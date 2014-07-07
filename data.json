@@ -7,6 +7,883 @@
         "logo": "http://pencilblue.org/img/pb_logo.png"
     },
     "files": {
+        "controllers\\actions\\admin\\content\\articles\\delete_article.js": {
+            "name": "controllers\\actions\\admin\\content\\articles\\delete_article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\articles\\edit_article.js": {
+            "name": "controllers\\actions\\admin\\content\\articles\\edit_article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\articles\\new_article.js": {
+            "name": "controllers\\actions\\admin\\content\\articles\\new_article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\comments\\delete_comment.js": {
+            "name": "controllers\\actions\\admin\\content\\comments\\delete_comment.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\delete_object.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\delete_object.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\delete_object_type.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\delete_object_type.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\edit_object.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\edit_object.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\edit_object_type.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\edit_object_type.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\new_object.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\new_object.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\new_object_type.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\new_object_type.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\custom_objects\\sort_objects.js": {
+            "name": "controllers\\actions\\admin\\content\\custom_objects\\sort_objects.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\media\\add_media.js": {
+            "name": "controllers\\actions\\admin\\content\\media\\add_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\media\\delete_media.js": {
+            "name": "controllers\\actions\\admin\\content\\media\\delete_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\media\\edit_media.js": {
+            "name": "controllers\\actions\\admin\\content\\media\\edit_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\media\\inline_add_media.js": {
+            "name": "controllers\\actions\\admin\\content\\media\\inline_add_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\media\\upload_media.js": {
+            "name": "controllers\\actions\\admin\\content\\media\\upload_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\pages\\delete_page.js": {
+            "name": "controllers\\actions\\admin\\content\\pages\\delete_page.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\pages\\edit_page.js": {
+            "name": "controllers\\actions\\admin\\content\\pages\\edit_page.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\pages\\new_page.js": {
+            "name": "controllers\\actions\\admin\\content\\pages\\new_page.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\sections\\delete_section.js": {
+            "name": "controllers\\actions\\admin\\content\\sections\\delete_section.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\sections\\edit_section.js": {
+            "name": "controllers\\actions\\admin\\content\\sections\\edit_section.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\sections\\new_section.js": {
+            "name": "controllers\\actions\\admin\\content\\sections\\new_section.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\sections\\section_map.js": {
+            "name": "controllers\\actions\\admin\\content\\sections\\section_map.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\topics\\delete_topic.js": {
+            "name": "controllers\\actions\\admin\\content\\topics\\delete_topic.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\topics\\import_topics.js": {
+            "name": "controllers\\actions\\admin\\content\\topics\\import_topics.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\content\\topics\\new_topic.js": {
+            "name": "controllers\\actions\\admin\\content\\topics\\new_topic.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\site_settings\\configuration.js": {
+            "name": "controllers\\actions\\admin\\site_settings\\configuration.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\site_settings\\content.js": {
+            "name": "controllers\\actions\\admin\\site_settings\\content.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\site_settings\\email.js": {
+            "name": "controllers\\actions\\admin\\site_settings\\email.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\themes\\index.js": {
+            "name": "controllers\\actions\\admin\\themes\\index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\users\\change_password.js": {
+            "name": "controllers\\actions\\admin\\users\\change_password.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\users\\delete_user.js": {
+            "name": "controllers\\actions\\admin\\users\\delete_user.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\users\\edit_user.js": {
+            "name": "controllers\\actions\\admin\\users\\edit_user.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\users\\new_user.js": {
+            "name": "controllers\\actions\\admin\\users\\new_user.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\admin\\users\\send_password_reset.js": {
+            "name": "controllers\\actions\\admin\\users\\send_password_reset.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\user\\manage_account\\change_password.js": {
+            "name": "controllers\\actions\\user\\manage_account\\change_password.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\user\\manage_account\\profile.js": {
+            "name": "controllers\\actions\\user\\manage_account\\profile.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\user\\resend_verification.js": {
+            "name": "controllers\\actions\\user\\resend_verification.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\user\\reset_password.js": {
+            "name": "controllers\\actions\\user\\reset_password.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\user\\sign_up.js": {
+            "name": "controllers\\actions\\user\\sign_up.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\user\\verify_email.js": {
+            "name": "controllers\\actions\\user\\verify_email.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\forgot_password.js": {
+            "name": "controllers\\actions\\forgot_password.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\login.js": {
+            "name": "controllers\\actions\\login.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\logout.js": {
+            "name": "controllers\\actions\\logout.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\actions\\setup.js": {
+            "name": "controllers\\actions\\setup.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\articles\\edit_article.js": {
+            "name": "controllers\\admin\\content\\articles\\edit_article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\articles\\manage_articles.js": {
+            "name": "controllers\\admin\\content\\articles\\manage_articles.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\articles\\new_article.js": {
+            "name": "controllers\\admin\\content\\articles\\new_article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\comments\\manage_comments.js": {
+            "name": "controllers\\admin\\content\\comments\\manage_comments.js",
+            "modules": {},
+            "classes": {
+                "ManageComments": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\edit_object.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\edit_object.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\edit_object_type.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\edit_object_type.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\manage_object_types.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\manage_object_types.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\manage_objects.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\manage_objects.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\new_object.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\new_object.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\new_object_type.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\new_object_type.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects\\sort_objects.js": {
+            "name": "controllers\\admin\\content\\custom_objects\\sort_objects.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\media\\add_media.js": {
+            "name": "controllers\\admin\\content\\media\\add_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\media\\edit_media.js": {
+            "name": "controllers\\admin\\content\\media\\edit_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\media\\manage_media.js": {
+            "name": "controllers\\admin\\content\\media\\manage_media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\pages\\edit_page.js": {
+            "name": "controllers\\admin\\content\\pages\\edit_page.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\pages\\manage_pages.js": {
+            "name": "controllers\\admin\\content\\pages\\manage_pages.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\pages\\new_page.js": {
+            "name": "controllers\\admin\\content\\pages\\new_page.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\sections\\edit_section.js": {
+            "name": "controllers\\admin\\content\\sections\\edit_section.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\sections\\new_section.js": {
+            "name": "controllers\\admin\\content\\sections\\new_section.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\sections\\section_map.js": {
+            "name": "controllers\\admin\\content\\sections\\section_map.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\topics\\import_topics.js": {
+            "name": "controllers\\admin\\content\\topics\\import_topics.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\topics\\manage_topics.js": {
+            "name": "controllers\\admin\\content\\topics\\manage_topics.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\topics\\new_topic.js": {
+            "name": "controllers\\admin\\content\\topics\\new_topic.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\articles.js": {
+            "name": "controllers\\admin\\content\\articles.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\comments.js": {
+            "name": "controllers\\admin\\content\\comments.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\custom_objects.js": {
+            "name": "controllers\\admin\\content\\custom_objects.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\media.js": {
+            "name": "controllers\\admin\\content\\media.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\pages.js": {
+            "name": "controllers\\admin\\content\\pages.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\sections.js": {
+            "name": "controllers\\admin\\content\\sections.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\content\\topics.js": {
+            "name": "controllers\\admin\\content\\topics.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\plugins\\details.js": {
+            "name": "controllers\\admin\\plugins\\details.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\plugins\\index.js": {
+            "name": "controllers\\admin\\plugins\\index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\plugins\\settings.js": {
+            "name": "controllers\\admin\\plugins\\settings.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\site_settings\\configuration.js": {
+            "name": "controllers\\admin\\site_settings\\configuration.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\site_settings\\content.js": {
+            "name": "controllers\\admin\\site_settings\\content.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\site_settings\\email.js": {
+            "name": "controllers\\admin\\site_settings\\email.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\themes\\index.js": {
+            "name": "controllers\\admin\\themes\\index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\themes\\settings.js": {
+            "name": "controllers\\admin\\themes\\settings.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\users\\change_password.js": {
+            "name": "controllers\\admin\\users\\change_password.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\users\\edit_user.js": {
+            "name": "controllers\\admin\\users\\edit_user.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\users\\manage_users.js": {
+            "name": "controllers\\admin\\users\\manage_users.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\users\\new_user.js": {
+            "name": "controllers\\admin\\users\\new_user.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\users\\permissions.js": {
+            "name": "controllers\\admin\\users\\permissions.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\index.js": {
+            "name": "controllers\\admin\\index.js",
+            "modules": {},
+            "classes": {
+                "AdminIndexController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\login.js": {
+            "name": "controllers\\admin\\login.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\site_settings.js": {
+            "name": "controllers\\admin\\site_settings.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\admin\\users.js": {
+            "name": "controllers\\admin\\users.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\admin\\content\\articles\\save_draft.js": {
+            "name": "controllers\\api\\admin\\content\\articles\\save_draft.js",
+            "modules": {},
+            "classes": {
+                "SaveArticleDraft": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\admin\\content\\pages\\save_draft.js": {
+            "name": "controllers\\api\\admin\\content\\pages\\save_draft.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\admin\\system\\cluster_api.js": {
+            "name": "controllers\\api\\admin\\system\\cluster_api.js",
+            "modules": {},
+            "classes": {
+                "ClusterApiController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\admin\\url_api.js": {
+            "name": "controllers\\api\\admin\\url_api.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\comments\\new_comment.js": {
+            "name": "controllers\\api\\comments\\new_comment.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\content\\get_articles.js": {
+            "name": "controllers\\api\\content\\get_articles.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\content\\get_media_embed.js": {
+            "name": "controllers\\api\\content\\get_media_embed.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\content\\search.js": {
+            "name": "controllers\\api\\content\\search.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\custom_objects\\get_object_type_name_available.js": {
+            "name": "controllers\\api\\custom_objects\\get_object_type_name_available.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\plugins\\plugin_api.js": {
+            "name": "controllers\\api\\plugins\\plugin_api.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\user\\get_username_available.js": {
+            "name": "controllers\\api\\user\\get_username_available.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\api\\api_action_controller.js": {
+            "name": "controllers\\api\\api_action_controller.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\error\\404.js": {
+            "name": "controllers\\error\\404.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\user\\change_password.js": {
+            "name": "controllers\\user\\change_password.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\user\\login.js": {
+            "name": "controllers\\user\\login.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\user\\manage_account.js": {
+            "name": "controllers\\user\\manage_account.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\user\\resend_verification.js": {
+            "name": "controllers\\user\\resend_verification.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\user\\sign_up.js": {
+            "name": "controllers\\user\\sign_up.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\user\\verification_sent.js": {
+            "name": "controllers\\user\\verification_sent.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\article.js": {
+            "name": "controllers\\article.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\base_controller.js": {
+            "name": "controllers\\base_controller.js",
+            "modules": {},
+            "classes": {
+                "BaseController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\delete_controller.js": {
+            "name": "controllers\\delete_controller.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\feed.js": {
+            "name": "controllers\\feed.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\form_controller.js": {
+            "name": "controllers\\form_controller.js",
+            "modules": {},
+            "classes": {
+                "FormController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\index.js": {
+            "name": "controllers\\index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\page.js": {
+            "name": "controllers\\page.js",
+            "modules": {},
+            "classes": {
+                "PageController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\preview.js": {
+            "name": "controllers\\preview.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\public.js": {
+            "name": "controllers\\public.js",
+            "modules": {},
+            "classes": {
+                "PluginPublicContentController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\section.js": {
+            "name": "controllers\\section.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\setup.js": {
+            "name": "controllers\\setup.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\sitemap.js": {
+            "name": "controllers\\sitemap.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "include\\dao\\cache.js": {
             "name": "include\\dao\\cache.js",
             "modules": {},
@@ -392,8 +1269,57 @@
             "fors": {},
             "namespaces": {}
         },
+        "plugins\\portfolio\\controllers\\blog.js": {
+            "name": "plugins\\portfolio\\controllers\\blog.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\portfolio\\controllers\\blog_filter.js": {
+            "name": "plugins\\portfolio\\controllers\\blog_filter.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\portfolio\\controllers\\home_page_settings.js": {
+            "name": "plugins\\portfolio\\controllers\\home_page_settings.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\portfolio\\controllers\\index.js": {
+            "name": "plugins\\portfolio\\controllers\\index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\portfolio\\controllers\\save_home_page_settings.js": {
+            "name": "plugins\\portfolio\\controllers\\save_home_page_settings.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "plugins\\portfolio\\portfolio.js": {
             "name": "plugins\\portfolio\\portfolio.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\sample\\controllers\\hello_world.js": {
+            "name": "plugins\\sample\\controllers\\hello_world.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\sample\\controllers\\test_page.js": {
+            "name": "plugins\\sample\\controllers\\test_page.js",
             "modules": {},
             "classes": {},
             "fors": {},
@@ -428,6 +1354,14 @@
             "name": "Database",
             "submodules": {},
             "classes": {
+                "ManageComments": 1,
+                "AdminIndexController": 1,
+                "SaveArticleDraft": 1,
+                "ClusterApiController": 1,
+                "BaseController": 1,
+                "FormController": 1,
+                "PageController": 1,
+                "PluginPublicContentController": 1,
                 "CacheFactory": 1,
                 "DAO": 1,
                 "DBManager": 1
@@ -689,6 +1623,119 @@
         }
     },
     "classes": {
+        "ManageComments": {
+            "name": "ManageComments",
+            "shortname": "ManageComments",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\admin\\content\\comments\\manage_comments.js",
+            "line": 21,
+            "description": "Interface for managing comments",
+            "is_constructor": 1
+        },
+        "AdminIndexController": {
+            "name": "AdminIndexController",
+            "shortname": "AdminIndexController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\admin\\index.js",
+            "line": 18,
+            "description": "Interface for the admin dashboard",
+            "is_constructor": 1
+        },
+        "SaveArticleDraft": {
+            "name": "SaveArticleDraft",
+            "shortname": "SaveArticleDraft",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\api\\admin\\content\\articles\\save_draft.js",
+            "line": 18,
+            "description": "Automatic draft saving of articles",
+            "is_constructor": 1
+        },
+        "ClusterApiController": {
+            "name": "ClusterApiController",
+            "shortname": "ClusterApiController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\api\\admin\\system\\cluster_api.js",
+            "line": 18,
+            "description": "Controller to properly route and handle remote calls to interact with\nthe cluster",
+            "is_constructor": 1
+        },
+        "BaseController": {
+            "name": "BaseController",
+            "shortname": "BaseController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\base_controller.js",
+            "line": 21,
+            "description": "The base controller provides functions for the majority of\nthe heavy lifing for a controller. It accepts and provides access to\nextending controllers for items such as the request, response, session, etc.",
+            "is_constructor": 1
+        },
+        "FormController": {
+            "name": "FormController",
+            "shortname": "FormController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\form_controller.js",
+            "line": 21,
+            "description": "Provides the basic functionality for implementing a controller that\nneeds access to a posted form.",
+            "is_constructor": 1
+        },
+        "PageController": {
+            "name": "PageController",
+            "shortname": "PageController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\page.js",
+            "line": 21,
+            "description": "Loads a page",
+            "is_constructor": 1
+        },
+        "PluginPublicContentController": {
+            "name": "PluginPublicContentController",
+            "shortname": "PluginPublicContentController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\public.js",
+            "line": 18,
+            "description": "Loads files in a plugin's public folder",
+            "is_constructor": 1,
+            "extends": "BaseController"
+        },
         "CacheFactory": {
             "name": "CacheFactory",
             "shortname": "CacheFactory",
@@ -1247,6 +2294,1491 @@
         }
     },
     "classitems": [
+        {
+            "file": "controllers\\actions\\admin\\content\\articles\\delete_article.js",
+            "line": 18,
+            "description": "Deletes an article",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\articles\\edit_article.js",
+            "line": 18,
+            "description": "Edits an article",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\articles\\new_article.js",
+            "line": 18,
+            "description": "Creates a new article",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\comments\\delete_comment.js",
+            "line": 18,
+            "description": "Deletes a comment",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\delete_object.js",
+            "line": 18,
+            "description": "Deletes an object",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\delete_object_type.js",
+            "line": 18,
+            "description": "Deletes an object type",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\edit_object.js",
+            "line": 18,
+            "description": "Edits an object",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\edit_object_type.js",
+            "line": 18,
+            "description": "Edits an object type",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\new_object.js",
+            "line": 18,
+            "description": "Creates an object",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\new_object_type.js",
+            "line": 18,
+            "description": "Creates an object type",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\custom_objects\\sort_objects.js",
+            "line": 18,
+            "description": "Sets the sorting of objects",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\media\\add_media.js",
+            "line": 18,
+            "description": "Adds new media",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\media\\delete_media.js",
+            "line": 18,
+            "description": "Deletes media",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\media\\edit_media.js",
+            "line": 18,
+            "description": "Edits media",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\media\\inline_add_media.js",
+            "line": 18,
+            "description": "Adds new media from inside a non-media form",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\media\\upload_media.js",
+            "line": 18,
+            "description": "Uploads a media file to the system",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\pages\\delete_page.js",
+            "line": 18,
+            "description": "Deletes a page",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\pages\\edit_page.js",
+            "line": 18,
+            "description": "Edits a page",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\pages\\new_page.js",
+            "line": 18,
+            "description": "Creates a new page",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\sections\\delete_section.js",
+            "line": 18,
+            "description": "Deletes a section",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\sections\\edit_section.js",
+            "line": 18,
+            "description": "Edits a section",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\sections\\new_section.js",
+            "line": 18,
+            "description": "Creates a new section",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\sections\\section_map.js",
+            "line": 18,
+            "description": "Updates the navigation",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\topics\\delete_topic.js",
+            "line": 18,
+            "description": "Deletes a topic",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\topics\\import_topics.js",
+            "line": 18,
+            "description": "Imports a CSV of topics",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\content\\topics\\new_topic.js",
+            "line": 18,
+            "description": "Creates a new topic",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\site_settings\\configuration.js",
+            "line": 18,
+            "description": "Saves the site's setting to call home",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\site_settings\\content.js",
+            "line": 18,
+            "description": "Saves the site's content settings",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\site_settings\\email.js",
+            "line": 18,
+            "description": "Saves the site's email settings",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\themes\\index.js",
+            "line": 18,
+            "description": "Saves the site's theme settings",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\users\\change_password.js",
+            "line": 18,
+            "description": "Changes a user's password",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\users\\delete_user.js",
+            "line": 18,
+            "description": "Deletes a user",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\users\\edit_user.js",
+            "line": 18,
+            "description": "Edits a user",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\users\\new_user.js",
+            "line": 18,
+            "description": "Creates a new user",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\admin\\users\\send_password_reset.js",
+            "line": 18,
+            "description": "Sends a password reset email",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\user\\manage_account\\change_password.js",
+            "line": 18,
+            "description": "Changes the logged in user's password",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\user\\manage_account\\profile.js",
+            "line": 18,
+            "description": "Edits the logged in user's information",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\user\\resend_verification.js",
+            "line": 18,
+            "description": "Resends an account verification email",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\user\\reset_password.js",
+            "line": 18,
+            "description": "Resets the logged in user's password",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\user\\sign_up.js",
+            "line": 18,
+            "description": "Creates an READER level user",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\user\\verify_email.js",
+            "line": 18,
+            "description": "Tests the token from a verication email and verifies the user if correct",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\forgot_password.js",
+            "line": 18,
+            "description": "Sends a password reset email",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\login.js",
+            "line": 18,
+            "description": "Authenticates a user",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\logout.js",
+            "line": 18,
+            "description": "Logs a user out of the system",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\actions\\setup.js",
+            "line": 18,
+            "description": "Creates the initial admin user",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\articles\\edit_article.js",
+            "line": 18,
+            "description": "Interface for editing an article",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\articles\\manage_articles.js",
+            "line": 18,
+            "description": "Interface for managing articles",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\articles\\new_article.js",
+            "line": 18,
+            "description": "Interface for creating a new article",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\comments\\manage_comments.js",
+            "line": 31,
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "itemtype": "property",
+            "name": "SUB_NAV_KEY",
+            "type": "{String}",
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\comments\\manage_comments.js",
+            "line": 40,
+            "see": [
+                "BaseController.render"
+            ],
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\comments\\manage_comments.js",
+            "line": 87,
+            "itemtype": "method",
+            "name": "getCommentDetails",
+            "params": [
+                {
+                    "name": "comments",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "dao",
+                    "description": "",
+                    "type": "DAO"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\comments\\manage_comments.js",
+            "line": 128,
+            "static": 1,
+            "itemtype": "method",
+            "name": "getSubNavItems",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "ls",
+                    "description": "",
+                    "type": "Localization"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "*"
+                }
+            ],
+            "class": "ManageComments"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\edit_object.js",
+            "line": 18,
+            "description": "Interface for editing an object",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\edit_object_type.js",
+            "line": 18,
+            "description": "Interface for editing an object type",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\manage_object_types.js",
+            "line": 18,
+            "description": "Interface for managing object types",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\manage_objects.js",
+            "line": 18,
+            "description": "Interface for managing objects",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\new_object.js",
+            "line": 18,
+            "description": "Interface for creating a new object",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\new_object_type.js",
+            "line": 18,
+            "description": "Interface for creating a new object type",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects\\sort_objects.js",
+            "line": 18,
+            "description": "Interface for sorting objects",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\media\\add_media.js",
+            "line": 18,
+            "description": "Interface for adding media",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\media\\edit_media.js",
+            "line": 18,
+            "description": "Interface for editing media",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\media\\manage_media.js",
+            "line": 18,
+            "description": "Interface for managing media",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\pages\\edit_page.js",
+            "line": 18,
+            "description": "Interface for editing a page",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\pages\\manage_pages.js",
+            "line": 18,
+            "description": "Interface for managing pages",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\pages\\new_page.js",
+            "line": 18,
+            "description": "Interface for creating a new page",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\sections\\edit_section.js",
+            "line": 18,
+            "description": "Interface for editing a section",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\sections\\new_section.js",
+            "line": 18,
+            "description": "Interface for creating a section",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\sections\\section_map.js",
+            "line": 18,
+            "description": "Interface for editing the navigation",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\topics\\import_topics.js",
+            "line": 18,
+            "description": "Interface for importing topics from CSV",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\topics\\manage_topics.js",
+            "line": 18,
+            "description": "Interface for managing topics",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\topics\\new_topic.js",
+            "line": 18,
+            "description": "Interface for creating new topics",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\articles.js",
+            "line": 18,
+            "description": "Parent articles controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\comments.js",
+            "line": 18,
+            "description": "Parent comments controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\custom_objects.js",
+            "line": 18,
+            "description": "Parent custom objects controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\media.js",
+            "line": 18,
+            "description": "Parent media controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\pages.js",
+            "line": 18,
+            "description": "Parent pages controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\sections.js",
+            "line": 18,
+            "description": "Parent sections controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\content\\topics.js",
+            "line": 18,
+            "description": "Parent topics controller",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\plugins\\details.js",
+            "line": 18,
+            "description": "Interface for viewing plugin details",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\plugins\\index.js",
+            "line": 18,
+            "description": "Interface for managing plugins",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\plugins\\settings.js",
+            "line": 18,
+            "description": "Interface for changing a plugin's settings",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\site_settings\\configuration.js",
+            "line": 18,
+            "description": "Interface for displaying the site's configuration settings",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\site_settings\\content.js",
+            "line": 18,
+            "description": "Interface for the site's content settings",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\site_settings\\email.js",
+            "line": 18,
+            "description": "Interface for the site's email settings",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\themes\\index.js",
+            "line": 18,
+            "description": "Interface for managing themes",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\themes\\settings.js",
+            "line": 18,
+            "description": "Interface for changing a theme's settings",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\users\\change_password.js",
+            "line": 18,
+            "description": "Interface for changing the logged in user's password",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\users\\edit_user.js",
+            "line": 18,
+            "description": "Interface for editing a user",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\users\\manage_users.js",
+            "line": 18,
+            "description": "Interface for managing users",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\users\\new_user.js",
+            "line": 18,
+            "description": "Interface for creating a new user",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\users\\permissions.js",
+            "line": 18,
+            "description": "Interface for displaying how a plugin's user permissions are organized",
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\index.js",
+            "line": 28,
+            "see": [
+                "BaseController#render"
+            ],
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\index.js",
+            "line": 69,
+            "description": "Gather all necessary data for rendering the dashboard.\n<ul>\n<li>Article count</li>\n<li>Page Count</li>\n<li>Cluster Status</li>\n</ul>",
+            "itemtype": "method",
+            "name": "gatherData",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Object)",
+                    "type": "Function"
+                }
+            ],
+            "class": "AdminIndexController"
+        },
+        {
+            "file": "controllers\\admin\\login.js",
+            "line": 18,
+            "description": "Interface for admin login",
+            "class": "SaveArticleDraft"
+        },
+        {
+            "file": "controllers\\admin\\site_settings.js",
+            "line": 18,
+            "description": "Parent site settings controller",
+            "class": "SaveArticleDraft"
+        },
+        {
+            "file": "controllers\\admin\\users.js",
+            "line": 18,
+            "description": "Parent users controller",
+            "class": "SaveArticleDraft"
+        },
+        {
+            "file": "controllers\\api\\admin\\content\\articles\\save_draft.js",
+            "line": 28,
+            "description": "Processes the request to persist a draft.  Redirects the request after\ncompletion.",
+            "see": [
+                "FormController#onPostParamsRetrieved"
+            ],
+            "itemtype": "method",
+            "name": "onPostParamsRetrieved",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "posted parameters",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "SaveArticleDraft"
+        },
+        {
+            "file": "controllers\\api\\admin\\content\\articles\\save_draft.js",
+            "line": 97,
+            "description": "The required parameters",
+            "itemtype": "method",
+            "name": "getRequiredFields",
+            "return": {
+                "description": "Parameter names that must be present in order to pass\nvalidation.",
+                "type": "Array"
+            },
+            "class": "SaveArticleDraft"
+        },
+        {
+            "file": "controllers\\api\\admin\\content\\pages\\save_draft.js",
+            "line": 18,
+            "description": "Automatic draft saving of pages",
+            "class": "ClusterApiController"
+        },
+        {
+            "file": "controllers\\api\\admin\\content\\pages\\save_draft.js",
+            "line": 26,
+            "description": "Processes the request to persist a draft.  Redirects the request after\ncompletion.",
+            "see": [
+                "FormController#onPostParamsRetrieved"
+            ],
+            "itemtype": "method",
+            "name": "onPostParamsRetrieved",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "posted parameters",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "ClusterApiController"
+        },
+        {
+            "file": "controllers\\api\\admin\\content\\pages\\save_draft.js",
+            "line": 94,
+            "description": "The required parameters",
+            "itemtype": "method",
+            "name": "getRequiredFields",
+            "return": {
+                "description": "Parameter names that must be present in order to pass\nvalidation.",
+                "type": "Array"
+            },
+            "class": "ClusterApiController"
+        },
+        {
+            "file": "controllers\\api\\admin\\system\\cluster_api.js",
+            "line": 39,
+            "description": "Provides the hash of all actions supported by this controller",
+            "itemtype": "method",
+            "name": "getActions",
+            "return": {
+                "description": "Hash of acceptable actions",
+                "type": "Object"
+            },
+            "class": "ClusterApiController"
+        },
+        {
+            "file": "controllers\\api\\admin\\system\\cluster_api.js",
+            "line": 48,
+            "description": "Causes the service registration storage to flush all status updates.  An API \nobject is returned to the client that specifies the correct amount of time to \nwait before the service registry is updated again by all nodes.",
+            "itemtype": "method",
+            "name": "refresh",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "ClusterApiController"
+        },
+        {
+            "file": "controllers\\api\\admin\\url_api.js",
+            "line": 18,
+            "description": "Controller to properly route and handle remote calls to interact with\nthe UrlService",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\admin\\url_api.js",
+            "line": 39,
+            "description": "Provides the hash of all actions supported by this controller",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\admin\\url_api.js",
+            "line": 46,
+            "description": "Validates any path parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\admin\\url_api.js",
+            "line": 55,
+            "description": "Validates any query parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\admin\\url_api.js",
+            "line": 79,
+            "description": "The \"exists\" action handler.  Calls the UrlService function <i>exists</i> to\nsee whether or not the provided URL path could trigger a controller to be\nexecuted.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\admin\\url_api.js",
+            "line": 92,
+            "description": "The \"exists_for\" action handler.  Calls the UrlService function\n<i>existsForType</i> to see whether or not the provided URL path the URL key\nof that particular object type.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\comments\\new_comment.js",
+            "line": 18,
+            "description": "Creates a new comment",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\content\\get_articles.js",
+            "line": 18,
+            "description": "Retrieve articles",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\content\\get_articles.js",
+            "line": 30,
+            "description": "Get articles within indices, for real time pagination",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\content\\get_media_embed.js",
+            "line": 18,
+            "description": "Retrieve a media embed",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\content\\search.js",
+            "line": 18,
+            "description": "Search for headline or subheading matching search term",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\custom_objects\\get_object_type_name_available.js",
+            "line": 18,
+            "description": "Checks to see if the proposed name for a custom object type is available",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\plugins\\plugin_api.js",
+            "line": 18,
+            "description": "Controller to properly route and handle remote calls to interact with\nthe PluginService",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\user\\get_username_available.js",
+            "line": 18,
+            "description": "Checks to see if the proposed username is available",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 18,
+            "description": "Controller interface used to map simple actions to handlers and provide\na flow for validation and error handling.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 33,
+            "description": "Flag to indicate if the form should automatically sanitize the incoming\nvalues.  In this case sanitize means it will attempt to strip away any\nHTML tags to prevent HTML injection and XSS.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 40,
+            "description": "The entry point called by the RequestHandler.  Executes the calls to the\nvalidation framework then, if passes, executes the action handler.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 63,
+            "description": "Provides the hash of all actions supported by this controller",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 70,
+            "description": "Validates the query, path, and post parameters in parallel and calls back\nwith any validation errors.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 132,
+            "description": "Validates any path parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded. The default implementation examines the\nvalue for the action in the value returned by ApiActionController#getActions.\nIf the value evaluates to true then the implementation will validate that an\n\"id\" path parameter was passed.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 150,
+            "description": "Validates any query parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded. The default implementation passes an empty\nerror array.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\api\\api_action_controller.js",
+            "line": 160,
+            "description": "Validates any post parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded. The default implementation passes an empty\nerror array.",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\error\\404.js",
+            "line": 18,
+            "description": "404 error",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\user\\change_password.js",
+            "line": 18,
+            "description": "Interface for logged in user to change password",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\user\\login.js",
+            "line": 18,
+            "description": "Interface for logging in",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\user\\manage_account.js",
+            "line": 18,
+            "description": "Interface for logged in user to manage account information",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\user\\resend_verification.js",
+            "line": 18,
+            "description": "Interface for resending a verification email",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\user\\sign_up.js",
+            "line": 18,
+            "description": "Interface for creating a new READER level user",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\user\\verification_sent.js",
+            "line": 18,
+            "description": "Verification email sent page",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\article.js",
+            "line": 18,
+            "description": "Loads a single article",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 31,
+            "description": "The code for a successful API call",
+            "static": 1,
+            "itemtype": "property",
+            "name": "API_SUCCESS",
+            "type": "{Integer}",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 39,
+            "description": "The code for a failed API call",
+            "static": 1,
+            "itemtype": "property",
+            "name": "API_FAILURE",
+            "type": "{Integer}",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 47,
+            "description": "The snippet of JS code that will ensure that a form is refilled with values\nfrom the post",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "FORM_REFILL_PATTERN",
+            "type": "{String}",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 59,
+            "description": "The snippet of HTML that will display an alert box",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "ALERT_PATTERN",
+            "type": "{String}",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 68,
+            "description": "Responsible for initializing a controller.  Properties from the\nRequestHandler are passed down so that the controller has complete access to\na variety of request specified properties.  By default the function transfers the options over to instance variables that can be access during rendering.  In addition, the function sets up the template service along with a set of local flags:\n<ul>\n<li>locale - The selected locale for the request (NOTE: this may not match the requested language if not supported)</li>\n<li>error_success - An alert box if one was registered by the controller</li>\n<li>page_name - The title of the page</li>\n<li>localization_script - Includes the localization script so that it can be used client side</li>\n<li>analytics - Inserts the necessary javascript for analytics providers</li>\n</ul>",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "The properties needed to initialize the controller",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "request_handler",
+                            "description": "",
+                            "type": "RequestHandler"
+                        },
+                        {
+                            "name": "request",
+                            "description": "The incoming request",
+                            "type": "Request"
+                        },
+                        {
+                            "name": "response",
+                            "description": "The outgoing response",
+                            "type": "Response"
+                        },
+                        {
+                            "name": "session",
+                            "description": "The session object",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "localization_service",
+                            "description": "The localization service instance for the request",
+                            "type": "Localization"
+                        },
+                        {
+                            "name": "path_vars",
+                            "description": "The path variables associated with the URL for the request",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "query",
+                            "description": "The query string variables associated with the URL for the request",
+                            "type": "Object"
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes a single optional argument: cb(Error)",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 120,
+            "itemtype": "method",
+            "name": "requiresClientLocalization",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 129,
+            "itemtype": "method",
+            "name": "requiresClientLocalizationCallback",
+            "params": [
+                {
+                    "name": "flag",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 143,
+            "itemtype": "method",
+            "name": "formError",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "The error message to be displayed",
+                    "type": "String"
+                },
+                {
+                    "name": "redirectLocation",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 156,
+            "itemtype": "method",
+            "name": "displayErrorOrSuccessCallback",
+            "params": [
+                {
+                    "name": "flag",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 178,
+            "description": "Provides a page title.  This is picked up by the template engine when the\n^page_name^ key is found in a template.",
+            "itemtype": "method",
+            "name": "getPageName",
+            "return": {
+                "description": "The page title",
+                "type": "String"
+            },
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 188,
+            "description": "Sets the page title",
+            "itemtype": "method",
+            "name": "setPageName",
+            "params": [
+                {
+                    "name": "pageName",
+                    "description": "The desired page title",
+                    "type": "String"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 197,
+            "itemtype": "method",
+            "name": "getPostParams",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 214,
+            "itemtype": "method",
+            "name": "getJSONPostParams",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 238,
+            "itemtype": "method",
+            "name": "getPostData",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 258,
+            "itemtype": "method",
+            "name": "hasRequiredParams",
+            "params": [
+                {
+                    "name": "queryObject",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "requiredParameters",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 285,
+            "itemtype": "method",
+            "name": "setFormFieldValues",
+            "params": [
+                {
+                    "name": "post",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 295,
+            "itemtype": "method",
+            "name": "checkForFormRefill",
+            "params": [
+                {
+                    "name": "result",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 313,
+            "description": "Sanitizes an object.  This function is handy for incoming post objects.  It\niterates over each field.  If the field is a string value it will be\nsanitized based on the default sanitization rules\n(BaseController.getDefaultSanitizationRules) or those provided by the call\nto BaseController.getSanitizationRules.",
+            "itemtype": "method",
+            "name": "sanitizeObject",
+            "params": [
+                {
+                    "name": "UNKNOWN",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 337,
+            "itemtype": "method",
+            "name": "getSanitizationRules",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 345,
+            "description": "The sanitization rules that apply to Pages and Articles",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getContentSanitizationRules",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 367,
+            "static": 1,
+            "itemtype": "method",
+            "name": "getDefaultSanitizationRules",
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 378,
+            "static": 1,
+            "itemtype": "method",
+            "name": "sanitize",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 395,
+            "description": "Redirects a request to a different location",
+            "itemtype": "method",
+            "name": "redirect",
+            "params": [
+                {
+                    "name": "location",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\base_controller.js",
+            "line": 405,
+            "description": "Generates an generic API response object",
+            "static": 1,
+            "itemtype": "method",
+            "name": "apiResponse",
+            "return": {
+                "description": "JSON",
+                "type": "String"
+            },
+            "class": "BaseController"
+        },
+        {
+            "file": "controllers\\delete_controller.js",
+            "line": 18,
+            "description": "Deletes objects from the database",
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\feed.js",
+            "line": 18,
+            "description": "RSS Feed",
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\form_controller.js",
+            "line": 32,
+            "description": "Instructs the controller to automatically sanitize any incoming post data\nwhen set to TRUE.",
+            "itemtype": "property",
+            "name": "autoSanitize",
+            "type": "{Boolean}",
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\form_controller.js",
+            "line": 40,
+            "description": "Responsible for gathering the payload data from the request and parsing it.\nThe result is passed down to the controller's onPostParamsRetrieved function.\nIn addition and the <i>autoSanitize</i> property is TRUE, the posted\nparameters will be sanitized.",
+            "see": [
+                "BaseController#render"
+            ],
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\form_controller.js",
+            "line": 64,
+            "itemtype": "method",
+            "name": "getAutoSanitize",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\form_controller.js",
+            "line": 73,
+            "itemtype": "method",
+            "name": "setAutoSanitize",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\form_controller.js",
+            "line": 82,
+            "itemtype": "method",
+            "name": "onPostParamsError",
+            "params": [
+                {
+                    "name": "err",
+                    "description": "",
+                    "type": "Error"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\form_controller.js",
+            "line": 93,
+            "description": "Called after the posted parameters have been received and parsed.  The\nfunction should be overriden in order to continue processing and render the\nresult of the request.  The default implementation echoes the received\nparameters as JSON.",
+            "itemtype": "method",
+            "name": "onPostParamsRetrieved",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "FormController"
+        },
+        {
+            "file": "controllers\\index.js",
+            "line": 18,
+            "description": "Index page of the pencilblue theme",
+            "class": "PageController"
+        },
+        {
+            "file": "controllers\\page.js",
+            "line": 31,
+            "description": "Looks up a page and renders it",
+            "see": [
+                "BaseController#render"
+            ],
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "PageController"
+        },
+        {
+            "file": "controllers\\page.js",
+            "line": 76,
+            "description": "Retrieves the name of the page.  The page's headhile",
+            "class": "PageController"
+        },
+        {
+            "file": "controllers\\preview.js",
+            "line": 18,
+            "description": "Preview an article or page",
+            "class": "PluginPublicContentController"
+        },
+        {
+            "file": "controllers\\public.js",
+            "line": 33,
+            "see": [
+                "BaseController.render"
+            ],
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginPublicContentController"
+        },
+        {
+            "file": "controllers\\section.js",
+            "line": 18,
+            "description": "Loads a section",
+            "class": "CacheFactory"
+        },
+        {
+            "file": "controllers\\setup.js",
+            "line": 18,
+            "description": "Initial setup page",
+            "class": "CacheFactory"
+        },
+        {
+            "file": "controllers\\sitemap.js",
+            "line": 18,
+            "description": "Google sitemap",
+            "class": "CacheFactory"
+        },
         {
             "file": "include\\dao\\cache.js",
             "line": 30,
@@ -6422,6 +8954,90 @@
             "module": "Services"
         },
         {
+            "file": "plugins\\portfolio\\controllers\\blog.js",
+            "line": 1,
+            "description": "Blog page of the pencilblue theme",
+            "author": "Blake Callens <blake@pencilblue.org>",
+            "copyright": "PencilBlue 2014, All rights reserved",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\blog.js",
+            "line": 432,
+            "description": "Provides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback of the form: cb(error, array of objects)"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\blog_filter.js",
+            "line": 1,
+            "description": "BlogFilter - Responsible for looking up a specific filter (section, article, page, author) and rendering it.",
+            "author": "Blake Callens <blake@pencilblue.org>",
+            "copyright": "PencilBlue, LLC. 2014 All Rights Reserved",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\home_page_settings.js",
+            "line": 1,
+            "description": "HomePageSettings - Settings for the display of home page content in the Portfolio theme",
+            "author": "Blake Callens <blake@pencilblue.org>",
+            "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\index.js",
+            "line": 1,
+            "description": "Index - The home page controller of the portfolio theme.",
+            "author": "Blake Callens <blake@pencilblue.org>",
+            "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\index.js",
+            "line": 17,
+            "description": "This is the function that will be called by the system's RequestHandler.  It\nwill map the incoming route to the ones below and then instantiate this\nprototype.  The request handler will then proceed to call this function.\nIts callback should contain everything needed in order to provide a response.",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "The callback.  It does not require a an error parameter.  All\nerrors should be handled by the controller and format the appropriate\n response.  The system will attempt to catch any catastrophic errors but\n makes no guarantees."
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\index.js",
+            "line": 136,
+            "description": "Provides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback of the form: cb(error, array of objects)"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\portfolio\\controllers\\save_home_page_settings.js",
+            "line": 1,
+            "description": "SaveHomePageSettings - Saves settings for the display of home page content in the Portfolio theme",
+            "author": "Blake Callens <blake@pencilblue.org>",
+            "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
             "file": "plugins\\portfolio\\portfolio.js",
             "line": 1,
             "description": "Portfolio - A portfolio site theme for PencilBlue",
@@ -6477,6 +9093,106 @@
                 {
                     "name": "cb",
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\hello_world.js",
+            "line": 1,
+            "description": "HelloWorld - A sample controller to show how to register a controller and \nroutes for the controller.",
+            "author": "Brian Hyder <brian@pencilblue.org>",
+            "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
+            "return": {
+                "description": ""
+            },
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\hello_world.js",
+            "line": 19,
+            "description": "This is the function that will be called by the system's RequestHandler.  It \nwill map the incoming route to the ones below and then instantiate this \nprototype.  The request handler will then proceed to call this function.  \nIts callback should contain everything needed in order to provide a response.",
+            "itemtype": "method",
+            "name": "render",
+            "see": [
+                "BaseController#render"
+            ],
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "The callback.  It does not require a an error parameter.  All \nerrors should be handled by the controller and format the appropriate\n response.  The system will attempt to catch any catastrophic errors but \n makes no guarantees."
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\hello_world.js",
+            "line": 85,
+            "description": "Retrieves the navigation for the page.",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "Callback that provides three parameters: cb(Error, navigation, accountButtons);",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\hello_world.js",
+            "line": 97,
+            "description": "Provides the routes that are to be handled by an instance of this prototype.  \nThe route provides a definition of path, permissions, authentication, and \nexpected content type. \nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback of the form: cb(error, array of objects)"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\test_page.js",
+            "line": 1,
+            "description": "HelloWorld - A sample controller to show how to register a controller and \nroutes for the controller.",
+            "author": "Brian Hyder <brian@pencilblue.org>",
+            "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
+            "return": {
+                "description": ""
+            },
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\test_page.js",
+            "line": 17,
+            "description": "This is the function that will be called by the system's RequestHandler.  It \nwill map the incoming route to the ones below and then instantiate this \nprototype.  The request handler will then proceed to call this function.  \nIts callback should contain everything needed in order to provide a response.",
+            "itemtype": "method",
+            "name": "render",
+            "see": [
+                "BaseController#render"
+            ],
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "The callback.  It does not require a an error parameter.  All \nerrors should be handled by the controller and format the appropriate\n response.  The system will attempt to catch any catastrophic errors but \n makes no guarantees."
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\controllers\\test_page.js",
+            "line": 41,
+            "description": "Provides the routes that are to be handled by an instance of this prototype.  \nThe route provides a definition of path, permissions, authentication, and \nexpected content type. \nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback of the form: cb(error, array of objects)"
                 }
             ],
             "class": "PencilBlue",
@@ -6711,6 +9427,10 @@
     ],
     "warnings": [
         {
+            "message": "param name missing: {Object}",
+            "line": " controllers\\base_controller.js:313"
+        },
+        {
             "message": "replacing incorrect tag: returns with return",
             "line": " include\\system\\server_registration.js:190"
         },
@@ -6744,7 +9464,43 @@
         },
         {
             "message": "unknown tag: copyright",
+            "line": " plugins\\portfolio\\controllers\\blog.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\portfolio\\controllers\\blog_filter.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\portfolio\\controllers\\home_page_settings.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\portfolio\\controllers\\index.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\portfolio\\controllers\\save_home_page_settings.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
             "line": " plugins\\portfolio\\portfolio.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\sample\\controllers\\hello_world.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " plugins\\sample\\controllers\\hello_world.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\sample\\controllers\\test_page.js:1"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " plugins\\sample\\controllers\\test_page.js:1"
         },
         {
             "message": "unknown tag: copyright",
@@ -6753,6 +9509,526 @@
         {
             "message": "unknown tag: copyright",
             "line": " plugins\\sample\\sample.js:1"
+        },
+        {
+            "message": "Missing item type\nDeletes an article",
+            "line": " controllers\\actions\\admin\\content\\articles\\delete_article.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits an article",
+            "line": " controllers\\actions\\admin\\content\\articles\\edit_article.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates a new article",
+            "line": " controllers\\actions\\admin\\content\\articles\\new_article.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes a comment",
+            "line": " controllers\\actions\\admin\\content\\comments\\delete_comment.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes an object",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\delete_object.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes an object type",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\delete_object_type.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits an object",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\edit_object.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits an object type",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\edit_object_type.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates an object",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\new_object.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates an object type",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\new_object_type.js:18"
+        },
+        {
+            "message": "Missing item type\nSets the sorting of objects",
+            "line": " controllers\\actions\\admin\\content\\custom_objects\\sort_objects.js:18"
+        },
+        {
+            "message": "Missing item type\nAdds new media",
+            "line": " controllers\\actions\\admin\\content\\media\\add_media.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes media",
+            "line": " controllers\\actions\\admin\\content\\media\\delete_media.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits media",
+            "line": " controllers\\actions\\admin\\content\\media\\edit_media.js:18"
+        },
+        {
+            "message": "Missing item type\nAdds new media from inside a non-media form",
+            "line": " controllers\\actions\\admin\\content\\media\\inline_add_media.js:18"
+        },
+        {
+            "message": "Missing item type\nUploads a media file to the system",
+            "line": " controllers\\actions\\admin\\content\\media\\upload_media.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes a page",
+            "line": " controllers\\actions\\admin\\content\\pages\\delete_page.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits a page",
+            "line": " controllers\\actions\\admin\\content\\pages\\edit_page.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates a new page",
+            "line": " controllers\\actions\\admin\\content\\pages\\new_page.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes a section",
+            "line": " controllers\\actions\\admin\\content\\sections\\delete_section.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits a section",
+            "line": " controllers\\actions\\admin\\content\\sections\\edit_section.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates a new section",
+            "line": " controllers\\actions\\admin\\content\\sections\\new_section.js:18"
+        },
+        {
+            "message": "Missing item type\nUpdates the navigation",
+            "line": " controllers\\actions\\admin\\content\\sections\\section_map.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes a topic",
+            "line": " controllers\\actions\\admin\\content\\topics\\delete_topic.js:18"
+        },
+        {
+            "message": "Missing item type\nImports a CSV of topics",
+            "line": " controllers\\actions\\admin\\content\\topics\\import_topics.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates a new topic",
+            "line": " controllers\\actions\\admin\\content\\topics\\new_topic.js:18"
+        },
+        {
+            "message": "Missing item type\nSaves the site's setting to call home",
+            "line": " controllers\\actions\\admin\\site_settings\\configuration.js:18"
+        },
+        {
+            "message": "Missing item type\nSaves the site's content settings",
+            "line": " controllers\\actions\\admin\\site_settings\\content.js:18"
+        },
+        {
+            "message": "Missing item type\nSaves the site's email settings",
+            "line": " controllers\\actions\\admin\\site_settings\\email.js:18"
+        },
+        {
+            "message": "Missing item type\nSaves the site's theme settings",
+            "line": " controllers\\actions\\admin\\themes\\index.js:18"
+        },
+        {
+            "message": "Missing item type\nChanges a user's password",
+            "line": " controllers\\actions\\admin\\users\\change_password.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes a user",
+            "line": " controllers\\actions\\admin\\users\\delete_user.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits a user",
+            "line": " controllers\\actions\\admin\\users\\edit_user.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates a new user",
+            "line": " controllers\\actions\\admin\\users\\new_user.js:18"
+        },
+        {
+            "message": "Missing item type\nSends a password reset email",
+            "line": " controllers\\actions\\admin\\users\\send_password_reset.js:18"
+        },
+        {
+            "message": "Missing item type\nChanges the logged in user's password",
+            "line": " controllers\\actions\\user\\manage_account\\change_password.js:18"
+        },
+        {
+            "message": "Missing item type\nEdits the logged in user's information",
+            "line": " controllers\\actions\\user\\manage_account\\profile.js:18"
+        },
+        {
+            "message": "Missing item type\nResends an account verification email",
+            "line": " controllers\\actions\\user\\resend_verification.js:18"
+        },
+        {
+            "message": "Missing item type\nResets the logged in user's password",
+            "line": " controllers\\actions\\user\\reset_password.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates an READER level user",
+            "line": " controllers\\actions\\user\\sign_up.js:18"
+        },
+        {
+            "message": "Missing item type\nTests the token from a verication email and verifies the user if correct",
+            "line": " controllers\\actions\\user\\verify_email.js:18"
+        },
+        {
+            "message": "Missing item type\nSends a password reset email",
+            "line": " controllers\\actions\\forgot_password.js:18"
+        },
+        {
+            "message": "Missing item type\nAuthenticates a user",
+            "line": " controllers\\actions\\login.js:18"
+        },
+        {
+            "message": "Missing item type\nLogs a user out of the system",
+            "line": " controllers\\actions\\logout.js:18"
+        },
+        {
+            "message": "Missing item type\nCreates the initial admin user",
+            "line": " controllers\\actions\\setup.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing an article",
+            "line": " controllers\\admin\\content\\articles\\edit_article.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing articles",
+            "line": " controllers\\admin\\content\\articles\\manage_articles.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a new article",
+            "line": " controllers\\admin\\content\\articles\\new_article.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing an object",
+            "line": " controllers\\admin\\content\\custom_objects\\edit_object.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing an object type",
+            "line": " controllers\\admin\\content\\custom_objects\\edit_object_type.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing object types",
+            "line": " controllers\\admin\\content\\custom_objects\\manage_object_types.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing objects",
+            "line": " controllers\\admin\\content\\custom_objects\\manage_objects.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a new object",
+            "line": " controllers\\admin\\content\\custom_objects\\new_object.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a new object type",
+            "line": " controllers\\admin\\content\\custom_objects\\new_object_type.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for sorting objects",
+            "line": " controllers\\admin\\content\\custom_objects\\sort_objects.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for adding media",
+            "line": " controllers\\admin\\content\\media\\add_media.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing media",
+            "line": " controllers\\admin\\content\\media\\edit_media.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing media",
+            "line": " controllers\\admin\\content\\media\\manage_media.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing a page",
+            "line": " controllers\\admin\\content\\pages\\edit_page.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing pages",
+            "line": " controllers\\admin\\content\\pages\\manage_pages.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a new page",
+            "line": " controllers\\admin\\content\\pages\\new_page.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing a section",
+            "line": " controllers\\admin\\content\\sections\\edit_section.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a section",
+            "line": " controllers\\admin\\content\\sections\\new_section.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing the navigation",
+            "line": " controllers\\admin\\content\\sections\\section_map.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for importing topics from CSV",
+            "line": " controllers\\admin\\content\\topics\\import_topics.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing topics",
+            "line": " controllers\\admin\\content\\topics\\manage_topics.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating new topics",
+            "line": " controllers\\admin\\content\\topics\\new_topic.js:18"
+        },
+        {
+            "message": "Missing item type\nParent articles controller",
+            "line": " controllers\\admin\\content\\articles.js:18"
+        },
+        {
+            "message": "Missing item type\nParent comments controller",
+            "line": " controllers\\admin\\content\\comments.js:18"
+        },
+        {
+            "message": "Missing item type\nParent custom objects controller",
+            "line": " controllers\\admin\\content\\custom_objects.js:18"
+        },
+        {
+            "message": "Missing item type\nParent media controller",
+            "line": " controllers\\admin\\content\\media.js:18"
+        },
+        {
+            "message": "Missing item type\nParent pages controller",
+            "line": " controllers\\admin\\content\\pages.js:18"
+        },
+        {
+            "message": "Missing item type\nParent sections controller",
+            "line": " controllers\\admin\\content\\sections.js:18"
+        },
+        {
+            "message": "Missing item type\nParent topics controller",
+            "line": " controllers\\admin\\content\\topics.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for viewing plugin details",
+            "line": " controllers\\admin\\plugins\\details.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing plugins",
+            "line": " controllers\\admin\\plugins\\index.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for changing a plugin's settings",
+            "line": " controllers\\admin\\plugins\\settings.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for displaying the site's configuration settings",
+            "line": " controllers\\admin\\site_settings\\configuration.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for the site's content settings",
+            "line": " controllers\\admin\\site_settings\\content.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for the site's email settings",
+            "line": " controllers\\admin\\site_settings\\email.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing themes",
+            "line": " controllers\\admin\\themes\\index.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for changing a theme's settings",
+            "line": " controllers\\admin\\themes\\settings.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for changing the logged in user's password",
+            "line": " controllers\\admin\\users\\change_password.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for editing a user",
+            "line": " controllers\\admin\\users\\edit_user.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for managing users",
+            "line": " controllers\\admin\\users\\manage_users.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a new user",
+            "line": " controllers\\admin\\users\\new_user.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for displaying how a plugin's user permissions are organized",
+            "line": " controllers\\admin\\users\\permissions.js:18"
+        },
+        {
+            "message": "Missing item type",
+            "line": " controllers\\admin\\index.js:28"
+        },
+        {
+            "message": "Missing item type\nInterface for admin login",
+            "line": " controllers\\admin\\login.js:18"
+        },
+        {
+            "message": "Missing item type\nParent site settings controller",
+            "line": " controllers\\admin\\site_settings.js:18"
+        },
+        {
+            "message": "Missing item type\nParent users controller",
+            "line": " controllers\\admin\\users.js:18"
+        },
+        {
+            "message": "Missing item type\nAutomatic draft saving of pages",
+            "line": " controllers\\api\\admin\\content\\pages\\save_draft.js:18"
+        },
+        {
+            "message": "Missing item type\nController to properly route and handle remote calls to interact with\nthe UrlService",
+            "line": " controllers\\api\\admin\\url_api.js:18"
+        },
+        {
+            "message": "Missing item type\nProvides the hash of all actions supported by this controller",
+            "line": " controllers\\api\\admin\\url_api.js:39"
+        },
+        {
+            "message": "Missing item type\nValidates any path parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded.",
+            "line": " controllers\\api\\admin\\url_api.js:46"
+        },
+        {
+            "message": "Missing item type\nValidates any query parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded.",
+            "line": " controllers\\api\\admin\\url_api.js:55"
+        },
+        {
+            "message": "Missing item type\nThe \"exists\" action handler.  Calls the UrlService function <i>exists</i> to\nsee whether or not the provided URL path could trigger a controller to be\nexecuted.",
+            "line": " controllers\\api\\admin\\url_api.js:79"
+        },
+        {
+            "message": "Missing item type\nThe \"exists_for\" action handler.  Calls the UrlService function\n<i>existsForType</i> to see whether or not the provided URL path the URL key\nof that particular object type.",
+            "line": " controllers\\api\\admin\\url_api.js:92"
+        },
+        {
+            "message": "Missing item type\nCreates a new comment",
+            "line": " controllers\\api\\comments\\new_comment.js:18"
+        },
+        {
+            "message": "Missing item type\nRetrieve articles",
+            "line": " controllers\\api\\content\\get_articles.js:18"
+        },
+        {
+            "message": "Missing item type\nGet articles within indices, for real time pagination",
+            "line": " controllers\\api\\content\\get_articles.js:30"
+        },
+        {
+            "message": "Missing item type\nRetrieve a media embed",
+            "line": " controllers\\api\\content\\get_media_embed.js:18"
+        },
+        {
+            "message": "Missing item type\nSearch for headline or subheading matching search term",
+            "line": " controllers\\api\\content\\search.js:18"
+        },
+        {
+            "message": "Missing item type\nChecks to see if the proposed name for a custom object type is available",
+            "line": " controllers\\api\\custom_objects\\get_object_type_name_available.js:18"
+        },
+        {
+            "message": "Missing item type\nController to properly route and handle remote calls to interact with\nthe PluginService",
+            "line": " controllers\\api\\plugins\\plugin_api.js:18"
+        },
+        {
+            "message": "Missing item type\nChecks to see if the proposed username is available",
+            "line": " controllers\\api\\user\\get_username_available.js:18"
+        },
+        {
+            "message": "Missing item type\nController interface used to map simple actions to handlers and provide\na flow for validation and error handling.",
+            "line": " controllers\\api\\api_action_controller.js:18"
+        },
+        {
+            "message": "Missing item type\nFlag to indicate if the form should automatically sanitize the incoming\nvalues.  In this case sanitize means it will attempt to strip away any\nHTML tags to prevent HTML injection and XSS.",
+            "line": " controllers\\api\\api_action_controller.js:33"
+        },
+        {
+            "message": "Missing item type\nThe entry point called by the RequestHandler.  Executes the calls to the\nvalidation framework then, if passes, executes the action handler.",
+            "line": " controllers\\api\\api_action_controller.js:40"
+        },
+        {
+            "message": "Missing item type\nProvides the hash of all actions supported by this controller",
+            "line": " controllers\\api\\api_action_controller.js:63"
+        },
+        {
+            "message": "Missing item type\nValidates the query, path, and post parameters in parallel and calls back\nwith any validation errors.",
+            "line": " controllers\\api\\api_action_controller.js:70"
+        },
+        {
+            "message": "Missing item type\nValidates any path parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded. The default implementation examines the\nvalue for the action in the value returned by ApiActionController#getActions.\nIf the value evaluates to true then the implementation will validate that an\n\"id\" path parameter was passed.",
+            "line": " controllers\\api\\api_action_controller.js:132"
+        },
+        {
+            "message": "Missing item type\nValidates any query parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded. The default implementation passes an empty\nerror array.",
+            "line": " controllers\\api\\api_action_controller.js:150"
+        },
+        {
+            "message": "Missing item type\nValidates any post parameters for the specified action.  The callback will\nprovide an array of validation errors. When the array is empty it is safe to\nassume that validation succeeded. The default implementation passes an empty\nerror array.",
+            "line": " controllers\\api\\api_action_controller.js:160"
+        },
+        {
+            "message": "Missing item type\n404 error",
+            "line": " controllers\\error\\404.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for logged in user to change password",
+            "line": " controllers\\user\\change_password.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for logging in",
+            "line": " controllers\\user\\login.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for logged in user to manage account information",
+            "line": " controllers\\user\\manage_account.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for resending a verification email",
+            "line": " controllers\\user\\resend_verification.js:18"
+        },
+        {
+            "message": "Missing item type\nInterface for creating a new READER level user",
+            "line": " controllers\\user\\sign_up.js:18"
+        },
+        {
+            "message": "Missing item type\nVerification email sent page",
+            "line": " controllers\\user\\verification_sent.js:18"
+        },
+        {
+            "message": "Missing item type\nLoads a single article",
+            "line": " controllers\\article.js:18"
+        },
+        {
+            "message": "Missing item type\nDeletes objects from the database",
+            "line": " controllers\\delete_controller.js:18"
+        },
+        {
+            "message": "Missing item type\nRSS Feed",
+            "line": " controllers\\feed.js:18"
+        },
+        {
+            "message": "Missing item type\nIndex page of the pencilblue theme",
+            "line": " controllers\\index.js:18"
+        },
+        {
+            "message": "Missing item type\nRetrieves the name of the page.  The page's headhile",
+            "line": " controllers\\page.js:76"
+        },
+        {
+            "message": "Missing item type\nPreview an article or page",
+            "line": " controllers\\preview.js:18"
+        },
+        {
+            "message": "Missing item type\nLoads a section",
+            "line": " controllers\\section.js:18"
+        },
+        {
+            "message": "Missing item type\nInitial setup page",
+            "line": " controllers\\setup.js:18"
+        },
+        {
+            "message": "Missing item type\nGoogle sitemap",
+            "line": " controllers\\sitemap.js:18"
         },
         {
             "message": "Missing item type",
@@ -6907,6 +10183,38 @@
             "line": " plugins\\ga\\ga.js:56"
         },
         {
+            "message": "Missing item type\nBlog page of the pencilblue theme",
+            "line": " plugins\\portfolio\\controllers\\blog.js:1"
+        },
+        {
+            "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "line": " plugins\\portfolio\\controllers\\blog.js:432"
+        },
+        {
+            "message": "Missing item type\nBlogFilter - Responsible for looking up a specific filter (section, article, page, author) and rendering it.",
+            "line": " plugins\\portfolio\\controllers\\blog_filter.js:1"
+        },
+        {
+            "message": "Missing item type\nHomePageSettings - Settings for the display of home page content in the Portfolio theme",
+            "line": " plugins\\portfolio\\controllers\\home_page_settings.js:1"
+        },
+        {
+            "message": "Missing item type\nIndex - The home page controller of the portfolio theme.",
+            "line": " plugins\\portfolio\\controllers\\index.js:1"
+        },
+        {
+            "message": "Missing item type\nThis is the function that will be called by the system's RequestHandler.  It\nwill map the incoming route to the ones below and then instantiate this\nprototype.  The request handler will then proceed to call this function.\nIts callback should contain everything needed in order to provide a response.",
+            "line": " plugins\\portfolio\\controllers\\index.js:17"
+        },
+        {
+            "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "line": " plugins\\portfolio\\controllers\\index.js:136"
+        },
+        {
+            "message": "Missing item type\nSaveHomePageSettings - Saves settings for the display of home page content in the Portfolio theme",
+            "line": " plugins\\portfolio\\controllers\\save_home_page_settings.js:1"
+        },
+        {
             "message": "Missing item type\nPortfolio - A portfolio site theme for PencilBlue",
             "line": " plugins\\portfolio\\portfolio.js:1"
         },
@@ -6925,6 +10233,26 @@
         {
             "message": "Missing item type\nCalled when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
             "line": " plugins\\portfolio\\portfolio.js:52"
+        },
+        {
+            "message": "Missing item type\nHelloWorld - A sample controller to show how to register a controller and \nroutes for the controller.",
+            "line": " plugins\\sample\\controllers\\hello_world.js:1"
+        },
+        {
+            "message": "Missing item type\nRetrieves the navigation for the page.",
+            "line": " plugins\\sample\\controllers\\hello_world.js:85"
+        },
+        {
+            "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.  \nThe route provides a definition of path, permissions, authentication, and \nexpected content type. \nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "line": " plugins\\sample\\controllers\\hello_world.js:97"
+        },
+        {
+            "message": "Missing item type\nHelloWorld - A sample controller to show how to register a controller and \nroutes for the controller.",
+            "line": " plugins\\sample\\controllers\\test_page.js:1"
+        },
+        {
+            "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.  \nThe route provides a definition of path, permissions, authentication, and \nexpected content type. \nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
+            "line": " plugins\\sample\\controllers\\test_page.js:41"
         },
         {
             "message": "Missing item type\nTextCreaterService - An example of a service that generates random text.",
