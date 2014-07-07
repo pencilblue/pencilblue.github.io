@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\service\entities\url_service.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+            
+                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+            
+                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+            
+                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+            
+                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+            
+                <li><a href="../classes/CommentService.html">CommentService</a></li>
+            
+                <li><a href="../classes/ContentService.html">ContentService</a></li>
+            
+                <li><a href="../classes/DAO.html">DAO</a></li>
+            
+                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+            
+                <li><a href="../classes/DBManager.html">DBManager</a></li>
+            
+                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EmailService.html">EmailService</a></li>
+            
+                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+            
+                <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+            
+                <li><a href="../classes/MediaService.html">MediaService</a></li>
+            
+                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+            
+                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+            
+                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+            
+                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/UrlService.html">UrlService</a></li>
+            
+                <li><a href="../classes/UserService.html">UserService</a></li>
+            
+                <li><a href="../classes/Util.html">Util</a></li>
+            
+                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/Database.html">Database</a></li>
+            
+                <li><a href="../modules/Entities.html">Entities</a></li>
+            
+                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+            
+                <li><a href="../modules/Model.html">Model</a></li>
+            
+                <li><a href="../modules/Security.html">Security</a></li>
+            
+                <li><a href="../modules/Services.html">Services</a></li>
+            
+                <li><a href="../modules/Session.html">Session</a></li>
+            
+                <li><a href="../modules/Storage.html">Storage</a></li>
+            
+                <li><a href="../modules/Theme.html">Theme</a></li>
+            
+                <li><a href="../modules/Validation.html">Validation</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: include\service\entities\url_service.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2014  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+/**
+ * A service that provides insight into the system&#x27;s routes (URLs) along with
+ * other utility functions to assist in examining and constructing URLs for
+ * clients to use for interaction with the system.
+ *
+ * @class UrlService
+ * @constructor
+ * @module Services
+ * @submodule Entities
+ */
+function UrlService() {}
+
+//dependencies
+var RequestHandler = pb.RequestHandler;
+
+/**
+ * Takes the URL path and tests it against registered routes.
+ * @static
+ * @method exists
+ * @param {string} url
+ * @return  {object} The themed route specification for the first route that
+ * matches the given URL path.  When no routes match NULL is returned.
+ */
+UrlService.exists = function(url){
+
+	var themes = null;
+	for (var i = 0; i &lt; RequestHandler.storage.length; i++) {
+		var curr   = RequestHandler.storage[i];
+		var result = curr.expression.test(url);
+		if (result) {
+			themes = pb.utils.clone(curr.themes);
+			break;
+		}
+	}
+	return themes;
+};
+
+/**
+ * Look at a specific content type to see if a matching URL key exists.  An
+ * optional ID can be provided to ensure that only an existing key for the
+ * object with that ID exists.
+ * @method existsForType
+ * @param {object} params Contains the options for the function.  &quot;url&quot;
+ * (string) and &quot;type&quot; (string) are required.  &quot;id&quot; (string) is optional.
+ * @param {function} cb Callback function
+ */
+UrlService.prototype.existsForType = function(params, cb) {
+	var url  = params.url;
+	var type = params.type;
+	var id   = params.id;
+
+	//validate required params
+	if (!url || !type) {
+		cb(new Error(&quot;The url and type parameters are required. URL=[&quot;+url+&quot;] TYPE=[&quot;+type+&quot;]&quot;), false);
+		return;
+	}
+
+	//build pattern
+	if (url.charAt(0) === &#x27;/&#x27;) {
+		url = url.substring(1);
+	}
+	if (url.charAt(url.length - 1) === &#x27;/&#x27;) {
+		url = url.substring(0, url.length - 1);
+	}
+	var pattern = &quot;^\\/{0,1}&quot; + pb.utils.escapeRegExp(url) + &quot;\\/{0,1}$&quot;;
+
+	var where = {url: new RegExp(pattern)};
+	if (id) {
+		try {
+			where._id = {$ne: new ObjectID(id+&#x27;&#x27;)};
+		}
+		catch(e) {
+			pb.log.error(&quot;UrlService: An invalid object ID was passed [%s]&quot;, util.inspect(id));
+			cb(e, false);
+			return;
+		}
+	}
+
+	var dao = new pb.DAO();
+	dao.count(type, where, function(err, count) {
+        cb(err, count &gt; 0);
+	});
+};
+
+/**
+ * Takes a variable set of arguments and joins them together to form a URL path.
+ * @method urlJoin
+ * @return {string} a URL path
+ */
+UrlService.urlJoin = function() {
+	var parts = [];
+	for (var i = 0; i &lt; arguments.length; i++) {
+		var segment = (&#x27;&#x27; + arguments[i]).replace(/\\/g, &#x27;/&#x27;);
+		parts.push(segment.replace(/^\/|\/$/g, &#x27;&#x27;));
+	}
+	var url = parts.join(&#x27;/&#x27;);
+	if (arguments.length &gt; 0 &amp;&amp; (arguments[0].charAt(0) === &#x27;/&#x27; || arguments[0].charAt(0) == &#x27;\\&#x27;) &amp;&amp; url.charAt(0) !== &#x27;/&#x27;) {
+		url = &#x27;/&#x27;+url;
+	}
+	return url;
+};
+
+/**
+ * Takes a url and extracts the wild card part.
+ * @method getCustomUrl
+ * @param {string} prefix
+ * @param {string} url
+ * @return {string}The custom part of the URL
+ */
+UrlService.getCustomUrl = function(prefix, url) {
+	var index = prefix.lastIndexOf(&#x27;/&#x27;);
+	if (index != prefix.length - 1) {
+		prefix += &#x27;/&#x27;;
+	}
+
+	index = url.lastIndexOf(prefix);
+	if (index &lt; 0) {
+		return null;
+	}
+
+	//check for prefix at the end
+	if (index == url.length - 1) {
+		return &#x27;&#x27;;
+	}
+	return url.substring(index + 1);
+};
+
+/**
+ * Determines whether a URL is external to the system by parsing the URL and
+ * then looking to see if the host matches that of the provided request.
+ * @method isExternalUrl
+ * @param {string} urlStr
+ * @param {Request} request
+ * @return {Boolean} TRUE if the link is external to the system, FALSE if not.
+ */
+UrlService.isExternalUrl = function(urlStr, request) {console.log(util.inspect(urlStr));
+	var obj    = url.parse(urlStr);
+    var reqUrl = null;
+
+    if(!obj.host) {
+        return false;
+    }
+
+    if(request) {
+        reqUrl = url.parse(request.url);
+    }
+    else {
+        reqUrl = url.parse(pb.config.siteRoot);
+    }
+
+    return reqUrl.host !== obj.host;
+};
+
+/**
+ * Indicates if the URL is fully qualified, meaning that the URL provides the
+ * &#x27;http&#x27; protocol at the beginning of the URL.
+ * @method isFullyQualifiedUrl
+ * @param {string} urlStr The URL to inspect
+ * @return {Boolean} TRUE if fully qualified, FALSE if not
+ */
+UrlService.isFullyQualifiedUrl = function(urlStr) {
+	return pb.utils.isString(urlStr) &amp;&amp; urlStr.indexOf(&#x27;http&#x27;) === 0;
+};
+
+//exports
+module.exports = UrlService;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

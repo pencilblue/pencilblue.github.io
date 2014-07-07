@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -79,17 +79,25 @@
             
                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
             
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
             
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
             
@@ -172,9 +180,34 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2014  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
 // A grouping of all require calls
 global.pb = require(&#x27;./include/requirements&#x27;);
 
+/**
+ * The main driver file for PencilBlue.  Provides the function necessary to
+ * start up the master and/or child processes.  In addition, it is responsible
+ * for ensuring that all system services are avaialble by requiring the
+ * &quot;requirements.js&quot; file.
+ * @class PencilBlue
+ * @constructor
+ */
 function PencilBlue(){}
 
 /**
@@ -188,8 +221,7 @@ PencilBlue.init = function(){
          PencilBlue.initDBConnections,
          PencilBlue.initServer,
          PencilBlue.initPlugins,
-         PencilBlue.initServerRegistration,
-         PencilBlue.registerSystemForEvents
+         PencilBlue.initServerRegistration
      ];
 	async.series(tasks, function(err, results) {
 		if (util.isError(err)) {
@@ -199,17 +231,33 @@ PencilBlue.init = function(){
 	});
 };
 
+/**
+ * Initializes the request handler.  This causes all system routes to be
+ * registered.
+ * @static
+ * @method initRequestHandler
+ * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+ */
 PencilBlue.initRequestHandler = function(cb) {
 	pb.RequestHandler.init();
 	cb(null, true);
 }
 
+/**
+ * Initializes the installed plugins.
+ * @static
+ * @method initPlugins
+ * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+ */
 PencilBlue.initPlugins = function(cb) {
     pb.plugins.initPlugins(cb);
 };
 
 /**
  * Attempts to initialize a connection pool to the core database
+ * @static
+ * @method initDBConnections
+ * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
  */
 PencilBlue.initDBConnections = function(cb){
 	//setup database connection to core database
@@ -229,7 +277,11 @@ PencilBlue.initDBConnections = function(cb){
 };
 
 /**
- * Initializes the server
+ * Initializes the HTTP server(s).  When SSL is enabled two servers are created.
+ * One to handle incoming HTTP traffic and one to handle HTTPS traffic.
+ * @static
+ * @method initServer
+ * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
  */
 PencilBlue.initServer = function(cb){
 	log.debug(&#x27;Starting server...&#x27;);
@@ -264,36 +316,46 @@ PencilBlue.initServer = function(cb){
 	}
 }
 
+/**
+ * The function that handles normal server traffic.  The function ensures that
+ * the incoming request is delegated out appropriately.  When SSL Termination
+ * is in use if the &#x27;x-forwarded-proto&#x27; header does equal &#x27;https&#x27; then the
+ * request is delegated to the handoff function so the request can be
+ * redirected appropriately.
+ * @static
+ * @method onHttpConnect
+ * @param {Request} req The incoming request
+ * @param {Response} resp The outgoing response
+ */
 PencilBlue.onHttpConnect = function(req, resp){
 	if (pb.log.isSilly()) {
 		req.uid = new ObjectID();
 		pb.log.silly(&#x27;New Request: &#x27;+req.uid);
 	}
-    
+
     //check to see if we should inspect the x-forwarded-proto header for SSL
-    //load balancers use this for SSL termination relieving the stress of SSL 
-    //computation on more powerful load balancers.  For me it is a giant pain 
+    //load balancers use this for SSL termination relieving the stress of SSL
+    //computation on more powerful load balancers.  For me it is a giant pain
     //in the ass when all I want to do is simple load balancing.
     if (pb.config.server.ssl.use_x_forwarded &amp;&amp; req.headers[&#x27;x-forwarded-proto&#x27;] !== &#x27;https&#x27;) {
         PencilBlue.onHttpConnectForHandoff(req, resp);
         return;
     }
-    
+
     //route the request
     var handler = new pb.RequestHandler(pb.server, req, resp);
     handler.handleRequest();
 };
 
+/**
+ * Handles traffic that comes in for HTTP when SSL is enabled.  The request is
+ * redirected to the appropriately protected HTTPS url.
+ * @static
+ * @method onHttpConnectForHandoff
+ * @param {Request} req The incoming request
+ * @param {Response} res The outgoing response
+ */
 PencilBlue.onHttpConnectForHandoff = function(req, res) {
-    
-    //static resources are the exception. It is safe to route them
-    if (pb.RequestHandler.isPublicRoute(req.url)) {
-        var handler = new pb.RequestHandler(pb.server, req, resp);
-        handler.handleRequest();
-        return;
-    }
-    
-    //otherwise just redirect the request to HTTP
     var host = req.headers.host;
     if (host) {
         var index = host.indexOf(&#x27;:&#x27;);
@@ -309,8 +371,14 @@ PencilBlue.onHttpConnectForHandoff = function(req, res) {
     res.end();
 };
 
-PencilBlue.initServerRegistration = function() {
-	pb.ServerRegistration.init();
+/**
+ * Initializes server registration.
+ * @static
+ * @method initServerRegistration
+ * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+ */
+PencilBlue.initServerRegistration = function(cb) {
+	pb.ServerRegistration.init(cb);
 };
 
 //start system

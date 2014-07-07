@@ -2,7 +2,7 @@
     "project": {
         "name": "PencilBlue",
         "description": "PencilBlue: Full stack online publishing for Node.js",
-        "version": "0.1.0",
+        "version": "0.1.3",
         "url": "http://pencilblue.org/",
         "logo": "http://pencilblue.org/img/pb_logo.png"
     },
@@ -232,10 +232,30 @@
             "fors": {},
             "namespaces": {}
         },
+        "include\\system\\registry\\mongo_registration_provider.js": {
+            "name": "include\\system\\registry\\mongo_registration_provider.js",
+            "modules": {},
+            "classes": {
+                "MongoRegistrationProvider": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "include\\system\\registry\\redis_registration_provider.js": {
+            "name": "include\\system\\registry\\redis_registration_provider.js",
+            "modules": {},
+            "classes": {
+                "RedisRegistrationProvider": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "include\\system\\server_registration.js": {
             "name": "include\\system\\server_registration.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "ServerRegistration": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -396,7 +416,9 @@
         "pencilblue.js": {
             "name": "pencilblue.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "PencilBlue": 1
+            },
             "fors": {},
             "namespaces": {}
         }
@@ -417,6 +439,14 @@
             "line": 29,
             "description": "Controlls the data model",
             "is_constructor": 1,
+            "params": [
+                {
+                    "name": "dbName",
+                    "description": "Will default to the config.db.name DB when not provided.",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
             "itemtype": "main"
         },
         "ErrorSuccess": {
@@ -484,12 +514,13 @@
                 "ContentService": 1,
                 "EmailService": 1,
                 "Localization": 1,
-                "Util": 1
+                "Util": 1,
+                "PencilBlue": 1
             },
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "include\\util.js",
+            "file": "pencilblue.js",
             "line": 21,
             "description": "Service for creating JavaScript tags",
             "is_constructor": 1,
@@ -594,12 +625,15 @@
             "classes": {
                 "MongoSessionStore": 1,
                 "RedisSessionStore": 1,
-                "SessionHandler": 1
+                "SessionHandler": 1,
+                "MongoRegistrationProvider": 1,
+                "RedisRegistrationProvider": 1,
+                "ServerRegistration": 1
             },
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "include\\session\\session.js",
+            "file": "include\\system\\server_registration.js",
             "line": 24,
             "description": "Session storage backed by MongoDB",
             "is_constructor": 1
@@ -1005,6 +1039,51 @@
             "line": 24,
             "description": "Responsible for managing user sessions"
         },
+        "MongoRegistrationProvider": {
+            "name": "MongoRegistrationProvider",
+            "shortname": "MongoRegistrationProvider",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Session",
+            "namespace": "",
+            "file": "include\\system\\registry\\mongo_registration_provider.js",
+            "line": 19,
+            "description": "Implements the necessary functions in order to be able to create and manage\na service registry for PB processes in the cluster.  This provider uses MongoDB\nas the storage.  In addition, it leverages MongoDB's TTL collections.  The\nreaper for mongo runs every 60 seconds.  It is possible for dead processes to\nappear in the status list for up to that magical 60 second threshold.  The\nname of the collection used to store all statuses is determined by the\nconfiguration property: \"registry.key\".",
+            "is_constructor": 1
+        },
+        "RedisRegistrationProvider": {
+            "name": "RedisRegistrationProvider",
+            "shortname": "RedisRegistrationProvider",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Session",
+            "namespace": "",
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 18,
+            "description": "Implements the necessary functions in order to be able to create and manage\na service registry for PB processes in the cluster.  This provider uses Redis\nas the storage.  In addition, it leverages Redis's expiry functionality to\nexpire entries automatically if they have not been touched.  In order to\nretrieve all nodes/processes in the cluster the provider must execute\nRedis's \"keys\" function which is an expensive operation.  To lessen the\nimpact on production systems the provider creates and manages its own Redis\nclient and switches to DB 2 in order to minimize the number of keys that\nneed to be scanned since the rest of the PB system leverages DB 0.",
+            "is_constructor": 1
+        },
+        "ServerRegistration": {
+            "name": "ServerRegistration",
+            "shortname": "ServerRegistration",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Session",
+            "namespace": "",
+            "file": "include\\system\\server_registration.js",
+            "line": 24,
+            "description": "Service that provides the ability for the process/node to register itself so\nthat other nodes in the system can find it.  In addition, it helps with the\nhealth monitoring of the system.",
+            "is_constructor": 1
+        },
         "CommentService": {
             "name": "CommentService",
             "shortname": "CommentService",
@@ -1150,6 +1229,21 @@
             "file": "include\\util.js",
             "line": 21,
             "description": "Provides a set of utility functions used throughout the code base"
+        },
+        "PencilBlue": {
+            "name": "PencilBlue",
+            "shortname": "PencilBlue",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Services",
+            "namespace": "",
+            "file": "pencilblue.js",
+            "line": 21,
+            "description": "The main driver file for PencilBlue.  Provides the function necessary to\nstart up the master and/or child processes.  In addition, it is responsible\nfor ensuring that all system services are avaialble by requiring the\n\"requirements.js\" file.",
+            "is_constructor": 1
         }
     },
     "classitems": [
@@ -1168,7 +1262,13 @@
         },
         {
             "file": "include\\dao\\cache.js",
-            "line": 47,
+            "line": 45,
+            "class": "CacheFactory",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\cache.js",
+            "line": 56,
             "description": "Shuts down the Redis or FakeRedis instance",
             "itemtype": "method",
             "name": "shutdown",
@@ -1184,7 +1284,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 30,
+            "line": 31,
             "description": "Static variable to indicate that all indices of a document should be\nretrieved",
             "itemtype": "property",
             "name": "PROJECT_ALL",
@@ -1194,7 +1294,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 38,
+            "line": 39,
             "description": "Static variable to indicate that documents should be retrieve from anywhere",
             "itemtype": "property",
             "name": "ANYWHERE",
@@ -1204,7 +1304,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 45,
+            "line": 46,
             "description": "Static variable to indicate that documents should be returned in their\nnatural order",
             "itemtype": "property",
             "name": "NATURAL_ORDER",
@@ -1214,7 +1314,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 54,
+            "line": 55,
             "description": "Static varible to sort ascending",
             "itemtype": "property",
             "name": "ASC",
@@ -1224,7 +1324,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 61,
+            "line": 62,
             "description": "Static variable to sort descending",
             "itemtype": "property",
             "name": "DESC",
@@ -1234,7 +1334,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 69,
+            "line": 70,
             "description": "Retrieves an object by ID",
             "itemtype": "method",
             "name": "loadById",
@@ -1260,7 +1360,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 81,
+            "line": 82,
             "description": "Retrieves objects matching a key value pair",
             "itemtype": "method",
             "name": "loadByValue",
@@ -1291,7 +1391,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 96,
+            "line": 97,
             "description": "Retrieves object matching several key value pairs",
             "itemtype": "method",
             "name": "loadByValues",
@@ -1317,7 +1417,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 115,
+            "line": 116,
             "description": "Gets the count of objects matching criteria",
             "itemtype": "method",
             "name": "count",
@@ -1343,7 +1443,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 127,
+            "line": 128,
             "description": "Determines if an object extists matching criteria",
             "itemtype": "method",
             "name": "exists",
@@ -1369,7 +1469,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 141,
+            "line": 142,
             "description": "Determines if there is only a single document that matches the specified query",
             "itemtype": "method",
             "name": "unique",
@@ -1401,7 +1501,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 170,
+            "line": 171,
             "description": "Queries the database",
             "itemtype": "method",
             "name": "query",
@@ -1432,26 +1532,76 @@
                 {
                     "name": "limit",
                     "description": "Number of documents to retrieve",
-                    "type": "Number",
+                    "type": "Integer",
                     "optional": true
                 },
                 {
                     "name": "offset",
                     "description": "Start index of retrieval",
-                    "type": "Number",
+                    "type": "Integer",
                     "optional": true
                 }
             ],
             "return": {
                 "description": "A promise object",
-                "type": "Object"
+                "type": "Promise"
             },
             "class": "DAO",
             "module": "Database"
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 239,
+            "line": 204,
+            "description": "The actual implementation for querying.  The function does not do the same\ntype checking as the wrapper function \"query\".  This funciton is responsible\nfor doing the heavy lifting and returning the result back to the calling intity.",
+            "access": "protected",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "_doQuery",
+            "params": [
+                {
+                    "name": "entityType",
+                    "description": "The collection to query",
+                    "type": "String"
+                },
+                {
+                    "name": "where",
+                    "description": "The where clause",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "{}"
+                },
+                {
+                    "name": "select",
+                    "description": "The fields to project",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "{}"
+                },
+                {
+                    "name": "orderBy",
+                    "description": "The ordering",
+                    "type": "Array",
+                    "optional": true
+                },
+                {
+                    "name": "limit",
+                    "description": "The maximum number of results to return",
+                    "type": "Integer",
+                    "optional": true
+                },
+                {
+                    "name": "offset",
+                    "description": "The number of results to skip before returning results.",
+                    "type": "Integer",
+                    "optional": true
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 253,
             "description": "Persists a DB Object for the first time.",
             "itemtype": "method",
             "name": "insert",
@@ -1464,14 +1614,14 @@
             ],
             "return": {
                 "description": "Promise object",
-                "type": "Object"
+                "type": "Promise"
             },
             "class": "DAO",
             "module": "Database"
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 256,
+            "line": 270,
             "description": "Replaces an existing document with the specified DB Object",
             "itemtype": "method",
             "name": "update",
@@ -1484,14 +1634,14 @@
             ],
             "return": {
                 "description": "Promise object",
-                "type": "Object"
+                "type": "Promise"
             },
             "class": "DAO",
             "module": "Database"
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 274,
+            "line": 288,
             "description": "Removes an object from persistence",
             "itemtype": "method",
             "name": "deleteById",
@@ -1509,14 +1659,14 @@
             ],
             "return": {
                 "description": "Promise object",
-                "type": "Object"
+                "type": "Promise"
             },
             "class": "DAO",
             "module": "Database"
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 291,
+            "line": 305,
             "description": "Removes objects from persistence that match criteria",
             "itemtype": "method",
             "name": "deleteMatching",
@@ -1541,8 +1691,70 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 320,
+            "line": 334,
+            "description": "Sends a command to the DB.\nhttp://mongodb.github.io/node-mongodb-native/api-generated/db.html#command",
+            "itemtype": "method",
+            "name": "command",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "command to execute",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 349,
+            "description": "Attempts to create an index.  If the collection already exists then the\noperation is skipped.\nhttp://mongodb.github.io/node-mongodb-native/api-generated/collection.html#ensureindex",
+            "itemtype": "method",
+            "name": "ensureIndex",
+            "params": [
+                {
+                    "name": "procedure",
+                    "description": "The objects containing the necessary parameters\nand options to create the index.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "collection",
+                            "description": "The collection to build an index for",
+                            "type": "String"
+                        },
+                        {
+                            "name": "spec",
+                            "description": "An object that specifies one or more fields\nand sort direction for the index.",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "options",
+                            "description": "An optional parameter that can\nspecify the options for the index.",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "{}"
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 378,
             "description": "Creates a basic where clause based on the specified Id",
+            "static": 1,
             "itemtype": "method",
             "name": "getIDWhere",
             "params": [
@@ -1561,8 +1773,35 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 352,
+            "line": 391,
+            "description": "Creates a where clause that equates to select where [idProp] is in the\nspecified array of values.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getIDInWhere",
+            "params": [
+                {
+                    "name": "objArray",
+                    "description": "The array of acceptable values",
+                    "type": "Array"
+                },
+                {
+                    "name": "The",
+                    "description": "property that holds a referenced ID value",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Where clause",
+                "type": "Object"
+            },
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 419,
             "description": "Creates a basic where clause based on not equalling the specified Id",
+            "static": 1,
             "itemtype": "method",
             "name": "getNotIDWhere",
             "params": [
@@ -1581,8 +1820,23 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 369,
+            "line": 432,
+            "description": "Creates a where clause that indicates to select where the '_id' field does\nnot equal the specified value.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getNotIDField",
+            "return": {
+                "description": "Where clause",
+                "type": "Object"
+            },
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 443,
             "description": "Creates an MongoDB ObjectID object",
+            "static": 1,
             "itemtype": "method",
             "name": "getObjectID",
             "params": [
@@ -1601,8 +1855,9 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 380,
+            "line": 454,
             "description": "Updates a DB object with a created time stamp and last modified time stamp.",
+            "static": 1,
             "itemtype": "method",
             "name": "updateChangeHistory",
             "params": [
@@ -1738,14 +1993,14 @@
         },
         {
             "file": "include\\http\\request_handler.js",
-            "line": 1090,
+            "line": 1091,
             "description": "Processes a request:\n<ol>\n\t<li>Initialize localization</li>\n\t<li>if Public Route:\n\t\t<ol>\n\t\t\t<li>If Valid Content\n\t\t\t\t<ol><li>Serve Public Content</li></ol>\n\t\t\t</li>\n\t\t\t<li>Else Serve 404</li>\n\t\t</ol>\n\t</li>\n\t<li>Else Parse Cookies</li>\n\t<li>Open/Create a session</li>\n\t<li>Get Route</li>\n\n</ol>",
             "class": "DocumentCreator",
             "module": "ErrorSuccess"
         },
         {
             "file": "include\\http\\request_handler.js",
-            "line": 1208,
+            "line": 1210,
             "description": "TODO Church this up a bit.  Make it a template and controller like 404.\nTODO install an encoder entity since node prints out function names in angle brackets",
             "class": "DocumentCreator",
             "module": "ErrorSuccess"
@@ -2686,7 +2941,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1184,
+            "line": 1188,
             "description": "Retrieves the absolute file path to a plugin's public directory",
             "static": 1,
             "itemtype": "method",
@@ -2707,7 +2962,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1197,
+            "line": 1201,
             "return": {
                 "description": "The absolute file path to the plugins directory",
                 "type": "String"
@@ -2718,7 +2973,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1204,
+            "line": 1208,
             "description": "Constructs the path to a specific plugin's details.json file",
             "return": {
                 "description": "The absolute file path to the details.json file for a plugin",
@@ -2730,7 +2985,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1212,
+            "line": 1216,
             "description": "Attempts to load and parse the details.json file for a plugin.",
             "params": [
                 {
@@ -2748,7 +3003,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1237,
+            "line": 1241,
             "description": "Validates a plugin's details.json file.",
             "params": [
                 {
@@ -2770,7 +3025,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1467,
+            "line": 1471,
             "description": "Validates the path to the plugin's icon file.  The path is considered valid\nif the path to a valid file.  The path may be absolute or relative to the\nplugin's public directory.",
             "params": [
                 {
@@ -2792,7 +3047,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1488,
+            "line": 1492,
             "description": "Validates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
             "params": [
                 {
@@ -2814,7 +3069,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1501,
+            "line": 1505,
             "description": "Validates a setting from a details.json file.",
             "params": [
                 {
@@ -2836,7 +3091,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1536,
+            "line": 1540,
             "description": "Validates a details.json file's setting value.  The value is required to be a\nstring or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT\nallowed.",
             "params": [
                 {
@@ -2854,7 +3109,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1548,
+            "line": 1552,
             "description": "Retrieves all services (initialized).  The services are provided in the\ncallback.",
             "params": [
                 {
@@ -2872,7 +3127,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1588,
+            "line": 1592,
             "description": "Loads a plugin service and initializes it.  The service is required to\nimplement an \"init\" function. The service is then provided as a parameter in\nthe callback.",
             "params": [
                 {
@@ -2890,7 +3145,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1684,
+            "line": 1688,
             "description": "Derives the name of a plugin service instance.  The function attempts to get\nthe name of the service by looking to see if the service has implemented the\ngetName function.  If it has not then the service name is set to be the file\nname minus any extension.",
             "params": [
                 {
@@ -4478,10 +4733,442 @@
             "module": "Session"
         },
         {
+            "file": "include\\system\\registry\\mongo_registration_provider.js",
+            "line": 32,
+            "description": "Retrieves the entire cluster status as an array of status objects.  The '_id'\nproperty uniquely identifies each process/node.",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "MongoRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\mongo_registration_provider.js",
+            "line": 51,
+            "description": "Updates the status of a single node.",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The unique identifier for the process/node",
+                    "type": "String"
+                },
+                {
+                    "name": "status",
+                    "description": "The status information",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "MongoRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\mongo_registration_provider.js",
+            "line": 76,
+            "description": "Purges all statuses from storage.",
+            "itemtype": "method",
+            "name": "flush",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "MongoRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\mongo_registration_provider.js",
+            "line": 92,
+            "description": "This function should only be called once at startup.  It is responsible for\nsetting up the collection and ensuring that the TTL index is configured\ncorrectly based on the the executing processes configuration.  <b>NOTE:</b>\nThe collection only supports one TTL value. The last process to startup and\nconfigure the index will win.  Please be careful to ensure that all PB\nprocesses/nodes have the same registry.update_interval value.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "MongoRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\mongo_registration_provider.js",
+            "line": 135,
+            "description": "Should be called during shutdown.  It is responsible for removing the\nprocess/node from the registry.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "shutdown",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The unique identifier for the node/process",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "MongoRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 34,
+            "description": "The Redis DB used for storage",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "REGISTRY_DB",
+            "type": "{Integer}",
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 42,
+            "description": "The character used to separate the registry key prefix from the unique value\nthat identifies the process/node.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "SEP",
+            "type": "{String}",
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 51,
+            "description": "The Redis client used to connect to the service registry",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "CLIENT",
+            "type": "{Integer}",
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 59,
+            "description": "Retrieves the entire cluster status as an array of status objects.  The '_id'\nproperty uniquely identifies each process/node.",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 93,
+            "description": "Updates the status of a single node.",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The unique identifier for the process/node",
+                    "type": "String"
+                },
+                {
+                    "name": "status",
+                    "description": "The status information",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 111,
+            "description": "Purges all statuses from storage.",
+            "itemtype": "method",
+            "name": "flush",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 128,
+            "description": "This function should only be called once at startup.  It is responsible for\ncreating the Redis client that connects to the service registry.  It also\nensures the proper Redis DB is selected.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 142,
+            "description": "Should be called during shutdown.  It is responsible for removing the\nprocess/node from the registry.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "shutdown",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The unique identifier for the node/process",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 160,
+            "description": "Creates the cache key used to store the status update",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getKey",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The unique identifier for the node/process",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The cache key to be used for storing the update",
+                "type": "String"
+            },
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\registry\\redis_registration_provider.js",
+            "line": 171,
+            "description": "Creates the glob pattern to be used to find service registry keys",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getPattern",
+            "return": {
+                "description": "The glob patern to be used to find all status updates",
+                "type": "String"
+            },
+            "class": "RedisRegistrationProvider",
+            "module": "Session"
+        },
+        {
             "file": "include\\system\\server_registration.js",
-            "line": 84,
+            "line": 33,
+            "description": "The instance of the RegistrationProvider interface to use as the storage\nprovider.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "PROVIDER",
+            "type": "{RedisRegistrationProvider|MongoRegistrationProvider}",
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 42,
+            "description": "The default set of functions that gather the default set of information.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "ITEM_CALLBACKS",
+            "type": "{Object}",
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 100,
+            "description": "The handle to the interval that is set to ensure that updates are regularly\nsent to the storage provider.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "TIMER_HANDLE",
+            "type": "{Integer}",
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 109,
+            "description": "Retrieves the most recent status from the entire cluster.",
+            "itemtype": "method",
+            "name": "getClusterStatus",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 118,
             "description": "Removes all entries from the server registry",
-            "class": "CommentService",
+            "static": 1,
+            "itemtype": "method",
+            "name": "flush",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 128,
+            "description": "Should only be called once at startup.  The function verifies that the\nregistry is enabled and initializes the correct storage provider.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 171,
+            "description": "Called during shutdown.  The function is responsible for clearing any\nscheduled updates and shutting down the storage provider.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "shutdown",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 190,
+            "description": "Registers a function to be called on every status update.  The function\nshould take one parameter: a callback function that accepts two parameters,\nthe first being an error if it occurred and the second being the current\nvalue for the information requested.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "addItem",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name and/or description of the information being\ngathered",
+                    "type": "String"
+                },
+                {
+                    "name": "The",
+                    "description": "function to be called to gather the data.",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the function is successfully registered, FALSE if not.",
+                "type": "Boolean"
+            },
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 211,
+            "description": "Performs the request for information and persists it through the storage\nprovider.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "doRegistration",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 251,
+            "description": "Generates the unique key for the PB process/node.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "generateKey",
+            "return": {
+                "description": "The unique identifier",
+                "type": "String"
+            },
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\server_registration.js",
+            "line": 261,
+            "description": "Retrieves the first IP address found for the node.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getIp",
+            "return": {
+                "description": "The first IP address found for the node",
+                "type": "String"
+            },
+            "class": "ServerRegistration",
             "module": "Session"
         },
         {
@@ -5014,14 +5701,14 @@
         },
         {
             "file": "include\\config.js",
-            "line": 5,
+            "line": 20,
             "description": "Default configuration.  The settings here should be overriden by taking the\nexample file \"sample.config.json\" and modifying it to override the properties\nshown below.  In order to properly override the default configuration do the\nfollowing:\n1) copy \"sample.config.json\" to \"/etc/pencilblue/config.json\"\n2) Override the properties as desired.\n3) Add any custom properties you wish to provide for your specific purposes.",
             "class": "ContentService",
             "module": "Services"
         },
         {
             "file": "include\\config.js",
-            "line": 109,
+            "line": 201,
             "description": "Loads an external configuration.\nNOTE: This should only be called once by the core code at startup.  Calling\nthis function after the server starts may cause unintended behavior across\nthe system.",
             "class": "ContentService",
             "module": "Services"
@@ -5251,8 +5938,31 @@
         },
         {
             "file": "include\\util.js",
-            "line": 46,
+            "line": 30,
+            "description": "Takes an array of promises and waits for each to be resolved before calling\nback.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "onPromisesOk",
+            "params": [
+                {
+                    "name": "promises",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "A",
+                    "description": "callback that takes zero arguments.  It is executed when\nall promises have been resolved.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Util",
+            "module": "Services"
+        },
+        {
+            "file": "include\\util.js",
+            "line": 55,
             "description": "Clones an object by serializing it and then re-parsing it.\nWARNING: Objects with circular dependencies will cause an error to be thrown.",
+            "static": 1,
             "itemtype": "method",
             "name": "clone",
             "params": [
@@ -5271,8 +5981,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 58,
+            "line": 67,
             "description": "Performs a deep merge and returns the result.  <b>NOTE:</b> DO NOT ATTEMPT\nTO MERGE PROPERTIES THAT REFERENCE OTHER PROPERTIES.  This could have\nunintended side-effects as well as cause errors due to circular dependencies.",
+            "static": 1,
             "itemtype": "method",
             "name": "deepMerge",
             "params": [
@@ -5296,8 +6007,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 72,
+            "line": 81,
             "description": "Checks if the supplied object is an errof. If the object is an error the\nfunction will throw the error.",
+            "static": 1,
             "itemtype": "method",
             "name": "ane",
             "params": [
@@ -5312,7 +6024,28 @@
         },
         {
             "file": "include\\util.js",
-            "line": 92,
+            "line": 94,
+            "description": "Escapes a regular expression.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "escapeRegExp",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "expression to escape",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Escaped regular expression.",
+                "type": "String"
+            },
+            "class": "Util",
+            "module": "Services"
+        },
+        {
+            "file": "include\\util.js",
+            "line": 108,
             "description": "Merges the properties from the first parameter into the second. This modifies\nthe second parameter instead of creating a new object.",
             "itemtype": "method",
             "name": "merge",
@@ -5333,8 +6066,48 @@
         },
         {
             "file": "include\\util.js",
-            "line": 121,
+            "line": 122,
+            "description": "Creates an object that has both the properties of \"a\" and \"b\".  When both\nobjects have a property with the same name, \"b\"'s value will be preserved.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "union",
+            "return": {
+                "description": "The union of properties from both a and b.",
+                "type": "Object"
+            },
+            "class": "Util",
+            "module": "Services"
+        },
+        {
+            "file": "include\\util.js",
+            "line": 136,
+            "description": "Creates a set of tasks that can be executed by the \"async\" module.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getTasks",
+            "params": [
+                {
+                    "name": "iterable",
+                    "description": "The array of items to build tasks for",
+                    "type": "Array"
+                },
+                {
+                    "name": "getTaskFunction",
+                    "description": "The function that creates and returns the\ntask to be executed.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n<code>\nvar items = ['apple', 'orange'];\nvar tasks = pb.utils.getTasks(items, function(items, i) {\n    return function(callback) {\n        console.log(items[i]);\n        callback(null, null);\n    };\n});\nasync.series(tasks, pb.utils.cb);\n<code>"
+            ],
+            "class": "Util",
+            "module": "Services"
+        },
+        {
+            "file": "include\\util.js",
+            "line": 163,
             "description": "Hashes an array",
+            "static": 1,
             "itemtype": "method",
             "name": "arrayToHash",
             "params": [
@@ -5358,19 +6131,26 @@
         },
         {
             "file": "include\\util.js",
-            "line": 147,
-            "description": "Converts a hash to an array",
+            "line": 189,
+            "description": "Converts a hash to an array. When provided, the hashKeyProp will be the\nproperty name of each object in the array that holds the hash key.",
+            "static": 1,
             "itemtype": "method",
             "name": "hashToArray",
             "params": [
                 {
                     "name": "obj",
-                    "description": "Hash object",
+                    "description": "The object to convert",
                     "type": "Object"
+                },
+                {
+                    "name": "hashKeyProp",
+                    "description": "The property name that will hold the hash key.",
+                    "type": "String",
+                    "optional": true
                 }
             ],
             "return": {
-                "description": "",
+                "description": "An array of each property value in the hash.",
                 "type": "Array"
             },
             "class": "Util",
@@ -5378,8 +6158,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 166,
+            "line": 214,
             "description": "Inverts a hash",
+            "static": 1,
             "itemtype": "method",
             "name": "invertHash",
             "params": [
@@ -5398,8 +6179,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 187,
+            "line": 235,
             "description": "Clones an array",
+            "static": 1,
             "itemtype": "method",
             "name": "copyArray",
             "params": [
@@ -5418,8 +6200,11 @@
         },
         {
             "file": "include\\util.js",
-            "line": 206,
+            "line": 254,
             "description": "Pushes all of one array's values into another",
+            "static": 1,
+            "itemtype": "method",
+            "name": "arrayPushAll",
             "params": [
                 {
                     "name": "from",
@@ -5437,28 +6222,33 @@
         },
         {
             "file": "include\\util.js",
-            "line": 221,
+            "line": 271,
             "description": "Empty callback function just used as a place holder if a callback is required\nand the result is not needed.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "cb",
             "class": "Util",
             "module": "Services"
         },
         {
             "file": "include\\util.js",
-            "line": 229,
+            "line": 281,
             "description": "Creates a unique Id",
+            "static": 1,
             "itemtype": "method",
             "name": "uniqueId",
             "return": {
                 "description": "Unique Id Object",
-                "type": "Object"
+                "type": "ObjectID"
             },
             "class": "Util",
             "module": "Services"
         },
         {
             "file": "include\\util.js",
-            "line": 239,
+            "line": 291,
             "description": "Tests if a value is an object",
+            "static": 1,
             "itemtype": "method",
             "name": "isObject",
             "params": [
@@ -5477,8 +6267,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 250,
+            "line": 302,
             "description": "Tests if a value is an string",
+            "static": 1,
             "itemtype": "method",
             "name": "isString",
             "params": [
@@ -5497,8 +6288,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 261,
+            "line": 313,
             "description": "Tests if a value is a function",
+            "static": 1,
             "itemtype": "method",
             "name": "isFunction",
             "params": [
@@ -5517,8 +6309,9 @@
         },
         {
             "file": "include\\util.js",
-            "line": 272,
+            "line": 324,
             "description": "Tests if a value is a boolean",
+            "static": 1,
             "itemtype": "method",
             "name": "isBoolean",
             "params": [
@@ -5537,8 +6330,11 @@
         },
         {
             "file": "include\\util.js",
-            "line": 283,
+            "line": 335,
             "description": "Retrieves the subdirectories of a path",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getDirectories",
             "params": [
                 {
                     "name": "dirPath",
@@ -5555,12 +6351,22 @@
             "module": "Services"
         },
         {
+            "file": "include\\util.js",
+            "line": 372,
+            "description": "Provides typical conversions for time",
+            "itemtype": "property",
+            "name": "TIME",
+            "type": "{Object}",
+            "class": "Util",
+            "module": "Services"
+        },
+        {
             "file": "plugins\\ga\\ga.js",
             "line": 1,
             "description": "GoogleAnalytics - A sample for exemplifying what the main module file should\nlook like.",
             "author": "Brian Hyder <brian@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC",
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5573,7 +6379,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5586,7 +6392,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5599,7 +6405,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5612,7 +6418,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5621,7 +6427,7 @@
             "description": "Portfolio - A portfolio site theme for PencilBlue",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC",
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5634,7 +6440,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5647,7 +6453,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5660,7 +6466,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5673,7 +6479,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5682,7 +6488,7 @@
             "description": "TextCreaterService - An example of a service that generates random text.",
             "author": "Brian Hyder <brian@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5695,14 +6501,14 @@
                     "description": "A callback that should provide one argument: cb(error) or cb(null) \nif initialization proceeded successfully."
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
             "file": "plugins\\sample\\services\\text_creator.js",
             "line": 27,
             "description": "Generates a random string of 5 characters.  The service functions can return \nvalues or use call backs.  There is no standard for how a service should \nprovide functionality.  The only requirement is that an instance be provided \nas the exported object with the understanding that services should be \nstateless.",
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5711,7 +6517,7 @@
             "description": "SamplePlugin - A sample for exemplifying what the main module file should \nlook like.",
             "author": "Brian Hyder <brian@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC",
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5724,7 +6530,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5737,7 +6543,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5750,7 +6556,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
@@ -5763,32 +6569,159 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
             "file": "pencilblue.js",
-            "line": 6,
+            "line": 31,
             "description": "To be called when the configuration is loaded.  The function is responsible\nfor triggered the startup of the HTTP connection listener as well as start a\nconnection pool to the core DB.",
-            "class": "",
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
             "file": "pencilblue.js",
-            "line": 37,
+            "line": 52,
+            "description": "Initializes the request handler.  This causes all system routes to be\nregistered.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "initRequestHandler",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "pencilblue.js",
+            "line": 64,
+            "description": "Initializes the installed plugins.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "initPlugins",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "pencilblue.js",
+            "line": 74,
             "description": "Attempts to initialize a connection pool to the core database",
-            "class": "",
+            "static": 1,
+            "itemtype": "method",
+            "name": "initDBConnections",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
             "module": "Services"
         },
         {
             "file": "pencilblue.js",
-            "line": 57,
-            "description": "Initializes the server",
-            "class": "",
+            "line": 97,
+            "description": "Initializes the HTTP server(s).  When SSL is enabled two servers are created.\nOne to handle incoming HTTP traffic and one to handle HTTPS traffic.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "initServer",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "pencilblue.js",
+            "line": 137,
+            "description": "The function that handles normal server traffic.  The function ensures that\nthe incoming request is delegated out appropriately.  When SSL Termination\nis in use if the 'x-forwarded-proto' header does equal 'https' then the\nrequest is delegated to the handoff function so the request can be\nredirected appropriately.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "onHttpConnect",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "The incoming request",
+                    "type": "Request"
+                },
+                {
+                    "name": "resp",
+                    "description": "The outgoing response",
+                    "type": "Response"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "pencilblue.js",
+            "line": 168,
+            "description": "Handles traffic that comes in for HTTP when SSL is enabled.  The request is\nredirected to the appropriately protected HTTPS url.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "onHttpConnectForHandoff",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "The incoming request",
+                    "type": "Request"
+                },
+                {
+                    "name": "res",
+                    "description": "The outgoing response",
+                    "type": "Response"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "pencilblue.js",
+            "line": 192,
+            "description": "Initializes server registration.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "initServerRegistration",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
             "module": "Services"
         }
     ],
     "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\system\\server_registration.js:190"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\system\\server_registration.js:251"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\system\\server_registration.js:261"
+        },
         {
             "message": "replacing incorrect tag: returns with return",
             "line": " include\\localization.js:38"
@@ -5822,6 +6755,10 @@
             "line": " plugins\\sample\\sample.js:1"
         },
         {
+            "message": "Missing item type",
+            "line": " include\\dao\\cache.js:45"
+        },
+        {
             "message": "Missing item type\nLegacy variable used to reference the main database\nTODO Remove this once all references are converted over.",
             "line": " include\\dao\\db_manager.js:23"
         },
@@ -5835,11 +6772,11 @@
         },
         {
             "message": "Missing item type\nProcesses a request:\n<ol>\n\t<li>Initialize localization</li>\n\t<li>if Public Route:\n\t\t<ol>\n\t\t\t<li>If Valid Content\n\t\t\t\t<ol><li>Serve Public Content</li></ol>\n\t\t\t</li>\n\t\t\t<li>Else Serve 404</li>\n\t\t</ol>\n\t</li>\n\t<li>Else Parse Cookies</li>\n\t<li>Open/Create a session</li>\n\t<li>Get Route</li>\n\n</ol>",
-            "line": " include\\http\\request_handler.js:1090"
+            "line": " include\\http\\request_handler.js:1091"
         },
         {
             "message": "Missing item type\nTODO Church this up a bit.  Make it a template and controller like 404.\nTODO install an encoder entity since node prints out function names in angle brackets",
-            "line": " include\\http\\request_handler.js:1208"
+            "line": " include\\http\\request_handler.js:1210"
         },
         {
             "message": "Missing item type\nReplaces an article or page layout's ^media_display^ tag with a media embed",
@@ -5851,47 +6788,47 @@
         },
         {
             "message": "Missing item type",
-            "line": " include\\service\\entities\\plugin_service.js:1197"
+            "line": " include\\service\\entities\\plugin_service.js:1201"
         },
         {
             "message": "Missing item type\nConstructs the path to a specific plugin's details.json file",
-            "line": " include\\service\\entities\\plugin_service.js:1204"
+            "line": " include\\service\\entities\\plugin_service.js:1208"
         },
         {
             "message": "Missing item type\nAttempts to load and parse the details.json file for a plugin.",
-            "line": " include\\service\\entities\\plugin_service.js:1212"
+            "line": " include\\service\\entities\\plugin_service.js:1216"
         },
         {
             "message": "Missing item type\nValidates a plugin's details.json file.",
-            "line": " include\\service\\entities\\plugin_service.js:1237"
+            "line": " include\\service\\entities\\plugin_service.js:1241"
         },
         {
             "message": "Missing item type\nValidates the path to the plugin's icon file.  The path is considered valid\nif the path to a valid file.  The path may be absolute or relative to the\nplugin's public directory.",
-            "line": " include\\service\\entities\\plugin_service.js:1467"
+            "line": " include\\service\\entities\\plugin_service.js:1471"
         },
         {
             "message": "Missing item type\nValidates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
-            "line": " include\\service\\entities\\plugin_service.js:1488"
+            "line": " include\\service\\entities\\plugin_service.js:1492"
         },
         {
             "message": "Missing item type\nValidates a setting from a details.json file.",
-            "line": " include\\service\\entities\\plugin_service.js:1501"
+            "line": " include\\service\\entities\\plugin_service.js:1505"
         },
         {
             "message": "Missing item type\nValidates a details.json file's setting value.  The value is required to be a\nstring or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT\nallowed.",
-            "line": " include\\service\\entities\\plugin_service.js:1536"
+            "line": " include\\service\\entities\\plugin_service.js:1540"
         },
         {
             "message": "Missing item type\nRetrieves all services (initialized).  The services are provided in the\ncallback.",
-            "line": " include\\service\\entities\\plugin_service.js:1548"
+            "line": " include\\service\\entities\\plugin_service.js:1552"
         },
         {
             "message": "Missing item type\nLoads a plugin service and initializes it.  The service is required to\nimplement an \"init\" function. The service is then provided as a parameter in\nthe callback.",
-            "line": " include\\service\\entities\\plugin_service.js:1588"
+            "line": " include\\service\\entities\\plugin_service.js:1592"
         },
         {
             "message": "Missing item type\nDerives the name of a plugin service instance.  The function attempts to get\nthe name of the service by looking to see if the service has implemented the\ngetName function.  If it has not then the service name is set to be the file\nname minus any extension.",
-            "line": " include\\service\\entities\\plugin_service.js:1684"
+            "line": " include\\service\\entities\\plugin_service.js:1688"
         },
         {
             "message": "Missing item type\nService for managing the site's navigation",
@@ -5930,10 +6867,6 @@
             "line": " include\\session\\session.js:317"
         },
         {
-            "message": "Missing item type\nRemoves all entries from the server registry",
-            "line": " include\\system\\server_registration.js:84"
-        },
-        {
             "message": "Missing item type\nSettingServiceFactory - Creates a service that will provide access to settings *",
             "line": " include\\system\\settings.js:18"
         },
@@ -5943,27 +6876,15 @@
         },
         {
             "message": "Missing item type\nDefault configuration.  The settings here should be overriden by taking the\nexample file \"sample.config.json\" and modifying it to override the properties\nshown below.  In order to properly override the default configuration do the\nfollowing:\n1) copy \"sample.config.json\" to \"/etc/pencilblue/config.json\"\n2) Override the properties as desired.\n3) Add any custom properties you wish to provide for your specific purposes.",
-            "line": " include\\config.js:5"
+            "line": " include\\config.js:20"
         },
         {
             "message": "Missing item type\nLoads an external configuration.\nNOTE: This should only be called once by the core code at startup.  Calling\nthis function after the server starts may cause unintended behavior across\nthe system.",
-            "line": " include\\config.js:109"
+            "line": " include\\config.js:201"
         },
         {
             "message": "Missing item type\nRequirements - Responsible for declaring all of the system types and modules\nneeded to construct the system API object.",
             "line": " include\\requirements.js:1"
-        },
-        {
-            "message": "Missing item type\nPushes all of one array's values into another",
-            "line": " include\\util.js:206"
-        },
-        {
-            "message": "Missing item type\nEmpty callback function just used as a place holder if a callback is required\nand the result is not needed.",
-            "line": " include\\util.js:221"
-        },
-        {
-            "message": "Missing item type\nRetrieves the subdirectories of a path",
-            "line": " include\\util.js:283"
         },
         {
             "message": "Missing item type\nGoogleAnalytics - A sample for exemplifying what the main module file should\nlook like.",
@@ -6039,15 +6960,7 @@
         },
         {
             "message": "Missing item type\nTo be called when the configuration is loaded.  The function is responsible\nfor triggered the startup of the HTTP connection listener as well as start a\nconnection pool to the core DB.",
-            "line": " pencilblue.js:6"
-        },
-        {
-            "message": "Missing item type\nAttempts to initialize a connection pool to the core database",
-            "line": " pencilblue.js:37"
-        },
-        {
-            "message": "Missing item type\nInitializes the server",
-            "line": " pencilblue.js:57"
+            "line": " pencilblue.js:31"
         }
     ]
 }

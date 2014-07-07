@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -79,17 +79,25 @@
             
                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
             
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
             
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
             
@@ -360,7 +368,7 @@ RequestHandler.CORE_ROUTES = [
     	content_type: &#x27;text/html&#x27;
     },
     {
-    	method: &#x27;post&#x27;,
+    	method: &#x27;get&#x27;,
     	path: &quot;/actions/admin/content/topics/delete_topic/:id&quot;,
     	access_level: ACCESS_EDITOR,
     	auth_required: true,
@@ -512,7 +520,7 @@ RequestHandler.CORE_ROUTES = [
     	content_type: &#x27;text/html&#x27;
     },
     {
-    	method: &#x27;post&#x27;,
+    	method: &#x27;get&#x27;,
     	path: &quot;/actions/admin/content/pages/delete_page/:id&quot;,
     	access_level: ACCESS_EDITOR,
     	auth_required: true,
@@ -568,7 +576,7 @@ RequestHandler.CORE_ROUTES = [
     	content_type: &#x27;text/html&#x27;
     },
     {
-    	method: &#x27;post&#x27;,
+    	method: &#x27;get&#x27;,
     	path: &quot;/actions/admin/content/media/delete_media/:id&quot;,
     	access_level: ACCESS_WRITER,
     	auth_required: true,
@@ -616,7 +624,7 @@ RequestHandler.CORE_ROUTES = [
     	content_type: &#x27;text/html&#x27;
     },
     {
-    	method: &#x27;post&#x27;,
+    	method: &#x27;get&#x27;,
     	path: &quot;/actions/admin/content/articles/delete_article/:id&quot;,
     	access_level: ACCESS_EDITOR,
     	auth_required: true,
@@ -749,7 +757,7 @@ RequestHandler.CORE_ROUTES = [
     	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;verify_email.js&#x27;),
     },
     {
-        method: &#x27;post&#x27;,
+        method: &#x27;get&#x27;,
     	path: &quot;/actions/admin/content/custom_objects/delete_object_type/:id&quot;,
     	access_level: ACCESS_EDITOR,
     	auth_required: true,
@@ -799,7 +807,7 @@ RequestHandler.CORE_ROUTES = [
     	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;edit_user.js&#x27;),
     },
     {
-        method: &#x27;post&#x27;,
+        method: &#x27;get&#x27;,
         path: &quot;/actions/admin/users/delete_user/:id&quot;,
         auth_required: true,
         access_level: ACCESS_EDITOR,
@@ -914,6 +922,7 @@ RequestHandler.CORE_ROUTES = [
     	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;login.js&#x27;),
     },
     {
+        method: &#x27;get&#x27;,
     	path: &quot;/actions/admin/content/custom_objects/delete_object/:id&quot;,
     	access_level: ACCESS_EDITOR,
     	auth_required: true,
@@ -1339,6 +1348,7 @@ RequestHandler.prototype.servePublicContent = function(absolutePath) {
 			svg: &#x27;image/svg+xml&#x27;,
 			jpg: &#x27;image/jpeg&#x27;,
 			gif: &#x27;image/gif&#x27;,
+            webp: &#x27;image/webp&#x27;,
 			ico: &#x27;image/vnd.microsoft.icon&#x27;,
 			tff: &#x27;application/octet-stream&#x27;,
 			eot: &#x27;application/vnd.ms-fontobject&#x27;,

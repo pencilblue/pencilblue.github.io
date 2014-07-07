@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -79,17 +79,25 @@
             
                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
             
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
             
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
             
@@ -172,7 +180,22 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2014  PencilBlue, LLC
 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
 var cluster = require(&#x27;cluster&#x27;);
 var utils   = require(&#x27;./util.js&#x27;);
 
@@ -195,19 +218,44 @@ global.LOG_DIR   = path.join(DOCUMENT_ROOT, &#x27;log&#x27;);
 global.LOG_FILE  = path.join(LOG_DIR, &#x27;pencilblue.log&#x27;);
 
 var config = {
+
+    //The name of the site.
 	siteName: &#x27;pencilblue&#x27;,
-	siteRoot: &#x27;https://localhost:8080&#x27;,
+
+    //The root of the site.  This host part should ALWAYS match the value of
+    //the siteIP
+	siteRoot: &#x27;http://localhost:8080&#x27;,
+
+    //The hostname or IP address represented by the entire site.  Should match
+    //your domain name if in production use.
 	siteIP:   &#x27;localhost&#x27;,
+
+    //The primary port to listen for traffic on.
 	sitePort: 8080,
+
+    //the absolute file path to the directory where installation lives
 	docRoot:  DOCUMENT_ROOT,
+
+    //provides a configuration for connecting to persistent storage.  The
+    //default configuration is meant for mongodb.
 	db: {
         type:&#x27;mongo&#x27;,
 		servers: [
           &#x27;mongodb://127.0.0.1:27017/&#x27;
         ],
+
+        //the name of the default DB for the system
         name: &#x27;pencil_blue&#x27;,
+
+        //http://docs.mongodb.org/manual/core/write-concern/
         writeConern: 1,
+
+        //PB provides the ability to log queries.  This is handy during
+        //development to see how many trips to the DB a single request is
+        //making.  The queries log at level &quot;info&quot;.
         query_logging: false,
+
+        //http://mongodb.github.io/node-mongodb-native/api-generated/db.html#authenticate
         authentication: {
             un: null,
             pw: null,
@@ -218,17 +266,29 @@ var config = {
             }
         }
 	},
+
+    //PB supports redis as a caching layer out of the box.  For development
+    //purposes the &quot;fake-redis&quot; module can be used by setting the fake property
+    //to true.
 	cache: {
 		fake: true,
 		host: &quot;localhost&quot;,
 		port: 6379,
         //auth_pass: &quot;password here&quot;
 	},
+
+    //PB supports two session stores out of the box: mongo &amp; redis.  The
+    //timeout value is in ms.
 	session: {
 		storage: &quot;redis&quot;,
 		timeout: 600000
 	},
+
+    //The global log level: silly, debug, info, warn, error
 	log_level: LOG_LEVEL,
+
+    //The list of supported locales along with the location of the localization
+    //keys.
 	locales: {
 		supported: [
             {
@@ -237,30 +297,70 @@ var config = {
         	}
         ]
 	},
+
+    //System settings always have the persistent storage layer on.  Optionally,
+    //the cache and/or memory can be used.  It is not recommended to use memory
+    //unless you are developing locally with a single worker.  Memory is not
+    //synced across cluster workers so be careful if this option is set to true.
 	settings: {
 		use_memory: true,
 		use_cache: false
 	},
+
+    //The template engine can take advantage of caching so that they are not
+    //retrieved and compiled from disk on each request.  In a development
+    //environment it is ok because you will want to see the changes you make
+    //after each tweak.
 	templates: {
 		use_memory: true,
 		use_cache: false
 	},
+
+    //Plugins can also take advantage of the caching.  This prevents a DB call
+    //to lookup active plugins and their settings.
 	plugins: {
 		caching: {
 			use_memory: true,
 			use_cache: false,
 		}
 	},
+
+    //PB provides a process registry.  It utilizes the cache to register
+    //properties about itself that are available via API or in the admin
+    //console.  This makes it easy to assist in monitoring your cluster and
+    //processes in production or development.  The type value can be one of
+    //three values: &#x27;redis&#x27;, &#x27;mongo&#x27; or an absolute path that implements the
+    //functions necessary to be a registration storage provider.The update
+    //interval specifies how many ms to wait before updating the registry with
+    //fresh data about itself.  The key specifies what the base of the cache
+    //key looks like.
 	registry: {
 		enabled: true,
+        type: &quot;redis&quot;,
 		update_interval: 10000,
 		key: &#x27;server_registry&#x27;
 	},
+
+    //PB aims to help developers scale.  The system can take advantage of
+    //Node&#x27;s cluster module to scale across the system cores. In order to
+    //protect against repeated catastrophic failures the system allows for
+    //&quot;fatal_error_count&quot; errors to occur outside of &quot;fatal_error_timeout&quot; secs.
+    //If the maximum number of failures occur inside of the allowed timeframe
+    //the master process and all the worker children will shutdown.
     cluster: {
         fatal_error_timeout: 2000,
         fatal_error_count: 5,
         workers: 1
     },
+
+    //PB supports two methods of handling SSL.  Standard point to a cert as
+    //described by the options below and SSL termination and the use of the
+    //&quot;X-FORWARDED-PROTO&quot; header.  Node does not gracefully handle the redirect
+    //of HTTP traffic to HTTPS.  PB handles this for you in what we call the
+    //handoff.  PB will start a second http server listening on the
+    //&quot;handoff_port&quot;.  When traffic is received it will be redirected to the
+    //URL of the form &quot;siteRoot+[URL PATH]&quot;.  The port will only show if
+    //specified by the &quot;use_handoff_port_in_redirect&quot; property.
     server: {
         ssl: {
             enabled: false,
