@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>plugins\wp_import\services\wp_xml_parse.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.2.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AdminIndexController.html">AdminIndexController</a></li>
+            
+                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+            
+                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+            
+                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/BaseController.html">BaseController</a></li>
+            
+                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+            
+                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+            
+                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+            
+                <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
+                <li><a href="../classes/CommentService.html">CommentService</a></li>
+            
+                <li><a href="../classes/ContentService.html">ContentService</a></li>
+            
+                <li><a href="../classes/DAO.html">DAO</a></li>
+            
+                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+            
+                <li><a href="../classes/DBManager.html">DBManager</a></li>
+            
+                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EmailService.html">EmailService</a></li>
+            
+                <li><a href="../classes/FormController.html">FormController</a></li>
+            
+                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+            
+                <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+            
+                <li><a href="../classes/MediaService.html">MediaService</a></li>
+            
+                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+            
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
+                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/PageController.html">PageController</a></li>
+            
+                <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+            
+                <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
+            
+                <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+            
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
+                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+            
+                <li><a href="../classes/SaveArticleDraft.html">SaveArticleDraft</a></li>
+            
+                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+            
+                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+            
+                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/UrlService.html">UrlService</a></li>
+            
+                <li><a href="../classes/UserService.html">UserService</a></li>
+            
+                <li><a href="../classes/Util.html">Util</a></li>
+            
+                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/Database.html">Database</a></li>
+            
+                <li><a href="../modules/Entities.html">Entities</a></li>
+            
+                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+            
+                <li><a href="../modules/Model.html">Model</a></li>
+            
+                <li><a href="../modules/Security.html">Security</a></li>
+            
+                <li><a href="../modules/Services.html">Services</a></li>
+            
+                <li><a href="../modules/Session.html">Session</a></li>
+            
+                <li><a href="../modules/Storage.html">Storage</a></li>
+            
+                <li><a href="../modules/Theme.html">Theme</a></li>
+            
+                <li><a href="../modules/Validation.html">Validation</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: plugins\wp_import\services\wp_xml_parse.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2014  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var xml2js         = pb.PluginService.require(&#x27;wp_import&#x27;, &#x27;xml2js&#x27;);
+var BaseController = pb.BaseController;
+
+/**
+ *
+ *
+ */
+function WPXMLParseService() {}
+
+//constants
+/**
+ * The absolute file path to the directory that stores media
+ * @private
+ * @static
+ * @property MEDIA_DIRECTORY
+ * @type {String}
+ */
+var MEDIA_DIRECTORY = path.join(DOCUMENT_ROOT, &#x27;/public/media/&#x27;);
+
+/**
+ * @static
+ * @method init
+ */
+WPXMLParseService.init = function(cb) {
+    if(!fs.existsSync(MEDIA_DIRECTORY)){
+        fs.mkdirSync(MEDIA_DIRECTORY);
+    }
+
+    pb.log.debug(&quot;WPXMLParseService: Initialized&quot;);
+    cb(null, true);
+};
+
+WPXMLParseService.parse = function(xmlString, defaultUserId, cb) {
+    var self = this;
+
+    var parseString = xml2js.parseString;
+    parseString(xmlString, function(err, wpData) {
+        if(err) {
+            cb(&#x27;^loc_INVALID_XML^&#x27;);
+            return;
+        }
+
+        var channel = wpData.rss.channel[0];
+
+        self.saveNewUsers(channel, function(users){
+            self.saveNewTopics(channel, function(topics) {
+                self.saveNewArticlesAndPages(defaultUserId, channel, users, topics, function(articles, pages, media) {
+                    cb(null, users);
+                });
+            });
+        });
+    });
+};
+
+WPXMLParseService.saveNewUsers = function(channel, cb) {
+    var self = this;
+    var users = [];
+    var dao = new pb.DAO();
+
+    this.checkForExistingUser = function(index) {
+        if(index &gt;= users.length) {
+            cb(users);
+            return;
+        }
+
+        dao.loadByValue(&#x27;username&#x27;, users[index].username, &#x27;user&#x27;, function(err, existingUser) {
+            if(existingUser) {
+                users[index] = existingUser;
+                delete users[index].password;
+
+                index++;
+                self.checkForExistingUser(index);
+                return;
+            }
+
+            var generatedPassword = self.generatePassword();
+
+            users[index].email = &#x27;user_&#x27; + pb.utils.uniqueId() + &#x27;@placeholder.com&#x27;;
+            users[index].admin = ACCESS_WRITER;
+            users[index].password = generatedPassword;
+
+            var newUser = pb.DocumentCreator.create(&#x27;user&#x27;, users[index]);
+            dao.update(newUser).then(function(result) {
+                delete users[index].password;
+                users[index].generatedPassword = generatedPassword;
+                users[index]._id = result._id;
+
+                index++;
+                self.checkForExistingUser(index);
+            });
+        });
+    };
+
+    pb.plugins.getSetting(&#x27;create_new_users&#x27;, &#x27;wp_import&#x27;, function(err, createNewUsers) {
+        if(createNewUsers) {
+            for(var i = 0; i &lt; channel.item.length; i++) {
+                for(var j = 0; j &lt; channel.item[i][&#x27;dc:creator&#x27;].length; j++) {
+                    var userMatch = false;
+                    for(var s = 0; s &lt; users.length; s++) {
+                        if(users[s].username === channel.item[i][&#x27;dc:creator&#x27;][j]) {
+                            userMatch = true;
+                            break;
+                        }
+                    }
+                    if(!userMatch) {
+                        users.push({username: channel.item[i][&#x27;dc:creator&#x27;][j]});
+                    }
+                }
+            }
+        }
+
+        self.checkForExistingUser(0);
+    });
+};
+
+WPXMLParseService.saveNewTopics = function(channel, cb) {
+    var self = this;
+    var topics = [];
+    var dao = new pb.DAO();
+
+    this.checkForExistingTopic = function(index) {
+        if(index &gt;= topics.length) {
+            cb(topics);
+            return;
+        }
+
+        dao.loadByValue(&#x27;name&#x27;, topics[index].name, &#x27;topic&#x27;, function(err, existingTopic) {
+            if(existingTopic) {
+                topics[index] = existingTopic;
+
+                index++;
+                self.checkForExistingTopic(index);
+                return;
+            }
+
+            topics[index].name = BaseController.sanitize(topics[index].name);
+            var newTopic = pb.DocumentCreator.create(&#x27;topic&#x27;, topics[index]);
+            dao.update(newTopic).then(function(result) {
+                topics[index]._id = result._id;
+
+                index++;
+                self.checkForExistingTopic(index);
+            });
+        });
+    };
+
+    var categories = channel[&#x27;wp:category&#x27;];
+    for(var i = 0; i &lt; categories.length; i++) {
+        for(var j = 0; j &lt; categories[i][&#x27;wp:cat_name&#x27;].length; j++) {
+            var topicMatch = false;
+            for(var s = 0; s &lt; topics.length; s++) {
+                if(categories[i][&#x27;wp:cat_name&#x27;][j] === topics[s]) {
+                    topicMatch = true;
+                    break;
+                }
+            }
+
+            if(!topicMatch &amp;&amp; categories[i][&#x27;wp:cat_name&#x27;][j].toLowerCase() !== &#x27;uncategorized&#x27;) {
+                topics.push({name: categories[i][&#x27;wp:cat_name&#x27;][j]});
+            }
+        }
+    }
+
+    var tags = channel[&#x27;wp:tag&#x27;];
+    for(var i = 0; i &lt; tags.length; i++) {
+        for(var j = 0; j &lt; tags[i][&#x27;wp:tag_name&#x27;].length; j++) {
+            var topicMatch = false;
+            for(var s = 0; s &lt; topics.length; s++) {
+                if(tags[i][&#x27;wp:tag_name&#x27;][j] === topics[s]) {
+                    topicMatch = true;
+                    break;
+                }
+            }
+
+            if(!topicMatch) {
+                topics.push({name: tags[i][&#x27;wp:tag_name&#x27;][j]});
+            }
+        }
+    }
+
+    self.checkForExistingTopic(0);
+};
+
+WPXMLParseService.saveNewArticlesAndPages = function(defaultUserId, channel, users, topics, cb) {
+    var self = this;
+    var rawArticles = [];
+    var rawPages = [];
+    var articles = [];
+    var pages = [];
+    var media = [];
+    var dao = new pb.DAO();
+
+    this.checkForExistingPage = function(index) {
+        if(index &gt;= rawPages.length) {
+            self.checkForExistingArticle(0);
+            return;
+        }
+
+        var rawPage = rawPages[index];
+        dao.loadByValue(&#x27;url&#x27;, rawPage[&#x27;wp:post_name&#x27;][0], &#x27;page&#x27;, function(err, existingPage) {
+            if(existingPage) {
+                pages.push(existingPage);
+                index++;
+                self.checkForExistingPage(index);
+                return;
+            }
+
+            var pageTopics = [];
+            rawPage.category = rawPage.category || [];
+            for(var i = 0; i &lt; rawPage.category.length; i++) {
+                if(pb.utils.isString(rawPage.category[i])) {
+                    for(var j = 0; j &lt; topics.length; j++) {
+                        if(topics[j].name == rawPage.category[i]) {
+                            pageTopics.push(topics[j]._id.toString());
+                        }
+                    }
+                }
+            }
+
+            self.retrieveMediaObjects(rawPage[&#x27;content:encoded&#x27;][0], function(updatedContent, mediaObjects) {
+                updatedContent = updatedContent.split(&quot;\r\n&quot;).join(&quot;&lt;br/&gt;&quot;);
+
+                var pageMedia = [];
+                for(var i = 0; i &lt; mediaObjects.length; i++) {
+                    pageMedia.push(mediaObjects[i]._id.toString());
+                }
+                self.addMedia(mediaObjects);
+
+                var pagedoc = {
+                    url: rawPage[&#x27;wp:post_name&#x27;][0],
+                    headline: BaseController.sanitize(rawPage.title[0]),
+                    publish_date: new Date(rawPage[&#x27;wp:post_date&#x27;][0]),
+                    page_layout: BaseController.sanitize(updatedContent, BaseController.getContentSanitizationRules()),
+                    page_topics: pageTopics,
+                    page_media: pageMedia,
+                    seo_title: BaseController.sanitize(rawPage.title[0]),
+                    author: defaultUserId
+                }
+                var newPage = pb.DocumentCreator.create(&#x27;page&#x27;, pagedoc);
+                dao.update(newPage).then(function(result) {
+                    pages.push(result);
+
+                    index++;
+                    self.checkForExistingPage(index);
+                });
+            });
+        });
+    };
+
+    this.checkForExistingArticle = function(index) {
+        if(index &gt;= rawArticles.length) {
+            cb(articles, pages, media);
+            return;
+        }
+
+        var rawArticle = rawArticles[index];
+        dao.loadByValue(&#x27;url&#x27;, rawArticle[&#x27;wp:post_name&#x27;][0], &#x27;article&#x27;, function(err, existingArticle) {
+            if(existingArticle) {
+                articles.push(existingArticle);
+                index++;
+                self.checkForExistingArticle(index);
+                return;
+            }
+
+            var articleTopics = [];
+            for(var i = 0; i &lt; rawArticle.category.length; i++) {
+                if(pb.utils.isString(rawArticle.category[i])) {
+                    for(var j = 0; j &lt; topics.length; j++) {
+                        if(topics[j].name == rawArticle.category[i]) {
+                            articleTopics.push(topics[j]._id.toString());
+                        }
+                    }
+                }
+            }
+
+            var authorUsername = rawArticle[&#x27;dc:creator&#x27;][0];
+            var author;
+            for(i = 0; i &lt; users.length; i++) {
+                if(users[i].username === authorUsername) {
+                    author = users[i]._id.toString();
+                }
+            }
+            if(!author) {
+                author = defaultUserId;
+            }
+
+            self.retrieveMediaObjects(rawArticle[&#x27;content:encoded&#x27;][0], function(updatedContent, mediaObjects) {
+                updatedContent = updatedContent.split(&quot;\r\n&quot;).join(&quot;&lt;br/&gt;&quot;);
+                var articleMedia = [];
+                for(var i = 0; i &lt; mediaObjects.length; i++) {
+                    articleMedia.push(mediaObjects[i]._id.toString());
+                }
+                self.addMedia(mediaObjects);
+
+                var articleDoc = {
+                    url: rawArticle[&#x27;wp:post_name&#x27;][0],
+                    headline: BaseController.sanitize(rawArticle.title[0]),
+                    publish_date: new Date(rawArticle[&#x27;wp:post_date&#x27;][0]),
+                    article_layout: BaseController.sanitize(updatedContent, BaseController.getContentSanitizationRules()),
+                    article_topics: articleTopics,
+                    article_sections: [],
+                    article_media: articleMedia,
+                    seo_title: BaseController.sanitize(rawArticle.title[0]),
+                    author: author
+                };
+                var newArticle = pb.DocumentCreator.create(&#x27;article&#x27;, articleDoc);
+                dao.update(newArticle).then(function(result) {
+                    articles.push(result);
+
+                    index++;
+                    self.checkForExistingArticle(index);
+                });
+            });
+        });
+    };
+
+    this.addMedia = function(mediaObjects) {
+        for(var i = 0; i &lt; mediaObjects.length; i++) {
+            var mediaMatch = false;
+            for(var j = 0; j &lt; media.length; j++) {
+                if(media[j]._id.equals(mediaObjects[i]._id)) {
+                    mediaMatch = true;
+                    break;
+                }
+            }
+
+            if(!mediaMatch) {
+                media.push(mediaObjects[i]);
+            }
+        }
+    };
+
+    var items = channel.item;
+    for(var i = 0; i &lt; items.length; i++) {
+        if(items[i][&#x27;wp:post_type&#x27;][0] === &#x27;page&#x27;) {
+            rawPages.push(items[i]);
+        }
+        else if(items[i][&#x27;wp:post_type&#x27;][0] === &#x27;post&#x27;) {
+            rawArticles.push(items[i]);
+        }
+    }
+
+    self.checkForExistingPage(0);
+};
+
+WPXMLParseService.retrieveMediaObjects = function(content, cb) {
+    var https = require(&#x27;https&#x27;);
+    var self = this;
+    var mediaObjects = [];
+    var dao = new pb.DAO();
+
+    pb.plugins.getSetting(&#x27;download_media&#x27;, &#x27;wp_import&#x27;, function(err, downloadMedia) {
+        self.replaceMediaObject = function() {
+            var startIndex = content.indexOf(&#x27;&lt;img&#x27;);
+            var mediaType = &#x27;image&#x27;;
+            if(startIndex === -1) {
+                self.checkForVideo();
+                return;
+            }
+
+
+            var endIndex1 = content.substr(startIndex).indexOf(&#x27;/&gt;&#x27;);
+            var endIndex2 = content.substr(startIndex).indexOf(&#x27;/img&gt;&#x27;);
+            var endIndex3 = content.substr(startIndex).indexOf(&#x27;&gt;&#x27;);
+            var endIndex;
+
+            if(endIndex1 &gt; -1 &amp;&amp; endIndex1 &lt; endIndex2) {
+                endIndex = endIndex1 + 2;
+            }
+            else if(endIndex2 &gt; -1) {
+                endIndex = endIndex2 + 4;
+            }
+            else {
+                endIndex = endIndex3 + 1;
+            }
+
+            var mediaString = content.substr(startIndex, endIndex);
+            var srcString = mediaString.substr(mediaString.indexOf(&#x27;src=&quot;&#x27;) + 5);
+            srcString = srcString.substr(0, srcString.indexOf(&#x27;&quot;&#x27;));
+            if(srcString.indexOf(&#x27;?&#x27;) &gt; -1) {
+                srcString = srcString.substr(0, srcString.indexOf(&#x27;?&#x27;));
+            }
+
+            if(downloadMedia &amp;&amp; mediaType === &#x27;image&#x27;) {
+                var ht = http;
+                if(srcString.indexOf(&#x27;https://&#x27;) &gt; -1) {
+                    ht = https;
+                }
+
+                ht.get(srcString, function(res) {
+                    var imageData = &#x27;&#x27;;
+                    res.setEncoding(&#x27;binary&#x27;);
+
+                    res.on(&#x27;data&#x27;, function(chunk){
+                        imageData += chunk;
+                    });
+
+                    res.on(&#x27;end&#x27;, function(){
+                        self.saveDownloadedImage(srcString, imageData, function(location) {
+                            self.saveMediaObject(mediaType, location, function(mediaObject) {
+                                content = content.split(mediaString).join(&#x27;^media_display_&#x27; + mediaObject._id.toString() + &#x27;/position:center^&#x27;);
+                                self.replaceMediaObject();
+                            });
+                        });
+                    });
+                });
+            }
+            else {
+                self.saveMediaObject(mediaType, srcString, function(mediaObject) {
+                    content = content.split(mediaString).join(&#x27;^media_display_&#x27; + mediaObject._id.toString() + &#x27;/position:center^&#x27;);
+                    self.replaceMediaObject();
+                });
+            }
+        };
+
+        self.checkForVideo = function() {
+            var startIndex;
+            var endIndex;
+            var mediaString;
+            var location;
+
+            if(content.indexOf(&#x27;[youtube=&#x27;) &gt; -1) {
+                startIndex = content.indexOf(&#x27;[youtube=&#x27;);
+                endIndex = content.substr(startIndex).indexOf(&#x27;]&#x27;) + 1;
+                mediaString = content.substr(startIndex, endIndex);
+                location = mediaString.substr(mediaString.indexOf(&#x27;?v=&#x27;) + 3, mediaString.substr(mediaString.indexOf(&#x27;?v=&#x27;) + 3).length - 1);
+
+                self.saveMediaObject(&#x27;youtube&#x27;, location, function(mediaObject) {
+                    content = content.split(mediaString).join(&#x27;^media_display_&#x27; + mediaObject._id.toString() + &#x27;/position:center^&#x27;);
+                    self.checkForVideo();
+                });
+            }
+            else if(content.indexOf(&#x27;[dailymotion&#x27;) &gt; -1) {
+                startIndex = content.indexOf(&#x27;[dailymotion&#x27;);
+                endIndex = content.substr(startIndex).indexOf(&#x27;]&#x27;) + 1;
+                mediaString = content.substr(startIndex, endIndex);
+                location = mediaString.substr(mediaString.indexOf(&#x27;id=&#x27;) + 3, mediaString.substr(mediaString.indexOf(&#x27;id=&#x27;) + 3).length - 1);
+
+                self.saveMediaObject(&#x27;daily_motion&#x27;, location, function(mediaObject) {
+                    content = content.split(mediaString).join(&#x27;^media_display_&#x27; + mediaObject._id.toString() + &#x27;/position:center^&#x27;);
+                    self.checkForVideo();
+                });
+            }
+            else {
+                cb(content, mediaObjects);
+            }
+        };
+
+        self.saveDownloadedImage = function(originalFilename, imageData, cb) {
+            var self  = this;
+
+            var date = new Date();
+            var monthDir = MEDIA_DIRECTORY + date.getFullYear() + &#x27;/&#x27;;
+            if(!fs.existsSync(monthDir)) {
+                fs.mkdirSync(monthDir);
+            }
+
+            var uploadDirectory = monthDir + (date.getMonth() + 1) + &#x27;/&#x27;;
+            if(!fs.existsSync(uploadDirectory)) {
+                fs.mkdirSync(uploadDirectory);
+            }
+
+            filename = self.generateFilename(originalFilename);
+            filePath = uploadDirectory + filename;
+
+            fs.writeFile(filePath, imageData, &#x27;binary&#x27;, function(err) {
+                cb(&#x27;/media/&#x27; + date.getFullYear() + &#x27;/&#x27; + (date.getMonth() + 1) + &#x27;/&#x27; + filename);
+            });
+        };
+
+        self.saveMediaObject = function(mediaType, location, cb) {
+            dao.loadByValue(&#x27;location&#x27;, location, &#x27;media&#x27;, function(err, existingMedia) {
+                if(existingMedia) {
+                    mediaObjects.push(existingMedia);
+                    cb(existingMedia);
+                    return;
+                }
+
+                var isFile = null;
+                if(location.indexOf(&#x27;/media&#x27;) === 0) {
+                    isFile = &#x27;on&#x27;;
+                }
+
+                var mediadoc = {
+                    is_file: isFile,
+                    media_type: mediaType,
+                    location: location,
+                    thumb: location,
+                    name: &#x27;Media_&#x27; + pb.utils.uniqueId(),
+                    caption: &#x27;&#x27;,
+                    media_topics: []
+                };
+                var newMedia = pb.DocumentCreator.create(&#x27;media&#x27;, mediadoc);
+                dao.update(newMedia).then(function(result) {
+                    mediaObjects.push(result);
+                    cb(result);
+                });
+            });
+        };
+
+        self.generateFilename = function(originalFilename){
+            var now = new Date();
+
+            //calculate extension
+            var ext = &#x27;&#x27;;
+            var extIndex = originalFilename.lastIndexOf(&#x27;.&#x27;);
+            if (extIndex &gt;= 0){
+                ext = originalFilename.substr(extIndex);
+            }
+
+            //build file name
+            return pb.utils.uniqueId() + &#x27;-&#x27; + now.getTime() + ext;
+        };
+
+        self.replaceMediaObject();
+    });
+};
+
+WPXMLParseService.generatePassword = function() {
+    return pb.security.generatePassword(8);
+};
+
+//exports
+module.exports = WPXMLParseService;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

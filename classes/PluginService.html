@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.3</em>
+            <em>API Docs for: 0.2.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -59,6 +59,8 @@
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
@@ -105,9 +109,13 @@
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
             
                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
                 <li><a href="../classes/SaveArticleDraft.html">SaveArticleDraft</a></li>
             
@@ -200,7 +208,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_plugin_service.js.html#l1"><code>include\service\entities\plugin_service.js:1</code></a>
+            Defined in: <a href="../files/include_service_entities_plugin_service.js.html#l24"><code>include\service\entities\plugin_service.js:24</code></a>
         </div>
     
 
@@ -257,7 +265,7 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1"><code>include\service\entities\plugin_service.js:1</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l24"><code>include\service\entities\plugin_service.js:24</code></a>
         
         </p>
 
@@ -289,6 +297,8 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
         
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
         
         
     </ul>
@@ -304,7 +314,41 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_genPublicPath">genPublicPath</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_genSettingsService">genSettingsService</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getActiveContentTemplates">getActiveContentTemplates</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getActiveIcon">getActiveIcon</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getActivePluginDir">getActivePluginDir</a>
 
                                 
                                     <span class="flag static">static</span>
@@ -320,6 +364,52 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_getActivePlugins">getActivePlugins</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getAvailablePlugins">getAvailablePlugins</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getDetailsPath">getDetailsPath</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getInactivePlugins">getInactivePlugins</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getLocalizations">getLocalizations</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getPermissionsForRole">getPermissionsForRole</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_getPlugin">getPlugin</a>
 
                                 
@@ -327,7 +417,48 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_getPluginMap">getPluginMap</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getPluginsDir">getPluginsDir</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_getPublicPath">getPublicPath</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getService">getService</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getServiceName">getServiceName</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getServices">getServices</a>
 
                                 
                                     <span class="flag static">static</span>
@@ -364,6 +495,20 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_initPlugin">initPlugin</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_initPlugins">initPlugins</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_installPlugin">installPlugin</a>
 
                                 
@@ -371,8 +516,78 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_installPluginDependencies">installPluginDependencies</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_isActivePlugin">isActivePlugin</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_isInstalled">isInstalled</a>
 
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_loadController">loadController</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_loadControllers">loadControllers</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_loadDetailsFile">loadDetailsFile</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_loadMainModule">loadMainModule</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_loadService">loadService</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_require">require</a>
+
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -419,10 +634,94 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                                 
                             </li>
                         
+                            <li class="index-item method">
+                                <a href="#method_uninstallPlugin">uninstallPlugin</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_validateDetails">validateDetails</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_validateIconPath">validateIconPath</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_validateSettingValue">validateSettingValue</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
                     </ul>
                 </div>
             
 
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property">
+                                <a href="#property_ACTIVE_PLUGINS">ACTIVE_PLUGINS</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_DETAILS_FILE_NAME">DETAILS_FILE_NAME</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_PLUGINS_DIR">PLUGINS_DIR</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_pluginSettingsService">pluginSettingsService</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_pluginSettingsService">pluginSettingsService</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_PUBLIC_DIR_NAME">PUBLIC_DIR_NAME</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
             
 
             
@@ -433,6 +732,138 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_genPublicPath" class="method item">
+    <h3 class="name"><code>genPublicPath</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>plugin</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>relativePathToMedia</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l591"><code>include\service\entities\plugin_service.js:591</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Generates a URL path to a public resource for a plugin.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">plugin</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The UID of the plugin</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">relativePathToMedia</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The relative path to the resource from
+the plugin&#39;s public directory.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    <p>URL path to the resource</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
 
                 
                     <div id="method_genSettingsService" class="method item">
@@ -501,7 +932,7 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l335"><code>include\service\entities\plugin_service.js:335</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l397"><code>include\service\entities\plugin_service.js:397</code></a>
         
         </p>
 
@@ -611,6 +1042,279 @@ use a cache service.</p>
 </div>
 
                 
+                    <div id="method_getActiveContentTemplates" class="method item">
+    <h3 class="name"><code>getActiveContentTemplates</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l627"><code>include\service\entities\plugin_service.js:627</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the content templates for all of the active plugins</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>An array of objects</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getActiveIcon" class="method item">
+    <h3 class="name"><code>getActiveIcon</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l83"><code>include\service\entities\plugin_service.js:83</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the path to the active fav icon.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, URL_PATH_TO_ICON)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getActivePluginDir" class="method item">
+    <h3 class="name"><code>getActivePluginDir</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l565"><code>include\service\entities\plugin_service.js:565</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the file path to the public directory for the specified plugin.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A plugin&#39;s UID value</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    <p>File path to the plugin&#39;s public directory</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_getActivePluginNames" class="method item">
     <h3 class="name"><code>getActivePluginNames</code></h3>
 
@@ -647,7 +1351,7 @@ use a cache service.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l37"><code>include\service\entities\plugin_service.js:37</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l99"><code>include\service\entities\plugin_service.js:99</code></a>
         
         </p>
 
@@ -675,6 +1379,654 @@ use a cache service.</p>
                     
                     <p>An array that contain the names of the plugins that
 initialized successfully within this instance.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getActivePlugins" class="method item">
+    <h3 class="name"><code>getActivePlugins</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l607"><code>include\service\entities\plugin_service.js:607</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the details for the active plugins.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Array)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getAvailablePlugins" class="method item">
+    <h3 class="name"><code>getAvailablePlugins</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>active</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>inactive</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l670"><code>include\service\entities\plugin_service.js:670</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the available plugins.  An available plugin is one who is
+uninstalled but available to be installed.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">active</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of plugin detail objects.  Each object is
+required to have a uid property that is a string.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">inactive</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An array of plugin details objects. Each object is
+required to have a uid property that is a string.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Array)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getDetailsPath" class="method item">
+    <h3 class="name"><code>getDetailsPath</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1454"><code>include\service\entities\plugin_service.js:1454</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Constructs the path to a specific plugin&#39;s details.json file</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the directory that the plugin is
+contained within.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    <p>The absolute file path to the details.json file for a plugin</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getInactivePlugins" class="method item">
+    <h3 class="name"><code>getInactivePlugins</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l649"><code>include\service\entities\plugin_service.js:649</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the inactive plugins for this instance of PencilBlue.  An inactive
+plugin is considered one who failed to install or one that failed to start
+properly.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Array)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getLocalizations" class="method item">
+    <h3 class="name"><code>getLocalizations</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1339"><code>include\service\entities\plugin_service.js:1339</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads the localization files from the specified plugin directory and places
+them into a hash where the key is the name of the localization file.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the plugin directory</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Object)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getPermissionsForRole" class="method item">
+    <h3 class="name"><code>getPermissionsForRole</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>role</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l538"><code>include\service\entities\plugin_service.js:538</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the permission set for a given role.  All active plugins are
+inspected.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">role</code>
+                        <span class="type">Integer | String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The role to get permissions for</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>A hash of the permissions</p>
 
                 
             </div>
@@ -733,7 +2085,7 @@ initialized successfully within this instance.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l303"><code>include\service\entities\plugin_service.js:303</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l365"><code>include\service\entities\plugin_service.js:365</code></a>
         
         </p>
 
@@ -798,6 +2150,170 @@ plugin does exist null is provided.</p>
 </div>
 
                 
+                    <div id="method_getPluginMap" class="method item">
+    <h3 class="name"><code>getPluginMap</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l750"><code>include\service\entities\plugin_service.js:750</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves a map of the system&#39;s plugin.  The map provides three properties:
+active, inactive, available.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Object)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_getPluginsDir" class="method item">
+    <h3 class="name"><code>getPluginsDir</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1445"><code>include\service\entities\plugin_service.js:1445</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    <p>The absolute file path to the plugins directory</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_getPublicPath" class="method item">
     <h3 class="name"><code>getPublicPath</code></h3>
 
@@ -846,7 +2362,7 @@ plugin does exist null is provided.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1188"><code>include\service\entities\plugin_service.js:1188</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1432"><code>include\service\entities\plugin_service.js:1432</code></a>
         
         </p>
 
@@ -908,6 +2424,385 @@ plugin</p>
 </div>
 
                 
+                    <div id="method_getService" class="method item">
+    <h3 class="name"><code>getService</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>serviceName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1386"><code>include\service\entities\plugin_service.js:1386</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves a plugin service prototype.  It is expected to be a prototype but
+it may also be an instance as along as that instance fufills all
+responsbilities of the service interface.  When the desired service does not
+exist NULL is returned.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">serviceName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The unique plugin identifier</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>Service prototype</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getServiceName" class="method item">
+    <h3 class="name"><code>getServiceName</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pathToService</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>service</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1977"><code>include\service\entities\plugin_service.js:1977</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Derives the name of a plugin service instance.  The function attempts to get
+the name of the service by looking to see if the service has implemented the
+getName function.  If it has not then the service name is set to be the file
+name minus any extension.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pathToService</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The file path to the service</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">service</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The service prototype</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">String</span>:
+                    
+                    <p>The derived service name</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getServices" class="method item">
+    <h3 class="name"><code>getServices</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pathToPlugin</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1821"><code>include\service\entities\plugin_service.js:1821</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves all services (initialized).  The services are provided in the
+callback.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pathToPlugin</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The absolute file path to the specific plugin directory.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(error, servicesHash);</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_getSetting" class="method item">
     <h3 class="name"><code>getSetting</code></h3>
 
@@ -962,7 +2857,7 @@ plugin</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l47"><code>include\service\entities\plugin_service.js:47</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l109"><code>include\service\entities\plugin_service.js:109</code></a>
         
         </p>
 
@@ -1091,7 +2986,7 @@ installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l77"><code>include\service\entities\plugin_service.js:77</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l139"><code>include\service\entities\plugin_service.js:139</code></a>
         
         </p>
 
@@ -1209,7 +3104,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l249"><code>include\service\entities\plugin_service.js:249</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l311"><code>include\service\entities\plugin_service.js:311</code></a>
         
         </p>
 
@@ -1336,7 +3231,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l277"><code>include\service\entities\plugin_service.js:277</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l339"><code>include\service\entities\plugin_service.js:339</code></a>
         
         </p>
 
@@ -1383,6 +3278,206 @@ Null is provided in the event that the plugin is not installed.</p>
 
                     <div class="param-description">
                         <p>A callback that provides two parameters: cb(err, settingsObject)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_initPlugin" class="method item">
+    <h3 class="name"><code>initPlugin</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>plugin</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1094"><code>include\service\entities\plugin_service.js:1094</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initializes a plugin during startup or just after a plugin has been installed.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">plugin</code>
+                        <span class="type">Plugin</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The plugin details</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Boolean)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_initPlugins" class="method item">
+    <h3 class="name"><code>initPlugins</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>A</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1030"><code>include\service\entities\plugin_service.js:1030</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Attempts to initialize all installed plugins.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">A</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>callback that provides two parameters: cb(Error, Boolean)</p>
 
                     </div>
 
@@ -1447,7 +3542,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l761"><code>include\service\entities\plugin_service.js:761</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l894"><code>include\service\entities\plugin_service.js:894</code></a>
         
         </p>
 
@@ -1523,6 +3618,245 @@ plugin and its details.json file.</p>
 </div>
 
                 
+                    <div id="method_installPluginDependencies" class="method item">
+    <h3 class="name"><code>installPluginDependencies</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>dependencies</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1273"><code>include\service\entities\plugin_service.js:1273</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Installs the dependencies for a plugin via NPM.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">dependencies</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_isActivePlugin" class="method item">
+    <h3 class="name"><code>isActivePlugin</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>uid</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l580"><code>include\service\entities\plugin_service.js:580</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Inidicates if the specified plugin is active in this instance of PB.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">uid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The unique identifier for a plugin</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE if the plugin is active, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_isInstalled" class="method item">
     <h3 class="name"><code>isInstalled</code></h3>
 
@@ -1571,7 +3905,7 @@ plugin and its details.json file.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l288"><code>include\service\entities\plugin_service.js:288</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l350"><code>include\service\entities\plugin_service.js:350</code></a>
         
         </p>
 
@@ -1636,6 +3970,770 @@ TRUE if the plugin is installed, FALSE if not.</p>
 </div>
 
                 
+                    <div id="method_loadController" class="method item">
+    <h3 class="name"><code>loadController</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pathToController</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1925"><code>include\service\entities\plugin_service.js:1925</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads a controller for a plugin and attempts to register the route with the
+RequestHandler.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pathToController</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The absolute file path to the controller</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The unique identifier for the plugin</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Boolean)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_loadControllers" class="method item">
+    <h3 class="name"><code>loadControllers</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pathToPlugin</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1887"><code>include\service\entities\plugin_service.js:1887</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads the controllers for a plugin by iterating through the files in the
+plugin&#39;s controllers directory.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pathToPlugin</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The absolute file path to the plugin =</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The unique identifier for the plugin</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Array)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_loadDetailsFile" class="method item">
+    <h3 class="name"><code>loadDetailsFile</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>filePath</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1466"><code>include\service\entities\plugin_service.js:1466</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Attempts to load and parse the details.json file for a plugin.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">filePath</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The absolute path to the details.json file</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(error, detailsObject)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_loadMainModule" class="method item">
+    <h3 class="name"><code>loadMainModule</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pathToModule</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1405"><code>include\service\entities\plugin_service.js:1405</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Attempts to require the main module file for a plugin.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the directory that the plugin is
+contained within.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pathToModule</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the main module file.  It is also
+to pass this parameter as the absolute file path to the module.  The
+function first checks if the parameter is just the file name then checks to
+see if it is an absolute path.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Function</span>:
+                    
+                    <p>The mainmodule prototype</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_loadService" class="method item">
+    <h3 class="name"><code>loadService</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pathToService</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1862"><code>include\service\entities\plugin_service.js:1862</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads a plugin service and initializes it.  The service is required to
+implement an &quot;init&quot; function. The service is then provided as a parameter in
+the callback.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pathToService</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The absolute file path to the service javascript file.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(error, initializedService)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_require" class="method item">
+    <h3 class="name"><code>require</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>moduleName</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1326"><code>include\service\entities\plugin_service.js:1326</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Loads a module dependencies for the specified plugin.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">moduleName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"></span>:
+                    
+                    <p>The entity returned by the &quot;require&quot; call.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_resetSettings" class="method item">
     <h3 class="name"><code>resetSettings</code></h3>
 
@@ -1684,7 +4782,7 @@ TRUE if the plugin is installed, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l367"><code>include\service\entities\plugin_service.js:367</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l429"><code>include\service\entities\plugin_service.js:429</code></a>
         
         </p>
 
@@ -1798,7 +4896,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l418"><code>include\service\entities\plugin_service.js:418</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l480"><code>include\service\entities\plugin_service.js:480</code></a>
         
         </p>
 
@@ -1925,7 +5023,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l89"><code>include\service\entities\plugin_service.js:89</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l151"><code>include\service\entities\plugin_service.js:151</code></a>
         
         </p>
 
@@ -2075,7 +5173,7 @@ TRUE if the setting was persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l135"><code>include\service\entities\plugin_service.js:135</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l197"><code>include\service\entities\plugin_service.js:197</code></a>
         
         </p>
 
@@ -2215,7 +5313,7 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l169"><code>include\service\entities\plugin_service.js:169</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l231"><code>include\service\entities\plugin_service.js:231</code></a>
         
         </p>
 
@@ -2365,7 +5463,7 @@ TRUE if the setting was persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l215"><code>include\service\entities\plugin_service.js:215</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l277"><code>include\service\entities\plugin_service.js:277</code></a>
         
         </p>
 
@@ -2445,9 +5543,777 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
 </div>
 
                 
+                    <div id="method_uninstallPlugin" class="method item">
+    <h3 class="name"><code>uninstallPlugin</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l781"><code>include\service\entities\plugin_service.js:781</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Uninstalls the plugin with the specified UID.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The unique plugin identifier</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, Boolean)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_validateDetails" class="method item">
+    <h3 class="name"><code>validateDetails</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>details</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1493"><code>include\service\entities\plugin_service.js:1493</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Validates a plugin&#39;s details.json file.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">details</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The details object to validate</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the directory containing the original
+details.json file that the details object was derived from.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(error, TRUE/FALSE).
+TRUE if the details object passes validation, FALSE if not.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_validateIconPath" class="method item">
+    <h3 class="name"><code>validateIconPath</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>iconPath</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>pluginDirName</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1738"><code>include\service\entities\plugin_service.js:1738</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Validates the path to the plugin&#39;s icon file.  The path is considered valid
+if the path to a valid file.  The path may be absolute or relative to the
+plugin&#39;s public directory.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">iconPath</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The path to the icon (image) file</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginDirName</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the directory housing the plugin</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE if the path is valid, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_validateSettingValue" class="method item">
+    <h3 class="name"><code>validateSettingValue</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>value</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1808"><code>include\service\entities\plugin_service.js:1808</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Validates a details.json file&#39;s setting value.  The value is required to be a
+string or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT
+allowed.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">value</code>
+                        <span class="type">Boolean | Integer | Float | String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The value to validate</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE if the value is valid, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
             </div>
         
 
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_ACTIVE_PLUGINS" class="property item">
+    <h3 class="name"><code>ACTIVE_PLUGINS</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l76"><code>include\service\entities\plugin_service.js:76</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A hash of the plugins that are installed and active in this instance of PB.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_DETAILS_FILE_NAME" class="property item">
+    <h3 class="name"><code>DETAILS_FILE_NAME</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l61"><code>include\service\entities\plugin_service.js:61</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The name of the file that defines the plugin&#39;s properties</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_PLUGINS_DIR" class="property item">
+    <h3 class="name"><code>PLUGINS_DIR</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l54"><code>include\service\entities\plugin_service.js:54</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The absolute path to the plugins directory for this PecilBlue installation</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_pluginSettingsService" class="property item">
+    <h3 class="name"><code>pluginSettingsService</code></h3>
+    <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l38"><code>include\service\entities\plugin_service.js:38</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A setting service that sets and retrieves the settings for plugins</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_pluginSettingsService" class="property item">
+    <h3 class="name"><code>pluginSettingsService</code></h3>
+    <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l45"><code>include\service\entities\plugin_service.js:45</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A setting service that sets and retrieves the settings for plugins</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_PUBLIC_DIR_NAME" class="property item">
+    <h3 class="name"><code>PUBLIC_DIR_NAME</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l68"><code>include\service\entities\plugin_service.js:68</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The name of the directory for each plugin that contains the public resources</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
         
 
         

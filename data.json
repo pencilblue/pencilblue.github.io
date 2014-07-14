@@ -2,7 +2,7 @@
     "project": {
         "name": "PencilBlue",
         "description": "PencilBlue: Full stack online publishing for Node.js",
-        "version": "0.1.3",
+        "version": "0.2.0",
         "url": "http://pencilblue.org/",
         "logo": "http://pencilblue.org/img/pb_logo.png"
     },
@@ -927,7 +927,9 @@
         "include\\http\\request_handler.js": {
             "name": "include\\http\\request_handler.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "RequestHandler": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -1105,6 +1107,24 @@
             "modules": {},
             "classes": {
                 "SessionHandler": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "include\\system\\command\\command_service.js": {
+            "name": "include\\system\\command\\command_service.js",
+            "modules": {},
+            "classes": {
+                "CommandService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "include\\system\\command\\redis_command_broker.js": {
+            "name": "include\\system\\command\\redis_command_broker.js",
+            "modules": {},
+            "classes": {
+                "RedisCommandBroker": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1339,6 +1359,29 @@
             "fors": {},
             "namespaces": {}
         },
+        "plugins\\wp_import\\controllers\\import_action.js": {
+            "name": "plugins\\wp_import\\controllers\\import_action.js",
+            "modules": {},
+            "classes": {
+                "ImportWP": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\wp_import\\services\\wp_xml_parse.js": {
+            "name": "plugins\\wp_import\\services\\wp_xml_parse.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "plugins\\wp_import\\wp_import.js": {
+            "name": "plugins\\wp_import\\wp_import.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "pencilblue.js": {
             "name": "pencilblue.js",
             "modules": {},
@@ -1387,12 +1430,13 @@
             "name": "ErrorSuccess",
             "submodules": {},
             "classes": {
-                "PBError": 1
+                "PBError": 1,
+                "RequestHandler": 1
             },
             "fors": {},
             "namespaces": {},
             "tag": "main",
-            "file": "include\\error\\pb_error.js",
+            "file": "include\\http\\request_handler.js",
             "line": 18,
             "description": "Specialized application error that knows what status code to return",
             "is_constructor": 1,
@@ -1449,6 +1493,7 @@
                 "EmailService": 1,
                 "Localization": 1,
                 "Util": 1,
+                "ImportWP": 1,
                 "PencilBlue": 1
             },
             "fors": {},
@@ -1560,6 +1605,8 @@
                 "MongoSessionStore": 1,
                 "RedisSessionStore": 1,
                 "SessionHandler": 1,
+                "CommandService": 1,
+                "RedisCommandBroker": 1,
                 "MongoRegistrationProvider": 1,
                 "RedisRegistrationProvider": 1,
                 "ServerRegistration": 1
@@ -1792,6 +1839,38 @@
             "line": 18,
             "description": "Specialized application error that knows what status code to return"
         },
+        "RequestHandler": {
+            "name": "RequestHandler",
+            "shortname": "RequestHandler",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ErrorSuccess",
+            "namespace": "",
+            "file": "include\\http\\request_handler.js",
+            "line": 18,
+            "description": "Responsible for processing a single req by delegating it to the correct controllers",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "server",
+                    "description": "The http server that the request came in on",
+                    "type": "Server"
+                },
+                {
+                    "name": "req",
+                    "description": "The incoming request",
+                    "type": "Request"
+                },
+                {
+                    "name": "resp",
+                    "description": "The outgoing response",
+                    "type": "Response"
+                }
+            ]
+        },
         "DocumentCreator": {
             "name": "DocumentCreator",
             "shortname": "DocumentCreator",
@@ -1879,7 +1958,7 @@
             "module": "Services",
             "namespace": "",
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1,
+            "line": 24,
             "description": "PluginService - Provides functions for interacting with plugins.\nInstall/uninstall, setting retrieval, plugin retrieval, etc.",
             "submodule": "Entities",
             "is_constructor": 1
@@ -2086,6 +2165,36 @@
             "line": 24,
             "description": "Responsible for managing user sessions"
         },
+        "CommandService": {
+            "name": "CommandService",
+            "shortname": "CommandService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Session",
+            "namespace": "",
+            "file": "include\\system\\command\\command_service.js",
+            "line": 18,
+            "description": "Provides a mechanism to send commands to all members of the cluster or a\nspecific member.",
+            "is_constructor": 1
+        },
+        "RedisCommandBroker": {
+            "name": "RedisCommandBroker",
+            "shortname": "RedisCommandBroker",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Session",
+            "namespace": "",
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 18,
+            "description": "Brokers messages using Redis as the medium.  The implementation follows a\npublish/subscribe model that allows for listening for changes based on a a\nspecified channel.",
+            "is_constructor": 1
+        },
         "MongoRegistrationProvider": {
             "name": "MongoRegistrationProvider",
             "shortname": "MongoRegistrationProvider",
@@ -2276,6 +2385,21 @@
             "file": "include\\util.js",
             "line": 21,
             "description": "Provides a set of utility functions used throughout the code base"
+        },
+        "ImportWP": {
+            "name": "ImportWP",
+            "shortname": "ImportWP",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Services",
+            "namespace": "",
+            "file": "plugins\\wp_import\\controllers\\import_action.js",
+            "line": 21,
+            "is_constructor": 1,
+            "extends": "BaseController"
         },
         "PencilBlue": {
             "name": "PencilBlue",
@@ -3025,7 +3149,7 @@
         {
             "file": "controllers\\api\\admin\\system\\cluster_api.js",
             "line": 48,
-            "description": "Causes the service registration storage to flush all status updates.  An API \nobject is returned to the client that specifies the correct amount of time to \nwait before the service registry is updated again by all nodes.",
+            "description": "Causes the service registration storage to flush all status updates.  An API\nobject is returned to the client that specifies the correct amount of time to\nwait before the service registry is updated again by all nodes.",
             "itemtype": "method",
             "name": "refresh",
             "params": [
@@ -3545,7 +3669,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 367,
+            "line": 375,
             "static": 1,
             "itemtype": "method",
             "name": "getDefaultSanitizationRules",
@@ -3553,7 +3677,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 378,
+            "line": 386,
             "static": 1,
             "itemtype": "method",
             "name": "sanitize",
@@ -3574,7 +3698,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 395,
+            "line": 403,
             "description": "Redirects a request to a different location",
             "itemtype": "method",
             "name": "redirect",
@@ -3594,7 +3718,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 405,
+            "line": 413,
             "description": "Generates an generic API response object",
             "static": 1,
             "itemtype": "method",
@@ -4518,23 +4642,27 @@
         },
         {
             "file": "include\\http\\request_handler.js",
-            "line": 18,
-            "description": "Responsible for processing a single req by delegating it to the correct controllers",
-            "class": "DocumentCreator",
+            "line": 34,
+            "description": "The fallback theme (pencilblue)",
+            "static": 1,
+            "itemtype": "property",
+            "name": "DEFAULT_THEME",
+            "type": "{String}",
+            "class": "RequestHandler",
             "module": "ErrorSuccess"
         },
         {
             "file": "include\\http\\request_handler.js",
-            "line": 1091,
+            "line": 1103,
             "description": "Processes a request:\n<ol>\n\t<li>Initialize localization</li>\n\t<li>if Public Route:\n\t\t<ol>\n\t\t\t<li>If Valid Content\n\t\t\t\t<ol><li>Serve Public Content</li></ol>\n\t\t\t</li>\n\t\t\t<li>Else Serve 404</li>\n\t\t</ol>\n\t</li>\n\t<li>Else Parse Cookies</li>\n\t<li>Open/Create a session</li>\n\t<li>Get Route</li>\n\n</ol>",
-            "class": "DocumentCreator",
+            "class": "RequestHandler",
             "module": "ErrorSuccess"
         },
         {
             "file": "include\\http\\request_handler.js",
-            "line": 1210,
+            "line": 1222,
             "description": "TODO Church this up a bit.  Make it a template and controller like 404.\nTODO install an encoder entity since node prints out function names in angle brackets",
-            "class": "DocumentCreator",
+            "class": "RequestHandler",
             "module": "ErrorSuccess"
         },
         {
@@ -5107,7 +5235,90 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 37,
+            "line": 38,
+            "description": "A setting service that sets and retrieves the settings for plugins",
+            "itemtype": "property",
+            "name": "pluginSettingsService",
+            "type": "{SimpleLayeredService}",
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 45,
+            "description": "A setting service that sets and retrieves the settings for plugins",
+            "itemtype": "property",
+            "name": "pluginSettingsService",
+            "type": "{SimpleLayeredService}",
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 54,
+            "description": "The absolute path to the plugins directory for this PecilBlue installation",
+            "itemtype": "property",
+            "name": "PLUGINS_DIR",
+            "type": "{String}",
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 61,
+            "description": "The name of the file that defines the plugin's properties",
+            "itemtype": "property",
+            "name": "DETAILS_FILE_NAME",
+            "type": "{String}",
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 68,
+            "description": "The name of the directory for each plugin that contains the public resources",
+            "itemtype": "property",
+            "name": "PUBLIC_DIR_NAME",
+            "type": "{String}",
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 76,
+            "description": "A hash of the plugins that are installed and active in this instance of PB.",
+            "itemtype": "property",
+            "name": "ACTIVE_PLUGINS",
+            "type": "{Object}",
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 83,
+            "description": "Retrieves the path to the active fav icon.",
+            "itemtype": "method",
+            "name": "getActiveIcon",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, URL_PATH_TO_ICON)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 99,
             "description": "Retrieves the names of the active plugins for this instance",
             "itemtype": "method",
             "name": "getActivePluginNames",
@@ -5121,7 +5332,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 47,
+            "line": 109,
             "description": "Retrieves a single setting for the specified plugin.",
             "itemtype": "method",
             "name": "getSetting",
@@ -5148,7 +5359,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 77,
+            "line": 139,
             "description": "Retrieves all of the settings for the specfied plugin.",
             "itemtype": "method",
             "name": "getSettings",
@@ -5168,7 +5379,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 89,
+            "line": 151,
             "description": "Replaces a single setting for the specified plugin",
             "itemtype": "method",
             "name": "setSetting",
@@ -5196,7 +5407,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 135,
+            "line": 197,
             "description": "Replaces the settings for the specified plugin.",
             "itemtype": "method",
             "name": "setSettings",
@@ -5220,7 +5431,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 169,
+            "line": 231,
             "description": "Replaces a single theme setting for the specified plugin",
             "itemtype": "method",
             "name": "setThemeSetting",
@@ -5248,7 +5459,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 215,
+            "line": 277,
             "description": "Replaces the theme settings for the specified plugin.",
             "itemtype": "method",
             "name": "setThemeSettings",
@@ -5272,7 +5483,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 249,
+            "line": 311,
             "description": "Retrieves a single theme setting value.",
             "itemtype": "method",
             "name": "getThemeSetting",
@@ -5296,7 +5507,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 277,
+            "line": 339,
             "description": "Retrieves the theme settings for the specified plugin",
             "itemtype": "method",
             "name": "getThemeSettings",
@@ -5316,7 +5527,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 288,
+            "line": 350,
             "description": "Indicates if a plugin by the specified identifier is installed.",
             "itemtype": "method",
             "name": "isInstalled",
@@ -5336,7 +5547,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 303,
+            "line": 365,
             "description": "Retrieves a plugin descriptor (plugin document)",
             "itemtype": "method",
             "name": "getPlugin",
@@ -5356,7 +5567,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 335,
+            "line": 397,
             "description": "Convenience function to generate a service to handle settings for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -5391,7 +5602,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 367,
+            "line": 429,
             "description": "Loads the settings from a details object and persists them in the DB.  Any\nexisting settings for the plugin are deleted before the new settings are\npersisted.",
             "itemtype": "method",
             "name": "resetSettings",
@@ -5411,7 +5622,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 418,
+            "line": 480,
             "description": "Loads the Theme settings from a details object and persists them in the DB.  Any\nexisting theme settings for the plugin are deleted before the new settings\nare persisted. If the plugin does not have a theme then false is provided in\nthe callback.",
             "itemtype": "method",
             "name": "resetThemeSettings",
@@ -5431,7 +5642,215 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 761,
+            "line": 538,
+            "description": "Retrieves the permission set for a given role.  All active plugins are\ninspected.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getPermissionsForRole",
+            "params": [
+                {
+                    "name": "role",
+                    "description": "The role to get permissions for",
+                    "type": "Integer|String"
+                }
+            ],
+            "return": {
+                "description": "A hash of the permissions",
+                "type": "Object"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 565,
+            "description": "Retrieves the file path to the public directory for the specified plugin.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getActivePluginDir",
+            "params": [
+                {
+                    "name": "pluginUid",
+                    "description": "A plugin's UID value",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "File path to the plugin's public directory",
+                "type": "String"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 580,
+            "description": "Inidicates if the specified plugin is active in this instance of PB.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isActivePlugin",
+            "params": [
+                {
+                    "name": "uid",
+                    "description": "The unique identifier for a plugin",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the plugin is active, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 591,
+            "description": "Generates a URL path to a public resource for a plugin.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "genPublicPath",
+            "params": [
+                {
+                    "name": "plugin",
+                    "description": "The UID of the plugin",
+                    "type": "String"
+                },
+                {
+                    "name": "relativePathToMedia",
+                    "description": "The relative path to the resource from\nthe plugin's public directory.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "URL path to the resource",
+                "type": "String"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 607,
+            "description": "Retrieves the details for the active plugins.",
+            "itemtype": "method",
+            "name": "getActivePlugins",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 627,
+            "description": "Retrieves the content templates for all of the active plugins",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getActiveContentTemplates",
+            "return": {
+                "description": "An array of objects",
+                "type": "Array"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 649,
+            "description": "Retrieves the inactive plugins for this instance of PencilBlue.  An inactive\nplugin is considered one who failed to install or one that failed to start\nproperly.",
+            "itemtype": "method",
+            "name": "getInactivePlugins",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 670,
+            "description": "Retrieves the available plugins.  An available plugin is one who is\nuninstalled but available to be installed.",
+            "itemtype": "method",
+            "name": "getAvailablePlugins",
+            "params": [
+                {
+                    "name": "active",
+                    "description": "An array of plugin detail objects.  Each object is\nrequired to have a uid property that is a string.",
+                    "type": "Array"
+                },
+                {
+                    "name": "inactive",
+                    "description": "An array of plugin details objects. Each object is\nrequired to have a uid property that is a string.",
+                    "type": "Array"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 750,
+            "description": "Retrieves a map of the system's plugin.  The map provides three properties:\nactive, inactive, available.",
+            "itemtype": "method",
+            "name": "getPluginMap",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Object)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 781,
+            "description": "Uninstalls the plugin with the specified UID.",
+            "itemtype": "method",
+            "name": "uninstallPlugin",
+            "params": [
+                {
+                    "name": "pluginUid",
+                    "description": "The unique plugin identifier",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 894,
             "description": "Installs a plugin by stepping through a series of steps that must be\ncompleted in order.  There is currently no fallback plan for a failed install.\nIn order for a plugin to be fully installed it must perform the following\nactions without error:\n<ol>\n<li>Load and parse the plugin's details.json file</li>\n<li>Pass validation</li>\n<li>Must not already be installed</li>\n<li>Successfully register itself with the system</li>\n<li>Successfully load any plugin settings</li>\n<li>Successfully load any theme settings</li>\n<li>Successfully execute the plugin's onInstall function</li>\n<li>Successfully initialize the plugin for runtime</li>\n</ol>",
             "itemtype": "method",
             "name": "installPlugin",
@@ -5453,13 +5872,59 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 946,
-            "description": "Initializes a plugin during startup or just after a plugin has been installed.",
+            "line": 1030,
+            "description": "Attempts to initialize all installed plugins.",
+            "itemtype": "method",
+            "name": "initPlugins",
             "params": [
                 {
-                    "name": "pluginName",
-                    "description": "",
+                    "name": "A",
+                    "description": "callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1094,
+            "description": "Initializes a plugin during startup or just after a plugin has been installed.",
+            "itemtype": "method",
+            "name": "initPlugin",
+            "params": [
+                {
+                    "name": "plugin",
+                    "description": "The plugin details",
                     "type": "Plugin"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1273,
+            "description": "Installs the dependencies for a plugin via NPM.",
+            "itemtype": "method",
+            "name": "installPluginDependencies",
+            "params": [
+                {
+                    "name": "pluginDirName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "dependencies",
+                    "description": "",
+                    "type": "Object"
                 },
                 {
                     "name": "cb",
@@ -5473,7 +5938,109 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1188,
+            "line": 1326,
+            "description": "Loads a module dependencies for the specified plugin.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "require",
+            "params": [
+                {
+                    "name": "pluginDirName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "moduleName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The entity returned by the \"require\" call.",
+                "type": "*"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1339,
+            "description": "Loads the localization files from the specified plugin directory and places\nthem into a hash where the key is the name of the localization file.",
+            "itemtype": "method",
+            "name": "getLocalizations",
+            "params": [
+                {
+                    "name": "pluginDirName",
+                    "description": "The name of the plugin directory",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Object)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1386,
+            "description": "Retrieves a plugin service prototype.  It is expected to be a prototype but\nit may also be an instance as along as that instance fufills all\nresponsbilities of the service interface.  When the desired service does not\nexist NULL is returned.",
+            "itemtype": "method",
+            "name": "getService",
+            "params": [
+                {
+                    "name": "serviceName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "pluginUid",
+                    "description": "The unique plugin identifier",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Service prototype",
+                "type": "Object"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1405,
+            "description": "Attempts to require the main module file for a plugin.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "loadMainModule",
+            "params": [
+                {
+                    "name": "pluginDirName",
+                    "description": "The name of the directory that the plugin is\ncontained within.",
+                    "type": "String"
+                },
+                {
+                    "name": "pathToModule",
+                    "description": "The name of the main module file.  It is also\nto pass this parameter as the absolute file path to the module.  The\nfunction first checks if the parameter is just the file name then checks to\nsee if it is an absolute path.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The mainmodule prototype",
+                "type": "Function"
+            },
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1432,
             "description": "Retrieves the absolute file path to a plugin's public directory",
             "static": 1,
             "itemtype": "method",
@@ -5494,7 +6061,10 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1201,
+            "line": 1445,
+            "static": 1,
+            "itemtype": "method",
+            "name": "getPluginsDir",
             "return": {
                 "description": "The absolute file path to the plugins directory",
                 "type": "String"
@@ -5505,8 +6075,18 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1208,
+            "line": 1454,
             "description": "Constructs the path to a specific plugin's details.json file",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getDetailsPath",
+            "params": [
+                {
+                    "name": "pluginDirName",
+                    "description": "The name of the directory that the plugin is\ncontained within.",
+                    "type": "String"
+                }
+            ],
             "return": {
                 "description": "The absolute file path to the details.json file for a plugin",
                 "type": "String"
@@ -5517,16 +6097,21 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1216,
+            "line": 1466,
             "description": "Attempts to load and parse the details.json file for a plugin.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "loadDetailsFile",
             "params": [
                 {
                     "name": "filePath",
-                    "description": "The absolute path to the details.json file"
+                    "description": "The absolute path to the details.json file",
+                    "type": "String"
                 },
                 {
                     "name": "cb",
-                    "description": "A callback that provides two parameters: cb(error, detailsObject)"
+                    "description": "A callback that provides two parameters: cb(error, detailsObject)",
+                    "type": "Function"
                 }
             ],
             "class": "PluginService",
@@ -5535,20 +6120,26 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1241,
+            "line": 1493,
             "description": "Validates a plugin's details.json file.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "validateDetails",
             "params": [
                 {
                     "name": "details",
-                    "description": "The details object to validate"
+                    "description": "The details object to validate",
+                    "type": "Object"
                 },
                 {
                     "name": "pluginDirName",
-                    "description": "The name of the directory containing the original\ndetails.json file that the details object was derived from."
+                    "description": "The name of the directory containing the original\ndetails.json file that the details object was derived from.",
+                    "type": "String"
                 },
                 {
                     "name": "cb",
-                    "description": "A callback that provides two parameters: cb(error, TRUE/FALSE).\nTRUE if the details object passes validation, FALSE if not."
+                    "description": "A callback that provides two parameters: cb(error, TRUE/FALSE).\nTRUE if the details object passes validation, FALSE if not.",
+                    "type": "Function"
                 }
             ],
             "class": "PluginService",
@@ -5557,8 +6148,11 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1471,
+            "line": 1738,
             "description": "Validates the path to the plugin's icon file.  The path is considered valid\nif the path to a valid file.  The path may be absolute or relative to the\nplugin's public directory.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "validateIconPath",
             "params": [
                 {
                     "name": "iconPath",
@@ -5579,7 +6173,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1492,
+            "line": 1760,
             "description": "Validates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
             "params": [
                 {
@@ -5601,7 +6195,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1505,
+            "line": 1773,
             "description": "Validates a setting from a details.json file.",
             "params": [
                 {
@@ -5623,12 +6217,16 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1540,
+            "line": 1808,
             "description": "Validates a details.json file's setting value.  The value is required to be a\nstring or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT\nallowed.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "validateSettingValue",
             "params": [
                 {
                     "name": "value",
-                    "description": "The value to validate"
+                    "description": "The value to validate",
+                    "type": "Boolean|Integer|Float|String"
                 }
             ],
             "return": {
@@ -5641,16 +6239,21 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1552,
+            "line": 1821,
             "description": "Retrieves all services (initialized).  The services are provided in the\ncallback.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getServices",
             "params": [
                 {
                     "name": "pathToPlugin",
-                    "description": "The absolute file path to the specific plugin directory."
+                    "description": "The absolute file path to the specific plugin directory.",
+                    "type": "String"
                 },
                 {
                     "name": "cb",
-                    "description": "A callback that provides two parameters: cb(error, servicesHash);"
+                    "description": "A callback that provides two parameters: cb(error, servicesHash);",
+                    "type": "Function"
                 }
             ],
             "class": "PluginService",
@@ -5659,16 +6262,21 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1592,
+            "line": 1862,
             "description": "Loads a plugin service and initializes it.  The service is required to\nimplement an \"init\" function. The service is then provided as a parameter in\nthe callback.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "loadService",
             "params": [
                 {
                     "name": "pathToService",
-                    "description": "The absolute file path to the service javascript file."
+                    "description": "The absolute file path to the service javascript file.",
+                    "type": "String"
                 },
                 {
                     "name": "cb",
-                    "description": "A callback that provides two parameters: cb(error, initializedService)"
+                    "description": "A callback that provides two parameters: cb(error, initializedService)",
+                    "type": "Function"
                 }
             ],
             "class": "PluginService",
@@ -5677,8 +6285,67 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1688,
+            "line": 1887,
+            "description": "Loads the controllers for a plugin by iterating through the files in the\nplugin's controllers directory.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "loadControllers",
+            "params": [
+                {
+                    "name": "pathToPlugin",
+                    "description": "The absolute file path to the plugin =",
+                    "type": "String"
+                },
+                {
+                    "name": "pluginUid",
+                    "description": "The unique identifier for the plugin",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1925,
+            "description": "Loads a controller for a plugin and attempts to register the route with the\nRequestHandler.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "loadController",
+            "params": [
+                {
+                    "name": "pathToController",
+                    "description": "The absolute file path to the controller",
+                    "type": "String"
+                },
+                {
+                    "name": "pluginUid",
+                    "description": "The unique identifier for the plugin",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 1977,
             "description": "Derives the name of a plugin service instance.  The function attempts to get\nthe name of the service by looking to see if the service has implemented the\ngetName function.  If it has not then the service name is set to be the file\nname minus any extension.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getServiceName",
             "params": [
                 {
                     "name": "pathToService",
@@ -7265,6 +7932,442 @@
             "module": "Session"
         },
         {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 27,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "BROKER",
+            "type": "{CommandBroker}",
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 34,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "BROKER",
+            "type": "{CommandBroker}",
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 41,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "COMMAND_CHANNEL",
+            "type": "{String}",
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 50,
+            "description": "Initializes the service and the broker implementation.  The broker is\ndetermined by the configuration value of \"command.broker\".  This value can\nbe \"redis\" for the out of the box implementation for Redis or an absolute\npath to another implementation.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: cb(Error, TRUE/FALSE)",
+                    "type": "Function"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 93,
+            "description": "Shuts down the command service and the broker if initialized",
+            "static": 1,
+            "itemtype": "method",
+            "name": "shutdown",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: cb(Error, TRUE/FALSE)",
+                    "type": "Function"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 111,
+            "description": "Registers a handler for incoming commands of the specified type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "registerForType",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The name/type of the command to handle",
+                    "type": "String"
+                },
+                {
+                    "name": "handler",
+                    "description": "A function that takes two parameters:\nhandler(channel, command). where channel is a string and command is an\nobject.",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the the handler was registered, FALSE if not.",
+                "type": "Boolean"
+            },
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 135,
+            "description": "Unregisters a handler for the specified type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "unregisterForType",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The name/type of the command that the handler is\nregistered for",
+                    "type": "String"
+                },
+                {
+                    "name": "handler",
+                    "description": "The handler function to unregister",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the handler was unregistered, FALSE if not.",
+                "type": "Boolean"
+            },
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 162,
+            "description": "Responsible for delegating out the received command to the registered\nhandlers.  The command parameter must be an object, must have a type\nproperty that is a string, and must have a registered handler for the\nspecified type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "notifyOfCommand",
+            "params": [
+                {
+                    "name": "command",
+                    "description": "The command to delegate",
+                    "type": "Object"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 203,
+            "description": "Sends a command to all processes iin the cluster and waits for a response\nfrom all before calling back.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "sendCommandToAllGetResponses",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The name/type of the command being sent",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "The options for the command.  The options object\nbecomes the command object.  Custom properties to be part of the command can\nbe added.  However, certain properties do have special meaning such as \"id\",\n\"to\", \"from\", \"timeout\", \"includeme\".  These special properties may be\noverriden by this function or one it calls in order for the commands to\nfunction properly.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "ignoreme",
+                            "description": "",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "name": "timeout",
+                            "description": "Timeout in milliseconds for each process to respond.",
+                            "type": "Integer",
+                            "optional": true,
+                            "optdefault": "2000"
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Array)",
+                    "type": "Function"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 274,
+            "description": "Sends a command to a single process in the cluster expecting a response.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "sendCommandGetResponse",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "onResponse",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 326,
+            "description": "Provides a mechanism to respond to a the entity that sent the command.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "sendInResponseTo",
+            "params": [
+                {
+                    "name": "command",
+                    "description": "The command that was sent to ths process",
+                    "type": "Object"
+                },
+                {
+                    "name": "responseCommand",
+                    "description": "The command to send back to the entity that sent the first command.",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Command ID)",
+                    "type": "Function"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 352,
+            "description": "Sends a command to the cluster",
+            "static": 1,
+            "itemtype": "method",
+            "name": "sendCommand",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The command name/type",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "The options that will be serialized and sent to the other processes in the cluster",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "to",
+                            "description": "The cluster process that should handle the message",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Command ID)",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\command_service.js",
+            "line": 400,
+            "description": "The global handler for incoming commands.  It registers itself with the\nbroker and then when messages are received it verifies that the message is\nmeant for this member of the cluster (or all members) then proceeds to\nhandoff to the function that will delegate out to the handlers.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "onCommandReceived",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": "The channel to listen for incoming commands",
+                    "type": "String"
+                },
+                {
+                    "name": "command",
+                    "description": "The command to verify and delegate",
+                    "type": "Object"
+                }
+            ],
+            "class": "CommandService",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 27,
+            "description": "Client used to publish commands to the cluster",
+            "itemtype": "property",
+            "name": "publishClient",
+            "type": "{Client}",
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 34,
+            "description": "Client used to subscribe to commands to the cluster",
+            "itemtype": "property",
+            "name": "publishClient",
+            "type": "{Client}",
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 43,
+            "description": "The hash of handlers for each channel subscribed to",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "itemtype": "property",
+            "name": "SUBSCRIBERS",
+            "type": "{Object}",
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 52,
+            "description": "Initializes the broker by creating the connections to Redis and registering\nfor the message event.",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 71,
+            "description": "Shuts down the broker by closing the open connections to Redis.",
+            "itemtype": "method",
+            "name": "shutdown",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, Boolean)",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 91,
+            "description": "Called when a member of the cluster has published a command.  The function\ninspects that it has a handler for the channel then delegates the command\nback to the handler.",
+            "itemtype": "method",
+            "name": "onCommandReceived",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": "The channel the message was pushed to",
+                    "type": "String"
+                },
+                {
+                    "name": "commandStr",
+                    "description": "The message that was published",
+                    "type": "String"
+                }
+            ],
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 115,
+            "description": "Sends a message to the specified channel",
+            "itemtype": "method",
+            "name": "publish",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": "The channel to send the message to",
+                    "type": "String"
+                },
+                {
+                    "name": "command",
+                    "description": "The command to send to the cluster",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: cb(Error, 1 on success/FALSE on failure)",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\command\\redis_command_broker.js",
+            "line": 134,
+            "description": "Registers a handler for messages on the specified channel.",
+            "itemtype": "method",
+            "name": "subscribe",
+            "params": [
+                {
+                    "name": "channel",
+                    "description": "The channel to listen for messages on",
+                    "type": "String"
+                },
+                {
+                    "name": "onCommandReceived",
+                    "description": "A handler function that takes two\narguments: onCommandReceived(channel, message) where channel is a string and\nmessage is an object.",
+                    "type": "Function"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "RedisCommandBroker",
+            "module": "Session"
+        },
+        {
             "file": "include\\system\\registry\\mongo_registration_provider.js",
             "line": 32,
             "description": "Retrieves the entire cluster status as an array of status objects.  The '_id'\nproperty uniquely identifies each process/node.",
@@ -8053,8 +9156,76 @@
             "submodule": "Validation"
         },
         {
+            "file": "include\\validation\\validation_service.js",
+            "line": 150,
+            "description": "Validates that the value is an integer.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isInt",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "The value under test",
+                    "type": "Integer"
+                },
+                {
+                    "name": "required",
+                    "description": "Indicates if the value is required. When\nFALSE, null will be an acceptable value.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "Indicates",
+                    "description": "if the value must be a number rather than a string representing a number.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the value is valid, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "ValidationService",
+            "module": "Services",
+            "submodule": "Validation"
+        },
+        {
+            "file": "include\\validation\\validation_service.js",
+            "line": 172,
+            "description": "Validates that the value is a float.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isFloat",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "The value under test",
+                    "type": "Float"
+                },
+                {
+                    "name": "required",
+                    "description": "Indicates if the value is required. When\nFALSE, null will be an acceptable value.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "Indicates",
+                    "description": "if the value must be a number rather than a string representing a number.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the value is valid, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "ValidationService",
+            "module": "Services",
+            "submodule": "Validation"
+        },
+        {
             "file": "include\\access_management.js",
-            "line": 38,
+            "line": 40,
             "description": "Retrieves the localized names of access levels",
             "itemtype": "method",
             "name": "getRoleNames",
@@ -8071,7 +9242,7 @@
         },
         {
             "file": "include\\access_management.js",
-            "line": 62,
+            "line": 64,
             "description": "Returns the constant name of an access level number",
             "itemtype": "method",
             "name": "getRoleName",
@@ -8088,7 +9259,7 @@
         },
         {
             "file": "include\\access_management.js",
-            "line": 107,
+            "line": 109,
             "description": "Check to see if a user meets security requirements",
             "itemtype": "method",
             "name": "isAuthorized",
@@ -8110,7 +9281,7 @@
         },
         {
             "file": "include\\access_management.js",
-            "line": 134,
+            "line": 136,
             "description": "Check to see if a session is authentic",
             "itemtype": "method",
             "name": "isAuthenticated",
@@ -8127,7 +9298,7 @@
         },
         {
             "file": "include\\access_management.js",
-            "line": 149,
+            "line": 151,
             "description": "One way encrypt a string",
             "itemtype": "method",
             "name": "encrypt",
@@ -8136,6 +9307,25 @@
                     "name": "valString!~YUIDOC_LINE~!#return",
                     "description": "{String} Encrypted string",
                     "type": "String"
+                }
+            ],
+            "class": "SecurityService",
+            "module": "Services",
+            "submodule": "Security"
+        },
+        {
+            "file": "include\\access_management.js",
+            "line": 164,
+            "static": 1,
+            "itemtype": "method",
+            "name": "generatePassword",
+            "params": [
+                {
+                    "name": "length",
+                    "description": "",
+                    "type": "Integer",
+                    "optional": true,
+                    "optdefault": "8"
                 }
             ],
             "class": "SecurityService",
@@ -8240,7 +9430,7 @@
         },
         {
             "file": "include\\config.js",
-            "line": 201,
+            "line": 211,
             "description": "Loads an external configuration.\nNOTE: This should only be called once by the core code at startup.  Calling\nthis function after the server starts may cause unintended behavior across\nthe system.",
             "class": "ContentService",
             "module": "Services"
@@ -8898,7 +10088,7 @@
             "description": "GoogleAnalytics - A sample for exemplifying what the main module file should\nlook like.",
             "author": "Brian Hyder <brian@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8911,7 +10101,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8924,7 +10114,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8937,7 +10127,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8950,7 +10140,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8959,7 +10149,7 @@
             "description": "Blog page of the pencilblue theme",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "PencilBlue 2014, All rights reserved",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8972,7 +10162,7 @@
                     "description": "A callback of the form: cb(error, array of objects)"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8981,7 +10171,7 @@
             "description": "BlogFilter - Responsible for looking up a specific filter (section, article, page, author) and rendering it.",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "PencilBlue, LLC. 2014 All Rights Reserved",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8990,7 +10180,7 @@
             "description": "HomePageSettings - Settings for the display of home page content in the Portfolio theme",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -8999,7 +10189,7 @@
             "description": "Index - The home page controller of the portfolio theme.",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9012,7 +10202,7 @@
                     "description": "The callback.  It does not require a an error parameter.  All\nerrors should be handled by the controller and format the appropriate\n response.  The system will attempt to catch any catastrophic errors but\n makes no guarantees."
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9025,7 +10215,7 @@
                     "description": "A callback of the form: cb(error, array of objects)"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9034,7 +10224,7 @@
             "description": "SaveHomePageSettings - Saves settings for the display of home page content in the Portfolio theme",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9043,7 +10233,7 @@
             "description": "Portfolio - A portfolio site theme for PencilBlue",
             "author": "Blake Callens <blake@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9056,7 +10246,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9069,7 +10259,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9082,7 +10272,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9095,7 +10285,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9107,7 +10297,7 @@
             "return": {
                 "description": ""
             },
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9125,7 +10315,7 @@
                     "description": "The callback.  It does not require a an error parameter.  All \nerrors should be handled by the controller and format the appropriate\n response.  The system will attempt to catch any catastrophic errors but \n makes no guarantees."
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9139,7 +10329,7 @@
                     "type": "Function"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9152,7 +10342,7 @@
                     "description": "A callback of the form: cb(error, array of objects)"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9164,7 +10354,7 @@
             "return": {
                 "description": ""
             },
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9182,7 +10372,7 @@
                     "description": "The callback.  It does not require a an error parameter.  All \nerrors should be handled by the controller and format the appropriate\n response.  The system will attempt to catch any catastrophic errors but \n makes no guarantees."
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9195,7 +10385,7 @@
                     "description": "A callback of the form: cb(error, array of objects)"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9204,7 +10394,7 @@
             "description": "TextCreaterService - An example of a service that generates random text.",
             "author": "Brian Hyder <brian@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC.  All Rights Reserved",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9217,14 +10407,14 @@
                     "description": "A callback that should provide one argument: cb(error) or cb(null) \nif initialization proceeded successfully."
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
             "file": "plugins\\sample\\services\\text_creator.js",
             "line": 27,
             "description": "Generates a random string of 5 characters.  The service functions can return \nvalues or use call backs.  There is no standard for how a service should \nprovide functionality.  The only requirement is that an instance be provided \nas the exported object with the understanding that services should be \nstateless.",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9233,7 +10423,7 @@
             "description": "SamplePlugin - A sample for exemplifying what the main module file should \nlook like.",
             "author": "Brian Hyder <brian@pencilblue.org>",
             "copyright": "2014 PencilBlue, LLC",
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9246,7 +10436,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9259,7 +10449,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9272,7 +10462,7 @@
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
                 }
             ],
-            "class": "PencilBlue",
+            "class": "ImportWP",
             "module": "Services"
         },
         {
@@ -9283,6 +10473,113 @@
                 {
                     "name": "cb",
                     "description": "A callback that must be called upon completion.  cb(err, result).  \nThe result is ignored"
+                }
+            ],
+            "class": "ImportWP",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\controllers\\import_action.js",
+            "line": 31,
+            "see": [
+                "BaseController#render"
+            ],
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "ImportWP",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\services\\wp_xml_parse.js",
+            "line": 22,
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\services\\wp_xml_parse.js",
+            "line": 29,
+            "description": "The absolute file path to the directory that stores media",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "itemtype": "property",
+            "name": "MEDIA_DIRECTORY",
+            "type": "{String}",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\services\\wp_xml_parse.js",
+            "line": 38,
+            "static": 1,
+            "itemtype": "method",
+            "name": "init",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\wp_import.js",
+            "line": 1,
+            "description": "WordPress Import: import a WordPress blog's content into PencilBlue",
+            "author": "Blake Callens <blake@pencilblue.org>",
+            "copyright": "2014 PencilBlue, LLC",
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\wp_import.js",
+            "line": 9,
+            "description": "Called when the application is being installed for the first time.",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\wp_import.js",
+            "line": 19,
+            "description": "Called when the application is uninstalling this plugin.  The plugin should\nmake every effort to clean up any plugin-specific DB items or any in function\noverrides it makes.",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\wp_import.js",
+            "line": 31,
+            "description": "Called when the application is starting up. The function is also called at\nthe end of a successful install. It is guaranteed that all core PB services\nwill be available including access to the core DB.",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\wp_import.js",
+            "line": 52,
+            "description": "Called when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that must be called upon completion.  cb(err, result).\nThe result is ignored"
                 }
             ],
             "class": "PencilBlue",
@@ -9297,7 +10594,7 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 52,
+            "line": 53,
             "description": "Initializes the request handler.  This causes all system routes to be\nregistered.",
             "static": 1,
             "itemtype": "method",
@@ -9314,7 +10611,7 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 64,
+            "line": 65,
             "description": "Initializes the installed plugins.",
             "static": 1,
             "itemtype": "method",
@@ -9331,7 +10628,7 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 74,
+            "line": 75,
             "description": "Attempts to initialize a connection pool to the core database",
             "static": 1,
             "itemtype": "method",
@@ -9348,7 +10645,7 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 97,
+            "line": 98,
             "description": "Initializes the HTTP server(s).  When SSL is enabled two servers are created.\nOne to handle incoming HTTP traffic and one to handle HTTPS traffic.",
             "static": 1,
             "itemtype": "method",
@@ -9365,7 +10662,7 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 137,
+            "line": 138,
             "description": "The function that handles normal server traffic.  The function ensures that\nthe incoming request is delegated out appropriately.  When SSL Termination\nis in use if the 'x-forwarded-proto' header does equal 'https' then the\nrequest is delegated to the handoff function so the request can be\nredirected appropriately.",
             "static": 1,
             "itemtype": "method",
@@ -9387,7 +10684,7 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 168,
+            "line": 169,
             "description": "Handles traffic that comes in for HTTP when SSL is enabled.  The request is\nredirected to the appropriately protected HTTPS url.",
             "static": 1,
             "itemtype": "method",
@@ -9409,11 +10706,28 @@
         },
         {
             "file": "pencilblue.js",
-            "line": 192,
+            "line": 193,
             "description": "Initializes server registration.",
             "static": 1,
             "itemtype": "method",
             "name": "initServerRegistration",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters: cb(Error, [RESULT])",
+                    "type": "Function"
+                }
+            ],
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "pencilblue.js",
+            "line": 203,
+            "description": "Initializes the command service by calling its \"init\" function.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "initCommandService",
             "params": [
                 {
                     "name": "cb",
@@ -9429,6 +10743,78 @@
         {
             "message": "param name missing: {Object}",
             "line": " controllers\\base_controller.js:313"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:538"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:565"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:580"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:591"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:627"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1326"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1386"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1405"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1432"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1445"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1454"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1738"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1760"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1773"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1808"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\service\\entities\\plugin_service.js:1977"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\system\\command\\command_service.js:111"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\system\\command\\command_service.js:135"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -9509,6 +10895,10 @@
         {
             "message": "unknown tag: copyright",
             "line": " plugins\\sample\\sample.js:1"
+        },
+        {
+            "message": "unknown tag: copyright",
+            "line": " plugins\\wp_import\\wp_import.js:1"
         },
         {
             "message": "Missing item type\nDeletes an article",
@@ -10043,68 +11433,24 @@
             "line": " include\\dao\\db_manager.js:39"
         },
         {
-            "message": "Missing item type\nResponsible for processing a single req by delegating it to the correct controllers",
-            "line": " include\\http\\request_handler.js:18"
-        },
-        {
             "message": "Missing item type\nProcesses a request:\n<ol>\n\t<li>Initialize localization</li>\n\t<li>if Public Route:\n\t\t<ol>\n\t\t\t<li>If Valid Content\n\t\t\t\t<ol><li>Serve Public Content</li></ol>\n\t\t\t</li>\n\t\t\t<li>Else Serve 404</li>\n\t\t</ol>\n\t</li>\n\t<li>Else Parse Cookies</li>\n\t<li>Open/Create a session</li>\n\t<li>Get Route</li>\n\n</ol>",
-            "line": " include\\http\\request_handler.js:1091"
+            "line": " include\\http\\request_handler.js:1103"
         },
         {
             "message": "Missing item type\nTODO Church this up a bit.  Make it a template and controller like 404.\nTODO install an encoder entity since node prints out function names in angle brackets",
-            "line": " include\\http\\request_handler.js:1210"
+            "line": " include\\http\\request_handler.js:1222"
         },
         {
             "message": "Missing item type\nReplaces an article or page layout's ^media_display^ tag with a media embed",
             "line": " include\\service\\entities\\article_service.js:433"
         },
         {
-            "message": "Missing item type\nInitializes a plugin during startup or just after a plugin has been installed.",
-            "line": " include\\service\\entities\\plugin_service.js:946"
-        },
-        {
-            "message": "Missing item type",
-            "line": " include\\service\\entities\\plugin_service.js:1201"
-        },
-        {
-            "message": "Missing item type\nConstructs the path to a specific plugin's details.json file",
-            "line": " include\\service\\entities\\plugin_service.js:1208"
-        },
-        {
-            "message": "Missing item type\nAttempts to load and parse the details.json file for a plugin.",
-            "line": " include\\service\\entities\\plugin_service.js:1216"
-        },
-        {
-            "message": "Missing item type\nValidates a plugin's details.json file.",
-            "line": " include\\service\\entities\\plugin_service.js:1241"
-        },
-        {
-            "message": "Missing item type\nValidates the path to the plugin's icon file.  The path is considered valid\nif the path to a valid file.  The path may be absolute or relative to the\nplugin's public directory.",
-            "line": " include\\service\\entities\\plugin_service.js:1471"
-        },
-        {
             "message": "Missing item type\nValidates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
-            "line": " include\\service\\entities\\plugin_service.js:1492"
+            "line": " include\\service\\entities\\plugin_service.js:1760"
         },
         {
             "message": "Missing item type\nValidates a setting from a details.json file.",
-            "line": " include\\service\\entities\\plugin_service.js:1505"
-        },
-        {
-            "message": "Missing item type\nValidates a details.json file's setting value.  The value is required to be a\nstring or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT\nallowed.",
-            "line": " include\\service\\entities\\plugin_service.js:1540"
-        },
-        {
-            "message": "Missing item type\nRetrieves all services (initialized).  The services are provided in the\ncallback.",
-            "line": " include\\service\\entities\\plugin_service.js:1552"
-        },
-        {
-            "message": "Missing item type\nLoads a plugin service and initializes it.  The service is required to\nimplement an \"init\" function. The service is then provided as a parameter in\nthe callback.",
-            "line": " include\\service\\entities\\plugin_service.js:1592"
-        },
-        {
-            "message": "Missing item type\nDerives the name of a plugin service instance.  The function attempts to get\nthe name of the service by looking to see if the service has implemented the\ngetName function.  If it has not then the service name is set to be the file\nname minus any extension.",
-            "line": " include\\service\\entities\\plugin_service.js:1688"
+            "line": " include\\service\\entities\\plugin_service.js:1773"
         },
         {
             "message": "Missing item type\nService for managing the site's navigation",
@@ -10156,7 +11502,7 @@
         },
         {
             "message": "Missing item type\nLoads an external configuration.\nNOTE: This should only be called once by the core code at startup.  Calling\nthis function after the server starts may cause unintended behavior across\nthe system.",
-            "line": " include\\config.js:201"
+            "line": " include\\config.js:211"
         },
         {
             "message": "Missing item type\nRequirements - Responsible for declaring all of the system types and modules\nneeded to construct the system API object.",
@@ -10285,6 +11631,30 @@
         {
             "message": "Missing item type\nCalled when the application is gracefully shutting down.  No guarantees are \nprovided for how much time will be provided the plugin to shut down.",
             "line": " plugins\\sample\\sample.js:44"
+        },
+        {
+            "message": "Missing item type",
+            "line": " plugins\\wp_import\\services\\wp_xml_parse.js:22"
+        },
+        {
+            "message": "Missing item type\nWordPress Import: import a WordPress blog's content into PencilBlue",
+            "line": " plugins\\wp_import\\wp_import.js:1"
+        },
+        {
+            "message": "Missing item type\nCalled when the application is being installed for the first time.",
+            "line": " plugins\\wp_import\\wp_import.js:9"
+        },
+        {
+            "message": "Missing item type\nCalled when the application is uninstalling this plugin.  The plugin should\nmake every effort to clean up any plugin-specific DB items or any in function\noverrides it makes.",
+            "line": " plugins\\wp_import\\wp_import.js:19"
+        },
+        {
+            "message": "Missing item type\nCalled when the application is starting up. The function is also called at\nthe end of a successful install. It is guaranteed that all core PB services\nwill be available including access to the core DB.",
+            "line": " plugins\\wp_import\\wp_import.js:31"
+        },
+        {
+            "message": "Missing item type\nCalled when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
+            "line": " plugins\\wp_import\\wp_import.js:52"
         },
         {
             "message": "Missing item type\nTo be called when the configuration is loaded.  The function is responsible\nfor triggered the startup of the HTTP connection listener as well as start a\nconnection pool to the core DB.",

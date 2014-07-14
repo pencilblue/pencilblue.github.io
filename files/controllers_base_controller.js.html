@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.3</em>
+            <em>API Docs for: 0.2.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -59,6 +59,8 @@
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
@@ -105,9 +109,13 @@
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
             
                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
                 <li><a href="../classes/SaveArticleDraft.html">SaveArticleDraft</a></li>
             
@@ -547,11 +555,19 @@ BaseController.prototype.getSanitizationRules = function() {
  */
 BaseController.getContentSanitizationRules = function() {
     return {
-        allowedTags: [ &#x27;h3&#x27;, &#x27;h4&#x27;, &#x27;h5&#x27;, &#x27;h6&#x27;, &#x27;blockquote&#x27;, &#x27;p&#x27;, &#x27;a&#x27;, &#x27;ul&#x27;, &#x27;ol&#x27;, &#x27;nl&#x27;, &#x27;li&#x27;, &#x27;b&#x27;, &#x27;i&#x27;, &#x27;strong&#x27;, &#x27;em&#x27;, &#x27;strike&#x27;, &#x27;code&#x27;, &#x27;hr&#x27;, &#x27;br&#x27;, &#x27;div&#x27;, &#x27;table&#x27;, &#x27;thead&#x27;, &#x27;caption&#x27;, &#x27;tbody&#x27;, &#x27;tr&#x27;, &#x27;th&#x27;, &#x27;td&#x27;, &#x27;pre&#x27;, &#x27;img&#x27;, &#x27;u&#x27; ],
+        allowedTags: [ &#x27;h1&#x27;, &#x27;h2&#x27;, &#x27;h3&#x27;, &#x27;h4&#x27;, &#x27;h5&#x27;, &#x27;h6&#x27;, &#x27;blockquote&#x27;, &#x27;p&#x27;, &#x27;a&#x27;, &#x27;ul&#x27;, &#x27;ol&#x27;, &#x27;nl&#x27;, &#x27;li&#x27;, &#x27;b&#x27;, &#x27;i&#x27;, &#x27;strong&#x27;, &#x27;em&#x27;, &#x27;strike&#x27;, &#x27;code&#x27;, &#x27;hr&#x27;, &#x27;br&#x27;, &#x27;div&#x27;, &#x27;table&#x27;, &#x27;thead&#x27;, &#x27;caption&#x27;, &#x27;tbody&#x27;, &#x27;tr&#x27;, &#x27;th&#x27;, &#x27;td&#x27;, &#x27;pre&#x27;, &#x27;img&#x27;, &#x27;u&#x27;, &#x27;span&#x27; ],
         allowedAttributes: {
-            a: [ &#x27;href&#x27;, &#x27;name&#x27;, &#x27;target&#x27; ],
-            img: [ &#x27;src&#x27; ],
-            p: [&#x27;align&#x27;]
+            a: [ &#x27;href&#x27;, &#x27;name&#x27;, &#x27;target&#x27;, &#x27;class&#x27; ],
+            img: [ &#x27;src&#x27;, &#x27;class&#x27; ],
+            p: [&#x27;align&#x27;, &#x27;class&#x27;],
+            h1: [&#x27;style&#x27;, &#x27;class&#x27;],
+            h2: [&#x27;style&#x27;, &#x27;class&#x27;],
+            h3: [&#x27;style&#x27;, &#x27;class&#x27;],
+            h4: [&#x27;style&#x27;, &#x27;class&#x27;],
+            h5: [&#x27;style&#x27;, &#x27;class&#x27;],
+            h6: [&#x27;style&#x27;, &#x27;class&#x27;],
+            div: [&#x27;style&#x27;, &#x27;class&#x27;],
+            span: [&#x27;style&#x27;, &#x27;class&#x27;]
         },
 
         // Lots of these won&#x27;t come up by default because we don&#x27;t allow them

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.3</em>
+            <em>API Docs for: 0.2.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -59,6 +59,8 @@
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
@@ -105,9 +109,13 @@
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
             
                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
                 <li><a href="../classes/SaveArticleDraft.html">SaveArticleDraft</a></li>
             
@@ -290,6 +298,8 @@ for ensuring that all system services are avaialble by requiring the
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
         
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
         
         
     </ul>
@@ -303,6 +313,24 @@ for ensuring that all system services are avaialble by requiring the
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
+                        
+                            <li class="index-item method">
+                                <a href="#method_init">init</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_initCommandService">initCommandService</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
                         
                             <li class="index-item method">
                                 <a href="#method_initDBConnections">initDBConnections</a>
@@ -367,16 +395,21 @@ for ensuring that all system services are avaialble by requiring the
                                 
                             </li>
                         
-                            <li class="index-item method">
-                                <a href="#method_render">render</a>
+                    </ul>
+                </div>
+            
 
-                                
-                                
-                            </li>
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
                         
-                            <li class="index-item method">
-                                <a href="#method_render">render</a>
+                            <li class="index-item property private">
+                                <a href="#property_MEDIA_DIRECTORY">MEDIA_DIRECTORY</a>
 
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -388,13 +421,158 @@ for ensuring that all system services are avaialble by requiring the
             
 
             
-
-            
         </div>
 
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_init" class="method item">
+    <h3 class="name"><code>init</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l38"><code>plugins\wp_import\services\wp_xml_parse.js:38</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_initCommandService" class="method item">
+    <h3 class="name"><code>initCommandService</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/pencilblue.js.html#l203"><code>pencilblue.js:203</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initializes the command service by calling its &quot;init&quot; function.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, [RESULT])</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
 
                 
                     <div id="method_initDBConnections" class="method item">
@@ -441,7 +619,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l74"><code>pencilblue.js:74</code></a>
+        <a href="../files/pencilblue.js.html#l75"><code>pencilblue.js:75</code></a>
         
         </p>
 
@@ -532,7 +710,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l64"><code>pencilblue.js:64</code></a>
+        <a href="../files/pencilblue.js.html#l65"><code>pencilblue.js:65</code></a>
         
         </p>
 
@@ -623,7 +801,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l52"><code>pencilblue.js:52</code></a>
+        <a href="../files/pencilblue.js.html#l53"><code>pencilblue.js:53</code></a>
         
         </p>
 
@@ -715,7 +893,7 @@ registered.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l97"><code>pencilblue.js:97</code></a>
+        <a href="../files/pencilblue.js.html#l98"><code>pencilblue.js:98</code></a>
         
         </p>
 
@@ -807,7 +985,7 @@ One to handle incoming HTTP traffic and one to handle HTTPS traffic.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l192"><code>pencilblue.js:192</code></a>
+        <a href="../files/pencilblue.js.html#l193"><code>pencilblue.js:193</code></a>
         
         </p>
 
@@ -904,7 +1082,7 @@ One to handle incoming HTTP traffic and one to handle HTTPS traffic.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l137"><code>pencilblue.js:137</code></a>
+        <a href="../files/pencilblue.js.html#l138"><code>pencilblue.js:138</code></a>
         
         </p>
 
@@ -1021,7 +1199,7 @@ redirected appropriately.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l168"><code>pencilblue.js:168</code></a>
+        <a href="../files/pencilblue.js.html#l169"><code>pencilblue.js:169</code></a>
         
         </p>
 
@@ -1085,35 +1263,28 @@ redirected to the appropriately protected HTTPS url.</p>
 </div>
 
                 
-                    <div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
+            </div>
+        
 
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>cb</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_MEDIA_DIRECTORY" class="property item private">
+    <h3 class="name"><code>MEDIA_DIRECTORY</code></h3>
+    <span class="type">String</span>
 
     
 
+    
+        <span class="flag private">private</span>
     
 
     
 
     
-
-    
-
-    
-
+        <span class="flag static">static</span>
     
 
     <div class="meta">
@@ -1127,10 +1298,9 @@ redirected to the appropriately protected HTTPS url.</p>
             
         
         
-        <a href="../files/plugins_sample_controllers_hello_world.js.html#l19"><code>plugins\sample\controllers\hello_world.js:19</code></a>
+        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l29"><code>plugins\wp_import\services\wp_xml_parse.js:29</code></a>
         
         </p>
-
 
         
 
@@ -1138,133 +1308,10 @@ redirected to the appropriately protected HTTPS url.</p>
     </div>
 
     <div class="description">
-        <p>This is the function that will be called by the system&#39;s RequestHandler.  It 
-will map the incoming route to the ones below and then instantiate this 
-prototype.  The request handler will then proceed to call this function.<br>Its callback should contain everything needed in order to provide a response.</p>
+        <p>The absolute file path to the directory that stores media</p>
 
     </div>
 
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">cb</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The callback.  It does not require a an error parameter.  All 
-errors should be handled by the controller and format the appropriate
- response.  The system will attempt to catch any catastrophic errors but 
- makes no guarantees.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>cb</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/plugins_sample_controllers_test_page.js.html#l17"><code>plugins\sample\controllers\test_page.js:17</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>This is the function that will be called by the system&#39;s RequestHandler.  It 
-will map the incoming route to the ones below and then instantiate this 
-prototype.  The request handler will then proceed to call this function.<br>Its callback should contain everything needed in order to provide a response.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">cb</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The callback.  It does not require a an error parameter.  All 
-errors should be handled by the controller and format the appropriate
- response.  The system will attempt to catch any catastrophic errors but 
- makes no guarantees.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
     
 
     
@@ -1274,8 +1321,6 @@ errors should be handled by the controller and format the appropriate
 
                 
             </div>
-        
-
         
 
         
