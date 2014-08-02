@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>controllers\index.js - PencilBlue</title>
+    <title>controllers/index.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.0</em>
+            <em>API Docs for: 0.2.2</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -47,7 +47,11 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -58,6 +62,8 @@
                 <li><a href="../classes/ClientJS.html">ClientJS</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
             
                 <li><a href="../classes/CommandService.html">CommandService</a></li>
             
@@ -81,6 +87,12 @@
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
@@ -97,15 +109,31 @@
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
             
                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
                 <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
@@ -200,7 +228,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: controllers\index.js</h1>
+                        <h1 class="file-heading">File: controllers/index.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -445,12 +473,13 @@ Index.prototype.loadContent = function(articleCallback) {
 Index.prototype.renderContent = function(content, contentSettings, themeSettings, index, cb) {
     var self = this;
 
-    var isPage        = content.object_type === &#x27;page&#x27;
-    var showByLine    = contentSettings.display_bylines &amp;&amp; !isPage;
-    var showTimestamp = contentSettings.display_timestamp &amp;&amp; !isPage;
-    var ats           = new pb.TemplateService(this.ls);
+    var isPage           = content.object_type === &#x27;page&#x27;
+    var showByLine       = contentSettings.display_bylines &amp;&amp; !isPage;
+    var showTimestamp    = contentSettings.display_timestamp &amp;&amp; !isPage;
+    var ats              = new pb.TemplateService(this.ls);
+    var contentUrlPrefix = isPage ? &#x27;/page/&#x27; : &#x27;/article/&#x27;;
     self.ts.reprocess = false;
-    ats.registerLocal(&#x27;article_headline&#x27;, new pb.TemplateValue(&#x27;&lt;a href=&quot;&#x27; + pb.UrlService.urlJoin(&#x27;/article/&#x27;, content.url) + &#x27;&quot;&gt;&#x27; + content.headline + &#x27;&lt;/a&gt;&#x27;, false));
+    ats.registerLocal(&#x27;article_headline&#x27;, new pb.TemplateValue(&#x27;&lt;a href=&quot;&#x27; + pb.UrlService.urlJoin(contentUrlPrefix, content.url) + &#x27;&quot;&gt;&#x27; + content.headline + &#x27;&lt;/a&gt;&#x27;, false));
     ats.registerLocal(&#x27;article_headline_nolink&#x27;, content.headline);
     ats.registerLocal(&#x27;article_subheading&#x27;, content.subheading ? content.subheading : &#x27;&#x27;);
     ats.registerLocal(&#x27;article_subheading_display&#x27;, content.subheading ? &#x27;&#x27; : &#x27;display:none;&#x27;);
@@ -467,7 +496,7 @@ Index.prototype.renderContent = function(content, contentSettings, themeSettings
     ats.registerLocal(&#x27;author_position&#x27;, content.author_position ? content.author_position : &#x27;&#x27;);
     ats.registerLocal(&#x27;media_body_style&#x27;, content.media_body_style ? content.media_body_style : &#x27;&#x27;);
     ats.registerLocal(&#x27;comments&#x27;, function(flag, cb) {
-       if (content.object_type === &#x27;page&#x27; || !contentSettings.allow_comments) {
+       if (isPage || !contentSettings.allow_comments) {
            cb(null, &#x27;&#x27;);
            return;
        }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\service\entities\plugin_service.js - PencilBlue</title>
+    <title>include/service/entities/plugin_service.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.0</em>
+            <em>API Docs for: 0.2.2</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -47,7 +47,11 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -58,6 +62,8 @@
                 <li><a href="../classes/ClientJS.html">ClientJS</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
             
                 <li><a href="../classes/CommandService.html">CommandService</a></li>
             
@@ -81,6 +87,12 @@
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
@@ -97,15 +109,31 @@
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
             
                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
                 <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
@@ -200,7 +228,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: include\service\entities\plugin_service.js</h1>
+                        <h1 class="file-heading">File: include/service/entities/plugin_service.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -300,6 +328,38 @@ PluginService.prototype.getActiveIcon = function(cb) {
 			cb(err, &#x27;/favicon.ico&#x27;);
 		}
 	});
+};
+
+/**
+ * Remove the active plugin entry from the current PB process.
+ * NOTE: it is not recommended to call this directly.
+ * @static
+ * @method deactivatePlugin
+ * @param {String} pluginUid
+ * @return {Boolean}
+ */
+PluginService.deactivatePlugin = function(pluginUid) {
+    if (!pb.validation.validateNonEmptyStr(pluginUid)) {
+        throw new Error(&#x27;A non-existent or empty plugin UID was passed&#x27;);
+    }
+
+    if (ACTIVE_PLUGINS[pluginUid]) {
+
+        delete ACTIVE_PLUGINS[pluginUid];
+        return true;
+    }
+    return false;
+};
+
+/**
+ * Retrieves the main module prototype for the specified active plugin
+ * @static
+ * @method getActiveMainModule
+ * @param {String} pluginUid
+ * @return {Function} The prototype that is the plugin&#x27;s main module.
+ */
+PluginService.getActiveMainModule = function(pluginUid) {
+    return ACTIVE_PLUGINS[pluginUid] ? ACTIVE_PLUGINS[pluginUid].main_module : null;
 };
 
 /**
@@ -747,7 +807,7 @@ PluginService.prototype.resetThemeSettings = function(details, cb) {
  * @static
  * @method getPermissionsForRole
  * @param {Integer|String} role The role to get permissions for
- * @returns {Object} A hash of the permissions
+ * @return {Object} A hash of the permissions
  */
 PluginService.getPermissionsForRole = function(role) {
 	if (!isNaN(role)) {
@@ -773,7 +833,7 @@ PluginService.getPermissionsForRole = function(role) {
  * @static
  * @method getActivePluginDir
  * @param {String} pluginUid A plugin&#x27;s UID value
- * @returns {String} File path to the plugin&#x27;s public directory
+ * @return {String} File path to the plugin&#x27;s public directory
  */
 PluginService.getActivePluginPublicDir = function(pluginUid) {
 	var publicPath = null;
@@ -788,7 +848,7 @@ PluginService.getActivePluginPublicDir = function(pluginUid) {
  * @static
  * @method isActivePlugin
  * @param {String} uid The unique identifier for a plugin
- * @returns {Boolean} TRUE if the plugin is active, FALSE if not
+ * @return {Boolean} TRUE if the plugin is active, FALSE if not
  */
 PluginService.isActivePlugin = function(uid) {
 	return ACTIVE_PLUGINS[uid] !== undefined;
@@ -801,7 +861,7 @@ PluginService.isActivePlugin = function(uid) {
  * @param {String} plugin The UID of the plugin
  * @param {String} relativePathToMedia The relative path to the resource from
  * the plugin&#x27;s public directory.
- * @returns {String} URL path to the resource
+ * @return {String} URL path to the resource
  */
 PluginService.genPublicPath = function(plugin, relativePathToMedia) {
 	if (!pb.utils.isString(plugin) || !pb.utils.isString(relativePathToMedia)) {
@@ -834,7 +894,7 @@ PluginService.prototype.getActivePlugins = function(cb) {
  * Retrieves the content templates for all of the active plugins
  * @static
  * @method getActiveContentTemplates
- * @returns {Array} An array of objects
+ * @return {Array} An array of objects
  */
 PluginService.getActiveContentTemplates = function() {
 
@@ -919,7 +979,8 @@ PluginService.prototype.getAvailablePlugins = function(active, inactive, cb) {
 						plugins.push({
 							uid: dirName,
 							dirName: dirName,
-							description: &quot;An invalid details file was provided for plugin. &quot;+err.stack
+							description: &quot;Failed to load &amp; parse the details.json file.&quot;,
+                            validationErrors: [&#x27;An invalid details file was provided for plugin. &#x27;+err.stack]
 						});
 						callback(null, false);
 						return;
@@ -988,113 +1049,42 @@ PluginService.prototype.getPluginMap = function(cb) {
  * Uninstalls the plugin with the specified UID.
  * @method uninstallPlugin
  * @param {String} pluginUid The unique plugin identifier
- * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+ * @param {Object} options
+ * @param {String} [options.jobId] Required when unintalling from the executing
+ * process instead of calling upon the cluster.
+ * @param {Boolean} [options.forCluster=true] When true or not provided the function
+ * instructs the cluster to uninstall the plugin.  When explicitly FALSE the
+ * function installs the plugin from the executing process.
+ * @param {Function} [cb] A callback that provides two parameters: cb(Error, Boolean)
  */
-PluginService.prototype.uninstallPlugin = function(pluginUid, cb) {
+PluginService.prototype.uninstallPlugin = function(pluginUid, options, cb) {
 	var self = this;
+
+    if (pb.utils.isFunction(options)) {
+        cb = options;
+        options = {};
+    }
+    if (!pb.utils.isObject(options)) {
+        options = {};
+    }
+    if (!pb.utils.isFunction(cb)) {
+        cb = pb.utils.cb;
+    }
 
 	//log start of operation
 	if (pb.log.isDebug()) {
-		pb.log.debug(&quot;PluginService:[%s] Attempting uninstall&quot;, pluginUid);
+		pb.log.debug(&quot;PluginService:[%s] Attempting uninstall with options: %s&quot;, pluginUid, util.inspect(options));
 	}
 
-	//construct sequential tasks
-	var plugin = null;
-	var tasks = [
 
-         //load plugin
-         function(callback) {
-        	 pb.log.debug(&#x27;PluginService:[%s] Attempting to load plugin &#x27;, pluginUid);
-        	 self.getPlugin(pluginUid, function(err, pluginObj) {
-        		if (util.isError(err)) {
-        			callback(err, false);
-        			return;
-        		}
-        		else if (!pluginObj) {
-        			callback(new Error(&quot;The [&quot;+pluginUid+&quot;] plugin is not installed&quot;), false);
-        			return;
-        		}
-        		plugin = pluginObj;
-        		callback(err, true);
-        	 });
-         },
-
-         //call onUninstall
-         function(callback) {
-        	 if (!PluginService.isActivePlugin(pluginUid)) {
-        		 pb.log.warn(&quot;PluginService:[%s] Skipping call to plugin&#x27;s onUninstall function.  Main module was not active.&quot;, pluginUid);
-        		 callback(null, true);
-        		 return;
-        	 }
-
-        	 var mm = ACTIVE_PLUGINS[pluginUid].main_module;
-        	 if (typeof mm.onUninstall === &#x27;function&#x27;) {
-        		 pb.log.debug(&#x27;PluginService:[%s] Calling plugin onUnstall&#x27;, pluginUid);
-
-        		 mm.onUninstall(callback);
-        	 }
-        	 else {
-        		 pb.log.debug(&#x27;PluginService:[%s] Plugin onUninstall function does not exist.  Skipping.&#x27;, pluginUid);
-        		 callback(null, true);
-        	 }
-         },
-
-         //unregister routes
-         function(callback) {
-        	 var routesRemoved = pb.RequestHandler.unregisterThemeRoutes(plugin.uid);
-        	 pb.log.debug(&#x27;PluginService:[%s] Unregistered %d routes&#x27;, pluginUid, routesRemoved);
-        	 process.nextTick(function(){callback(null, true);});
-         },
-
-         //remove localization
-         function(callback) {
-        	 //TODO refactor localization to figure out how to remove only those
-        	 //that were overriden. For now any overriden localizations will be
-        	 //left until the server cycles.  This is not ideal but will suffice
-        	 //for most use cases.  The only affected use case is if a default
-        	 //label is overriden.
-        	 process.nextTick(function(){callback(null, false);});
-         },
-
-         //remove settings
-         function(callback) {
-     		self.pluginSettingsService.purge(pluginUid, function (err, result) {
-     			callback(err, !util.isError(err) &amp;&amp; result);
-     		});
-         },
-
-         //remove theme settings
-         function(callback) {
-     		self.themeSettingsService.purge(pluginUid, function (err, result) {
-     			callback(err, !util.isError(err) &amp;&amp; result);
-     		});
-         },
-
-         //remove plugin record from &quot;plugin&quot; collection
-         function(callback) {
-        	 var dao = new pb.DAO();
-        	 dao.deleteById(plugin._id, &#x27;plugin&#x27;).then(function(result) {
-        		var error = util.isError(result) ? result : null;
-        		callback(error, error == null);
-        	 });
-         },
-
-         //roll over to default theme
-         function(callback) {
-        	pb.settings.set(&#x27;active_theme&#x27;, &#x27;pencilblue&#x27;, function(err, result) {
-        		callback(err, result ? true : false);
-        	});
-         },
-
-         //remove from ACTIVE_PLUGINS//unregister services
-         function(callback) {
-        	 delete ACTIVE_PLUGINS[pluginUid];
-        	 process.nextTick(function(){callback(null, false);});
-         }
-    ];
-	async.series(tasks, function(err, results) {
-		cb(err, !util.isError(err));
-	});
+    var name  = util.format(&#x27;UNINSTALL_PLUGIN_%s&#x27;, pluginUid);
+    var jobId = options.jobId;
+    var job = new pb.PluginUninstallJob();
+    job.init(name, jobId);
+    job.setPluginUid(pluginUid);
+    job.setRunAsInitiator(options.forCluster === false ? false : true);
+    job.run(cb);
+    return job.getId();
 };
 
 /**
@@ -1118,119 +1108,15 @@ PluginService.prototype.uninstallPlugin = function(pluginUid, cb) {
  * @param {function} cb A callback that provides two parameters: cb(err, TRUE/FALSE)
  */
 PluginService.prototype.installPlugin = function(pluginDirName, cb) {
-	var self            = this;
-	var detailsFilePath = PluginService.getDetailsPath(pluginDirName);
-	var details         = null;
-	var plugin          = null;
 
-	pb.log.info(&quot;PluginService: Beginning install of %s&quot;, pluginDirName);
-	var tasks = [
-
-         //load the details file
-         function(callback) {
-        	 pb.log.info(&quot;PluginService: Attempting to load details.json file for %s&quot;, pluginDirName);
-
-			PluginService.loadDetailsFile(detailsFilePath, function(err, loadedDetails) {
-				details = loadedDetails;
-				callback(err, null);
-			});
-         },
-
-         //validate the details
-         function(callback) {
-        	 pb.log.info(&quot;PluginService: Validating details of %s&quot;, pluginDirName);
-
-        	 PluginService.validateDetails(details, pluginDirName, callback);
-         },
-
-         //verify that the plugin is not installed
-         function(callback) {
-        	 pb.log.info(&quot;PluginService: Verifying that plugin %s is not already installed&quot;, details.uid);
-
-        	 self.isInstalled(details.uid, function(err, isInstalled){
-        		if (util.isError(err)) {
-        			callback(err, isInstalled);
-        		}
-        		else {
-        			err = isInstalled ? (new Error(&#x27;PluginService: The &#x27;+details.uid+&#x27; plugin is already installed&#x27;)) : null;
-        			callback(err, isInstalled);
-                }
-             });
-         },
-
-        //install dependencies
-        function(callback) {
-            if (details.dependencies) {
-                self.installPluginDependencies(pluginDirName, details.dependencies, callback);
-            }
-            else {
-                callback(null, true);
-            }
-        },
-
-        //create plugin entry
-        function(callback) {
-        	 pb.log.info(&quot;PluginService: Setting system install flags for %s&quot;, details.uid);
-
-        	 var clone     = pb.utils.clone(details);
-        	 clone.dirName = pluginDirName;
-
-        	 var pluginDescriptor = pb.DocumentCreator.create(&#x27;plugin&#x27;, clone);
-        	 var dao              = new pb.DAO();
-        	 dao.update(pluginDescriptor).then(function(result) {
-        		 plugin = pluginDescriptor;
-        		 callback(util.isError(result) ? result : null, result);
-        	 });
-         },
-
-         //load plugin settings
-         function(callback) {
-        	 pb.log.info(&quot;PluginService: Adding settings for %s&quot;, details.uid);
-        	 self.resetSettings(details, callback);
-         },
-
-         //load theme settings
-         function(callback) {
-        	 if (details.theme &amp;&amp; details.theme.settings) {
-        		 pb.log.info(&quot;PluginService: Adding theme settings for %s&quot;, details.uid);
-
-        		 self.resetThemeSettings(details, callback);
-        	 }
-        	 else {
-        		 callback(null, null);
-        	 }
-         },
-
-        //call plugin&#x27;s onInstall function
-        function(callback) {
-
-            var mainModule = PluginService.loadMainModule(pluginDirName, details.main_module.path);
-    		if (mainModule !== null &amp;&amp; typeof mainModule.onInstall === &#x27;function&#x27;) {
-    			pb.log.info(&quot;PluginService: Executing %s &#x27;onInstall&#x27; function&quot;, details.uid);
-    			mainModule.onInstall(callback);
-    		}
-    		else {
-    			pb.log.warn(&quot;PluginService: Plugin %s did not provide an &#x27;onInstall&#x27; function.&quot;, details.uid);
-    			callback(null, false);
-    		}
-        },
-
-         //do plugin initialization
-         function(callback) {
-        	pb.log.info(&quot;PluginService: Initializing %s&quot;, details.uid);
-        	self.initPlugin(plugin, callback);
-         },
-
-         //notify cluster of plugin install
-         function(callback) {
-        	 pb.log.warn(&quot;PluginService: Cluster Notification for install of %s is not yet supported&quot;, pluginDirName);
-        	 //TODO PluginInstall Notifications across cluster
-        	callback(null, null);
-         }
-	];
-	async.series(tasks, function(err, results) {
-		cb(err, !util.isError(err));
-	});
+    cb       = cb || pb.utils.cb;
+    var name = util.format(&#x27;INSTALL_PLUGIN_%s&#x27;, pluginDirName);
+    var job  = new pb.PluginInstallJob();
+    job.init(name);
+    job.setRunAsInitiator(true);
+    job.setPluginUid(pluginDirName);
+    job.run(cb);
+    return job.getId();
 };
 
 /**
@@ -1535,7 +1421,7 @@ PluginService.prototype.installPluginDependencies = function(pluginDirName, depe
  * @method require
  * @param {String} pluginDirName
  * @param {String} moduleName
- * @returns {*} The entity returned by the &quot;require&quot; call.
+ * @return {*} The entity returned by the &quot;require&quot; call.
  */
 PluginService.require = function(pluginDirName, moduleName) {
     var modulePath = path.join(PluginService.getPluginsDir(), pluginDirName, &#x27;node_modules&#x27;, moduleName);
@@ -1597,7 +1483,7 @@ PluginService.prototype.getLocalizations = function(pluginDirName, cb) {
  * @method getService
  * @param {String} serviceName
  * @param {String} pluginUid The unique plugin identifier
- * @returns {Object} Service prototype
+ * @return {Object} Service prototype
  */
 PluginService.prototype.getService = function(serviceName, pluginUid) {
 	if (ACTIVE_PLUGINS[pluginUid]) {
@@ -1618,7 +1504,7 @@ PluginService.prototype.getService = function(serviceName, pluginUid) {
  * to pass this parameter as the absolute file path to the module.  The
  * function first checks if the parameter is just the file name then checks to
  * see if it is an absolute path.
- * @returns {Function} The mainmodule prototype
+ * @return {Function} The mainmodule prototype
  */
 PluginService.loadMainModule = function(pluginDirName, pathToModule) {
 	var pluginMM = path.join(PLUGINS_DIR, pluginDirName, pathToModule);
@@ -1642,7 +1528,7 @@ PluginService.loadMainModule = function(pluginDirName, pathToModule) {
  * @method getPublicPath
  * @param pluginDirName The name of the directory that contains the intended
  * plugin
- * @returns {string} the absolute file path to a plugin&#x27;s public directory
+ * @return {string} the absolute file path to a plugin&#x27;s public directory
  */
 PluginService.getPublicPath = function(pluginDirName) {
 	return path.join(PLUGINS_DIR, pluginDirName, PUBLIC_DIR_NAME);
@@ -1651,7 +1537,7 @@ PluginService.getPublicPath = function(pluginDirName) {
 /**
  * @static
  * @method getPluginsDir
- * @returns {string} The absolute file path to the plugins directory
+ * @return {string} The absolute file path to the plugins directory
  */
 PluginService.getPluginsDir = function() {
 	return PLUGINS_DIR;
@@ -1663,7 +1549,7 @@ PluginService.getPluginsDir = function() {
  * @method getDetailsPath
  * @param {String} pluginDirName The name of the directory that the plugin is
  * contained within.
- * @returns {string} The absolute file path to the details.json file for a plugin
+ * @return {string} The absolute file path to the details.json file for a plugin
  */
 PluginService.getDetailsPath = function(pluginDirName) {
 	return path.join(PLUGINS_DIR, pluginDirName, DETAILS_FILE_NAME);
@@ -1949,7 +1835,7 @@ PluginService.validateDetails = function(details, pluginDirName, cb) {
  * @method validateIconPath
  * @param iconPath The path to the icon (image) file
  * @param pluginDirName The name of the directory housing the plugin
- * @returns {Boolean} TRUE if the path is valid, FALSE if not
+ * @return {Boolean} TRUE if the path is valid, FALSE if not
  */
 PluginService.validateIconPath = function(iconPath, pluginDirName) {
 	var pluginPublicIcon = path.join(PluginService.getPublicPath(pluginDirName), iconPath);
@@ -1970,7 +1856,7 @@ PluginService.validateIconPath = function(iconPath, pluginDirName) {
  *
  * @param mmPath The relative or absolute path to the main module file
  * @param pluginDirName The name of the directory housing the plugin
- * @returns {Boolean} TRUE if the path is valid, FALSE if not
+ * @return {Boolean} TRUE if the path is valid, FALSE if not
  */
 PluginService.validateMainModulePath = function(mmPath, pluginDirName) {
 	return PluginService.loadMainModule(pluginDirName, mmPath) !== null;
@@ -1982,7 +1868,7 @@ PluginService.validateMainModulePath = function(mmPath, pluginDirName) {
  * @param setting The setting to validate
  * @param position The position in the settings array where the setting resides
  * as a 0 based index.
- * @returns {Array} The array of errors that were generated.  If no errors were
+ * @return {Array} The array of errors that were generated.  If no errors were
  * produced an empty array is returned.
  */
 PluginService.validateSetting = function(setting, position) {
@@ -2018,7 +1904,7 @@ PluginService.validateSetting = function(setting, position) {
  * @static
  * @method validateSettingValue
  * @param {Boolean|Integer|Float|String} value The value to validate
- * @returns {Boolean} TRUE if the value is valid, FALSE if not
+ * @return {Boolean} TRUE if the value is valid, FALSE if not
  */
 PluginService.validateSettingValue = function(value) {
 	return pb.utils.isString(value) || !isNaN(value) || value === true || value === false;
@@ -2189,7 +2075,7 @@ PluginService.loadController = function(pathToController, pluginUid, cb) {
  * @method getServiceName
  * @param pathToService The file path to the service
  * @param service The service prototype
- * @returns {String} The derived service name
+ * @return {String} The derived service name
  */
 PluginService.getServiceName = function(pathToService, service) {
 	var name = &#x27;UNKNOWN&#x27;;
@@ -2206,6 +2092,141 @@ PluginService.getServiceName = function(pathToService, service) {
 	}
 	return name;
 };
+
+/**
+ * &lt;b&gt;NOTE: DO NOT CALL THIS DIRECTLY&lt;/b&gt;&lt;br/&gt;
+ * The function is called when a command is recevied to uninstall a plugin.
+ * The function builds out the appropriate options then calls the
+ * uninstallPlugin function.  The result is then sent back to the calling
+ * process via the CommandService.
+ * @static
+ * @method onUninstallPluginCommandReceived
+ * @param {Object} command
+ * @param {String} command.jobId The ID of the in-progress job that this
+ * process is intended to join.
+ */
+PluginService.onUninstallPluginCommandReceived = function(command) {
+    if (!pb.utils.isObject(command)) {
+        pb.log.error(&#x27;PluginService: an invalid uninstall plugin command object was passed. %s&#x27;, util.inspect(command));
+        return;
+    }
+
+    var options = {
+        forCluster: false,
+        jobId: command.jobId
+    }
+    pb.plugins.uninstallPlugin(command.pluginUid, options, function(err, result) {
+
+        var response = {
+            error: err ? err.stack : undefined,
+            result: result
+        };
+        pb.CommandService.sendInResponseTo(command, response);
+    });
+};
+
+/**
+ * &lt;b&gt;NOTE: DO NOT CALL THIS DIRECTLY&lt;/b&gt;&lt;br/&gt;
+ * The function is called when a command is recevied to validate that a plugin is available to this process for install.
+ * The function builds out the appropriate options then calls the
+ * uninstallPlugin function.  The result is then sent back to the calling
+ * process via the CommandService.
+ * @static
+ * @method onIsPluginAvailableCommandReceived
+ * @param {Object} command
+ * @param {String} command.jobId The ID of the in-progress job that this
+ * process is intended to join.
+ */
+PluginService.onIsPluginAvailableCommandReceived = function(command) {
+    if (!pb.utils.isObject(command)) {
+        pb.log.error(&#x27;PluginService: an invalid is_plugin_available command object was passed. %s&#x27;, util.inspect(command));
+        return;
+    }
+
+    var name = util.format(&quot;IS_AVAILABLE_%s&quot;, command.pluginUid);
+    var job  = new pb.PluginAvailableJob();
+    job.setRunAsInitiator(false)
+    .init(name, command.jobId)
+    .setPluginUid(command.pluginUid)
+    .run(function(err, result) {
+
+        var response = {
+            error: err ? err.stack : undefined,
+            result: result ? true : false
+        };
+        pb.CommandService.sendInResponseTo(command, response);
+    });
+};
+
+/**
+ * &lt;b&gt;NOTE: DO NOT CALL THIS DIRECTLY&lt;/b&gt;&lt;br/&gt;
+ * The function is called when a command is recevied to install plugin
+ * dependencies.  The result is then sent back to the calling process via the
+ * CommandService.
+ * @static
+ * @method onIsPluginAvailableCommandReceived
+ * @param {Object} command
+ * @param {String} command.jobId The ID of the in-progress job that this
+ * process is intended to join.
+ */
+PluginService.onInstallPluginDependenciesCommandReceived = function(command) {
+    if (!pb.utils.isObject(command)) {
+        pb.log.error(&#x27;PluginService: an invalid install_plugin_dependencies command object was passed. %s&#x27;, util.inspect(command));
+        return;
+    }
+
+    var name = util.format(&quot;INSTALL_DEPENDENCIES_%s&quot;, command.pluginUid);
+    var job  = new pb.PluginDependenciesJob();
+    job.setRunAsInitiator(false)
+    .init(name, command.jobId)
+    .setPluginUid(command.pluginUid)
+    .run(function(err, result) {
+
+        var response = {
+            error: err ? err.stack : undefined,
+            result: result ? true : false
+        };
+        pb.CommandService.sendInResponseTo(command, response);
+    });
+};
+
+/**
+ * &lt;b&gt;NOTE: DO NOT CALL THIS DIRECTLY&lt;/b&gt;&lt;br/&gt;
+ * The function is called when a command is recevied to initialize a plugin.
+ * The result is then sent back to the calling process via the
+ * CommandService.
+ * @static
+ * @method onIsPluginAvailableCommandReceived
+ * @param {Object} command
+ * @param {String} command.jobId The ID of the in-progress job that this
+ * process is intended to join.
+ */
+PluginService.onInitializePluginCommandReceived = function(command) {
+    if (!pb.utils.isObject(command)) {
+        pb.log.error(&#x27;PluginService: an invalid initialize_plugin command object was passed. %s&#x27;, util.inspect(command));
+        return;
+    }
+
+    var name = util.format(&quot;INITIALIZE_PLUGIN_%s&quot;, command.pluginUid);
+    var job  = new pb.PluginInitializeJob();
+    job.setRunAsInitiator(false)
+    .init(name, command.jobId)
+    .setPluginUid(command.pluginUid)
+    .run(function(err, result) {
+
+        var response = {
+            error: err ? err.stack : undefined,
+            result: result ? true : false
+        };
+        pb.CommandService.sendInResponseTo(command, response);
+    });
+};
+
+//register for commands
+pb.CommandService.registerForType(pb.PluginUninstallJob.UNINSTALL_PLUGIN_COMMAND, PluginService.onUninstallPluginCommandReceived);
+pb.CommandService.registerForType(&#x27;is_plugin_available&#x27;, PluginService.onIsPluginAvailableCommandReceived);
+pb.CommandService.registerForType(&#x27;install_plugin_dependencies&#x27;, PluginService.onInstallPluginDependenciesCommandReceived);
+pb.CommandService.registerForType(&#x27;initialize_plugin&#x27;, PluginService.onInitializePluginCommandReceived);
 
 //exports
 module.exports = PluginService;

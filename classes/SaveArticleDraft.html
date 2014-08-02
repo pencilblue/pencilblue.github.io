@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.0</em>
+            <em>API Docs for: 0.2.2</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -47,7 +47,11 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -58,6 +62,8 @@
                 <li><a href="../classes/ClientJS.html">ClientJS</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
             
                 <li><a href="../classes/CommandService.html">CommandService</a></li>
             
@@ -81,6 +87,12 @@
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
@@ -97,15 +109,31 @@
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
             
                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
                 <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
@@ -208,7 +236,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l18"><code>controllers\api\admin\content\articles\save_draft.js:18</code></a>
+            Defined in: <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l18"><code>controllers&#x2F;api&#x2F;admin&#x2F;content&#x2F;articles&#x2F;save_draft.js:18</code></a>
         </div>
     
 
@@ -263,7 +291,7 @@
             
         
         
-        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l18"><code>controllers\api\admin\content\articles\save_draft.js:18</code></a>
+        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l18"><code>controllers&#x2F;api&#x2F;admin&#x2F;content&#x2F;articles&#x2F;save_draft.js:18</code></a>
         
         </p>
 
@@ -311,6 +339,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_getRequiredFields">getRequiredFields</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getSanitizationRules">getSanitizationRules</a>
 
                                 
                                 
@@ -375,7 +410,7 @@
             
         
         
-        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l97"><code>controllers\api\admin\content\articles\save_draft.js:97</code></a>
+        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l97"><code>controllers&#x2F;api&#x2F;admin&#x2F;content&#x2F;articles&#x2F;save_draft.js:97</code></a>
         
         </p>
 
@@ -404,6 +439,76 @@
                     <p>Parameter names that must be present in order to pass
 validation.</p>
 
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getSanitizationRules" class="method item">
+    <h3 class="name"><code>getSanitizationRules</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l107"><code>controllers&#x2F;api&#x2F;admin&#x2F;content&#x2F;articles&#x2F;save_draft.js:107</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
                 
             </div>
         </div>
@@ -461,7 +566,7 @@ validation.</p>
             
         
         
-        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l28"><code>controllers\api\admin\content\articles\save_draft.js:28</code></a>
+        <a href="../files/controllers_api_admin_content_articles_save_draft.js.html#l28"><code>controllers&#x2F;api&#x2F;admin&#x2F;content&#x2F;articles&#x2F;save_draft.js:28</code></a>
         
         </p>
 

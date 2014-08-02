@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>controllers\admin\content\custom_objects\edit_object.js - PencilBlue</title>
+    <title>controllers/admin/content/custom_objects/edit_object.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.0</em>
+            <em>API Docs for: 0.2.2</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -47,7 +47,11 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -58,6 +62,8 @@
                 <li><a href="../classes/ClientJS.html">ClientJS</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
             
                 <li><a href="../classes/CommandService.html">CommandService</a></li>
             
@@ -81,6 +87,12 @@
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
@@ -97,15 +109,31 @@
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
             
                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
                 <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
@@ -200,7 +228,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: controllers\admin\content\custom_objects\edit_object.js</h1>
+                        <h1 class="file-heading">File: controllers/admin/content/custom_objects/edit_object.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -236,7 +264,7 @@ EditObject.prototype.render = function(cb) {
 	var self = this;
 	var vars = this.pathVars;
     if(!vars.id) {
-        cb(pb.RequestHandler.generateRedirect(pb.config.siteRoot + &#x27;/admin/content/custom_objects/manage_object_types&#x27;));
+        self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
         return;
     }
 
@@ -248,7 +276,7 @@ EditObject.prototype.render = function(cb) {
 
 		//none to manage
         if(customObjects.length === 0) {
-            cb(pb.RequestHandler.generateRedirect(pb.config.siteRoot + &#x27;/admin/content/custom_objects/manage_object_types&#x27;));
+            self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
             return;
         }
 
@@ -261,44 +289,42 @@ EditObject.prototype.render = function(cb) {
 
 	        //none to manage
             if(customObjectTypes.length === 0) {
-                cb(pb.RequestHandler.generateRedirect(pb.config.siteRoot + &#x27;/admin/content/custom_objects/manage_object_types&#x27;));
+                self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
                 return;
             }
 
             EditObject.loadFieldOptions(dao, customObjectTypes[0], function(objectType) {
+                var tabs   =
+                [
+                    {
+                        active: &#x27;active&#x27;,
+                        href: &#x27;#object_fields&#x27;,
+                        icon: &#x27;list-ul&#x27;,
+                        title: self.ls.get(&#x27;FIELDS&#x27;)
+                    }
+                ];
+
+                var fieldOrder = [];
+                for(var key in objectType.fields) {
+                    fieldOrder.push(key);
+                }
+
+                var angularData = pb.js.getAngularController(
+                {
+                    navigation: pb.AdminNavigation.get(self.session, [&#x27;content&#x27;, &#x27;custom_objects&#x27;], self.ls),
+                    pills: pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, null, {objectType: objectType, customObject: customObject}),
+                    tabs: tabs,
+                    customObjectType: objectType,
+                    customObject: customObject,
+                    fieldOrder: fieldOrder
+                }, [], &#x27;initCustomObjectsPagination()&#x27;);
+
                 self.setPageName(self.ls.get(&#x27;EDIT&#x27;) + &#x27; &#x27; + customObject.name);
                 self.ts.registerLocal(&#x27;object_id&#x27;, customObject._id);
+                self.ts.registerLocal(&#x27;angular_script&#x27;, angularData);
+                self.ts.registerLocal(&#x27;custom_object_script&#x27;, pb.js.getJSTag(&#x27;var customObjectType = &#x27; + JSON.stringify(objectType) + &#x27;;&#x27; + &#x27;var customObject = &#x27; + JSON.stringify(customObject)));
                 self.ts.load(&#x27;admin/content/custom_objects/edit_object&#x27;,  function(err, data) {
-                    var result = &#x27;&#x27;+data;
-                    var tabs   =
-                    [
-                        {
-                            active: &#x27;active&#x27;,
-                            href: &#x27;#object_fields&#x27;,
-                            icon: &#x27;list-ul&#x27;,
-                            title: self.ls.get(&#x27;FIELDS&#x27;)
-                        }
-                    ];
-
-                    var fieldOrder = [];
-                    for(var key in objectType.fields) {
-                        fieldOrder.push(key);
-                    }
-
-                    var pills = pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, null, {objectType: objectType, customObject: customObject});
-                    result    = result.split(&#x27;^angular_script^&#x27;).join(pb.js.getAngularController(
-                    {
-                        navigation: pb.AdminNavigation.get(self.session, [&#x27;content&#x27;, &#x27;custom_objects&#x27;], self.ls),
-                        pills: pills,
-                        tabs: tabs,
-                        customObjectType: objectType,
-                        customObject: customObject,
-                        fieldOrder: fieldOrder
-                    }, [], &#x27;initCustomObjectsPagination()&#x27;));
-
-                    result += pb.js.getJSTag(&#x27;var customObjectType = &#x27; + JSON.stringify(objectType));
-                    result += pb.js.getJSTag(&#x27;var customObject = &#x27; + JSON.stringify(customObject));
-
+                    var result = &#x27;&#x27; + data;
                     cb({content: result});
                 });
             });

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.0</em>
+            <em>API Docs for: 0.2.2</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -47,7 +47,11 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -58,6 +62,8 @@
                 <li><a href="../classes/ClientJS.html">ClientJS</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
             
                 <li><a href="../classes/CommandService.html">CommandService</a></li>
             
@@ -81,6 +87,12 @@
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
@@ -97,15 +109,31 @@
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
             
                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
                 <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
@@ -208,7 +236,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/include_dao_dao.js.html#l18"><code>include\dao\dao.js:18</code></a>
+            Defined in: <a href="../files/include_dao_dao.js.html#l18"><code>include&#x2F;dao&#x2F;dao.js:18</code></a>
         </div>
     
 
@@ -384,6 +412,15 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_transfer">transfer</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_unique">unique</a>
 
                                 
@@ -402,6 +439,13 @@
 
                                 
                                     <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_updateFields">updateFields</a>
+
                                 
                                 
                             </li>
@@ -425,6 +469,13 @@
                         
                             <li class="index-item property">
                                 <a href="#property_ASC">ASC</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_dbName">dbName</a>
 
                                 
                                 
@@ -513,6 +564,10 @@
     
 
     
+        <span class="returns-inline">
+            <span class="type">Cursor</span>
+        </span>
+    
 
     
 
@@ -539,7 +594,7 @@
             
         
         
-        <a href="../files/include_dao_dao.js.html#l204"><code>include\dao\dao.js:204</code></a>
+        <a href="../files/include_dao_dao.js.html#l216"><code>include&#x2F;dao&#x2F;dao.js:216</code></a>
         
         </p>
 
@@ -668,6 +723,20 @@ for doing the heavy lifting and returning the result back to the calling intity.
     
 
     
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Cursor</span>:
+                    
+                    <p>The MongoDB cursor that provides the results of the query</p>
+
+                
+            </div>
+        </div>
+    
 
     
 </div>
@@ -721,7 +790,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l334"><code>include\dao\dao.js:334</code></a>
+        <a href="../files/include_dao_dao.js.html#l381"><code>include&#x2F;dao&#x2F;dao.js:381</code></a>
         
         </p>
 
@@ -839,7 +908,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l116"><code>include\dao\dao.js:116</code></a>
+        <a href="../files/include_dao_dao.js.html#l128"><code>include&#x2F;dao&#x2F;dao.js:128</code></a>
         
         </p>
 
@@ -970,7 +1039,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l288"><code>include\dao\dao.js:288</code></a>
+        <a href="../files/include_dao_dao.js.html#l335"><code>include&#x2F;dao&#x2F;dao.js:335</code></a>
         
         </p>
 
@@ -1099,7 +1168,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l305"><code>include\dao\dao.js:305</code></a>
+        <a href="../files/include_dao_dao.js.html#l352"><code>include&#x2F;dao&#x2F;dao.js:352</code></a>
         
         </p>
 
@@ -1224,7 +1293,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l349"><code>include\dao\dao.js:349</code></a>
+        <a href="../files/include_dao_dao.js.html#l396"><code>include&#x2F;dao&#x2F;dao.js:396</code></a>
         
         </p>
 
@@ -1393,7 +1462,7 @@ specify the options for the index.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l128"><code>include\dao\dao.js:128</code></a>
+        <a href="../files/include_dao_dao.js.html#l140"><code>include&#x2F;dao&#x2F;dao.js:140</code></a>
         
         </p>
 
@@ -1526,7 +1595,7 @@ specify the options for the index.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l391"><code>include\dao\dao.js:391</code></a>
+        <a href="../files/include_dao_dao.js.html#l438"><code>include&#x2F;dao&#x2F;dao.js:438</code></a>
         
         </p>
 
@@ -1652,7 +1721,7 @@ specified array of values.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l378"><code>include\dao\dao.js:378</code></a>
+        <a href="../files/include_dao_dao.js.html#l425"><code>include&#x2F;dao&#x2F;dao.js:425</code></a>
         
         </p>
 
@@ -1751,7 +1820,7 @@ specified array of values.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l432"><code>include\dao\dao.js:432</code></a>
+        <a href="../files/include_dao_dao.js.html#l479"><code>include&#x2F;dao&#x2F;dao.js:479</code></a>
         
         </p>
 
@@ -1837,7 +1906,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l419"><code>include\dao\dao.js:419</code></a>
+        <a href="../files/include_dao_dao.js.html#l466"><code>include&#x2F;dao&#x2F;dao.js:466</code></a>
         
         </p>
 
@@ -1946,7 +2015,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l443"><code>include\dao\dao.js:443</code></a>
+        <a href="../files/include_dao_dao.js.html#l490"><code>include&#x2F;dao&#x2F;dao.js:490</code></a>
         
         </p>
 
@@ -2053,7 +2122,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l253"><code>include\dao\dao.js:253</code></a>
+        <a href="../files/include_dao_dao.js.html#l266"><code>include&#x2F;dao&#x2F;dao.js:266</code></a>
         
         </p>
 
@@ -2168,7 +2237,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l70"><code>include\dao\dao.js:70</code></a>
+        <a href="../files/include_dao_dao.js.html#l82"><code>include&#x2F;dao&#x2F;dao.js:82</code></a>
         
         </p>
 
@@ -2307,7 +2376,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l82"><code>include\dao\dao.js:82</code></a>
+        <a href="../files/include_dao_dao.js.html#l94"><code>include&#x2F;dao&#x2F;dao.js:94</code></a>
         
         </p>
 
@@ -2456,7 +2525,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l97"><code>include\dao\dao.js:97</code></a>
+        <a href="../files/include_dao_dao.js.html#l109"><code>include&#x2F;dao&#x2F;dao.js:109</code></a>
         
         </p>
 
@@ -2611,7 +2680,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l171"><code>include\dao\dao.js:171</code></a>
+        <a href="../files/include_dao_dao.js.html#l183"><code>include&#x2F;dao&#x2F;dao.js:183</code></a>
         
         </p>
 
@@ -2757,6 +2826,121 @@ not equal the specified value.</p>
 </div>
 
                 
+                    <div id="method_transfer" class="method item">
+    <h3 class="name"><code>transfer</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>obj</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>to</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l521"><code>include&#x2F;dao&#x2F;dao.js:521</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Transfers a system object from one type to another.  The system specific
+properties are cleared so that when the object is persisted it will receive
+its own properties.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The object to convert</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">to</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The type to convert it to</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_unique" class="method item">
     <h3 class="name"><code>unique</code></h3>
 
@@ -2817,7 +3001,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l142"><code>include\dao\dao.js:142</code></a>
+        <a href="../files/include_dao_dao.js.html#l154"><code>include&#x2F;dao&#x2F;dao.js:154</code></a>
         
         </p>
 
@@ -2959,7 +3143,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l270"><code>include\dao\dao.js:270</code></a>
+        <a href="../files/include_dao_dao.js.html#l283"><code>include&#x2F;dao&#x2F;dao.js:283</code></a>
         
         </p>
 
@@ -3064,7 +3248,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l454"><code>include\dao\dao.js:454</code></a>
+        <a href="../files/include_dao_dao.js.html#l501"><code>include&#x2F;dao&#x2F;dao.js:501</code></a>
         
         </p>
 
@@ -3111,6 +3295,196 @@ not equal the specified value.</p>
 </div>
 
                 
+                    <div id="method_updateFields" class="method item">
+    <h3 class="name"><code>updateFields</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>collection</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>query</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>updates</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>options</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l312"><code>include&#x2F;dao&#x2F;dao.js:312</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Updates a specific set of fields. This is handy for performing upserts.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">collection</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The collection to update object(s) in</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">query</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The query to execute to find the existing object</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">updates</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The updates to perform</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Any options to go along with the update</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[upsert=false]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Inserts the object is not found</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[multi=false]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Updates multiple records if the query
+finds more than 1</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
             </div>
         
 
@@ -3142,7 +3516,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l39"><code>include\dao\dao.js:39</code></a>
+        <a href="../files/include_dao_dao.js.html#l49"><code>include&#x2F;dao&#x2F;dao.js:49</code></a>
         
         </p>
 
@@ -3187,7 +3561,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l55"><code>include\dao\dao.js:55</code></a>
+        <a href="../files/include_dao_dao.js.html#l66"><code>include&#x2F;dao&#x2F;dao.js:66</code></a>
         
         </p>
 
@@ -3198,6 +3572,53 @@ not equal the specified value.</p>
 
     <div class="description">
         <p>Static varible to sort ascending</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_dbName" class="property item">
+    <h3 class="name"><code>dbName</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l30"><code>include&#x2F;dao&#x2F;dao.js:30</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The name of the DB that this instance is intended to interact with.  By
+default, it goes to the name of the DB provided by system configuration
+property db.name.</p>
 
     </div>
 
@@ -3232,7 +3653,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l62"><code>include\dao\dao.js:62</code></a>
+        <a href="../files/include_dao_dao.js.html#l74"><code>include&#x2F;dao&#x2F;dao.js:74</code></a>
         
         </p>
 
@@ -3277,7 +3698,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l46"><code>include\dao\dao.js:46</code></a>
+        <a href="../files/include_dao_dao.js.html#l57"><code>include&#x2F;dao&#x2F;dao.js:57</code></a>
         
         </p>
 
@@ -3323,7 +3744,7 @@ natural order</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l31"><code>include\dao\dao.js:31</code></a>
+        <a href="../files/include_dao_dao.js.html#l40"><code>include&#x2F;dao&#x2F;dao.js:40</code></a>
         
         </p>
 

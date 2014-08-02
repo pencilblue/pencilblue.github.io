@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.0</em>
+            <em>API Docs for: 0.2.2</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -47,7 +47,11 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -58,6 +62,8 @@
                 <li><a href="../classes/ClientJS.html">ClientJS</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
             
                 <li><a href="../classes/CommandService.html">CommandService</a></li>
             
@@ -81,6 +87,12 @@
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
@@ -97,15 +109,31 @@
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
                 <li><a href="../classes/PBError.html">PBError</a></li>
             
                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
             
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
                 <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
             
                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
@@ -208,7 +236,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_plugin_service.js.html#l24"><code>include\service\entities\plugin_service.js:24</code></a>
+            Defined in: <a href="../files/include_service_entities_plugin_service.js.html#l24"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:24</code></a>
         </div>
     
 
@@ -265,7 +293,7 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l24"><code>include\service\entities\plugin_service.js:24</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l24"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:24</code></a>
         
         </p>
 
@@ -314,6 +342,15 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_deactivatePlugin">deactivatePlugin</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_genPublicPath">genPublicPath</a>
 
                                 
@@ -343,6 +380,15 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                             <li class="index-item method">
                                 <a href="#method_getActiveIcon">getActiveIcon</a>
 
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getActiveMainModule">getActiveMainModule</a>
+
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -584,6 +630,42 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_onIsPluginAvailableCommandReceived">onIsPluginAvailableCommandReceived</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_onIsPluginAvailableCommandReceived">onIsPluginAvailableCommandReceived</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_onIsPluginAvailableCommandReceived">onIsPluginAvailableCommandReceived</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_onUninstallPluginCommandReceived">onUninstallPluginCommandReceived</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_require">require</a>
 
                                 
@@ -734,6 +816,113 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                 <h2 class="off-left">Methods</h2>
 
                 
+                    <div id="method_deactivatePlugin" class="method item">
+    <h3 class="name"><code>deactivatePlugin</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l99"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:99</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Remove the active plugin entry from the current PB process.
+NOTE: it is not recommended to call this directly.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_genPublicPath" class="method item">
     <h3 class="name"><code>genPublicPath</code></h3>
 
@@ -788,7 +977,7 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l591"><code>include\service\entities\plugin_service.js:591</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l623"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:623</code></a>
         
         </p>
 
@@ -932,7 +1121,7 @@ the plugin&#39;s public directory.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l397"><code>include\service\entities\plugin_service.js:397</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l429"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:429</code></a>
         
         </p>
 
@@ -1080,7 +1269,7 @@ use a cache service.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l627"><code>include\service\entities\plugin_service.js:627</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l659"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:659</code></a>
         
         </p>
 
@@ -1159,7 +1348,7 @@ use a cache service.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l83"><code>include\service\entities\plugin_service.js:83</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l83"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:83</code></a>
         
         </p>
 
@@ -1200,6 +1389,114 @@ use a cache service.</p>
         </div>
     
 
+    
+
+    
+</div>
+
+                
+                    <div id="method_getActiveMainModule" class="method item">
+    <h3 class="name"><code>getActiveMainModule</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>pluginUid</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l120"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:120</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves the main module prototype for the specified active plugin</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Function</span>:
+                    
+                    <p>The prototype that is the plugin&#39;s main module.</p>
+
+                
+            </div>
+        </div>
     
 
     
@@ -1254,7 +1551,7 @@ use a cache service.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l565"><code>include\service\entities\plugin_service.js:565</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l597"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:597</code></a>
         
         </p>
 
@@ -1351,7 +1648,7 @@ use a cache service.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l99"><code>include\service\entities\plugin_service.js:99</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l131"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:131</code></a>
         
         </p>
 
@@ -1431,7 +1728,7 @@ initialized successfully within this instance.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l607"><code>include\service\entities\plugin_service.js:607</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l639"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:639</code></a>
         
         </p>
 
@@ -1532,7 +1829,7 @@ initialized successfully within this instance.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l670"><code>include\service\entities\plugin_service.js:670</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l702"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:702</code></a>
         
         </p>
 
@@ -1662,7 +1959,7 @@ required to have a uid property that is a string.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1454"><code>include\service\entities\plugin_service.js:1454</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1312"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1312</code></a>
         
         </p>
 
@@ -1766,7 +2063,7 @@ contained within.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l649"><code>include\service\entities\plugin_service.js:649</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l681"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:681</code></a>
         
         </p>
 
@@ -1863,7 +2160,7 @@ properly.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1339"><code>include\service\entities\plugin_service.js:1339</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1197"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1197</code></a>
         
         </p>
 
@@ -1975,7 +2272,7 @@ them into a hash where the key is the name of the localization file.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l538"><code>include\service\entities\plugin_service.js:538</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l570"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:570</code></a>
         
         </p>
 
@@ -2085,7 +2382,7 @@ inspected.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l365"><code>include\service\entities\plugin_service.js:365</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l397"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:397</code></a>
         
         </p>
 
@@ -2192,7 +2489,7 @@ plugin does exist null is provided.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l750"><code>include\service\entities\plugin_service.js:750</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l783"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:783</code></a>
         
         </p>
 
@@ -2278,7 +2575,7 @@ active, inactive, available.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1445"><code>include\service\entities\plugin_service.js:1445</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1303"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1303</code></a>
         
         </p>
 
@@ -2362,7 +2659,7 @@ active, inactive, available.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1432"><code>include\service\entities\plugin_service.js:1432</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1290"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1290</code></a>
         
         </p>
 
@@ -2476,7 +2773,7 @@ plugin</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1386"><code>include\service\entities\plugin_service.js:1386</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1244"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1244</code></a>
         
         </p>
 
@@ -2609,7 +2906,7 @@ exist NULL is returned.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1977"><code>include\service\entities\plugin_service.js:1977</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1835"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1835</code></a>
         
         </p>
 
@@ -2739,7 +3036,7 @@ name minus any extension.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1821"><code>include\service\entities\plugin_service.js:1821</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1679"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1679</code></a>
         
         </p>
 
@@ -2857,7 +3154,7 @@ callback.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l109"><code>include\service\entities\plugin_service.js:109</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l141"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:141</code></a>
         
         </p>
 
@@ -2986,7 +3283,7 @@ installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l139"><code>include\service\entities\plugin_service.js:139</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l171"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:171</code></a>
         
         </p>
 
@@ -3104,7 +3401,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l311"><code>include\service\entities\plugin_service.js:311</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l343"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:343</code></a>
         
         </p>
 
@@ -3231,7 +3528,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l339"><code>include\service\entities\plugin_service.js:339</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l371"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:371</code></a>
         
         </p>
 
@@ -3342,7 +3639,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1094"><code>include\service\entities\plugin_service.js:1094</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l952"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:952</code></a>
         
         </p>
 
@@ -3447,7 +3744,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1030"><code>include\service\entities\plugin_service.js:1030</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l888"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:888</code></a>
         
         </p>
 
@@ -3542,7 +3839,7 @@ Null is provided in the event that the plugin is not installed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l894"><code>include\service\entities\plugin_service.js:894</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l856"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:856</code></a>
         
         </p>
 
@@ -3672,7 +3969,7 @@ plugin and its details.json file.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1273"><code>include\service\entities\plugin_service.js:1273</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1131"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1131</code></a>
         
         </p>
 
@@ -3796,7 +4093,7 @@ plugin and its details.json file.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l580"><code>include\service\entities\plugin_service.js:580</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l612"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:612</code></a>
         
         </p>
 
@@ -3905,7 +4202,7 @@ plugin and its details.json file.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l350"><code>include\service\entities\plugin_service.js:350</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l382"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:382</code></a>
         
         </p>
 
@@ -4026,7 +4323,7 @@ TRUE if the plugin is installed, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1925"><code>include\service\entities\plugin_service.js:1925</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1783"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1783</code></a>
         
         </p>
 
@@ -4162,7 +4459,7 @@ RequestHandler.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1887"><code>include\service\entities\plugin_service.js:1887</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1745"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1745</code></a>
         
         </p>
 
@@ -4292,7 +4589,7 @@ plugin&#39;s controllers directory.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1466"><code>include\service\entities\plugin_service.js:1466</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1324"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1324</code></a>
         
         </p>
 
@@ -4409,7 +4706,7 @@ plugin&#39;s controllers directory.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1405"><code>include\service\entities\plugin_service.js:1405</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1263"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1263</code></a>
         
         </p>
 
@@ -4540,7 +4837,7 @@ see if it is an absolute path.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1862"><code>include\service\entities\plugin_service.js:1862</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1720"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1720</code></a>
         
         </p>
 
@@ -4592,6 +4889,456 @@ the callback.</p>
 
                     </div>
 
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_onIsPluginAvailableCommandReceived" class="method item">
+    <h3 class="name"><code>onIsPluginAvailableCommandReceived</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>command</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1959"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1959</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p><b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>
+The function is called when a command is recevied to initialize a plugin.
+The result is then sent back to the calling process via the
+CommandService.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">command</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">jobId</code>
+                                    <span class="type">String</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The ID of the in-progress job that this
+process is intended to join.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_onIsPluginAvailableCommandReceived" class="method item">
+    <h3 class="name"><code>onIsPluginAvailableCommandReceived</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>command</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1927"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1927</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p><b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>
+The function is called when a command is recevied to install plugin
+dependencies.  The result is then sent back to the calling process via the
+CommandService.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">command</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">jobId</code>
+                                    <span class="type">String</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The ID of the in-progress job that this
+process is intended to join.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_onIsPluginAvailableCommandReceived" class="method item">
+    <h3 class="name"><code>onIsPluginAvailableCommandReceived</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>command</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1894"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1894</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p><b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>
+The function is called when a command is recevied to validate that a plugin is available to this process for install.
+The function builds out the appropriate options then calls the
+uninstallPlugin function.  The result is then sent back to the calling
+process via the CommandService.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">command</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">jobId</code>
+                                    <span class="type">String</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The ID of the in-progress job that this
+process is intended to join.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_onUninstallPluginCommandReceived" class="method item">
+    <h3 class="name"><code>onUninstallPluginCommandReceived</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>command</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_plugin_service.js.html#l1862"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1862</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p><b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>
+The function is called when a command is recevied to uninstall a plugin.
+The function builds out the appropriate options then calls the
+uninstallPlugin function.  The result is then sent back to the calling
+process via the CommandService.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">command</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">jobId</code>
+                                    <span class="type">String</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The ID of the in-progress job that this
+process is intended to join.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
                     
                 </li>
             
@@ -4659,7 +5406,7 @@ the callback.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1326"><code>include\service\entities\plugin_service.js:1326</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1184"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1184</code></a>
         
         </p>
 
@@ -4782,7 +5529,7 @@ the callback.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l429"><code>include\service\entities\plugin_service.js:429</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l461"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:461</code></a>
         
         </p>
 
@@ -4896,7 +5643,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l480"><code>include\service\entities\plugin_service.js:480</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l512"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:512</code></a>
         
         </p>
 
@@ -5023,7 +5770,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l151"><code>include\service\entities\plugin_service.js:151</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l183"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:183</code></a>
         
         </p>
 
@@ -5173,7 +5920,7 @@ TRUE if the setting was persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l197"><code>include\service\entities\plugin_service.js:197</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l229"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:229</code></a>
         
         </p>
 
@@ -5313,7 +6060,7 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l231"><code>include\service\entities\plugin_service.js:231</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l263"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:263</code></a>
         
         </p>
 
@@ -5463,7 +6210,7 @@ TRUE if the setting was persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l277"><code>include\service\entities\plugin_service.js:277</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l309"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:309</code></a>
         
         </p>
 
@@ -5558,7 +6305,13 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
             
                 <li class="arg">
                     
-                        <code>cb</code>
+                        <code>options</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[cb]</code>
                     
                 </li>
             
@@ -5591,7 +6344,7 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l781"><code>include\service\entities\plugin_service.js:781</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l814"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:814</code></a>
         
         </p>
 
@@ -5630,8 +6383,61 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
             
                 <li class="param">
                     
-                        <code class="param-name">cb</code>
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[jobId]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Required when unintalling from the executing
+process instead of calling upon the cluster.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[forCluster=true]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>When true or not provided the function
+instructs the cluster to uninstall the plugin.  When explicitly FALSE the
+function installs the plugin from the executing process.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[cb]</code>
                         <span class="type">Function</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
@@ -5710,7 +6516,7 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1493"><code>include\service\entities\plugin_service.js:1493</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1351"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1351</code></a>
         
         </p>
 
@@ -5845,7 +6651,7 @@ TRUE if the details object passes validation, FALSE if not.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1738"><code>include\service\entities\plugin_service.js:1738</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1596"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1596</code></a>
         
         </p>
 
@@ -5972,7 +6778,7 @@ plugin&#39;s public directory.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l1808"><code>include\service\entities\plugin_service.js:1808</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1666"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1666</code></a>
         
         </p>
 
@@ -6066,7 +6872,7 @@ allowed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l76"><code>include\service\entities\plugin_service.js:76</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l76"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:76</code></a>
         
         </p>
 
@@ -6111,7 +6917,7 @@ allowed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l61"><code>include\service\entities\plugin_service.js:61</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l61"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:61</code></a>
         
         </p>
 
@@ -6156,7 +6962,7 @@ allowed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l54"><code>include\service\entities\plugin_service.js:54</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l54"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:54</code></a>
         
         </p>
 
@@ -6201,7 +7007,7 @@ allowed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l38"><code>include\service\entities\plugin_service.js:38</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l38"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:38</code></a>
         
         </p>
 
@@ -6246,7 +7052,7 @@ allowed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l45"><code>include\service\entities\plugin_service.js:45</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l45"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:45</code></a>
         
         </p>
 
@@ -6291,7 +7097,7 @@ allowed.</p>
             
         
         
-        <a href="../files/include_service_entities_plugin_service.js.html#l68"><code>include\service\entities\plugin_service.js:68</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l68"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:68</code></a>
         
         </p>
 

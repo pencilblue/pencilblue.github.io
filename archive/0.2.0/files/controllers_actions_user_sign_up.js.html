@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>controllers\actions\user\sign_up.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.2.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AdminIndexController.html">AdminIndexController</a></li>
+            
+                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+            
+                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+            
+                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/BaseController.html">BaseController</a></li>
+            
+                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+            
+                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+            
+                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+            
+                <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
+                <li><a href="../classes/CommentService.html">CommentService</a></li>
+            
+                <li><a href="../classes/ContentService.html">ContentService</a></li>
+            
+                <li><a href="../classes/DAO.html">DAO</a></li>
+            
+                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+            
+                <li><a href="../classes/DBManager.html">DBManager</a></li>
+            
+                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EmailService.html">EmailService</a></li>
+            
+                <li><a href="../classes/FormController.html">FormController</a></li>
+            
+                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+            
+                <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+            
+                <li><a href="../classes/MediaService.html">MediaService</a></li>
+            
+                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+            
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
+                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/PageController.html">PageController</a></li>
+            
+                <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+            
+                <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
+            
+                <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+            
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
+                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+            
+                <li><a href="../classes/SaveArticleDraft.html">SaveArticleDraft</a></li>
+            
+                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+            
+                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+            
+                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/UrlService.html">UrlService</a></li>
+            
+                <li><a href="../classes/UserService.html">UserService</a></li>
+            
+                <li><a href="../classes/Util.html">Util</a></li>
+            
+                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/Database.html">Database</a></li>
+            
+                <li><a href="../modules/Entities.html">Entities</a></li>
+            
+                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+            
+                <li><a href="../modules/Model.html">Model</a></li>
+            
+                <li><a href="../modules/Security.html">Security</a></li>
+            
+                <li><a href="../modules/Services.html">Services</a></li>
+            
+                <li><a href="../modules/Session.html">Session</a></li>
+            
+                <li><a href="../modules/Storage.html">Storage</a></li>
+            
+                <li><a href="../modules/Theme.html">Theme</a></li>
+            
+                <li><a href="../modules/Validation.html">Validation</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: controllers\actions\user\sign_up.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2014  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+/**
+ * Creates an READER level user
+ */
+
+//dependencies
+var BaseController = pb.BaseController;
+var FormController = pb.FormController;
+
+function SignUp(){}
+
+//inheritance
+util.inherits(SignUp, FormController);
+
+SignUp.prototype.onPostParamsRetrieved = function(post, cb) {
+	var self = this;
+
+	post.position   = &#x27;&#x27;;
+    post.photo      = null;
+    post.admin      = ACCESS_USER;
+    post.username   = BaseController.sanitize(post.username);
+    post.email      = BaseController.sanitize(post.email);
+    post.first_name = BaseController.sanitize(post.first_name);
+    post.last_name  = BaseController.sanitize(post.last_name);
+
+    var message = this.hasRequiredParams(post, this.getRequiredFields());
+    if(message) {
+        this.formError(message, &#x27;/user/sign_up&#x27;, cb);
+        return;
+    }
+
+    var dao = new pb.DAO();
+    pb.content.getSettings(function(err, contentSettings) {
+    	//TODO handle error
+
+    	var collection      = &#x27;user&#x27;;
+    	var successRedirect = &#x27;/user/login&#x27;;
+    	var successMsg      = self.ls.get(&#x27;ACCOUNT_CREATED&#x27;);
+        if(contentSettings.require_verification) {
+        	collection      = &#x27;unverified_user&#x27;;
+        	successRedirect = &#x27;/user/verification_sent&#x27;;
+        	successMsg      = self.ls.get(&#x27;VERIFICATION_SENT&#x27;) + post.email;
+        	post.verification_code = pb.utils.uniqueId();
+        }
+
+        var user = pb.DocumentCreator.create(collection, post);
+
+        self.validateUniques(user, function(err, results) {
+            if(util.isError(err)) {
+                self.formError(&#x27;A general failure occurred&#x27;, &#x27;/user/sign_up&#x27;, cb);
+                return;
+            }
+
+            //check for validation failures
+            var errMsg = null;
+            if (results.verified_username &gt; 0 || results.unverified_username &gt; 0) {
+            	errMsg = self.ls.get(&#x27;EXISTING_EMAIL&#x27;);
+            }
+            else if (results.verified_email &gt; 0 || results.unverified_email &gt; 0) {
+            	errMsg = self.ls.get(&#x27;EXISTING_EMAIL&#x27;);
+            }
+
+            if (errMsg) {
+            	self.formError(errMsg, &#x27;/user/sign_up&#x27;, cb);
+                return;
+            }
+
+            dao.update(user).then(function(data) {
+                if(util.isError(data)) {
+                    self.formError(request, session, self.ls.get(&#x27;ERROR_SAVING&#x27;), &#x27;/user/sign_up&#x27;, cb);
+                    return;
+                }
+
+                self.session.success = successMsg;
+                self.redirect(pb.config.siteRoot + successRedirect, cb);
+
+                //send email for verification when required
+                if (contentSettings.require_verification) {
+                	pb.users.sendVerificationEmail(user, pb.utils.cb);
+                }
+            });
+        });
+    });
+};
+
+SignUp.prototype.getRequiredFields = function() {
+	return [&#x27;username&#x27;, &#x27;email&#x27;, &#x27;password&#x27;, &#x27;confirm_password&#x27;];
+};
+
+SignUp.prototype.validateUniques = function(user, cb) {
+	var dao = new pb.DAO();
+	var tasks = {
+		verified_username: function(callback) {
+			dao.count(&#x27;user&#x27;, {username: user.username}, callback);
+		},
+		verified_email: function(callback) {
+			dao.count(&#x27;user&#x27;, {email: user.email}, callback);
+		},
+		unverified_username: function(callback) {
+			dao.count(&#x27;unverified_user&#x27;, {username: user.username}, callback);
+		},
+		unverified_email: function(callback) {
+			dao.count(&#x27;unverified_user&#x27;, {email: user.email}, callback);
+		},
+	};
+	async.series(tasks, cb);
+};
+
+//exports
+module.exports = SignUp;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

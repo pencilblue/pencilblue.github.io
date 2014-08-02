@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\http\request_handler.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.2.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AdminIndexController.html">AdminIndexController</a></li>
+            
+                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+            
+                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+            
+                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/BaseController.html">BaseController</a></li>
+            
+                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+            
+                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+            
+                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+            
+                <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
+                <li><a href="../classes/CommentService.html">CommentService</a></li>
+            
+                <li><a href="../classes/ContentService.html">ContentService</a></li>
+            
+                <li><a href="../classes/DAO.html">DAO</a></li>
+            
+                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+            
+                <li><a href="../classes/DBManager.html">DBManager</a></li>
+            
+                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EmailService.html">EmailService</a></li>
+            
+                <li><a href="../classes/FormController.html">FormController</a></li>
+            
+                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+            
+                <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+            
+                <li><a href="../classes/MediaService.html">MediaService</a></li>
+            
+                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+            
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
+                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/PageController.html">PageController</a></li>
+            
+                <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+            
+                <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
+            
+                <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+            
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
+                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+            
+                <li><a href="../classes/SaveArticleDraft.html">SaveArticleDraft</a></li>
+            
+                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+            
+                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+            
+                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/UrlService.html">UrlService</a></li>
+            
+                <li><a href="../classes/UserService.html">UserService</a></li>
+            
+                <li><a href="../classes/Util.html">Util</a></li>
+            
+                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/Database.html">Database</a></li>
+            
+                <li><a href="../modules/Entities.html">Entities</a></li>
+            
+                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+            
+                <li><a href="../modules/Model.html">Model</a></li>
+            
+                <li><a href="../modules/Security.html">Security</a></li>
+            
+                <li><a href="../modules/Services.html">Services</a></li>
+            
+                <li><a href="../modules/Session.html">Session</a></li>
+            
+                <li><a href="../modules/Storage.html">Storage</a></li>
+            
+                <li><a href="../modules/Theme.html">Theme</a></li>
+            
+                <li><a href="../modules/Validation.html">Validation</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: include\http\request_handler.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2014  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+/**
+ * Responsible for processing a single req by delegating it to the correct controllers
+ * @class RequestHandler
+ * @constructor
+ * @param {Server} server The http server that the request came in on
+ * @param {Request} req The incoming request
+ * @param {Response} resp The outgoing response
+ */
+function RequestHandler(server, req, resp){
+	this.startTime = (new Date()).getTime();
+	this.server    = server;
+	this.req       = req;
+	this.resp      = resp;
+	this.url       = url.parse(req.url, true);
+}
+
+/**
+ * The fallback theme (pencilblue)
+ * @static
+ * @property DEFAULT_THEME
+ * @type {String}
+ */
+RequestHandler.DEFAULT_THEME = &#x27;pencilblue&#x27;;
+
+RequestHandler.storage = [];
+RequestHandler.index   = {};
+
+RequestHandler.CORE_ROUTES = [
+	{
+		method: &#x27;get&#x27;,
+		path: &quot;/public/:plugin/*&quot;,
+		access_level: 0,
+		auth_required: false,
+		setup_required: false,
+		controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;public.js&#x27;),
+		content_type: &#x27;text/html&#x27;
+	},
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/setup&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	setup_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;setup.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/setup&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	setup_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;setup.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/login&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;login.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/login&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;login.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/forgot_password&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;forgot_password.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/user/reset_password&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;reset_password.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;index.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	path: &quot;/actions/logout&quot;,
+    	access_level: 0,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;logout.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/&quot;,
+    	access_level: 0,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;index.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/sections&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/sections/section_map&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;section_map.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/sections/new_section&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;new_section.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/sections/new_section&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;new_section.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/sections/section_map&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;section_map.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/sections/edit_section/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;edit_section.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/sections/delete_section/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;delete_section.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/sections/edit_section/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;sections&#x27;, &#x27;edit_section.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/topics/manage_topics&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics&#x27;, &#x27;manage_topics.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/topics/delete_topic/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics&#x27;, &#x27;delete_topic.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/site_settings/configuration&quot;,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;site_settings&#x27;, &#x27;configuration.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/site_settings/configuration&quot;,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;site_settings&#x27;, &#x27;configuration.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/site_settings/content&quot;,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;site_settings&#x27;, &#x27;content.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/site_settings/content&quot;,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;site_settings&#x27;, &#x27;content.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/site_settings/email&quot;,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;site_settings&#x27;, &#x27;email.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/site_settings/email&quot;,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;site_settings&#x27;, &#x27;email.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/topics/new_topic&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics&#x27;, &#x27;new_topic.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/topics/new_topic&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics&#x27;, &#x27;new_topic.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/topics/import_topics&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics&#x27;, &#x27;import_topics.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/topics/import_topics&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics&#x27;, &#x27;import_topics.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/topics/&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;topics.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/pages/new_page&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;new_page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/pages/new_page&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;new_page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/pages/manage_pages&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;manage_pages.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/pages/edit_page/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;edit_page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/pages/edit_page/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;edit_page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/api/admin/content/pages/save_draft/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;save_draft.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/pages/new_page&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;new_page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/pages/delete_page/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;pages&#x27;, &#x27;delete_page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/media&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/media/manage_media&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;manage_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/media/add_media&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;add_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/media/add_media&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;add_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/media/edit_media/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;edit_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/media/edit_media/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;edit_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/media/delete_media/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;delete_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/media/inline_add_media&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;inline_add_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/media/upload_media&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;media&#x27;, &#x27;upload_media.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/articles&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/articles/manage_articles&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;manage_articles.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/articles/new_article&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;new_article.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/articles/delete_article/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;delete_article.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/api/custom_objects/get_object_type_name_available&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;custom_objects&#x27;, &#x27;get_object_type_name_available.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/articles/edit_article/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;edit_article.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/articles/edit_article/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;edit_article.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/api/admin/content/articles/save_draft/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;save_draft.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/preview/:type/:id&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;preview.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/articles/new_article&quot;,
+    	access_level: ACCESS_WRITER,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;articles&#x27;, &#x27;new_article.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/user/manage_account/change_password&quot;,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;manage_account&#x27;, &#x27;change_password.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/custom_objects&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/custom_objects/manage_object_types&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;manage_object_types.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/custom_objects/new_object_type&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;new_object_type.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/user/manage_account/profile&quot;,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;manage_account&#x27;, &#x27;profile.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/user/resend_verification&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;resend_verification.js&#x27;),
+    },
+    {
+        method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/new_object_type&quot;,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;new_object_type.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/custom_objects/edit_object_type/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;edit_object_type.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/user/sign_up&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;sign_up.js&#x27;),
+    },
+    {
+        method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/edit_object_type/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;edit_object_type.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/user/verify_email&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;user&#x27;, &#x27;verify_email.js&#x27;),
+    },
+    {
+        method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/delete_object_type/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;delete_object_type.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/users&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;users.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/site_settings&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;site_settings.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/users/new_user&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;new_user.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/users/manage_users&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;manage_users.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/users/edit_user/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;edit_user.js&#x27;),
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/users/edit_user/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;edit_user.js&#x27;),
+    },
+    {
+        method: &#x27;get&#x27;,
+        path: &quot;/actions/admin/users/delete_user/:id&quot;,
+        auth_required: true,
+        access_level: ACCESS_EDITOR,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;delete_user.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/users/change_password/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;change_password.js&#x27;),
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/users/change_password/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;change_password.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/users/send_password_reset/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_MANAGING_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;send_password_reset.js&#x27;),
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/users/new_user&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_EDITOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;new_user.js&#x27;),
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/sitemap&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;sitemap.js&#x27;),
+    	content_type: &#x27;application/xml&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/user/sign_up&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;sign_up.js&#x27;),
+    },
+    {
+    	path: &quot;/admin/content/custom_objects/manage_objects/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;manage_objects.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	path: &quot;/admin/content/custom_objects/sort_objects/:type_id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;sort_objects.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+        method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/sort_objects/:type_id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;sort_objects.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/custom_objects/new_object/:type_id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;new_object.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/new_object/:type_id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;new_object.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/content/custom_objects/edit_object/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;edit_object.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/edit_object/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;edit_object.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/api/user/get_username_available&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;user&#x27;, &#x27;get_username_available.js&#x27;),
+    	content_type: &#x27;application/json&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/user/login&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;login.js&#x27;),
+    },
+    {
+        method: &#x27;get&#x27;,
+    	path: &quot;/actions/admin/content/custom_objects/delete_object/:id&quot;,
+    	access_level: ACCESS_EDITOR,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;custom_objects&#x27;, &#x27;delete_object.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/feed&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;feed.js&#x27;),
+    	content_type: &#x27;application/rss+xml&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/section/:customUrl&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;section.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/article/:customUrl&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;article.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/page/:customUrl&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;page.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/api/comments/new_comment&quot;,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;comments&#x27;, &#x27;new_comment.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/user/change_password&quot;,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;change_password.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/user/manage_account&quot;,
+    	auth_required: true,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;manage_account.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/user/resend_verification&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;resend_verification.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/user/verification_sent&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;user&#x27;, &#x27;verification_sent.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/plugins&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;plugins&#x27;, &#x27;index.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/api/plugins/:action/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;plugins&#x27;, &#x27;plugin_api.js&#x27;),
+    	content_type: &#x27;application/json&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/users/permissions&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;users&#x27;, &#x27;permissions.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/plugins/view/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;plugins&#x27;, &#x27;details.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	path: &quot;/admin/plugins/settings/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;plugins&#x27;, &#x27;settings.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	path: &quot;/admin/themes/settings/:id&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;themes&#x27;, &#x27;settings.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+    	path: &quot;/admin/themes&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;themes&#x27;, &#x27;index.js&#x27;),
+    	content_type: &#x27;text/html&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+    	path: &quot;/actions/admin/themes&quot;,
+    	auth_required: true,
+    	access_level: ACCESS_ADMINISTRATOR,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;themes&#x27;, &#x27;index.js&#x27;),
+    },
+    {
+    	path: &quot;/api/content/get_articles&quot;,
+    	auth_required: false,
+    	controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;content&#x27;, &#x27;get_articles.js&#x27;),
+    	content_type: &#x27;application/json&#x27;
+    },
+    {
+        path: &quot;/api/content/get_media_embed&quot;,
+        auth_required: false,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;content&#x27;, &#x27;get_media_embed.js&#x27;),
+        content_type: &#x27;application/json&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+        path: &quot;/api/url/:action&quot;,
+        auth_required: true,
+        access_level: ACCESS_WRITER,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;, &#x27;url_api.js&#x27;),
+        content_type: &#x27;application/json&#x27;
+    },
+    {
+    	method: &#x27;get&#x27;,
+        path: &quot;/api/content/search&quot;,
+        auth_required: true,
+        access_level: ACCESS_WRITER,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;content&#x27;, &#x27;search.js&#x27;),
+        content_type: &#x27;application/json&#x27;
+    },
+    {
+    	method: &#x27;post&#x27;,
+        path: &quot;/api/cluster/:action&quot;,
+        auth_required: true,
+        access_level: ACCESS_ADMINISTRATOR,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;api&#x27;, &#x27;admin&#x27;, &#x27;system&#x27;, &#x27;cluster_api.js&#x27;),
+        content_type: &#x27;application/json&#x27;
+    },
+    {
+        method: &#x27;get&#x27;,
+        path: &quot;/admin/content/comments/manage_comments&quot;,
+        auth_required: true,
+        access_level: ACCESS_EDITOR,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;comments&#x27;, &#x27;manage_comments.js&#x27;),
+        content_type: &#x27;text/html&#x27;
+    },
+    {
+        method: &#x27;get&#x27;,
+        path: &quot;/actions/admin/content/comments/delete_comment/:id&quot;,
+        access_level: ACCESS_EDITOR,
+        auth_required: true,
+        controller: path.join(DOCUMENT_ROOT, &#x27;controllers&#x27;, &#x27;actions&#x27;, &#x27;admin&#x27;, &#x27;content&#x27;, &#x27;comments&#x27;, &#x27;delete_comment.js&#x27;),
+        content_type: &#x27;text/html&#x27;
+    },
+];
+
+RequestHandler.init = function(){
+
+	//iterate core routes adding them
+	pb.log.debug(&#x27;RequestHandler: Registering System Routes&#x27;);
+	for (var i = 0; i &lt; RequestHandler.CORE_ROUTES.length; i++) {
+		var descriptor = RequestHandler.CORE_ROUTES[i];
+
+		//register the route
+		RequestHandler.registerRoute(descriptor, RequestHandler.DEFAULT_THEME);
+	}
+};
+
+RequestHandler.generateRedirect = function (location) {
+	return {
+		redirect: location
+	};
+};
+
+RequestHandler.isValidRoute = function(descriptor) {
+	return fs.existsSync(descriptor.controller) &amp;&amp;
+		   typeof descriptor.path != &#x27;undefined&#x27;;
+};
+
+RequestHandler.unregisterThemeRoutes = function(theme) {
+
+	var routesRemoved = 0;
+	for (var i = 0; i &lt; RequestHandler.storage.length; i++) {
+		var path   = RequestHandler.storage[i].path;
+		var result = RequestHandler.unregisterRoute(path, theme);
+		if (result) {
+			routesRemoved++;
+		}
+	}
+	return routesRemoved;
+};
+
+RequestHandler.unregisterRoute = function(path, theme) {
+
+	//get the pattern to check for
+	var pattern    = null;
+	var patternObj = RequestHandler.getRoutePattern(path);
+	if (patternObj) {
+		pattern = patternObj.pattern;
+	}
+	else {//invalid path provided
+		return false;
+	}
+
+	//check if that pattern is registered for any theme
+	if (RequestHandler.index[pattern] === undefined) {
+		return false;
+	}
+
+	//check for theme
+	var descriptor = RequestHandler.storage[RequestHandler.index[pattern]];
+	if (!descriptor.themes[theme]) {
+		return false;
+	}
+
+	//remove from service
+	delete descriptor.themes[theme];
+	return true;
+};
+
+RequestHandler.registerRoute = function(descriptor, theme){
+	//validate route
+	if (!RequestHandler.isValidRoute(descriptor)) {
+		pb.log.error(&quot;Route Validation Failed for: &quot;+JSON.stringify(descriptor));
+		return false;
+	}
+
+	//standardize http method (if exists) to upper case
+	if (descriptor.method) {
+		descriptor.method = descriptor.method.toUpperCase();
+	}
+    else {
+        descriptor.method = &#x27;ALL&#x27;
+    }
+
+	//get pattern and path variables
+	var patternObj = RequestHandler.getRoutePattern(descriptor.path);
+	var pathVars   = patternObj.pathVars;
+	var pattern    = patternObj.pattern;
+
+	//insert it
+	var routeDescriptor = null;
+	if (RequestHandler.index[pattern] !== undefined) {
+
+		//exists so find it
+		for (var i = 0; i &lt; RequestHandler.storage.length; i++) {
+			var route = RequestHandler.storage[i];
+			if (route.pattern == pattern) {
+				routeDescriptor = route;
+				break;
+			}
+		}
+	}
+	else{//does not exist so create it
+		routeDescriptor = {
+			path: patternObj.path,
+			pattern: pattern,
+			path_vars: pathVars,
+			expression: new RegExp(pattern),
+            themes: {}
+		};
+
+		//set them in storage
+		RequestHandler.index[pattern] = RequestHandler.storage.length;
+		RequestHandler.storage.push(routeDescriptor);
+	}
+
+	//set the descriptor for the theme and load the controller type
+    if (!routeDescriptor.themes[theme]) {
+        routeDescriptor.themes[theme] = {};
+    }
+	routeDescriptor.themes[theme][descriptor.method]            = descriptor;
+	routeDescriptor.themes[theme][descriptor.method].controller = require(descriptor.controller);
+
+	pb.log.debug(&quot;RequestHandler: Registered Route - Theme [%s] Path [%s][%s] Pattern [%s]&quot;, theme, descriptor.method, descriptor.path, pattern);
+	return true;
+};
+
+RequestHandler.getRoutePattern = function(path) {
+	if (!path) {
+		return null;
+	}
+
+	//clean up path
+	if (path.indexOf(&#x27;/&#x27;) == 0) {
+		path = path.substring(1);
+	}
+	if (path.lastIndexOf(&#x27;/&#x27;) == path.length - 1) {
+		path = path.substring(0, path.length - 1);
+	}
+
+	//construct the pattern &amp; extract path variables
+	var pathVars = {};
+	var pattern = &#x27;^&#x27;;
+	var pathPieces = path.split(&#x27;/&#x27;);
+	for (var i = 0; i &lt; pathPieces.length; i++) {
+		var piece = pathPieces[i];
+
+		if (piece.indexOf(&#x27;:&#x27;) == 0) {
+			var fieldName = piece.substring(1);
+			pathVars[fieldName] = i + 1;
+			pattern += &#x27;/[A-Za-z0-9_\-]+&#x27;;
+		}
+		else {
+			if (piece.indexOf(&#x27;*&#x27;) &gt;= 0) {
+				piece = piece.replace(/\*/g, &#x27;.*&#x27;);
+			}
+			pattern += &#x27;/&#x27;+piece;
+		}
+	}
+	pattern += &#x27;[/]{0,1}$&#x27;;
+
+	return {
+		path: path,
+		pattern: pattern,
+		pathVars: pathVars
+	};
+};
+
+/**
+ * Processes a request:
+ * &lt;ol&gt;
+ * 	&lt;li&gt;Initialize localization&lt;/li&gt;
+ * 	&lt;li&gt;if Public Route:
+ * 		&lt;ol&gt;
+ * 			&lt;li&gt;If Valid Content
+ * 				&lt;ol&gt;&lt;li&gt;Serve Public Content&lt;/li&gt;&lt;/ol&gt;
+ * 			&lt;/li&gt;
+ * 			&lt;li&gt;Else Serve 404&lt;/li&gt;
+ * 		&lt;/ol&gt;
+ * 	&lt;/li&gt;
+ * 	&lt;li&gt;Else Parse Cookies&lt;/li&gt;
+ * 	&lt;li&gt;Open/Create a session&lt;/li&gt;
+ * 	&lt;li&gt;Get Route&lt;/li&gt;
+ *
+ * &lt;/ol&gt;
+ */
+RequestHandler.prototype.handleRequest = function(){
+
+	//get locale preference
+	this.localizationService = new pb.Localization(this.req);
+
+	//fist things first check for public resource
+	if (RequestHandler.isPublicRoute(this.url.pathname)) {
+		this.servePublicContent();
+		return;
+	}
+
+	//check for session cookie
+	var cookies = RequestHandler.parseCookies(this.req);
+	this.req.headers[pb.SessionHandler.COOKIE_HEADER] = cookies;
+
+    //open session
+	var self = this;
+    pb.session.open(this.req, function(err, session){
+
+    	//set the session id when no session has started or the current one has
+    	//expired.
+    	var sc = Object.keys(cookies).length == 0;
+    	var se = !sc &amp;&amp; cookies.session_id != session.uid;
+    	self.setSessionCookie =  sc || se;
+    	if (pb.log.isSilly()) {
+    		pb.log.silly(&quot;RequestHandler: Session ID [&quot;+session.uid+&quot;] Cookie SID [&quot;+cookies.session_id+&quot;] Created [&quot;+sc+&quot;] Expired [&quot;+se+&quot;]&quot;);
+    	}
+
+    	//continue processing
+    	self.onSessionRetrieved(err, session);
+    });
+};
+
+RequestHandler.prototype.servePublicContent = function(absolutePath) {
+
+	//check for provided path, then default if necessary
+	if (absolutePath === undefined) {
+		absolutePath = path.join(DOCUMENT_ROOT, &#x27;public&#x27;, this.url.pathname);
+	}
+
+	var self = this;
+	fs.readFile(absolutePath, function(err, content){
+		if (err) {
+			self.serve404();
+			return;
+		}
+
+		//build response structure
+		var data = {
+			content: content
+		};
+
+		//guess at content-type
+		var map = {
+			js: &#x27;text/javascript&#x27;,
+			css: &#x27;text/css&#x27;,
+			png: &#x27;image/png&#x27;,
+			svg: &#x27;image/svg+xml&#x27;,
+			jpg: &#x27;image/jpeg&#x27;,
+			gif: &#x27;image/gif&#x27;,
+            webp: &#x27;image/webp&#x27;,
+			ico: &#x27;image/vnd.microsoft.icon&#x27;,
+			tff: &#x27;application/octet-stream&#x27;,
+			eot: &#x27;application/vnd.ms-fontobject&#x27;,
+			woff: &#x27;application/x-font-woff&#x27;,
+            html: &#x27;text/html&#x27;
+		};
+		var index = absolutePath.lastIndexOf(&#x27;.&#x27;);
+		if (index &gt;= 0) {
+			var mime = map[absolutePath.substring(index + 1)];
+			if (mime != undefined) {
+				data.content_type = mime;
+			}
+		}
+
+		//send response
+		self.writeResponse(data);
+	});
+};
+
+RequestHandler.isPublicRoute = function(path){
+	var publicRoutes = [&#x27;/js/&#x27;, &#x27;/css/&#x27;, &#x27;/fonts/&#x27;, &#x27;/img/&#x27;, &#x27;/media/&#x27;, &#x27;/localization/&#x27;, &#x27;/favicon.ico&#x27;, &#x27;/docs/&#x27;];
+	for (var i = 0; i &lt; publicRoutes.length; i++) {
+		if (path.indexOf(publicRoutes[i]) == 0) {
+			return true;
+		}
+	}
+	return false;
+};
+
+RequestHandler.prototype.serve404 = function() {
+
+	var NotFound  = require(&#x27;../../controllers/error/404.js&#x27;);
+	var cInstance = new NotFound();
+	this.doRender({}, cInstance);
+
+	if (pb.log.isSilly()) {
+		pb.log.silly(&quot;RequestHandler: No Route Found, Sending 404 for URL=&quot;+this.url.href);
+	}
+};
+
+/**
+ * TODO Church this up a bit.  Make it a template and controller like 404.
+ * TODO install an encoder entity since node prints out function names in angle brackets
+ */
+RequestHandler.prototype.serveError = function(err) {
+	var data = {
+		content: &#x27;&lt;html&gt;&lt;body&gt;&lt;h2&gt;Whoops! Something unexpected happened.&lt;/h2&gt;&lt;br/&gt;&lt;pre&gt;&#x27;+(err ? err.stack : err)+&#x27;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&#x27;,
+		content_type: &#x27;text/html&#x27;,
+		code: 500
+	};
+	this.onRenderComplete(data);
+};
+
+RequestHandler.prototype.onSessionRetrieved = function(err, session) {
+	if (err) {
+		this.onErrorOccurred(err);
+		return;
+	}
+
+	//set the session
+	this.session = session;
+
+	//find the controller to hand off to
+	var route = this.getRoute(this.url.pathname);
+	if (route == null) {
+		this.serve404();
+		return;
+	}
+	this.route = route;
+
+	//get active theme
+	var self = this;
+	pb.settings.get(&#x27;active_theme&#x27;, function(err, activeTheme){
+		if (!activeTheme) {
+			pb.log.warn(&quot;RequestHandler: The active theme is not set.  Defaulting to &#x27;%s&#x27;&quot;, RequestHandler.DEFAULT_THEME);
+			activeTheme = RequestHandler.DEFAULT_THEME;
+		}
+		self.onThemeRetrieved(activeTheme, route);
+	});
+};
+
+RequestHandler.prototype.getRoute = function(path) {
+
+	var route = null;
+	for (var i = 0; i &lt; RequestHandler.storage.length; i++) {
+
+		var curr   = RequestHandler.storage[i];
+		var result = curr.expression.test(path);
+
+		if (pb.log.isSilly()) {
+			pb.log.silly(&#x27;RequestHandler: Comparing Path [%s] to Pattern [%s] Result [%s]&#x27;, path, curr.pattern, result);
+		}
+		if (result) {
+			route = curr;
+			break;
+		}
+	}
+	return route;
+};
+
+RequestHandler.routeSupportsMethod = function(themeRoutes, method) {
+    method = method.toUpperCase();
+    return themeRoutes[method] !== undefined;
+};
+
+RequestHandler.routeSupportsTheme = function(route, theme, method) {
+    return route.themes[theme] !== undefined &amp;&amp; RequestHandler.routeSupportsMethod(route.themes[theme], method);
+};
+
+RequestHandler.prototype.getRouteTheme = function(activeTheme, route) {
+    var obj = {theme: null, method: null};
+
+    var methods = [this.req.method, &#x27;ALL&#x27;];
+    for (var i = 0; i &lt; methods.length; i++) {
+
+        //check for themed route
+        var themesToCheck = [activeTheme, RequestHandler.DEFAULT_THEME];
+        pb.utils.arrayPushAll(Object.keys(route.themes), themesToCheck);
+        for (var j = 0; j &lt; themesToCheck.length; j++) {
+
+            //see if theme supports method and provides support
+            if (RequestHandler.routeSupportsTheme(route, themesToCheck[j], methods[i])) {
+                obj.theme  = themesToCheck[j];
+                obj.method = methods[i];
+                return obj;
+            }
+        }
+    }
+    return obj;
+}
+
+RequestHandler.prototype.onThemeRetrieved = function(activeTheme, route) {
+	var self = this;
+
+	//check for unregistered route for theme
+	var rt = this.getRouteTheme(activeTheme, route);
+
+	if (pb.log.isSilly()) {
+		pb.log.silly(&quot;RequestHandler: Settling on theme [%s] and method [%s] for URL=[%s:%s]&quot;, rt.theme, rt.method, this.req.method, this.url.href);
+	}
+
+	//sanity check
+	if (rt.theme === null || rt.method === null) {
+		this.serve404();
+		return;
+	}
+
+	//do security checks
+	this.checkSecurity(rt.theme, rt.method, function(err, result) {
+		if (pb.log.isSilly()) {
+			pb.log.silly(&quot;RequestHandler: Security Result=[%s]&quot;, result.success);
+			for (var key in result.results) {
+				pb.log.silly(&quot;RequestHandler:&quot;+key+&#x27;: &#x27;+JSON.stringify(result.results[key]));
+			}
+		}
+		//all good
+		if (result.success) {
+			self.onSecurityChecksPassed(rt.theme, rt.method, route);
+			return;
+		}
+
+		//handle failures through bypassing other processing and doing output
+		self.onRenderComplete(err);
+	});
+};
+
+RequestHandler.prototype.onSecurityChecksPassed = function(activeTheme, method, route) {
+
+	//extract path variables
+	var pathVars = {};
+	var pathParts = this.url.pathname.split(&#x27;/&#x27;);
+	for (var field in route.path_vars) {
+		pathVars[field] = pathParts[route.path_vars[field]];
+	}
+
+	//execute controller
+	var ControllerType  = route.themes[activeTheme][method].controller;
+	var cInstance       = new ControllerType();
+	this.doRender(pathVars, cInstance);
+};
+
+RequestHandler.prototype.doRender = function(pathVars, cInstance) {
+	var self  = this;
+	var props = {
+	    request_handler: this,
+		request: this.req,
+		response: this.resp,
+		session: this.session,
+		localization_service: this.localizationService,
+		path_vars: pathVars,
+		query: this.url.query
+	};
+	cInstance.init(props, function(){
+		self.onControllerInitialized(cInstance);
+	});
+};
+
+RequestHandler.prototype.checkSecurity = function(activeTheme, method, cb){
+	var self        = this;
+	this.themeRoute = this.route.themes[activeTheme][method];
+
+	//verify if setup is needed
+	var checkSystemSetup = function(callback) {
+		var result = {success: true};
+		if (self.themeRoute.setup_required == undefined || self.themeRoute.setup_required == true) {
+			pb.settings.get(&#x27;system_initialized&#x27;, function(err, isSetup){
+
+				//verify system init
+				if (!isSetup) {
+					result.success = false;
+					result.redirect = &#x27;/setup&#x27;;
+					callback(result, result);
+					return;
+				}
+				callback(null, result);
+			});
+		}
+		else {
+			callback(null, result);
+		}
+	};
+
+	var checkRequiresAuth = function(callback) {
+
+		var result = {success: true};
+		if (self.themeRoute.auth_required == true) {
+
+			if (self.session.authentication.user_id == null || self.session.authentication.user_id == undefined) {
+				result.success  = false;
+				result.redirect = RequestHandler.isAdminURL(self.url.href) ? &#x27;/admin/login&#x27; : &#x27;/user/login&#x27;;
+				self.session.on_login = self.url.href;
+				callback(result, result);
+				return;
+			}
+			callback(null, result);
+		}
+		else{
+			callback(null, result);
+		}
+	};
+
+	var checkAdminLevel = function(callback) {
+
+		var result = {success: true};
+		if (self.themeRoute.access_level !== undefined) {
+
+			if (self.session.authentication.admin_level &lt; self.themeRoute.access_level) {
+				result.success = false;
+				result.content = &#x27;403 Forbidden&#x27;;
+				result.code    = 403;
+				callback(result, result);
+				return;
+			}
+			callback(null, result);
+		}
+		else{
+			callback(null, result);
+		}
+	};
+
+	var checkPermissions = function(callback) {
+
+		var result   = {success: true};
+		var reqPerms = self.themeRoute.permissions;
+		var auth     = self.session.authentication;
+		if (auth &amp;&amp; auth.user &amp;&amp; auth.access_level !== ACCESS_ADMINISTRATOR &amp;&amp; auth.user.permissisions &amp;&amp; util.isArray(reqPerms)) {
+
+			var permMap = self.session.authentication.user.permissions;
+			for(var i = 0; i &lt; reqPerms.length; i++) {
+
+				if (!permMap[reqPerms[i]]) {
+					result.success = false;
+					result.content = &#x27;403 Forbidden&#x27;;
+					result.code    = 403;
+					callback(result, result);
+					return;
+				}
+			}
+			callback(null, result);
+		}
+		else{
+			callback(null, result);
+		}
+	};
+
+	var tasks = {
+		checkSystemSetup: checkSystemSetup,
+        checkRequiresAuth: checkRequiresAuth,
+        checkAdminLevel: checkAdminLevel,
+        checkPermissions: checkPermissions
+	};
+	async.series(tasks, function(err, results){
+		if (err) {
+			cb(err, {success: false, results: results});
+			return;
+		}
+
+		cb(null, {success: true, results: results});
+	});
+};
+
+RequestHandler.prototype.onControllerInitialized = function(controller) {
+	var self = this;
+    var d = domain.create();
+    d.run(function() {
+        controller.render(function(result){
+            self.onRenderComplete(result);
+        });
+	});
+    d.on(&#x27;error&#x27;, function(err) {
+        pb.log.error(&quot;RequestHandler: An error occurred during controller execution. URL=[%s:%s] ROUTE=%s\n%s&quot;, self.req.method, self.req.url, JSON.stringify(self.route), err.stack);
+        self.serveError(err);
+    });
+};
+
+RequestHandler.prototype.onRenderComplete = function(data){
+
+	//set cookie
+    var cookies = new Cookies(this.req, this.resp);
+    if (this.setSessionCookie) {
+    	try{
+    		cookies.set(pb.SessionHandler.COOKIE_NAME, this.session.uid, pb.SessionHandler.getSessionCookie(this.session));
+    	}
+    	catch(e){
+    		pb.log.error(&#x27;RequestHandler: %s&#x27;, e.stack);
+    	}
+    }
+
+	//do any necessary redirects
+	var doRedirect = typeof data.redirect != &quot;undefined&quot;;
+	if(doRedirect) {
+        this.doRedirect(data.redirect);
+    }
+	else {
+		//output data here
+		this.writeResponse(data);
+	}
+
+	//calculate response time
+	if (pb.log.isDebug()) {
+		pb.log.debug(&quot;Response Time: &quot;+(new Date().getTime() - this.startTime)+
+				&quot;ms URL=[&quot;+this.req.method+&#x27;]&#x27;+
+				this.req.url+(doRedirect ? &#x27; Redirect=&#x27;+data.redirect : &#x27;&#x27;) +
+				(data.code == undefined ? &#x27;&#x27; : &#x27; CODE=&#x27;+data.code));
+	}
+
+	//close session after data sent
+	//public content doesn&#x27;t require a session so in order to not error out we
+	//check if the session exists first.
+	if (this.session) {
+		pb.session.close(this.session, function(err, result) {
+			//TODO handle any errors
+		});
+	}
+};
+
+RequestHandler.prototype.writeResponse = function(data){
+
+    //infer a response code when not provided
+    if(typeof data.code === &#x27;undefined&#x27;){
+        data.code = 200;
+    }
+
+    // If a response code other than 200 is provided, force that code into the head
+    var contentType = &#x27;text/html&#x27;;
+    if (typeof data.content_type !== &#x27;undefined&#x27;) {
+    	contentType = data.content_type;
+    }
+    else if (this.themeRoute &amp;&amp; this.themeRoute.content_type != undefined) {
+    	contentType = this.themeRoute.content_type;
+    }
+
+    //send response
+    //the catch allows us to prevent any plugins that callback trwice from
+    //screwing us over due to the attempt to write headers twice.
+    try {
+    	//set any custom headers
+    	if (pb.utils.isObject(data.headers)) {
+    		for(var header in data.headers) {
+    			this.resp.setHeader(header, data.headers[header]);
+    		}
+    	}
+    	this.resp.setHeader(&#x27;content-type&#x27;, contentType);
+    	this.resp.writeHead(data.code);
+    	this.resp.end(data.content);
+    }
+    catch(e) {
+    	pb.log.error(&#x27;RequestHandler: &#x27;+e.stack);
+    }
+};
+
+
+RequestHandler.prototype.writeCookie = function(descriptor, cookieStr){
+	cookieStr = cookieStr ? cookieStr : &#x27;&#x27;;
+
+	for(var key in descriptor) {
+        cookieStr += key + &#x27;=&#x27; + descriptor[key]+&#x27;; &#x27;;
+    }
+	return cookieStr;
+};
+
+RequestHandler.prototype.doRedirect = function(location) {
+	this.resp.statusCode = 302;
+    this.resp.setHeader(&quot;Location&quot;, location);
+    this.resp.end();
+};
+
+RequestHandler.prototype.onErrorOccurred = function(err){
+	var error = new PBError(&quot;Failed to open a session&quot;, 500);
+	error.setSource(err);
+	throw error;
+};
+
+RequestHandler.parseCookies = function(req){
+
+	var parsedCookies = {};
+	if (req.headers.cookie) {
+
+        var cookieParameters = req.headers.cookie.split(&#x27;;&#x27;);
+        for(var i = 0; i &lt; cookieParameters.length; i++)  {
+
+        	var keyVal = cookieParameters[i].split(&#x27;=&#x27;);
+            parsedCookies[keyVal[0]] = keyVal[1];
+        }
+	}
+    return parsedCookies;
+};
+
+RequestHandler.urlExists = function(url, id, cb) {
+	var dao = new pb.DAO();
+	var getTask = function(collection) {
+		return function (callback) {
+			var where = {url: url};
+			if (id) {
+				where._id = {$ne: new ObjectID(id)};
+			}
+			dao.count(collection, where, function(err, count) {
+                if(util.isError(err) || count &gt; 0) {
+                    callback(true, count);
+                }
+                else {
+                	callback(null, count);
+                }
+			});
+		};
+	};
+	async.series([getTask(&#x27;article&#x27;), getTask(&#x27;page&#x27;)], function(err, results){
+		cb(err, err != null);
+	});
+};
+
+RequestHandler.isAdminURL = function(url) {
+	if (url != null) {
+
+		var index = url.indexOf(&#x27;/&#x27;);
+		if (index == 0 &amp;&amp; url.length &gt; 0) {
+			url = url.substring(1);
+		}
+
+		var pieces = url.split(&#x27;/&#x27;);
+		return pieces.length &gt; 0 &amp;&amp; pieces[0].indexOf(&#x27;admin&#x27;) == 0;
+	}
+	return false;
+};
+
+RequestHandler.isSystemSafeURL = function(url, id, cb) {
+	if (url == null || RequestHandler.isAdminURL(url)) {
+		cb(null, false);
+		return;
+	}
+	RequestHandler.urlExists(url, id, function(err, exists){
+		cb(err, !exists);
+	});
+};
+
+//exports
+module.exports.RequestHandler = RequestHandler;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
