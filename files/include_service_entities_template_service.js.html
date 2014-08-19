@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include/service/entities/template_service.js - PencilBlue</title>
+    <title>include\service\entities\template_service.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: include/service/entities/template_service.js</h1>
+                        <h1 class="file-heading">File: include\service\entities\template_service.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -296,7 +320,7 @@ function TemplateService(localizationService){
 		}
 
 		//always add fs service
-		services.push(new pb.FSEntityService(objType));
+		services.push(new pb.TemplateEntityService());
 
 		TEMPLATE_LOADER = new pb.SimpleLayeredService(services, &#x27;TemplateService&#x27;);
 	}
@@ -319,6 +343,9 @@ var SYSTEM_PREFIX           = &#x27;system_&#x27;;
 var SYSTEM_PREFIX_LEN       = SYSTEM_PREFIX.length;
 
 var TEMPLATE_LOADER = null;
+
+var TEMPLATE_PIECE_STATIC = &#x27;static&#x27;;
+var TEMPLATE_PIECE_FLAG   = &#x27;flag&#x27;;
 
 /**
  * A container that provides the mapping for global call backs.  These should
@@ -408,7 +435,7 @@ TemplateService.prototype.getTemplateContentsByPriority = function(relativePath,
 	    		//attempt to load template
 	    		TEMPLATE_LOADER.get(paths[i], function(err, templateData){
 					template = templateData;
-					doLoop   = template === null;
+					doLoop   = util.isError(err) || !pb.utils.isObject(template);
 					i++;
 					callback();
 				});
@@ -434,7 +461,7 @@ TemplateService.prototype.load = function(templateLocation, cb) {
 	var self = this;
 	this.getTemplateContentsByPriority(templateLocation, function(err, templateContents) {
 		if (util.isError(err)) {
-			cb(err, templateContents);
+			cb(err, null);
 			return;
 		}
 
@@ -451,73 +478,44 @@ TemplateService.prototype.load = function(templateLocation, cb) {
  * @param {function} cb Callback function
  */
 TemplateService.prototype.process = function(content, cb) {
-
-	//error checking
-	if (typeof content !== &#x27;string&#x27;) {
+	if (!pb.utils.isObject(content)) {
 		cb(new Error(&quot;TemplateService: A valid content string is required in order for the template engine to process the value&quot;), content);
 		return;
 	}
 
-	//iterate content characters
-	var self      = this;
-	var rf        = false;
-	var flag      = &#x27;&#x27;;
+    //iterate parts
+    var self  = this;
+    var tasks = pb.utils.getTasks(content.parts, function(parts, i) {
+        return function(callback) {
 
-	var cnt = 0;
-	var doCallback = function(cb, err, val) {
-		if (++cnt % 1000) {
-			process.nextTick(function() {cb(err, val);});
-		}
-		else {
-			cb(err, val);
-		}
-	};
-	var getIteratorFunc = function(index) {
-		return function(next) {
+            //callback with static content
+            var part = parts[i];
+            if (part.type === TEMPLATE_PIECE_STATIC) {
+                callback(null, part.val);
+                return;
+            }
+            else if (part.type === TEMPLATE_PIECE_FLAG) {
 
-			var curr = content.charAt(index);
-			switch (curr) {
-
-			case &#x27;^&#x27;:
-				if (rf) {
-					process.nextTick(function() {
-						self.processFlag(flag, function(err, subContent) {
-							if (pb.log.isSilly()) {
-								var str = subContent;
-								if (pb.utils.isString(str) &amp;&amp; str.length &gt; 20) {
-									str = str.substring(0, 17)+&#x27;...&#x27;;
-								}
-								pb.log.silly(&quot;TemplateService: Processed flag [%s] Content=[%s]&quot;, flag, str);
-							}
-							rf   = false;
-							flag = &#x27;&#x27;;
-							doCallback(next, null, subContent);
-						});
-					}, 0);
-				}
-				else {
-					rf = true;
-					doCallback(next, null, &#x27;&#x27;);
-				}
-				break;
-			default:
-				if (rf) {
-					flag += curr;
-					doCallback(next, null, &#x27;&#x27;);
-				}
-				else {
-					doCallback(next, null, curr);
-				}
-			}
-		};
-	};
-	var tasks = [];
-	for (var i = 0; i &lt; content.length; i++) {
-		tasks.push(getIteratorFunc(i));
-	};
-	async.series(tasks, function(err, contentArray) {
-		doCallback(cb, err, contentArray.join(&#x27;&#x27;));
-	});
+                self.processFlag(part.val, function(err, subContent) {
+                    if (pb.log.isSilly()) {
+                        var str = subContent;
+                        if (pb.utils.isString(str) &amp;&amp; str.length &gt; 20) {
+                            str = str.substring(0, 17)+&#x27;...&#x27;;
+                        }
+                        pb.log.silly(&quot;TemplateService: Processed flag [%s] Content=[%s]&quot;, part.val, str);
+                    }
+                    callback(err, subContent);
+                });
+            }
+            else {
+                pb.log.error(&#x27;An invalid template part type was provided: %s&#x27;, part.type);
+                cb(new Error(&#x27;An invalid template part type was provided: &#x27;+part.type));
+            }
+        };
+    });
+    async.series(tasks, function(err, results) {
+        cb(err, util.isArray(results) ? results.join(&#x27;&#x27;) : &#x27;&#x27;);
+    });
 };
 
 /**
@@ -620,7 +618,7 @@ TemplateService.prototype.handleReplacement = function(flag, replacement, cb) {
         if (content instanceof TemplateValue) {
             content = content.val();
         }
-        else if (pb.utils.isObject(content) || pb.utils.isString(content)){//console.log(&#x27;Encoding [&#x27;+(typeof content)+&#x27;] v=&#x27;+content.substring(0, 30));
+        else if (pb.utils.isObject(content) || pb.utils.isString(content)){;
             content = HtmlEncoder.htmlEncode(content.toString());
         }
 
@@ -773,12 +771,105 @@ TemplateService.getCustomPath = function(themeName, templateLocation){
 	return path.join(DOCUMENT_ROOT, &#x27;plugins&#x27;, themeName, &#x27;templates&#x27;, templateLocation + &#x27;.html&#x27;);
 };
 
+/**
+ * Compiles the content be eagerly searching for flags/directives.  The static
+ * content is also placed into an object.  Whether static or a flag, an object
+ * is created and pushed into an array.  Each object has two properties: &quot;type&quot;
+ * that describes the type of template part it is (static, flag).  &quot;val&quot; the
+ * string value of the part.
+ * @static
+ * @method compile
+ * @param {String} text The template text to compile
+ * @param {String} [start=&#x27;^&#x27;] The starting flag marker
+ * @param {String} [end=&#x27;^&#x27;] The ending flag marker
+ * @return {Array} The array template parts
+ */
+TemplateService.compile = function(text, start, end) {
+    if (!pb.validation.validateNonEmptyStr(text, true)) {
+        pb.log.warn(&#x27;TemplateService: Cannot parse the content because it is not a valid string: &#x27;+text);
+        return [];
+    }
+    if (!pb.validation.validateNonEmptyStr(start, true)) {
+        start = &#x27;^&#x27;;
+    }
+    if (!pb.validation.validateNonEmptyStr(end, true)) {
+        end = &#x27;^&#x27;;
+    }
+
+    //generates the proper part form
+    var genPiece = function(type, val) {
+        return {
+            type: type,
+            val: val
+        };
+    };
+
+    var i;
+    var pipe      = 0;
+    var flag      = null;
+    var static    = null;
+    var flagFound = 0;
+    var compiled  = [];
+    while ( (i = text.indexOf(start)) &gt;= 0) {
+
+        var start_pos = i + start.length;
+        var end_pos   = text.indexOf(end, start_pos);
+        if (end_pos &gt;= 0) {
+
+            //determine precursing static content &amp; flag
+            flag   = text.substring(start_pos, end_pos);
+            static = text.substring(0, start_pos - start.length);
+
+            //add the static content
+            if (static) {
+                compiled.push(genPiece(TEMPLATE_PIECE_STATIC, static));
+            }
+
+            //add the flag
+            if (flag) {
+                compiled.push(genPiece(TEMPLATE_PIECE_FLAG, flag));
+            }
+
+            //cut the text down to after the current flag
+            text = text.substring(end_pos + end.length);
+            if (!text) {
+                break;
+            }
+        }
+        else {
+            break;
+        }
+    }
+
+    //add what&#x27;s left
+    if (text) {
+        compiled.push(genPiece(TEMPLATE_PIECE_STATIC, text));
+    }
+    return compiled;
+};
+
+/**
+ * A value that has special meaning to TemplateService.  It acts as a wrapper
+ * for a value to be used in a template along with special processing
+ * instructions.
+ * @class TemplateValue
+ * @constructor
+ * @param {String} The raw value to be included in the template processing
+ * @param {Boolean} [htmlEncode=true] Indicates if the value should be
+ * encoded during serialization.
+ */
 function TemplateValue(val, htmlEncode){
 
     this.raw        = val;
     this.htmlEncode = pb.utils.isBoolean(htmlEncode) ? htmlEncode : true;
 };
 
+/**
+ * Encodes the value for an HTML document when a value is provided.
+ * @method encode
+ * @param {Boolean} [doHtmlEncoding] Sets the property to encode the value to HTML
+ * @return {Boolean} The current value of the htmlEncode property
+ */
 TemplateValue.prototype.encode = function(doHtmlEncoding) {
     if (doHtmlEncoding == true || doHtmlEncoding == false) {
         this.htmlEncode = doHtmlEncoding;
@@ -786,22 +877,41 @@ TemplateValue.prototype.encode = function(doHtmlEncoding) {
     return this.htmlEncode;
 };
 
+/**
+ * Specifies that the value should not be encoded for HTML
+ * @method skipEncode
+ */
 TemplateValue.prototype.skipEncode = function() {
     this.enocde(false);
 };
 
+/**
+ * Specifies that the value should be encoded for HTML
+ * @method doEncode
+ */
 TemplateValue.prototype.doEncode = function() {
     this.encode(true);
 };
 
+/**
+ * Retrieves the processed value represented by this object.
+ * @method val
+ * @return {String} The processed value
+ */
 TemplateValue.prototype.val = function() {
     var val = this.raw;
-    if (this.encode()) {//console.log(&#x27;TVEncoding [&#x27;+(typeof val)+&#x27;] v=&#x27;+val.substring(0, 30));
+    if (this.encode()) {
         val = HtmlEncoder.htmlEncode(this.raw);
-    }//else{console.log(&#x27;TV Not Encoding&#x27;);}
+    }
     return val;
 };
 
+/**
+ * Overrides the toString function in order to properly serialize the value.
+ * @method toString
+ * @return {String} A string representation of the value that follows the
+ * processing instructions.
+ */
 TemplateValue.prototype.toString = function() {
     return this.val();
 }

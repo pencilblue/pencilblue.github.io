@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>controllers/admin/content/custom_objects/manage_objects.js - PencilBlue</title>
+    <title>controllers\admin\content\custom_objects\manage_objects.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: controllers/admin/content/custom_objects/manage_objects.js</h1>
+                        <h1 class="file-heading">File: controllers\admin\content\custom_objects\manage_objects.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -251,8 +275,10 @@
 
 /**
  * Interface for managing objects
+ * @class ManageObjects
+ * @constructor
+ * @extends BaseController
  */
-
 function ManageObjects() {}
 
 //inheritance
@@ -264,88 +290,53 @@ var SUB_NAV_KEY = &#x27;manage_custom_objects&#x27;;
 ManageObjects.prototype.render = function(cb) {
 	var self = this;
 	var vars = this.pathVars;
+
     if(!vars.id) {
-        self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
-        return;
+        return this.reqHandler.serve404();
     }
 
-	var dao  = new pb.DAO();
-	dao.loadById(vars.id, &#x27;custom_object_type&#x27;, function(err, objectType) {
-        if(util.isError(err) || objectType === null) {
-    		self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
-            return;
-		}
+    var service = new pb.CustomObjectService();
+    service.loadTypeById(vars.id, function(err, custObjType) {
+        if (util.isError(err)) {
+            return self.serveError(err);
+        }
+        else if (!pb.utils.isObject(custObjType)) {
+            return self.reqHandler.serve404();
+        }
 
-        dao.query(&#x27;custom_object&#x27;, {type: objectType._id.toString()}).then(function(customObjects) {
+        service.findByTypeWithOrdering(custObjType, function(err, customObjects) {
 		    if (util.isError(customObjects)) {
-			    //TODO handle this
+			    return self.reqHandler.serveError(err);
 		    }
 
 		    //none to manage
             if(customObjects.length === 0) {
-                self.redirect(&#x27;/admin/content/custom_objects/new_object/&#x27; + vars.id, cb);
-                return;
+                return self.redirect(&#x27;/admin/content/custom_objects/new_object/&#x27; + vars.id, cb);
             }
 
-            dao.query(&#x27;custom_object_sort&#x27;, {custom_object_type: objectType._id.toString()}).then(function(customObjectSorts) {
-		        if (util.isError(customObjects)) {
-			        //TODO handle this
-		        }
 
-		        if(customObjectSorts.length === 0) {
-                    //currently, mongo cannot do case-insensitive sorts.  We do it manually
-                    //until a solution for https://jira.mongodb.org/browse/SERVER-90 is merged.
-                    customObjects.sort(function(a, b) {
-                        var x = a.name.toLowerCase();
-                        var y = b.name.toLowerCase();
-
-                        return ((x &lt; y) ? -1 : ((x &gt; y) ? 1 : 0));
-                    });
+            var pills = pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, &#x27;manage_objects&#x27;, custObjType);
+            for(var i = 0; i &lt; pills.length; i++) {
+                if(pills[i].name == &#x27;manage_objects&#x27;) {
+                    pills[i].title += &#x27; (&#x27; + customObjects.length + &#x27;)&#x27;;
+                    break;
                 }
-                else
-                {
-                    var customObjectSort = customObjectSorts[0].sorted_objects;
-                    var sortedObjects = [];
-                    for(var i = 0; i &lt; customObjectSort.length; i++)
-                    {
-                        for(var j = 0; j &lt; customObjects.length; j++)
-                        {
-                            if(customObjects[j]._id.equals(ObjectID(customObjectSort[i])))
-                            {
-                                sortedObjects.push(customObjects[j]);
-                                customObjects.splice(j, 1);
-                                break;
-                            }
-                        }
-                    }
+            }
 
-                    sortedObjects.concat(customObjects);
-                    customObjects = sortedObjects;
-                }
+            var angularData = pb.js.getAngularController(
+            {
+                navigation: pb.AdminNavigation.get(self.session, [&#x27;content&#x27;, &#x27;custom_objects&#x27;], self.ls),
+                pills: pills,
+                customObjects: customObjects,
+                objectType: custObjType
+            }, [], &#x27;initCustomObjectsPagination()&#x27;);
 
-                var pills = pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, &#x27;manage_objects&#x27;, objectType);
-                for(var i = 0; i &lt; pills.length; i++) {
-                    if(pills[i].name == &#x27;manage_objects&#x27;) {
-                        pills[i].title += &#x27; (&#x27; + customObjects.length + &#x27;)&#x27;;
-                        break;
-                    }
-                }
-
-                var angularData = pb.js.getAngularController(
-                {
-                    navigation: pb.AdminNavigation.get(self.session, [&#x27;content&#x27;, &#x27;custom_objects&#x27;], self.ls),
-                    pills: pills,
-                    customObjects: customObjects,
-                    objectType: objectType
-                }, [], &#x27;initCustomObjectsPagination()&#x27;);
-
-		        var title = self.ls.get(&#x27;MANAGE&#x27;) + &#x27; &#x27; + objectType.name;
-		        self.setPageName(title);
-                self.ts.registerLocal(&#x27;angular_script&#x27;, angularData);
-                self.ts.load(&#x27;admin/content/custom_objects/manage_objects&#x27;, function(err, data) {
-                    var result = &#x27;&#x27; + data;
-                    cb({content: result});
-                });
+            var title = self.ls.get(&#x27;MANAGE&#x27;) + &#x27; &#x27; + custObjType.name;
+            self.setPageName(title);
+            self.ts.registerLocal(&#x27;angular_script&#x27;, angularData);
+            self.ts.load(&#x27;admin/content/custom_objects/manage_objects&#x27;, function(err, data) {
+                var result = &#x27;&#x27; + data;
+                cb({content: result});
             });
         });
     });

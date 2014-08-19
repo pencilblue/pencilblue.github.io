@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include/theme/media.js - PencilBlue</title>
+    <title>include\theme\media.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: include/theme/media.js</h1>
+                        <h1 class="file-heading">File: include\theme\media.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -351,65 +375,6 @@ MediaService.onStyleSettingPosition = function(containerCSS, position) {
         default:
             break;
     }
-};
-
-MediaService.getCarousel = function(carouselMedia, template, tagToReplace, carouselID, output) {
-    var instance = this;
-
-    if(carouselMedia.length === 0) {
-        output(template.split(&#x27;^carousel^&#x27;).join(&#x27;&#x27;));
-        return;
-    }
-
-    var mediaOptions = [];
-    for(var i = 0; i &lt; carouselMedia.length; i++) {
-        mediaOptions.push({_id: ObjectID(carouselMedia[i])});
-    }
-
-    var dao = new pb.DAO();
-    dao.query(&#x27;media&#x27;, pb.DAO.getIDInWhere(carouselMedia)).then(function(carouselItems) {
-        if(util.isError(carouselItems) || !carouselItems.length) {
-            output(template.split(tagToReplace).join(&#x27;&#x27;));
-            return;
-        }
-
-        var ts = new pb.TemplateService();
-        ts.load(&#x27;elements/carousel&#x27;, function(err, data) {
-            template = template.split(tagToReplace).join(data);
-            template = template.split(&#x27;^carousel_id^&#x27;).join(carouselID);
-
-            ts.load(&#x27;elements/carousel/item&#x27;, function(err, data) {
-                var carouselItemTemplate = &#x27;&#x27; + data;
-
-                var carouselIndicators = &#x27;&#x27;;
-                var carouselContent    = &#x27;&#x27;;
-
-                for(var i = 0; i &lt; carouselItems.length; i++) {
-                    if(carouselItems.length &gt; 1) {
-                        carouselIndicators += &#x27;&lt;li data-target=&quot;#&#x27; + carouselID + &#x27;&quot; data-slide-to=&quot;&#x27; + i + &#x27;&quot; &#x27; + ((i === 0) ? &#x27;class=&quot;active&quot;&#x27; : &#x27;&#x27;) + &#x27;&gt;&lt;/li&gt;&#x27;;
-                    }
-
-                    var item = carouselItemTemplate.split(&#x27;^item_media^&#x27;).join(instance.getMediaEmbed(carouselItems[i]))
-                    .split(&#x27;^item_caption^&#x27;).join(carouselItems[i].caption)
-                    .split(&#x27;^item_active^&#x27;).join((i === 0) ? &#x27;active&#x27; : &#x27;&#x27;);
-
-                    carouselContent = carouselContent.concat(item);
-                }
-
-                if(carouselItems.length == 1) {
-                    template = template.split(&#x27;^carousel_arrows^&#x27;).join(&#x27;&#x27;);
-                }
-                else {
-                	var anchors = &#x27;&lt;a class=&quot;left carousel-control&quot; href=&quot;#&#x27; + carouselID + &#x27;&quot; data-slide=&quot;prev&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-chevron-left&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;a class=&quot;right carousel-control&quot; href=&quot;#&#x27; + carouselID + &#x27;&quot; data-slide=&quot;next&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/span&gt;&lt;/a&gt;&#x27;;
-                    template = template.split(&#x27;^carousel_arrows^&#x27;).join(anchors);
-                }
-
-                template = template.split(&#x27;^carousel_indicators^&#x27;).join(carouselIndicators);
-                template = template.split(&#x27;^carousel_content^&#x27;).join(carouselContent);
-                output(template);
-            });
-        });
-    });
 };
 
 //exports

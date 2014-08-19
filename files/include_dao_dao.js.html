@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include/dao/dao.js - PencilBlue</title>
+    <title>include\dao\dao.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: include/dao/dao.js</h1>
+                        <h1 class="file-heading">File: include\dao\dao.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -405,7 +429,7 @@ DAO.prototype.unique = function(collection, where, exclusionId, cb) {
 
 	//set the exclusion
 	if (exclusionId) {
-		where._id = {$ne: new ObjectID(exclusionId + &#x27;&#x27;)};
+		where[DAO.getIdField()] = DAO.getNotIDField(exclusionId);
 	}
 
 	//checks to see how many docs were available
@@ -770,6 +794,17 @@ DAO.transfer = function(obj, to) {
     delete obj.created;
     delete obj.last_modified;
     obj.object_type = to;
+};
+
+/**
+ * Retrieves the field in system objects that represents the unique identifier.
+ * The default implementation returns the mongo field &#x27;_id&#x27;.
+ * @static
+ * @method getIdField
+ * @return {String} &#x27;_id&#x27;
+ */
+DAO.getIdField = function() {
+    return &#x27;_id&#x27;;
 };
 
 //exports

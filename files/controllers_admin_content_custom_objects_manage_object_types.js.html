@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>controllers/admin/content/custom_objects/manage_object_types.js - PencilBlue</title>
+    <title>controllers\admin\content\custom_objects\manage_object_types.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: controllers/admin/content/custom_objects/manage_object_types.js</h1>
+                        <h1 class="file-heading">File: controllers\admin\content\custom_objects\manage_object_types.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -249,14 +273,16 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Interface for managing object types
- */
-
-function ManageObjectTypes() {}
-
 //dependencies
 var CustomObjects = require(&#x27;../custom_objects&#x27;);
+
+/**
+ * Interface for managing object types
+ * @class ManageObjectTypes
+ * @constructor
+ * @extends BaseController
+ */
+function ManageObjectTypes() {}
 
 //inheritance
 util.inherits(ManageObjectTypes, pb.BaseController);
@@ -266,34 +292,25 @@ var SUB_NAV_KEY = &#x27;manage_custom_object_types&#x27;;
 
 ManageObjectTypes.prototype.render = function(cb) {
 	var self = this;
-	var dao  = new pb.DAO();
-	dao.query(&#x27;custom_object_type&#x27;, pb.DAO.ANYWHERE, pb.DAO.PROJECT_ALL).then(function(customObjectTypes) {
-		if (util.isError(customObjectTypes)) {
-			//TODO handle this
-		}
+
+	var service = new pb.CustomObjectService();
+    service.findTypes(function(err, custObjTypes) {
 
 		//none to manage
-        if(customObjectTypes.length === 0) {
+        if(custObjTypes.length === 0) {
             self.redirect(&#x27;/admin/content/custom_objects/new_object_type&#x27;, cb);
             return;
         }
 
-        customObjectTypes = ManageObjectTypes.setFieldTypesUsed(self, customObjectTypes);
+        //set listing of field types used by each of the custom object types
+        pb.CustomObjectService.setFieldTypesUsed(custObjTypes, self.ls);
 
-        //currently, mongo cannot do case-insensitive sorts.  We do it manually
-        //until a solution for https://jira.mongodb.org/browse/SERVER-90 is merged.
-        customObjectTypes.sort(function(a, b) {
-            var x = a.name.toLowerCase();
-            var y = b.name.toLowerCase();
-
-            return ((x &lt; y) ? -1 : ((x &gt; y) ? 1 : 0));
-        });
-
+        //build out the angular controller
         var angularData = pb.js.getAngularController(
         {
             navigation: pb.AdminNavigation.get(self.session, [&#x27;content&#x27;, &#x27;custom_objects&#x27;], self.ls),
             pills: pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, &#x27;manage_object_types&#x27;),
-            customObjectTypes: customObjectTypes
+            customObjectTypes: custObjTypes
         }, [], &#x27;initObjectTypesPagination()&#x27;);
 
         self.setPageName(self.ls.get(&#x27;MANAGE_OBJECT_TYPES&#x27;));
@@ -305,47 +322,6 @@ ManageObjectTypes.prototype.render = function(cb) {
     });
 };
 
-ManageObjectTypes.setFieldTypesUsed = function(self, customObjectTypes) {
-    // Make the list of field types used in each custom object type, for display
-    for(var i = 0; i &lt; customObjectTypes.length; i++) {
-        var fieldTypesUsed = [];
-        for(var key in customObjectTypes[i].fields) {
-            var fieldType = customObjectTypes[i].fields[key].field_type;
-            switch(fieldType) {
-                case &#x27;text&#x27;:
-                    fieldTypesUsed.push(self.ls.get(&#x27;TEXT&#x27;));
-                    break;
-                case &#x27;number&#x27;:
-                    fieldTypesUsed.push(self.ls.get(&#x27;NUMBER&#x27;));
-                    break;
-                case &#x27;date&#x27;:
-                    fieldTypesUsed.push(self.ls.get(&#x27;DATE&#x27;));
-                    break;
-                case &#x27;peer_object&#x27;:
-                    fieldTypesUsed.push(self.ls.get(&#x27;PEER_OBJECT&#x27;));
-                    break;
-                case &#x27;child_objects&#x27;:
-                    fieldTypesUsed.push(self.ls.get(&#x27;CHILD_OBJECTS&#x27;));
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        for(var j = 0; j &lt; fieldTypesUsed.length; j++) {
-            for(var s = j + 1; s &lt; fieldTypesUsed.length; s++) {
-                if(fieldTypesUsed[s] == fieldTypesUsed[j]) {
-                    fieldTypesUsed.splice(s, 1);
-                    s--;
-                }
-            }
-        }
-
-        customObjectTypes[i].fieldTypesUsed = fieldTypesUsed.join(&#x27;, &#x27;);
-    }
-
-    return customObjectTypes;
-};
 
 ManageObjectTypes.getSubNavItems = function(key, ls, data) {
 	var pills = CustomObjects.getPillNavOptions(&#x27;manage_object_types&#x27;);

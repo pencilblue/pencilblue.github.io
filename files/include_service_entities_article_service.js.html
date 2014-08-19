@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include/service/entities/article_service.js - PencilBlue</title>
+    <title>include\service\entities\article_service.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: include/service/entities/article_service.js</h1>
+                        <h1 class="file-heading">File: include\service\entities\article_service.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -262,6 +286,9 @@
  * @submodule Entities
  */
 
+//dependencies
+var Media = require(&#x27;../../theme/media&#x27;);
+
 /**
  * Retrieves articles and pages
  *
@@ -272,9 +299,6 @@
 function ArticleService(){
 	this.object_type = &#x27;article&#x27;;
 }
-
-//dependencies
-var Media = require(&#x27;../../theme/media&#x27;);
 
 /**
  * Rerieves the content type
@@ -646,19 +670,7 @@ MediaLoader.prototype.start = function(articleLayout, cb) {
 				});
 			},
 			function(err) {
-
-				async.whilst(
-					function() {return articleLayout.indexOf(&#x27;^carousel_display_&#x27;) &gt;= 0;},
-					function(callback) {
-						self.replaceCarouselTag(articleLayout, mediaTemplate, function(err, newArticleLayout) {
-							articleLayout = newArticleLayout;
-							callback();
-						});
-					},
-					function(err) {
-						cb(err, articleLayout);
-					}
-				);
+				cb(err, articleLayout);
 			}
 		);
     });
@@ -697,24 +709,6 @@ MediaLoader.prototype.replaceMediaTag = function(layout, mediaTemplate, cb) {
         }
 
         cb(null, layout);
-    });
-};
-
-MediaLoader.prototype.replaceCarouselTag = function(layout, mediaTemplate, cb) {
-	var index = layout.indexOf(&#x27;^carousel_display_&#x27;);
-	if(index == -1) {
-        cb(null, layout);
-        return;
-    }
-
-    var startIndex = layout.indexOf(&#x27;^carousel_display_&#x27;) + 18;
-    var endIndex   = layout.substr(startIndex).indexOf(&#x27;^&#x27;);
-    var mediaIDs   = layout.substr(startIndex, endIndex).split(&#x27;-&#x27;);
-
-    var tagToReplace = layout.substr(startIndex - 18, endIndex + 19);
-    var carouselID   = layout.substr(startIndex - 17, endIndex + 17);
-    Media.getCarousel(mediaIDs, layout, tagToReplace, carouselID, function(newLayout) {
-    	cb(null, newLayout);
     });
 };
 

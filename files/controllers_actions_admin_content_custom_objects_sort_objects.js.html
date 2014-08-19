@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>controllers/actions/admin/content/custom_objects/sort_objects.js - PencilBlue</title>
+    <title>controllers\actions\admin\content\custom_objects\sort_objects.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -228,7 +252,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: controllers/actions/admin/content/custom_objects/sort_objects.js</h1>
+                        <h1 class="file-heading">File: controllers\actions\admin\content\custom_objects\sort_objects.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -251,62 +275,48 @@
 
 /**
  * Sets the sorting of objects
+ * @class SortObjectsPostController
  */
-
-function SortObjects(){}
+function SortObjectsPostController(){}
 
 //inheritance
-util.inherits(SortObjects, pb.FormController);
+util.inherits(SortObjectsPostController, pb.FormController);
 
-SortObjects.prototype.onPostParamsRetrieved = function(post, cb) {
+SortObjectsPostController.prototype.onPostParamsRetrieved = function(post, cb) {
 	var self = this;
 	var vars = this.pathVars;
 
-	if(!vars.type_id)
-	{
-	    self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
-	    return;
+	if(!vars.type_id) {
+	    return this.reqHandler.serve404();
 	}
 
-	var dao = new pb.DAO();
-    dao.query(&#x27;custom_object_type&#x27;, {_id: ObjectID(vars.type_id)}).then(function(customObjectTypes) {
-		if (util.isError(customObjectTypes)) {
-			//TODO handle this
+    var service = new pb.CustomObjectService();
+    service.loadTypeById(vars.type_id, function(err, customObjectType) {
+		if (util.isError(err)) {
+			return self.reqHandler.serveError(err);
+		}
+        else if(!pb.utils.isObject(customObjectType)) {
+		    return self.reqHandler.serve404();
 		}
 
-		if(customObjectTypes.length === 0)
-		{
-		    self.redirect(&#x27;/admin/content/custom_objects/manage_object_types&#x27;, cb);
-	        return;
-		}
+        service.loadSortOrdering(customObjectType, function(err, sortOrder) {
+            if (util.isError(err)) {
+                return self.reqHandler.serveError(err);
+            }
 
-		var customObjectType = customObjectTypes[0];
+            post.custom_object_type = vars.type_id;console.log(&#x27;pos:&#x27;+util.inspect(post));
+            var sortDocument        = pb.CustomObjectService.formatRawSortOrdering(post, sortOrder);console.log(&#x27;doc:&#x27;+util.inspect(sortDocument));
 
-	    post.custom_object_type = vars.type_id;
-	    var sortDocument = pb.DocumentCreator.create(&#x27;custom_object_sort&#x27;, post, [&#x27;sorted_objects&#x27;]);
+            service.saveSortOrdering(sortDocument, function(err, result) {
+                if(util.isError(err)) {
+                    return self.reqHandler.serveError(err);
+                }
+                else if (util.isArray(result) &amp;&amp; result.length &gt; 0) {
 
-	    if(sortDocument.sorted_objects.length === 0)
-	    {
-	        self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), &#x27;/admin/content/custom_objects/sort_objects/&#x27; + customObjectType.name, cb);
-            return;
-	    }
-
-        dao.query(&#x27;custom_object_sort&#x27;, {custom_object_type: vars.type_id}).then(function(customObjectSorts) {
-		    if (util.isError(customObjectTypes)) {
-			    //TODO handle this
-		    }
-
-		    if(customObjectSorts.length &gt; 0)
-		    {
-		        sortDocument._id = customObjectSorts[0]._id;
-		    }
-
-            dao.update(sortDocument).then(function(result) {
-                if(util.isError(result)) {
-                    self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), &#x27;/admin/content/custom_objects/sort_objects/&#x27; + customObjectType._id, cb);
+                    self.setFormFieldValues(post);
+                    self.formError(pb.CustomObjectService.createErrorStr(result), &#x27;/admin/content/custom_objects/sort_objects/&#x27; + vars.type_id, cb);
                     return;
                 }
-
                 self.session.success = customObjectType.name + &#x27; &#x27; + self.ls.get(&#x27;SORT_SAVED&#x27;);
                 self.redirect(&#x27;/admin/content/custom_objects/manage_objects/&#x27; + customObjectType._id, cb);
             });
@@ -315,7 +325,7 @@ SortObjects.prototype.onPostParamsRetrieved = function(post, cb) {
 };
 
 //exports
-module.exports = SortObjects;
+module.exports = SortObjectsPostController;
 
     </pre>
 </div>

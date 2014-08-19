@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.2</em>
+            <em>API Docs for: 0.2.3</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
                 <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
@@ -78,6 +80,10 @@
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
             
                 <li><a href="../classes/EmailService.html">EmailService</a></li>
             
@@ -95,9 +101,15 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
@@ -108,6 +120,10 @@
                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
             
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NewObject.html">NewObject</a></li>
+            
+                <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
             
@@ -155,7 +171,15 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsPostController.html">SortObjectsPostController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
             
@@ -370,6 +394,15 @@ for ensuring that all system services are avaialble by requiring the
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_initLibraries">initLibraries</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_initPlugins">initPlugins</a>
 
                                 
@@ -490,7 +523,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l38"><code>plugins&#x2F;wp_import&#x2F;services&#x2F;wp_xml_parse.js:38</code></a>
+        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l38"><code>plugins\wp_import\services\wp_xml_parse.js:38</code></a>
         
         </p>
 
@@ -556,7 +589,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l203"><code>pencilblue.js:203</code></a>
+        <a href="../files/pencilblue.js.html#l204"><code>pencilblue.js:204</code></a>
         
         </p>
 
@@ -647,7 +680,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l75"><code>pencilblue.js:75</code></a>
+        <a href="../files/pencilblue.js.html#l76"><code>pencilblue.js:76</code></a>
         
         </p>
 
@@ -678,6 +711,97 @@ for ensuring that all system services are avaialble by requiring the
 
                     <div class="param-description">
                         <p>A callback that provides two parameters: cb(Error, Boolean)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_initLibraries" class="method item">
+    <h3 class="name"><code>initLibraries</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/pencilblue.js.html#l214"><code>pencilblue.js:214</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Initializes the libraries service</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters: cb(Error, [RESULT])</p>
 
                     </div>
 
@@ -738,7 +862,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l65"><code>pencilblue.js:65</code></a>
+        <a href="../files/pencilblue.js.html#l66"><code>pencilblue.js:66</code></a>
         
         </p>
 
@@ -829,7 +953,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l53"><code>pencilblue.js:53</code></a>
+        <a href="../files/pencilblue.js.html#l54"><code>pencilblue.js:54</code></a>
         
         </p>
 
@@ -921,7 +1045,7 @@ registered.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l98"><code>pencilblue.js:98</code></a>
+        <a href="../files/pencilblue.js.html#l99"><code>pencilblue.js:99</code></a>
         
         </p>
 
@@ -1013,7 +1137,7 @@ One to handle incoming HTTP traffic and one to handle HTTPS traffic.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l193"><code>pencilblue.js:193</code></a>
+        <a href="../files/pencilblue.js.html#l194"><code>pencilblue.js:194</code></a>
         
         </p>
 
@@ -1110,7 +1234,7 @@ One to handle incoming HTTP traffic and one to handle HTTPS traffic.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l138"><code>pencilblue.js:138</code></a>
+        <a href="../files/pencilblue.js.html#l139"><code>pencilblue.js:139</code></a>
         
         </p>
 
@@ -1227,7 +1351,7 @@ redirected appropriately.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l169"><code>pencilblue.js:169</code></a>
+        <a href="../files/pencilblue.js.html#l170"><code>pencilblue.js:170</code></a>
         
         </p>
 
@@ -1326,7 +1450,7 @@ redirected to the appropriately protected HTTPS url.</p>
             
         
         
-        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l29"><code>plugins&#x2F;wp_import&#x2F;services&#x2F;wp_xml_parse.js:29</code></a>
+        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l29"><code>plugins\wp_import\services\wp_xml_parse.js:29</code></a>
         
         </p>
 
