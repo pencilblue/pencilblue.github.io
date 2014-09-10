@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -371,6 +383,14 @@ BaseController.prototype.init = function(props, cb) {
     this.templateService.registerLocal(&#x27;analytics&#x27;, function(flag, cb) {
 		pb.AnalyticsManager.onPageRender(self.req, self.session, self.ls, cb);
 	});
+	this.templateService.registerLocal(&#x27;wysiwyg&#x27;, function(flag, cb) {
+		var wysiwygId = pb.utils.uniqueId().toString();
+
+		self.templateService.registerLocal(&#x27;wys_id&#x27;, wysiwygId);
+		self.templateService.load(&#x27;admin/elements/wysiwyg&#x27;, function(err, data) {
+			cb(err, new pb.TemplateValue(data, false));
+		});
+	});
 	this.ts = this.templateService;
 
 	cb();
@@ -610,17 +630,17 @@ BaseController.getContentSanitizationRules = function() {
     return {
         allowedTags: [ &#x27;h1&#x27;, &#x27;h2&#x27;, &#x27;h3&#x27;, &#x27;h4&#x27;, &#x27;h5&#x27;, &#x27;h6&#x27;, &#x27;blockquote&#x27;, &#x27;p&#x27;, &#x27;a&#x27;, &#x27;ul&#x27;, &#x27;ol&#x27;, &#x27;nl&#x27;, &#x27;li&#x27;, &#x27;b&#x27;, &#x27;i&#x27;, &#x27;strong&#x27;, &#x27;em&#x27;, &#x27;strike&#x27;, &#x27;code&#x27;, &#x27;hr&#x27;, &#x27;br&#x27;, &#x27;div&#x27;, &#x27;table&#x27;, &#x27;thead&#x27;, &#x27;caption&#x27;, &#x27;tbody&#x27;, &#x27;tr&#x27;, &#x27;th&#x27;, &#x27;td&#x27;, &#x27;pre&#x27;, &#x27;img&#x27;, &#x27;u&#x27;, &#x27;span&#x27; ],
         allowedAttributes: {
-            a: [ &#x27;href&#x27;, &#x27;name&#x27;, &#x27;target&#x27;, &#x27;class&#x27; ],
-            img: [ &#x27;src&#x27;, &#x27;class&#x27; ],
+            a: [ &#x27;href&#x27;, &#x27;name&#x27;, &#x27;target&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            img: [ &#x27;src&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
             p: [&#x27;align&#x27;, &#x27;class&#x27;],
-            h1: [&#x27;style&#x27;, &#x27;class&#x27;],
-            h2: [&#x27;style&#x27;, &#x27;class&#x27;],
-            h3: [&#x27;style&#x27;, &#x27;class&#x27;],
-            h4: [&#x27;style&#x27;, &#x27;class&#x27;],
-            h5: [&#x27;style&#x27;, &#x27;class&#x27;],
-            h6: [&#x27;style&#x27;, &#x27;class&#x27;],
-            div: [&#x27;style&#x27;, &#x27;class&#x27;],
-            span: [&#x27;style&#x27;, &#x27;class&#x27;]
+            h1: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            h2: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            h3: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            h4: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            h5: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            h6: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            div: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
+            span: [&#x27;style&#x27;, &#x27;class&#x27;, &#x27;align&#x27;]
         },
 
         // Lots of these won&#x27;t come up by default because we don&#x27;t allow them

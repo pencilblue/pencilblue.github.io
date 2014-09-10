@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -275,53 +287,63 @@
 
 /**
  * Deletes media
+ * @class DeleteMediaController
+ * @constructor
+ * @extends FormController
  */
-
-function DeleteMedia(){}
+function DeleteMediaController(){}
 
 //inheritance
-util.inherits(DeleteMedia, pb.FormController);
+util.inherits(DeleteMediaController, pb.FormController);
 
-DeleteMedia.prototype.onPostParamsRetrieved = function(post, cb) {
+//constants
+var MANAGE_MEDIA_PATH = &#x27;/admin/content/media/manage_media&#x27;;
+
+/**
+ * @method onPostParamsRetrieved
+ * @param {Object} post
+ * @param {Function} cb
+ */
+DeleteMediaController.prototype.onPostParamsRetrieved = function(post, cb) {
     var self = this;
     var vars = this.pathVars;
 
     var message = this.hasRequiredParams(vars, [&#x27;id&#x27;]);
     if(message) {
-        this.formError(message, &#x27;/admin/content/media/manage_media&#x27;, cb);
+        this.formError(message, MANAGE_MEDIA_PATH, cb);
         return;
     }
 
-    var dao = new pb.DAO();
-    dao.query(&#x27;media&#x27;, {_id: ObjectID(vars.id)}).then(function(mediaData) {
-        if(util.isError(mediaData) || mediaData.length === 0) {
-            self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), &#x27;/admin/content/media/manage_media&#x27;, cb);
+    var mservice = new pb.MediaService();
+    mservice.loadById(vars.id, function(err, mediaData) {
+        if(util.isError(err) || !mediaData) {
+            self.formError(self.ls.get(&#x27;ERROR_DELETING&#x27;), MANAGE_MEDIA_PATH, cb);
             return;
         }
 
-        dao.deleteById(vars.id, &#x27;media&#x27;).then(function(recordsDeleted) {
-            if(recordsDeleted &lt;= 0) {
-                self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), &#x27;/admin/content/media/manage_media&#x27;, cb);
+        mservice.deleteById(vars.id, function(err, recordsDeleted) {
+            if(util.isError(err) || recordsDeleted &lt;= 0) {
+                self.formError(self.ls.get(&#x27;ERROR_DELETING&#x27;), MANAGE_MEDIA_PATH, cb);
                 return;
             }
 
-            self.removeLocal(mediaData[0], function(err) {
-            	self.session.success = mediaData[0].name + &#x27; &#x27; + self.ls.get(&#x27;DELETED&#x27;);
+            self.removeLocal(mediaData, mservice, function(err) {
+            	self.session.success = mediaData.name + &#x27; &#x27; + self.ls.get(&#x27;DELETED&#x27;);
             	self.redirect(&#x27;/admin/content/media/manage_media&#x27;, cb);
             });
         });
     });
 };
 
-DeleteMedia.prototype.removeLocal = function(media, cb) {
-	var file = path.join(DOCUMENT_ROOT, &#x27;public&#x27;, media.location);
-	fs.exists(file, function(exists) {
-		fs.unlink(file, cb);
-	});
+DeleteMediaController.prototype.removeLocal = function(media, mservice, cb) {
+    if (!media.is_file) {
+        return cb();
+    }
+    mservice.deleteContentByPath(media.location, cb);
 };
 
 //exports
-module.exports = DeleteMedia;
+module.exports = DeleteMediaController;
 
     </pre>
 </div>

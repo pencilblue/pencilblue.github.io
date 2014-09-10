@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -311,43 +323,21 @@ EditSectionPostController.prototype.onPostParamsRetrieved = function(post, cb){
 
 		//validate
 		var navService = new pb.SectionService();
-		navService.validate(navItem, function(err, validationErrors) {
+        navService.save(navItem, function(err, result) {
 			if (util.isError(err)) {
-				throw err;
+				return self.reqHandler.serveError(err);
 			}
-			else if (validationErrors.length &gt; 0) {
+			else if (util.isArray(result) &amp;&amp; result.length &gt; 0) {
 				self.setFormFieldValues(post);
-				var errMsg = EditSectionPostController.getHtmlErrorMsg(validationErrors);
+				var errMsg   = EditSectionPostController.getHtmlErrorMsg(result);
 				var redirect = self.getFormLocation();
 				self.formError(errMsg, redirect, cb);
 				return;
 			}
 
-			//persist the changes
-			var dao = new pb.DAO();
-			dao.update(navItem).then(function(data) {
-                if(util.isError(data)) {
-                	self.setFormFieldValues(post);
-                    self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), self.getFormLocation(), cb);
-                    return;
-                }
-
-                //update the navigation map
-                self.checkForNavMapUpdate(navItem, function() {
-
-                	//ok, now we can delete the orhphans if they exist
-                	self.deleteOrphans(navItem, function(err, orphanCount) {
-                		if(util.isError(err)) {
-                            self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), self.getFormLocation(), cb);
-                            return;
-                        }
-
-                		//finally do the callback
-                		self.session.success = self.getSuccessMessage(navItem);
-                    	self.redirect(&#x27;/admin/content/sections/section_map&#x27;, cb);
-                	});
-            	});
-            });
+			//finally do the callback
+            self.session.success = self.getSuccessMessage(navItem);
+            self.redirect(&#x27;/admin/content/sections/section_map&#x27;, cb);
 		});
 	});
 };

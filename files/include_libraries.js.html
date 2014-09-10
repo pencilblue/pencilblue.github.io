@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -294,6 +306,12 @@ LibrariesService.getSettings = function(cb){
             settings = LibrariesService.getCDNDefaults();
             pb.settings.set(&#x27;libraries_settings&#x27;, settings, pb.utils.cb);
         }
+        else {
+            // Replace any missing libraries with CDN defaults
+            var newSettings = LibrariesService.getCDNDefaults();
+            pb.utils.merge(settings, newSettings);
+            settings = newSettings;
+        }
         cb(err, settings);
     });
 };
@@ -340,12 +358,15 @@ LibrariesService.getCDNDefaults = function() {
         jquery_validate: &#x27;//ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js&#x27;,
         bootstrap_js: &#x27;//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js&#x27;,
         bootstrap_css: &#x27;//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&#x27;,
-        font_awesome: &#x27;//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css&#x27;,
+        font_awesome: &#x27;//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css&#x27;,
         angular: &#x27;//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js&#x27;,
         angular_route: &#x27;//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js&#x27;,
         angular_sanitize: &#x27;//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js&#x27;,
         spin: &#x27;//fgnass.github.io/spin.js/spin.min.js&#x27;,
-        jquery_spin: &#x27;//fgnass.github.io/spin.js/jquery.spin.js&#x27;
+        jquery_spin: &#x27;//fgnass.github.io/spin.js/jquery.spin.js&#x27;,
+        he: &#x27;/js/lib/he/he.js&#x27;,
+        to_markdown: &#x27;/js/lib/to_markdown/to-markdown.js&#x27;,
+        markdown: &#x27;/js/lib/markdown/lib/markdown.js&#x27;
     };
 };
 
@@ -374,7 +395,10 @@ LibrariesService.getBowerDefaults = function() {
         angular_route: &#x27;/bower_components/angular-route/angular-route.min.js&#x27;,
         angular_sanitize: &#x27;/bower_components/angular-sanitize/angular-sanitize.min.js&#x27;,
         spin: &#x27;/bower_components/jquery.spinjs/libs/spin/spin.js&#x27;,
-        jquery_spin: &#x27;/bower_components/jquery.spinjs/dist/jquery.spin.min.js&#x27;
+        jquery_spin: &#x27;/bower_components/jquery.spinjs/dist/jquery.spin.min.js&#x27;,
+        he: &#x27;/bower_components/he/he.js&#x27;,
+        to_markdown: &#x27;/bower_components/to-markdown/src/to-markdown.js&#x27;,
+        markdown: &#x27;/bower_components/markdown/lib/markdown.js&#x27;
     };
 };
 

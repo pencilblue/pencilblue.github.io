@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -283,7 +295,8 @@ WPImport.onInstall = function(cb) {
  * The result is ignored
  */
 WPImport.onUninstall = function(cb) {
-	cb(null, true);
+    var result = pb.AdminSubnavService.unregisterFor(&#x27;plugin_settings&#x27;, WPImport.onPluginSettingsSubNav);
+	cb(null, result);
 };
 
 /**
@@ -295,20 +308,30 @@ WPImport.onUninstall = function(cb) {
  * The result is ignored
  */
 WPImport.onStartup = function(cb) {
-	pb.AdminSubnavService.registerFor(&#x27;plugin_settings&#x27;, function(navKey, localization, plugin) {
-        if(plugin.uid === &#x27;wp_import&#x27;) {
-            return [
-                {
-                    name: &#x27;import_xml&#x27;,
-                    title: &#x27;Import WordPress XML&#x27;,
-                    icon: &#x27;upload&#x27;,
-                    href: &#x27;/admin/plugins/settings/wp_import/import&#x27;
-                }
-            ];
-        }
-        return [];
-    });
-    cb(null, true);
+	var result = pb.AdminSubnavService.registerFor(&#x27;plugin_settings&#x27;, WPImport.onPluginSettingsSubNav);
+    cb(null, result);
+};
+
+/**
+ * @static
+ * @method onPluginSettingsSubNav
+ * @param {String} navKey
+ * @param {Localization}
+ * @param {Object} The plugin object
+ * @return {Array}
+ */
+WPImport.onPluginSettingsSubNav = function(navKey, localization, plugin) {
+    if(plugin.uid === &#x27;wp_import&#x27;) {
+        return [
+            {
+                name: &#x27;import_xml&#x27;,
+                title: &#x27;Import WordPress XML&#x27;,
+                icon: &#x27;upload&#x27;,
+                href: &#x27;/admin/plugins/settings/wp_import/import&#x27;
+            }
+        ];
+    }
+    return [];
 };
 
 /**

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -257,21 +269,21 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+ Copyright (C) 2014  PencilBlue, LLC
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-*/
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
 
 /**
  * Provides function to construct the structure needed to display the navigation
@@ -282,63 +294,71 @@
  * @class AdminNavigation
  * @constructor
  */
-function AdminNavigation(){}
+function AdminNavigation() {
+}
 
-function getDefaultNavigation(ls) {
-	return [
+AdminNavigation.navigation = null;
+AdminNavigation.additions = [];
+AdminNavigation.childrenAdditions = {};
+
+/**
+ *
+ * @returns {*[]}
+ */
+function getDefaultNavigation() {
+    return [
         {
             id: &#x27;content&#x27;,
-            title: ls.get(&#x27;CONTENT&#x27;),
+            title: &#x27;CONTENT&#x27;,
             icon: &#x27;quote-right&#x27;,
             href: &#x27;#&#x27;,
             access: ACCESS_WRITER,
-            children:
-            [
+            children: [
                 {
                     id: &#x27;sections&#x27;,
-                    title: ls.get(&#x27;NAVIGATION&#x27;),
+                    title: &#x27;NAVIGATION&#x27;,
                     icon: &#x27;th-large&#x27;,
                     href: &#x27;/admin/content/sections/section_map&#x27;,
                     access: ACCESS_EDITOR
                 },
                 {
                     id: &#x27;topics&#x27;,
-                    title: ls.get(&#x27;TOPICS&#x27;),
+                    title: &#x27;TOPICS&#x27;,
                     icon: &#x27;tags&#x27;,
                     href: &#x27;/admin/content/topics/manage_topics&#x27;,
                     access: ACCESS_EDITOR
                 },
                 {
                     id: &#x27;pages&#x27;,
-                    title: ls.get(&#x27;PAGES&#x27;),
+                    title: &#x27;PAGES&#x27;,
                     icon: &#x27;file-o&#x27;,
                     href: &#x27;/admin/content/pages/manage_pages&#x27;,
                     access: ACCESS_EDITOR
                 },
                 {
                     id: &#x27;articles&#x27;,
-                    title: ls.get(&#x27;ARTICLES&#x27;),
+                    title: &#x27;ARTICLES&#x27;,
                     icon: &#x27;files-o&#x27;,
                     href: &#x27;/admin/content/articles/manage_articles&#x27;,
                     access: ACCESS_WRITER
                 },
                 {
                     id: &#x27;media&#x27;,
-                    title: ls.get(&#x27;MEDIA&#x27;),
+                    title: &#x27;MEDIA&#x27;,
                     icon: &#x27;camera&#x27;,
                     href: &#x27;/admin/content/media/manage_media&#x27;,
                     access: ACCESS_WRITER
                 },
                 {
                     id: &#x27;comments&#x27;,
-                    title: ls.get(&#x27;COMMENTS&#x27;),
+                    title: &#x27;COMMENTS&#x27;,
                     icon: &#x27;comments&#x27;,
                     href: &#x27;/admin/content/comments/manage_comments&#x27;,
                     access: ACCESS_EDITOR
                 },
                 {
                     id: &#x27;custom_objects&#x27;,
-                    title: ls.get(&#x27;CUSTOM_OBJECTS&#x27;),
+                    title: &#x27;CUSTOM_OBJECTS&#x27;,
                     icon: &#x27;sitemap&#x27;,
                     href: &#x27;/admin/content/custom_objects/manage_object_types&#x27;,
                     access: ACCESS_EDITOR
@@ -347,45 +367,43 @@ function getDefaultNavigation(ls) {
         },
         {
             id: &#x27;plugins&#x27;,
-            title: ls.get(&#x27;PLUGINS&#x27;),
+            title: &#x27;PLUGINS&#x27;,
             icon: &#x27;puzzle-piece&#x27;,
             href: &#x27;#&#x27;,
             access: ACCESS_ADMINISTRATOR,
-            children:
-            [
+            children: [
                 {
-	                divider: true,
-	                id: &#x27;manage&#x27;,
-	                title: ls.get(&#x27;MANAGE&#x27;),
-	                icon: &#x27;upload&#x27;,
-	                href: &#x27;/admin/plugins&#x27;
-	            },
-	            {
-	                id: &#x27;themes&#x27;,
-	                title: ls.get(&#x27;THEMES&#x27;),
-	                icon: &#x27;magic&#x27;,
-	                href: &#x27;/admin/themes&#x27;
-	            }
+                    divider: true,
+                    id: &#x27;manage&#x27;,
+                    title: &#x27;MANAGE&#x27;,
+                    icon: &#x27;upload&#x27;,
+                    href: &#x27;/admin/plugins&#x27;
+                },
+                {
+                    id: &#x27;themes&#x27;,
+                    title: &#x27;THEMES&#x27;,
+                    icon: &#x27;magic&#x27;,
+                    href: &#x27;/admin/themes&#x27;
+                }
             ]
         },
         {
             id: &#x27;users&#x27;,
-            title: ls.get(&#x27;USERS&#x27;),
+            title: &#x27;USERS&#x27;,
             icon: &#x27;users&#x27;,
             href: &#x27;#&#x27;,
             access: ACCESS_EDITOR,
-            children:
-            [
+            children: [
                 {
                     id: &#x27;manage&#x27;,
-                    title: ls.get(&#x27;MANAGE&#x27;),
+                    title: &#x27;MANAGE&#x27;,
                     icon: &#x27;users&#x27;,
                     href: &#x27;/admin/users/manage_users&#x27;,
                     access: ACCESS_EDITOR
                 },
                 {
                     id: &#x27;permissions&#x27;,
-                    title: ls.get(&#x27;PERMISSIONS&#x27;),
+                    title: &#x27;PERMISSIONS&#x27;,
                     icon: &#x27;lock&#x27;,
                     href: &#x27;/admin/users/permissions&#x27;,
                     access: ACCESS_ADMINISTRATOR
@@ -394,15 +412,14 @@ function getDefaultNavigation(ls) {
         },
         {
             id: &#x27;settings&#x27;,
-            title: ls.get(&#x27;SETTINGS&#x27;),
+            title: &#x27;SETTINGS&#x27;,
             icon: &#x27;cogs&#x27;,
             href: &#x27;#&#x27;,
             access: ACCESS_WRITER,
-            children:
-            [
+            children: [
                 {
                     id: &#x27;site_settings&#x27;,
-                    title: ls.get(&#x27;SITE_SETTINGS&#x27;),
+                    title: &#x27;SITE_SETTINGS&#x27;,
                     icon: &#x27;cog&#x27;,
                     href: &#x27;/admin/site_settings/configuration&#x27;,
                     access: ACCESS_MANAGING_EDITOR
@@ -410,7 +427,7 @@ function getDefaultNavigation(ls) {
                 {
                     divider: true,
                     id: &#x27;logout&#x27;,
-                    title: ls.get(&#x27;LOGOUT&#x27;),
+                    title: &#x27;LOGOUT&#x27;,
                     icon: &#x27;power-off&#x27;,
                     href: &#x27;/actions/logout&#x27;,
                     access: ACCESS_WRITER
@@ -421,6 +438,103 @@ function getDefaultNavigation(ls) {
 }
 
 /**
+ *
+ * @returns {*}
+ */
+function getAdditions() {
+    return pb.utils.clone(AdminNavigation.additions);
+};
+
+/**
+ *
+ * @returns {*}
+ */
+function getChildrenAdditions() {
+    return pb.utils.clone(AdminNavigation.childrenAdditions);
+};
+
+/**
+ *
+ * @returns {Array}
+ */
+function buildNavigation() {
+    var i;
+    var navigation = [];
+    var defaultNavigation = getDefaultNavigation();
+    var additions = getAdditions();
+    var childrenAdditions = getChildrenAdditions();
+
+    pb.utils.arrayPushAll(defaultNavigation, navigation);
+    pb.utils.arrayPushAll(additions, navigation);
+
+    for (var id in childrenAdditions) {
+        var children = childrenAdditions[id];
+
+        for (i = 0; i &lt; navigation.length; i++) {
+            if (navigation[i].id == id) {
+                if (!navigation[i].children) {
+                    navigation[i].children = [];
+                }
+
+                for (var j = 0; j &lt; children.length; j++) {
+                    navigation[i].children.push(children[j]);
+                }
+                break;
+            }
+        }
+    }
+
+    return navigation;
+};
+
+/**
+ *
+ * @param navigation
+ * @param ls
+ * @returns {*}
+ */
+function localizeNavigation(navigation, ls) {
+    for(var i = 0; i &lt; navigation.length; i++) {
+        navigation[i].title = ls.get(navigation[i].title);
+        if(navigation[i].children) {
+            navigation[i].children = localizeNavigation(navigation[i].children, ls);
+        }
+    }
+
+    return navigation;
+};
+
+/**
+ *
+ * @param id
+ * @param navigation
+ * @returns {boolean}
+ */
+function isDuplicate(id, navigation) {
+    if (!navigation) {
+        navigation = buildNavigation();
+    }
+
+    for (var i = 0; i &lt; navigation.length; i++) {
+        var node = navigation[i];
+
+        if (node.id == id) {
+            return true;
+        }
+
+        if (node.children &amp;&amp; isDuplicate(id, node.children)) {
+            return true;
+        }
+    }
+
+    return false;
+};
+
+function isDefaultNode(id) {
+    return isDuplicate(id, getDefaultNavigation());
+};
+
+/**
  * Retrive the admin navigation hierarchy
  *
  * @method get
@@ -429,19 +543,105 @@ function getDefaultNavigation(ls) {
  * @param {Object} ls Localization service
  * @return {object} Admin navigation
  */
-AdminNavigation.get = function(session, activeMenuItems, ls) {
-    return AdminNavigation.removeUnauthorized(
-		session,
-		getDefaultNavigation(ls),
-		activeMenuItems
-	);
+AdminNavigation.get = function (session, activeMenuItems, ls) {
+    var navigation = AdminNavigation.removeUnauthorized(
+        session,
+        buildNavigation(),
+        activeMenuItems
+    );
+
+    return localizeNavigation(navigation, ls);
 };
 
-AdminNavigation.removeUnauthorized = function(session, adminNavigation, activeItems) {
-	for (var i = 0; i &lt; adminNavigation.length; i++) {
+/**
+ * Adds a new child node to an existing top level node
+ *
+ * @method addChild
+ * @param parentId
+ * @param node
+ * @returns {boolean}
+ */
+AdminNavigation.addChild = function (parentId, node) {
+    if (isDuplicate(node.id)) {
+        return false;
+    }
+
+    if (!AdminNavigation.childrenAdditions[parentId]) {
+        AdminNavigation.childrenAdditions[parentId] = [];
+    }
+
+    AdminNavigation.childrenAdditions[parentId].push(node);
+    return true;
+};
+
+/**
+ * Adds a new top level node
+ *
+ * @method add
+ * @param node
+ * @returns {boolean}
+ */
+AdminNavigation.add = function (node) {
+    if (isDuplicate(node.id)) {
+        return false;
+    }
+
+    AdminNavigation.additions.push(node);
+    return true;
+};
+
+/**
+ * Remove a navigation node
+ *
+ * @param id
+ * @param navigation
+ * @returns {boolean}
+ */
+AdminNavigation.remove = function (id) {
+    if (!isDuplicate(id, buildNavigation())) {
+        return false;
+    }
+
+    if (isDefaultNode(id)) {
+        pb.log.warn(&quot;Admin Navigation: Attempting to remove default Node %s&quot;, id);
+        return false;
+    }
+
+    function removeNode(id, navigation) {
+        for (var i = 0; i &lt; navigation.length; i++) {
+            if (navigation[i].id == id) {
+                navigation.splice(i, 1);
+                return navigation;
+            }
+
+            if (navigation[i].children) {
+                navigation[i].children = removeNode(id, navigation[i].children);
+            }
+        }
+
+        return navigation;
+    }
+
+    AdminNavigation.additions = removeNode(id, AdminNavigation.additions);
+
+    for (var parentId in AdminNavigation.childrenAdditions) {
+        AdminNavigation.childrenAdditions[parentId] = removeNode(id, AdminNavigation.childrenAdditions[parentId]);
+    }
+
+    return true;
+};
+
+/**
+ * @param session
+ * @param adminNavigation
+ * @param activeItems
+ * @returns {*}
+ */
+AdminNavigation.removeUnauthorized = function (session, adminNavigation, activeItems) {
+    for (var i = 0; i &lt; adminNavigation.length; i++) {
         if (typeof adminNavigation[i].access !== &#x27;undefined&#x27;) {
 
-        	if (!pb.security.isAuthorized(session, {admin_level: adminNavigation[i].access})) {
+            if (!pb.security.isAuthorized(session, {admin_level: adminNavigation[i].access})) {
                 adminNavigation.splice(i, 1);
                 i--;
                 continue;
@@ -461,9 +661,9 @@ AdminNavigation.removeUnauthorized = function(session, adminNavigation, activeIt
 
                 for (var j = 0; j &lt; adminNavigation[i].children.length; j++) {
 
-                	if (typeof adminNavigation[i].children[j].access !== &#x27;undefined&#x27;) {
+                    if (typeof adminNavigation[i].children[j].access !== &#x27;undefined&#x27;) {
 
-                		if (!pb.security.isAuthorized(session, {admin_level: adminNavigation[i].children[j].access})) {
+                        if (!pb.security.isAuthorized(session, {admin_level: adminNavigation[i].children[j].access})) {
                             adminNavigation[i].children.splice(j, 1);
                             j--;
                             continue;
@@ -486,7 +686,6 @@ AdminNavigation.removeUnauthorized = function(session, adminNavigation, activeIt
 
 //exports
 module.exports.AdminNavigation = AdminNavigation;
-
     </pre>
 </div>
 

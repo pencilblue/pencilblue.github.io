@@ -2,7 +2,7 @@
     "project": {
         "name": "PencilBlue",
         "description": "PencilBlue: Full stack online publishing for Node.js",
-        "version": "0.2.3",
+        "version": "0.2.4",
         "url": "http://pencilblue.org/",
         "logo": "http://pencilblue.org/img/pb_logo.png"
     },
@@ -98,14 +98,18 @@
         "controllers\\actions\\admin\\content\\media\\delete_media.js": {
             "name": "controllers\\actions\\admin\\content\\media\\delete_media.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "DeleteMediaController": 1
+            },
             "fors": {},
             "namespaces": {}
         },
         "controllers\\actions\\admin\\content\\media\\edit_media.js": {
             "name": "controllers\\actions\\admin\\content\\media\\edit_media.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "EditMediaPostController": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -548,7 +552,9 @@
         "controllers\\admin\\content\\media.js": {
             "name": "controllers\\admin\\content\\media.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "ContentMediaController": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -724,6 +730,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "controllers\\api\\admin\\site_settings\\email\\send_test.js": {
+            "name": "controllers\\api\\admin\\site_settings\\email\\send_test.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "controllers\\api\\admin\\system\\cluster_api.js": {
             "name": "controllers\\api\\admin\\system\\cluster_api.js",
             "modules": {},
@@ -812,7 +825,9 @@
         "controllers\\error\\404.js": {
             "name": "controllers\\error\\404.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "NotFoundController": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -901,6 +916,15 @@
             "name": "controllers\\index.js",
             "modules": {},
             "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "controllers\\media_content_controller.js": {
+            "name": "controllers\\media_content_controller.js",
+            "modules": {},
+            "classes": {
+                "MediaContentController": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -1179,6 +1203,15 @@
             "modules": {},
             "classes": {
                 "JobRunner": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "include\\service\\media\\fs_media_provider.js": {
+            "name": "include\\service\\media\\fs_media_provider.js",
+            "modules": {},
+            "classes": {
+                "FsMediaProvider": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1586,19 +1619,24 @@
                 "NewObject": 1,
                 "NewObjectType": 1,
                 "SortObjectsPostController": 1,
+                "DeleteMediaController": 1,
+                "EditMediaPostController": 1,
                 "NewPagePostController": 1,
                 "ManageComments": 1,
                 "ManageObjectTypes": 1,
                 "ManageObjects": 1,
                 "SortObjects": 1,
+                "ContentMediaController": 1,
                 "AdminIndexController": 1,
                 "SaveArticleDraft": 1,
                 "ClusterApiController": 1,
                 "JobApiController": 1,
                 "PluginApi": 1,
                 "ApiActionController": 1,
+                "NotFoundController": 1,
                 "BaseController": 1,
                 "FormController": 1,
+                "MediaContentController": 1,
                 "PageController": 1,
                 "PluginPublicContentController": 1,
                 "CacheFactory": 1,
@@ -1684,6 +1722,7 @@
                 "AsyncJobRunner": 1,
                 "ClusterJobRunner": 1,
                 "JobRunner": 1,
+                "FsMediaProvider": 1,
                 "CacheEntityService": 1,
                 "DBEntityService": 1,
                 "FSEntityService": 1,
@@ -1954,6 +1993,34 @@
             "line": 18,
             "description": "Sets the sorting of objects"
         },
+        "DeleteMediaController": {
+            "name": "DeleteMediaController",
+            "shortname": "DeleteMediaController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\actions\\admin\\content\\media\\delete_media.js",
+            "line": 18,
+            "description": "Deletes media",
+            "is_constructor": 1,
+            "extends": "FormController"
+        },
+        "EditMediaPostController": {
+            "name": "EditMediaPostController",
+            "shortname": "EditMediaPostController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\actions\\admin\\content\\media\\edit_media.js",
+            "line": 18,
+            "description": "Edits media"
+        },
         "NewPagePostController": {
             "name": "NewPagePostController",
             "shortname": "NewPagePostController",
@@ -2025,6 +2092,21 @@
             "file": "controllers\\admin\\content\\custom_objects\\sort_objects.js",
             "line": 18,
             "description": "Interface for sorting objects",
+            "is_constructor": 1,
+            "extends": "BaseController"
+        },
+        "ContentMediaController": {
+            "name": "ContentMediaController",
+            "shortname": "ContentMediaController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\admin\\content\\media.js",
+            "line": 18,
+            "description": "Parent media controller",
             "is_constructor": 1,
             "extends": "BaseController"
         },
@@ -2115,6 +2197,21 @@
             "is_constructor": 1,
             "extends": "BaseController"
         },
+        "NotFoundController": {
+            "name": "NotFoundController",
+            "shortname": "NotFoundController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\error\\404.js",
+            "line": 18,
+            "description": "404 error",
+            "is_constructor": 1,
+            "extends": "BaseController"
+        },
         "BaseController": {
             "name": "BaseController",
             "shortname": "BaseController",
@@ -2142,6 +2239,21 @@
             "line": 21,
             "description": "Provides the basic functionality for implementing a controller that\nneeds access to a posted form.",
             "is_constructor": 1
+        },
+        "MediaContentController": {
+            "name": "MediaContentController",
+            "shortname": "MediaContentController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "file": "controllers\\media_content_controller.js",
+            "line": 18,
+            "description": "Media Content Controller is responsible for taking incoming requests for media and \nproviding the right content for it or redirecting to where it should be.",
+            "is_constructor": 1,
+            "extends": "BaseController"
         },
         "PageController": {
             "name": "PageController",
@@ -2316,7 +2428,7 @@
             "module": "Services",
             "namespace": "",
             "file": "include\\service\\entities\\article_service.js",
-            "line": 384,
+            "line": 446,
             "description": "Handles retrieval and injection of media in articles and pages",
             "submodule": "Entities",
             "is_constructor": 1
@@ -2333,6 +2445,7 @@
             "namespace": "",
             "file": "include\\service\\entities\\custom_object_service.js",
             "line": 21,
+            "description": "Provides a service to do the heavy lifting of retrieving custom objects with \nthe ability to eagerly fetch the related objects.",
             "is_constructor": 1
         },
         "JobService": {
@@ -2417,7 +2530,7 @@
             "submodule": "Entities",
             "namespace": "",
             "file": "include\\service\\entities\\template_service.js",
-            "line": 593,
+            "line": 668,
             "description": "A value that has special meaning to TemplateService.  It acts as a wrapper\nfor a value to be used in a template along with special processing\ninstructions.",
             "is_constructor": 1,
             "params": [
@@ -2607,6 +2720,20 @@
             "file": "include\\service\\jobs\\job_runner.js",
             "line": 18,
             "description": "A base interface that system jobs can implement.  The premise is that every\njob will have an ID and a name.  The job is initialized by calling the\n\"init\" function and started by calling the \"run\" function.  The specific\nimplementation is also provided with functions to report the start, update,\nand end of the job run.  The advantage to extending this prototype is that\nthe provided functions allow for creating a persisted record of the job.  In\naddition, log statements generated by the job are also persisted (as long as\nthe provided \"log\" function is called).",
+            "is_constructor": 1
+        },
+        "FsMediaProvider": {
+            "name": "FsMediaProvider",
+            "shortname": "FsMediaProvider",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Services",
+            "namespace": "",
+            "file": "include\\service\\media\\fs_media_provider.js",
+            "line": 21,
             "is_constructor": 1
         },
         "CacheEntityService": {
@@ -2873,7 +3000,7 @@
             "namespace": "",
             "file": "include\\theme\\top_menu.js",
             "line": 18,
-            "description": "Service for top menu navigation"
+            "description": "Service for top menu navigation.\nNOTE: This is not for administrative pages."
         },
         "ValidationService": {
             "name": "ValidationService",
@@ -3077,19 +3204,26 @@
             "file": "controllers\\actions\\admin\\content\\media\\add_media.js",
             "line": 18,
             "description": "Adds new media",
-            "class": "NewPagePostController"
+            "class": "DeleteMediaController"
         },
         {
             "file": "controllers\\actions\\admin\\content\\media\\delete_media.js",
-            "line": 18,
-            "description": "Deletes media",
-            "class": "NewPagePostController"
-        },
-        {
-            "file": "controllers\\actions\\admin\\content\\media\\edit_media.js",
-            "line": 18,
-            "description": "Edits media",
-            "class": "NewPagePostController"
+            "line": 32,
+            "itemtype": "method",
+            "name": "onPostParamsRetrieved",
+            "params": [
+                {
+                    "name": "post",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "DeleteMediaController"
         },
         {
             "file": "controllers\\actions\\admin\\content\\media\\inline_add_media.js",
@@ -3397,97 +3531,106 @@
             "file": "controllers\\admin\\content\\media\\add_media.js",
             "line": 18,
             "description": "Interface for adding media",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\media\\edit_media.js",
             "line": 18,
             "description": "Interface for editing media",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\media\\manage_media.js",
             "line": 18,
             "description": "Interface for managing media",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\pages\\edit_page.js",
             "line": 18,
             "description": "Interface for editing a page",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\pages\\manage_pages.js",
             "line": 18,
             "description": "Interface for managing pages",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\pages\\new_page.js",
             "line": 18,
             "description": "Interface for creating a new page",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\sections\\edit_section.js",
             "line": 18,
             "description": "Interface for editing a section",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\sections\\new_section.js",
             "line": 18,
             "description": "Interface for creating a section",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\sections\\section_map.js",
             "line": 18,
             "description": "Interface for editing the navigation",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\topics\\import_topics.js",
             "line": 18,
             "description": "Interface for importing topics from CSV",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\topics\\manage_topics.js",
             "line": 18,
             "description": "Interface for managing topics",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\topics\\new_topic.js",
             "line": 18,
             "description": "Interface for creating new topics",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\articles.js",
             "line": 18,
             "description": "Parent articles controller",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\comments.js",
             "line": 18,
             "description": "Parent comments controller",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\custom_objects.js",
             "line": 18,
             "description": "Parent custom objects controller",
-            "class": "AdminIndexController"
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\media.js",
-            "line": 18,
-            "description": "Parent media controller",
-            "class": "AdminIndexController"
+            "line": 44,
+            "deprecated": true,
+            "itemtype": "method",
+            "name": "getAll",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "ContentMediaController"
         },
         {
             "file": "controllers\\admin\\content\\pages.js",
@@ -3740,6 +3883,12 @@
                 "description": "",
                 "type": "Object"
             },
+            "class": "ClusterApiController"
+        },
+        {
+            "file": "controllers\\api\\admin\\site_settings\\email\\send_test.js",
+            "line": 18,
+            "description": "Resends an account verification email",
             "class": "ClusterApiController"
         },
         {
@@ -4217,9 +4366,20 @@
         },
         {
             "file": "controllers\\error\\404.js",
-            "line": 18,
-            "description": "404 error",
-            "class": "BaseController"
+            "line": 32,
+            "see": [
+                "BaseController.render"
+            ],
+            "itemtype": "method",
+            "name": "render",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "NotFoundController"
         },
         {
             "file": "controllers\\user\\change_password.js",
@@ -4366,7 +4526,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 121,
+            "line": 129,
             "itemtype": "method",
             "name": "requiresClientLocalization",
             "return": {
@@ -4377,7 +4537,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 130,
+            "line": 138,
             "itemtype": "method",
             "name": "requiresClientLocalizationCallback",
             "params": [
@@ -4396,7 +4556,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 144,
+            "line": 152,
             "itemtype": "method",
             "name": "formError",
             "params": [
@@ -4420,7 +4580,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 157,
+            "line": 165,
             "itemtype": "method",
             "name": "displayErrorOrSuccessCallback",
             "params": [
@@ -4439,7 +4599,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 179,
+            "line": 187,
             "description": "Provides a page title.  This is picked up by the template engine when the\n^page_name^ key is found in a template.",
             "itemtype": "method",
             "name": "getPageName",
@@ -4451,7 +4611,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 189,
+            "line": 197,
             "description": "Sets the page title",
             "itemtype": "method",
             "name": "setPageName",
@@ -4466,7 +4626,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 198,
+            "line": 206,
             "itemtype": "method",
             "name": "getPostParams",
             "params": [
@@ -4480,7 +4640,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 215,
+            "line": 223,
             "description": "Parses the incoming payload of a request as JSON formatted data.",
             "itemtype": "method",
             "name": "getJSONPostParams",
@@ -4495,7 +4655,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 239,
+            "line": 247,
             "itemtype": "method",
             "name": "getPostData",
             "params": [
@@ -4509,7 +4669,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 259,
+            "line": 267,
             "itemtype": "method",
             "name": "hasRequiredParams",
             "params": [
@@ -4528,7 +4688,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 286,
+            "line": 294,
             "itemtype": "method",
             "name": "setFormFieldValues",
             "params": [
@@ -4542,7 +4702,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 296,
+            "line": 304,
             "itemtype": "method",
             "name": "checkForFormRefill",
             "params": [
@@ -4561,7 +4721,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 314,
+            "line": 322,
             "description": "Sanitizes an object.  This function is handy for incoming post objects.  It\niterates over each field.  If the field is a string value it will be\nsanitized based on the default sanitization rules\n(BaseController.getDefaultSanitizationRules) or those provided by the call\nto BaseController.getSanitizationRules.",
             "itemtype": "method",
             "name": "sanitizeObject",
@@ -4576,14 +4736,14 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 338,
+            "line": 346,
             "itemtype": "method",
             "name": "getSanitizationRules",
             "class": "BaseController"
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 346,
+            "line": 354,
             "description": "The sanitization rules that apply to Pages and Articles",
             "static": 1,
             "itemtype": "method",
@@ -4592,7 +4752,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 376,
+            "line": 384,
             "static": 1,
             "itemtype": "method",
             "name": "getDefaultSanitizationRules",
@@ -4600,7 +4760,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 387,
+            "line": 395,
             "static": 1,
             "itemtype": "method",
             "name": "sanitize",
@@ -4621,7 +4781,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 404,
+            "line": 412,
             "description": "Redirects a request to a different location",
             "itemtype": "method",
             "name": "redirect",
@@ -4641,7 +4801,7 @@
         },
         {
             "file": "controllers\\base_controller.js",
-            "line": 414,
+            "line": 422,
             "description": "Generates an generic API response object",
             "static": 1,
             "itemtype": "method",
@@ -4759,7 +4919,7 @@
             "file": "controllers\\index.js",
             "line": 18,
             "description": "Index page of the pencilblue theme",
-            "class": "PageController"
+            "class": "MediaContentController"
         },
         {
             "file": "controllers\\page.js",
@@ -5893,7 +6053,7 @@
         },
         {
             "file": "include\\http\\request_handler.js",
-            "line": 408,
+            "line": 413,
             "description": "TODO Church this up a bit.  Make it a template and controller like 404.\nTODO install an encoder entity since node prints out function names in angle brackets",
             "class": "RequestHandler",
             "module": "ErrorSuccess"
@@ -6123,7 +6283,34 @@
         },
         {
             "file": "include\\service\\admin\\admin_subnav_service.js",
-            "line": 59,
+            "line": 63,
+            "description": "Unregisters a callback function",
+            "static": 1,
+            "itemtype": "method",
+            "name": "unregisterFor",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "Function",
+                    "description": "to unregister",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "TRUE if function was unregistered, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "AdminSubnavService",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\service\\admin\\admin_subnav_service.js",
+            "line": 87,
             "description": "Retrieves the sub-nav items",
             "itemtype": "method",
             "name": "get",
@@ -6279,7 +6466,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 147,
+            "line": 151,
             "description": "Retrieves data necessary for displaying an articles and appends it to the\narticle object",
             "itemtype": "method",
             "name": "processArticleForDisplay",
@@ -6287,17 +6474,22 @@
                 {
                     "name": "article",
                     "description": "The artice to process",
-                    "type": "[type]"
+                    "type": "Object"
+                },
+                {
+                    "name": "articleCount",
+                    "description": "The total number of articles",
+                    "type": "Number"
                 },
                 {
                     "name": "authors",
                     "description": "Available authors retrieved from the database",
-                    "type": "[type]"
+                    "type": "Array"
                 },
                 {
                     "name": "contentSettings",
                     "description": "Content settings to use for processing",
-                    "type": "[type]"
+                    "type": "Object"
                 },
                 {
                     "name": "cb",
@@ -6311,7 +6503,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 215,
+            "line": 277,
             "description": "Retrieves the authors of an array of articles",
             "itemtype": "method",
             "name": "getArticleAuthors",
@@ -6333,7 +6525,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 239,
+            "line": 301,
             "description": "Retrieves the commenters for an array of comments",
             "itemtype": "method",
             "name": "getCommenters",
@@ -6360,7 +6552,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 302,
+            "line": 364,
             "description": "Retrieves the article and byline templates",
             "itemtype": "method",
             "name": "getTemplates",
@@ -6377,7 +6569,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 317,
+            "line": 379,
             "description": "Retrieves the meta info for an article or page",
             "itemtype": "method",
             "name": "getMetaInfo",
@@ -6399,7 +6591,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 394,
+            "line": 456,
             "description": "Processes an article or page to insert media",
             "itemtype": "method",
             "name": "start",
@@ -6421,7 +6613,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 421,
+            "line": 483,
             "description": "Replaces an article or page layout's ^media_display^ tag with a media embed",
             "params": [
                 {
@@ -6446,7 +6638,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 34,
+            "line": 38,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6458,7 +6650,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 43,
+            "line": 47,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6470,7 +6662,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 52,
+            "line": 56,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6482,7 +6674,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 61,
+            "line": 65,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6494,7 +6686,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 70,
+            "line": 74,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6506,7 +6698,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 85,
+            "line": 89,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6518,7 +6710,82 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 402,
+            "line": 160,
+            "description": "Retrieves custom objects of the specified type based on the specified options.",
+            "itemtype": "method",
+            "name": "findByTypeWithOrdering",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "custom object type descriptor object or the ID\nstring of the type descriptor.",
+                    "type": "Object|String"
+                },
+                {
+                    "name": "options",
+                    "description": "The filters and other flags.  The options object\nsupports the same fields as the DAO.query function.",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "{}",
+                    "props": [
+                        {
+                            "name": "fetch_depth",
+                            "description": "The depth indicates how many levels\nof referenced child and peer objects to load.  At the bottom level the\nreferences will be left as ID strings.",
+                            "type": "Integer",
+                            "optional": true,
+                            "optdefault": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is any\nerror, if ocurred. The second is an array of objects sorted by the ordering\nassigned for the custom object or by name if no ordering exists.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 210,
+            "description": "Coordinates the eager fetching of peer and child objects for the specified custom object.",
+            "itemtype": "method",
+            "name": "fetchChildren",
+            "params": [
+                {
+                    "name": "custObj",
+                    "description": "The custom object to inspect",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "The options specified for the retrieval",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "fetch_depth",
+                            "description": "The number of levels of peer and child\nobjects to retrieve",
+                            "type": "Integer"
+                        }
+                    ]
+                },
+                {
+                    "name": "custObjType",
+                    "description": "The custom object type for the specified\ncustom object.  This can also be the ID string value.",
+                    "type": "Object|String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback function that takes two parameters. The\nfirst is an Error, if occurred. The second is the specified custom object.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 606,
             "description": "Validates a Custom Object Type.",
             "itemtype": "method",
             "name": "validateType",
@@ -6539,7 +6806,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 472,
+            "line": 676,
             "description": "Validates that the field descriptor for a custom object type.",
             "itemtype": "method",
             "name": "validateFieldDescriptor",
@@ -6564,7 +6831,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 499,
+            "line": 703,
             "description": "Retrieves an array of all of the available object types that can be\nreferenced as a child or peer object.",
             "itemtype": "method",
             "name": "getReferenceTypes",
@@ -6580,7 +6847,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 785,
+            "line": 989,
             "description": "Creates a validation error field",
             "static": 1,
             "itemtype": "method",
@@ -6632,7 +6899,7 @@
         },
         {
             "file": "include\\service\\entities\\job_service.js",
-            "line": 52,
+            "line": 56,
             "description": "Retrieves the job descriptor by ID",
             "itemtype": "method",
             "name": "loadById",
@@ -6653,7 +6920,16 @@
         },
         {
             "file": "include\\service\\entities\\media_service.js",
-            "line": 28,
+            "line": 31,
+            "itemtype": "property",
+            "name": "provider",
+            "class": "MediaService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\media_service.js",
+            "line": 150,
             "description": "Retrieves whether a media's file path is valid",
             "itemtype": "method",
             "name": "isValidFilePath",
@@ -7443,7 +7719,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1184,
+            "line": 1193,
             "description": "Loads a module dependencies for the specified plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7470,7 +7746,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1197,
+            "line": 1206,
             "description": "Loads the localization files from the specified plugin directory and places\nthem into a hash where the key is the name of the localization file.",
             "itemtype": "method",
             "name": "getLocalizations",
@@ -7492,7 +7768,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1244,
+            "line": 1253,
             "description": "Retrieves a plugin service prototype.  It is expected to be a prototype but\nit may also be an instance as along as that instance fufills all\nresponsbilities of the service interface.  When the desired service does not\nexist NULL is returned.",
             "itemtype": "method",
             "name": "getService",
@@ -7518,7 +7794,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1263,
+            "line": 1272,
             "description": "Attempts to require the main module file for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7545,7 +7821,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1290,
+            "line": 1299,
             "description": "Retrieves the absolute file path to a plugin's public directory",
             "static": 1,
             "itemtype": "method",
@@ -7566,7 +7842,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1303,
+            "line": 1312,
             "static": 1,
             "itemtype": "method",
             "name": "getPluginsDir",
@@ -7580,7 +7856,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1312,
+            "line": 1321,
             "description": "Constructs the path to a specific plugin's details.json file",
             "static": 1,
             "itemtype": "method",
@@ -7602,7 +7878,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1324,
+            "line": 1333,
             "description": "Attempts to load and parse the details.json file for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7625,7 +7901,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1351,
+            "line": 1360,
             "description": "Validates a plugin's details.json file.",
             "static": 1,
             "itemtype": "method",
@@ -7653,7 +7929,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1596,
+            "line": 1605,
             "description": "Validates the path to the plugin's icon file.  The path is considered valid\nif the path to a valid file.  The path may be absolute or relative to the\nplugin's public directory.",
             "static": 1,
             "itemtype": "method",
@@ -7678,7 +7954,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1618,
+            "line": 1627,
             "description": "Validates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
             "params": [
                 {
@@ -7700,7 +7976,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1631,
+            "line": 1640,
             "description": "Validates a setting from a details.json file.",
             "params": [
                 {
@@ -7722,7 +7998,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1666,
+            "line": 1675,
             "description": "Validates a details.json file's setting value.  The value is required to be a\nstring or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT\nallowed.",
             "static": 1,
             "itemtype": "method",
@@ -7744,7 +8020,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1679,
+            "line": 1688,
             "description": "Retrieves all services (initialized).  The services are provided in the\ncallback.",
             "static": 1,
             "itemtype": "method",
@@ -7767,7 +8043,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1720,
+            "line": 1729,
             "description": "Loads a plugin service and initializes it.  The service is required to\nimplement an \"init\" function. The service is then provided as a parameter in\nthe callback.",
             "static": 1,
             "itemtype": "method",
@@ -7790,7 +8066,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1745,
+            "line": 1754,
             "description": "Loads the controllers for a plugin by iterating through the files in the\nplugin's controllers directory.",
             "static": 1,
             "itemtype": "method",
@@ -7818,7 +8094,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1783,
+            "line": 1792,
             "description": "Loads a controller for a plugin and attempts to register the route with the\nRequestHandler.",
             "static": 1,
             "itemtype": "method",
@@ -7846,7 +8122,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1835,
+            "line": 1844,
             "description": "Derives the name of a plugin service instance.  The function attempts to get\nthe name of the service by looking to see if the service has implemented the\ngetName function.  If it has not then the service name is set to be the file\nname minus any extension.",
             "static": 1,
             "itemtype": "method",
@@ -7871,7 +8147,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1862,
+            "line": 1871,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to uninstall a plugin.\nThe function builds out the appropriate options then calls the\nuninstallPlugin function.  The result is then sent back to the calling\nprocess via the CommandService.",
             "static": 1,
             "itemtype": "method",
@@ -7896,7 +8172,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1894,
+            "line": 1903,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to validate that a plugin is available to this process for install.\nThe function builds out the appropriate options then calls the\nuninstallPlugin function.  The result is then sent back to the calling\nprocess via the CommandService.",
             "static": 1,
             "itemtype": "method",
@@ -7921,7 +8197,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1927,
+            "line": 1936,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to install plugin\ndependencies.  The result is then sent back to the calling process via the\nCommandService.",
             "static": 1,
             "itemtype": "method",
@@ -7946,7 +8222,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1959,
+            "line": 1968,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to initialize a plugin.\nThe result is then sent back to the calling process via the\nCommandService.",
             "static": 1,
             "itemtype": "method",
@@ -7978,7 +8254,7 @@
         },
         {
             "file": "include\\service\\entities\\section_service.js",
-            "line": 525,
+            "line": 571,
             "static": 1,
             "itemtype": "method",
             "name": "",
@@ -7998,7 +8274,7 @@
         },
         {
             "file": "include\\service\\entities\\section_service.js",
-            "line": 560,
+            "line": 606,
             "static": 1,
             "itemtype": "method",
             "name": "isValidType",
@@ -8029,7 +8305,17 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 92,
+            "line": 78,
+            "itemtype": "property",
+            "name": "unregisteredFlagTemplate",
+            "type": "{Function}",
+            "class": "TemplateService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\template_service.js",
+            "line": 98,
             "description": "A container that provides the mapping for global call backs.  These should\nonly be added to at the start of the application or on plugin install/update.",
             "access": "private",
             "tagname": "",
@@ -8041,7 +8327,17 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 113,
+            "line": 119,
+            "itemtype": "property",
+            "name": "unregisteredFlagHandler",
+            "type": "{Function}",
+            "class": "TemplateService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\template_service.js",
+            "line": 128,
             "description": "Sets the prioritized theme to use when loading templates",
             "itemtype": "method",
             "name": "setTheme",
@@ -8058,7 +8354,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 123,
+            "line": 138,
             "description": "Retrieves the prioratized theme",
             "itemtype": "method",
             "name": "getTheme",
@@ -8072,7 +8368,66 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 133,
+            "line": 148,
+            "description": "When a flag is encountered that is not registered with the engine the \nhandler is called as a fail safe.  It is expected to return a string that \nwill be put in the place of the flag.",
+            "itemtype": "method",
+            "name": "setUnregisteredFlagHandler",
+            "params": [
+                {
+                    "name": "unregisteredFlagHandler",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "TRUE when the handler was set, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "TemplateService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\template_service.js",
+            "line": 166,
+            "description": "When a flag is encountered that is not registered with the engine the \nhandler is called as a fail safe unless there is a locally registered handler.  \nIt is expected to return a string that will be put in the place of the flag.",
+            "itemtype": "method",
+            "name": "setGlobalUnregisteredFlagHandler",
+            "params": [
+                {
+                    "name": "unregisteredFlagHandler",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "TRUE when the handler was set, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "TemplateService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\template_service.js",
+            "line": 184,
+            "description": "Sets the option that when true, instructs the engine to inspect the content \nprovided by a flag for more flags.  This is one way of providing iterative \nprocessing of items.  See the sample plugin for an example.",
+            "itemtype": "method",
+            "name": "setReprocess",
+            "params": [
+                {
+                    "name": "reprocess",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "TemplateService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\template_service.js",
+            "line": 195,
             "description": "Retrieves the raw template based on a priority.  The path to the template is\nderived from the specified relative path and the following order of\ndirectories:\n<ol>\n<li>The theme provided by \"getTheme\" if not null</li>\n<li>The globally set active_theme</li>\n<li>Iterates over the list of active plugins looking for the template</li>\n<li>The system template directory</li>\n</ol>",
             "itemtype": "method",
             "name": "getTemplateContentsByPriority",
@@ -8094,7 +8449,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 192,
+            "line": 254,
             "description": "Loads a template file along with any encountered sub-template files and\nprocesses any flags.  The call back provides any error encountered and a\nsecond parameter that is the transformed content.",
             "itemtype": "method",
             "name": "load",
@@ -8116,7 +8471,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 214,
+            "line": 276,
             "description": "Scans the template for flags.  The callback provides any error and a second\nparameter that is the populated template with any registered flags replaced.",
             "itemtype": "method",
             "name": "process",
@@ -8138,7 +8493,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 263,
+            "line": 325,
             "description": "Called when a flag is encountered by the processing engine.  The function is\nresponsible for delegating out the responsibility of the flag to the\nregistered entity.  Some flags are handled by default (although they can\nalways be overriden locally or globally).  The following flags are considered\n\"baked in\" and will be handled automatically unless overriden:\n<ul>\n<li>^loc_xyz^ - A localization flag.  When provided, the Localization\ninstance will have its \"get\" function called in an attempt to retrieve the\nproperly translated value for the key (the part betwee \"^loc_\" and the ending\n\"^\").\n</li>\n<li>^tmp_somedir=someotherdir=templatefileminusext^ - Specifies a\nsub-template that should be loaded processed.  The file is expected to have\na .html extension.\n</li>\n</ul>",
             "itemtype": "method",
             "name": "processFlag",
@@ -8160,7 +8515,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 321,
+            "line": 393,
             "description": "When a sub-template flag is encountered by the processing engine this\nfunction is called to parse the flag and delegate out the loading and\nprocessing of the sub-template.",
             "itemtype": "method",
             "name": "handleTemplateReplacement",
@@ -8182,7 +8537,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 342,
+            "line": 414,
             "description": "Called when the processing engine encounters a non-sub-template flag.  The\nfunction delegates the content transformation out to either the locally or\nglobally registered function.  In the event that a value was registered and not\na function then the value is used as the second parameter in the callback.\nDuring template re-assembly the value will be converted to a string.",
             "itemtype": "method",
             "name": "handleReplacement",
@@ -8209,7 +8564,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 385,
+            "line": 460,
             "description": "Registers a value or function for the specified",
             "itemtype": "method",
             "name": "registerLocal",
@@ -8235,7 +8590,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 400,
+            "line": 475,
             "description": "Retrieves the content template names and locations for the active theme.",
             "itemtype": "method",
             "name": "getTemplatesForActiveTheme",
@@ -8252,7 +8607,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 454,
+            "line": 529,
             "description": "Retrieves the content templates that are available for use to render\nArticles and pages.",
             "itemtype": "method",
             "name": "getAvailableContentTemplates",
@@ -8266,7 +8621,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 474,
+            "line": 549,
             "description": "Registers a value or function for the specified",
             "static": 1,
             "itemtype": "method",
@@ -8293,7 +8648,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 490,
+            "line": 565,
             "description": "Retrieves the default path to a template file based on the assumption that\nthe provided path is relative to the pencilblue/templates/ directory.",
             "static": 1,
             "itemtype": "method",
@@ -8315,7 +8670,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 503,
+            "line": 578,
             "description": "Retrieves the path to a template file based on the assumption that\nthe provided path is relative to the pencilblue/plugins/[themeName]/templates/ directory.",
             "static": 1,
             "itemtype": "method",
@@ -8337,7 +8692,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 516,
+            "line": 591,
             "description": "Compiles the content be eagerly searching for flags/directives.  The static\ncontent is also placed into an object.  Whether static or a flag, an object\nis created and pushed into an array.  Each object has two properties: \"type\"\nthat describes the type of template part it is (static, flag).  \"val\" the\nstring value of the part.",
             "static": 1,
             "itemtype": "method",
@@ -8373,7 +8728,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 609,
+            "line": 684,
             "description": "Encodes the value for an HTML document when a value is provided.",
             "itemtype": "method",
             "name": "encode",
@@ -8395,7 +8750,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 622,
+            "line": 697,
             "description": "Specifies that the value should not be encoded for HTML",
             "itemtype": "method",
             "name": "skipEncode",
@@ -8405,7 +8760,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 630,
+            "line": 705,
             "description": "Specifies that the value should be encoded for HTML",
             "itemtype": "method",
             "name": "doEncode",
@@ -8415,7 +8770,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 638,
+            "line": 713,
             "description": "Retrieves the processed value represented by this object.",
             "itemtype": "method",
             "name": "val",
@@ -8429,7 +8784,7 @@
         },
         {
             "file": "include\\service\\entities\\template_service.js",
-            "line": 651,
+            "line": 726,
             "description": "Overrides the toString function in order to properly serialize the value.",
             "itemtype": "method",
             "name": "toString",
@@ -8662,7 +9017,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 154,
+            "line": 165,
             "description": "Sends a password reset email to a user",
             "itemtype": "method",
             "name": "sendPasswordResetEmail",
@@ -8689,7 +9044,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 180,
+            "line": 190,
             "description": "Checks to see if a proposed user name or email is already in the system",
             "itemtype": "method",
             "name": "isUserNameOrEmailTaken",
@@ -8721,7 +9076,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 203,
+            "line": 213,
             "description": "Gets the total counts of a username and email in both the user and unverified_user collections",
             "itemtype": "method",
             "name": "getExistingUsernameEmailCounts",
@@ -8753,7 +9108,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 237,
+            "line": 270,
             "description": "Verifies if a user has the provided access level or higher",
             "itemtype": "method",
             "name": "hasAccessLevel",
@@ -11446,7 +11801,7 @@
         },
         {
             "file": "include\\theme\\media.js",
-            "line": 68,
+            "line": 70,
             "description": "Gets the proper CSS style for a media object",
             "itemtype": "method",
             "name": "getMediaStyleString",
@@ -11468,24 +11823,38 @@
         },
         {
             "file": "include\\theme\\top_menu.js",
-            "line": 31,
-            "description": "Retrieves the data needed for the top menu",
+            "line": 32,
+            "description": "Retrieves the theme settings, navigation data structure, and account buttons.",
             "itemtype": "method",
             "name": "getTopMenu",
             "params": [
                 {
                     "name": "session",
-                    "description": "",
+                    "description": "The current user's session",
                     "type": "Object"
                 },
                 {
                     "name": "localizationService",
-                    "description": "",
-                    "type": "Object"
+                    "description": "An instance of Localization to \ntranslate default items",
+                    "type": "Localization"
+                },
+                {
+                    "name": "options",
+                    "description": "An optional argument to provide more flexibility \nto the menu construction.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "currUrl",
+                            "description": "The current request URL.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
                 },
                 {
                     "name": "cb",
-                    "description": "Callback function",
+                    "description": "Callback function that takes three parameters. The \nfirst are the theme's settings, the second is the navigation structure, and \nthe third is the account button structure.",
                     "type": "Function"
                 }
             ],
@@ -11495,7 +11864,7 @@
         },
         {
             "file": "include\\theme\\top_menu.js",
-            "line": 67,
+            "line": 83,
             "description": "Retrieves the information needed to draw account buttons",
             "itemtype": "method",
             "name": "getAccountButtons",
@@ -11522,7 +11891,7 @@
         },
         {
             "file": "include\\theme\\top_menu.js",
-            "line": 132,
+            "line": 148,
             "description": "Returns a bootstrap ready ul list for a nav element",
             "itemtype": "method",
             "name": "getBootstrapNav",
@@ -12257,7 +12626,93 @@
         },
         {
             "file": "include\\admin_navigation.js",
-            "line": 165,
+            "line": 34,
+            "return": {
+                "description": "",
+                "type": "*[]"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 170,
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 178,
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 186,
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 220,
+            "params": [
+                {
+                    "name": "navigation",
+                    "description": ""
+                },
+                {
+                    "name": "ls",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 237,
+            "params": [
+                {
+                    "name": "id",
+                    "description": ""
+                },
+                {
+                    "name": "navigation",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 267,
             "description": "Retrive the admin navigation hierarchy",
             "itemtype": "method",
             "name": "get",
@@ -12281,6 +12736,97 @@
             "return": {
                 "description": "Admin navigation",
                 "type": "Object"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 286,
+            "description": "Adds a new child node to an existing top level node",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "parentId",
+                    "description": ""
+                },
+                {
+                    "name": "node",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 307,
+            "description": "Adds a new top level node",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "node",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 323,
+            "description": "Remove a navigation node",
+            "params": [
+                {
+                    "name": "id",
+                    "description": ""
+                },
+                {
+                    "name": "navigation",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "AdminNavigation",
+            "module": "Services",
+            "submodule": "Admin"
+        },
+        {
+            "file": "include\\admin_navigation.js",
+            "line": 364,
+            "params": [
+                {
+                    "name": "session",
+                    "description": ""
+                },
+                {
+                    "name": "adminNavigation",
+                    "description": ""
+                },
+                {
+                    "name": "activeItems",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
             },
             "class": "AdminNavigation",
             "module": "Services",
@@ -12353,7 +12899,7 @@
         },
         {
             "file": "include\\config.js",
-            "line": 221,
+            "line": 228,
             "description": "Loads an external configuration.\nNOTE: This should only be called once by the core code at startup.  Calling\nthis function after the server starts may cause unintended behavior across\nthe system.",
             "class": "ContentService",
             "module": "Services"
@@ -12376,7 +12922,7 @@
         },
         {
             "file": "include\\content.js",
-            "line": 43,
+            "line": 44,
             "description": "Retrieves the default content settings from installation",
             "itemtype": "method",
             "name": "getDefaultSettings",
@@ -12389,7 +12935,7 @@
         },
         {
             "file": "include\\content.js",
-            "line": 69,
+            "line": 71,
             "description": "Returns a formatted time stamp from a date",
             "itemtype": "method",
             "name": "getTimestampTextFromSettings",
@@ -12432,6 +12978,27 @@
         {
             "file": "include\\email.js",
             "line": 53,
+            "description": "Uses an HTML layout and sends it as an email",
+            "itemtype": "method",
+            "name": "sendFromTemplate",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Object containing the email settings and template name",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "Callback function",
+                    "type": "Function"
+                }
+            ],
+            "class": "EmailService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\email.js",
+            "line": 71,
             "description": "Sends an email",
             "itemtype": "method",
             "name": "send",
@@ -12467,7 +13034,7 @@
         },
         {
             "file": "include\\email.js",
-            "line": 107,
+            "line": 125,
             "description": "Retrieves the email settings",
             "itemtype": "method",
             "name": "getSettings",
@@ -12483,7 +13050,7 @@
         },
         {
             "file": "include\\email.js",
-            "line": 120,
+            "line": 138,
             "description": "Retrieves the default email settings from installation",
             "itemtype": "method",
             "name": "getDefaultSettings",
@@ -12512,7 +13079,7 @@
         },
         {
             "file": "include\\libraries.js",
-            "line": 43,
+            "line": 49,
             "description": "Loads the libraries settings into template service globals. Called on system\nstartup",
             "itemtype": "method",
             "name": "init",
@@ -12528,7 +13095,7 @@
         },
         {
             "file": "include\\libraries.js",
-            "line": 65,
+            "line": 71,
             "description": "Retrieves the default library settings for CDNs",
             "itemtype": "method",
             "name": "getCDNDefaults",
@@ -12541,7 +13108,7 @@
         },
         {
             "file": "include\\libraries.js",
-            "line": 94,
+            "line": 103,
             "description": "Retrieves the default library settings for Bower",
             "itemtype": "method",
             "name": "getBowerDefaults",
@@ -12835,6 +13402,32 @@
         {
             "file": "include\\util.js",
             "line": 189,
+            "description": "Converts an array of objects into a hash where the key the value of the \nspecified property. If multiple objects in the array have the same value for \nthe specified value then the last one found will be kept.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "objArrayToHash",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "The array to convert",
+                    "type": "Array"
+                },
+                {
+                    "name": "hashProp",
+                    "description": "The property who's value will be used as the key \nfor each object in the array.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "A hash of the values in the array",
+                "type": "Object"
+            },
+            "class": "Util",
+            "module": "Services"
+        },
+        {
+            "file": "include\\util.js",
+            "line": 212,
             "description": "Converts a hash to an array. When provided, the hashKeyProp will be the\nproperty name of each object in the array that holds the hash key.",
             "static": 1,
             "itemtype": "method",
@@ -12861,7 +13454,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 214,
+            "line": 237,
             "description": "Inverts a hash",
             "static": 1,
             "itemtype": "method",
@@ -12882,7 +13475,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 235,
+            "line": 258,
             "description": "Clones an array",
             "static": 1,
             "itemtype": "method",
@@ -12903,7 +13496,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 254,
+            "line": 277,
             "description": "Pushes all of one array's values into another",
             "static": 1,
             "itemtype": "method",
@@ -12925,7 +13518,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 271,
+            "line": 294,
             "description": "Empty callback function just used as a place holder if a callback is required\nand the result is not needed.",
             "static": 1,
             "itemtype": "method",
@@ -12935,7 +13528,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 281,
+            "line": 304,
             "description": "Creates a unique Id",
             "static": 1,
             "itemtype": "method",
@@ -12949,7 +13542,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 291,
+            "line": 314,
             "description": "Tests if a value is an object",
             "static": 1,
             "itemtype": "method",
@@ -12970,7 +13563,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 302,
+            "line": 325,
             "description": "Tests if a value is an string",
             "static": 1,
             "itemtype": "method",
@@ -12991,7 +13584,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 313,
+            "line": 336,
             "description": "Tests if a value is a function",
             "static": 1,
             "itemtype": "method",
@@ -13012,7 +13605,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 324,
+            "line": 347,
             "description": "Tests if a value is a boolean",
             "static": 1,
             "itemtype": "method",
@@ -13033,7 +13626,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 335,
+            "line": 358,
             "description": "Retrieves the subdirectories of a path",
             "static": 1,
             "itemtype": "method",
@@ -13055,7 +13648,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 372,
+            "line": 395,
             "description": "Provides typical conversions for time",
             "itemtype": "property",
             "name": "TIME",
@@ -13135,7 +13728,7 @@
         },
         {
             "file": "plugins\\portfolio\\controllers\\blog.js",
-            "line": 432,
+            "line": 440,
             "description": "Provides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
             "params": [
                 {
@@ -13188,7 +13781,7 @@
         },
         {
             "file": "plugins\\portfolio\\controllers\\index.js",
-            "line": 136,
+            "line": 160,
             "description": "Provides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
             "params": [
                 {
@@ -13301,7 +13894,7 @@
         },
         {
             "file": "plugins\\sample\\controllers\\hello_world.js",
-            "line": 85,
+            "line": 91,
             "description": "Retrieves the navigation for the page.",
             "params": [
                 {
@@ -13315,7 +13908,7 @@
         },
         {
             "file": "plugins\\sample\\controllers\\hello_world.js",
-            "line": 97,
+            "line": 107,
             "description": "Provides the routes that are to be handled by an instance of this prototype.  \nThe route provides a definition of path, permissions, authentication, and \nexpected content type. \nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
             "params": [
                 {
@@ -13435,7 +14028,7 @@
         },
         {
             "file": "plugins\\sample\\sample.js",
-            "line": 32,
+            "line": 34,
             "description": "Called when the application is starting up. The function is also called at\nthe end of a successful install. It is guaranteed that all core PB services\nwill be available including access to the core DB.",
             "params": [
                 {
@@ -13449,6 +14042,13 @@
         {
             "file": "plugins\\sample\\sample.js",
             "line": 44,
+            "description": "Administration Navigation sample",
+            "class": "ImportWP",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\sample\\sample.js",
+            "line": 90,
             "description": "Called when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
             "params": [
                 {
@@ -13542,7 +14142,7 @@
         },
         {
             "file": "plugins\\wp_import\\wp_import.js",
-            "line": 31,
+            "line": 32,
             "description": "Called when the application is starting up. The function is also called at\nthe end of a successful install. It is guaranteed that all core PB services\nwill be available including access to the core DB.",
             "params": [
                 {
@@ -13555,7 +14155,37 @@
         },
         {
             "file": "plugins\\wp_import\\wp_import.js",
-            "line": 56,
+            "line": 45,
+            "static": 1,
+            "itemtype": "method",
+            "name": "onPluginSettingsSubNav",
+            "params": [
+                {
+                    "name": "navKey",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "UNKNOWN",
+                    "description": "",
+                    "type": "Localization"
+                },
+                {
+                    "name": "The",
+                    "description": "plugin object",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "PencilBlue",
+            "module": "Services"
+        },
+        {
+            "file": "plugins\\wp_import\\wp_import.js",
+            "line": 67,
             "description": "Called when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
             "params": [
                 {
@@ -13744,11 +14374,51 @@
         },
         {
             "message": "param name missing: {Object}",
-            "line": " controllers\\base_controller.js:314"
+            "line": " controllers\\base_controller.js:322"
         },
         {
             "message": "unknown tag: request",
             "line": " include\\http\\request_handler.js:150"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:34"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:170"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:178"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:186"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:220"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:237"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:286"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:307"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:323"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " include\\admin_navigation.js:364"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -13823,6 +14493,10 @@
             "line": " plugins\\wp_import\\wp_import.js:1"
         },
         {
+            "message": "param name missing: {Localization}",
+            "line": " plugins\\wp_import\\wp_import.js:45"
+        },
+        {
             "message": "Missing item type\nDeletes an article",
             "line": " controllers\\actions\\admin\\content\\articles\\delete_article.js:18"
         },
@@ -13849,14 +14523,6 @@
         {
             "message": "Missing item type\nAdds new media",
             "line": " controllers\\actions\\admin\\content\\media\\add_media.js:18"
-        },
-        {
-            "message": "Missing item type\nDeletes media",
-            "line": " controllers\\actions\\admin\\content\\media\\delete_media.js:18"
-        },
-        {
-            "message": "Missing item type\nEdits media",
-            "line": " controllers\\actions\\admin\\content\\media\\edit_media.js:18"
         },
         {
             "message": "Missing item type\nAdds new media from inside a non-media form",
@@ -14067,10 +14733,6 @@
             "line": " controllers\\admin\\content\\custom_objects.js:18"
         },
         {
-            "message": "Missing item type\nParent media controller",
-            "line": " controllers\\admin\\content\\media.js:18"
-        },
-        {
             "message": "Missing item type\nParent pages controller",
             "line": " controllers\\admin\\content\\pages.js:18"
         },
@@ -14163,6 +14825,10 @@
             "line": " controllers\\api\\admin\\content\\pages\\save_draft.js:18"
         },
         {
+            "message": "Missing item type\nResends an account verification email",
+            "line": " controllers\\api\\admin\\site_settings\\email\\send_test.js:18"
+        },
+        {
             "message": "Missing item type\nController to properly route and handle remote calls to interact with\nthe UrlService",
             "line": " controllers\\api\\admin\\url_api.js:18"
         },
@@ -14213,10 +14879,6 @@
         {
             "message": "Missing item type\nChecks to see if the proposed username is available",
             "line": " controllers\\api\\user\\get_username_available.js:18"
-        },
-        {
-            "message": "Missing item type\n404 error",
-            "line": " controllers\\error\\404.js:18"
         },
         {
             "message": "Missing item type\nInterface for logged in user to change password",
@@ -14292,19 +14954,19 @@
         },
         {
             "message": "Missing item type\nTODO Church this up a bit.  Make it a template and controller like 404.\nTODO install an encoder entity since node prints out function names in angle brackets",
-            "line": " include\\http\\request_handler.js:408"
+            "line": " include\\http\\request_handler.js:413"
         },
         {
             "message": "Missing item type\nReplaces an article or page layout's ^media_display^ tag with a media embed",
-            "line": " include\\service\\entities\\article_service.js:421"
+            "line": " include\\service\\entities\\article_service.js:483"
         },
         {
             "message": "Missing item type\nValidates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
-            "line": " include\\service\\entities\\plugin_service.js:1618"
+            "line": " include\\service\\entities\\plugin_service.js:1627"
         },
         {
             "message": "Missing item type\nValidates a setting from a details.json file.",
-            "line": " include\\service\\entities\\plugin_service.js:1631"
+            "line": " include\\service\\entities\\plugin_service.js:1640"
         },
         {
             "message": "Missing item type\nService for managing the site's navigation",
@@ -14359,12 +15021,44 @@
             "line": " include\\theme\\media.js:18"
         },
         {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:34"
+        },
+        {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:170"
+        },
+        {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:178"
+        },
+        {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:186"
+        },
+        {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:220"
+        },
+        {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:237"
+        },
+        {
+            "message": "Missing item type\nRemove a navigation node",
+            "line": " include\\admin_navigation.js:323"
+        },
+        {
+            "message": "Missing item type",
+            "line": " include\\admin_navigation.js:364"
+        },
+        {
             "message": "Missing item type\nDefault configuration.  The settings here should be overriden by taking the\nexample file \"sample.config.json\" and modifying it to override the properties\nshown below.  In order to properly override the default configuration do the\nfollowing:\n1) copy \"sample.config.json\" to \"/etc/pencilblue/config.json\"\n2) Override the properties as desired.\n3) Add any custom properties you wish to provide for your specific purposes.",
             "line": " include\\config.js:23"
         },
         {
             "message": "Missing item type\nLoads an external configuration.\nNOTE: This should only be called once by the core code at startup.  Calling\nthis function after the server starts may cause unintended behavior across\nthe system.",
-            "line": " include\\config.js:221"
+            "line": " include\\config.js:228"
         },
         {
             "message": "Missing item type\nRequirements - Responsible for declaring all of the system types and modules\nneeded to construct the system API object.",
@@ -14396,7 +15090,7 @@
         },
         {
             "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
-            "line": " plugins\\portfolio\\controllers\\blog.js:432"
+            "line": " plugins\\portfolio\\controllers\\blog.js:440"
         },
         {
             "message": "Missing item type\nBlogFilter - Responsible for looking up a specific filter (section, article, page, author) and rendering it.",
@@ -14416,7 +15110,7 @@
         },
         {
             "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
-            "line": " plugins\\portfolio\\controllers\\index.js:136"
+            "line": " plugins\\portfolio\\controllers\\index.js:160"
         },
         {
             "message": "Missing item type\nSaveHomePageSettings - Saves settings for the display of home page content in the Portfolio theme",
@@ -14448,11 +15142,11 @@
         },
         {
             "message": "Missing item type\nRetrieves the navigation for the page.",
-            "line": " plugins\\sample\\controllers\\hello_world.js:85"
+            "line": " plugins\\sample\\controllers\\hello_world.js:91"
         },
         {
             "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.  \nThe route provides a definition of path, permissions, authentication, and \nexpected content type. \nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
-            "line": " plugins\\sample\\controllers\\hello_world.js:97"
+            "line": " plugins\\sample\\controllers\\hello_world.js:107"
         },
         {
             "message": "Missing item type\nHelloWorld - A sample controller to show how to register a controller and \nroutes for the controller.",
@@ -14488,11 +15182,15 @@
         },
         {
             "message": "Missing item type\nCalled when the application is starting up. The function is also called at\nthe end of a successful install. It is guaranteed that all core PB services\nwill be available including access to the core DB.",
-            "line": " plugins\\sample\\sample.js:32"
+            "line": " plugins\\sample\\sample.js:34"
+        },
+        {
+            "message": "Missing item type\nAdministration Navigation sample",
+            "line": " plugins\\sample\\sample.js:44"
         },
         {
             "message": "Missing item type\nCalled when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
-            "line": " plugins\\sample\\sample.js:44"
+            "line": " plugins\\sample\\sample.js:90"
         },
         {
             "message": "Missing item type",
@@ -14512,11 +15210,11 @@
         },
         {
             "message": "Missing item type\nCalled when the application is starting up. The function is also called at\nthe end of a successful install. It is guaranteed that all core PB services\nwill be available including access to the core DB.",
-            "line": " plugins\\wp_import\\wp_import.js:31"
+            "line": " plugins\\wp_import\\wp_import.js:32"
         },
         {
             "message": "Missing item type\nCalled when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
-            "line": " plugins\\wp_import\\wp_import.js:56"
+            "line": " plugins\\wp_import\\wp_import.js:67"
         },
         {
             "message": "Missing item type\nTo be called when the configuration is loaded.  The function is responsible\nfor triggered the startup of the HTTP connection listener as well as start a\nconnection pool to the core DB.",

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -275,22 +287,33 @@
 
 /**
  * 404 error
+ * @class NotFoundController
+ * @constructor
+ * @extends BaseController
  */
-
-function NotFound(){}
+function NotFoundController(){}
 
 //dependencies
 var TopMenu = require(&#x27;../../include/theme/top_menu&#x27;);
 
 //inheritance
-util.inherits(NotFound, pb.BaseController);
+util.inherits(NotFoundController, pb.BaseController);
 
-NotFound.prototype.render = function(cb) {
+/**
+ * @see BaseController.render
+ * @method render
+ * @param {Function} cb
+ */
+NotFoundController.prototype.render = function(cb) {
 	var self = this;
 
 	this.setPageName(&#x27;404&#x27;);
     pb.content.getSettings(function(err, contentSettings) {
-        TopMenu.getTopMenu(self.session, self.localizationService, function(themeSettings, navigation, accountButtons) {
+        
+        var options = {
+            currUrl: self.req.url
+        };
+        TopMenu.getTopMenu(self.session, self.ls, options, function(themeSettings, navigation, accountButtons) {
             TopMenu.getBootstrapNav(navigation, accountButtons, function(navigation, accountButtons) {
 
                 //load template
@@ -315,7 +338,7 @@ NotFound.prototype.render = function(cb) {
 };
 
 //exports
-module.exports = NotFound;
+module.exports = NotFoundController;
 
     </pre>
 </div>

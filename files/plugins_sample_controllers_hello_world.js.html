@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -315,17 +327,23 @@ HelloWorld.prototype.render = function(cb) {
 			self.setPageName(self.ls.get(&#x27;SAMPLE_HELLO_WORLD&#x27;));
 			self.ts.registerLocal(&#x27;sample_plugin_icon&#x27;, PluginService.genPublicPath(&#x27;sample&#x27;, &#x27;imgs/sample.ico&#x27;));
 			self.ts.registerLocal(&#x27;sample_text&#x27;, text);
-			self.ts.registerLocal(&#x27;navigation&#x27;, navigation);
+			self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(navigation, false));
 			self.ts.registerLocal(&#x27;account_buttons&#x27;, accountButtons);
             self.ts.registerLocal(&#x27;items&#x27;, function(flag, cb) {
                 if (i &gt;= items.length) {
+                    
+                    //we are done iterating so we shouldn&#x27;t continue to 
+                    //reprocess content.
+                    self.ts.setReprocess(false);
                     cb(null, &#x27;&#x27;);
                     return;
                 }
-               
-                var content = &#x27;&lt;li&gt;&#x27;+items[i]+&#x27;&lt;/li&gt;^items^&#x27;;
-                i+=1;
-                cb(null, content);
+                
+                //make sure the flag appended to the end is processed
+                self.ts.setReprocess(true);
+                
+                var content = &#x27;&lt;li&gt;&#x27;+items[i++]+&#x27;&lt;/li&gt;^items^&#x27;;
+                cb(null, new pb.TemplateValue(content, false));
             });
 			self.ts.load(path.join(&#x27;sample&#x27;, &#x27;index&#x27;), function(err, template) {
 				if (util.isError(err)) {
@@ -345,7 +363,11 @@ HelloWorld.prototype.render = function(cb) {
  * @param {function} cb Callback that provides three parameters: cb(Error, navigation, accountButtons);
  */
 HelloWorld.prototype.getNavigation = function(cb) {
-	TopMenuService.getTopMenu(this.session, this.localizationService, function(themeSettings, navigation, accountButtons) {
+    
+    var options = {
+        currUrl: this.req.url
+    };
+	TopMenuService.getTopMenu(this.session, this.localizationService, options, function(themeSettings, navigation, accountButtons) {
         TopMenuService.getBootstrapNav(navigation, accountButtons, function(navigation, accountButtons) {
         	cb(null, navigation, accountButtons);
         });

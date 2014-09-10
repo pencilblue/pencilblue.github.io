@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -277,7 +289,8 @@
 
 
 <div class="box intro">
-    <p>Service for top menu navigation</p>
+    <p>Service for top menu navigation.
+NOTE: This is not for administrative pages.</p>
 
 </div>
 
@@ -396,7 +409,7 @@
             
         
         
-        <a href="../files/include_theme_top_menu.js.html#l67"><code>include\theme\top_menu.js:67</code></a>
+        <a href="../files/include_theme_top_menu.js.html#l83"><code>include\theme\top_menu.js:83</code></a>
         
         </p>
 
@@ -528,7 +541,7 @@
             
         
         
-        <a href="../files/include_theme_top_menu.js.html#l132"><code>include\theme\top_menu.js:132</code></a>
+        <a href="../files/include_theme_top_menu.js.html#l148"><code>include\theme\top_menu.js:148</code></a>
         
         </p>
 
@@ -628,6 +641,12 @@
             
                 <li class="arg">
                     
+                        <code class="optional">[options]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
                         <code>cb</code>
                     
                 </li>
@@ -661,7 +680,7 @@
             
         
         
-        <a href="../files/include_theme_top_menu.js.html#l31"><code>include\theme\top_menu.js:31</code></a>
+        <a href="../files/include_theme_top_menu.js.html#l32"><code>include\theme\top_menu.js:32</code></a>
         
         </p>
 
@@ -672,7 +691,7 @@
     </div>
 
     <div class="description">
-        <p>Retrieves the data needed for the top menu</p>
+        <p>Retrieves the theme settings, navigation data structure, and account buttons.</p>
 
     </div>
 
@@ -691,7 +710,8 @@
                     
 
                     <div class="param-description">
-                         
+                        <p>The current user&#39;s session</p>
+
                     </div>
 
                     
@@ -700,15 +720,54 @@
                 <li class="param">
                     
                         <code class="param-name">localizationService</code>
-                        <span class="type">Object</span>
+                        <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
                     
 
                     
 
                     <div class="param-description">
-                         
+                        <p>An instance of Localization to 
+translate default items</p>
+
                     </div>
 
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An optional argument to provide more flexibility 
+to the menu construction.</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[currUrl]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The current request URL.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
                     
                 </li>
             
@@ -721,7 +780,9 @@
                     
 
                     <div class="param-description">
-                        <p>Callback function</p>
+                        <p>Callback function that takes three parameters. The 
+first are the theme&#39;s settings, the second is the navigation structure, and 
+the third is the account button structure.</p>
 
                     </div>
 

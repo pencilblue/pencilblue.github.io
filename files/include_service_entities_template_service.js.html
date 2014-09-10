@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -332,6 +344,12 @@ function TemplateService(localizationService){
      * @type {Boolean}
      */
     this.reprocess = false;
+    
+    /**
+     * @property unregisteredFlagTemplate
+     * @type {Function}
+     */
+    this.unregisteredFlagHandler = null;
 }
 
 //constants
@@ -369,6 +387,15 @@ var GLOBAL_CALLBACKS = {
 };
 
 /**
+ * 
+ * @property unregisteredFlagHandler
+ * @type {Function}
+ */
+TemplateService.unregisteredFlagHandler = function(flag) {
+    return &#x27;^&#x27;+flag+&#x27;^&#x27;;
+};
+
+/**
  * Sets the prioritized theme to use when loading templates
  *
  * @method setTheme
@@ -386,6 +413,53 @@ TemplateService.prototype.setTheme = function(theme) {
  */
 TemplateService.prototype.getTheme = function() {
 	return this.theme;
+};
+
+/**
+ * When a flag is encountered that is not registered with the engine the 
+ * handler is called as a fail safe.  It is expected to return a string that 
+ * will be put in the place of the flag.
+ *
+ * @method setUnregisteredFlagHandler
+ * @param {Function} unregisteredFlagHandler
+ * @return {Boolean} TRUE when the handler was set, FALSE if not
+ */
+TemplateService.prototype.setUnregisteredFlagHandler = function(unregisteredFlagHandler) {
+    if (!pb.utils.isFunction(unregisteredFlagHandler)) {
+        return false;
+    }
+    
+	this.unregisteredFlagHandler = unregisteredFlagHandler;
+    return true;
+};
+
+/**
+ * When a flag is encountered that is not registered with the engine the 
+ * handler is called as a fail safe unless there is a locally registered handler.  
+ * It is expected to return a string that will be put in the place of the flag.
+ *
+ * @method setGlobalUnregisteredFlagHandler
+ * @param {Function} unregisteredFlagHandler
+ * @return {Boolean} TRUE when the handler was set, FALSE if not
+ */
+TemplateService.setGlobalUnregisteredFlagHandler = function(unregisteredFlagHandler) {
+    if (!pb.utils.isFunction(unregisteredFlagHandler)) {
+        return false;
+    }
+    
+	TemplateService.unregisteredFlagHandler = unregisteredFlagHandler;
+    return true;
+};
+
+/**
+ * Sets the option that when true, instructs the engine to inspect the content 
+ * provided by a flag for more flags.  This is one way of providing iterative 
+ * processing of items.  See the sample plugin for an example.
+ * @method setReprocess
+ * @param {Boolean} reprocess
+ */
+TemplateService.prototype.setReprocess = function(reprocess) {
+    this.reprocess = reprocess ? true : false;
 };
 
 /**
@@ -566,11 +640,21 @@ TemplateService.prototype.processFlag = function(flag, cb) {
 			return;
 		}
 		else {
+            //the flag was not registered.  Hand it off to a handler for any 
+            //catch-all processing.
+            
+            
 			//log result
 			if (pb.log.isSilly()) {
 				pb.log.silly(&quot;TemplateService: Failed to process flag [%s]&quot;, flag);
 			}
-			cb(null, &#x27;^&#x27;+flag+&#x27;^&#x27;);
+            
+            if (pb.utils.isFunction(self.unregisteredFlagHandler)) {
+                cb(null, self.unregisteredFlagHandler(flag));
+            }
+            else {
+			     cb(null, TemplateService.unregisteredFlagHandler(flag));
+            }
 		}
 	};
 	doFlagProcessing(flag, cb);
@@ -623,10 +707,13 @@ TemplateService.prototype.handleReplacement = function(flag, replacement, cb) {
         }
 
 		//prevent infinite loops
-		if (!this.reprocess || TemplateService.isFlag(content)) {
+		if (!self.reprocess || TemplateService.isFlag(content, flag)) {
 			cb(err, content);
 		}
 		else {
+            content = {
+                parts: TemplateService.compile(content)
+            };
 			self.process(content, cb);
 		}
 	};
@@ -705,7 +792,7 @@ TemplateService.prototype.getTemplatesForActiveTheme = function(cb) {
     });
 };
 
-TemplateService.isFlag = function(content) {
+TemplateService.isFlag = function(content, flag) {
     return pb.utils.isString(content) &amp;&amp; (content.length === 0 || (&#x27;^&#x27;+flag+&#x27;^&#x27;) === content);
 };
 

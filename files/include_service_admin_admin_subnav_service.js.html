@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -310,8 +322,36 @@ AdminSubnavService.registerFor = function(key, getSubNavItems) {
 	if (CALLBACKS[key] === undefined) {
 		CALLBACKS[key] = [];
 	}
+    else if (CALLBACKS[key].indexOf(getSubNavItems) &gt; -1) {
+        return true;
+    }
+    
 	CALLBACKS[key].push(getSubNavItems);
 	return true;
+};
+
+/**
+ * Unregisters a callback function
+ * @static
+ * @method unregisterFor
+ * @param {String} key
+ * @param {Function} Function to unregister
+ * @return {Boolean} TRUE if function was unregistered, FALSE if not
+ */
+AdminSubnavService.unregisterFor = function(key, registeredFunc) {
+    if (!pb.validation.validateNonEmptyStr(key, true) || !pb.utils.isFunction(registeredFunc)) {
+		return false;
+	}
+    else if (!util.isArray(CALLBACKS[key])) {
+        return false;
+    }
+    
+    var index = CALLBACKS[key].indexOf(registeredFunc);
+    if (index &gt; -1) {
+        CALLBACKS[key].splice(index, 1);
+        return true;
+    }
+    return false;
 };
 
 /**

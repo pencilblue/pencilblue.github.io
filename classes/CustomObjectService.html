@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -276,7 +288,9 @@
 
 
 <div class="box intro">
-    
+    <p>Provides a service to do the heavy lifting of retrieving custom objects with 
+the ability to eagerly fetch the related objects.</p>
+
 </div>
 
 
@@ -367,6 +381,20 @@
 
                                 
                                     <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_fetchChildren">fetchChildren</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_findByTypeWithOrdering">findByTypeWithOrdering</a>
+
                                 
                                 
                             </li>
@@ -524,7 +552,7 @@
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l785"><code>include\service\entities\custom_object_service.js:785</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l989"><code>include\service\entities\custom_object_service.js:989</code></a>
         
         </p>
 
@@ -601,6 +629,341 @@
 </div>
 
                 
+                    <div id="method_fetchChildren" class="method item">
+    <h3 class="name"><code>fetchChildren</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>custObj</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>options</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>custObjType</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l210"><code>include\service\entities\custom_object_service.js:210</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Coordinates the eager fetching of peer and child objects for the specified custom object.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">custObj</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The custom object to inspect</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The options specified for the retrieval</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">fetch_depth</code>
+                                    <span class="type">Integer</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The number of levels of peer and child
+objects to retrieve</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">custObjType</code>
+                        <span class="type">Object | String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The custom object type for the specified
+custom object.  This can also be the ID string value.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback function that takes two parameters. The
+first is an Error, if occurred. The second is the specified custom object.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_findByTypeWithOrdering" class="method item">
+    <h3 class="name"><code>findByTypeWithOrdering</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>The</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[options={}]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l160"><code>include\service\entities\custom_object_service.js:160</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves custom objects of the specified type based on the specified options.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">The</code>
+                        <span class="type">Object | String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>custom object type descriptor object or the ID
+string of the type descriptor.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options={}]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The filters and other flags.  The options object
+supports the same fields as the DAO.query function.</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[fetch_depth=0]</code>
+                                    <span class="type">Integer</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The depth indicates how many levels
+of referenced child and peer objects to load.  At the bottom level the
+references will be left as ID strings.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters. The first is any
+error, if ocurred. The second is an array of objects sorted by the ordering
+assigned for the custom object or by name if no ordering exists.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_getReferenceTypes" class="method item">
     <h3 class="name"><code>getReferenceTypes</code></h3>
 
@@ -643,7 +1006,7 @@
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l499"><code>include\service\entities\custom_object_service.js:499</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l703"><code>include\service\entities\custom_object_service.js:703</code></a>
         
         </p>
 
@@ -745,7 +1108,7 @@ types that can be referenced as a peer or child object.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l472"><code>include\service\entities\custom_object_service.js:472</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l676"><code>include\service\entities\custom_object_service.js:676</code></a>
         
         </p>
 
@@ -869,7 +1232,7 @@ error</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l402"><code>include\service\entities\custom_object_service.js:402</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l606"><code>include\service\entities\custom_object_service.js:606</code></a>
         
         </p>
 
@@ -970,7 +1333,7 @@ assume that validation passed.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l70"><code>include\service\entities\custom_object_service.js:70</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l74"><code>include\service\entities\custom_object_service.js:74</code></a>
         
         </p>
 
@@ -1018,7 +1381,7 @@ assume that validation passed.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l85"><code>include\service\entities\custom_object_service.js:85</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l89"><code>include\service\entities\custom_object_service.js:89</code></a>
         
         </p>
 
@@ -1066,7 +1429,7 @@ assume that validation passed.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l52"><code>include\service\entities\custom_object_service.js:52</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l56"><code>include\service\entities\custom_object_service.js:56</code></a>
         
         </p>
 
@@ -1114,7 +1477,7 @@ assume that validation passed.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l61"><code>include\service\entities\custom_object_service.js:61</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l65"><code>include\service\entities\custom_object_service.js:65</code></a>
         
         </p>
 
@@ -1162,7 +1525,7 @@ assume that validation passed.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l34"><code>include\service\entities\custom_object_service.js:34</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l38"><code>include\service\entities\custom_object_service.js:38</code></a>
         
         </p>
 
@@ -1210,7 +1573,7 @@ assume that validation passed.</p>
             
         
         
-        <a href="../files/include_service_entities_custom_object_service.js.html#l43"><code>include\service\entities\custom_object_service.js:43</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l47"><code>include\service\entities\custom_object_service.js:47</code></a>
         
         </p>
 

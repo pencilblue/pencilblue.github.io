@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -290,50 +302,43 @@ util.inherits(UploadMedia, pb.BaseController);
 
 UploadMedia.prototype.render = function(cb) {
 	var self  = this;
+    
+    var mservice = new pb.MediaService();
+    var fpart    = null;
+    var sresult  = null;
+    var error    = null;
+    var fdata    = &#x27;&#x27;;
+    var form     = new formidable.IncomingForm();
 
-    var date = new Date();
-    var monthDir = MEDIA_DIRECTORY + date.getFullYear() + &#x27;/&#x27;;
-    if(!fs.existsSync(monthDir)) {
-        fs.mkdirSync(monthDir);
-    }
+    //parse the form out and let us know when its done
+    form.parse(this.req, function(err, fields, files) {
+        if (util.isError(error)) {
+            return self.reqHandler.serveError(error);
+        }
+        
+        var keys = Object.keys(files);
+        if (keys.length === 0) {
+            return self.serveError(new Error(&#x27;No file inputs were submitted&#x27;));
+        }
+        var fileDescriptor = files[keys[0]];
+        
+        var stream = fs.createReadStream(fileDescriptor.path);
+        mservice.setContentStream(stream, fileDescriptor.name, function(err, sresult) {
+            if (util.isError(err)) {
+                return self.reqHandler.serveError(err);   
+            }
 
-    var uploadDirectory = monthDir + (date.getMonth() + 1) + &#x27;/&#x27;;
-    if(!fs.existsSync(uploadDirectory)) {
-        fs.mkdirSync(uploadDirectory);
-    }
-
-    var filename = &#x27;&#x27;;
-    var form = new formidable.IncomingForm();
-    form.on(&#x27;fileBegin&#x27;, function(name, file) {
-        filename = self.generateFilename(file.name);
-        file.path = uploadDirectory + filename;
-    });
-
-    form.parse(this.req, function() {
-
-    	var content = {
-			content: JSON.stringify({
-				filename: &#x27;/media/&#x27; + date.getFullYear() + &#x27;/&#x27; + (date.getMonth() + 1) + &#x27;/&#x27; + filename
-			}),
-			content_type: &#x27;application/json&#x27;
-		};
-        cb(content);
+            //write the response
+            var content = {
+                content: JSON.stringify({
+                    filename: sresult.mediaPath
+                }),
+                content_type: &#x27;application/json&#x27;
+            };
+            cb(content);
+        });
         return;
     });
-};
-
-UploadMedia.prototype.generateFilename = function(originalFilename){
-	var now = new Date();
-
-	//calculate extension
-	var ext = &#x27;&#x27;;
-	var extIndex = originalFilename.lastIndexOf(&#x27;.&#x27;);
-	if (extIndex &gt;= 0){
-		ext = originalFilename.substr(extIndex);
-	}
-
-	//build file name
-    return pb.utils.uniqueId() + &#x27;-&#x27; + now.getTime() + ext;
 };
 
 //exports

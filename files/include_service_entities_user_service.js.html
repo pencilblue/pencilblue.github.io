@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -396,17 +408,28 @@ UserService.prototype.getEditorSelectList = function(currId, cb) {
 UserService.prototype.sendVerificationEmail = function(user, cb) {
 	cb = cb || pb.utils.cb;
 
-	var options = {
-		to: user.email,
-		subject: pb.config.siteName + &#x27; Account Confirmation&#x27;,
-		template: &#x27;admin/elements/default_verification_email&#x27;,
-		replacements: {
-			&#x27;verification_url&#x27;: pb.config.siteRoot + &#x27;/actions/user/verify_email?email=&#x27; + user.email + &#x27;&amp;code=&#x27; + user.verification_code,
-			&#x27;first_name&#x27;: user.first_name,
-			&#x27;last_name&#x27;: user.last_name
+	// We need to see if email settings have been saved with verification content
+	var options;
+	pb.email.getSettings(function(err, emailSettings) {
+		options = {
+			to: user.email,
+			replacements: {
+				&#x27;verification_url&#x27;: pb.config.siteRoot + &#x27;/actions/user/verify_email?email=&#x27; + user.email + &#x27;&amp;code=&#x27; + user.verification_code,
+				&#x27;first_name&#x27;: user.first_name,
+				&#x27;last_name&#x27;: user.last_name
+			}
+		};
+		if(emailSettings.layout) {
+			options.subject= emailSettings.verification_subject;
+			options.layout = emailSettings.verification_content;
+			pb.email.sendFromLayout(options, cb);
 		}
-	};
-	pb.email.sendFromTemplate(options, cb);
+		else {
+			options.subject = pb.config.siteName + &#x27; Account Confirmation&#x27;;
+			options.template = emailSettings.template;
+			pb.email.sendFromTemplate(options, cb);
+		}
+	});
 };
 
 /**
@@ -419,8 +442,7 @@ UserService.prototype.sendVerificationEmail = function(user, cb) {
  */
 UserService.prototype.sendPasswordResetEmail = function(user, passwordReset, cb) {
 	cb = cb || pb.utils.cb;
-console.log(util.inspect(user));
-console.log(util.inspect(passwordReset));
+
     var verficationUrl = pb.UrlService.urlJoin(pb.config.siteRoot, &#x27;/actions/user/reset_password&#x27;) + util.format(&#x27;?email=%s&amp;code=%s&#x27;, encodeURIComponent(user.email), encodeURIComponent(passwordReset.verification_code));
 	var options = {
 		to: user.email,
@@ -468,9 +490,14 @@ UserService.prototype.isUserNameOrEmailTaken = function(username, email, id, cb)
  * @param {Function} cb       Callback function
  */
 UserService.prototype.getExistingUsernameEmailCounts = function(username, email, id, cb) {
+    if (pb.utils.isFunction(id)) {
+        cb = id;
+        id = null;
+    }
+
 	var getWhere = function(where) {
 		if (id) {
-			where._id = {$ne: new ObjectID(id)};
+			where[pb.DAO.getIdField()] = {$ne: pb.DAO.getObjectID(id)};
 		}
 		return where;
 	};
@@ -490,6 +517,24 @@ UserService.prototype.getExistingUsernameEmailCounts = function(username, email,
 		},
 	};
 	async.series(tasks, cb);
+};
+
+UserService.prototype.findByAccessLevel = function(level, options, cb) {
+    if (pb.utils.isFunction(options)) {
+        cb      = options;
+        options = {};
+    }
+    else if (!pb.utils.isObject(options)) {
+        throw new Error(&#x27;The options parameter must be an object&#x27;);
+    }
+
+    var where = {
+        admin: level
+    };
+    var dao = new pb.DAO();
+    dao.query(&#x27;user&#x27;, where, options.select, options.orderBy, options.limit, options.offset).then(function(result) {
+        cb(util.isError(result) ? result : null, result);
+    });
 };
 
 /**

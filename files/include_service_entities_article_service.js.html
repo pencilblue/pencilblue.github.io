@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -385,10 +397,14 @@ ArticleService.prototype.find = function(where,  cb) {
 		self.getArticleAuthors(articles, function(err, authors) {
 
 			pb.content.getSettings(function(err, contentSettings) {
+				if(!contentSettings.read_more_text) {
+					var defaultSettings = pb.content.getDefaultSettings();
+					contentSettings.read_more_text = defaultSettings.read_more_text;
+				}
 
 				var tasks = pb.utils.getTasks(articles, function(articles, i) {
 					return function(callback) {
-						self.processArticleForDisplay(articles[i], authors, contentSettings, function(){
+						self.processArticleForDisplay(articles[i], articles.length, authors, contentSettings, function(){
 							callback(null, null);
 						});
 					};
@@ -407,12 +423,13 @@ ArticleService.prototype.find = function(where,  cb) {
  * article object
  *
  * @method processArticleForDisplay
- * @param {[type]}   article         The artice to process
- * @param {[type]}   authors         Available authors retrieved from the database
- * @param {[type]}   contentSettings Content settings to use for processing
+ * @param {Object}   article         The artice to process
+ * @param {Number}   articleCount    The total number of articles
+ * @param {Array}    authors         Available authors retrieved from the database
+ * @param {Object}   contentSettings Content settings to use for processing
  * @param {Function} cb              Callback function
  */
-ArticleService.prototype.processArticleForDisplay = function(article, authors, contentSettings, cb) {
+ArticleService.prototype.processArticleForDisplay = function(article, articleCount, authors, contentSettings, cb) {
 	var self = this;
 
 	if (this.getContentType() === &#x27;article&#x27;) {
@@ -439,6 +456,63 @@ ArticleService.prototype.processArticleForDisplay = function(article, authors, c
 	        		contentSettings
 			);
 	    }
+
+		// No need to cutoff article if there&#x27;s only 1
+		if(articleCount &gt; 1 &amp;&amp; contentSettings.auto_break_articles) {
+			var breakString = &#x27;&lt;br&gt;&#x27;;
+			var tempLayout;
+
+			// Firefox uses br and Chrome uses div in content editables.
+			// We need to see which one is being used
+			var brIndex = article.article_layout.indexOf(&#x27;&lt;br&gt;&#x27;);
+			if(brIndex === -1) {
+				brIndex = article.article_layout.indexOf(&#x27;&lt;br /&gt;&#x27;);
+				breakString = &#x27;&lt;br /&gt;&#x27;;
+			}
+			var divIndex = article.article_layout.indexOf(&#x27;&lt;/div&gt;&#x27;);
+
+			// Temporarily replace double breaks with a directive so we don&#x27;t mess up the count
+			if(divIndex === -1 || (brIndex &gt; -1 &amp;&amp; divIndex &gt; -1 &amp;&amp; brIndex &lt; divIndex)) {
+				tempLayout = article.article_layout.split(breakString + breakString).join(breakString + &#x27;^dbl_pgf_break^&#x27;);
+			}
+			else {
+				breakString = &#x27;&lt;/div&gt;&#x27;;
+				tempLayout = article.article_layout.split(&#x27;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&#x27;).join(breakString + &#x27;^dbl_pgf_break^&#x27;)
+				.split(&#x27;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&#x27;).join(breakString + &#x27;^dbl_pgf_break^&#x27;);
+			}
+
+			// Split the layout by paragraphs and remove any empty indices
+			var tempLayoutArray = tempLayout.split(breakString);
+			for(var i = 0; i &lt; tempLayoutArray.length; i++) {
+				if(!tempLayoutArray[i].length) {
+					tempLayoutArray.splice(i, 1);
+					i--;
+				}
+			}
+
+			// Only continue if we have more than 1 paragraph
+			if(tempLayoutArray.length &gt; 1) {
+				var newLayout = &#x27;&#x27;;
+
+				// Cutoff the article at the right number of paragraphs
+				for(i = 0; i &lt; tempLayoutArray.length &amp;&amp; i &lt; contentSettings.auto_break_articles; i++) {
+					if(i === contentSettings.auto_break_articles -1 &amp;&amp; i != tempLayoutArray.length - 1) {
+						newLayout += tempLayoutArray[i] + &#x27;&amp;nbsp;&lt;a href=&quot;&#x27; + pb.config.siteRoot + &#x27;/article/&#x27; + article.url + &#x27;&quot;&gt;&#x27; + contentSettings.read_more_text + &#x27;...&lt;/a&gt;&#x27; + breakString;
+						continue;
+					}
+					newLayout += tempLayoutArray[i] + breakString;
+				}
+
+				if(breakString === &#x27;&lt;/div&gt;&#x27;) {
+					breakString = &#x27;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&#x27;;
+				}
+
+				// Replace the double breaks
+				newLayout = newLayout.split(&#x27;^dbl_pgf_break^&#x27;).join(breakString);
+
+				article.article_layout = newLayout;
+			}
+		}
 	}
 
     article.layout  = article.article_layout;
@@ -703,7 +777,8 @@ MediaLoader.prototype.replaceMediaTag = function(layout, mediaTemplate, cb) {
         else {
             var mediaEmbed = mediaTemplate.split(&#x27;^media^&#x27;).join(Media.getMediaEmbed(data));
             mediaEmbed     = mediaEmbed.split(&#x27;^caption^&#x27;).join(data.caption);
-            mediaEmbed     = Media.getMediaStyle(mediaEmbed, mediaStyleString);
+			mediaEmbed     = mediaEmbed.split(&#x27;^display_caption^&#x27;).join(data.caption.length ? &#x27;&#x27; : &#x27;display: none&#x27;);
+            mediaEmbed     = Media.getMediaStyle(mediaEmbed, mediaStyleString, data.media_type);
 
             layout = layout.split(layout.substr(startIndex - 15, endIndex + 16)).join(mediaEmbed);
         }

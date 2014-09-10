@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -275,14 +287,14 @@
 
 /**
  * Edits media
+ * @class EditMediaPostController
  */
-
-function EditMedia(){}
+function EditMediaPostController(){}
 
 //inheritance
-util.inherits(EditMedia, pb.FormController);
+util.inherits(EditMediaPostController, pb.FormController);
 
-EditMedia.prototype.onPostParamsRetrieved = function(post, cb) {
+EditMediaPostController.prototype.onPostParamsRetrieved = function(post, cb) {
 	var self = this;
 	var vars = this.pathVars;
 
@@ -296,17 +308,19 @@ EditMedia.prototype.onPostParamsRetrieved = function(post, cb) {
         return;
     }
 
-	var dao = new pb.DAO();
-	dao.loadById(post.id, &#x27;media&#x27;, function(err, media) {
-    	//TODO handle error
-
-        if(media === null) {
-            self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), this.getFormErrorRedirect(post.id), cb);
+    var mservice = new pb.MediaService();
+    mservice.loadById(post.id, function(err, media) {
+    	if (util.isError(err)) {
+            self.reqHandler.serveError(err);
+        }
+        else if(media === null) {
+            self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), self.getFormErrorRedirect(post.id), cb);
             return;
         }
 
         //update existing document
         pb.DocumentCreator.update(post, media, [&#x27;media_topics&#x27;], [&#x27;is_file&#x27;]);
+        var dao = new pb.DAO();
         dao.update(media).then(function(result) {
             if (util.isError(result)) {
                 self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), self.getFormErrorRedirect(), cb);
@@ -319,20 +333,20 @@ EditMedia.prototype.onPostParamsRetrieved = function(post, cb) {
     });
 };
 
-EditMedia.prototype.onSaveSuccessful = function(mediaDocument) {
+EditMediaPostController.prototype.onSaveSuccessful = function(mediaDocument) {
 	this.session.success = mediaDocument.name + &#x27; &#x27; + this.ls.get(&#x27;EDITED&#x27;);
 };
 
-EditMedia.prototype.getRequiredParams = function() {
+EditMediaPostController.prototype.getRequiredParams = function() {
 	return [&#x27;media_type&#x27;, &#x27;location&#x27;, &#x27;name&#x27;];
 };
 
-EditMedia.prototype.getFormErrorRedirect = function(id){
+EditMediaPostController.prototype.getFormErrorRedirect = function(id){
 	return &#x27;/admin/content/media/edit_media/&#x27; + id;
 };
 
 //exports
-module.exports = EditMedia;
+module.exports = EditMediaPostController;
 
     </pre>
 </div>

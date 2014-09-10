@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.3</em>
+            <em>API Docs for: 0.2.4</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -69,6 +69,8 @@
             
                 <li><a href="../classes/CommentService.html">CommentService</a></li>
             
+                <li><a href="../classes/ContentMediaController.html">ContentMediaController</a></li>
+            
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
@@ -79,7 +81,11 @@
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaPostController.html">EditMediaPostController</a></li>
             
                 <li><a href="../classes/EditObject.html">EditObject</a></li>
             
@@ -90,6 +96,8 @@
                 <li><a href="../classes/FormController.html">FormController</a></li>
             
                 <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
             
@@ -111,6 +119,8 @@
             
                 <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
             
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
             
                 <li><a href="../classes/MediaService.html">MediaService</a></li>
@@ -126,6 +136,8 @@
                 <li><a href="../classes/NewObjectType.html">NewObjectType</a></li>
             
                 <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
             
                 <li><a href="../classes/PageController.html">PageController</a></li>
             
@@ -406,7 +418,7 @@ call backs.</p>
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_handleTemplateReplacement">handleTemplateReplacement</a>
+                                <a href="#method_processFlag">processFlag</a>
 
                                 
                                 
@@ -436,6 +448,27 @@ call backs.</p>
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_setUnregisteredFlagHandler">setUnregisteredFlagHandler</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setGlobalUnregisteredFlagHandler">setGlobalUnregisteredFlagHandler</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setReprocess">setReprocess</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_getTemplateContentsByPriority">getTemplateContentsByPriority</a>
 
                                 
@@ -457,17 +490,17 @@ call backs.</p>
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_processFlag">processFlag</a>
+                                <a href="#method_isValidType">isValidType</a>
 
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_isValidType">isValidType</a>
+                                <a href="#method_handleTemplateReplacement">handleTemplateReplacement</a>
 
-                                
-                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -553,8 +586,22 @@ call backs.</p>
                                 
                             </li>
                         
+                            <li class="index-item property">
+                                <a href="#property_unregisteredFlagTemplate">unregisteredFlagTemplate</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item property private">
                                 <a href="#property_"></a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_unregisteredFlagHandler">unregisteredFlagHandler</a>
 
                                 
                                 
@@ -574,8 +621,8 @@ call backs.</p>
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_handleTemplateReplacement" class="method item">
-    <h3 class="name"><code>handleTemplateReplacement</code></h3>
+                    <div id="method_processFlag" class="method item">
+    <h3 class="name"><code>processFlag</code></h3>
 
     
         <div class="args">
@@ -622,7 +669,7 @@ call backs.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l321"><code>include\service\entities\template_service.js:321</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l325"><code>include\service\entities\template_service.js:325</code></a>
         
         </p>
 
@@ -633,10 +680,22 @@ call backs.</p>
     </div>
 
     <div class="description">
-        <p>When a sub-template flag is encountered by the processing engine this
-function is called to parse the flag and delegate out the loading and
-processing of the sub-template.</p>
-
+        <p>Called when a flag is encountered by the processing engine.  The function is
+responsible for delegating out the responsibility of the flag to the
+registered entity.  Some flags are handled by default (although they can
+always be overriden locally or globally).  The following flags are considered
+&quot;baked in&quot; and will be handled automatically unless overriden:</p>
+<ul>
+<li>^loc<em>xyz^ - A localization flag.  When provided, the Localization
+instance will have its &quot;get&quot; function called in an attempt to retrieve the
+properly translated value for the key (the part betwee &quot;^loc</em>&quot; and the ending
+&quot;^&quot;).
+</li>
+<li>^tmp_somedir=someotherdir=templatefileminusext^ - Specifies a
+sub-template that should be loaded processed.  The file is expected to have
+a .html extension.
+</li>
+</ul>
     </div>
 
     
@@ -654,7 +713,8 @@ processing of the sub-template.</p>
                     
 
                     <div class="param-description">
-                        <p>The sub-template flag</p>
+                        <p>The flag to be processed. The value should NOT contain
+the carrot (^) prefix or postfix.</p>
 
                     </div>
 
@@ -737,7 +797,7 @@ processing of the sub-template.</p>
             
         
         
-        <a href="../files/include_service_entities_section_service.js.html#l525"><code>include\service\entities\section_service.js:525</code></a>
+        <a href="../files/include_service_entities_section_service.js.html#l571"><code>include\service\entities\section_service.js:571</code></a>
         
         </p>
 
@@ -836,7 +896,7 @@ processing of the sub-template.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l113"><code>include\service\entities\template_service.js:113</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l128"><code>include\service\entities\template_service.js:128</code></a>
         
         </p>
 
@@ -919,7 +979,7 @@ processing of the sub-template.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l123"><code>include\service\entities\template_service.js:123</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l138"><code>include\service\entities\template_service.js:138</code></a>
         
         </p>
 
@@ -950,6 +1010,311 @@ processing of the sub-template.</p>
                 
             </div>
         </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_setUnregisteredFlagHandler" class="method item">
+    <h3 class="name"><code>setUnregisteredFlagHandler</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>unregisteredFlagHandler</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_template_service.js.html#l148"><code>include\service\entities\template_service.js:148</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>When a flag is encountered that is not registered with the engine the 
+handler is called as a fail safe.  It is expected to return a string that 
+will be put in the place of the flag.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">unregisteredFlagHandler</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE when the handler was set, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_setGlobalUnregisteredFlagHandler" class="method item">
+    <h3 class="name"><code>setGlobalUnregisteredFlagHandler</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>unregisteredFlagHandler</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_template_service.js.html#l166"><code>include\service\entities\template_service.js:166</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>When a flag is encountered that is not registered with the engine the 
+handler is called as a fail safe unless there is a locally registered handler.<br>It is expected to return a string that will be put in the place of the flag.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">unregisteredFlagHandler</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE when the handler was set, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_setReprocess" class="method item">
+    <h3 class="name"><code>setReprocess</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>reprocess</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_template_service.js.html#l184"><code>include\service\entities\template_service.js:184</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the option that when true, instructs the engine to inspect the content 
+provided by a flag for more flags.  This is one way of providing iterative 
+processing of items.  See the sample plugin for an example.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">reprocess</code>
+                        <span class="type">Boolean</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
     
 
     
@@ -1004,7 +1369,7 @@ processing of the sub-template.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l133"><code>include\service\entities\template_service.js:133</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l195"><code>include\service\entities\template_service.js:195</code></a>
         
         </p>
 
@@ -1121,7 +1486,7 @@ directories:</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l192"><code>include\service\entities\template_service.js:192</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l254"><code>include\service\entities\template_service.js:254</code></a>
         
         </p>
 
@@ -1234,7 +1599,7 @@ second parameter that is the transformed content.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l214"><code>include\service\entities\template_service.js:214</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l276"><code>include\service\entities\template_service.js:276</code></a>
         
         </p>
 
@@ -1266,132 +1631,6 @@ parameter that is the populated template with any registered flags replaced.</p>
 
                     <div class="param-description">
                         <p>The raw content to be inspected for flags</p>
-
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Callback function</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_processFlag" class="method item">
-    <h3 class="name"><code>processFlag</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>flag</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>cb</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_template_service.js.html#l263"><code>include\service\entities\template_service.js:263</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Called when a flag is encountered by the processing engine.  The function is
-responsible for delegating out the responsibility of the flag to the
-registered entity.  Some flags are handled by default (although they can
-always be overriden locally or globally).  The following flags are considered
-&quot;baked in&quot; and will be handled automatically unless overriden:</p>
-<ul>
-<li>^loc<em>xyz^ - A localization flag.  When provided, the Localization
-instance will have its &quot;get&quot; function called in an attempt to retrieve the
-properly translated value for the key (the part betwee &quot;^loc</em>&quot; and the ending
-&quot;^&quot;).
-</li>
-<li>^tmp_somedir=someotherdir=templatefileminusext^ - Specifies a
-sub-template that should be loaded processed.  The file is expected to have
-a .html extension.
-</li>
-</ul>
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">flag</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The flag to be processed. The value should NOT contain
-the carrot (^) prefix or postfix.</p>
 
                     </div>
 
@@ -1474,7 +1713,7 @@ the carrot (^) prefix or postfix.</p>
             
         
         
-        <a href="../files/include_service_entities_section_service.js.html#l560"><code>include\service\entities\section_service.js:560</code></a>
+        <a href="../files/include_service_entities_section_service.js.html#l606"><code>include\service\entities\section_service.js:606</code></a>
         
         </p>
 
@@ -1526,6 +1765,119 @@ the carrot (^) prefix or postfix.</p>
                 
             </div>
         </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_handleTemplateReplacement" class="method item">
+    <h3 class="name"><code>handleTemplateReplacement</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>flag</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_template_service.js.html#l393"><code>include\service\entities\template_service.js:393</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>When a sub-template flag is encountered by the processing engine this
+function is called to parse the flag and delegate out the loading and
+processing of the sub-template.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">flag</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The sub-template flag</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
     
 
     
@@ -1586,7 +1938,7 @@ the carrot (^) prefix or postfix.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l342"><code>include\service\entities\template_service.js:342</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l414"><code>include\service\entities\template_service.js:414</code></a>
         
         </p>
 
@@ -1722,7 +2074,7 @@ replacement or a value.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l385"><code>include\service\entities\template_service.js:385</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l460"><code>include\service\entities\template_service.js:460</code></a>
         
         </p>
 
@@ -1843,7 +2195,7 @@ transformation or the value to substitute in place of the flag.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l400"><code>include\service\entities\template_service.js:400</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l475"><code>include\service\entities\template_service.js:475</code></a>
         
         </p>
 
@@ -1926,7 +2278,7 @@ transformation or the value to substitute in place of the flag.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l454"><code>include\service\entities\template_service.js:454</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l529"><code>include\service\entities\template_service.js:529</code></a>
         
         </p>
 
@@ -2018,7 +2370,7 @@ Articles and pages.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l474"><code>include\service\entities\template_service.js:474</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l549"><code>include\service\entities\template_service.js:549</code></a>
         
         </p>
 
@@ -2145,7 +2497,7 @@ transformation or the value to substitute in place of the flag.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l490"><code>include\service\entities\template_service.js:490</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l565"><code>include\service\entities\template_service.js:565</code></a>
         
         </p>
 
@@ -2254,7 +2606,7 @@ the provided path is relative to the pencilblue/templates/ directory.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l503"><code>include\service\entities\template_service.js:503</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l578"><code>include\service\entities\template_service.js:578</code></a>
         
         </p>
 
@@ -2375,7 +2727,7 @@ the provided path is relative to the pencilblue/plugins/[themeName]/templates/ d
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l516"><code>include\service\entities\template_service.js:516</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l591"><code>include\service\entities\template_service.js:591</code></a>
         
         </p>
 
@@ -2528,6 +2880,50 @@ should be reprocessed.  The value is FALSE by default.</p>
 </div>
 
                 
+                    <div id="property_unregisteredFlagTemplate" class="property item">
+    <h3 class="name"><code>unregisteredFlagTemplate</code></h3>
+    <span class="type">Function</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_template_service.js.html#l78"><code>include\service\entities\template_service.js:78</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="property_" class="property item private">
     <h3 class="name"><code></code></h3>
     <span class="type">Unknown</span>
@@ -2553,7 +2949,7 @@ should be reprocessed.  The value is FALSE by default.</p>
             
         
         
-        <a href="../files/include_service_entities_template_service.js.html#l92"><code>include\service\entities\template_service.js:92</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l98"><code>include\service\entities\template_service.js:98</code></a>
         
         </p>
 
@@ -2566,6 +2962,50 @@ should be reprocessed.  The value is FALSE by default.</p>
         <p>A container that provides the mapping for global call backs.  These should
 only be added to at the start of the application or on plugin install/update.</p>
 
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_unregisteredFlagHandler" class="property item">
+    <h3 class="name"><code>unregisteredFlagHandler</code></h3>
+    <span class="type">Function</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_template_service.js.html#l119"><code>include\service\entities\template_service.js:119</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
     </div>
 
     
