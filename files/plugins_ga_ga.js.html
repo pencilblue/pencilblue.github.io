@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -309,17 +309,21 @@ GoogleAnalytics.onUninstall = function(cb) {
  */
 GoogleAnalytics.onStartup = function(cb) {
     pb.AnalyticsManager.registerProvider(&#x27;google_analytics&#x27;, function(req, session, ls, cb) {
-        pb.plugins.getSetting(&#x27;google_analytics_tracking_id&#x27;, &#x27;ga&#x27;, function(err, trackingId) {
-            if(!trackingId || trackingId.length === 0) {
-                cb(null, &#x27;&#x27;);
-                return;
+        pb.plugins.getSettingsKV(&#x27;ga&#x27;, function(err, settings) {
+            if (util.isError(err)) {
+                return cb(err, &#x27;&#x27;);
             }
-            pb.plugins.getSetting(&#x27;demographics_support&#x27;, &#x27;ga&#x27;, function(err, demographicsSupport) {
-                var website = pb.config.siteRoot.split(&#x27;http://&#x27;).join(&#x27;&#x27;).split(&#x27;https://&#x27;).join(&#x27;&#x27;);
-                var script  = &quot;&lt;script&gt;(function(i,s,o,g,r,a,m){i[&#x27;GoogleAnalyticsObject&#x27;]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,&#x27;script&#x27;,&#x27;//www.google-analytics.com/analytics.js&#x27;,&#x27;ga&#x27;);ga(&#x27;create&#x27;, &#x27;&quot; + trackingId + &quot;&#x27;, &#x27;&quot; + website + &quot;&#x27;);&quot; + (demographicsSupport ? &quot;ga(&#x27;require&#x27;, &#x27;displayfeatures&#x27;);&quot; : &quot;&quot;) + &quot;ga(&#x27;send&#x27;, &#x27;pageview&#x27;);&lt;/script&gt;&quot;;
+            else if (!settings || !settings.google_analytics_tracking_id || settings.google_analytics_tracking_id.length === 0) {
+                pb.log.warn(&#x27;GoogleAnalytics: Settings have not been initialized!&#x27;);
+                return cb(null, &#x27;&#x27;);
+            }
+            
+            var trackingId          = settings.google_analytics_tracking_id;
+            var demographicsSupport = settings.demographics_support;
+            var website             = pb.config.siteRoot.split(&#x27;http://&#x27;).join(&#x27;&#x27;).split(&#x27;https://&#x27;).join(&#x27;&#x27;);
+            var script              = &quot;&lt;script&gt;(function(i,s,o,g,r,a,m){i[&#x27;GoogleAnalyticsObject&#x27;]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,&#x27;script&#x27;,&#x27;//www.google-analytics.com/analytics.js&#x27;,&#x27;ga&#x27;);ga(&#x27;create&#x27;, &#x27;&quot; + trackingId + &quot;&#x27;, &#x27;&quot; + website + &quot;&#x27;);&quot; + (demographicsSupport ? &quot;ga(&#x27;require&#x27;, &#x27;displayfeatures&#x27;);&quot; : &quot;&quot;) + &quot;ga(&#x27;send&#x27;, &#x27;pageview&#x27;);&lt;/script&gt;&quot;;
 
-                cb(null, script);
-            });
+            cb(null, script);
         });
     });
     cb(null, true);

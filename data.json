@@ -2,7 +2,7 @@
     "project": {
         "name": "PencilBlue",
         "description": "PencilBlue: Full stack online publishing for Node.js",
-        "version": "0.2.4",
+        "version": "0.2.5",
         "url": "http://pencilblue.org/",
         "logo": "http://pencilblue.org/img/pb_logo.png"
     },
@@ -1355,6 +1355,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "include\\system\\analytics_manager.js": {
+            "name": "include\\system\\analytics_manager.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "include\\system\\server_registration.js": {
             "name": "include\\system\\server_registration.js",
             "modules": {},
@@ -2428,7 +2435,7 @@
             "module": "Services",
             "namespace": "",
             "file": "include\\service\\entities\\article_service.js",
-            "line": 446,
+            "line": 499,
             "description": "Handles retrieval and injection of media in articles and pages",
             "submodule": "Entities",
             "is_constructor": 1
@@ -5166,7 +5173,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 128,
+            "line": 129,
             "description": "Gets the count of objects matching criteria",
             "itemtype": "method",
             "name": "count",
@@ -5192,7 +5199,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 140,
+            "line": 141,
             "description": "Determines if an object extists matching criteria",
             "itemtype": "method",
             "name": "exists",
@@ -5218,7 +5225,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 154,
+            "line": 155,
             "description": "Determines if there is only a single document that matches the specified query",
             "itemtype": "method",
             "name": "unique",
@@ -5250,8 +5257,9 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 183,
+            "line": 184,
             "description": "Queries the database",
+            "deprecated": true,
             "itemtype": "method",
             "name": "query",
             "params": [
@@ -5300,7 +5308,94 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 216,
+            "line": 217,
+            "description": "Queries the database",
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "collection",
+                    "description": "The type of object to search for",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "The options for the query",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "where",
+                            "description": "The conditions under which results are \nreturned",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "{}"
+                        },
+                        {
+                            "name": "select",
+                            "description": "Selection type object",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "order",
+                            "description": "Order by array (MongoDB syntax)",
+                            "type": "Array",
+                            "optional": true
+                        },
+                        {
+                            "name": "limit",
+                            "description": "Number of documents to retrieve",
+                            "type": "Integer",
+                            "optional": true
+                        },
+                        {
+                            "name": "offset",
+                            "description": "Start index of retrieval",
+                            "type": "Integer",
+                            "optional": true
+                        },
+                        {
+                            "name": "handler",
+                            "description": "A function that takes two paramters.  \nThe first, the Cursor object that contains the results of the query.  The \nsecond is a callback that takes two parameters.  An error if occurred and by \ndefault, the documents returned by the query.  Custom handlers may provide \nwhatever value it wishes including the cursor if it wishes to handle the \nresults itself.",
+                            "type": "Function",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback function that takes two parameters.  The \nfirst, an error, if occurred and the second is the result provided by the \nhandler.  By default it provides an array of objects that represent the \nitems returned by the query.",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 267,
+            "description": "A cursor handler that iterates over each result from the query that created\nthe cursor and places the result into an array.  The array of documents is\nprovided as the second argument in the callback.",
+            "itemtype": "method",
+            "name": "toArrayCursorHandler",
+            "params": [
+                {
+                    "name": "cursor",
+                    "description": "",
+                    "type": "Cursor"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 279,
             "description": "The actual implementation for querying.  The function does not do the same\ntype checking as the wrapper function \"query\".  This funciton is responsible\nfor doing the heavy lifting and returning the result back to the calling intity.",
             "access": "protected",
             "tagname": "",
@@ -5354,8 +5449,9 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 266,
+            "line": 329,
             "description": "Persists a DB Object for the first time.",
+            "deprecated": true,
             "itemtype": "method",
             "name": "insert",
             "params": [
@@ -5374,8 +5470,9 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 283,
+            "line": 346,
             "description": "Replaces an existing document with the specified DB Object",
+            "deprecated": true,
             "itemtype": "method",
             "name": "update",
             "params": [
@@ -5394,7 +5491,66 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 312,
+            "line": 375,
+            "description": "Replaces an existing document with the specified DB Object",
+            "itemtype": "method",
+            "name": "save",
+            "params": [
+                {
+                    "name": "dbObj",
+                    "description": "The system object to persist",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "See http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#save",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters.  The first, an \nerror, if occurred.  The second is the result of the persistence operation.",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 415,
+            "description": "Provides a mechanism to save an array of objects all from the same \ncollection.  The function handles updates and inserts.  The difference is \ndetermined by the truth value of the ID field of each object.",
+            "itemtype": "method",
+            "name": "saveBatch",
+            "params": [
+                {
+                    "name": "objArray",
+                    "description": "The array of objects to persist",
+                    "type": "Array"
+                },
+                {
+                    "name": "collection",
+                    "description": "The collection to persist the objects to",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "See http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#initializeunorderedbulkop",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two arguments.  The first is an \nerror, if occurred. The second is the second parameter of the callback \ndescribed here: http://mongodb.github.io/node-mongodb-native/api-generated/unordered.html#execute",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 464,
             "description": "Updates a specific set of fields. This is handy for performing upserts.",
             "itemtype": "method",
             "name": "updateFields",
@@ -5441,7 +5597,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 335,
+            "line": 487,
             "description": "Removes an object from persistence",
             "itemtype": "method",
             "name": "deleteById",
@@ -5449,16 +5605,22 @@
                 {
                     "name": "oid",
                     "description": "The Id of the object to remove",
-                    "type": "String"
+                    "type": "String|ObjectID"
                 },
                 {
                     "name": "collection",
                     "description": "The collection the object is in",
                     "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters.  The first is \nan error, if occurred.  The second is the number of records deleted by the \nexecution of the command.",
+                    "type": "Function",
+                    "optional": true
                 }
             ],
             "return": {
-                "description": "Promise object",
+                "description": "Promise object iff a callback is not provided",
                 "type": "Promise"
             },
             "class": "DAO",
@@ -5466,8 +5628,9 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 352,
+            "line": 524,
             "description": "Removes objects from persistence that match criteria",
+            "deprecated": true,
             "itemtype": "method",
             "name": "deleteMatching",
             "params": [
@@ -5491,7 +5654,39 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 381,
+            "line": 553,
+            "description": "Removes objects from persistence that match criteria",
+            "itemtype": "method",
+            "name": "delete",
+            "params": [
+                {
+                    "name": "where",
+                    "description": "Key value pair object",
+                    "type": "Object"
+                },
+                {
+                    "name": "collection",
+                    "description": "The collection to search in",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "See http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#remove",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameter. The first is an \nerror, if occurred.  The second is the number of records that were removed \nfrom persistence.",
+                    "type": "Function"
+                }
+            ],
+            "class": "DAO",
+            "module": "Database"
+        },
+        {
+            "file": "include\\dao\\dao.js",
+            "line": 590,
             "description": "Sends a command to the DB.\nhttp://mongodb.github.io/node-mongodb-native/api-generated/db.html#command",
             "itemtype": "method",
             "name": "command",
@@ -5512,7 +5707,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 396,
+            "line": 605,
             "description": "Attempts to create an index.  If the collection already exists then the\noperation is skipped.\nhttp://mongodb.github.io/node-mongodb-native/api-generated/collection.html#ensureindex",
             "itemtype": "method",
             "name": "ensureIndex",
@@ -5552,7 +5747,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 425,
+            "line": 634,
             "description": "Creates a basic where clause based on the specified Id",
             "static": 1,
             "itemtype": "method",
@@ -5573,7 +5768,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 438,
+            "line": 647,
             "description": "Creates a where clause that equates to select where [idProp] is in the\nspecified array of values.",
             "static": 1,
             "itemtype": "method",
@@ -5599,7 +5794,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 466,
+            "line": 675,
             "description": "Creates a basic where clause based on not equalling the specified Id",
             "static": 1,
             "itemtype": "method",
@@ -5620,7 +5815,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 479,
+            "line": 688,
             "description": "Creates a where clause that indicates to select where the '_id' field does\nnot equal the specified value.",
             "static": 1,
             "itemtype": "method",
@@ -5634,7 +5829,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 490,
+            "line": 699,
             "description": "Creates an MongoDB ObjectID object",
             "static": 1,
             "itemtype": "method",
@@ -5655,7 +5850,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 501,
+            "line": 710,
             "description": "Updates a DB object with a created time stamp and last modified time stamp.",
             "static": 1,
             "itemtype": "method",
@@ -5672,7 +5867,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 521,
+            "line": 730,
             "description": "Transfers a system object from one type to another.  The system specific\nproperties are cleared so that when the object is persisted it will receive\nits own properties.",
             "static": 1,
             "itemtype": "method",
@@ -5694,7 +5889,7 @@
         },
         {
             "file": "include\\dao\\dao.js",
-            "line": 541,
+            "line": 750,
             "description": "Retrieves the field in system objects that represents the unique identifier.\nThe default implementation returns the mongo field '_id'.",
             "static": 1,
             "itemtype": "method",
@@ -6451,12 +6646,43 @@
             "params": [
                 {
                     "name": "where",
-                    "description": "Key value pair object",
+                    "description": "Defines the where clause for the article search",
                     "type": "Object"
                 },
                 {
+                    "name": "options",
+                    "description": "The options object that can provide query control \nparameters",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "order",
+                            "description": "The order that the results will be returned \nin.  The default is publish date descending and created descending",
+                            "type": "Array",
+                            "optional": true
+                        },
+                        {
+                            "name": "select",
+                            "description": "The fields that will be returned for each \narticle that matches the criteria",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The number of results to return",
+                            "type": "Integer",
+                            "optional": true
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The number of articles to skip before \nreturning results",
+                            "type": "Integer",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
                     "name": "cb",
-                    "description": "Callback function",
+                    "description": "Callback function that takes two parameters: the first \nis an error, if occurred.  The second is an array of articles or possibly \nnull if an error occurs.",
                     "type": "Function"
                 }
             ],
@@ -6466,7 +6692,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 151,
+            "line": 204,
             "description": "Retrieves data necessary for displaying an articles and appends it to the\narticle object",
             "itemtype": "method",
             "name": "processArticleForDisplay",
@@ -6503,7 +6729,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 277,
+            "line": 330,
             "description": "Retrieves the authors of an array of articles",
             "itemtype": "method",
             "name": "getArticleAuthors",
@@ -6525,7 +6751,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 301,
+            "line": 354,
             "description": "Retrieves the commenters for an array of comments",
             "itemtype": "method",
             "name": "getCommenters",
@@ -6552,7 +6778,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 364,
+            "line": 417,
             "description": "Retrieves the article and byline templates",
             "itemtype": "method",
             "name": "getTemplates",
@@ -6569,7 +6795,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 379,
+            "line": 432,
             "description": "Retrieves the meta info for an article or page",
             "itemtype": "method",
             "name": "getMetaInfo",
@@ -6591,7 +6817,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 456,
+            "line": 509,
             "description": "Processes an article or page to insert media",
             "itemtype": "method",
             "name": "start",
@@ -6613,7 +6839,7 @@
         },
         {
             "file": "include\\service\\entities\\article_service.js",
-            "line": 483,
+            "line": 536,
             "description": "Replaces an article or page layout's ^media_display^ tag with a media embed",
             "params": [
                 {
@@ -6638,7 +6864,37 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 38,
+            "line": 33,
+            "static": 1,
+            "itemtype": "property",
+            "name": "CUST_OBJ_COLL",
+            "type": "{String}",
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 40,
+            "static": 1,
+            "itemtype": "property",
+            "name": "CUST_OBJ_TYPE_COLL",
+            "type": "{String}",
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 47,
+            "static": 1,
+            "itemtype": "property",
+            "name": "CUST_OBJ_SORT_COLL",
+            "type": "{String}",
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 55,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6650,7 +6906,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 47,
+            "line": 64,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6662,7 +6918,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 56,
+            "line": 73,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6674,7 +6930,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 65,
+            "line": 82,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6686,7 +6942,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 74,
+            "line": 91,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6698,7 +6954,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 89,
+            "line": 106,
             "access": "private",
             "tagname": "",
             "static": 1,
@@ -6710,7 +6966,49 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 160,
+            "line": 122,
+            "description": "Validates and persists a sort ordering for custom objects of a specific type",
+            "itemtype": "method",
+            "name": "saveSortOrdering",
+            "params": [
+                {
+                    "name": "sortOrder",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 147,
+            "description": "Validates a sort ordering for custom objects of a specific type",
+            "itemtype": "method",
+            "name": "validateSortOrdering",
+            "params": [
+                {
+                    "name": "sortOrdering",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror, if occurred and the second is an array of validation error objects.  \nIf the array is empty them it is safe to assume that the object is valid.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 191,
             "description": "Retrieves custom objects of the specified type based on the specified options.",
             "itemtype": "method",
             "name": "findByTypeWithOrdering",
@@ -6747,7 +7045,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 210,
+            "line": 241,
             "description": "Coordinates the eager fetching of peer and child objects for the specified custom object.",
             "itemtype": "method",
             "name": "fetchChildren",
@@ -6785,7 +7083,302 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 606,
+            "line": 401,
+            "description": "Loads an ordering object for a specific custom object type.",
+            "itemtype": "method",
+            "name": "loadSortOrdering",
+            "params": [
+                {
+                    "name": "custObjType",
+                    "description": "",
+                    "type": "Object|String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters.  The first is an \nerror, if occurred.  The second is the sort ordering object if found.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 420,
+            "description": "Finds custom objects by the specified type.",
+            "itemtype": "method",
+            "name": "findByType",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The custom object type object or the ID of the \nobject as a string",
+                    "type": "Object|String"
+                },
+                {
+                    "name": "options",
+                    "description": "See DAO.q()",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two arguments. The first is an \nerror, if occurred.  The second is an array of custom objects that match the \nspecified criteria.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 467,
+            "description": "Retrieves all of the custom object types in the system",
+            "itemtype": "method",
+            "name": "findTypes",
+            "params": [
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror, if occurred.  The second is an array of custom object type objects.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 498,
+            "description": "Retrieves a count based the specified criteria and type",
+            "itemtype": "method",
+            "name": "countByType",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The custom object type object or ID string",
+                    "type": "Object|String"
+                },
+                {
+                    "name": "where",
+                    "description": "The criteria for which objects to count",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror, if occurred. The second is the number of objects that match the \nspecified critieria.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 526,
+            "description": "Loads a custom object by ID",
+            "itemtype": "method",
+            "name": "loadById",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "ObjectID|String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 537,
+            "description": "Loads a custom object by name",
+            "itemtype": "method",
+            "name": "loadById",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The ID string of the custom object type",
+                    "type": "String"
+                },
+                {
+                    "name": "name",
+                    "description": "The unique name of the custom object",
+                    "type": "ObjectID|String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 551,
+            "description": "Loads a custom object by the specified where criteria",
+            "itemtype": "method",
+            "name": "loadBy",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "where",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 585,
+            "description": "Loads a custom object type by ID",
+            "itemtype": "method",
+            "name": "loadTypeById",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "ObjectID|String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 595,
+            "description": "Loads a custom object type by name",
+            "itemtype": "method",
+            "name": "loadTypeById",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 608,
+            "description": "Loads a custom object type by the specified where criteria",
+            "itemtype": "method",
+            "name": "loadTypeBy",
+            "params": [
+                {
+                    "name": "where",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 623,
+            "description": "Validates a custom object",
+            "itemtype": "method",
+            "name": "validate",
+            "params": [
+                {
+                    "name": "custObj",
+                    "description": "The object to validate",
+                    "type": "Object"
+                },
+                {
+                    "name": "custObjType",
+                    "description": "The custom object type to validate against",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror if occurred. The second is an array of validation error objects.  If \nthe array is empty it is safe to assume that the object is valid.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 690,
+            "description": "Validates the fields of a custom object",
+            "params": [
+                {
+                    "name": "custObj",
+                    "description": "The object to validate",
+                    "type": "Object"
+                },
+                {
+                    "name": "custObjType",
+                    "description": "The custom object type to validate against",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror if occurred. The second is an array of validation error objects.  If \nthe array is empty it is safe to assume that the object is valid.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 729,
             "description": "Validates a Custom Object Type.",
             "itemtype": "method",
             "name": "validateType",
@@ -6806,7 +7399,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 676,
+            "line": 799,
             "description": "Validates that the field descriptor for a custom object type.",
             "itemtype": "method",
             "name": "validateFieldDescriptor",
@@ -6831,7 +7424,7 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 703,
+            "line": 826,
             "description": "Retrieves an array of all of the available object types that can be\nreferenced as a child or peer object.",
             "itemtype": "method",
             "name": "getReferenceTypes",
@@ -6847,7 +7440,254 @@
         },
         {
             "file": "include\\service\\entities\\custom_object_service.js",
-            "line": 989,
+            "line": 858,
+            "description": "Validates and persists a custom object",
+            "itemtype": "method",
+            "name": "save",
+            "params": [
+                {
+                    "name": "custObj",
+                    "description": "The object to validate",
+                    "type": "Object"
+                },
+                {
+                    "name": "custObjType",
+                    "description": "The custom object type to validate against",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror if occurred. The second is an array of validation error objects or the \nresult of the persistence operation.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 887,
+            "description": "Validates and persists a custom object type",
+            "itemtype": "method",
+            "name": "saveType",
+            "params": [
+                {
+                    "name": "custObjType",
+                    "description": "The object to persist",
+                    "type": "Object"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters. The first is an \nerror if occurred. The second is an array of validation error objects or the \nresult of the persistence operation.",
+                    "type": "Function"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 914,
+            "description": "Retrieves the objects types that can be referenced by custom objects",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getStaticReferenceTypes",
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 924,
+            "description": "Determines if a field type is reference to another object type",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isReferenceFieldType",
+            "params": [
+                {
+                    "name": "fieldType",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 935,
+            "description": "Determines if the field type is a custom object type or a system reference",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isCustomObjectType",
+            "params": [
+                {
+                    "name": "objType",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 946,
+            "description": "Gets the simple custom object name.  The simple name is one that is not \nprefixed to indicate that it is custom",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getCustTypeSimpleName",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 961,
+            "description": "Formats the object by ensuring that each field is in the correct data type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "formatRawForType",
+            "params": [
+                {
+                    "name": "post",
+                    "description": "The raw post object",
+                    "type": "Object"
+                },
+                {
+                    "name": "custObjType",
+                    "description": "The custom object type describes the data in the \npost obj.",
+                    "type": "Object"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 1012,
+            "description": "Formats a custom object type object to ensure each field has the correct \ndata type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "formatRawType",
+            "params": [
+                {
+                    "name": "post",
+                    "description": "The raw post data",
+                    "type": "Object"
+                },
+                {
+                    "name": "ls",
+                    "description": "The instance of Localization created for the \nincoming request.  The locale of the Localization service instance must \nmatch that of the post data.",
+                    "type": "Localization"
+                }
+            ],
+            "return": {
+                "description": "The formatted custom object type object",
+                "type": "Object"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 1098,
+            "description": "Formats the raw post data for a sort ordering",
+            "static": 1,
+            "itemtype": "method",
+            "name": "formatRawSortOrdering",
+            "params": [
+                {
+                    "name": "post",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "sortOrder",
+                    "description": "the existing sort order object that the post data \nwill be merged with",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The formatted sort ordering object",
+                "type": "Object"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 1125,
+            "description": "Discovers the field types used for each entry in the provided array and sets \nthe \"fieldTypesUsed\" property for the object.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "setFieldTypesUsed",
+            "params": [
+                {
+                    "name": "custObjTypes",
+                    "description": "The array of custom object type objects to inspect",
+                    "type": "Array"
+                },
+                {
+                    "name": "ls",
+                    "description": "",
+                    "type": "Localization"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 1160,
+            "description": "Orders the custom objects based on the provided sort order",
+            "static": 1,
+            "itemtype": "method",
+            "name": "applyOrder",
+            "params": [
+                {
+                    "name": "custObjects",
+                    "description": "The array of custom objects to be sorted",
+                    "type": "Array"
+                },
+                {
+                    "name": "sortOrder",
+                    "description": "The object describing the ordering of the objects",
+                    "type": "Object"
+                },
+                {
+                    "name": "A",
+                    "description": "refernce to the sorted array of custom objects.  The \nreference is the same as provided to the function.",
+                    "type": "Array"
+                }
+            ],
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 1207,
             "description": "Creates a validation error field",
             "static": 1,
             "itemtype": "method",
@@ -6867,6 +7707,32 @@
             "return": {
                 "description": "An object that describes the validation error",
                 "type": "Object"
+            },
+            "class": "CustomObjectService",
+            "module": "Services"
+        },
+        {
+            "file": "include\\service\\entities\\custom_object_service.js",
+            "line": 1222,
+            "description": "Creates an HTML formatted error string out of an array of error objects.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "createErrorStr",
+            "params": [
+                {
+                    "name": "errors",
+                    "description": "An array of objects where each object has a \"msg\" and \na \"field\" property",
+                    "type": "Array"
+                },
+                {
+                    "name": "msg",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "HTML formatted string representing the errors",
+                "type": "String"
             },
             "class": "CustomObjectService",
             "module": "Services"
@@ -6929,7 +7795,7 @@
         },
         {
             "file": "include\\service\\entities\\media_service.js",
-            "line": 150,
+            "line": 145,
             "description": "Retrieves whether a media's file path is valid",
             "itemtype": "method",
             "name": "isValidFilePath",
@@ -6945,6 +7811,126 @@
                     "type": "Function"
                 }
             ],
+            "class": "MediaService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\media_service.js",
+            "line": 479,
+            "description": "Generates the path to uploaded media",
+            "static": 1,
+            "itemtype": "method",
+            "name": "generateMediaPath",
+            "params": [
+                {
+                    "name": "originalFilename",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "MediaService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\media_service.js",
+            "line": 492,
+            "description": "Generates a filename for a new media object",
+            "static": 1,
+            "itemtype": "method",
+            "name": "generateFilename",
+            "params": [
+                {
+                    "name": "originalFilename",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "MediaService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\media_service.js",
+            "line": 513,
+            "description": "Retrieves the font awesome icon for the media type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getMediaIcon",
+            "params": [
+                {
+                    "name": "mediaType",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "MediaService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\media_service.js",
+            "line": 549,
+            "description": "Retrieves the content URL for a media type.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getMediaLink",
+            "params": [
+                {
+                    "name": "mediaType",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "mediaLocation",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "isFile",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "MediaService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\media_service.js",
+            "line": 591,
+            "description": "Sets the proper icon and link for an array of media items",
+            "static": 1,
+            "itemtype": "method",
+            "name": "formatMedia",
+            "params": [
+                {
+                    "name": "media",
+                    "description": "The array of media objects to format",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "The same array of media that was passed in",
+                "type": "Array"
+            },
             "class": "MediaService",
             "module": "Services",
             "submodule": "Entities"
@@ -7140,6 +8126,28 @@
         {
             "file": "include\\service\\entities\\plugin_service.js",
             "line": 183,
+            "description": "Retrieves the settings for a plugin as hash of key/value pairs.  This \ndiffers from the getSettings function because the getSettings function \nprovides the settings in their raw form as an array of objects containing \nmultiple properties.  In most circumstances just the k/v pair is needed and \nnot any additional information about the property.  The function takes the \nraw settings array and transforms it into an object where the setting name \nis the property and the setting value is the value.",
+            "itemtype": "method",
+            "name": "getSettingsKV",
+            "params": [
+                {
+                    "name": "pluginName",
+                    "description": "The unique ID of the plugin who settings are to be retrieved",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters.  A error, if \nexists, and a hash of of the plugin's settings' names/values.",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 209,
             "description": "Replaces a single setting for the specified plugin",
             "itemtype": "method",
             "name": "setSetting",
@@ -7167,7 +8175,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 229,
+            "line": 255,
             "description": "Replaces the settings for the specified plugin.",
             "itemtype": "method",
             "name": "setSettings",
@@ -7191,7 +8199,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 263,
+            "line": 289,
             "description": "Replaces a single theme setting for the specified plugin",
             "itemtype": "method",
             "name": "setThemeSetting",
@@ -7219,7 +8227,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 309,
+            "line": 335,
             "description": "Replaces the theme settings for the specified plugin.",
             "itemtype": "method",
             "name": "setThemeSettings",
@@ -7243,7 +8251,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 343,
+            "line": 369,
             "description": "Retrieves a single theme setting value.",
             "itemtype": "method",
             "name": "getThemeSetting",
@@ -7267,7 +8275,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 371,
+            "line": 397,
             "description": "Retrieves the theme settings for the specified plugin",
             "itemtype": "method",
             "name": "getThemeSettings",
@@ -7287,7 +8295,29 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 382,
+            "line": 408,
+            "description": "Retrieves the theme settings for a plugin as hash of key/value pairs.  This \ndiffers from the getThemeSettings function because the getThemeSettings function \nprovides the settings in their raw form as an array of objects containing \nmultiple properties.  In most circumstances just the k/v pair is needed and \nnot any additional information about the property.  The function takes the \nraw settings array and transforms it into an object where the setting name \nis the property and the setting value is the value.",
+            "itemtype": "method",
+            "name": "getThemeSettingsKV",
+            "params": [
+                {
+                    "name": "pluginName",
+                    "description": "The unique ID of the plugin who settings are to be retrieved",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters.  A error, if \nexists, and a hash of of the plugin's settings' names/values.",
+                    "type": "Function"
+                }
+            ],
+            "class": "PluginService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\plugin_service.js",
+            "line": 434,
             "description": "Indicates if a plugin by the specified identifier is installed.",
             "itemtype": "method",
             "name": "isInstalled",
@@ -7307,7 +8337,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 397,
+            "line": 449,
             "description": "Retrieves a plugin descriptor (plugin document)",
             "itemtype": "method",
             "name": "getPlugin",
@@ -7327,7 +8357,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 429,
+            "line": 481,
             "description": "Convenience function to generate a service to handle settings for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7362,7 +8392,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 461,
+            "line": 513,
             "description": "Loads the settings from a details object and persists them in the DB.  Any\nexisting settings for the plugin are deleted before the new settings are\npersisted.",
             "itemtype": "method",
             "name": "resetSettings",
@@ -7382,7 +8412,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 512,
+            "line": 564,
             "description": "Loads the Theme settings from a details object and persists them in the DB.  Any\nexisting theme settings for the plugin are deleted before the new settings\nare persisted. If the plugin does not have a theme then false is provided in\nthe callback.",
             "itemtype": "method",
             "name": "resetThemeSettings",
@@ -7402,7 +8432,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 570,
+            "line": 622,
             "description": "Retrieves the permission set for a given role.  All active plugins are\ninspected.",
             "static": 1,
             "itemtype": "method",
@@ -7424,7 +8454,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 597,
+            "line": 649,
             "description": "Retrieves the file path to the public directory for the specified plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7446,7 +8476,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 612,
+            "line": 664,
             "description": "Inidicates if the specified plugin is active in this instance of PB.",
             "static": 1,
             "itemtype": "method",
@@ -7468,7 +8498,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 623,
+            "line": 675,
             "description": "Generates a URL path to a public resource for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7495,7 +8525,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 639,
+            "line": 691,
             "description": "Retrieves the details for the active plugins.",
             "itemtype": "method",
             "name": "getActivePlugins",
@@ -7512,7 +8542,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 659,
+            "line": 711,
             "description": "Retrieves the content templates for all of the active plugins",
             "static": 1,
             "itemtype": "method",
@@ -7527,7 +8557,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 681,
+            "line": 733,
             "description": "Retrieves the inactive plugins for this instance of PencilBlue.  An inactive\nplugin is considered one who failed to install or one that failed to start\nproperly.",
             "itemtype": "method",
             "name": "getInactivePlugins",
@@ -7544,7 +8574,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 702,
+            "line": 754,
             "description": "Retrieves the available plugins.  An available plugin is one who is\nuninstalled but available to be installed.",
             "itemtype": "method",
             "name": "getAvailablePlugins",
@@ -7571,7 +8601,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 783,
+            "line": 835,
             "description": "Retrieves a map of the system's plugin.  The map provides three properties:\nactive, inactive, available.",
             "itemtype": "method",
             "name": "getPluginMap",
@@ -7588,7 +8618,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 814,
+            "line": 866,
             "description": "Uninstalls the plugin with the specified UID.",
             "itemtype": "method",
             "name": "uninstallPlugin",
@@ -7631,7 +8661,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 856,
+            "line": 908,
             "description": "Installs a plugin by stepping through a series of steps that must be\ncompleted in order.  There is currently no fallback plan for a failed install.\nIn order for a plugin to be fully installed it must perform the following\nactions without error:\n<ol>\n<li>Load and parse the plugin's details.json file</li>\n<li>Pass validation</li>\n<li>Must not already be installed</li>\n<li>Successfully register itself with the system</li>\n<li>Successfully load any plugin settings</li>\n<li>Successfully load any theme settings</li>\n<li>Successfully execute the plugin's onInstall function</li>\n<li>Successfully initialize the plugin for runtime</li>\n</ol>",
             "itemtype": "method",
             "name": "installPlugin",
@@ -7653,7 +8683,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 888,
+            "line": 940,
             "description": "Attempts to initialize all installed plugins.",
             "itemtype": "method",
             "name": "initPlugins",
@@ -7670,7 +8700,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 952,
+            "line": 1004,
             "description": "Initializes a plugin during startup or just after a plugin has been installed.",
             "itemtype": "method",
             "name": "initPlugin",
@@ -7692,7 +8722,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1131,
+            "line": 1183,
             "description": "Installs the dependencies for a plugin via NPM.",
             "itemtype": "method",
             "name": "installPluginDependencies",
@@ -7719,7 +8749,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1193,
+            "line": 1245,
             "description": "Loads a module dependencies for the specified plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7746,7 +8776,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1206,
+            "line": 1258,
             "description": "Loads the localization files from the specified plugin directory and places\nthem into a hash where the key is the name of the localization file.",
             "itemtype": "method",
             "name": "getLocalizations",
@@ -7768,7 +8798,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1253,
+            "line": 1305,
             "description": "Retrieves a plugin service prototype.  It is expected to be a prototype but\nit may also be an instance as along as that instance fufills all\nresponsbilities of the service interface.  When the desired service does not\nexist NULL is returned.",
             "itemtype": "method",
             "name": "getService",
@@ -7794,7 +8824,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1272,
+            "line": 1324,
             "description": "Attempts to require the main module file for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7821,7 +8851,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1299,
+            "line": 1351,
             "description": "Retrieves the absolute file path to a plugin's public directory",
             "static": 1,
             "itemtype": "method",
@@ -7842,7 +8872,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1312,
+            "line": 1364,
             "static": 1,
             "itemtype": "method",
             "name": "getPluginsDir",
@@ -7856,7 +8886,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1321,
+            "line": 1373,
             "description": "Constructs the path to a specific plugin's details.json file",
             "static": 1,
             "itemtype": "method",
@@ -7878,7 +8908,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1333,
+            "line": 1385,
             "description": "Attempts to load and parse the details.json file for a plugin.",
             "static": 1,
             "itemtype": "method",
@@ -7901,7 +8931,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1360,
+            "line": 1412,
             "description": "Validates a plugin's details.json file.",
             "static": 1,
             "itemtype": "method",
@@ -7929,7 +8959,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1605,
+            "line": 1657,
             "description": "Validates the path to the plugin's icon file.  The path is considered valid\nif the path to a valid file.  The path may be absolute or relative to the\nplugin's public directory.",
             "static": 1,
             "itemtype": "method",
@@ -7954,7 +8984,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1627,
+            "line": 1679,
             "description": "Validates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
             "params": [
                 {
@@ -7976,7 +9006,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1640,
+            "line": 1692,
             "description": "Validates a setting from a details.json file.",
             "params": [
                 {
@@ -7998,7 +9028,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1675,
+            "line": 1727,
             "description": "Validates a details.json file's setting value.  The value is required to be a\nstring or a number.  Null, undefined, Arrays, Objects, and prototypes are NOT\nallowed.",
             "static": 1,
             "itemtype": "method",
@@ -8020,7 +9050,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1688,
+            "line": 1740,
             "description": "Retrieves all services (initialized).  The services are provided in the\ncallback.",
             "static": 1,
             "itemtype": "method",
@@ -8043,7 +9073,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1729,
+            "line": 1781,
             "description": "Loads a plugin service and initializes it.  The service is required to\nimplement an \"init\" function. The service is then provided as a parameter in\nthe callback.",
             "static": 1,
             "itemtype": "method",
@@ -8066,7 +9096,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1754,
+            "line": 1806,
             "description": "Loads the controllers for a plugin by iterating through the files in the\nplugin's controllers directory.",
             "static": 1,
             "itemtype": "method",
@@ -8094,7 +9124,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1792,
+            "line": 1844,
             "description": "Loads a controller for a plugin and attempts to register the route with the\nRequestHandler.",
             "static": 1,
             "itemtype": "method",
@@ -8122,7 +9152,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1844,
+            "line": 1896,
             "description": "Derives the name of a plugin service instance.  The function attempts to get\nthe name of the service by looking to see if the service has implemented the\ngetName function.  If it has not then the service name is set to be the file\nname minus any extension.",
             "static": 1,
             "itemtype": "method",
@@ -8147,7 +9177,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1871,
+            "line": 1923,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to uninstall a plugin.\nThe function builds out the appropriate options then calls the\nuninstallPlugin function.  The result is then sent back to the calling\nprocess via the CommandService.",
             "static": 1,
             "itemtype": "method",
@@ -8172,7 +9202,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1903,
+            "line": 1955,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to validate that a plugin is available to this process for install.\nThe function builds out the appropriate options then calls the\nuninstallPlugin function.  The result is then sent back to the calling\nprocess via the CommandService.",
             "static": 1,
             "itemtype": "method",
@@ -8197,7 +9227,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1936,
+            "line": 1988,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to install plugin\ndependencies.  The result is then sent back to the calling process via the\nCommandService.",
             "static": 1,
             "itemtype": "method",
@@ -8222,7 +9252,7 @@
         },
         {
             "file": "include\\service\\entities\\plugin_service.js",
-            "line": 1968,
+            "line": 2020,
             "description": "<b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>\nThe function is called when a command is recevied to initialize a plugin.\nThe result is then sent back to the calling process via the\nCommandService.",
             "static": 1,
             "itemtype": "method",
@@ -8951,7 +9981,29 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 56,
+            "line": 52,
+            "description": "Takes the specified user object and formats the first and last name.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "getFormattedName",
+            "params": [
+                {
+                    "name": "user",
+                    "description": "The user object to extract a name for.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The user's full name",
+                "type": "String"
+            },
+            "class": "UserService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\user_service.js",
+            "line": 67,
             "description": "Gets the full names for the supplied authors",
             "itemtype": "method",
             "name": "getAuthors",
@@ -8973,7 +10025,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 76,
+            "line": 87,
             "description": "Retrieves the available access privileges to assign to a user",
             "itemtype": "method",
             "name": "getAdminOptions",
@@ -8995,7 +10047,29 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 131,
+            "line": 111,
+            "description": "Retrieves a select list (id/name) of available system editors",
+            "itemtype": "method",
+            "name": "getEditorSelectList",
+            "params": [
+                {
+                    "name": "currId",
+                    "description": "The Id to be excluded from the list.",
+                    "type": "String"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters.  The first is an \nerror, if exists, the second is an array of objects that represent the \neditor select list.",
+                    "type": "Function"
+                }
+            ],
+            "class": "UserService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\user_service.js",
+            "line": 150,
             "description": "Sends a verification email to an unverified user",
             "itemtype": "method",
             "name": "sendVerificationEmail",
@@ -9017,7 +10091,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 165,
+            "line": 184,
             "description": "Sends a password reset email to a user",
             "itemtype": "method",
             "name": "sendPasswordResetEmail",
@@ -9044,7 +10118,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 190,
+            "line": 209,
             "description": "Checks to see if a proposed user name or email is already in the system",
             "itemtype": "method",
             "name": "isUserNameOrEmailTaken",
@@ -9076,7 +10150,7 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 213,
+            "line": 232,
             "description": "Gets the total counts of a username and email in both the user and unverified_user collections",
             "itemtype": "method",
             "name": "getExistingUsernameEmailCounts",
@@ -9108,7 +10182,63 @@
         },
         {
             "file": "include\\service\\entities\\user_service.js",
-            "line": 270,
+            "line": 271,
+            "description": "Retrieves users by their access level (role)",
+            "itemtype": "method",
+            "name": "findByAccessLevel",
+            "params": [
+                {
+                    "name": "level",
+                    "description": "The admin level of the users to find",
+                    "type": "Integer"
+                },
+                {
+                    "name": "options",
+                    "description": "The search options",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "select",
+                            "description": "The fields to return",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "{}"
+                        },
+                        {
+                            "name": "orderBy",
+                            "description": "The order to return the results in",
+                            "type": "Array",
+                            "optional": true
+                        },
+                        {
+                            "name": "limit",
+                            "description": "The maximum number of results to return",
+                            "type": "Integer",
+                            "optional": true
+                        },
+                        {
+                            "name": "offset",
+                            "description": "The number of results to skip before \nreturning results.",
+                            "type": "Offset",
+                            "optional": true,
+                            "optdefault": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that takes two parameters: an error, if \noccurred, and the second is an array of User objects.",
+                    "type": "Function"
+                }
+            ],
+            "class": "UserService",
+            "module": "Services",
+            "submodule": "Entities"
+        },
+        {
+            "file": "include\\service\\entities\\user_service.js",
+            "line": 302,
             "description": "Verifies if a user has the provided access level or higher",
             "itemtype": "method",
             "name": "hasAccessLevel",
@@ -11556,6 +12686,112 @@
             "module": "Session"
         },
         {
+            "file": "include\\system\\analytics_manager.js",
+            "line": 24,
+            "description": "Takes the provided request and session then checks with each of the \nregistered analytics providers to ensure get the HTML snippets to be \nexecuted for analytics reporting.",
+            "itemtype": "method",
+            "name": "gatherData",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "The current incoming request",
+                    "type": "Request"
+                },
+                {
+                    "name": "session",
+                    "description": "The current user session",
+                    "type": "Object"
+                },
+                {
+                    "name": "ls",
+                    "description": "An instance of the Localization service",
+                    "type": "Localization"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters.  An error, if \noccurred, and a TemplateValue representing the HTML snippets for the analytic \nproviders.",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\analytics_manager.js",
+            "line": 83,
+            "description": "Registers an alaytics provider.  When a template is being rendered and \nencounters the ^analytics^ directive \"onPageRender\" is called.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "registerProvider",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The provider's name",
+                    "type": "String"
+                },
+                {
+                    "name": "onPageRendering",
+                    "description": "A function that is called for every \nrequests that intends to execute HTML snippets to track analytics.  The \nfunction is expected to take 4 parameters.  The first is the current Request \nobject.  The second is the current user session object. The third is an \ninstance of Localization.  The last is a callback that should be called with \ntwo parameters.  The first is an error, if occurred and the second is raw \nHTML string that represents the snippet to be executed by the analytics \nplugin.",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\analytics_manager.js",
+            "line": 107,
+            "description": "Indicates if an analytics provider with the specified name has already \nregistered itself.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isRegistered",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "The name of the analytics provider to check registration for",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "TRUE when the provider is registered, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
+            "file": "include\\system\\analytics_manager.js",
+            "line": 119,
+            "description": "Called when a page is rendering.  It creates a new instance of the analytics \nmanager and constructs the javascript snippets (wrappered in TemplateValue) \nneeded for the analytics plugins",
+            "static": 1,
+            "itemtype": "method",
+            "name": "onPageRender",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Request"
+                },
+                {
+                    "name": "session",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "ls",
+                    "description": "",
+                    "type": "Localization"
+                },
+                {
+                    "name": "cb",
+                    "description": "A callback that provides two parameters.  An error, if \noccurred, and a TemplateValue representing the HTML snippets for the analytic \nproviders.",
+                    "type": "Function"
+                }
+            ],
+            "class": "ServerRegistration",
+            "module": "Session"
+        },
+        {
             "file": "include\\system\\server_registration.js",
             "line": 33,
             "description": "The instance of the RegistrationProvider interface to use as the storage\nprovider.",
@@ -12017,7 +13253,36 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 101,
+            "line": 93,
+            "description": "Checks to see if the value is a valid ID string or an instance of ObjectID.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "isId",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "The value under test",
+                    "type": "String|ObjectID"
+                },
+                {
+                    "name": "required",
+                    "description": "Indicates if the value is required. When\nFALSE, null will be an acceptable value.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "return": {
+                "description": "TRUE if the value is valid, FALSE if not",
+                "type": "Boolean"
+            },
+            "class": "ValidationService",
+            "module": "Services",
+            "submodule": "Validation"
+        },
+        {
+            "file": "include\\validation\\validation_service.js",
+            "line": 116,
             "description": "Validates an email address",
             "itemtype": "method",
             "name": "validateEmail",
@@ -12039,7 +13304,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 112,
+            "line": 127,
             "description": "Validates an email address",
             "itemtype": "method",
             "name": "isEmail",
@@ -12061,7 +13326,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 127,
+            "line": 142,
             "description": "Validates a version number",
             "deprecated": true,
             "itemtype": "method",
@@ -12084,7 +13349,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 138,
+            "line": 153,
             "description": "Validates a version number",
             "itemtype": "method",
             "name": "isVersionNum",
@@ -12106,7 +13371,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 153,
+            "line": 168,
             "description": "Validates an URL",
             "deprecated": true,
             "itemtype": "method",
@@ -12129,7 +13394,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 164,
+            "line": 179,
             "description": "Validates an URL",
             "itemtype": "method",
             "name": "isUrl",
@@ -12151,7 +13416,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 179,
+            "line": 194,
             "description": "Validates a file name",
             "deprecated": true,
             "itemtype": "method",
@@ -12174,7 +13439,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 190,
+            "line": 205,
             "description": "Validates a file name",
             "itemtype": "method",
             "name": "isSafeFileName",
@@ -12196,7 +13461,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 205,
+            "line": 220,
             "description": "Validates a string",
             "deprecated": true,
             "itemtype": "method",
@@ -12219,7 +13484,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 216,
+            "line": 231,
             "description": "Validates a string",
             "itemtype": "method",
             "name": "isStr",
@@ -12241,7 +13506,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 230,
+            "line": 245,
             "description": "Validates a string is not empty",
             "deprecated": true,
             "itemtype": "method",
@@ -12264,7 +13529,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 241,
+            "line": 256,
             "description": "Validates a string is not empty",
             "itemtype": "method",
             "name": "isNonEmptyStr",
@@ -12286,7 +13551,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 255,
+            "line": 270,
             "description": "Validates an array",
             "deprecated": true,
             "itemtype": "method",
@@ -12309,7 +13574,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 266,
+            "line": 281,
             "description": "Validates an array",
             "itemtype": "method",
             "name": "isArray",
@@ -12331,7 +13596,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 280,
+            "line": 295,
             "description": "Validates an object",
             "deprecated": true,
             "itemtype": "method",
@@ -12354,7 +13619,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 291,
+            "line": 306,
             "description": "Validates an object",
             "itemtype": "method",
             "name": "isObject",
@@ -12376,7 +13641,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 305,
+            "line": 320,
             "description": "Validates that the value is an integer.",
             "static": 1,
             "itemtype": "method",
@@ -12410,7 +13675,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 327,
+            "line": 342,
             "description": "Validates that the value is a float.",
             "static": 1,
             "itemtype": "method",
@@ -12444,7 +13709,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 349,
+            "line": 364,
             "description": "Validates that the value is a number.",
             "static": 1,
             "itemtype": "method",
@@ -12473,7 +13738,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 366,
+            "line": 381,
             "description": "Validates that the value is null, defined, an empty object, or an empty\nstring.",
             "static": 1,
             "itemtype": "method",
@@ -12495,7 +13760,7 @@
         },
         {
             "file": "include\\validation\\validation_service.js",
-            "line": 378,
+            "line": 393,
             "description": "Validates that the value is a date object",
             "static": 1,
             "itemtype": "method",
@@ -13034,7 +14299,7 @@
         },
         {
             "file": "include\\email.js",
-            "line": 125,
+            "line": 127,
             "description": "Retrieves the email settings",
             "itemtype": "method",
             "name": "getSettings",
@@ -13050,7 +14315,7 @@
         },
         {
             "file": "include\\email.js",
-            "line": 138,
+            "line": 140,
             "description": "Retrieves the default email settings from installation",
             "itemtype": "method",
             "name": "getDefaultSettings",
@@ -13402,6 +14667,38 @@
         {
             "file": "include\\util.js",
             "line": 189,
+            "description": "Converts an array to an object.",
+            "static": 1,
+            "itemtype": "method",
+            "name": "arrayToObj",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "The array of items to transform from an array to an \nobject",
+                    "type": "Array"
+                },
+                {
+                    "name": "keyFieldOrTransform",
+                    "description": "When this field is a string it \nis expected that the array contains objects and that the objects contain a \nproperty that the string represents.  The value of that field will be used \nas the property name in the new object.  When this parameter is a function \nit is passed two parameters: the array being operated on and the index of \nthe current item.  It is expected that the function will return a value \nrepresenting the key in the new object.",
+                    "type": "String|Function"
+                },
+                {
+                    "name": "valFieldOrTransform",
+                    "description": "When this value is a string \nit is expected that the array contains objects and that the objects contain \na property that the string represents.  The value of that field will be used \nas the property value in the new object.  When this parameter is a function \nit is passed two parameters: the array being operated on and the index of \nthe current item.  It is expected that the function return a value \nrepresenting the value of the derived property for that item.",
+                    "type": "String|Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "The converted array.",
+                "type": "Object"
+            },
+            "class": "Util",
+            "module": "Services"
+        },
+        {
+            "file": "include\\util.js",
+            "line": 248,
             "description": "Converts an array of objects into a hash where the key the value of the \nspecified property. If multiple objects in the array have the same value for \nthe specified value then the last one found will be kept.",
             "static": 1,
             "itemtype": "method",
@@ -13427,7 +14724,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 212,
+            "line": 271,
             "description": "Converts a hash to an array. When provided, the hashKeyProp will be the\nproperty name of each object in the array that holds the hash key.",
             "static": 1,
             "itemtype": "method",
@@ -13454,7 +14751,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 237,
+            "line": 296,
             "description": "Inverts a hash",
             "static": 1,
             "itemtype": "method",
@@ -13475,7 +14772,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 258,
+            "line": 317,
             "description": "Clones an array",
             "static": 1,
             "itemtype": "method",
@@ -13496,7 +14793,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 277,
+            "line": 336,
             "description": "Pushes all of one array's values into another",
             "static": 1,
             "itemtype": "method",
@@ -13518,7 +14815,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 294,
+            "line": 353,
             "description": "Empty callback function just used as a place holder if a callback is required\nand the result is not needed.",
             "static": 1,
             "itemtype": "method",
@@ -13528,7 +14825,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 304,
+            "line": 363,
             "description": "Creates a unique Id",
             "static": 1,
             "itemtype": "method",
@@ -13542,7 +14839,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 314,
+            "line": 373,
             "description": "Tests if a value is an object",
             "static": 1,
             "itemtype": "method",
@@ -13563,7 +14860,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 325,
+            "line": 384,
             "description": "Tests if a value is an string",
             "static": 1,
             "itemtype": "method",
@@ -13584,7 +14881,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 336,
+            "line": 395,
             "description": "Tests if a value is a function",
             "static": 1,
             "itemtype": "method",
@@ -13605,7 +14902,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 347,
+            "line": 406,
             "description": "Tests if a value is a boolean",
             "static": 1,
             "itemtype": "method",
@@ -13626,7 +14923,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 358,
+            "line": 417,
             "description": "Retrieves the subdirectories of a path",
             "static": 1,
             "itemtype": "method",
@@ -13648,7 +14945,7 @@
         },
         {
             "file": "include\\util.js",
-            "line": 395,
+            "line": 454,
             "description": "Provides typical conversions for time",
             "itemtype": "property",
             "name": "TIME",
@@ -13706,7 +15003,7 @@
         },
         {
             "file": "plugins\\ga\\ga.js",
-            "line": 58,
+            "line": 62,
             "description": "Called when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
             "params": [
                 {
@@ -13728,7 +15025,7 @@
         },
         {
             "file": "plugins\\portfolio\\controllers\\blog.js",
-            "line": 440,
+            "line": 449,
             "description": "Provides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
             "params": [
                 {
@@ -14958,15 +16255,19 @@
         },
         {
             "message": "Missing item type\nReplaces an article or page layout's ^media_display^ tag with a media embed",
-            "line": " include\\service\\entities\\article_service.js:483"
+            "line": " include\\service\\entities\\article_service.js:536"
+        },
+        {
+            "message": "Missing item type\nValidates the fields of a custom object",
+            "line": " include\\service\\entities\\custom_object_service.js:690"
         },
         {
             "message": "Missing item type\nValidates the path of a main module file.  The path is considered valid if\nthe path points to JS file.  The path may be absolute or relative to the\nspecific plugin directory.",
-            "line": " include\\service\\entities\\plugin_service.js:1627"
+            "line": " include\\service\\entities\\plugin_service.js:1679"
         },
         {
             "message": "Missing item type\nValidates a setting from a details.json file.",
-            "line": " include\\service\\entities\\plugin_service.js:1640"
+            "line": " include\\service\\entities\\plugin_service.js:1692"
         },
         {
             "message": "Missing item type\nService for managing the site's navigation",
@@ -15082,7 +16383,7 @@
         },
         {
             "message": "Missing item type\nCalled when the application is gracefully shutting down.  No guarantees are\nprovided for how much time will be provided the plugin to shut down.",
-            "line": " plugins\\ga\\ga.js:58"
+            "line": " plugins\\ga\\ga.js:62"
         },
         {
             "message": "Missing item type\nBlog page of the pencilblue theme",
@@ -15090,7 +16391,7 @@
         },
         {
             "message": "Missing item type\nProvides the routes that are to be handled by an instance of this prototype.\nThe route provides a definition of path, permissions, authentication, and\nexpected content type.\nMethod is optional\nPath is required\nPermissions are optional\nAccess levels are optional\nContent type is optional",
-            "line": " plugins\\portfolio\\controllers\\blog.js:440"
+            "line": " plugins\\portfolio\\controllers\\blog.js:449"
         },
         {
             "message": "Missing item type\nBlogFilter - Responsible for looking up a specific filter (section, article, page, author) and rendering it.",

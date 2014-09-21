@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -341,12 +341,7 @@ MediaService.prototype.deleteById = function(mid, options, cb) {
 
     var self = this;
     var dao  = new pb.DAO();
-    dao.deleteById(mid, MediaService.COLL).then(function(result) {
-        if (util.isError(result)) {
-            return cb(result);
-        }
-        cb(null, result);
-    });
+    dao.deleteById(mid, MediaService.COLL, cb);
 };
 
 MediaService.prototype.get = function(options, cb) {
@@ -751,12 +746,26 @@ MediaService.getMediaFlag = function(mid, options) {
     return flag;
 };
 
+/**
+ * Generates the path to uploaded media
+ * @static
+ * @method generateMediaPath
+ * @param {String} originalFilename
+ * @return {String}
+ */
 MediaService.generateMediaPath = function(originalFilename) {
     var now = new Date();
     var fn  = MediaService.generateFilename(originalFilename);
     return path.join(&#x27;/media&#x27;, now.getFullYear() + &#x27;&#x27;, (now.getMonth() + 1) + &#x27;&#x27;, fn);
 };
 
+/**
+ * Generates a filename for a new media object
+ * @static
+ * @method generateFilename
+ * @param {String} originalFilename
+ * @return {String}
+ */
 MediaService.generateFilename = function(originalFilename){
 	var now = new Date();
 
@@ -771,6 +780,13 @@ MediaService.generateFilename = function(originalFilename){
     return pb.utils.uniqueId() + &#x27;-&#x27; + now.getTime() + ext;
 };
 
+/**
+ * Retrieves the font awesome icon for the media type.
+ * @static
+ * @method getMediaIcon
+ * @param {String} mediaType
+ * @return {String}
+ */
 MediaService.getMediaIcon = function(mediaType) {
     switch(mediaType) {
         case &#x27;image&#x27;:
@@ -800,6 +816,15 @@ MediaService.getMediaIcon = function(mediaType) {
     }
 };
 
+/**
+ * Retrieves the content URL for a media type.
+ * @static
+ * @method getMediaLink
+ * @param {String} mediaType
+ * @param {String} mediaLocation
+ * @param {Boolean} isFile
+ * @return {String}
+ */
 MediaService.getMediaLink = function(mediaType, mediaLocation, isFile) {
     switch(mediaType) {
         case &#x27;youtube&#x27;:
@@ -827,12 +852,19 @@ MediaService.getMediaLink = function(mediaType, mediaLocation, isFile) {
         case &#x27;video/ogg&#x27;:
         default:
             if(isFile) {
-                return pb.config.siteRoot + mediaLocation;
+                return pb.config.siteRoot + mediaLocation;//TODO test this: pb.UrlService.urlJoin(pb.config.siteRoot, mediaLocation);
             }
             return mediaLocation;
     }
 };
 
+/**
+ * Sets the proper icon and link for an array of media items
+ * @static
+ * @method formatMedia
+ * @param {Array} media The array of media objects to format
+ * @return {Array} The same array of media that was passed in
+ */
 MediaService.formatMedia = function(media) {
     for(var i = 0; i &lt; media.length; i++) {
         media[i].icon = MediaService.getMediaIcon(media[i].media_type);

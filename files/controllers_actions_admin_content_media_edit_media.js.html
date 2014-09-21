@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -321,8 +321,8 @@ EditMediaPostController.prototype.onPostParamsRetrieved = function(post, cb) {
         //update existing document
         pb.DocumentCreator.update(post, media, [&#x27;media_topics&#x27;], [&#x27;is_file&#x27;]);
         var dao = new pb.DAO();
-        dao.update(media).then(function(result) {
-            if (util.isError(result)) {
+        dao.save(media, function(err, result) {
+            if (util.isError(err)) {
                 self.formError(self.ls.get(&#x27;ERROR_SAVING&#x27;), self.getFormErrorRedirect(), cb);
                 return;
             }

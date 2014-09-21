@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -555,6 +555,11 @@ var loadConfiguration = function() {
              new (winston.transports.File)({ filename: LOG_FILE, level: config.log_level, timestamp: true })
        ]
 	};
+
+    //special check to ensure that there is no ending slash on the site root
+    if (config.siteRoot.lastIndexOf(&#x27;/&#x27;) === (config.siteRoot.length - 1)) {
+        config.siteRoot = config.siteRoot.substring(0, config.siteRoot.length - 1);
+    }
 	return config;
 };
 

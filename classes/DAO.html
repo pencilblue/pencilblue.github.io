@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -340,16 +340,25 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_deleteById">deleteById</a>
+                                <a href="#method_delete">delete</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_deleteById">deleteById</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method deprecated">
                                 <a href="#method_deleteMatching">deleteMatching</a>
 
                                 
+                                
+                                    <span class="flag deprecated">deprecated</span>
                                 
                             </li>
                         
@@ -421,10 +430,12 @@
                                 
                             </li>
                         
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_insert">insert</a>
 
                                 
+                                
+                                    <span class="flag deprecated">deprecated</span>
                                 
                             </li>
                         
@@ -449,8 +460,38 @@
                                 
                             </li>
                         
+                            <li class="index-item method deprecated">
+                                <a href="#method_query">query</a>
+
+                                
+                                
+                                    <span class="flag deprecated">deprecated</span>
+                                
+                            </li>
+                        
                             <li class="index-item method">
                                 <a href="#method_query">query</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_save">save</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_saveBatch">saveBatch</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_toArrayCursorHandler">toArrayCursorHandler</a>
 
                                 
                                 
@@ -472,10 +513,12 @@
                                 
                             </li>
                         
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_update">update</a>
 
                                 
+                                
+                                    <span class="flag deprecated">deprecated</span>
                                 
                             </li>
                         
@@ -639,7 +682,7 @@
             
         
         
-        <a href="../files/include_dao_dao.js.html#l216"><code>include\dao\dao.js:216</code></a>
+        <a href="../files/include_dao_dao.js.html#l279"><code>include\dao\dao.js:279</code></a>
         
         </p>
 
@@ -835,7 +878,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l381"><code>include\dao\dao.js:381</code></a>
+        <a href="../files/include_dao_dao.js.html#l590"><code>include\dao\dao.js:590</code></a>
         
         </p>
 
@@ -953,7 +996,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l128"><code>include\dao\dao.js:128</code></a>
+        <a href="../files/include_dao_dao.js.html#l129"><code>include\dao\dao.js:129</code></a>
         
         </p>
 
@@ -1032,6 +1075,164 @@ for doing the heavy lifting and returning the result back to the calling intity.
 </div>
 
                 
+                    <div id="method_delete" class="method item">
+    <h3 class="name"><code>delete</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>where</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>collection</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[options]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l553"><code>include\dao\dao.js:553</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Removes objects from persistence that match criteria</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">where</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Key value pair object</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">collection</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The collection to search in</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>See <a href="http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#remove">http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#remove</a></p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameter. The first is an 
+error, if occurred.  The second is the number of records that were removed 
+from persistence.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_deleteById" class="method item">
     <h3 class="name"><code>deleteById</code></h3>
 
@@ -1048,6 +1249,12 @@ for doing the heavy lifting and returning the result back to the calling intity.
                 <li class="arg">
                     
                         <code>collection</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[cb]</code>
                     
                 </li>
             
@@ -1084,7 +1291,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l335"><code>include\dao\dao.js:335</code></a>
+        <a href="../files/include_dao_dao.js.html#l487"><code>include\dao\dao.js:487</code></a>
         
         </p>
 
@@ -1108,7 +1315,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
                 <li class="param">
                     
                         <code class="param-name">oid</code>
-                        <span class="type">String</span>
+                        <span class="type">String | ObjectID</span>
                     
 
                     
@@ -1137,6 +1344,25 @@ for doing the heavy lifting and returning the result back to the calling intity.
                     
                 </li>
             
+                <li class="param">
+                    
+                        <code class="param-name optional">[cb]</code>
+                        <span class="type">Function</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters.  The first is 
+an error, if occurred.  The second is the number of records deleted by the 
+execution of the command.</p>
+
+                    </div>
+
+                    
+                </li>
+            
             </ul>
         </div>
     
@@ -1150,7 +1376,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
                     
                         <span class="type">Promise</span>:
                     
-                    <p>Promise object</p>
+                    <p>Promise object iff a callback is not provided</p>
 
                 
             </div>
@@ -1161,7 +1387,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
 </div>
 
                 
-                    <div id="method_deleteMatching" class="method item">
+                    <div id="method_deleteMatching" class="method item deprecated">
     <h3 class="name"><code>deleteMatching</code></h3>
 
     
@@ -1191,6 +1417,8 @@ for doing the heavy lifting and returning the result back to the calling intity.
     
 
     
+        <span class="flag deprecated">deprecated</span>
+    
 
     
 
@@ -1213,7 +1441,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l352"><code>include\dao\dao.js:352</code></a>
+        <a href="../files/include_dao_dao.js.html#l524"><code>include\dao\dao.js:524</code></a>
         
         </p>
 
@@ -1338,7 +1566,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
             
         
         
-        <a href="../files/include_dao_dao.js.html#l396"><code>include\dao\dao.js:396</code></a>
+        <a href="../files/include_dao_dao.js.html#l605"><code>include\dao\dao.js:605</code></a>
         
         </p>
 
@@ -1507,7 +1735,7 @@ specify the options for the index.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l140"><code>include\dao\dao.js:140</code></a>
+        <a href="../files/include_dao_dao.js.html#l141"><code>include\dao\dao.js:141</code></a>
         
         </p>
 
@@ -1624,7 +1852,7 @@ specify the options for the index.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l541"><code>include\dao\dao.js:541</code></a>
+        <a href="../files/include_dao_dao.js.html#l750"><code>include\dao\dao.js:750</code></a>
         
         </p>
 
@@ -1716,7 +1944,7 @@ The default implementation returns the mongo field &#39;_id&#39;.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l438"><code>include\dao\dao.js:438</code></a>
+        <a href="../files/include_dao_dao.js.html#l647"><code>include\dao\dao.js:647</code></a>
         
         </p>
 
@@ -1842,7 +2070,7 @@ specified array of values.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l425"><code>include\dao\dao.js:425</code></a>
+        <a href="../files/include_dao_dao.js.html#l634"><code>include\dao\dao.js:634</code></a>
         
         </p>
 
@@ -1941,7 +2169,7 @@ specified array of values.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l479"><code>include\dao\dao.js:479</code></a>
+        <a href="../files/include_dao_dao.js.html#l688"><code>include\dao\dao.js:688</code></a>
         
         </p>
 
@@ -2027,7 +2255,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l466"><code>include\dao\dao.js:466</code></a>
+        <a href="../files/include_dao_dao.js.html#l675"><code>include\dao\dao.js:675</code></a>
         
         </p>
 
@@ -2136,7 +2364,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l490"><code>include\dao\dao.js:490</code></a>
+        <a href="../files/include_dao_dao.js.html#l699"><code>include\dao\dao.js:699</code></a>
         
         </p>
 
@@ -2197,7 +2425,7 @@ not equal the specified value.</p>
 </div>
 
                 
-                    <div id="method_insert" class="method item">
+                    <div id="method_insert" class="method item deprecated">
     <h3 class="name"><code>insert</code></h3>
 
     
@@ -2221,6 +2449,8 @@ not equal the specified value.</p>
     
 
     
+        <span class="flag deprecated">deprecated</span>
+    
 
     
 
@@ -2243,7 +2473,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l266"><code>include\dao\dao.js:266</code></a>
+        <a href="../files/include_dao_dao.js.html#l329"><code>include\dao\dao.js:329</code></a>
         
         </p>
 
@@ -2725,7 +2955,7 @@ not equal the specified value.</p>
 </div>
 
                 
-                    <div id="method_query" class="method item">
+                    <div id="method_query" class="method item deprecated">
     <h3 class="name"><code>query</code></h3>
 
     
@@ -2779,6 +3009,8 @@ not equal the specified value.</p>
     
 
     
+        <span class="flag deprecated">deprecated</span>
+    
 
     
 
@@ -2801,7 +3033,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l183"><code>include\dao\dao.js:183</code></a>
+        <a href="../files/include_dao_dao.js.html#l184"><code>include\dao\dao.js:184</code></a>
         
         </p>
 
@@ -2947,6 +3179,648 @@ not equal the specified value.</p>
 </div>
 
                 
+                    <div id="method_query" class="method item">
+    <h3 class="name"><code>query</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>collection</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[options]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l217"><code>include\dao\dao.js:217</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Queries the database</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">collection</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The type of object to search for</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The options for the query</p>
+
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[where={}]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The conditions under which results are 
+returned</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[select]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Selection type object</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[order]</code>
+                                    <span class="type">Array</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Order by array (MongoDB syntax)</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[limit]</code>
+                                    <span class="type">Integer</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Number of documents to retrieve</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[offset]</code>
+                                    <span class="type">Integer</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Start index of retrieval</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[handler]</code>
+                                    <span class="type">Function</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>A function that takes two paramters.<br>The first, the Cursor object that contains the results of the query.  The 
+second is a callback that takes two parameters.  An error if occurred and by 
+default, the documents returned by the query.  Custom handlers may provide 
+whatever value it wishes including the cursor if it wishes to handle the 
+results itself.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback function that takes two parameters.  The 
+first, an error, if occurred and the second is the result provided by the 
+handler.  By default it provides an array of objects that represent the 
+items returned by the query.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_save" class="method item">
+    <h3 class="name"><code>save</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>dbObj</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[options]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l375"><code>include\dao\dao.js:375</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Replaces an existing document with the specified DB Object</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">dbObj</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The system object to persist</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>See <a href="http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#save">http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#save</a></p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters.  The first, an 
+error, if occurred.  The second is the result of the persistence operation.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_saveBatch" class="method item">
+    <h3 class="name"><code>saveBatch</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>objArray</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>collection</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[options]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l415"><code>include\dao\dao.js:415</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Provides a mechanism to save an array of objects all from the same 
+collection.  The function handles updates and inserts.  The difference is 
+determined by the truth value of the ID field of each object.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">objArray</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The array of objects to persist</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">collection</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The collection to persist the objects to</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>See <a href="http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#initializeunorderedbulkop">http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#initializeunorderedbulkop</a></p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that takes two arguments.  The first is an 
+error, if occurred. The second is the second parameter of the callback 
+described here: <a href="http://mongodb.github.io/node-mongodb-native/api-generated/unordered.html#execute">http://mongodb.github.io/node-mongodb-native/api-generated/unordered.html#execute</a></p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_toArrayCursorHandler" class="method item">
+    <h3 class="name"><code>toArrayCursorHandler</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>cursor</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_dao_dao.js.html#l267"><code>include\dao\dao.js:267</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>A cursor handler that iterates over each result from the query that created
+the cursor and places the result into an array.  The array of documents is
+provided as the second argument in the callback.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">cursor</code>
+                        <span class="type">Cursor</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_transfer" class="method item">
     <h3 class="name"><code>transfer</code></h3>
 
@@ -2997,7 +3871,7 @@ not equal the specified value.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l521"><code>include\dao\dao.js:521</code></a>
+        <a href="../files/include_dao_dao.js.html#l730"><code>include\dao\dao.js:730</code></a>
         
         </p>
 
@@ -3122,7 +3996,7 @@ its own properties.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l154"><code>include\dao\dao.js:154</code></a>
+        <a href="../files/include_dao_dao.js.html#l155"><code>include\dao\dao.js:155</code></a>
         
         </p>
 
@@ -3218,7 +4092,7 @@ its own properties.</p>
 </div>
 
                 
-                    <div id="method_update" class="method item">
+                    <div id="method_update" class="method item deprecated">
     <h3 class="name"><code>update</code></h3>
 
     
@@ -3242,6 +4116,8 @@ its own properties.</p>
     
 
     
+        <span class="flag deprecated">deprecated</span>
+    
 
     
 
@@ -3264,7 +4140,7 @@ its own properties.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l283"><code>include\dao\dao.js:283</code></a>
+        <a href="../files/include_dao_dao.js.html#l346"><code>include\dao\dao.js:346</code></a>
         
         </p>
 
@@ -3369,7 +4245,7 @@ its own properties.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l501"><code>include\dao\dao.js:501</code></a>
+        <a href="../files/include_dao_dao.js.html#l710"><code>include\dao\dao.js:710</code></a>
         
         </p>
 
@@ -3476,7 +4352,7 @@ its own properties.</p>
             
         
         
-        <a href="../files/include_dao_dao.js.html#l312"><code>include\dao\dao.js:312</code></a>
+        <a href="../files/include_dao_dao.js.html#l464"><code>include\dao\dao.js:464</code></a>
         
         </p>
 

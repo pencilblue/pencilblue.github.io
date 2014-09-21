@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -355,7 +355,9 @@ EmailService.prototype.send = function(from, to, subject, body, cb) {
             throw err;
         }
         else if (!emailSettings) {
-            throw new Error(&#x27;No Email settings available.  Go to the admin settings and put in SMTP settings&#x27;);
+            var err = new Error(&#x27;No Email settings available.  Go to the admin settings and put in SMTP settings&#x27;);
+            pb.log.error(err.stack); 
+            return cb(err);
         }
 
         var options = {
@@ -383,7 +385,7 @@ EmailService.prototype.send = function(from, to, subject, body, cb) {
 
         smtpTransport.sendMail(mailOptions, function(err, response) {
             if (util.isError(err)) {
-            	pb.log.error(&quot;EmailService: Failed to send email: &quot;, err);
+            	pb.log.error(&quot;EmailService: Failed to send email: &quot;, err.stack);
             }
             smtpTransport.close();
 

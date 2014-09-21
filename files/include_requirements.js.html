@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.2.4</em>
+            <em>API Docs for: 0.2.5</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -418,8 +418,9 @@ pb.FsMediaProvider = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/med
 pb.MediaService    = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/entities/media_service.js&#x27;));
 
 //content services
-pb.SectionService     = require(DOCUMENT_ROOT+&#x27;/include/service/entities/section_service.js&#x27;);
-pb.TopMenuService     = require(DOCUMENT_ROOT+&#x27;/include/theme/top_menu.js&#x27;);
+pb.SectionService = require(DOCUMENT_ROOT+&#x27;/include/service/entities/section_service.js&#x27;);
+pb.TopMenuService = require(DOCUMENT_ROOT+&#x27;/include/theme/top_menu.js&#x27;);
+pb.ArticleService = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/entities/article_service.js&#x27;));
 
 //Export system object
 module.exports = pb;
