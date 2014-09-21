@@ -5311,7 +5311,7 @@
             "line": 217,
             "description": "Queries the database",
             "itemtype": "method",
-            "name": "query",
+            "name": "q",
             "params": [
                 {
                     "name": "collection",
