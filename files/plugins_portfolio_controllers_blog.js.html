@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -305,7 +347,6 @@ function Blog(){}
 //dependencies
 var PluginService = pb.PluginService;
 var TopMenu        = require(DOCUMENT_ROOT + &#x27;/include/theme/top_menu&#x27;);
-var Media          = require(DOCUMENT_ROOT + &#x27;/include/theme/media&#x27;);
 var Comments       = require(DOCUMENT_ROOT + &#x27;/include/theme/comments&#x27;);
 var ArticleService = require(DOCUMENT_ROOT + &#x27;/include/service/entities/article_service&#x27;).ArticleService;
 
@@ -327,8 +368,8 @@ Blog.prototype.render = function(cb) {
 
                 self.ts.reprocess = false;
                 self.ts.registerLocal(&#x27;meta_keywords&#x27;, metaKeywords);
-                self.ts.registerLocal(&#x27;meta_desc&#x27;, metaDescription);
-                self.ts.registerLocal(&#x27;meta_title&#x27;, metaTitle);
+                self.ts.registerLocal(&#x27;meta_desc&#x27;, data.section.description || metaDescription);
+                self.ts.registerLocal(&#x27;meta_title&#x27;, data.section.name || metaTitle);
                 self.ts.registerLocal(&#x27;meta_lang&#x27;, localizationLanguage);
                 self.ts.registerLocal(&#x27;current_url&#x27;, self.req.url);
                 self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(data.nav.navigation, false));
@@ -501,6 +542,16 @@ Blog.prototype.gatherData = function(cb) {
         content: function(callback) {
             self.loadContent(callback);
         },
+
+        section: function(callback) {
+            if(!self.req.pencilblue_section) {
+                callback(null, {});
+                return;
+            }
+
+            var dao = new pb.DAO();
+            dao.loadById(self.req.pencilblue_section, &#x27;section&#x27;, callback);
+        }
     };
     async.parallel(tasks, cb);
 };
@@ -713,10 +764,22 @@ Blog.prototype.getSideNavigation = function(articles, cb) {
             }
         }
 
+        var opts = {
+            where: {
+                article_topics: {$in: topics},
+                _id: {$nin: articleIDs}
+            },
+            limit: 6
+        };
         var dao = new pb.DAO();
-        dao.query(&#x27;article&#x27;, {article_topics: {$in: topics}, _id: {$nin: articleIDs}}, null, null, 6).then(function(relatedArticles) {
+        dao.q(&#x27;article&#x27;, opts, function(err, relatedArticles) {
             if(relatedArticles.length === 0) {
-                dao.query(&#x27;topic&#x27;, {}, null, {name: 1}).then(function(topicObjects) {
+
+                opts = {
+                    where: pb.DAO.ANYWHERE,
+                    order: {name: 1}
+                };
+                dao.q(&#x27;topic&#x27;, opts, function(err, topicObjects) {
                     var articleTopics = [];
                     for(var i = 0; i &lt; topics.length &amp;&amp; articleTopics.length &lt; 20; i++) {
                         for(var j = 0; j &lt; topicObjects.length; j++) {

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -388,8 +430,6 @@ for ensuring that all system services are avaialble by requiring the
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
         
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
-        
         
         
     </ul>
@@ -403,15 +443,6 @@ for ensuring that all system services are avaialble by requiring the
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                        
-                            <li class="index-item method">
-                                <a href="#method_init">init</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
                         
                             <li class="index-item method">
                                 <a href="#method_initCommandService">initCommandService</a>
@@ -517,23 +548,6 @@ for ensuring that all system services are avaialble by requiring the
             
 
             
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property private">
-                                <a href="#property_MEDIA_DIRECTORY">MEDIA_DIRECTORY</a>
-
-                                
-                                    <span class="flag static">static</span>
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
 
             
 
@@ -543,62 +557,6 @@ for ensuring that all system services are avaialble by requiring the
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_init" class="method item">
-    <h3 class="name"><code>init</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l38"><code>plugins\wp_import\services\wp_xml_parse.js:38</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
 
                 
                     <div id="method_initCommandService" class="method item">
@@ -645,7 +603,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l224"><code>pencilblue.js:224</code></a>
+        <a href="../files/pencilblue.js.html#l230"><code>pencilblue.js:230</code></a>
         
         </p>
 
@@ -827,7 +785,7 @@ for ensuring that all system services are avaialble by requiring the
             
         
         
-        <a href="../files/pencilblue.js.html#l100"><code>pencilblue.js:100</code></a>
+        <a href="../files/pencilblue.js.html#l98"><code>pencilblue.js:98</code></a>
         
         </p>
 
@@ -919,7 +877,7 @@ place.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l234"><code>pencilblue.js:234</code></a>
+        <a href="../files/pencilblue.js.html#l240"><code>pencilblue.js:240</code></a>
         
         </p>
 
@@ -1193,7 +1151,7 @@ registered.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l119"><code>pencilblue.js:119</code></a>
+        <a href="../files/pencilblue.js.html#l117"><code>pencilblue.js:117</code></a>
         
         </p>
 
@@ -1285,7 +1243,7 @@ One to handle incoming HTTP traffic and one to handle HTTPS traffic.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l214"><code>pencilblue.js:214</code></a>
+        <a href="../files/pencilblue.js.html#l220"><code>pencilblue.js:220</code></a>
         
         </p>
 
@@ -1382,7 +1340,7 @@ One to handle incoming HTTP traffic and one to handle HTTPS traffic.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l159"><code>pencilblue.js:159</code></a>
+        <a href="../files/pencilblue.js.html#l165"><code>pencilblue.js:165</code></a>
         
         </p>
 
@@ -1499,7 +1457,7 @@ redirected appropriately.</p>
             
         
         
-        <a href="../files/pencilblue.js.html#l190"><code>pencilblue.js:190</code></a>
+        <a href="../files/pencilblue.js.html#l196"><code>pencilblue.js:196</code></a>
         
         </p>
 
@@ -1714,61 +1672,6 @@ redirected to the appropriately protected HTTPS url.</p>
             </div>
         
 
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_MEDIA_DIRECTORY" class="property item private">
-    <h3 class="name"><code>MEDIA_DIRECTORY</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/plugins_wp_import_services_wp_xml_parse.js.html#l29"><code>plugins\wp_import\services\wp_xml_parse.js:29</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The absolute file path to the directory that stores media</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
         
 
         

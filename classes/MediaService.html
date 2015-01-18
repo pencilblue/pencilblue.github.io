@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -298,13 +340,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/include_theme_media.js.html#l23"><code>include\theme\media.js:23</code></a>
+            Defined in: <a href="../files/include_service_entities_media_service.js.html#l21"><code>include\service\entities\media_service.js:21</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Theme.html">Theme</a><br>
+            Module: <a href="../modules/Entities.html">Entities</a><br>
             Parent Module: <a href="../modules/Services.html">Services</a>
         
     
@@ -315,7 +357,7 @@
 
 
 <div class="box intro">
-    <p>Retrieves media information</p>
+    <p>Provides information on media</p>
 
 </div>
 
@@ -346,6 +388,15 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_.">.</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_createContentWriteStream">createContentWriteStream</a>
 
                                 
@@ -369,6 +420,15 @@
                             <li class="index-item method">
                                 <a href="#method_existsByPath">existsByPath</a>
 
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_extractNextMediaFlag">extractNextMediaFlag</a>
+
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -429,13 +489,6 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_getMediaEmbed">getMediaEmbed</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
                                 <a href="#method_getMediaFlag">getMediaFlag</a>
 
                                 
@@ -454,7 +507,7 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_getMediaLink">getMediaLink</a>
+                                <a href="#method_getRendererByType">getRendererByType</a>
 
                                 
                                     <span class="flag static">static</span>
@@ -463,29 +516,46 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_getMediaStyleString">getMediaStyleString</a>
+                                <a href="#method_getRendererByType">getRendererByType</a>
 
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_getMediaThumb">getMediaThumb</a>
+                                <a href="#method_getStyleForPosition">getStyleForPosition</a>
 
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_getSlideShareId">getSlideShareId</a>
+                                <a href="#method_getStyleForView">getStyleForView</a>
 
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_getVimeoThumb">getVimeoThumb</a>
+                                <a href="#method_isFile">isFile</a>
 
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_isRegistered">isRegistered</a>
+
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -499,6 +569,43 @@
                         
                             <li class="index-item method">
                                 <a href="#method_loadById">loadById</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_registerRenderer">registerRenderer</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_render">render</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_render">render</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_renderById">renderById</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_renderByLocation">renderByLocation</a>
 
                                 
                                 
@@ -528,6 +635,15 @@
                             <li class="index-item method">
                                 <a href="#method_statByPath">statByPath</a>
 
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_unregisterRenderer">unregisterRenderer</a>
+
+                                
+                                    <span class="flag static">static</span>
                                 
                                 
                             </li>
@@ -565,6 +681,15 @@
                                 
                             </li>
                         
+                            <li class="index-item property private">
+                                <a href="#property_REGISTERED_MEDIA_RENDERERS">REGISTERED_MEDIA_RENDERERS</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
                     </ul>
                 </div>
             
@@ -577,6 +702,120 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_." class="method item">
+    <h3 class="name"><code>.</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>content</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l709"><code>include\service\entities\media_service.js:709</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Parses a media flag and returns each part in an object. The parsed value that 
+is returned will include:</p>
+<ul>
+<li>id - The media descriptor id that is referenced by the media flag</li>
+<li>style - A hash of the style properties declared for the flag</li>
+<li>cleanFlag - The media flag stripped of the start and end markers</li>
+</ul>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">content</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The content string that potentially contains 1 or more media flags</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>An object that contains the information about the parsed media flag.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
 
                 
                     <div id="method_createContentWriteStream" class="method item">
@@ -620,8 +859,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -629,7 +866,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l241"><code>include\service\entities\media_service.js:241</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l262"><code>include\service\entities\media_service.js:262</code></a>
         
         </p>
 
@@ -736,8 +973,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -745,7 +980,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l83"><code>include\service\entities\media_service.js:83</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l104"><code>include\service\entities\media_service.js:104</code></a>
         
         </p>
 
@@ -863,8 +1098,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -872,7 +1105,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l268"><code>include\service\entities\media_service.js:268</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l289"><code>include\service\entities\media_service.js:289</code></a>
         
         </p>
 
@@ -973,8 +1206,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -982,7 +1213,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l258"><code>include\service\entities\media_service.js:258</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l279"><code>include\service\entities\media_service.js:279</code></a>
         
         </p>
 
@@ -1042,6 +1273,123 @@
 </div>
 
                 
+                    <div id="method_extractNextMediaFlag" class="method item">
+    <h3 class="name"><code>extractNextMediaFlag</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>content</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l665"><code>include\service\entities\media_service.js:665</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Given a content string the function will search for and extract the first 
+occurance of a media flag. The parsed value that is returned will include:</p>
+<ul>
+<li>startIndex - The index where the flag was found to start</li>
+<li>endIndex - The position in the content string of the last character of the media flag</li>
+<li>flag - The entire media flag including the start and end markers</li>
+<li>id - The media descriptor id that is referenced by the media flag</li>
+<li>style - A hash of the style properties declared for the flag</li>
+<li>cleanFlag - The media flag stripped of the start and end markers</li>
+</ul>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">content</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The content string that potentially contains 1 or more media flags</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Object</span>:
+                    
+                    <p>An object that contains the information about the parsed media flag.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_formatMedia" class="method item">
     <h3 class="name"><code>formatMedia</code></h3>
 
@@ -1083,8 +1431,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1092,7 +1438,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l775"><code>include\service\entities\media_service.js:775</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l820"><code>include\service\entities\media_service.js:820</code></a>
         
         </p>
 
@@ -1194,8 +1540,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1203,7 +1547,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l672"><code>include\service\entities\media_service.js:672</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l783"><code>include\service\entities\media_service.js:783</code></a>
         
         </p>
 
@@ -1302,8 +1646,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1311,7 +1653,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l659"><code>include\service\entities\media_service.js:659</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l770"><code>include\service\entities\media_service.js:770</code></a>
         
         </p>
 
@@ -1404,8 +1746,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1413,7 +1753,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l159"><code>include\service\entities\media_service.js:159</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l180"><code>include\service\entities\media_service.js:180</code></a>
         
         </p>
 
@@ -1589,8 +1929,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1598,7 +1936,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l193"><code>include\service\entities\media_service.js:193</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l214"><code>include\service\entities\media_service.js:214</code></a>
         
         </p>
 
@@ -1699,8 +2037,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1708,7 +2044,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l203"><code>include\service\entities\media_service.js:203</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l224"><code>include\service\entities\media_service.js:224</code></a>
         
         </p>
 
@@ -1815,8 +2151,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -1824,7 +2158,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l302"><code>include\service\entities\media_service.js:302</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l377"><code>include\service\entities\media_service.js:377</code></a>
         
         </p>
 
@@ -1835,7 +2169,8 @@
     </div>
 
     <div class="description">
-        
+        <p>Generates a media descriptor for a given media URL</p>
+
     </div>
 
     
@@ -1868,7 +2203,8 @@
                     
 
                     <div class="param-description">
-                         
+                        <p>Indicates if the media resource was uploaded to the server.</p>
+
                     </div>
 
                     
@@ -1883,95 +2219,10 @@
                     
 
                     <div class="param-description">
-                         
-                    </div>
+                        <p>A callback with two parameters. First, an Error if 
+occurred and second is an object that describes the media resource described 
+by the given media URL</p>
 
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_getMediaEmbed" class="method item">
-    <h3 class="name"><code>getMediaEmbed</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>mediaObject</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_theme_media.js.html#l33"><code>include\theme\media.js:33</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Retrieves the correct embed HTML for a media object</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">mediaObject</code>
-                        <span class="type">Object</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
                     </div>
 
                     
@@ -2034,8 +2285,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2043,7 +2292,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l630"><code>include\service\entities\media_service.js:630</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l635"><code>include\service\entities\media_service.js:635</code></a>
         
         </p>
 
@@ -2054,7 +2303,8 @@
     </div>
 
     <div class="description">
-        
+        <p>Generates a media placeholder for templating</p>
+
     </div>
 
     
@@ -2072,7 +2322,8 @@
                     
 
                     <div class="param-description">
-                         
+                        <p>The media descriptor ID</p>
+
                     </div>
 
                     
@@ -2088,7 +2339,9 @@
                     
 
                     <div class="param-description">
-                         
+                        <p>The list of attributes to be provided to the 
+rendering element.</p>
+
                     </div>
 
                     
@@ -2157,8 +2410,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2166,7 +2417,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l693"><code>include\service\entities\media_service.js:693</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l804"><code>include\service\entities\media_service.js:804</code></a>
         
         </p>
 
@@ -2224,8 +2475,8 @@
 </div>
 
                 
-                    <div id="method_getMediaLink" class="method item">
-    <h3 class="name"><code>getMediaLink</code></h3>
+                    <div id="method_getRendererByType" class="method item">
+    <h3 class="name"><code>getRendererByType</code></h3>
 
     
         <div class="args">
@@ -2233,19 +2484,249 @@
             
                 <li class="arg">
                     
-                        <code>mediaType</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>mediaLocation</code>
+                        <code>mediaUrl</code>
                     
                 </li>
             
                 <li class="arg">
                     
                         <code>isFile</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">MediaRenderer</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l604"><code>include\service\entities\media_service.js:604</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves a media renderer for the specified URL</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">mediaUrl</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The media URL</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">isFile</code>
+                        <span class="type">Boolean</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>TRUE if the URL represents an uploaded file, FALSE if not</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">MediaRenderer</span>:
+                    
+                    <p>A media renderer interface implementation or NULL if 
+none support the given URL.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getRendererByType" class="method item">
+    <h3 class="name"><code>getRendererByType</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">MediaRenderer</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l578"><code>include\service\entities\media_service.js:578</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Retrieves a media renderer for the specified type</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The media type</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">MediaRenderer</span>:
+                    
+                    <p>A media renderer interface implementation or NULL if 
+none support the given type.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getStyleForPosition" class="method item">
+    <h3 class="name"><code>getStyleForPosition</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>position</code>
                     
                 </li>
             
@@ -2277,8 +2758,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2286,7 +2765,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l731"><code>include\service\entities\media_service.js:731</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l751"><code>include\service\entities\media_service.js:751</code></a>
         
         </p>
 
@@ -2297,7 +2776,10 @@
     </div>
 
     <div class="description">
-        <p>Retrieves the content URL for a media type.</p>
+        <p>The default editor implementations all for three position values to declared 
+for embeded media (none, left, right, center).  These values map to HTML 
+alignments.  This function retrieves the HTML style attribute for the 
+provided position.</p>
 
     </div>
 
@@ -2309,44 +2791,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name">mediaType</code>
+                        <code class="param-name">position</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                         
-                    </div>
+                        <p>Can be one of 4 values: none, left, right, center</p>
 
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">mediaLocation</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">isFile</code>
-                        <span class="type">Boolean</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
                     </div>
 
                     
@@ -2365,6 +2818,8 @@
                     
                         <span class="type">String</span>:
                     
+                    <p>The HTML formatted style attribute(s)</p>
+
                 
             </div>
         </div>
@@ -2374,8 +2829,8 @@
 </div>
 
                 
-                    <div id="method_getMediaStyleString" class="method item">
-    <h3 class="name"><code>getMediaStyleString</code></h3>
+                    <div id="method_getStyleForView" class="method item">
+    <h3 class="name"><code>getStyleForView</code></h3>
 
     
         <div class="args">
@@ -2383,13 +2838,19 @@
             
                 <li class="arg">
                     
-                        <code>template</code>
+                        <code>renderer</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code>styleString</code>
+                        <code>view</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[overrides]</code>
                     
                 </li>
             
@@ -2405,6 +2866,8 @@
 
     
 
+    
+        <span class="flag static">static</span>
     
 
     
@@ -2422,7 +2885,7 @@
             
         
         
-        <a href="../files/include_theme_media.js.html#l69"><code>include\theme\media.js:69</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l556"><code>include\service\entities\media_service.js:556</code></a>
         
         </p>
 
@@ -2433,7 +2896,8 @@
     </div>
 
     <div class="description">
-        <p>Gets the proper CSS style for a media object</p>
+        <p>Retrieves the base style for the given renderer and view.  Overrides will be 
+applied on top of the base style.</p>
 
     </div>
 
@@ -2445,14 +2909,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name">template</code>
-                        <span class="type">String</span>
+                        <code class="param-name">renderer</code>
+                        <span class="type">MediaRenderer</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>Media embed HTML template</p>
+                        <p>An implementation of MediaRenderer</p>
 
                     </div>
 
@@ -2461,14 +2925,33 @@
             
                 <li class="param">
                     
-                        <code class="param-name">styleString</code>
+                        <code class="param-name">view</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The style string from the article layout&#39;s media directive</p>
+                        <p>The view to retrieve the default styling for (view, 
+editor, post)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[overrides]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A hash of style properties that will be applied 
+to the base style for the given view</p>
 
                     </div>
 
@@ -2485,8 +2968,8 @@
 </div>
 
                 
-                    <div id="method_getMediaThumb" class="method item">
-    <h3 class="name"><code>getMediaThumb</code></h3>
+                    <div id="method_isFile" class="method item">
+    <h3 class="name"><code>isFile</code></h3>
 
     
         <div class="args">
@@ -2494,19 +2977,7 @@
             
                 <li class="arg">
                     
-                        <code>type</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>location</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>cb</code>
+                        <code>mediaUrl</code>
                     
                 </li>
             
@@ -2523,6 +2994,8 @@
     
 
     
+        <span class="flag static">static</span>
+    
 
     
 
@@ -2532,8 +3005,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2541,7 +3012,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l514"><code>include\service\entities\media_service.js:514</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l366"><code>include\service\entities\media_service.js:366</code></a>
         
         </p>
 
@@ -2552,7 +3023,9 @@
     </div>
 
     <div class="description">
-        
+        <p>Determines if the media URI is a file.  It is determined to be a file if and 
+only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.</p>
+
     </div>
 
     
@@ -2563,44 +3036,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name">type</code>
+                        <code class="param-name">mediaUrl</code>
                         <span class="type">String</span>
                     
 
                     
 
                     <div class="param-description">
-                         
-                    </div>
+                        <p>A URI string that points to a media resource</p>
 
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">location</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
                     </div>
 
                     
@@ -2616,8 +3060,8 @@
 </div>
 
                 
-                    <div id="method_getSlideShareId" class="method item">
-    <h3 class="name"><code>getSlideShareId</code></h3>
+                    <div id="method_isRegistered" class="method item">
+    <h3 class="name"><code>isRegistered</code></h3>
 
     
         <div class="args">
@@ -2625,13 +3069,7 @@
             
                 <li class="arg">
                     
-                        <code>mediaURL</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>cb</code>
+                        <code>interfaceImplementation</code>
                     
                 </li>
             
@@ -2640,13 +3078,19 @@
     
 
     
-
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
     
 
     
 
     
 
+    
+
+    
+        <span class="flag static">static</span>
     
 
     
@@ -2657,8 +3101,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2666,7 +3108,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l597"><code>include\service\entities\media_service.js:597</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l339"><code>include\service\entities\media_service.js:339</code></a>
         
         </p>
 
@@ -2677,7 +3119,8 @@
     </div>
 
     <div class="description">
-        
+        <p>Indicates if a media renderer is already registered</p>
+
     </div>
 
     
@@ -2688,29 +3131,15 @@
             
                 <li class="param">
                     
-                        <code class="param-name">mediaURL</code>
-                        <span class="type">String</span>
+                        <code class="param-name">interfaceImplementation</code>
+                        <span class="type">Function | Object</span>
                     
 
                     
 
                     <div class="param-description">
-                         
-                    </div>
+                        <p>A prototype or object that implements the media renderer interface</p>
 
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
                     </div>
 
                     
@@ -2721,115 +3150,19 @@
     
 
     
+        <div class="returns">
+            <h4>Returns:</h4>
 
-    
-</div>
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE if registered, FALSE if not</p>
 
                 
-                    <div id="method_getVimeoThumb" class="method item">
-    <h3 class="name"><code>getVimeoThumb</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>location</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>cb</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
+            </div>
         </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_media_service.js.html#l563"><code>include\service\entities\media_service.js:563</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">location</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
     
 
     
@@ -2877,8 +3210,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2886,7 +3217,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l288"><code>include\service\entities\media_service.js:288</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l309"><code>include\service\entities\media_service.js:309</code></a>
         
         </p>
 
@@ -2990,8 +3321,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -2999,7 +3328,7 @@
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l71"><code>include\service\entities\media_service.js:71</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l92"><code>include\service\entities\media_service.js:92</code></a>
         
         </p>
 
@@ -3063,6 +3392,864 @@ occurred and a media descriptor if found.</p>
 </div>
 
                 
+                    <div id="method_registerRenderer" class="method item">
+    <h3 class="name"><code>registerRenderer</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>interfaceImplementation</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l323"><code>include\service\entities\media_service.js:323</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Registers a media renderer</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">interfaceImplementation</code>
+                        <span class="type">Function | Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A prototype or object that implements the media renderer interface.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE if the implementation was registered, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_render" class="method item">
+    <h3 class="name"><code>render</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>The</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>options</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l526"><code>include\service\entities\media_service.js:526</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Renders the media represented by the provided media descriptor.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">The</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>media resource ID</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[attrs]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired HTML attributes that will be 
+added to the element that provides the rendering</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[style]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired style overrides for the media</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[view]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The view type that the media will be rendered 
+for (view, editor, post).  Any style options provided will override those 
+provided by the default style associated with the view.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters. An Error if 
+exists and the rendered HTML content for the media resource.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_render" class="method item">
+    <h3 class="name"><code>render</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>The</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>options</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l489"><code>include\service\entities\media_service.js:489</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Renders the media represented by the provided media flag</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">The</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>media resource ID</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[attrs]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired HTML attributes that will be 
+added to the element that provides the rendering</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[style]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired style overrides for the media</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[view]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The view type that the media will be rendered 
+for (view, editor, post).  Any style options provided will override those 
+provided by the default style associated with the view.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters. An Error if 
+exists and the rendered HTML content for the media resource.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_renderById" class="method item">
+    <h3 class="name"><code>renderById</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>The</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>options</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l457"><code>include\service\entities\media_service.js:457</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Renders a media resource by ID where ID refers the to the media descriptor 
+id.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">The</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>media resource ID</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[attrs]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired HTML attributes that will be 
+added to the element that provides the rendering</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[style]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired style overrides for the media</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[view]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The view type that the media will be rendered 
+for (view, editor, post).  Any style options provided will override those 
+provided by the default style associated with the view.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters. An Error if 
+exists and the rendered HTML content for the media resource.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_renderByLocation" class="method item">
+    <h3 class="name"><code>renderByLocation</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>options</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>cb</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l427"><code>include\service\entities\media_service.js:427</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Renders a resource by type and location (mediaId).</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name">location</code>
+                                    <span class="type">String</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The unique media identifier for the type</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[type]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The type of provider that knows how to render 
+the resource</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[attrs]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired HTML attributes that will be 
+added to the element that provides the rendering</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[style]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The desired style overrides for the media</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[view]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>The view type that the media will be rendered 
+for (view, editor, post).  Any style options provided will override those 
+provided by the default style associated with the view.</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A callback that provides two parameters.  An Error if 
+exists and the rendered HTML content for the media resource.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_save" class="method item">
     <h3 class="name"><code>save</code></h3>
 
@@ -3110,8 +4297,6 @@ occurred and a media descriptor if found.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3119,7 +4304,7 @@ occurred and a media descriptor if found.</p>
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l101"><code>include\service\entities\media_service.js:101</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l122"><code>include\service\entities\media_service.js:122</code></a>
         
         </p>
 
@@ -3243,8 +4428,6 @@ occurred and a media descriptor if found.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3252,7 +4435,7 @@ occurred and a media descriptor if found.</p>
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l213"><code>include\service\entities\media_service.js:213</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l234"><code>include\service\entities\media_service.js:234</code></a>
         
         </p>
 
@@ -3374,8 +4557,6 @@ occurred and a media descriptor if found.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3383,7 +4564,7 @@ occurred and a media descriptor if found.</p>
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l227"><code>include\service\entities\media_service.js:227</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l248"><code>include\service\entities\media_service.js:248</code></a>
         
         </p>
 
@@ -3499,8 +4680,6 @@ occurred and a media descriptor if found.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3508,7 +4687,7 @@ occurred and a media descriptor if found.</p>
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l278"><code>include\service\entities\media_service.js:278</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l299"><code>include\service\entities\media_service.js:299</code></a>
         
         </p>
 
@@ -3568,6 +4747,115 @@ occurred and a media descriptor if found.</p>
 </div>
 
                 
+                    <div id="method_unregisterRenderer" class="method item">
+    <h3 class="name"><code>unregisterRenderer</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>interfaceImplementation</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l350"><code>include\service\entities\media_service.js:350</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Unregisters a media renderer</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">interfaceImplementation</code>
+                        <span class="type">Function | Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A prototype or object that implements the media renderer interface</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Boolean</span>:
+                    
+                    <p>TRUE if unregistered, FALSE if not</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_validate" class="method item">
     <h3 class="name"><code>validate</code></h3>
 
@@ -3609,8 +4897,6 @@ occurred and a media descriptor if found.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3618,7 +4904,7 @@ occurred and a media descriptor if found.</p>
             
         
         
-        <a href="../files/include_service_entities_media_service.js.html#l128"><code>include\service\entities\media_service.js:128</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l149"><code>include\service\entities\media_service.js:149</code></a>
         
         </p>
 
@@ -3707,8 +4993,6 @@ occurred.  The second is an array of validation error objects.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3754,8 +5038,6 @@ occurred.  The second is an array of validation error objects.</p>
         
             
                 
-                    <p>Provided by the <a href="../modules/Entities.html">Entities</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -3774,6 +5056,55 @@ occurred.  The second is an array of validation error objects.</p>
 
     <div class="description">
         
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_REGISTERED_MEDIA_RENDERERS" class="property item private">
+    <h3 class="name"><code>REGISTERED_MEDIA_RENDERERS</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/include_service_entities_media_service.js.html#l71"><code>include\service\entities\media_service.js:71</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Contains the list of media renderers</p>
+
     </div>
 
     

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -322,31 +364,6 @@ var extend = require(&#x27;node.extend&#x27;);
  * @constructor
  */
 function Util(){};
-
-/**
- * Takes an array of promises and waits for each to be resolved before calling
- * back.
- * @static
- * @method onPromisesOk
- * @param {Array} promises
- * @param {Function} A callback that takes zero arguments.  It is executed when
- * all promises have been resolved.
- */
-Util.onPromisesOk = function(promises, cb){
-
-	var cnt = 0;
-	for(var i = 0; i &lt; promises.length; i++){
-
-		promises[i].then(function(result){
-
-			pb.log.debug(&quot;Promise [&quot;+cnt+&quot;] Compelted&quot;);
-			if(++cnt == promises.length){
-				pb.log.debug(&quot;All promises Accounted for&quot;);
-				cb();
-			}
-		});
-	}
-};
 
 /**
  * Clones an object by serializing it and then re-parsing it.
@@ -856,17 +873,47 @@ Util.getFiles = function(dirPath, options, cb) {
 };
 
 /**
+ * Retrieves the extension off of the end of a string that represents a URI to 
+ * a resource
+ * @static
+ * @method getExtension
+ * @param {String} path URI to the resource
+ * @param {Object} [options]
+ * @param {Boolean} [options.lower=false] When TRUE the extension will be returned as lower case
+ * @return {String} The value after the last &#x27;.&#x27; character
+ */
+Util.getExtension = function(path, options) {
+    if (!pb.validation.isNonEmptyStr(path, true)) {
+        return null;
+    }
+    
+    var ext = null;
+    var index = path.lastIndexOf(&#x27;.&#x27;);
+    if (index &gt;= 0) {
+        ext = path.substring(index + 1);
+        
+        //apply options
+        if (options &amp;&amp; options.lower) {
+            ext = ext.toLowerCase();
+        }
+    }
+    return ext;
+};
+
+/**
  * Provides typical conversions for time
+ * @static
+ * @readonly
  * @property TIME
  * @type {Object}
  */
-Util.TIME = {
+Util.TIME = Object.freeze({
 
 	MILLIS_PER_SEC: 1000,
 	MILLIS_PER_MIN: 60000,
 	MILLIS_PER_HOUR: 3600000,
 	MILLIS_PER_DAY: 86400000
-};
+});
 
 //exports
 module.exports = Util;

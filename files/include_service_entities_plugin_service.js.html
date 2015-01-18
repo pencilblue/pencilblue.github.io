@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -375,6 +417,16 @@ var PUBLIC_DIR_NAME   = &#x27;public&#x27;;
  * @type {Object}
  */
 var ACTIVE_PLUGINS = {};
+
+/**
+ * The name of the collection where plugin descriptors are stored
+ * @private
+ * @static
+ * @readonly
+ * @property PLUGIN_COLL
+ * @type {String}
+ */
+var PLUGIN_COLL = &#x27;plugin&#x27;;
 
 /**
  * Retrieves the path to the active fav icon.
@@ -760,18 +812,17 @@ PluginService.prototype.getPlugin = function(pluginIdentifier, cb) {
 		where.uid = pluginIdentifier;
 	}
 	var dao = new pb.DAO();
-	dao.loadByValues(where, &#x27;plugin&#x27;, cb);
+	dao.loadByValues(where, PLUGIN_COLL, cb);
 };
 
+/**
+ * Retrieves the plugins that have themes associated with them
+ * @method getPluginsWithThemes
+ * @param {Function} cb Provides two parameters: Error, Array
+ */
 PluginService.prototype.getPluginsWithThemes = function(cb) {
 	var dao = new pb.DAO();
-	dao.query(&#x27;plugin&#x27;, {theme: {$exists: true}}).then(function(themes) {
-		if (util.isError(themes)) {
-			cb(themes, null);
-			return;
-		}
-		cb(null, themes);
-	});
+	dao.q(PLUGIN_COLL, {where: {theme: {$exists: true}}}, cb);
 };
 
 /**
@@ -845,13 +896,8 @@ PluginService.prototype.resetSettings = function(details, cb) {
 
 			//save it
 			var dao      = new pb.DAO();
-			dao.update(settings).then(function(result) {
-				if (util.isError(result)) {
-					cb(result, false);
-				}
-				else {
-					cb(null, true);
-				}
+			dao.save(settings, function(err, result) {
+                cb(err, !util.isError(err));
 			});
 		});
 	});
@@ -903,13 +949,8 @@ PluginService.prototype.resetThemeSettings = function(details, cb) {
 
 			//save it
 			var dao      = new pb.DAO();
-			dao.update(settings).then(function(result) {
-				if (util.isError(result)) {
-					cb(result, false);
-				}
-				else {
-					cb(null, true);
-				}
+			dao.save(settings, function(err, result) {
+				cb(err, !util.isError(err));
 			});
 		});
 	});
@@ -991,17 +1032,13 @@ PluginService.genPublicPath = function(plugin, relativePathToMedia) {
  */
 PluginService.prototype.getActivePlugins = function(cb) {
 
-	var where = {uid: {&#x27;$in&#x27;: this.getActivePluginNames()}};
-	var order = {created: pb.DAO.ASC};
+    var opts = {
+        select: pb.DAO.SELECT_ALL,
+        where: {uid: {&#x27;$in&#x27;: this.getActivePluginNames()}},
+        order: {created: pb.DAO.ASC}
+    };
 	var dao   = new pb.DAO();
-	dao.query(&#x27;plugin&#x27;, where, pb.DAO.SELECT_ALL, order).then(function(results) {
-		if (util.isError(results)) {
-			cb(results, null);
-		}
-		else {
-			cb(null, results);
-		}
-	});
+	dao.q(PLUGIN_COLL, opts, cb);
 };
 
 /**
@@ -1034,17 +1071,13 @@ PluginService.getActiveContentTemplates = function() {
  * @param {Function} cb A callback that provides two parameters: cb(Error, Array)
  */
 PluginService.prototype.getInactivePlugins = function(cb) {
-	var where = {uid: {&#x27;$nin&#x27;: this.getActivePluginNames()}};
-	var order = {created: pb.DAO.ASC};
-	var dao   = new pb.DAO();
-	dao.query(&#x27;plugin&#x27;, where, pb.DAO.SELECT_ALL, order).then(function(results) {
-		if (util.isError(results)) {
-			cb(results, null);
-		}
-		else {
-			cb(null, results);
-		}
-	});
+    var opts = {
+        select: pb.DAO.SELECT_ALL,
+        where: {uid: {&#x27;$nin&#x27;: this.getActivePluginNames()}},
+        order: {created: pb.DAO.ASC}
+    };
+    var dao = new pb.DAO();
+	dao.q(PLUGIN_COLL, opts, cb);
 };
 
 /**
@@ -1243,23 +1276,20 @@ PluginService.prototype.initPlugins = function(cb) {
 
 	var self = this;
 	var dao  = new pb.DAO();
-	dao.query(&#x27;plugin&#x27;).then(function(plugins) {
-		if (util.isError(plugins)) {
-			cb(plugins, null);
-			return;
+	dao.q(PLUGIN_COLL, function(err, plugins) {
+		if (util.isError(err)) {
+			return cb(err);
 		}
 		else if (!util.isArray(plugins)) {
 			var err = new Error(&#x27;An array of plugins was expected but found [&#x27;+(typeof plugins)+&#x27;][&#x27;+util.inspect(plugins)+&#x27;] instead.&#x27;);
 			pb.log.error(&#x27;PluginService %s&#x27;, err.stack);
-			cb(err, plugins);
-			return;
+			return cb(err, plugins);
 		}
 
 		//make sure there are plugins to initialize
 		if (plugins.length === 0) {
 			pb.log.debug(&#x27;PluginService: No plugins are installed&#x27;);
-			cb(null, true);
-			return;
+			return cb(null, true);
 		}
 		var tasks  = pb.utils.getTasks(plugins, function(plugins, i) {
 			return function(callback) {
@@ -1285,7 +1315,7 @@ PluginService.prototype.initPlugins = function(cb) {
 					pb.log.debug(&#x27;PluginService: Plugin [%s] was successfully initialized&#x27;, result.plugin.name);
 				}
 				else {
-					pb.log.warn(&#x27;PluginService: Plugin [%s] failed to initialize.&#x27;+result.initialized, result.plugin.name);
+					pb.log.warn(&#x27;PluginService: Plugin [%s] failed to initialize. INITIALIZED=%s&#x27;, result.plugin.name, result.initialized);
 				}
 				if (result.error) {
 					pb.log.error(&#x27;PluginService: The following error was produced while initializing the %s plugin: %s&#x27;, result.plugin.name, result.error.stack);
@@ -2348,7 +2378,7 @@ PluginService.loadController = function(pathToController, pluginUid, cb) {
  */
 PluginService.getServiceName = function(pathToService, service) {
 	var name = &#x27;UNKNOWN&#x27;;
-	if (service &amp;&amp; typeof service.getName === &#x27;function&#x27;) {
+	if (service &amp;&amp; pb.utils.isFunction(service.getName)) {
 		name = service.getName();
 	}
 	else {

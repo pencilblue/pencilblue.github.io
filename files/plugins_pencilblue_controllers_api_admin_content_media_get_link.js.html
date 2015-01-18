@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -295,7 +337,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -313,13 +355,22 @@
 
 /**
  * Returns information on a media link
+ * @class GetMediaLinkApiController
+ * @constructor
+ * extends BaseController
  */
-function GetMediaLink(){}
+function GetMediaLinkApiController(){}
 
 //inheritance
-util.inherits(GetMediaLink, pb.BaseController);
+util.inherits(GetMediaLinkApiController, pb.BaseController);
 
-GetMediaLink.prototype.render = function(cb) {
+/**
+ * Inspects the provided URL and returns a media descriptor for the URL.  If 
+ * the media type is not supported a 400 will be returned to the client.  
+ * @method render
+ * @param {Function} cb
+ */
+GetMediaLinkApiController.prototype.render = function(cb) {
     var self = this;
     var get  = this.query;
 
@@ -328,286 +379,25 @@ GetMediaLink.prototype.render = function(cb) {
             code: 400,
             content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_URL&#x27;))
         });
-        return;
     }
-
-    if(self.checkForMediaFile(get.url, cb)) {
-        return;
-    }
-
-    get.url = get.url.split(&#x27;https://&#x27;).join(&#x27;&#x27;).split(&#x27;http://&#x27;).join(&#x27;&#x27;).split(&#x27;//&#x27;).join(&#x27;&#x27;);
-    if(get.url.charAt(get.url.length - 1) === &#x27;/&#x27;) {
-        get.url = get.url.substr(0, get.url.length - 1);
-    }
-
-    if(get.url.indexOf(&#x27;youtube.com&#x27;) !== -1 || get.url.indexOf(&#x27;youtu.be&#x27;) !== -1) {
-        self.getYouTube(get.url, cb, get.url.indexOf(&#x27;youtu.be&#x27;) &gt; -1 );
-    }
-    else if(get.url.indexOf(&#x27;vimeo.com&#x27;) !== -1) {
-        self.getVimeo(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;dailymotion.com/video/&#x27;) !== -1 || get.url.indexOf(&#x27;dai.ly&#x27;) !== -1) {
-        self.getDailyMotion(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;vine.co&#x27;) !== -1) {
-        self.getVine(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;instagram.com&#x27;) !== -1) {
-        self.getInstagram(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;slideshare.net&#x27;) !== -1) {
-        self.getSlideshare(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;trinket.io&#x27;) !== -1) {
-        self.getTrinket(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;storify.com&#x27;) !== -1) {
-        self.getStorify(get.url, cb);
-    }
-    else if(get.url.indexOf(&#x27;kickstarter.com&#x27;) !== -1) {
-        self.getKickstarter(get.url, cb);
-    }
-    else {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;UNSUPPORTED_MEDIA&#x27;))
-        });
-    }
-};
-
-GetMediaLink.prototype.checkForMediaFile = function(url, cb) {
-    var self = this;
-    var fileType = url.substr(url.lastIndexOf(&#x27;.&#x27;) + 1).toLowerCase();
-
-    switch(fileType) {
-        case &#x27;jpg&#x27;:
-        case &#x27;jpeg&#x27;:
-        case &#x27;png&#x27;:
-        case &#x27;gif&#x27;:
-        case &#x27;svg&#x27;:
-        case &#x27;webp&#x27;:
-            self.mediaOutput(&#x27;image&#x27;, url, url, cb);
-            return true;
-        case &#x27;mp4&#x27;:
-            self.mediaOutput(&#x27;video/mp4&#x27;, url, &#x27;&#x27;, cb);
-            return true;
-        case &#x27;webm&#x27;:
-            self.mediaOutput(&#x27;video/webm&#x27;, url, &#x27;&#x27;, cb);
-            return true;
-        case &#x27;ogv&#x27;:
-            self.mediaOutput(&#x27;video/ogg&#x27;, url, &#x27;&#x27;, cb);
-            return true;
-    }
-    return false;
-};
-
-GetMediaLink.prototype.getYouTube = function(url, cb, shortURL) {
-    var videoId;
-
-    if(!shortURL) {
-        if(url.indexOf(&#x27;v=&#x27;) === -1) {
-            cb({
+    
+    var service = new pb.MediaService();
+    service.getMediaDescriptor(get.url, function(err, descriptor) {
+        if (util.isError(err)) {
+            return self.reqHandler.serveError(err);
+        }
+        else if (!descriptor) {
+            return cb({
                 code: 400,
-                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-            });
-            return;
+                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_URL&#x27;))
+            }); 
         }
-        videoId = url.substr(url.indexOf(&#x27;v=&#x27;) + 2);
-        if(videoId.indexOf(&#x27;&amp;&#x27;) != -1) {
-            videoId = videoId.substr(0, videoId.indexOf(&#x27;&amp;&#x27;));
-        }
-    }
-    else {
-        if(url.indexOf(&#x27;/&#x27;) === -1) {
-            cb({
-                code: 400,
-                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-            });
-            return;
-        }
-        videoId = url.substr(url.lastIndexOf(&#x27;/&#x27;) + 1);
-        if(videoId.indexOf(&#x27;?&#x27;) != -1) {
-            videoId = videoId.substr(0, videoId.indexOf(&#x27;?&#x27;));
-        }
-    }
-
-    this.mediaOutput(&#x27;youtube&#x27;, videoId, &#x27;http://img.youtube.com/vi/&#x27; + videoId + &#x27;/0.jpg&#x27;, cb);
-};
-
-GetMediaLink.prototype.getVimeo = function(url, cb) {
-    var self = this;
-
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var videoId = url.substr(url.lastIndexOf(&#x27;/&#x27;) + 1);
-    if(videoId.indexOf(&#x27;?&#x27;) != -1)
-    {
-        videoId = videoId.substr(0, videoId.indexOf(&#x27;?&#x27;));
-    }
-
-    this.getJSON(&#x27;http://vimeo.com/api/v2/video/&#x27; + videoId + &#x27;.json&#x27;, function(data) {
-        self.mediaOutput(&#x27;vimeo&#x27;, videoId, data[0].thumbnail_medium, cb);
+        cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;&#x27;, descriptor)});
     });
-};
-
-GetMediaLink.prototype.getDailyMotion = function(url, cb) {
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var videoId = url.substr(url.lastIndexOf(&#x27;/&#x27;) + 1);
-    if(videoId.indexOf(&#x27;?&#x27;) != -1)
-    {
-        videoId = videoId.substr(0, videoId.indexOf(&#x27;?&#x27;));
-    }
-    this.mediaOutput(&#x27;daily_motion&#x27;, videoId, &#x27;http://www.dailymotion.com/thumbnail/video/&#x27; + videoId, cb);
-};
-
-GetMediaLink.prototype.getVine = function(url, cb) {
-    url = url.split(&#x27;/embed&#x27;).join(&#x27;&#x27;);
-
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var videoId = url.substr(url.lastIndexOf(&#x27;/&#x27;) + 1);
-    if(videoId.indexOf(&#x27;?&#x27;) != -1)
-    {
-        videoId = videoId.substr(0, videoId.indexOf(&#x27;?&#x27;));
-    }
-
-    this.mediaOutput(&#x27;vine&#x27;, videoId, &#x27;&#x27;, cb);
-};
-
-GetMediaLink.prototype.getInstagram = function(url, cb) {
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var videoId = url.substr(url.lastIndexOf(&#x27;/&#x27;) + 1);
-    if(videoId.indexOf(&#x27;?&#x27;) != -1)
-    {
-        videoId = videoId.substr(0, videoId.indexOf(&#x27;?&#x27;));
-    }
-
-    this.mediaOutput(&#x27;instagram&#x27;, videoId, &#x27;&#x27;, cb);
-};
-
-GetMediaLink.prototype.getSlideshare = function(url, cb) {
-    var self = this;
-
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    this.getJSON(&#x27;http://www.slideshare.net/api/oembed/2?url=&#x27; + url + &#x27;&amp;format=jsonp&amp;callback=?&#x27;, function(data) {
-        var slideshowId = data.slideshow_id;
-        if(!slideshowId)
-        {
-            cb({
-                code: 400,
-                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-            });
-            return;
-        }
-
-        self.mediaOutput(&#x27;slideshare&#x27;, slideshowId, &#x27;&#x27;, cb);
-    });
-};
-
-GetMediaLink.prototype.getTrinket = function(url, cb) {
-    if(url.indexOf(&#x27;/embed&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var mediaId = url.substr(url.lastIndexOf(&#x27;/embed&#x27;) + 7);
-    this.mediaOutput(&#x27;trinket&#x27;, mediaId, &#x27;&#x27;, cb);
-};
-
-GetMediaLink.prototype.getStorify = function(url, cb) {
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var mediaId = url.substr(url.indexOf(&#x27;storify.com&#x27;) + 12);
-    this.mediaOutput(&#x27;storify&#x27;, mediaId, &#x27;&#x27;, cb);
-};
-
-GetMediaLink.prototype.getKickstarter = function(url, cb) {
-    if(url.indexOf(&#x27;/&#x27;) === -1) {
-        cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;INVALID_MEDIA_URL&#x27;))
-        });
-        return;
-    }
-
-    var videoId = url.substr(url.indexOf(&#x27;kickstarter.com&#x27;) + 15);
-    if(videoId.indexOf(&#x27;?&#x27;) != -1)
-    {
-        videoId = videoId.substr(0, videoId.indexOf(&#x27;?&#x27;));
-    }
-
-    this.mediaOutput(&#x27;kickstarter&#x27;, videoId, &#x27;&#x27;, cb);
-};
-
-GetMediaLink.prototype.getJSON = function(url, cb) {
-    http.get(url, function(res) {
-        var body = &#x27;&#x27;;
-
-        res.on(&#x27;data&#x27;, function(chunk) {
-            body += chunk;
-        });
-
-        res.on(&#x27;end&#x27;, function() {
-            cb(JSON.parse(body));
-        });
-    });
-};
-
-GetMediaLink.prototype.mediaOutput = function(type, location, thumb, cb) {
-    var mediaData = {
-        isFile: type === &#x27;image&#x27; || type.indexOf(&#x27;video/&#x27;) &gt; -1,
-        mediaType: type,
-        location: location,
-        thumb: thumb
-    };
-
-    cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;&#x27;, mediaData)});
 };
 
 //exports
-module.exports = GetMediaLink;
+module.exports = GetMediaLinkApiController;
 
     </pre>
 </div>

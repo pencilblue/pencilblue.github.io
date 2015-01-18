@@ -1,0 +1,170 @@
+YUI.add("yuidoc-meta", function(Y) {
+   Y.YUIDoc = { meta: {
+    "classes": [
+        "AdminChangePasswordController",
+        "AdminIndexController",
+        "AdminNavigation",
+        "AdminSubnavService",
+        "ApiActionController",
+        "ArticleService",
+        "AsyncJobRunner",
+        "BaseController",
+        "CacheEntityService",
+        "CacheFactory",
+        "ChangePasswordFormController",
+        "ClientJS",
+        "ClusterApiController",
+        "ClusterJobRunner",
+        "CommandService",
+        "CommentService",
+        "ContentService",
+        "CustomObjectService",
+        "DAO",
+        "DBEntityService",
+        "DBManager",
+        "DeleteArticleActionController",
+        "DeleteMediaController",
+        "DocumentCreator",
+        "EditMediaActionController",
+        "EditObject",
+        "EditObjectType",
+        "EmailService",
+        "ErrorsOverTime",
+        "FSEntityService",
+        "ForgotPasswordController",
+        "FormBodyParser",
+        "FormController",
+        "FsMediaProvider",
+        "ImportWP",
+        "JSONFSEntityService",
+        "JobApiController",
+        "JobRunner",
+        "JobService",
+        "JsonBodyParser",
+        "LibrariesService",
+        "Localization",
+        "ManageComments",
+        "ManageObjectTypes",
+        "ManageObjects",
+        "MediaContentController",
+        "MediaForm",
+        "MediaLoader",
+        "MediaService",
+        "MemoryEntityService",
+        "MongoCommandBroker",
+        "MongoMediaProvider",
+        "MongoRegistrationProvider",
+        "MongoSessionStore",
+        "NavItemFormController",
+        "NewObjectActionController",
+        "NewObjectTypeActionController",
+        "NewPagePostController",
+        "NotFoundController",
+        "ObjectFormController",
+        "PBError",
+        "PageController",
+        "PencilBlue",
+        "PluginApi",
+        "PluginAvailableJob",
+        "PluginDependenciesJob",
+        "PluginDetailsViewController",
+        "PluginInitializeJob",
+        "PluginInstallJob",
+        "PluginJobRunner",
+        "PluginPublicContentController",
+        "PluginService",
+        "PluginSettingsFormController",
+        "PluginUninstallJob",
+        "ReadOnlySimpleLayeredService",
+        "RedisCommandBroker",
+        "RedisRegistrationProvider",
+        "RedisSessionStore",
+        "RequestHandler",
+        "SecurityService",
+        "ServerRegistration",
+        "SessionHandler",
+        "SimpleLayeredService",
+        "SortObjects",
+        "SortObjectsActionController",
+        "TemplateEntityService",
+        "TemplateService",
+        "TemplateValue",
+        "TopMenuService",
+        "UrlApiController",
+        "UrlService",
+        "UserService",
+        "Util",
+        "ValidationService"
+    ],
+    "modules": [
+        "Admin",
+        "Database",
+        "Entities",
+        "ErrorSuccess",
+        "Model",
+        "Security",
+        "Services",
+        "Session",
+        "Storage",
+        "Theme",
+        "Validation"
+    ],
+    "allModules": [
+        {
+            "displayName": "Admin",
+            "name": "Admin",
+            "description": "Services calls for the admin interface"
+        },
+        {
+            "displayName": "Database",
+            "name": "Database",
+            "description": "Controlls the data model"
+        },
+        {
+            "displayName": "Entities",
+            "name": "Entities",
+            "description": "Service calls for individual entities in the system"
+        },
+        {
+            "displayName": "ErrorSuccess",
+            "name": "ErrorSuccess",
+            "description": "Specialized application error that knows what status code to return"
+        },
+        {
+            "displayName": "Model",
+            "name": "Model",
+            "description": "Creates structures for persistence and cleans various fields."
+        },
+        {
+            "displayName": "Security",
+            "name": "Security",
+            "description": "Service for managing user access"
+        },
+        {
+            "displayName": "Services",
+            "name": "Services",
+            "description": "Service for creating JavaScript tags"
+        },
+        {
+            "displayName": "Session",
+            "name": "Session",
+            "description": "Session storage backed by MongoDB"
+        },
+        {
+            "displayName": "Storage",
+            "name": "Storage",
+            "description": "Services for managing storage"
+        },
+        {
+            "displayName": "Theme",
+            "name": "Theme",
+            "description": "Theme content services"
+        },
+        {
+            "displayName": "Validation",
+            "name": "Validation",
+            "description": "Provides a set of functions for common validations."
+        }
+    ]
+} };
+});

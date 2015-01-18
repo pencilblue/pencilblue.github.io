@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -353,12 +395,12 @@ DeleteUser.prototype.render = function(cb) {
         }
 
         // delete the user&#x27;s comments
-        dao.deleteMatching({commenter: vars.id}, &#x27;comment&#x27;).then(function(result) {
+        dao.delete({commenter: vars.id}, &#x27;comment&#x27;, function(err, result) {
             //reassign the user&#x27;s content to the current user
-            self.reassignContent(vars.id, self.session.authentication.user_id, dao, function(articles, pages, sections) {
+            self.reassignContent(vars.id, self.session.authentication.user_id, dao, function(err, results) {
                 //delete the user
-                dao.deleteMatching({_id: ObjectID(vars.id)}, &#x27;user&#x27;).then(function(result) {
-                    if(result &lt; 1) {
+                dao.deleteById(vars.id, &#x27;user&#x27;, function(err, result) {
+                    if(util.isError(err) || result &lt; 1) {
                         cb({
                             code: 500,
                             content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;ERROR_DELETING&#x27;))
@@ -374,65 +416,38 @@ DeleteUser.prototype.render = function(cb) {
 };
 
 DeleteUser.prototype.reassignContent = function(deletedUserId, newUserId, dao, cb) {
-    dao.query(&#x27;article&#x27;, {author: deletedUserId}).then(function(articles) {
-        dao.query(&#x27;page&#x27;, {author: deletedUserId}).then(function(pages) {
-            dao.query(&#x27;section&#x27;, {editor: deletedUserId}).then(function(sections) {
-                var self = this;
-
-                this.updateArticlesUser = function(index) {
-                    if(index &gt;= articles.length) {
-                        self.updatePagesUser(0);
-                        return;
-                    }
-
-                    dao.update(articles[index]).then(function(result) {
-                        index++;
-                        self.updateArticlesUser(index);
-                    });
-                };
-
-                this.updatePagesUser = function(index) {
-                    if(index &gt;= pages.length) {
-                        self.updateSectionsUser(0);
-                        return;
-                    }
-
-                    dao.update(pages[index]).then(function(result) {
-                        index++;
-                        self.updatePagesUser(index);
-                    });
-                };
-
-                this.updateSectionsUser = function(index) {
-                    if(index &gt;= sections.length) {
-                        cb(articles, pages, sections);
-                        return;
-                    }
-
-                    dao.update(sections[index]).then(function(result) {
-                        index++;
-                        self.updateSectionsUser(index);
-                    });
-                };
-
-                articles = articles || [];
-                pages = pages || [];
-                sections = sections || [];
-
-                for(var i = 0; i &lt; articles.length; i++) {
-                    articles[i].author = newUserId;
-                }
-                for(i = 0; i &lt; pages.length; i++) {
-                    pages[i].author = newUserId;
-                }
-                for(i = 0; i &lt; sections.length; i++) {
-                    sections[i].editor = newUserId;
-                }
-
-                this.updateArticlesUser(0);
-            });
-        });
-    });
+    
+    var authorWhere = {
+        author: deletedUserId
+    };
+    var authorUpdate = {
+        $set: {
+            author: newUserId
+        }
+    };
+    var updateOptions = {
+        multi: true
+    };
+    var tasks = [
+        
+        //update articles
+        function(callback) {
+            dao.updateFields(&#x27;article&#x27;, authorWhere, authorUpdate, updateOptions, callback);
+        },
+                             
+         //update pages
+        function(callback) {
+            dao.updateFields(&#x27;page&#x27;, authorWhere, authorUpdate, updateOptions, callback);
+        },
+                             
+        //update sections
+        function(callback) {
+            var editorWhere = {editor: deletedUserId};
+            var editorUpdate = {$set: {editor: newUserId}};
+            dao.updateFields(&#x27;section&#x27;, editorWhere, editorUpdate, updateOptions, callback);
+        }
+    ];
+    async.parallel(tasks, cb);
 };
 
 //exports

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -316,16 +358,6 @@
  *
  * @module Services
  */
-
-/**
- * Service calls for individual entities in the system
- *
- * @module Services
- * @submodule Entities
- */
-
-//dependencies
-var Media = require(path.join(DOCUMENT_ROOT, &#x27;include/theme/media&#x27;));
 
 /**
  * Retrieves articles and pages
@@ -463,10 +495,9 @@ ArticleService.prototype.find = function(where, options, cb) {
 
 	var self = this;
 	var dao  = new pb.DAO();
-	dao.query(this.getContentType(), where, select, order, limit, offset).then(function(articles) {
-		if (util.isError(articles)) {
-			cb(articles, []);
-			return;
+	dao.q(this.getContentType(), {where: where, select: select, order: order, limit: limit, offset: offset}, function(err, articles) {
+		if (util.isError(err)) {
+			return cb(err, []);
 		}
 		else if (articles.length === 0) {
 			return cb(null, []);
@@ -605,10 +636,9 @@ ArticleService.prototype.processArticleForDisplay = function(article, articleCou
         	var where = {article: article._id.toString()};
 	        var order = {created: pb.DAO.ASC};
 	        var dao   = new pb.DAO();
-	        dao.query(&#x27;comment&#x27;, where, pb.DAO.PROJECT_ALL, order).then(function(comments) {
-	            if(util.isError(comments) || comments.length == 0) {
-	                cb(null, null);
-	                return;
+	        dao.q(&#x27;comment&#x27;, {where: where, select: pb.DAO.PROJECT_ALL, order: order}, function(err, comments) {
+	            if(util.isError(err) || comments.length == 0) {
+	                return cb(null, null);
 	            }
 
 	            self.getCommenters(comments, contentSettings, function(err, commentsWithCommenters) {
@@ -634,17 +664,7 @@ ArticleService.prototype.getArticleAuthors = function(articles, cb) {
 
 	//gather all author IDs
 	var dao = new pb.DAO();
-	dao.query(&#x27;user&#x27;, pb.DAO.getIDInWhere(articles, &#x27;author&#x27;)).then(function(authors) {
-		if (util.isError(authors)) {
-			cb(authors, []);
-			return;
-		}
-		else if (authors.length === 0) {
-			cb(null, []);
-			return;
-		}
-		cb(null, authors);
-	});
+	dao.q(&#x27;user&#x27;, {where: pb.DAO.getIDInWhere(articles, &#x27;author&#x27;)}, cb);
 };
 
 /**
@@ -838,33 +858,56 @@ MediaLoader.prototype.start = function(articleLayout, cb) {
  * @param {Function} cb            Callback function
  */
 MediaLoader.prototype.replaceMediaTag = function(layout, mediaTemplate, cb) {
-	var index = layout.indexOf(&#x27;^media_display_&#x27;);
-	if (index == -1) {
-        cb(null, layout);
-        return;
+	var flag = pb.MediaService.extractNextMediaFlag(layout);
+    if (!flag) {
+        return cb(null, layout);
     }
-
-    var startIndex       = index + 15;
-    var endIndex         = layout.substr(startIndex).indexOf(&#x27;^&#x27;);
-    var mediaProperties  = layout.substr(startIndex, endIndex).split(&#x27;/&#x27;);
-    var mediaID          = mediaProperties[0];
-    var mediaStyleString = mediaProperties[1];
+    
+    var mediaStyleString = flag.style;
 
     var dao = new pb.DAO();
-    dao.loadById(mediaID, &#x27;media&#x27;, function(err, data) {
-        if(util.isError(err) || !data) {
-            layout = layout.split(layout.substr(startIndex - 15, endIndex + 16)).join(&#x27;&#x27;);
+    dao.loadById(flag.id, &#x27;media&#x27;, function(err, data) {
+        if(util.isError(err)) {
+            return cb(err);
         }
-        else {
-            var mediaEmbed = mediaTemplate.split(&#x27;^media^&#x27;).join(Media.getMediaEmbed(data));
+        else if (!data) {
+            pb.log.warn(&quot;ArticleService: Content contains reference to missing media [%s].&quot;, flag.id);
+            return cb(null, layout.replace(flag.flag, &#x27;&#x27;));
+        }
+        
+        //ensure the max height is set if explicity set for media replacement
+        var options = {
+            view: &#x27;post&#x27;,
+            style: {
+                
+            },
+            attrs: {
+                frameborder: &quot;0&quot;,
+                allowfullscreen: &quot;&quot;
+            }
+        };
+        if (flag.style.maxHeight) {
+            options.style[&#x27;max-height&#x27;] = flag.style.maxHeight;
+        }
+        var ms = new pb.MediaService();
+        ms.render(data, options, function(err, html) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            
+            //get the style for the container
+            var containerStyleStr = pb.MediaService.getStyleForPosition(flag.style.position) || &#x27;&#x27;;
+            
+            //finish up replacements
+            var mediaEmbed = mediaTemplate.split(&#x27;^media^&#x27;).join(html);
             mediaEmbed     = mediaEmbed.split(&#x27;^caption^&#x27;).join(data.caption);
-			mediaEmbed     = mediaEmbed.split(&#x27;^display_caption^&#x27;).join(data.caption ? &#x27;&#x27; : &#x27;display: none&#x27;);
-            mediaEmbed     = Media.getMediaStyle(mediaEmbed, mediaStyleString, data.media_type);
+            mediaEmbed     = mediaEmbed.split(&#x27;^display_caption^&#x27;).join(data.caption ? &#x27;&#x27; : &#x27;display: none&#x27;);
+            mediaEmbed     = mediaEmbed.split(&#x27;^container_style^&#x27;).join(containerStyleStr);
 
-            layout = layout.split(layout.substr(startIndex - 15, endIndex + 16)).join(mediaEmbed);
-        }
-
-        cb(null, layout);
+            console.log(&#x27;RL=&#x27;+layout);
+            console.log(&#x27;NL=&#x27;+layout.replace(flag.flag, mediaEmbed));
+            cb(null, layout.replace(flag.flag, mediaEmbed));
+        });
     });
 };
 

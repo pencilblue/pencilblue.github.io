@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -330,7 +372,7 @@ function DAO(dbName){
      * @property dbName
      * @type {String}
      */
-	this.dbName  = typeof dbName  !== &#x27;undefined&#x27; ? dbName : pb.config.db.name;
+	this.dbName = typeof dbName  !== &#x27;undefined&#x27; ? dbName : pb.config.db.name;
 }
 
 /**
@@ -340,7 +382,7 @@ function DAO(dbName){
  * @property PROJECT_ALL
  * @type {Object}
  */
-DAO.PROJECT_ALL   = {};
+DAO.PROJECT_ALL = Object.freeze({});
 
 /**
  * Static variable to indicate that documents should be retrieve from anywhere
@@ -348,7 +390,7 @@ DAO.PROJECT_ALL   = {};
  * @property ANYWHERE
  * @type {Object}
  */
-DAO.ANYWHERE      = {};
+DAO.ANYWHERE = Object.freeze({});
 
 /**
  * Static variable to indicate that documents should be returned in their
@@ -357,7 +399,7 @@ DAO.ANYWHERE      = {};
  * @property NATURAL_ORDER
  * @type {Array}
  */
-DAO.NATURAL_ORDER = [];
+DAO.NATURAL_ORDER = Object.freeze([]);
 
 /**
  * Static varible to sort ascending
@@ -365,7 +407,7 @@ DAO.NATURAL_ORDER = [];
  * @property ASC
  * @type {Number}
  */
-DAO.ASC  = 1;
+DAO.ASC = 1;
 
 /**
  * Static variable to sort descending
@@ -381,10 +423,11 @@ DAO.DESC = -1;
  * @method loadById
  * @param {String}   id         The unique id of the object
  * @param {String}   collection The collection the object is in
+ * @param {Object}   Key value pair object to exclude the retrival of data
  * @param {Function} cb         Callback function
  */
-DAO.prototype.loadById = function(id, collection, cb){
-	this.loadByValues(DAO.getIDWhere(id), collection, cb);
+DAO.prototype.loadById = function(id, collection, opts, cb){
+    this.loadByValues(DAO.getIDWhere(id), collection, opts, cb);	
 };
 
 /**
@@ -394,12 +437,13 @@ DAO.prototype.loadById = function(id, collection, cb){
  * @param {String}   key        The key to search for
  * @param {*}        val        The value to search for
  * @param {String}   collection The collection to search in
+ * @param {Object}   Key value pair object to exclude the retrival of data
  * @param {Function} cb         Callback function
  */
-DAO.prototype.loadByValue = function(key, val, collection, cb) {
-	var where = {};
-	where[key] = val;
-	this.loadByValues(where, collection, cb);
+DAO.prototype.loadByValue = function(key, val, collection, opts, cb) {
+    var where = {};
+    where[key] = val;
+    this.loadByValues(where, collection, opts, cb);
 };
 
 /**
@@ -408,18 +452,26 @@ DAO.prototype.loadByValue = function(key, val, collection, cb) {
  * @method loadByValues
  * @param {Object}   where      Key value pair object
  * @param {String}   collection The collection to search in
+ * @param {Object}   Key value pair object to exclude the retrival of data
  * @param {Function} cb         Callback function
  */
-DAO.prototype.loadByValues = function(where, collection, cb) {
-    var options = {
-        where: where,
-        select: DAO.PROJECT_ALL,
-        order: DAO.NATURAL_ORDER,
-        limit: 1
-    };
-	this.q(collection, options, function(err, result){
-        cb(err, util.isArray(result) &amp;&amp; result.length &gt; 0 ? result[0] : null);
-	});
+DAO.prototype.loadByValues = function(where, collection, opts, cb) {
+    if (pb.utils.isFunction(opts)) {
+        cb = opts;
+        opts = null;
+    }
+    if (!pb.utils.isObject(opts)) {
+        opts = { };
+    }
+        var options = {
+            where: where,
+            select: opts.select || DAO.PROJECT_ALL,
+            order: opts.order || DAO.NATURAL_ORDER,
+            limit: 1
+        };
+    this.q(collection, options, function(err, result){
+           cb(err, util.isArray(result) &amp;&amp; result.length &gt; 0 ? result[0] : null);
+    });
 };
 
 /**
@@ -493,7 +545,8 @@ DAO.prototype.unique = function(collection, where, exclusionId, cb) {
  * @return {Promise}            A promise object
  */
 DAO.prototype.query = function(entityType, where, select, orderBy, limit, offset){
-
+    pb.log.warn(&#x27;DAO: &quot;query&quot; is deprecated and will be removed 0.4.0. Please update your code to call &quot;q&quot;.&#x27;);
+    
 	var cursor  = this._doQuery(entityType, where, select, orderBy, limit, offset);
 	var promise = new Promise();
 	cursor.toArray(function(err, docs){
@@ -613,14 +666,18 @@ DAO.prototype._doQuery = function(entityType, where, select, orderBy, limit, off
 	}
 
 	if(pb.config.db.query_logging){
-		var query = &quot;DAO: SELECT &quot;+JSON.stringify(select)+&quot; FROM &quot;+entityType+&quot; WHERE &quot;+JSON.stringify(where);
+		var query = &quot;DAO: SELECT %j FROM %s.%s WHERE %j&quot;;
+        var args = [select, this.dbName, entityType, where];
 		if (typeof orderBy !== &#x27;undefined&#x27;) {
-			query += &quot; ORDER BY &quot;+JSON.stringify(orderBy);
+			query += &quot; ORDER BY %j&quot;;
+            args.push(orderBy);
 		}
 		if (typeof limit !== &#x27;undefined&#x27;) {
-			query += &quot; LIMIT &quot;+JSON.stringify(limit)+&quot;, OFFSET &quot;+offset;
+			query += &quot; LIMIT %d, OFFSET %d&quot;;
+            args.push(limit, offset);
 		}
-		pb.log.info(query);
+        args.unshift(query);
+		pb.log.info(util.format.apply(util, args));
 	}
 	return cursor;
 };
@@ -633,6 +690,7 @@ DAO.prototype._doQuery = function(entityType, where, select, orderBy, limit, off
  * @return {Promise} Promise object
  */
 DAO.prototype.insert = function(dbObject) {
+    pb.log.warn(&#x27;DAO: &quot;insert&quot; is deprecated and will be removed 0.4.0. Please update your code to call &quot;save&quot;.&#x27;);
 	var promise = new Promise();
 
 	DAO.updateChangeHistory(dbObject);
@@ -650,7 +708,8 @@ DAO.prototype.insert = function(dbObject) {
  * @return {Promise} Promise object
  */
 DAO.prototype.update = function(dbObj) {
-
+    pb.log.warn(&#x27;DAO: &quot;update&quot; is deprecated and will be removed 0.4.0. Please update your code to call &quot;save&quot;.&#x27;);
+    
     //log interaction
     if (pb.config.db.query_logging) {
         var msg;
@@ -764,7 +823,7 @@ DAO.prototype.saveBatch = function(objArray, collection, options, cb) {
  * Updates a specific set of fields. This is handy for performing upserts.
  * @method updateFields
  * @param {String} collection The collection to update object(s) in
- * @param {Object} query The query to execute to find the existing object
+ * @param {Object} query The where clause to execute to find the existing object
  * @param {Object} updates The updates to perform
  * @param {Object} options Any options to go along with the update
  * @param {Boolean} [options.upsert=false] Inserts the object is not found
@@ -778,7 +837,7 @@ DAO.prototype.updateFields = function(collection, query, updates, options, cb) {
     }
 
     if (pb.config.db.query_logging) {
-        pb.log.info(&#x27;UPDATE %s %s WHERE %s WITH OPTIONS %s&#x27;, collection, JSON.stringify(updates), JSON.stringify(query), JSON.stringify(options));
+        pb.log.info(&#x27;UPDATE %s.%s %s WHERE %s WITH OPTIONS %s&#x27;, this.dbName, collection, JSON.stringify(updates), JSON.stringify(query), JSON.stringify(options));
     }
     pb.dbm[this.dbName].collection(collection).update(query, updates, options, cb);
 };
@@ -816,7 +875,8 @@ DAO.prototype.deleteById = function(oid, collection, cb) {
     }
     else {
         //used for backward compatibility with old way of using promises.
-	   return this.deleteMatching(where, collection);
+        pb.log.warn(&#x27;DAO: Calling &quot;DAO.deleteById&quot; and expecting a promise is deprecated.  Please update your code to pass a callback as the third parameter&#x27;);
+        return this.deleteMatching(where, collection);
     }
 };
 
@@ -832,10 +892,11 @@ DAO.prototype.deleteMatching = function(where, collection){
 	if (typeof where === &#x27;undefined&#x27;) {
 		throw new Error(&#x27;A where object must be specified in order to delete&#x27;);
 	}
-
+    pb.log.warn(&#x27;DAO: &quot;deleteMatching&quot; is deprecated and will be removed 0.4.0. Please update your code to call &quot;delete&quot;.&#x27;);
+    
 	//output delete command
 	if(pb.config.db.query_logging){
-		pb.log.info(&quot;DAO: DELETE FROM &quot;+collection+&quot; WHERE &quot;+JSON.stringify(where));
+		pb.log.info(&quot;DAO: DELETE FROM %s.%s WHERE %s&quot;, this.dbName, collection, JSON.stringify(where));
 	}
 
 	var promise = new Promise();
@@ -879,11 +940,16 @@ DAO.prototype.delete = function(where, collection, options, cb) {
     
     //log interaction
 	if(pb.config.db.query_logging){
-		pb.log.info(&#x27;DAO: DELETE FROM %s WHERE %s&#x27;, collection, JSON.stringify(where));
+		pb.log.info(&#x27;DAO: DELETE FROM %s.%s WHERE %s&#x27;, this.dbName, collection, JSON.stringify(where));
 	}
-    
+
     //execute delete command
-    pb.dbm[this.dbName].collection(collection).remove(where, options, cb);
+    pb.dbm.getDB(this.dbName, function(err, db) {
+        if (util.isError(err)) { 
+            return cb(err); 
+        }
+        db.collection(collection).remove(where, options, cb);
+    });
 };
 
 /**
@@ -1008,6 +1074,32 @@ DAO.getIDInWhere = function(objArray, idProp) {
     };
 };
 
+/**
+ * Creates a where clause that equates to select where [idProp] is not in the
+ * specified array of values.
+ * @static
+ * @method getIDInWhere
+ * @param {Array} objArray The array of acceptable values
+ * @param {String} idProp The property that holds a referenced ID value
+ * @return {Object} Where clause
+ */
+DAO.getIdNotInWhere = function(objArray, idProp) {
+	var idArray = [];
+    for(var i = 0; i &lt; objArray.length; i++) {
+
+    	var rawId;
+    	if (idProp) {
+    		rawId = objArray[i][idProp];
+    	}
+    	else{
+    		rawId = objArray[i];
+    	}
+    	idArray.push(DAO.getObjectID(rawId));
+    }
+    return {
+    	_id: {$nin: idArray}
+    };
+};
 
 /**
  * Creates a basic where clause based on not equalling the specified Id

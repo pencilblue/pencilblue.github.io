@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.0</em>
+            <em>API Docs for: 0.3.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -57,6 +57,8 @@
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
                 <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
@@ -76,6 +78,8 @@
                 <li><a href="../classes/ContentService.html">ContentService</a></li>
             
                 <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
@@ -109,7 +113,17 @@
             
                 <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
             
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
                 <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
                 <li><a href="../classes/JobApiController.html">JobApiController</a></li>
             
@@ -121,9 +135,13 @@
             
                 <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
             
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
                 <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -150,6 +168,8 @@
                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
             
                 <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
             
                 <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
             
@@ -189,6 +209,8 @@
             
                 <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
             
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
             
                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
@@ -207,9 +229,13 @@
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
                 <li><a href="../classes/SortObjects.html">SortObjects</a></li>
             
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -217,7 +243,13 @@
             
                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
             
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
             
                 <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
             
@@ -228,6 +260,16 @@
                 <li><a href="../classes/Util.html">Util</a></li>
             
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
             
             </ul>
 
@@ -295,7 +337,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -313,100 +355,83 @@
 
 /**
  * Returns the HTML for a media preview
+ * @class GetMediaPreviewApiController
+ * @constructor
+ * @extends BaseController
  */
-function GetMediaPreview(){}
+function GetMediaPreviewApiController(){}
 
 //inheritance
-util.inherits(GetMediaPreview, pb.BaseController);
+util.inherits(GetMediaPreviewApiController, pb.BaseController);
 
-GetMediaPreview.prototype.render = function(cb) {
+/**
+ * Renders the preview
+ * @method render
+ * @param {Function} cb
+ */
+GetMediaPreviewApiController.prototype.render = function(cb) {
     var self = this;
     var get  = this.query;
 
-    if(pb.validation.isIdStr(get.id, true)) {
-        this.getPreviewById(get.id, cb);
+    //validate request
+    if (!pb.validation.isIdStr(get.id, true) &amp;&amp; !pb.validation.isStr(get.location, true)) {
+        return cb({
+            code: 400,
+            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, message)
+        });
+    }
+
+    //retrieve rendering
+    var options = {
+        view: &#x27;view&#x27;
+    };
+    var ms = new pb.MediaService();
+    if (get.id) {
+        ms.renderById(get.id, options, function(err, html) {
+            self.renderComplete(err, html, cb);
+        });
+    }
+    else if (get.location &amp;&amp; get.type){
+        
+        var options = {
+            view: &#x27;view&#x27;,
+            location: get.location,
+            type: get.type
+        };
+        ms.renderByLocation(options, function(err, html) {
+            self.renderComplete(err, html, cb);
+        });
     }
     else {
-        var message = this.hasRequiredParams(get, [&#x27;type&#x27;, &#x27;location&#x27;]);
-        if (message) {
-            cb({
-                code: 400,
-                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, message)
-            });
-            return;
-        }
-
-        this.getPreviewByType(get.type, get.location, cb);
+        this.renderComplete(null, null, cb);
     }
 };
 
-GetMediaPreview.prototype.getPreviewById = function(id, cb) {
-    var self = this;
-    var dao = new pb.DAO();
-
-    dao.loadById(id, &#x27;media&#x27;, function(err, media) {
-        if(util.isError(err) || media === null) {
-            cb({
-                code: 404,
-                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;OBJECT_NOT_FOUND&#x27;))
-            });
-        }
-
-        self.getPreviewByType(media.media_type, media.location, cb);
-    });
-};
-
-GetMediaPreview.prototype.getPreviewByType = function(type, location, cb) {
-    var self = this;
-    var responsiveEmbed = &#x27;&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;^iframe^&lt;/div&gt;&#x27;;
-    var preview;
-
-    switch(type) {
-        case &#x27;image&#x27;:
-            preview = &#x27;&lt;img class=&quot;img-responsive&quot; src=&quot;&#x27; + location + &#x27;&quot; style=&quot;max-width: 100%; max-height: 300px&quot;/&gt;&#x27;;
-            break;
-        case &#x27;video/mp4&#x27;:
-        case &#x27;video/webm&#x27;:
-        case &#x27;video/ogg&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;video src=&quot;&#x27; + location + &#x27;&quot;&gt;&lt;/video&gt;&#x27;);
-            break;
-        case &#x27;youtube&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;//www.youtube.com/embed/&#x27; + location + &#x27;&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;vimeo&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;//player.vimeo.com/video/&#x27; + location + &#x27;&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;daily_motion&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;http://www.dailymotion.com/embed/video/&#x27; + location + &#x27;&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;vine&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;https://vine.co/v/&#x27; + location + &#x27;/embed/simple&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;instagram&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;//instagram.com/p/&#x27; + location + &#x27;/embed/&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;slideshare&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;http://www.slideshare.net/slideshow/embed_code/&#x27; + location + &#x27;&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;trinket&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;https://trinket.io/embed/&#x27; + location + &#x27;&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;storify&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;//storify.com/&#x27; + location + &#x27;/embed?header=false&amp;border=false&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        case &#x27;kickstarter&#x27;:
-            preview = responsiveEmbed.split(&#x27;^iframe^&#x27;).join(&#x27;&lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;https://www.kickstarter.com/&#x27; + location + &#x27;/widget/video.html&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&#x27;);
-            break;
-        default:
-            cb({content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, self.ls.get(&#x27;UNSUPPORTED_MEDIA&#x27;))});
-            return;
+/**
+ * When the rendering is complete this function can be called to serialize the 
+ * result back to the client in the standard API wrapper format.
+ * @method renderComplete
+ * @param {Error} err
+ * @param {String} html
+ * @param {Function} cb
+ */
+GetMediaPreviewApiController.prototype.renderComplete = function(err, html, cb) {
+    if (util.isError(err)) {
+        return this.reqHandler.serveError(err);
+    }
+    else if (!html) {
+        return cb({
+            code: 400,
+            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, this.ls.get(&#x27;UNSUPPORTED_MEDIA&#x27;))
+        });
     }
 
-    cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;&#x27;, preview)});
+    html = &#x27;&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;&#x27; + html + &#x27;&lt;/div&gt;&#x27;;
+    cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;&#x27;, html)});
 };
 
 //exports
-module.exports = GetMediaPreview;
+module.exports = GetMediaPreviewApiController;
 
     </pre>
 </div>

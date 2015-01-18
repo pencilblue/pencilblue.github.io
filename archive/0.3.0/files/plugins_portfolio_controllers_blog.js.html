@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>plugins\portfolio\controllers\blog.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.3.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AdminChangePasswordController.html">AdminChangePasswordController</a></li>
+            
+                <li><a href="../classes/AdminIndexController.html">AdminIndexController</a></li>
+            
+                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+            
+                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+            
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
+                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseController.html">BaseController</a></li>
+            
+                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+            
+                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+            
+                <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
+            
+                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+            
+                <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+            
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
+                <li><a href="../classes/CommentService.html">CommentService</a></li>
+            
+                <li><a href="../classes/ContentService.html">ContentService</a></li>
+            
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DAO.html">DAO</a></li>
+            
+                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+            
+                <li><a href="../classes/DBManager.html">DBManager</a></li>
+            
+                <li><a href="../classes/DeleteArticleActionController.html">DeleteArticleActionController</a></li>
+            
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
+                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaActionController.html">EditMediaActionController</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
+            
+                <li><a href="../classes/EmailService.html">EmailService</a></li>
+            
+                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+            
+                <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
+            
+                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+            
+                <li><a href="../classes/FormController.html">FormController</a></li>
+            
+                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+            
+                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+            
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
+                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+            
+                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+            
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
+                <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
+            
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
+                <li><a href="../classes/MediaForm.html">MediaForm</a></li>
+            
+                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+            
+                <li><a href="../classes/MediaService.html">MediaService</a></li>
+            
+                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+            
+                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+            
+                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+            
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
+                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
+            
+                <li><a href="../classes/NewObjectTypeActionController.html">NewObjectTypeActionController</a></li>
+            
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
+            
+                <li><a href="../classes/ObjectFormController.html">ObjectFormController</a></li>
+            
+                <li><a href="../classes/PageController.html">PageController</a></li>
+            
+                <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+            
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginDetailsViewController.html">PluginDetailsViewController</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
+                <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
+            
+                <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginSettingsFormController.html">PluginSettingsFormController</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
+            
+                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+            
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
+                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+            
+                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+            
+                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+            
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
+                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+            
+                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
+            
+                <li><a href="../classes/UrlService.html">UrlService</a></li>
+            
+                <li><a href="../classes/UserService.html">UserService</a></li>
+            
+                <li><a href="../classes/Util.html">Util</a></li>
+            
+                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/Database.html">Database</a></li>
+            
+                <li><a href="../modules/Entities.html">Entities</a></li>
+            
+                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+            
+                <li><a href="../modules/Model.html">Model</a></li>
+            
+                <li><a href="../modules/Security.html">Security</a></li>
+            
+                <li><a href="../modules/Services.html">Services</a></li>
+            
+                <li><a href="../modules/Session.html">Session</a></li>
+            
+                <li><a href="../modules/Storage.html">Storage</a></li>
+            
+                <li><a href="../modules/Theme.html">Theme</a></li>
+            
+                <li><a href="../modules/Validation.html">Validation</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: plugins\portfolio\controllers\blog.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * Blog page of the pencilblue theme
+ *
+ * @author Blake Callens &lt;blake@pencilblue.org&gt;
+ * @copyright PencilBlue 2014, All rights reserved
+ */
+function Blog(){}
+
+//dependencies
+var PluginService = pb.PluginService;
+var TopMenu        = require(DOCUMENT_ROOT + &#x27;/include/theme/top_menu&#x27;);
+var Media          = require(DOCUMENT_ROOT + &#x27;/include/theme/media&#x27;);
+var Comments       = require(DOCUMENT_ROOT + &#x27;/include/theme/comments&#x27;);
+var ArticleService = require(DOCUMENT_ROOT + &#x27;/include/service/entities/article_service&#x27;).ArticleService;
+
+//inheritance
+util.inherits(Blog, pb.BaseController);
+
+Blog.prototype.render = function(cb) {
+    var self = this;
+
+    //determine and execute the proper call
+    var section = self.req.pencilblue_section || null;
+    var topic   = self.req.pencilblue_topic   || null;
+    var article = self.req.pencilblue_article || null;
+    var page    = self.req.pencilblue_page    || null;
+
+    pb.content.getSettings(function(err, contentSettings) {
+        self.gatherData(function(err, data) {
+            ArticleService.getMetaInfo(data.content[0], function(metaKeywords, metaDescription, metaTitle) {
+
+                self.ts.reprocess = false;
+                self.ts.registerLocal(&#x27;meta_keywords&#x27;, metaKeywords);
+                self.ts.registerLocal(&#x27;meta_desc&#x27;, metaDescription);
+                self.ts.registerLocal(&#x27;meta_title&#x27;, metaTitle);
+                self.ts.registerLocal(&#x27;meta_lang&#x27;, localizationLanguage);
+                self.ts.registerLocal(&#x27;current_url&#x27;, self.req.url);
+                self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(data.nav.navigation, false));
+                self.ts.registerLocal(&#x27;account_buttons&#x27;, new pb.TemplateValue(data.nav.accountButtons, false));
+                self.ts.registerLocal(&#x27;infinite_scroll&#x27;, function(flag, cb) {
+                    if(article || page) {
+                        cb(null, &#x27;&#x27;);
+                    }
+                    else {
+                        var infiniteScrollScript = pb.js.includeJS(&#x27;/js/infinite_article_scroll.js&#x27;);
+                        if(section) {
+                            infiniteScrollScript += pb.js.getJSTag(&#x27;var infiniteScrollSection = &quot;&#x27; + section + &#x27;&quot;;&#x27;);
+                        }
+                        else if(topic) {
+                            infiniteScrollScript += pb.js.getJSTag(&#x27;var infiniteScrollTopic = &quot;&#x27; + topic + &#x27;&quot;;&#x27;);
+                        }
+                        cb(null, new pb.TemplateValue(infiniteScrollScript, false));
+                    }
+                });
+                self.ts.registerLocal(&#x27;articles&#x27;, function(flag, cb) {
+                    var tasks = pb.utils.getTasks(data.content, function(content, i) {
+                        return function(callback) {
+                            if (i &gt;= contentSettings.articles_per_page) {//TODO, limit articles in query, not throug hackery
+                                callback(null, &#x27;&#x27;);
+                                return;
+                            }
+                            self.renderContent(content[i], contentSettings, data.nav.themeSettings, i, callback);
+                        };
+                    });
+                    async.parallel(tasks, function(err, result) {
+                        cb(err, new pb.TemplateValue(result.join(&#x27;&#x27;), false));
+                    });
+                });
+                self.ts.registerLocal(&#x27;page_name&#x27;, function(flag, cb) {
+                     self.getContentSpecificPageName(util.isArray(data.content) &amp;&amp; data.content.length &gt; 0 ? data.content[0] : null, cb);
+                });
+
+                self.getSideNavigation(data.content, function(sideNavTemplate, sideNavItems) {
+                    self.ts.load(sideNavTemplate, function(err, sideNavTemplate) {
+                        if(util.isError(err)) {
+                            sideNavTemplate = &#x27;&#x27;;
+                        }
+
+                        self.ts.registerLocal(&#x27;side_nav&#x27;, new pb.TemplateValue(sideNavTemplate, false));
+
+                        self.getTemplate(data.content, function(err, template) {
+                            if (util.isError(err)) {
+                                throw err;
+                            }
+
+                            self.ts.registerLocal(&#x27;angular&#x27;, function(flag, cb) {
+
+                                var loggedIn       = pb.security.isAuthenticated(self.session);
+                                var commentingUser = loggedIn ? Comments.getCommentingUser(self.session.authentication.user) : null;
+                                var heroImage      = null;
+                                if(data.content[0]) {
+                                    heroImage = data.content[0].hero_image ? data.content[0].hero_image: null;
+                                }
+
+                                var objects = {
+                                    contentSettings: contentSettings,
+                                    loggedIn: loggedIn,
+                                    commentingUser: commentingUser,
+                                    themeSettings: data.nav.themeSettings,
+                                    articles: data.content,
+                                    hero_image: heroImage,
+                                    sideNavItems: sideNavItems,
+                                    trustHTML: &#x27;function(string){return $sce.trustAsHtml(string);}&#x27;
+                                };
+                                var angularData = pb.js.getAngularController(objects, [&#x27;ngSanitize&#x27;]);
+                                cb(null, angularData);
+                            });
+                            self.ts.load(template, function(err, result) {
+                                if (util.isError(err)) {
+                                    throw err;
+                                }
+
+                                var loggedIn = pb.security.isAuthenticated(self.session);
+                                var commentingUser = loggedIn ? Comments.getCommentingUser(self.session.authentication.user) : null;
+                                var heroImage = null;
+                                if(data.content[0]) {
+                                    heroImage = data.content[0].hero_image ? data.content[0].hero_image: null;
+                                }
+                                cb({content: result});
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+};
+
+
+Blog.prototype.getTemplate = function(content, cb) {
+
+    //check if we should just use whatever default there is.
+    //this could fall back to an active theme or the default pencilblue theme.
+    if (!this.req.pencilblue_article &amp;&amp; !this.req.pencilblue_page) {
+        cb(null, &#x27;index&#x27;);
+        return;
+    }
+
+    //now we are dealing with a single page or article. the template will be
+    //judged based off the article&#x27;s preference.
+    if (util.isArray(content) &amp;&amp; content.length &gt; 0) {
+        content = content[0];
+    }
+    var uidAndTemplate = content.template;
+
+    //when no template is specified or is empty we no that the article has no
+    //preference and we can fall back on the default (index).  We depend on the
+    //template service to determine who has priority based on the active theme
+    //then defaulting back to pencilblue.
+    if (!pb.validation.validateNonEmptyStr(uidAndTemplate, true)) {
+        pb.log.silly(&quot;ContentController: No template specified, defaulting to index.&quot;);
+        cb(null, &quot;index&quot;);
+        return;
+    }
+
+    //we now know that the template was specified.  We have to split the value
+    //to extract the intended theme and the template path
+    var pieces = uidAndTemplate.split(&#x27;|&#x27;);
+
+    //for backward compatibility we let the template service determine where to
+    //find the template when no template is specified.  This mostly catches the
+    //default case of &quot;index&quot;
+    if (pieces.length === 1) {
+
+        pb.log.silly(&quot;ContentController: No theme specified, Template Service will delegate [%s]&quot;, pieces[0]);
+        cb(null, pieces[0]);
+        return;
+    }
+    else if (pieces.length &lt;= 0) {
+
+        //shit&#x27;s broke. This should never be the case but better safe than sorry
+        cb(new Error(&quot;The content&#x27;s template property provided an invalid value of [&quot;+content.template+&#x27;]&#x27;), null);
+        return;
+    }
+
+    //the theme is specified, we ensure that the theme is installed and
+    //initialized otherwise we let the template service figure out how to
+    //delegate.
+    if (!pb.PluginService.isActivePlugin(pieces[0])) {
+        pb.log.silly(&quot;ContentController: Theme [%s] is not active, Template Service will delegate [%s]&quot;, pieces[0], pieces[1]);
+        cb(null, pieces[1]);
+        return;
+    }
+
+    //the theme is OK. We don&#x27;t gaurantee that the template is on the disk but we can testify that it SHOULD.  We set the
+    //prioritized theme for the template service.
+    pb.log.silly(&quot;ContentController: Prioritizing Theme [%s] for template [%s]&quot;, pieces[0], pieces[1]);
+    this.ts.setTheme(pieces[0]);
+    cb(null, pieces[1]);
+};
+
+
+Blog.prototype.gatherData = function(cb) {
+    var self  = this;
+    var tasks = {
+
+        //navigation
+        nav: function(callback) {
+            self.getNavigation(function(themeSettings, navigation, accountButtons) {
+                callback(null, {themeSettings: themeSettings, navigation: navigation, accountButtons: accountButtons});
+            });
+        },
+
+        //articles, pages, etc.
+        content: function(callback) {
+            self.loadContent(callback);
+        },
+    };
+    async.parallel(tasks, cb);
+};
+
+Blog.prototype.loadContent = function(articleCallback) {
+
+    var section = this.req.pencilblue_section || null;
+    var topic   = this.req.pencilblue_topic   || null;
+    var article = this.req.pencilblue_article || null;
+    var page    = this.req.pencilblue_page    || null;
+
+    var service = new ArticleService();
+    if(this.req.pencilblue_preview) {
+        if(this.req.pencilblue_preview == page || article) {
+            if(page) {
+                service.setContentType(&#x27;page&#x27;);
+            }
+            var where = pb.DAO.getIDWhere(page || article);
+            where.draft = {$exists: true};
+            where.publish_date = {$exists: true};
+            service.find(where, articleCallback);
+        }
+        else {
+            service.find({}, articleCallback);
+        }
+    }
+    else if(section) {
+        service.findBySection(section, articleCallback);
+    }
+    else if(topic) {
+        service.findByTopic(topic, articleCallback);
+    }
+    else if(article) {
+        service.findById(article, articleCallback);
+    }
+    else if(page) {
+        service.setContentType(&#x27;page&#x27;);
+        service.findById(page, articleCallback);
+    }
+    else{
+        service.find({}, articleCallback);
+    }
+};
+
+Blog.prototype.renderContent = function(content, contentSettings, themeSettings, index, cb) {
+    var self = this;
+
+    var isPage        = content.object_type === &#x27;page&#x27;;
+    var showByLine    = contentSettings.display_bylines &amp;&amp; !isPage;
+    var showTimestamp = contentSettings.display_timestamp &amp;&amp; !isPage;
+    var ats           = new pb.TemplateService(this.ls);
+    var contentUrlPrefix = isPage ? &#x27;/page/&#x27; : &#x27;/article/&#x27;;
+    self.ts.reprocess = false;
+    ats.registerLocal(&#x27;article_permalink&#x27;, pb.UrlService.urlJoin(pb.config.siteRoot, contentUrlPrefix, content.url));
+    ats.registerLocal(&#x27;article_headline&#x27;, new pb.TemplateValue(&#x27;&lt;a href=&quot;&#x27; + pb.UrlService.urlJoin(contentUrlPrefix, content.url) + &#x27;&quot;&gt;&#x27; + content.headline + &#x27;&lt;/a&gt;&#x27;, false));
+    ats.registerLocal(&#x27;article_headline_nolink&#x27;, content.headline);
+    ats.registerLocal(&#x27;article_subheading&#x27;, content.subheading ? content.subheading : &#x27;&#x27;);
+    ats.registerLocal(&#x27;article_subheading_display&#x27;, content.subheading ? &#x27;&#x27; : &#x27;display:none;&#x27;);
+    ats.registerLocal(&#x27;article_id&#x27;, content._id.toString());
+    ats.registerLocal(&#x27;article_index&#x27;, index);
+    ats.registerLocal(&#x27;article_timestamp&#x27;, showTimestamp &amp;&amp; content.timestamp ? content.timestamp : &#x27;&#x27;);
+    ats.registerLocal(&#x27;article_timestamp_display&#x27;, showTimestamp ? &#x27;&#x27; : &#x27;display:none;&#x27;);
+    ats.registerLocal(&#x27;article_layout&#x27;, new pb.TemplateValue(content.layout, false));
+    ats.registerLocal(&#x27;article_url&#x27;, content.url);
+    ats.registerLocal(&#x27;display_byline&#x27;, showByLine ? &#x27;&#x27; : &#x27;display:none;&#x27;);
+    ats.registerLocal(&#x27;author_photo&#x27;, content.author_photo ? content.author_photo : &#x27;&#x27;);
+    ats.registerLocal(&#x27;author_photo_display&#x27;, content.author_photo ? &#x27;&#x27; : &#x27;display:none;&#x27;);
+    ats.registerLocal(&#x27;author_name&#x27;, content.author_name ? content.author_name : &#x27;&#x27;);
+    ats.registerLocal(&#x27;author_position&#x27;, content.author_position ? content.author_position : &#x27;&#x27;);
+    ats.registerLocal(&#x27;media_body_style&#x27;, content.media_body_style ? content.media_body_style : &#x27;&#x27;);
+    ats.registerLocal(&#x27;comments&#x27;, function(flag, cb) {
+       if (content.object_type === &#x27;page&#x27; || !contentSettings.allow_comments) {
+           cb(null, &#x27;&#x27;);
+           return;
+       }
+
+        self.renderComments(content, ats, function(err, comments) {
+            cb(err, new pb.TemplateValue(comments, false));
+        });
+    });
+    ats.load(&#x27;elements/article&#x27;, cb);
+};
+
+Blog.prototype.renderComments = function(content, ts, cb) {
+    var self           = this;
+    var commentingUser = null;
+    if(pb.security.isAuthenticated(this.session)) {
+        commentingUser = Comments.getCommentingUser(this.session.authentication.user);
+    }
+
+    ts.registerLocal(&#x27;user_photo&#x27;, function(flag, cb) {
+        if (commentingUser) {
+            cb(null, commentingUser.photo ? commentingUser.photo : &#x27;&#x27;);
+        }
+        else {
+            cb(null, &#x27;&#x27;);
+        }
+    });
+    ts.registerLocal(&#x27;user_position&#x27;, function(flag, cb) {
+        if (commentingUser &amp;&amp; util.isArray(commentingUser.position) &amp;&amp; commentingUser.position.length &gt; 0) {
+            cb(null, &#x27;, &#x27; + commentingUser.position);
+        }
+        else {
+            cb(null, &#x27;&#x27;);
+        }
+    });
+    ts.registerLocal(&#x27;user_name&#x27;, commentingUser ? commentingUser.name : &#x27;&#x27;);
+    ts.registerLocal(&#x27;display_submit&#x27;, commentingUser ? &#x27;block&#x27; : &#x27;none&#x27;);
+    ts.registerLocal(&#x27;display_login&#x27;, commentingUser ? &#x27;none&#x27; : &#x27;block&#x27;);
+    ts.registerLocal(&#x27;comments_length&#x27;, util.isArray(content.comments) ? content.comments.length : 0);
+    ts.registerLocal(&#x27;individual_comments&#x27;, function(flag, cb) {
+        if (!util.isArray(content.comments) || content.comments.length == 0) {
+            cb(null, &#x27;&#x27;);
+            return;
+        }
+
+        var tasks = pb.utils.getTasks(content.comments, function(comments, i) {
+            return function(callback) {
+                self.renderComment(comments[i], callback);
+            };
+        });
+        async.parallel(tasks, function(err, results) {
+            cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
+        });
+    });
+    ts.load(&#x27;elements/comments&#x27;, cb);
+};
+
+Blog.prototype.renderComment = function(comment, cb) {
+
+    var cts = new pb.TemplateService(this.ls);
+    cts.reprocess = false;
+    cts.registerLocal(&#x27;commenter_photo&#x27;, comment.commenter_photo ? comment.commenter_photo : &#x27;&#x27;);
+    cts.registerLocal(&#x27;display_photo&#x27;, comment.commenter_photo ? &#x27;block&#x27; : &#x27;none&#x27;);
+    cts.registerLocal(&#x27;commenter_name&#x27;, comment.commenter_name);
+    cts.registerLocal(&#x27;commenter_position&#x27;, comment.commenter_position ? &#x27;, &#x27; + comment.commenter_position : &#x27;&#x27;);
+    cts.registerLocal(&#x27;content&#x27;, comment.content);
+    cts.registerLocal(&#x27;timestamp&#x27;, comment.timestamp);
+    cts.load(&#x27;elements/comments/comment&#x27;, cb);
+};
+
+Blog.prototype.getContentSpecificPageName = function(content, cb) {
+
+
+    if(this.req.pencilblue_article || this.req.pencilblue_page) {
+        cb(null, content.headline + &#x27; | &#x27; + pb.config.siteName);
+    }
+    else if(searchId = this.req.pencilblue_section || this.req.pencilblue_topic) {
+
+        var objType = this.req.pencilblue_section ? &#x27;section&#x27; : &#x27;topic&#x27;;
+        var dao     = new pb.DAO();
+        if(this.req.pencilblue_topic) {
+            searchId = searchId.toString();
+        }
+        dao.loadById(searchId, objType, function(err, obj) {
+            if(util.isError(err) || obj === null) {
+                cb(null, pb.config.siteName);
+                return;
+            }
+
+            cb(null, obj.name + &#x27; | &#x27; + pb.config.siteName);
+        });
+    }
+    else {
+        cb(null, pb.config.siteName);
+    }
+};
+
+Blog.prototype.getNavigation = function(cb) {
+    var options = {
+        currUrl: this.req.url
+    };
+    TopMenu.getTopMenu(this.session, this.ls, options, function(themeSettings, navigation, accountButtons) {
+        TopMenu.getBootstrapNav(navigation, accountButtons, function(navigation, accountButtons) {
+            cb(themeSettings, navigation, accountButtons);
+        });
+    });
+};
+
+Blog.prototype.getSideNavigation = function(articles, cb) {
+    var self = this;
+
+    pb.plugins.getSetting(&#x27;show_side_navigation&#x27;, &#x27;portfolio&#x27;, function(err, showSideNavigation) {
+        if(!showSideNavigation) {
+            cb(&#x27;&#x27;, null);
+            return;
+        }
+
+        var topics = [];
+        var articleIDs = [];
+
+        if(self.req.pencilblue_article) {
+            topics = articles[0].article_topics;
+            articleIDs = [articles[0]._id];
+        }
+        else if(self.req.pencilblue_page) {
+            articleIDs = [];
+            for(i = 0; i &lt; articles.length; i++) {
+                for(j = 0; j &lt; articles[i].page_topics.length; j++) {
+                    topics.push(articles[i].page_topics[j]);
+                }
+            }
+        }
+        else {
+            for(var i = 0; i &lt; articles.length; i++) {
+                articleIDs.push(articles[i]._id);
+                for(var j = 0; j &lt; articles[i].article_topics.length; j++) {
+                    topics.push(articles[i].article_topics[j]);
+                }
+            }
+        }
+
+        var dao = new pb.DAO();
+        dao.query(&#x27;article&#x27;, {article_topics: {$in: topics}, _id: {$nin: articleIDs}}, null, null, 6).then(function(relatedArticles) {
+            if(relatedArticles.length === 0) {
+                dao.query(&#x27;topic&#x27;, {}, null, {name: 1}).then(function(topicObjects) {
+                    var articleTopics = [];
+                    for(var i = 0; i &lt; topics.length &amp;&amp; articleTopics.length &lt; 20; i++) {
+                        for(var j = 0; j &lt; topicObjects.length; j++) {
+                            if(ObjectID(topics[i]).equals(topicObjects[j]._id)) {
+                                articleTopics.push(topicObjects[j]);
+                                topicObjects.splice(j, 1);
+                                break;
+                            }
+                        }
+                    }
+
+                    for(i = 0; i &lt; topicObjects.length &amp;&amp; articleTopics.length &lt; 20; i++) {
+                        articleTopics.push(topicObjects[i]);
+                    }
+
+                    cb(&#x27;elements/side_nav/topics&#x27;, articleTopics);
+                });
+                return;
+            }
+
+            cb(&#x27;elements/side_nav/related_articles&#x27;, relatedArticles);
+        });
+    });
+};
+
+/**
+* Provides the routes that are to be handled by an instance of this prototype.
+* The route provides a definition of path, permissions, authentication, and
+* expected content type.
+* Method is optional
+* Path is required
+* Permissions are optional
+* Access levels are optional
+* Content type is optional
+*
+* @param cb A callback of the form: cb(error, array of objects)
+*/
+Blog.getRoutes = function(cb) {
+    var routes = [
+        {
+            method: &#x27;get&#x27;,
+            path: &#x27;/blog&#x27;,
+            auth_required: false,
+            content_type: &#x27;text/html&#x27;
+        }
+    ];
+    cb(null, routes);
+};
+
+//exports
+module.exports = Blog;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
