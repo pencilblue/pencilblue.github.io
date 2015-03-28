@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,174 +391,178 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * RSS Feed
- */
-
 //dependencies
+var path           = require(&#x27;path&#x27;);
 var HtmlEncoder    = require(&#x27;htmlencode&#x27;);
-var ArticleService = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/entities/article_service&#x27;)).ArticleService;
-var MediaLoader    = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/entities/article_service&#x27;)).MediaLoader;
+var async          = require(&#x27;async&#x27;);
 
-function ArticleFeed(){}
+module.exports = function PreviewModule(pb) {
+    
+    //pb dependencies
+    var util           = pb.util;
+    var ArticleService = pb.ArticleService;
+    var MediaLoader    = pb.MediaLoader;
 
-//inheritance
-util.inherits(ArticleFeed, pb.BaseController);
+    /**
+     * RSS Feed
+     */
+    function ArticleFeed(){}
+    util.inherits(ArticleFeed, pb.BaseController);
 
-ArticleFeed.prototype.render = function(cb) {
-	var self = this;
+    ArticleFeed.prototype.render = function(cb) {
+        var self = this;
 
-	this.ts.registerLocal(&#x27;language&#x27;, pb.config.defaultLanguage ? pb.config.defaultLanguage : &#x27;en-us&#x27;);
-    this.ts.registerLocal(&#x27;last_build&#x27;, self.getBuildDate());
-	this.ts.registerLocal(&#x27;items&#x27;, function(flag, cb){
+        this.ts.registerLocal(&#x27;language&#x27;, pb.config.defaultLanguage ? pb.config.defaultLanguage : &#x27;en-us&#x27;);
+        this.ts.registerLocal(&#x27;last_build&#x27;, self.getBuildDate());
+        this.ts.registerLocal(&#x27;items&#x27;, function(flag, cb){
 
-        var opts = {
-            select: pb.DAO.PROJECT_ALL,
-            where: {publish_date: {$lte: new Date()}},
-            order: {publish_date: pb.DAO.DESC}
-        };
-        var dao   = new pb.DAO();
-        dao.q(&#x27;article&#x27;, opts, function(err, articles) {
-            if (util.isError(err)) {
-                return cb(err);   
-            }
+            var opts = {
+                select: pb.DAO.PROJECT_ALL,
+                where: {publish_date: {$lte: new Date()}},
+                order: {publish_date: pb.DAO.DESC},
+                limit: 100
+            };
+            var dao   = new pb.DAO();
+            dao.q(&#x27;article&#x27;, opts, function(err, articles) {
+                if (util.isError(err)) {
+                    return cb(err);   
+                }
 
-			pb.users.getAuthors(articles, function(err, articlesWithAuthorNames) {
-	            articles = articlesWithAuthorNames;
+                pb.users.getAuthors(articles, function(err, articlesWithAuthorNames) {
+                    articles = articlesWithAuthorNames;
 
-	            self.getSectionNames(articles, function(err, articlesWithSectionNames) {
-	                articles = articlesWithSectionNames;
+                    self.getSectionNames(articles, function(err, articlesWithSectionNames) {
+                        articles = articlesWithSectionNames;
 
-	                self.getMedia(articles, function(articlesWithMedia) {
-	                    articles = articlesWithMedia;
+                        self.getMedia(articles, function(err, articlesWithMedia) {
+                            articles = articlesWithMedia;
 
 
 
-                        var tasks = pb.utils.getTasks(articles, function(articles, i) {
-                            return function(callback) {
+                            var tasks = util.getTasks(articles, function(articles, i) {
+                                return function(callback) {
 
-                                self.ts.registerLocal(&#x27;url&#x27;, &#x27;/article/&#x27; + articles[i].url);
-                                self.ts.registerLocal(&#x27;title&#x27;, articles[i].headline);
-                                self.ts.registerLocal(&#x27;pub_date&#x27;, ArticleFeed.getRSSDate(articles[i].publish_date));
-                                self.ts.registerLocal(&#x27;author&#x27;, articles[i].author_name);
-                                self.ts.registerLocal(&#x27;description&#x27;, new pb.TemplateValue(articles[i].meta_desc ? articles[i].meta_desc : articles[i].subheading, false));
-                                self.ts.registerLocal(&#x27;content&#x27;, new pb.TemplateValue(articles[i].article_layout, false));
-                                self.ts.registerLocal(&#x27;categories&#x27;, function(flag, onFlagProccessed) {
-                                    var categories = &#x27;&#x27;;
-                                    for(var j = 0; j &lt; articles[i].section_names.length; j++) {
-                                        categories = categories.concat(&#x27;&lt;category&gt;&#x27; + HtmlEncoder.htmlEncode(articles[i].section_names[j]) + &#x27;&lt;/category&gt;&#x27;);
-                                    }
-                                    onFlagProccessed(null, new pb.TemplateValue(categories, false));
-                                });
-                                self.ts.load(&#x27;xml_feeds/rss/item&#x27;, callback);
-                            };
-                        });
-                        async.series(tasks, function(err, results) {
-                            cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
+                                    self.ts.registerLocal(&#x27;url&#x27;, &#x27;/article/&#x27; + articles[i].url);
+                                    self.ts.registerLocal(&#x27;title&#x27;, articles[i].headline);
+                                    self.ts.registerLocal(&#x27;pub_date&#x27;, ArticleFeed.getRSSDate(articles[i].publish_date));
+                                    self.ts.registerLocal(&#x27;author&#x27;, articles[i].author_name);
+                                    self.ts.registerLocal(&#x27;description&#x27;, new pb.TemplateValue(articles[i].meta_desc ? articles[i].meta_desc : articles[i].subheading, false));
+                                    self.ts.registerLocal(&#x27;content&#x27;, new pb.TemplateValue(articles[i].article_layout, false));
+                                    self.ts.registerLocal(&#x27;categories&#x27;, function(flag, onFlagProccessed) {
+                                        var categories = &#x27;&#x27;;
+                                        for(var j = 0; j &lt; articles[i].section_names.length; j++) {
+                                            categories = categories.concat(&#x27;&lt;category&gt;&#x27; + HtmlEncoder.htmlEncode(articles[i].section_names[j]) + &#x27;&lt;/category&gt;&#x27;);
+                                        }
+                                        onFlagProccessed(null, new pb.TemplateValue(categories, false));
+                                    });
+                                    self.ts.load(&#x27;xml_feeds/rss/item&#x27;, callback);
+                                };
+                            });
+                            async.series(tasks, function(err, results) {
+                                cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
+                            });
                         });
                     });
                 });
             });
         });
-	});
-	self.ts.load(&#x27;xml_feeds/rss&#x27;, function(err, content) {
-		var data = {
-			content: content,
-			headers: {
-				&#x27;Access-Control-Allow-Origin&#x27;: &#x27;*&#x27;
-			}
-		};
-		cb(data);
-    });
-};
-
-ArticleFeed.prototype.getBuildDate = function() {
-    var date = new Date();
-    //Thu, 03 Jul 2014 18:21:05 +0000
-
-    var days = [&#x27;Sun&#x27;, &#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;];
-    var months = [&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;Mar&#x27;, &#x27;Apr&#x27;, &#x27;May&#x27;, &#x27;Jun&#x27;, &#x27;Jul&#x27;, &#x27;Aug&#x27;, &#x27;Sep&#x27;, &#x27;Oct&#x27;, &#x27;Nov&#x27;, &#x27;Dec&#x27;];
-
-    this.zeroNum = function(num) {
-        if(num &lt; 10) {
-            return &#x27;0&#x27; + num;
-        }
-
-        return num.toString();
-    };
-
-    return days[date.getDay()] + &#x27;, &#x27; + this.zeroNum(date.getDate()) + &#x27; &#x27; + months[date.getMonth()] + &#x27; &#x27; + date.getFullYear() + &#x27; &#x27; + this.zeroNum(date.getHours()) + &#x27;:&#x27; + this.zeroNum(date.getMinutes()) + &#x27;:&#x27; + this.zeroNum(date.getSeconds()) + &#x27; +0000&#x27;;
-};
-
-
-ArticleFeed.prototype.getSectionNames = function(articles, cb) {
-
-    var opts = {
-        select: {name: 1},
-        where: pb.DAO.ANYWHERE,
-        order: {parent: 1}
-    };
-	var dao = new pb.DAO();
-	dao.q(&#x27;section&#x27;, opts, function(err, sections) {
-        if (util.isError(err)) {
-            return cb(err, sections);   
-        }
-
-		for(var i = 0; i &lt; articles.length; i++) {
-
-			var sectionNames = [];
-            for(var j = 0; j &lt; articles[i].article_sections.length; j++) {
-
-            	for(var o = 0; o &lt; sections.length; o++) {
-
-                	if(sections[o]._id.equals(ObjectID(articles[i].article_sections[j]))) {
-                        sectionNames.push(sections[o].name);
-                        break;
-                    }
+        self.ts.load(&#x27;xml_feeds/rss&#x27;, function(err, content) {
+            var data = {
+                content: content,
+                headers: {
+                    &#x27;Access-Control-Allow-Origin&#x27;: &#x27;*&#x27;
                 }
+            };
+            cb(data);
+        });
+    };
+
+    ArticleFeed.prototype.getBuildDate = function() {
+        var date = new Date();
+        //Thu, 03 Jul 2014 18:21:05 +0000
+
+        var days = [&#x27;Sun&#x27;, &#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;];
+        var months = [&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;Mar&#x27;, &#x27;Apr&#x27;, &#x27;May&#x27;, &#x27;Jun&#x27;, &#x27;Jul&#x27;, &#x27;Aug&#x27;, &#x27;Sep&#x27;, &#x27;Oct&#x27;, &#x27;Nov&#x27;, &#x27;Dec&#x27;];
+
+        this.zeroNum = function(num) {
+            if(num &lt; 10) {
+                return &#x27;0&#x27; + num;
             }
 
-            articles[i].section_names = sectionNames;
+            return num.toString();
+        };
+
+        return days[date.getDay()] + &#x27;, &#x27; + this.zeroNum(date.getDate()) + &#x27; &#x27; + months[date.getMonth()] + &#x27; &#x27; + date.getFullYear() + &#x27; &#x27; + this.zeroNum(date.getHours()) + &#x27;:&#x27; + this.zeroNum(date.getMinutes()) + &#x27;:&#x27; + this.zeroNum(date.getSeconds()) + &#x27; +0000&#x27;;
+    };
+
+
+    ArticleFeed.prototype.getSectionNames = function(articles, cb) {
+
+        var opts = {
+            select: {name: 1},
+            where: pb.DAO.ANYWHERE,
+            order: {parent: 1}
+        };
+        var dao = new pb.DAO();
+        dao.q(&#x27;section&#x27;, opts, function(err, sections) {
+            if (util.isError(err)) {
+                return cb(err, sections);   
+            }
+
+            for(var i = 0; i &lt; articles.length; i++) {
+
+                var sectionNames = [];
+                for(var j = 0; j &lt; articles[i].article_sections.length; j++) {
+
+                    for(var o = 0; o &lt; sections.length; o++) {
+
+                        if(pb.DAO.areIdsEqual(sections[o][pb.DAO.getIdField()], articles[i].article_sections[j])) {
+                            sectionNames.push(sections[o].name);
+                            break;
+                        }
+                    }
+                }
+
+                articles[i].section_names = sectionNames;
+            }
+
+            cb(null, articles);
+        });
+    };
+
+    ArticleFeed.prototype.getMedia = function(articles, cb) {
+
+        var tasks = util.getTasks(articles, function(articles, i) {
+            return function (callback) {
+
+                var mediaLoader = new MediaLoader();
+                mediaLoader.start(articles[i].article_layout, function(err, newLayout) {
+                    articles[i].layout = newLayout;
+                    callback(null, articles[i]);
+                });
+            };
+        });
+        async.series(tasks, cb);
+    };
+
+    ArticleFeed.getRSSDate = function(date) {
+
+        var dayNames   = [&#x27;Sun&#x27;, &#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;];
+        var monthNames = [&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;Mar&#x27;, &#x27;Apr&#x27;, &#x27;May&#x27;, &#x27;Jun&#x27;, &#x27;Jul&#x27;, &#x27;Aug&#x27;, &#x27;Sep&#x27;, &#x27;Oct&#x27;, &#x27;Nov&#x27;, &#x27;Dec&#x27;];
+
+        function getTrailingZero(number)  {
+            if(number &lt; 10) {
+                return &#x27;0&#x27; + number;
+            }
+            return number;
         }
 
-        cb(articles);
-    });
+        return dayNames[date.getDay()] + &#x27;, &#x27; + date.getDate() + &#x27; &#x27; + monthNames[date.getMonth()] + &#x27; &#x27; + date.getFullYear() + &#x27; &#x27; + getTrailingZero(date.getHours()) + &#x27;:&#x27; + getTrailingZero(date.getMinutes()) + &#x27;:&#x27; + getTrailingZero(date.getSeconds()) + &#x27; +0000&#x27;;
+    };
+
+    //exports
+    return ArticleFeed;
 };
-
-ArticleFeed.prototype.getMedia = function(articles, cb) {
-
-    var tasks = pb.utils.getTasks(articles, function(articles, i) {
-    	return function (callback) {
-
-    		var mediaLoader = new MediaLoader();
-    	    mediaLoader.start(articles[i].article_layout, function(err, newLayout) {
-    	        articles[i].layout = newLayout;
-    	        callback(null, articles[i]);
-    	    });
-    	};
-    });
-    async.series(tasks, function(err, articles) {
-    	cb(articles);
-    });
-};
-
-ArticleFeed.getRSSDate = function(date) {
-
-    var dayNames   = [&#x27;Sun&#x27;, &#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;];
-    var monthNames = [&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;Mar&#x27;, &#x27;Apr&#x27;, &#x27;May&#x27;, &#x27;Jun&#x27;, &#x27;Jul&#x27;, &#x27;Aug&#x27;, &#x27;Sep&#x27;, &#x27;Oct&#x27;, &#x27;Nov&#x27;, &#x27;Dec&#x27;];
-
-    function getTrailingZero(number)  {
-        if(number &lt; 10) {
-            return &#x27;0&#x27; + number;
-        }
-        return number;
-    }
-
-    return dayNames[date.getDay()] + &#x27;, &#x27; + date.getDate() + &#x27; &#x27; + monthNames[date.getMonth()] + &#x27; &#x27; + date.getFullYear() + &#x27; &#x27; + getTrailingZero(date.getHours()) + &#x27;:&#x27; + getTrailingZero(date.getMinutes()) + &#x27;:&#x27; + getTrailingZero(date.getSeconds()) + &#x27; +0000&#x27;;
-};
-
-//exports
-module.exports = ArticleFeed;
 
     </pre>
 </div>

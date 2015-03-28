@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,213 +392,215 @@
 */
 
 //dependencies
-var PluginJobRunner = require(&#x27;./plugin_job_runner.js&#x27;);
+var process = require(&#x27;process&#x27;);
+var domain  = require(&#x27;domain&#x27;);
+var util    = require(&#x27;../../../util.js&#x27;);
 
-/**
- * A system job that coordinates the uninstall of a plugin across the cluster.
- * The job has two modes.  The first is initiator.  This is the process that
- * receives the request to uninstall the plugin.  It coordinates a sequenced
- * uninstall from each process in the cluster.  The initiator does this by
- * getting a list of active processes through the service registry.  It then
- * uses the registry to send a message to each process to uninstall the plugin.
- * Some operations are repeated for each server but this is ok based on the
- * current set of operations.  When a command is received that instructs a
- * process to uninstall a plugin it creates an instance of the plugin uninstall
- * job with isInitiator = FALSE.  This changes causes the actual uninstall
- * process to take place.  Log statements are sent both to the system logger
- * and to the job log persistence entity.
- * @class PluginUninstallJob
- * @constructor
- * @extends PluginJobRunner
- */
-function PluginUninstallJob(){
-    PluginUninstallJob.super_.call(this);
+module.exports = function PluginUninstallJobModule(pb) {
 
-    //initialize
-    this.setParallelLimit(1);
-};
+    /**
+     * A system job that coordinates the uninstall of a plugin across the cluster.
+     * The job has two modes.  The first is initiator.  This is the process that
+     * receives the request to uninstall the plugin.  It coordinates a sequenced
+     * uninstall from each process in the cluster.  The initiator does this by
+     * getting a list of active processes through the service registry.  It then
+     * uses the registry to send a message to each process to uninstall the plugin.
+     * Some operations are repeated for each server but this is ok based on the
+     * current set of operations.  When a command is received that instructs a
+     * process to uninstall a plugin it creates an instance of the plugin uninstall
+     * job with isInitiator = FALSE.  This changes causes the actual uninstall
+     * process to take place.  Log statements are sent both to the system logger
+     * and to the job log persistence entity.
+     * @class PluginUninstallJob
+     * @constructor
+     * @extends PluginJobRunner
+     */
+    function PluginUninstallJob(){
+        PluginUninstallJob.super_.call(this);
 
-//inheritance
-util.inherits(PluginUninstallJob, PluginJobRunner);
-
-//statics
-/**
- * The command to that intends for the the uninstall job to run
- * @static
- * @property UNINSTALL_PLUGIN_COMMAND
- * @type {String}
- */
-PluginUninstallJob.UNINSTALL_PLUGIN_COMMAND = &#x27;uninstall_plugin&#x27;;
-
-/**
- * Retrieves the tasks needed to contact each process in the cluster to
- * uninstall the plugin.
- * @method getInitiatorTasks
- * @param {Function} cb A callback that takes two parameters: cb(Error, Object|Array)
- */
-PluginUninstallJob.prototype.getInitiatorTasks = function(cb) {
-    var self = this;
-
-    var command = {
-        pluginUid: self.getPluginUid(),
-        jobId: self.getId(),
-
-        //we provide a progress function to update the job listing
-        progress: function(indexOfExecutingTask, totalTasks) {
-
-            var increment = indexOfExecutingTask &gt; 0 ? 100 / totalTasks / self.getChunkOfWorkPercentage(): 0;
-            self.onUpdate(increment);
-        }
+        //initialize
+        this.setParallelLimit(1);
     };
-    var tasks = [
-        this.createCommandTask(PluginUninstallJob.UNINSTALL_PLUGIN_COMMAND, command)
-    ];
-    cb(null, tasks);
-};
+    util.inherits(PluginUninstallJob, pb.PluginJobRunner);
 
-/**
- * Retrieves the tasks needed to uninstall the plugin from this executing
- * process.  The tasks are executed in series:
- * &lt;ol&gt;
- * &lt;li&gt;Call the plugin&#x27;s onUninstall function&lt;/li&gt;
- * &lt;li&gt;Unregister any routes and controllers&lt;/li&gt;
- * &lt;li&gt;Remove any plugin settings&lt;/li&gt;
- * &lt;li&gt;Remove any theme settings&lt;/li&gt;
- * &lt;li&gt;Remove the plugin record from persistence&lt;/li&gt;
- * &lt;li&gt;Switch active theme if needed&lt;/li&gt;
- * &lt;li&gt;Deactivate the plugin from this process&lt;/li&gt;
- * &lt;/ol&gt;
- * @method getWorkerTasks
- * @param {Function} cb A callback that takes two parameters: cb(Error, Object|Array)
- */
-PluginUninstallJob.prototype.getWorkerTasks = function(cb) {
-    var self = this;
+    /**
+     * The command to that intends for the the uninstall job to run
+     * @static
+     * @readonly
+     * @property UNINSTALL_PLUGIN_COMMAND
+     * @type {String}
+     */
+    PluginUninstallJob.UNINSTALL_PLUGIN_COMMAND = &#x27;uninstall_plugin&#x27;;
 
-    var pluginUid = this.getPluginUid();
-    var tasks = [
+    /**
+     * Retrieves the tasks needed to contact each process in the cluster to
+     * uninstall the plugin.
+     * @method getInitiatorTasks
+     * @param {Function} cb A callback that takes two parameters: cb(Error, Object|Array)
+     */
+    PluginUninstallJob.prototype.getInitiatorTasks = function(cb) {
+        var self = this;
 
-        //call onUninstall
-        function(callback) {
-            if (!pb.PluginService.isActivePlugin(pluginUid)) {
-                self.log(&quot;Skipping call to plugin&#x27;s onUninstall function.  Main module was not active.&quot;);
-                callback(null, true);
-                return;
+        var command = {
+            pluginUid: self.getPluginUid(),
+            jobId: self.getId(),
+
+            //we provide a progress function to update the job listing
+            progress: function(indexOfExecutingTask, totalTasks) {
+
+                var increment = indexOfExecutingTask &gt; 0 ? 100 / totalTasks / self.getChunkOfWorkPercentage(): 0;
+                self.onUpdate(increment);
             }
+        };
+        var tasks = [
+            this.createCommandTask(PluginUninstallJob.UNINSTALL_PLUGIN_COMMAND, command)
+        ];
+        cb(null, tasks);
+    };
 
-            var mm = pb.PluginService.getActiveMainModule(pluginUid);
-            if (pb.utils.isFunction(mm.onUninstall)) {
-                self.log(&#x27;Calling plugin onUnstall&#x27;, pluginUid);
+    /**
+     * Retrieves the tasks needed to uninstall the plugin from this executing
+     * process.  The tasks are executed in series:
+     * &lt;ol&gt;
+     * &lt;li&gt;Call the plugin&#x27;s onUninstall function&lt;/li&gt;
+     * &lt;li&gt;Unregister any routes and controllers&lt;/li&gt;
+     * &lt;li&gt;Remove any plugin settings&lt;/li&gt;
+     * &lt;li&gt;Remove any theme settings&lt;/li&gt;
+     * &lt;li&gt;Remove the plugin record from persistence&lt;/li&gt;
+     * &lt;li&gt;Switch active theme if needed&lt;/li&gt;
+     * &lt;li&gt;Deactivate the plugin from this process&lt;/li&gt;
+     * &lt;/ol&gt;
+     * @method getWorkerTasks
+     * @param {Function} cb A callback that takes two parameters: cb(Error, Object|Array)
+     */
+    PluginUninstallJob.prototype.getWorkerTasks = function(cb) {
+        var self = this;
 
-                var d = domain.create();
-                d.on(&#x27;error&#x27;, callback);
-                d.run(function() {
-                    mm.onUninstall(callback);
-                });
-            }
-            else {
-                self.log(&#x27;Plugin onUninstall function does not exist.  Skipping.&#x27;);
-                callback(null, true);
-            }
-        },
+        var pluginUid = this.getPluginUid();
+        var tasks = [
 
-        //unregister routes
-        function(callback) {
-            var routesRemoved = pb.RequestHandler.unregisterThemeRoutes(pluginUid);
-            self.log(&#x27;Unregistered %d routes&#x27;, routesRemoved);
-            process.nextTick(function(){callback(null, true);});
-        },
-
-        //remove localization
-        function(callback) {
-            //TODO refactor localization to figure out how to remove only those
-            //that were overriden. For now any overriden localizations will be
-            //left until the server cycles.  This is not ideal but will suffice
-            //for most use cases.  The only affected use case is if a default
-            //label is overriden.
-            process.nextTick(function(){callback(null, true);});
-        },
-
-        //remove settings
-        function(callback) {
-            self.log(&#x27;Attemping to remove plugin settings&#x27;);
-
-            pb.plugins.pluginSettingsService.purge(pluginUid, function (err, result) {
-                callback(err, !util.isError(err) &amp;&amp; result);
-            });
-        },
-
-        //remove theme settings
-        function(callback) {
-            self.log(&#x27;Attemping to remove theme settings&#x27;);
-
-            pb.plugins.themeSettingsService.purge(pluginUid, function (err, result) {
-                callback(err, !util.isError(err) &amp;&amp; result);
-            });
-        },
-
-        //remove plugin record from &quot;plugin&quot; collection
-        function(callback) {
-            self.log(&#x27;Attemping to remove plugin from persistent storage&#x27;);
-
-            var where = {
-                uid: pluginUid
-            };
-            var dao = new pb.DAO();
-            dao.delete(where, &#x27;plugin&#x27;, function(err, result) {
-                callback(error, !util.isError(err));
-            });
-        },
-
-        //roll over to default theme
-        function(callback) {
-            self.log(&#x27;Inspecting the active theme&#x27;);
-
-            //retrieve the plugin so we can see if the value matches what we
-            //are uninstalling
-            pb.settings.get(&#x27;active_theme&#x27;, function(err, activeTheme) {
-                if (util.isError(err)) {
-                    callback(err, false);
+            //call onUninstall
+            function(callback) {
+                if (!pb.PluginService.isActivePlugin(pluginUid)) {
+                    self.log(&quot;Skipping call to plugin&#x27;s onUninstall function.  Main module was not active.&quot;);
+                    callback(null, true);
                     return;
                 }
 
-                //check if we need to reset the active theme
-                if (activeTheme === pluginUid) {
-                    self.log(&#x27;Uninstalling the active theme.  Switching to pencilblue&#x27;);
+                var mm = pb.PluginService.getActiveMainModule(pluginUid);
+                if (util.isFunction(mm.onUninstall)) {
+                    self.log(&#x27;Calling plugin onUnstall&#x27;, pluginUid);
 
-                    pb.settings.set(&#x27;active_theme&#x27;, &#x27;pencilblue&#x27;, function(err, result) {
-                        callback(err, result ? true : false);
+                    var d = domain.create();
+                    d.on(&#x27;error&#x27;, callback);
+                    d.run(function() {
+                        mm.onUninstall(callback);
                     });
                 }
                 else {
+                    self.log(&#x27;Plugin onUninstall function does not exist.  Skipping.&#x27;);
                     callback(null, true);
                 }
-            });
-        },
+            },
 
-        //remove from ACTIVE_PLUGINS//unregister services
-        function(callback) {
-            var result = pb.PluginService.deactivatePlugin(pluginUid);
-            process.nextTick(function(){callback(null, result);});
-        }
-    ];
-    cb(null, tasks);
+            //unregister routes
+            function(callback) {
+                var routesRemoved = pb.RequestHandler.unregisterThemeRoutes(pluginUid);
+                self.log(&#x27;Unregistered %d routes&#x27;, routesRemoved);
+                process.nextTick(function(){callback(null, true);});
+            },
+
+            //remove localization
+            function(callback) {
+                //TODO refactor localization to figure out how to remove only those
+                //that were overriden. For now any overriden localizations will be
+                //left until the server cycles.  This is not ideal but will suffice
+                //for most use cases.  The only affected use case is if a default
+                //label is overriden.
+                process.nextTick(function(){callback(null, true);});
+            },
+
+            //remove settings
+            function(callback) {
+                self.log(&#x27;Attemping to remove plugin settings&#x27;);
+
+                pb.plugins.pluginSettingsService.purge(pluginUid, function (err, result) {
+                    callback(err, !util.isError(err) &amp;&amp; result);
+                });
+            },
+
+            //remove theme settings
+            function(callback) {
+                self.log(&#x27;Attemping to remove theme settings&#x27;);
+
+                pb.plugins.themeSettingsService.purge(pluginUid, function (err, result) {
+                    callback(err, !util.isError(err) &amp;&amp; result);
+                });
+            },
+
+            //remove plugin record from &quot;plugin&quot; collection
+            function(callback) {
+                self.log(&#x27;Attemping to remove plugin from persistent storage&#x27;);
+
+                var where = {
+                    uid: pluginUid
+                };
+                var dao = new pb.DAO();
+                dao.delete(where, &#x27;plugin&#x27;, function(err, result) {
+                    callback(err, !util.isError(err));
+                });
+            },
+
+            //roll over to default theme
+            function(callback) {
+                self.log(&#x27;Inspecting the active theme&#x27;);
+
+                //retrieve the plugin so we can see if the value matches what we
+                //are uninstalling
+                pb.settings.get(&#x27;active_theme&#x27;, function(err, activeTheme) {
+                    if (util.isError(err)) {
+                        return callback(err, false);
+                    }
+
+                    //check if we need to reset the active theme
+                    if (activeTheme === pluginUid) {
+                        self.log(&#x27;Uninstalling the active theme.  Switching to pencilblue&#x27;);
+
+                        pb.settings.set(&#x27;active_theme&#x27;, &#x27;pencilblue&#x27;, function(err, result) {
+                            callback(err, result ? true : false);
+                        });
+                    }
+                    else {
+                        callback(null, true);
+                    }
+                });
+            },
+
+            //remove from ACTIVE_PLUGINS//unregister services
+            function(callback) {
+                var result = pb.PluginService.deactivatePlugin(pluginUid);
+                process.nextTick(function(){callback(null, result);});
+            }
+        ];
+        cb(null, tasks);
+    };
+
+    /**
+     * Called when the tasks have completed execution and isInitiator = FALSE. The
+     * function blindly passes the results of the tasks back to the callback.
+     * @param {Error} err The error that occurred (if any) during task execution
+     * @param {Array} results An array containing the result of each executed task
+     * @param {Function} cb A callback that provides two parameters: The first is
+     * any error that occurred (if exists) and the second is an array of Boolean
+     * values that indicate the success or failure of each task.
+     */
+    PluginUninstallJob.prototype.processWorkerResults = function(err, results, cb) {
+        cb(err, results);
+    };
+
+    //exports
+    return PluginUninstallJob;
 };
-
-/**
- * Called when the tasks have completed execution and isInitiator = FALSE. The
- * function blindly passes the results of the tasks back to the callback.
- * @param {Error} err The error that occurred (if any) during task execution
- * @param {Array} results An array containing the result of each executed task
- * @param {Function} cb A callback that provides two parameters: The first is
- * any error that occurred (if exists) and the second is an array of Boolean
- * values that indicate the success or failure of each task.
- */
-PluginUninstallJob.prototype.processWorkerResults = function(err, results, cb) {
-    cb(err, results);
-};
-
-//exports
-module.exports = PluginUninstallJob;
 
     </pre>
 </div>

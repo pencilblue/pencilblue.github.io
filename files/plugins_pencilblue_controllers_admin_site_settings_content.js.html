@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,86 +391,90 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Interface for the site&#x27;s content settings
- */
+module.exports = function(pb) {
+    
+    //pb dependencies
+    var util = pb.util;
+    
+    /**
+     * Interface for the site&#x27;s content settings
+     */
+    function Content(){}
+    util.inherits(Content, pb.BaseController);
 
-function Content(){}
+    //statics
+    var SUB_NAV_KEY = &#x27;content_settings&#x27;;
 
-//inheritance
-util.inherits(Content, pb.BaseController);
+    Content.prototype.render = function(cb) {
+        var self = this;
 
-//statics
-var SUB_NAV_KEY = &#x27;content_settings&#x27;;
+        var tabs =
+        [
+            {
+                active: &#x27;active&#x27;,
+                href: &#x27;#articles&#x27;,
+                icon: &#x27;files-o&#x27;,
+                title: self.ls.get(&#x27;ARTICLES&#x27;)
+            },
+            {
+                href: &#x27;#timestamp&#x27;,
+                icon: &#x27;clock-o&#x27;,
+                title: self.ls.get(&#x27;TIMESTAMP&#x27;)
+            },
+            {
+                href: &#x27;#authors&#x27;,
+                icon: &#x27;user&#x27;,
+                title: self.ls.get(&#x27;AUTHOR&#x27;)
+            },
+            {
+                href: &#x27;#comments&#x27;,
+                icon: &#x27;comment&#x27;,
+                title: self.ls.get(&#x27;COMMENTS&#x27;)
+            }
+        ];
 
-Content.prototype.render = function(cb) {
-    var self = this;
+        var contentService = new pb.ContentService();
+        contentService.getSettings(function(err, contentSettings) {
+            var angularObjects = pb.ClientJs.getAngularObjects({
+                navigation: pb.AdminNavigation.get(self.session, [&#x27;settings&#x27;, &#x27;site_settings&#x27;], self.ls),
+                pills: pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, &#x27;content&#x27;),
+                tabs: tabs,
+                contentSettings: contentSettings
+            });
 
-    var tabs =
-    [
-        {
-            active: &#x27;active&#x27;,
-            href: &#x27;#articles&#x27;,
-            icon: &#x27;files-o&#x27;,
-            title: self.ls.get(&#x27;ARTICLES&#x27;)
-        },
-        {
-            href: &#x27;#timestamp&#x27;,
-            icon: &#x27;clock-o&#x27;,
-            title: self.ls.get(&#x27;TIMESTAMP&#x27;)
-        },
-        {
-            href: &#x27;#authors&#x27;,
-            icon: &#x27;user&#x27;,
-            title: self.ls.get(&#x27;AUTHOR&#x27;)
-        },
-        {
-            href: &#x27;#comments&#x27;,
-            icon: &#x27;comment&#x27;,
-            title: self.ls.get(&#x27;COMMENTS&#x27;)
-        }
-    ];
-
-    pb.content.getSettings(function(err, contentSettings) {
-        var angularObjects = pb.js.getAngularObjects({
-            navigation: pb.AdminNavigation.get(self.session, [&#x27;settings&#x27;, &#x27;site_settings&#x27;], self.ls),
-            pills: pb.AdminSubnavService.get(SUB_NAV_KEY, self.ls, &#x27;content&#x27;),
-            tabs: tabs,
-            contentSettings: contentSettings
+            self.setPageName(self.ls.get(&#x27;CONTENT&#x27;));
+            self.ts.registerLocal(&#x27;angular_objects&#x27;, new pb.TemplateValue(angularObjects, false));
+            self.ts.load(&#x27;admin/site_settings/content&#x27;, function(err,result) {
+                cb({content: result});
+            });
         });
+    };
 
-        self.setPageName(self.ls.get(&#x27;CONTENT&#x27;));
-        self.ts.registerLocal(&#x27;angular_objects&#x27;, new pb.TemplateValue(angularObjects, false));
-        self.ts.load(&#x27;admin/site_settings/content&#x27;, function(err,result) {
-            cb({content: result});
-        });
-    });
+    Content.getSubNavItems = function(key, ls, data) {
+        return [{
+            name: &#x27;configuration&#x27;,
+            title: ls.get(&#x27;CONTENT&#x27;),
+            icon: &#x27;chevron-left&#x27;,
+            href: &#x27;/admin/site_settings&#x27;
+        }, {
+            name: &#x27;email&#x27;,
+            title: ls.get(&#x27;EMAIL&#x27;),
+            icon: &#x27;envelope&#x27;,
+            href: &#x27;/admin/site_settings/email&#x27;
+        }, {
+            name: &#x27;libraries&#x27;,
+            title: ls.get(&#x27;LIBRARIES&#x27;),
+            icon: &#x27;book&#x27;,
+            href: &#x27;/admin/site_settings/libraries&#x27;
+        }];
+    };
+
+    //register admin sub-nav
+    pb.AdminSubnavService.registerFor(SUB_NAV_KEY, Content.getSubNavItems);
+
+    //exports
+    return Content;
 };
-
-Content.getSubNavItems = function(key, ls, data) {
-    return [{
-        name: &#x27;configuration&#x27;,
-        title: ls.get(&#x27;CONTENT&#x27;),
-        icon: &#x27;chevron-left&#x27;,
-        href: &#x27;/admin/site_settings&#x27;
-    }, {
-        name: &#x27;email&#x27;,
-        title: ls.get(&#x27;EMAIL&#x27;),
-        icon: &#x27;envelope&#x27;,
-        href: &#x27;/admin/site_settings/email&#x27;
-    }, {
-        name: &#x27;libraries&#x27;,
-        title: ls.get(&#x27;LIBRARIES&#x27;),
-        icon: &#x27;book&#x27;,
-        href: &#x27;/admin/site_settings/libraries&#x27;
-    }];
-};
-
-//register admin sub-nav
-pb.AdminSubnavService.registerFor(SUB_NAV_KEY, Content.getSubNavItems);
-
-//exports
-module.exports = Content;
 
     </pre>
 </div>

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,9 +392,13 @@
 */
 
 //dependencies
+var fs      = require(&#x27;fs&#x27;);
+var path    = require(&#x27;path&#x27;);
 var cluster = require(&#x27;cluster&#x27;);
 var process = require(&#x27;process&#x27;);
-var utils   = require(&#x27;./util.js&#x27;);
+var util    = require(&#x27;./util.js&#x27;);
+var process = require(&#x27;process&#x27;);
+var winston = require(&#x27;winston&#x27;);
 
 /**
  * Default configuration.  The settings here should be overriden by taking the
@@ -367,19 +409,96 @@ var utils   = require(&#x27;./util.js&#x27;);
  * 2) Override the properties as desired.
  * 3) Add any custom properties you wish to provide for your specific purposes.
  */
+function Configuration(){}
 
-// Don&#x27;t change this setting
-global.DOCUMENT_ROOT = __dirname.substr(0, __dirname.indexOf(path.sep+&#x27;include&#x27;));
-global.EXTERNAL_ROOT = path.join(path.sep, &#x27;etc&#x27;, &#x27;pencilblue&#x27;);
+/**
+ * 
+ * @static
+ * @readonly
+ * @property DOCUMENT_ROOT
+ * @type {String}
+ */
+Configuration.DOCUMENT_ROOT = __dirname.substr(0, __dirname.indexOf(path.sep+&#x27;include&#x27;));
 
-global.LOG_LEVEL = &#x27;info&#x27;;
-global.LOG_DIR   = path.join(DOCUMENT_ROOT, &#x27;log&#x27;);
-global.LOG_FILE  = path.join(LOG_DIR, &#x27;pencilblue.log&#x27;);
+/**
+ * 
+ * @static
+ * @readonly
+ * @property EXTERNAL_ROOT
+ * @type {String}
+ */
+Configuration.EXTERNAL_ROOT = path.join(path.sep, &#x27;etc&#x27;, &#x27;pencilblue&#x27;);
 
+/**
+ * Ascending index value
+ * @private
+ * @static
+ * @readonly
+ * @property ASC
+ * @type {Integer}
+ */
 var ASC  = 1;
+
+/**
+ * Descending index value
+ * @private
+ * @static
+ * @readonly
+ * @property DESC
+ * @type {Integer}
+ */
 var DESC = -1;
 
-var config = {
+/**
+ * The default logging directory absolute file path
+ * @private
+ * @static
+ * @readonly
+ * @property LOG_DIR
+ * @type {String}
+ */
+var LOG_DIR = path.join(Configuration.DOCUMENT_ROOT, &#x27;log&#x27;);
+
+/**
+ * The default logging file absolute path
+ * @private
+ * @static
+ * @readonly
+ * @property LOG_FILESC
+ * @type {String}
+ */
+var LOG_FILE = path.join(LOG_DIR, &#x27;pencilblue.log&#x27;);
+
+/**
+ * The configuration module overrides file name 
+ * @private
+ * @static
+ * @readonly
+ * @property CONFIG_MODULE_NAME
+ * @type {String}
+ */
+var CONFIG_MODULE_NAME  = &#x27;config.js&#x27;;
+
+/**
+ * The default list of absolute file paths to try when loading the configuration
+ * @private
+ * @static
+ * @readonly
+ * @property OVERRIDE_FILE_PATHS
+ * @type {Array}
+ */
+var OVERRIDE_FILE_PATHS = [
+    path.join(Configuration.DOCUMENT_ROOT, CONFIG_MODULE_NAME),
+    path.join(Configuration.EXTERNAL_ROOT, CONFIG_MODULE_NAME),
+];
+
+/**
+ * @private
+ * @static
+ * @readonly
+ * @property BASE_CONFIG
+ */
+var BASE_CONFIG = {
 
     //The name of the site.
 	siteName: &#x27;pencilblue&#x27;,
@@ -388,8 +507,7 @@ var config = {
     //the siteIP
 	siteRoot: &#x27;http://localhost:8080&#x27;,
 
-    //The hostname or IP address represented by the entire site.  Should match
-    //your domain name if in production use.
+    //The hostname or IP address that the web server instance will bind to
 	siteIP:   &#x27;0.0.0.0&#x27;,
 
     //The primary port to listen for traffic on.  Some environment such as
@@ -398,7 +516,7 @@ var config = {
 	sitePort: process.env.port || process.env.PORT || 8080,
 
     //the absolute file path to the directory where installation lives
-	docRoot:  DOCUMENT_ROOT,
+	docRoot:  Configuration.DOCUMENT_ROOT,
 
     //provides a configuration for connecting to persistent storage.  The
     //default configuration is meant for mongodb.
@@ -471,6 +589,13 @@ var config = {
                 collection: &#x27;user&#x27;,
                 spec: {admin: DESC},
                 options: {}
+            },
+            
+            //unverified user
+            {
+                collection: &#x27;unverified_user&#x27;,
+                spec: { last_modified: ASC },
+                options: { expireAfterSeconds: 2592000 }
             },
 
             //theme settings
@@ -731,8 +856,16 @@ var config = {
 		timeout: 2000000
 	},
 
-    //The global log level: silly, debug, info, warn, error
-	log_level: LOG_LEVEL,
+    //The logging settings.  The level property specifies at what level to log.  
+    //It can be of any of the following: silly, debug, info, warn, error.  The 
+    //file property specifes the absolute file path where the log file should 
+    //be written.  If no value is provided the file transport will not be 
+    //configured.
+    logging: {
+        
+        level: &quot;info&quot;,
+        file: LOG_FILE
+    },
 
     //System settings always have the persistent storage layer on.  Optionally,
     //the cache and/or memory can be used.  It is not recommended to use memory
@@ -740,7 +873,12 @@ var config = {
     //synced across cluster workers so be careful if this option is set to true.
 	settings: {
 		use_memory: true,
-		use_cache: false
+		use_cache: false,
+        
+        //The timeout specifies how long in milliseconds a setting will exist 
+        //in memory before being flushed.  A value of 0 indicates that the 
+        //values will not be purged from memory once expired.
+        memory_timeout: 0,
 	},
 
     //The template engine can take advantage of caching so that they are not
@@ -749,7 +887,12 @@ var config = {
     //after each tweak.
 	templates: {
 		use_memory: true,
-		use_cache: false
+		use_cache: false,
+        
+        //The timeout specifies how long in milliseconds a setting will exist 
+        //in memory before being flushed.  A value of 0 indicates that the 
+        //values will not be purged from memory once expired.
+        memory_timeout: 0,
 	},
 
     //Plugins can also take advantage of the caching.  This prevents a DB call
@@ -758,6 +901,11 @@ var config = {
 		caching: {
 			use_memory: true,
 			use_cache: false,
+            
+            //The timeout specifies how long in milliseconds a setting will exist 
+            //in memory before being flushed.  A value of 0 indicates that the 
+            //values will not be purged from memory once expired.
+            memory_timeout: 0,
 		}
 	},
 
@@ -859,17 +1007,19 @@ var config = {
         //The maximum size of media files that can be uploaded to the server in 
         //bytes
         max_upload_size: 2 * 1024 * 1024
-    }
+    },
+    
+    //Pulls in the package.json file for PB and extracts the version so it is 
+    //available in the configuration.
+    version: require(path.join(Configuration.DOCUMENT_ROOT, &#x27;package.json&#x27;)).version
 };
 
-var CONFIG_FILE_NAME    = &#x27;config.json&#x27;;
-var CONFIG_MODULE_NAME  = &#x27;config.js&#x27;;
-var OVERRIDE_FILE_PATHS = [
-    path.join(DOCUMENT_ROOT, CONFIG_FILE_NAME),
-    path.join(EXTERNAL_ROOT, CONFIG_FILE_NAME),
-    path.join(DOCUMENT_ROOT, CONFIG_MODULE_NAME),
-    path.join(EXTERNAL_ROOT, CONFIG_MODULE_NAME),
-];
+/** 
+ * Retrieve the base configuration
+ */
+Configuration.getBaseConfig = function() {
+    return util.clone(BASE_CONFIG);
+};
 
 /**
  * Loads an external configuration.
@@ -877,73 +1027,71 @@ var OVERRIDE_FILE_PATHS = [
  * this function after the server starts may cause unintended behavior across
  * the system.
  */
-var loadConfiguration = function() {
-
-    // If no log file exists, we should create one
-    if (!fs.existsSync(LOG_FILE)) {
-        if (!fs.existsSync(LOG_DIR)) {
-            fs.mkdirSync(LOG_DIR);
-        }
-        console.log(&#x27;SystemStartup: Creating log file [%s]&#x27;, LOG_FILE);
-        fs.writeFileSync(LOG_FILE, &#x27;&#x27;);
+Configuration.load = function(filePaths) {
+    if (util.isString(filePaths)) {
+        filePaths = [filePaths];
+    }
+    else if (!filePaths) {
+        filePaths = OVERRIDE_FILE_PATHS;
     }
 
     //find the override file, if exists
     var override       = {};
     var overrideFile   = null;
     var overridesFound = false;
-    for (var i = 0; i &lt; OVERRIDE_FILE_PATHS.length; i++) {
+    for (var i = 0; i &lt; filePaths.length; i++) {
 
-    	overrideFile = OVERRIDE_FILE_PATHS[i];
+    	overrideFile = filePaths[i];
     	if (fs.existsSync(overrideFile)) {
 
             try{
-              override       = require(overrideFile);
-              overridesFound = true;
-              break;
+                override       = require(overrideFile);
+                overridesFound = true;
+                break;
             }
             catch(e){
-              console.log(&#x27;SystemStartup: Failed to parse configuration file [%s]: %s&#x27;, overrideFile, e.stack);
+                console.log(&#x27;SystemStartup: Failed to parse configuration file [%s]: %s&#x27;, overrideFile, e.stack);
             }
-    	}
-    	else {
-    		console.log(&#x27;SystemStartup: No configuration file [%s] found.&#x27;, overrideFile);
     	}
     }
 
     //log result
-    var message = overridesFound ? &#x27;Override file [&#x27;+overrideFile+&#x27;] will be applied.&#x27; : &#x27;No overrides are available, skipping to defaults&#x27;;
-    console.log(&#x27;SystemStartup: %s&#x27;, message);
+    var message;
+    if (overridesFound) {
+        message = util.format(&#x27;Override file [%s] will be applied.&#x27;, overrideFile);
+    }
+    else {
+        message = &#x27;No overrides are available, skipping to defaults after searching the following files:&#x27;;
+        filePaths.forEach(function(filePath) {
+            message += util.format(&#x27;\n* %s&#x27;, filePath);
+        });
+    }
+    console.log(message);
 
     //perform any overrides
-    config = utils.deepMerge(override, config);
+    return Configuration.mergeWithBase(override);
+};
 
-    //setup logging
-    if (!config.logging) {
-        config.logging = {
-            transports: [
-                 new (winston.transports.Console)({ level: config.log_level, timestamp: true, label: cluster.worker ? cluster.worker.id : &#x27;M&#x27;}),
-                 new (winston.transports.File)({ filename: LOG_FILE, level: config.log_level, timestamp: true })
-           ]
-        };
-    }
+/**
+ * 
+ * @static
+ * @method mergeWithBase
+ */
+Configuration.mergeWithBase = function(overrides) {
+    
+    //merge in all overrides with the base configuration
+    var config = util.deepMerge(overrides, Configuration.getBaseConfig());
 
     //special check to ensure that there is no ending slash on the site root
     if (config.siteRoot.lastIndexOf(&#x27;/&#x27;) === (config.siteRoot.length - 1)) {
         config.siteRoot = config.siteRoot.substring(0, config.siteRoot.length - 1);
     }
-
-    //ensure that the version is provided
-    var packageInfo = require(path.join(DOCUMENT_ROOT, &#x27;package.json&#x27;));
-    config.version = packageInfo.version;
     
 	return config;
 };
 
 //export configuration
-var config               = loadConfiguration();
-config.loadConfiguration = loadConfiguration;
-module.exports           = Object.freeze(config);
+module.exports = Configuration;
 
     </pre>
 </div>

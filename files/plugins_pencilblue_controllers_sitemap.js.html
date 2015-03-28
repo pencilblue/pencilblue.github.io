@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,109 +391,115 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Google sitemap
- */
+//dependencies
+var async = require(&#x27;async&#x27;);
 
-function SiteMap(){}
+module.exports = function SiteMapModule(pb) {
+    
+    //pb dependencies
+    var util = pb.util;
 
-//inheritance
-util.inherits(SiteMap, pb.BaseController);
+    /**
+     * Google sitemap
+     */
+    function SiteMap(){}
+    util.inherits(SiteMap, pb.BaseController);
 
-//constants
-var PARALLEL_LIMIT = 2;
+    //constants
+    var PARALLEL_LIMIT = 2;
 
-SiteMap.prototype.render = function(cb) {
-	var self = this;
+    SiteMap.prototype.render = function(cb) {
+        var self = this;
 
-	this.ts.registerLocal(&#x27;urls&#x27;, function(flag, cb) {
+        this.ts.registerLocal(&#x27;urls&#x27;, function(flag, cb) {
 
-		var dao   = new pb.DAO();
-		var today = new Date();
-        var descriptors = {
-            section: {
-                where: {type: {$ne: &#x27;container&#x27;}},
-                weight: &#x27;0.5&#x27;,
-                path: &#x27;/&#x27;
-            },
-            page: {
-                where: {publish_date: {$lte: today}},
-                weight: &#x27;1.0&#x27;,
-                path: &#x27;/page/&#x27;
-            },
-            article: {
-                where: {publish_date: {$lte: today}},
-                weight: &#x27;1.0&#x27;,
-                path: &#x27;/article/&#x27;
-            }
-        };
-    	var tasks = pb.utils.getTasks(Object.keys(descriptors), function(keys, i) {
-            return function(callback) {
-                var data = descriptors[keys[i]];
-                data.select = {url: 1, last_modified: 1};
-                dao.q(keys[i], data, function(err, items) {
-                    self.processObjects(items, data.path, data.weight, callback);
-                });
-            };    
+            var dao   = new pb.DAO();
+            var today = new Date();
+            var descriptors = {
+                section: {
+                    where: {type: {$ne: &#x27;container&#x27;}},
+                    weight: &#x27;0.5&#x27;,
+                    path: &#x27;/&#x27;
+                },
+                page: {
+                    where: {publish_date: {$lte: today}},
+                    weight: &#x27;1.0&#x27;,
+                    path: &#x27;/page/&#x27;
+                },
+                article: {
+                    where: {publish_date: {$lte: today}},
+                    weight: &#x27;1.0&#x27;,
+                    path: &#x27;/article/&#x27;
+                }
+            };
+            var tasks = util.getTasks(Object.keys(descriptors), function(keys, i) {
+                return function(callback) {
+                    var data = descriptors[keys[i]];
+                    data.select = {url: 1, last_modified: 1};
+                    dao.q(keys[i], data, function(err, items) {
+                        self.processObjects(items, data.path, data.weight, callback);
+                    });
+                };    
+            });
+            async.parallelLimit(tasks, 2, function(err, htmlParts) {
+                cb(err, new pb.TemplateValue(htmlParts.join(&#x27;&#x27;), false));
+            });
         });
-    	async.parallelLimit(tasks, 2, function(err, htmlParts) {
-    		cb(err, new pb.TemplateValue(htmlParts.join(&#x27;&#x27;), false));
-    	});
-	});
-	this.ts.load(&#x27;xml_feeds/sitemap&#x27;, function(err, content) {
-		var data = {
-			content: content,
-			headers: {
-				&#x27;Access-Control-Allow-Origin&#x27;: &#x27;*&#x27;
-			}
-		};
-        cb(data);
-    });
+        this.ts.load(&#x27;xml_feeds/sitemap&#x27;, function(err, content) {
+            var data = {
+                content: content,
+                headers: {
+                    &#x27;Access-Control-Allow-Origin&#x27;: &#x27;*&#x27;
+                }
+            };
+            cb(data);
+        });
+    };
+
+    SiteMap.prototype.processObjects = function(objArray, urlPrefix, priority, cb) {
+        var self = this;
+        var ts   = new pb.TemplateService(this.ls);
+        ts.registerLocal(&#x27;change_freq&#x27;, &#x27;daily&#x27;);
+        ts.registerLocal(&#x27;priority&#x27;, priority);
+
+
+        var tasks = util.getTasks(objArray, function(objArray, i) {
+            return function(callback) {
+
+                var url;
+                if (urlPrefix === &#x27;/&#x27;) {//special case for navItems
+                    pb.SectionService.formatUrl(objArray[i]);
+                    url = objArray[i].url;
+                }
+                else {
+                    url = pb.UrlService.urlJoin(urlPrefix, objArray[i].url);
+                }
+                ts.registerLocal(&#x27;url&#x27;, url);
+                ts.registerLocal(&#x27;last_mod&#x27;, self.getLastModDate(objArray[i].last_modified));
+                ts.load(&#x27;xml_feeds/sitemap/url&#x27;, callback);
+            };
+        });
+        async.series(tasks, function(err, results) {
+            cb(err, results.join(&#x27;&#x27;));
+        });
+    };
+
+    SiteMap.prototype.getLastModDate = function(date) {
+        var month = date.getMonth() + 1;
+        if(month &lt; 10) {
+            month = &#x27;0&#x27; + month;
+        }
+        var day = date.getDate();
+        if(day &lt; 10) {
+            day = &#x27;0&#x27; + day;
+        }
+
+        return date.getFullYear() + &#x27;-&#x27; + month + &#x27;-&#x27; + day;
+    };
+
+    //exports
+    return SiteMap;
 };
-
-SiteMap.prototype.processObjects = function(objArray, urlPrefix, priority, cb) {
-	var self = this;
-	var ts   = new pb.TemplateService(this.ls);
-	ts.registerLocal(&#x27;change_freq&#x27;, &#x27;daily&#x27;);
-	ts.registerLocal(&#x27;priority&#x27;, priority);
-
-
-	var tasks = pb.utils.getTasks(objArray, function(objArray, i) {
-		return function(callback) {
-
-			var url;
-			if (urlPrefix === &#x27;/&#x27;) {//special case for navItems
-				pb.SectionService.formatUrl(objArray[i]);
-				url = objArray[i].url;
-			}
-			else {
-				url = pb.UrlService.urlJoin(urlPrefix, objArray[i].url);
-			}
-			ts.registerLocal(&#x27;url&#x27;, url);
-			ts.registerLocal(&#x27;last_mod&#x27;, self.getLastModDate(objArray[i].last_modified));
-			ts.load(&#x27;xml_feeds/sitemap/url&#x27;, callback);
-		};
-	});
-	async.series(tasks, function(err, results) {
-		cb(err, results.join(&#x27;&#x27;));
-	});
-};
-
-SiteMap.prototype.getLastModDate = function(date) {
-    var month = date.getMonth() + 1;
-    if(month &lt; 10) {
-        month = &#x27;0&#x27; + month;
-    }
-    var day = date.getDate();
-    if(day &lt; 10) {
-        day = &#x27;0&#x27; + day;
-    }
-
-    return date.getFullYear() + &#x27;-&#x27; + month + &#x27;-&#x27; + day;
-};
-
-//exports
-module.exports = SiteMap;
 
     </pre>
 </div>

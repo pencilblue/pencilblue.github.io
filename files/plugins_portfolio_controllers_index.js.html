@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -336,178 +374,201 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-/**
- * Index - The home page controller of the portfolio theme.
- *
- * @author Blake Callens &lt;blake@pencilblue.org&gt;
- * @copyright 2014 PencilBlue, LLC.  All Rights Reserved
- */
+/*
+    Copyright (C) 2015  PencilBlue, LLC
 
-function Index() {}
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
 
 //dependencies
-var PluginService = pb.PluginService;
-var TopMenu       = require(DOCUMENT_ROOT + &#x27;/include/theme/top_menu&#x27;);
-var MediaLoader = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/entities/article_service&#x27;)).MediaLoader;
+var path = require(&#x27;path&#x27;);
 
-//inheritance
-util.inherits(Index, pb.BaseController);
+module.exports = function IndexModule(pb) {
+    
+    //pb dependencies
+    var util          = pb.util;
+    var PluginService = pb.PluginService;
+    var TopMenu       = pb.TopMenuService;
+    var MediaLoader   = pb.MediaLoader;
 
-/**
-* This is the function that will be called by the system&#x27;s RequestHandler.  It
-* will map the incoming route to the ones below and then instantiate this
-* prototype.  The request handler will then proceed to call this function.
-* Its callback should contain everything needed in order to provide a response.
-*
-* @param cb The callback.  It does not require a an error parameter.  All
-* errors should be handled by the controller and format the appropriate
-*  response.  The system will attempt to catch any catastrophic errors but
-*  makes no guarantees.
-*/
-Index.prototype.render = function(cb) {
-    var self = this;
+    /**
+     * Index The home page controller of the portfolio theme.
+     * @class Index
+     * @author Blake Callens &lt;blake@pencilblue.org&gt;
+     * @copyright 2014 PencilBlue, LLC.  All Rights Reserved
+     */
+    function Index() {}
+    util.inherits(Index, pb.BaseController);
 
-    var content = {
-        content_type: &quot;text/html&quot;,
-        code: 200
-    };
+    /**
+    * This is the function that will be called by the system&#x27;s RequestHandler.  It
+    * will map the incoming route to the ones below and then instantiate this
+    * prototype.  The request handler will then proceed to call this function.
+    * Its callback should contain everything needed in order to provide a response.
+    *
+    * @param cb The callback.  It does not require a an error parameter.  All
+    * errors should be handled by the controller and format the appropriate
+    *  response.  The system will attempt to catch any catastrophic errors but
+    *  makes no guarantees.
+    */
+    Index.prototype.render = function(cb) {
+        var self = this;
 
-    var options = {
-        currUrl: this.req.url
-    };
-    TopMenu.getTopMenu(self.session, self.ls, options, function(themeSettings, navigation, accountButtons) {
-        TopMenu.getBootstrapNav(navigation, accountButtons, function(navigation, accountButtons) {
-            pb.plugins.getSettings(&#x27;portfolio&#x27;, function(err, portfolioSettings) {
-                var homePageKeywords = &#x27;&#x27;;
-                var homePageDescription = &#x27;&#x27;;
-                for(var i = 0; i &lt; portfolioSettings.length; i++) {
-                    switch(portfolioSettings[i].name) {
-                        case &#x27;home_page_keywords&#x27;:
-                            homePageKeywords = portfolioSettings[i].value;
-                            break;
-                        case &#x27;home_page_description&#x27;:
-                            homePageDescription = portfolioSettings[i].value;
-                            break;
-                        default:
-                            break;
-                    }
-                }
+        var content = {
+            content_type: &quot;text/html&quot;,
+            code: 200
+        };
 
-                self.ts.registerLocal(&#x27;meta_keywords&#x27;, homePageKeywords);
-                self.ts.registerLocal(&#x27;meta_desc&#x27;, homePageDescription);
-                self.ts.registerLocal(&#x27;meta_title&#x27;, pb.config.siteName);
-                self.ts.registerLocal(&#x27;meta_lang&#x27;, localizationLanguage);
-                self.ts.registerLocal(&#x27;current_url&#x27;, self.req.url);
-                self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(navigation, false));
-                self.ts.registerLocal(&#x27;account_buttons&#x27;, new pb.TemplateValue(accountButtons, false));
-                self.ts.load(&#x27;landing_page&#x27;, function(err, template) {
-                    if(util.isError(err)) {
-                        content.content = &#x27;&#x27;;
-                    }
-                    else {
-                        content.content = template;
-                    }
-
-                    var opts = {
-                        where: {settings_type: &#x27;home_page&#x27;}
-                    };
-                    var dao = new pb.DAO();
-                    dao.q(&#x27;portfolio_theme_settings&#x27;, opts, function(err, settings) {
-                        if (util.isError(err)) {
-                            self.reqHandler.serveError(err);
+        var options = {
+            currUrl: this.req.url
+        };
+        TopMenu.getTopMenu(self.session, self.ls, options, function(themeSettings, navigation, accountButtons) {
+            TopMenu.getBootstrapNav(navigation, accountButtons, function(navigation, accountButtons) {
+                
+                var pluginService = new pb.PluginService();
+                pluginService.getSettings(&#x27;portfolio&#x27;, function(err, portfolioSettings) {
+                    var homePageKeywords = &#x27;&#x27;;
+                    var homePageDescription = &#x27;&#x27;;
+                    for(var i = 0; i &lt; portfolioSettings.length; i++) {
+                        switch(portfolioSettings[i].name) {
+                            case &#x27;home_page_keywords&#x27;:
+                                homePageKeywords = portfolioSettings[i].value;
+                                break;
+                            case &#x27;home_page_description&#x27;:
+                                homePageDescription = portfolioSettings[i].value;
+                                break;
+                            default:
+                                break;
                         }
-                        if(settings.length &gt; 0) {
-                            settings = settings[0];
+                    }
+
+                    self.ts.registerLocal(&#x27;meta_keywords&#x27;, homePageKeywords);
+                    self.ts.registerLocal(&#x27;meta_desc&#x27;, homePageDescription);
+                    self.ts.registerLocal(&#x27;meta_title&#x27;, pb.config.siteName);
+                    self.ts.registerLocal(&#x27;meta_lang&#x27;, localizationLanguage);
+                    self.ts.registerLocal(&#x27;current_url&#x27;, self.req.url);
+                    self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(navigation, false));
+                    self.ts.registerLocal(&#x27;account_buttons&#x27;, new pb.TemplateValue(accountButtons, false));
+                    self.ts.load(&#x27;landing_page&#x27;, function(err, template) {
+                        if(util.isError(err)) {
+                            content.content = &#x27;&#x27;;
+                        }
+                        else {
+                            content.content = template;
                         }
 
-                        //remove any callouts that are blank. If the home page
-                        //settings for the plugin have not been set it is
-                        //possible for the setting to be empty.  Therefore we
-                        //must put in a fall back plan of an empty array.
-                        var callouts = settings.callouts || [];
-                        for(var i = callouts.length - 1; i &gt;= 0; i--) {
-                            if(typeof callouts[i].copy === &#x27;undefined&#x27; || !callouts[i].copy.length) {
-                                callouts.splice(i, 1);
+                        var opts = {
+                            where: {settings_type: &#x27;home_page&#x27;}
+                        };
+                        var dao = new pb.DAO();
+                        dao.q(&#x27;portfolio_theme_settings&#x27;, opts, function(err, settings) {
+                            if (util.isError(err)) {
+                                self.reqHandler.serveError(err);
                             }
-                        }
-                        content.content = content.content.split(&#x27;^display_callouts^&#x27;).join(callouts.length ? &#x27;&#x27; : &#x27;display: none&#x27;);
-
-                        var colWidth = Math.floor(12 / callouts.length) + &#x27;&#x27;;
-                        self.ts.registerLocal(&#x27;col_width&#x27;, colWidth);
-                        self.ts.load(&#x27;elements/callout&#x27;, function(err, template) {
-                            if(util.isError(err)) {
-                                template = &#x27;&#x27;;
+                            if(settings.length &gt; 0) {
+                                settings = settings[0];
                             }
 
-                            var calloutsHTML = &#x27;&#x27;;
-                            for(var i = 0; i &lt; callouts.length; i++) {
-                                var calloutTemplate = template.split(&#x27;^copy^&#x27;).join(callouts[i].copy);
-                                if(callouts[i].headline &amp;&amp; callouts[i].headline.length) {
-                                    if(callouts[i].link &amp;&amp; callouts[i].link.length) {
-                                        calloutTemplate = calloutTemplate.split(&#x27;^headline^&#x27;).join(&#x27;&lt;h3&gt;&lt;a href=&quot;&#x27; + callouts[i].link + &#x27;&quot;&gt;&#x27; + callouts[i].headline + &#x27;&lt;/a&gt;&lt;/h3&gt;&#x27;);
+                            //remove any callouts that are blank. If the home page
+                            //settings for the plugin have not been set it is
+                            //possible for the setting to be empty.  Therefore we
+                            //must put in a fall back plan of an empty array.
+                            var callouts = settings.callouts || [];
+                            for(var i = callouts.length - 1; i &gt;= 0; i--) {
+                                if(typeof callouts[i].copy === &#x27;undefined&#x27; || !callouts[i].copy.length) {
+                                    callouts.splice(i, 1);
+                                }
+                            }
+                            content.content = content.content.split(&#x27;^display_callouts^&#x27;).join(callouts.length ? &#x27;&#x27; : &#x27;display: none&#x27;);
+
+                            var colWidth = Math.floor(12 / callouts.length) + &#x27;&#x27;;
+                            self.ts.registerLocal(&#x27;col_width&#x27;, colWidth);
+                            self.ts.load(&#x27;elements/callout&#x27;, function(err, template) {
+                                if(util.isError(err)) {
+                                    template = &#x27;&#x27;;
+                                }
+
+                                var calloutsHTML = &#x27;&#x27;;
+                                for(var i = 0; i &lt; callouts.length; i++) {
+                                    var calloutTemplate = template.split(&#x27;^copy^&#x27;).join(callouts[i].copy);
+                                    if(callouts[i].headline &amp;&amp; callouts[i].headline.length) {
+                                        if(callouts[i].link &amp;&amp; callouts[i].link.length) {
+                                            calloutTemplate = calloutTemplate.split(&#x27;^headline^&#x27;).join(&#x27;&lt;h3&gt;&lt;a href=&quot;&#x27; + callouts[i].link + &#x27;&quot;&gt;&#x27; + callouts[i].headline + &#x27;&lt;/a&gt;&lt;/h3&gt;&#x27;);
+                                        }
+                                        else {
+                                            calloutTemplate = calloutTemplate.split(&#x27;^headline^&#x27;).join(&#x27;&lt;h3&gt;&#x27; + callouts[i].headline + &#x27;&lt;/h3&gt;&#x27;);
+                                        }
                                     }
                                     else {
-                                        calloutTemplate = calloutTemplate.split(&#x27;^headline^&#x27;).join(&#x27;&lt;h3&gt;&#x27; + callouts[i].headline + &#x27;&lt;/h3&gt;&#x27;);
+                                        calloutTemplate = calloutTemplate.split(&#x27;^headline^&#x27;).join(&#x27;&#x27;);
                                     }
+
+                                    calloutsHTML += calloutTemplate;
                                 }
-                                else {
-                                    calloutTemplate = calloutTemplate.split(&#x27;^headline^&#x27;).join(&#x27;&#x27;);
+
+
+                                if(!settings.page_layout) {
+                                    settings.page_layout = &#x27;&#x27;;
                                 }
+                                var mediaLoader = new MediaLoader();
+                                mediaLoader.start(settings.page_layout, function(err, layout) {
+                                    content.content = content.content.split(&#x27;^layout^&#x27;).join(layout);
+                                    content.content = content.content.split(&#x27;^hero_image^&#x27;).join(settings.home_page_hero ? settings.home_page_hero : &#x27;&#x27;);
+                                    content.content = content.content.split(&#x27;^callouts^&#x27;).join(calloutsHTML);
 
-                                calloutsHTML += calloutTemplate;
-                            }
+                                    content.content = self.ls.localize([], content.content);
 
+                                    var angularData = pb.ClientJs.getAngularController({}, [&#x27;ngSanitize&#x27;]);
+                                    content.content = content.content.concat(angularData);
 
-                            if(!settings.page_layout) {
-                                settings.page_layout = &#x27;&#x27;;
-                            }
-                            var mediaLoader = new MediaLoader();
-                            mediaLoader.start(settings.page_layout, function(err, layout) {
-                                content.content = content.content.split(&#x27;^layout^&#x27;).join(layout);
-                                content.content = content.content.split(&#x27;^hero_image^&#x27;).join(settings.home_page_hero ? settings.home_page_hero : &#x27;&#x27;);
-                                content.content = content.content.split(&#x27;^callouts^&#x27;).join(calloutsHTML);
-
-                                content.content = self.ls.localize([], content.content);
-
-                                var angularData = pb.js.getAngularController({}, [&#x27;ngSanitize&#x27;]);
-                                content.content = content.content.concat(angularData);
-
-                                cb(content);
+                                    cb(content);
+                                });
                             });
                         });
                     });
                 });
             });
         });
-    });
-};
+    };
 
-/**
-* Provides the routes that are to be handled by an instance of this prototype.
-* The route provides a definition of path, permissions, authentication, and
-* expected content type.
-* Method is optional
-* Path is required
-* Permissions are optional
-* Access levels are optional
-* Content type is optional
-*
-* @param cb A callback of the form: cb(error, array of objects)
-*/
-Index.getRoutes = function(cb) {
-    var routes = [
-        {
-            method: &#x27;get&#x27;,
-            path: &#x27;/&#x27;,
-            auth_required: false,
-            content_type: &#x27;text/html&#x27;
-        }
-    ];
-    cb(null, routes);
-};
+    /**
+    * Provides the routes that are to be handled by an instance of this prototype.
+    * The route provides a definition of path, permissions, authentication, and
+    * expected content type.
+    * Method is optional
+    * Path is required
+    * Permissions are optional
+    * Access levels are optional
+    * Content type is optional
+    *
+    * @param cb A callback of the form: cb(error, array of objects)
+    */
+    Index.getRoutes = function(cb) {
+        var routes = [
+            {
+                method: &#x27;get&#x27;,
+                path: &#x27;/&#x27;,
+                auth_required: false,
+                content_type: &#x27;text/html&#x27;
+            }
+        ];
+        cb(null, routes);
+    };
 
-//exports
-module.exports = Index;
+    //exports
+    return Index;
+};
 
     </pre>
 </div>

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,43 +391,41 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Service for content settings retrieval
- *
- * @module Services
- * @class ContentService
- * @constructor
- */
-function ContentService(){}
+var util = require(&#x27;./util.js&#x27;);
 
-/**
- * Retrieves the content settings
- *
- * @method getSettings
- * @param {Function} cb Callback function
- */
-ContentService.getSettings = function(cb){
-	pb.settings.get(&#x27;content_settings&#x27;, function(err, settings){
-		if (settings === null) {
-			settings = ContentService.getDefaultSettings();
-			pb.settings.set(&#x27;content_settings&#x27;, settings, pb.utils.cb);
-		}
-		
-		cb(err, settings);
-	});
-};
+module.exports = function ContentServiceModule(pb) {
 
-/**
- * Retrieves the default content settings from installation
- *
- * @method getDefaultSettings
- * @return {Object} Content settings
- */
-ContentService.getDefaultSettings = function() {
-    return {
+    /**
+     * Service for content settings retrieval
+     *
+     * @module Services
+     * @class ContentService
+     * @constructor
+     */
+    function ContentService(){}
+    
+    /**
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property CONTENT_SETTINGS_REF
+     * @type {String}
+     */
+    var CONTENT_SETTINGS_REF = &#x27;content_settings&#x27;;
+    
+    /**
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property DEFAULT_SETTINGS
+     * @type {String}
+     */
+    var DEFAULT_SETTINGS = Object.freeze({
         articles_per_page: 5,
         auto_break_articles: 0,
-		read_more_text: &#x27;Read more&#x27;,
+        read_more_text: &#x27;Read more&#x27;,
         display_timestamp: 1,
         date_format: &#x27;M dd, YYYY&#x27;,
         two_digit_date: 0,
@@ -403,83 +439,141 @@ ContentService.getDefaultSettings = function() {
         default_comments: 1,
         require_account: 0,
         require_verification: 0
+    });
+
+    /**
+     * Retrieves the content settings
+     *
+     * @method getSettings
+     * @param {Function} cb Callback function
+     */
+    ContentService.prototype.getSettings = function(cb){
+        pb.settings.get(CONTENT_SETTINGS_REF, function(err, settings){
+            if (settings) {
+                return cb(err, settings);
+            }
+
+            //set default settings if they don&#x27;t exist
+            settings = ContentService.getDefaultSettings();
+            pb.settings.set(CONTENT_SETTINGS_REF, settings, function(err, result) {
+                cb(err, settings);
+            });
+        });
     };
-};
 
-/**
- * Returns a formatted time stamp from a date
- *
- * @method getTimestampTextFromSettings
- * @param {Date} date
- * @param {Object} contentSettings
- */
-ContentService.getTimestampTextFromSettings = function(date, contentSettings) {
-	return ContentService.getTimestampText(date, contentSettings.date_format, contentSettings.two_digit_date,
-    		contentSettings.display_hours_minutes, contentSettings.time_format, contentSettings.two_digit_time);
-};
+    /**
+     * Retrieves the default content settings from installation
+     *
+     * @method getDefaultSettings
+     * @return {Object} Content settings
+     */
+    ContentService.getDefaultSettings = function() {
+        return util.clone(DEFAULT_SETTINGS);
+    };
 
-ContentService.getTimestampText = function(date, format, twoDigitDate, displayTime, timeFormat, twoDigitTime, ls) {
-    if (!ls) {
-        ls = new pb.Localization();
-    }
+    /**
+     * Returns a formatted time stamp from a date
+     *
+     * @method getTimestampTextFromSettings
+     * @param {Date} date
+     * @param {Object} contentSettings
+     */
+    ContentService.getTimestampTextFromSettings = function(date, contentSettings, ls) {
+        var options = {
+            date: date,
+            format: contentSettings.date_format,
+            twoDigitDate: contentSettings.two_digit_date,
+            displayTime: contentSettings.display_hours_minutes,
+            timeFormat: contentSettings.time_format,
+            twoDigitDate: contentSettings.two_digit_time,
+            ls: ls
+        };
+        return ContentService.getTimestampText(options);
+    };
 
-	var dateString = format;
-    var monthNames = [
-      ls.get(&#x27;JAN&#x27;),
-      ls.get(&#x27;FEB&#x27;),
-      ls.get(&#x27;MAR&#x27;),
-      ls.get(&#x27;APR&#x27;),
-      ls.get(&#x27;MAY&#x27;),
-      ls.get(&#x27;JUN&#x27;),
-      ls.get(&#x27;JUL&#x27;),
-      ls.get(&#x27;AUG&#x27;),
-      ls.get(&#x27;SEP&#x27;),
-      ls.get(&#x27;OCT&#x27;),
-      ls.get(&#x27;NOV&#x27;),
-      ls.get(&#x27;DEC&#x27;)
-    ];
-
-    var month = date.getMonth() + 1;
-	var day = date.getDate();
-
-	month = (twoDigitDate &amp;&amp; month &lt; 10) ? &#x27;0&#x27; + month : month.toString();
-	day = (twoDigitDate &amp;&amp; day &lt; 10) ? &#x27;0&#x27; + day : day.toString();
-
-    dateString = dateString.split(&#x27;YYYY&#x27;).join(date.getFullYear());
-    dateString = dateString.split(&#x27;yy&#x27;).join(date.getYear());
-    dateString = dateString.split(&#x27;M&#x27;).join(monthNames[date.getMonth()]);
-    dateString = dateString.split(&#x27;mm&#x27;).join(month);
-    dateString = dateString.split(&#x27;dd&#x27;).join(day);
-
-    if (typeof displayTime !== &#x27;undefined&#x27; &amp;&amp; displayTime) {
-
-        var hours   = date.getHours();
-        var minutes = date.getMinutes();
-        if(minutes &lt; 10) {
-            minutes = &#x27;0&#x27; + minutes;
+    /**
+     * 
+     * @static
+     * @method getTimestampText
+     * @param {Object} options
+     * @param {Date} options.date
+     * @param {String} options.format
+     * @param {Boolean} options.twoDigitDate
+     * @param {Boolean} options.displayTime
+     * @param {String} options.timeFormat
+     * @param {Boolean} options.twoDigitTime
+     * @param {Localization} options.ls
+     */
+    ContentService.getTimestampText = function(options) {
+        var date         = options.date;
+        var format       = options.format;
+        var twoDigitDate = options.twoDigitDate;
+        var displayTime  = options.displayTime;
+        var timeFormat   = options.timeFormat;
+        var twoDigitTime = options.twoDigitTime;
+        var ls           = options.ls;
+        if (!ls) {
+            ls = new pb.Localization();
         }
-        var ampm = &#x27;&#x27;;
 
-        if(timeFormat == &#x27;12&#x27;) {
-            if(hours &gt; 12) {
-                hours -= 12;
-                ampm = &#x27; &#x27;+ls.get(&#x27;TIME_PM&#x27;);
+        var dateString = format;
+        var monthNames = [
+          ls.get(&#x27;JAN&#x27;),
+          ls.get(&#x27;FEB&#x27;),
+          ls.get(&#x27;MAR&#x27;),
+          ls.get(&#x27;APR&#x27;),
+          ls.get(&#x27;MAY&#x27;),
+          ls.get(&#x27;JUN&#x27;),
+          ls.get(&#x27;JUL&#x27;),
+          ls.get(&#x27;AUG&#x27;),
+          ls.get(&#x27;SEP&#x27;),
+          ls.get(&#x27;OCT&#x27;),
+          ls.get(&#x27;NOV&#x27;),
+          ls.get(&#x27;DEC&#x27;)
+        ];
+
+        var month = date.getMonth() + 1;
+        var day   = date.getDate();
+
+        month = (twoDigitDate &amp;&amp; month &lt; 10) ? &#x27;0&#x27; + month : month.toString();
+        day   = (twoDigitDate &amp;&amp; day &lt; 10) ? &#x27;0&#x27; + day : day.toString();
+
+        dateString = dateString.split(&#x27;YYYY&#x27;).join(date.getFullYear());
+        dateString = dateString.split(&#x27;yy&#x27;).join(date.getYear());
+        dateString = dateString.split(&#x27;M&#x27;).join(monthNames[date.getMonth()]);
+        dateString = dateString.split(&#x27;mm&#x27;).join(month);
+        dateString = dateString.split(&#x27;dd&#x27;).join(day);
+
+        if (typeof displayTime !== &#x27;undefined&#x27; &amp;&amp; displayTime) {
+
+            var hours   = date.getHours();
+            var minutes = date.getMinutes();
+            if(minutes &lt; 10) {
+                minutes = &#x27;0&#x27; + minutes;
             }
-            else {
-                ampm = &#x27; &#x27;+ls.get(&#x27;TIME_AM&#x27;);
+            var ampm = &#x27;&#x27;;
+
+            if(timeFormat == &#x27;12&#x27;) {
+                if(hours &gt; 12) {
+                    hours -= 12;
+                    ampm = &#x27; &#x27;+ls.get(&#x27;TIME_PM&#x27;);
+                }
+                else {
+                    ampm = &#x27; &#x27;+ls.get(&#x27;TIME_AM&#x27;);
+                }
             }
-        }
-        if(twoDigitTime &amp;&amp; hours &lt; 10) {
-            hours = &#x27;0&#x27; + hours;
-        }
+            if(twoDigitTime &amp;&amp; hours &lt; 10) {
+                hours = &#x27;0&#x27; + hours;
+            }
 
-        dateString = dateString.concat(&#x27; &#x27; + hours + &#x27;:&#x27; + minutes + ampm);
-    }
-    return dateString;
+            dateString = dateString.concat(&#x27; &#x27; + hours + &#x27;:&#x27; + minutes + ampm);
+        }
+        return dateString;
+    };
+
+    //exports
+    return ContentService;
 };
-
-//exports
-module.exports.ContentService = ContentService;
 
     </pre>
 </div>

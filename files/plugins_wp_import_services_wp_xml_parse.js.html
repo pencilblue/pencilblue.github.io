@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,625 +392,651 @@
 */
 
 //dependencies
-var xml2js         = pb.PluginService.require(&#x27;wp_import&#x27;, &#x27;xml2js&#x27;);
-var BaseController = pb.BaseController;
+var process = require(&#x27;process&#x27;);
+var async   = require(&#x27;async&#x27;);
+var domain  = require(&#x27;domain&#x27;);
 
-/**
- *
- * @class WPXMLParseService
- * @constructor
- */
-function WPXMLParseService() {}
-
-/**
- * @static
- * @method init
- */
-WPXMLParseService.init = function(cb) {
-    pb.log.debug(&quot;WPXMLParseService: Initialized&quot;);
-    cb(null, true);
-};
-
-WPXMLParseService.parse = function(xmlString, defaultUserId, cb) {
-    var self = this;
-    pb.log.debug(&#x27;WPXMLParseService: Starting to parse...&#x27;);
+module.exports = function WPXMLParseServiceModule(pb) {
     
-    xml2js.parseString(xmlString, function(err, wpData) {
-        if(err) {
-            return cb(&#x27;^loc_INVALID_XML^&#x27;);
-        }
+    //pb dependencies
+    var util           = pb.util;
+    var xml2js         = pb.PluginService.require(&#x27;wp_import&#x27;, &#x27;xml2js&#x27;);
+    var BaseController = pb.BaseController;
 
-        var channel = wpData.rss.channel[0];
+    /**
+     *
+     * @class WPXMLParseService
+     * @constructor
+     */
+    function WPXMLParseService() {}
+    
+    /**
+     * Counter used to help create a random values for required fields when no 
+     * value is present
+     * @private
+     * @static
+     * @property DEFAULT_COUNTER
+     * @type {Integer}
+     */
+    var DEFAULT_COUNTER = 0;
 
-        var settings = null;
-        var users = null;
-        var topics = null;
-        var tasks = [
-            
-            //load settings
-            function(callback) {
-                pb.plugins.getSettingsKV(&#x27;wp_import&#x27;, function(err, settingsResult) {
-                    settings = settingsResult;
-                    callback(err);
-                });
-            },
-            
-            function(callback) {
-                self.saveNewUsers(channel, settings, function(err, usersResult){
-                    users = usersResult;
-                    callback(err);
-                });
-            },
-            
-            function(callback) {
-                self.saveNewTopics(channel, function(err, topicsResult) {
-                    topics = topicsResult;
-                    callback(err);
-                });
-            },
-            
-            function(callback) {
-                self.saveNewArticlesAndPages(defaultUserId, channel, users, topics, settings, callback);
+    /**
+     * @static
+     * @method init
+     */
+    WPXMLParseService.init = function(cb) {
+        pb.log.debug(&quot;WPXMLParseService: Initialized&quot;);
+        cb(null, true);
+    };
+
+    WPXMLParseService.parse = function(xmlString, defaultUserId, cb) {
+        var self = this;
+        pb.log.debug(&#x27;WPXMLParseService: Starting to parse...&#x27;);
+
+        xml2js.parseString(xmlString, function(err, wpData) {
+            if(err) {
+                return cb(&#x27;^loc_INVALID_XML^&#x27;);
             }
-        ];
-        async.series(tasks, function(err, results) {
-            cb(err, users);
+
+            var channel = wpData.rss.channel[0];
+
+            var settings = null;
+            var users = null;
+            var topics = null;
+            var tasks = [
+
+                //load settings
+                function(callback) {
+                    var pluginService = new pb.PluginService();
+                    pluginService.getSettingsKV(&#x27;wp_import&#x27;, function(err, settingsResult) {
+                        settings = settingsResult;
+                        callback(err);
+                    });
+                },
+
+                function(callback) {
+                    self.saveNewUsers(channel, settings, function(err, usersResult){
+                        users = usersResult;
+                        callback(err);
+                    });
+                },
+
+                function(callback) {
+                    self.saveNewTopics(channel, function(err, topicsResult) {
+                        topics = topicsResult;
+                        callback(err);
+                    });
+                },
+
+                function(callback) {
+                    self.saveNewArticlesAndPages(defaultUserId, channel, users, topics, settings, callback);
+                }
+            ];
+            async.series(tasks, function(err, results) {
+                cb(err, users);
+            });
         });
-    });
-};
+    };
 
-WPXMLParseService.saveNewUsers = function(channel, settings, cb) {
-    pb.log.debug(&#x27;WPXMLParseService: Parsing Users...&#x27;);
+    WPXMLParseService.saveNewUsers = function(channel, settings, cb) {
+        pb.log.debug(&#x27;WPXMLParseService: Parsing Users...&#x27;);
 
-    var self = this;
-    var users = [];
-    var createNewUsers = settings.create_new_users;
-    if(createNewUsers &amp;&amp; util.isArray(channel.item)) {
-        for(var i = 0; i &lt; channel.item.length; i++) {
-            for(var j = 0; j &lt; channel.item[i][&#x27;dc:creator&#x27;].length; j++) {
+        var self = this;
+        var users = [];
+        var createNewUsers = settings.create_new_users;
+        if(createNewUsers &amp;&amp; util.isArray(channel.item)) {
+            for(var i = 0; i &lt; channel.item.length; i++) {
+                for(var j = 0; j &lt; channel.item[i][&#x27;dc:creator&#x27;].length; j++) {
 
-                var userMatch = false;
-                for(var s = 0; s &lt; users.length; s++) {
-                    if(users[s].username === channel.item[i][&#x27;dc:creator&#x27;][j]) {
-                        userMatch = true;
-                        break;
+                    var userMatch = false;
+                    for(var s = 0; s &lt; users.length; s++) {
+                        if(users[s].username === channel.item[i][&#x27;dc:creator&#x27;][j]) {
+                            userMatch = true;
+                            break;
+                        }
+                    }
+                    if(!userMatch) {
+                        users.push({username: channel.item[i][&#x27;dc:creator&#x27;][j]});
                     }
                 }
-                if(!userMatch) {
-                    users.push({username: channel.item[i][&#x27;dc:creator&#x27;][j]});
+            }
+        }
+
+        var tasks = util.getTasks(users, function(users, index) {
+            return function(callback) {
+
+                var dao = new pb.DAO();
+                dao.loadByValue(&#x27;username&#x27;, users[index].username, &#x27;user&#x27;, function(err, existingUser) {
+                    if (util.isError(err)) {
+                        return cb(err);
+                    }
+                    else if(existingUser) {
+                        pb.log.debug(&#x27;WPXMLParseService: User [%s] already exists&#x27;, users[index].username);
+
+                        users[index] = existingUser;
+                        delete users[index].password;
+                        return callback(null, existingUser);
+                    }
+
+                    var generatedPassword = pb.security.generatePassword(8);
+
+                    users[index].email = &#x27;user_&#x27; + util.uniqueId() + &#x27;@placeholder.com&#x27;;
+                    users[index].admin = pb.SecurityService.ACCESS_WRITER;
+                    users[index].password = generatedPassword;
+
+                    var newUser = pb.DocumentCreator.create(&#x27;user&#x27;, users[index]);
+                    dao.save(newUser, function(err, result) {
+                        if (util.isError(err)) {
+                            return callback(err);
+                        }
+
+                        pb.log.debug(&#x27;WPXMLParseService: Created user [%s]&#x27;, users[index].username);
+                        delete users[index].password;
+                        users[index].generatedPassword = generatedPassword;
+                        users[index][pb.DAO.getIdField()] = result[pb.DAO.getIdField()];
+                        callback(null, newUser);
+                    });
+                });
+            };
+        });
+        async.series(tasks, cb);
+    };
+
+    WPXMLParseService.saveNewTopics = function(channel, cb) {
+        pb.log.debug(&#x27;WPXMLParseService: Parsing topics...&#x27;);
+
+        //parse out the list of topics to try and persist
+        var topics = {};
+        var iterations = [
+            {
+                element: &quot;wp:category&quot;,
+                name: &quot;wp:cat_name&quot;
+            },
+            {
+                element: &quot;wp:tag&quot;,
+                name: &quot;wp:tag_name&quot;
+            }                      
+        ];
+        iterations.forEach(function(descriptor) {
+
+            pb.log.silly(&#x27;WPXMLParseService:Parsing Topics: Inspecting &quot;%s&quot; elements...&#x27;, descriptor.element);
+
+            //could also be tags. we treat them the same
+            var categories = channel[descriptor.element];
+            if (util.isArray(categories)) {
+
+                //iterate over the categories
+                for(var i = 0; i &lt; categories.length; i++) {
+
+                    //iterate over the individual items
+                    for(var j = 0; j &lt; categories[i][descriptor.name].length; j++) {
+
+                        //get the topic name
+                        var rawName = categories[i][descriptor.name][j];
+                        var topicName = pb.BaseController.sanitize(rawName.trim());
+
+                        //when it doesn&#x27;t exist
+                        var lower = topicName.toLowerCase();
+                        if(!topics[lower] &amp;&amp; lower !== &#x27;uncategorized&#x27;) {
+
+                            topics[lower] = {
+                                name: topicName
+                            };
+                        }
+                    }
+                }
+            }
+        });
+
+        //persist each tag if it doesn&#x27;t already exist
+        var tasks = util.getTasks(Object.keys(topics), function(topicKeys, i) {
+            return function(callback) {
+
+                //get the topic formatted
+                var topic = pb.DocumentCreator.create(&#x27;topic&#x27;, topics[topicKeys[i]]);
+
+                //ensure it doesn&#x27;t already exist
+                var key = &#x27;name&#x27;;
+                var val = new RegExp(&#x27;^&#x27;+util.escapeRegExp(topic.name)+&#x27;$&#x27;, &#x27;ig&#x27;);
+                var dao = new pb.DAO();
+                dao.loadByValue(key, val, &#x27;topic&#x27;, function(err, existingTopic) {
+                    if (util.isError(err)) {
+                        return callback(err);   
+                    }
+                    else if(existingTopic) {
+                        pb.log.debug(&quot;WPXMLParseService: Topic %s already exists. Skipping&quot;, topic.name);
+                        return callback(null, existingTopic);
+                    }
+
+                    //we&#x27;re all good.  we can persist now
+                    dao.save(topic, callback);
+                });
+            };
+        });
+        async.parallel(tasks, cb);
+    };
+
+    WPXMLParseService.saveNewArticlesAndPages = function(defaultUserId, channel, users, topics, settings, cb) {
+        var self = this;
+        var rawArticles = [];
+        var rawPages = [];
+        var articles = [];
+        var pages = [];
+        var media = [];
+
+
+        pb.log.debug(&#x27;WPXMLParseService: Parsing Articles and Pages...&#x27;);
+
+        //parse out the articles and pages
+        var items = channel.item;
+        for(var i = 0; i &lt; items.length; i++) {
+
+            var postType = items[i][&#x27;wp:post_type&#x27;]
+            if (postType) {
+
+                if(postType[0] === &#x27;page&#x27;) {
+                    rawPages.push(items[i]);
+                }
+                else if(postType[0] === &#x27;post&#x27;) {
+                    rawArticles.push(items[i]);
+                }
+                else {
+                    pb.log.debug(&#x27;WPXMLParseService: Unrecognized post type [%s] found with title &quot;%s&quot;&#x27;, postType[0], items[i].title ? items[i].title[0] : undefined);
                 }
             }
         }
-    }
-    
-    var tasks = pb.utils.getTasks(users, function(users, index) {
-        return function(callback) {
-            
-            var dao = new pb.DAO();
-            dao.loadByValue(&#x27;username&#x27;, users[index].username, &#x27;user&#x27;, function(err, existingUser) {
-                if (util.isError(err)) {
-                    return cb(err);
-                }
-                else if(existingUser) {
-                    pb.log.debug(&#x27;WPXMLParseService: User [%s] already exists&#x27;, users[index].username);
 
-                    users[index] = existingUser;
-                    delete users[index].password;
-                    return callback(null, existingUser);
-                }
 
-                var generatedPassword = pb.security.generatePassword(8);
+        //page tasks
+        var pageTasks = util.getTasks(rawPages, function(rawPages, index) {
+            return function(callback) {
+                var rawPage = rawPages[index];
+                var pageName = rawPage[&#x27;wp:post_name&#x27;][0];
 
-                users[index].email = &#x27;user_&#x27; + pb.utils.uniqueId() + &#x27;@placeholder.com&#x27;;
-                users[index].admin = ACCESS_WRITER;
-                users[index].password = generatedPassword;
+                //output progress
+                pb.log.debug(&#x27;WPXMLParseService: Processing %s &quot;%s&quot;&#x27;, &#x27;page&#x27;, pageName);
 
-                var newUser = pb.DocumentCreator.create(&#x27;user&#x27;, users[index]);
-                dao.save(newUser, function(err, result) {
+                //check to see if the page already exists by URL
+                var options = {
+                    type: &#x27;page&#x27;,
+                    url: pageName,
+                };
+                var urlService = new pb.UrlService();
+                urlService.existsForType(options, function(err, exists) {
                     if (util.isError(err)) {
                         return callback(err);
                     }
-                    
-                    pb.log.debug(&#x27;WPXMLParseService: Created user [%s]&#x27;, users[index].username);
-                    delete users[index].password;
-                    users[index].generatedPassword = generatedPassword;
-                    users[index][pb.DAO.getIdField()] = result[pb.DAO.getIdField()];
-                    callback(null, newUser);
-                });
-            });
-        };
-    });
-    async.series(tasks, cb);
-};
-
-WPXMLParseService.saveNewTopics = function(channel, cb) {
-    pb.log.debug(&#x27;WPXMLParseService: Parsing topics...&#x27;);
-    
-    //parse out the list of topics to try and persist
-    var topics = {};
-    var iterations = [
-        {
-            element: &quot;wp:category&quot;,
-            name: &quot;wp:cat_name&quot;
-        },
-        {
-            element: &quot;wp:tag&quot;,
-            name: &quot;wp:tag_name&quot;
-        }                      
-    ];
-    iterations.forEach(function(descriptor) {
-                
-        pb.log.silly(&#x27;WPXMLParseService:Parsing Topics: Inspecting &quot;%s&quot; elements...&#x27;, descriptor.element);
-        
-        //could also be tags. we treat them the same
-        var categories = channel[descriptor.element];
-        if (util.isArray(categories)) {
-            
-            //iterate over the categories
-            for(var i = 0; i &lt; categories.length; i++) {
-                
-                //iterate over the individual items
-                for(var j = 0; j &lt; categories[i][descriptor.name].length; j++) {
-                    
-                    //get the topic name
-                    var rawName = categories[i][descriptor.name][j];
-                    var topicName = pb.BaseController.sanitize(rawName.trim());
-                    
-                    //when it doesn&#x27;t exist
-                    var lower = topicName.toLowerCase();
-                    if(!topics[lower] &amp;&amp; lower !== &#x27;uncategorized&#x27;) {
-                        
-                        topics[lower] = {
-                            name: topicName
-                        };
-                    }
-                }
-            }
-        }
-    });
-
-    //persist each tag if it doesn&#x27;t already exist
-    var tasks = pb.utils.getTasks(Object.keys(topics), function(topicKeys, i) {
-        return function(callback) {
-            
-            //get the topic formatted
-            var topic = pb.DocumentCreator.create(&#x27;topic&#x27;, topics[topicKeys[i]]);
-            
-            //ensure it doesn&#x27;t already exist
-            var key = &#x27;name&#x27;;
-            var val = new RegExp(&#x27;^&#x27;+pb.utils.escapeRegExp(topic.name)+&#x27;$&#x27;, &#x27;ig&#x27;);
-            var dao = new pb.DAO();
-            dao.loadByValue(key, val, &#x27;topic&#x27;, function(err, existingTopic) {
-                if (util.isError(err)) {
-                    return callback(err);   
-                }
-                else if(existingTopic) {
-                    pb.log.debug(&quot;WPXMLParseService: Topic %s already exists. Skipping&quot;, topic.name);
-                    return callback(null, existingTopic);
-                }
-                
-                //we&#x27;re all good.  we can persist now
-                dao.save(topic, callback);
-            });
-        };
-    });
-    async.parallel(tasks, cb);
-};
-
-WPXMLParseService.saveNewArticlesAndPages = function(defaultUserId, channel, users, topics, settings, cb) {
-    var self = this;
-    var rawArticles = [];
-    var rawPages = [];
-    var articles = [];
-    var pages = [];
-    var media = [];
-    
-
-    pb.log.debug(&#x27;WPXMLParseService: Parsing Articles and Pages...&#x27;);
-    
-    //parse out the articles and pages
-    var items = channel.item;
-    for(var i = 0; i &lt; items.length; i++) {
-        
-        var postType = items[i][&#x27;wp:post_type&#x27;]
-        if (postType) {
-            
-            if(postType[0] === &#x27;page&#x27;) {
-                rawPages.push(items[i]);
-            }
-            else if(postType[0] === &#x27;post&#x27;) {
-                rawArticles.push(items[i]);
-            }
-            else {
-                pb.log.debug(&#x27;WPXMLParseService: Unrecognized post type [%s] found with title &quot;%s&quot;&#x27;, postType[0], items[i].title ? items[i].title[0] : undefined);
-            }
-        }
-    }
-    
-    
-    //page tasks
-    var pageTasks = pb.utils.getTasks(rawPages, function(rawPages, index) {
-        return function(callback) {
-            var rawPage = rawPages[index];
-            var pageName = rawPage[&#x27;wp:post_name&#x27;][0];
-            
-            //output progress
-            pb.log.debug(&#x27;WPXMLParseService: Processing %s &quot;%s&quot;&#x27;, &#x27;page&#x27;, pageName);
-            
-            //check to see if the page already exists by URL
-            var options = {
-                type: &#x27;page&#x27;,
-                url: pageName,
-            };
-            var urlService = new pb.UrlService();
-            urlService.existsForType(options, function(err, exists) {
-                if (util.isError(err)) {
-                    return callback(err);
-                }
-                else if (exists) {
-                    pb.log.debug(&#x27;A %s with this URL [%s] already exists.  Skipping&#x27;, options.type, pageName);
-                    return callback();
-                }
-                
-                //look for associated topics
-                var pageTopics = [];
-                rawPage.category = rawPage.category || [];
-                for(var i = 0; i &lt; rawPage.category.length; i++) {
-                    if(pb.utils.isString(rawPage.category[i])) {
-                        for(var j = 0; j &lt; topics.length; j++) {
-                            if(topics[j].name == rawPage.category[i]) {
-                                pageTopics.push(topics[j]._id.toString());
-                            }
-                        }
-                    }
-                }
-                
-                //retrieve media content for page
-                pb.log.debug(&#x27;WPXMLParseService: Inspecting %s for media content&#x27;, pageName);
-                
-                self.retrieveMediaObjects(rawPage[&#x27;content:encoded&#x27;][0], settings, function(err, updatedContent, mediaObjects) {
-                    if (util.isError(err)) {
-                        pb.log.error(&#x27;WPXMLParseService: Failed to retrieve 1 or more media objects for %s. %s&#x27;, options.type, err.stack);
-                    }
-                    updatedContent = updatedContent.split(&quot;\r\n&quot;).join(&quot;&lt;br/&gt;&quot;);
-
-                    //create page media references
-                    var pageMedia = [];
-                    if (util.isArray(mediaObjects)) {
-                        for(var i = 0; i &lt; mediaObjects.length; i++) {
-                            pageMedia.push(mediaObjects[i][pb.DAO.getIdField()].toString());
-                        }
+                    else if (exists) {
+                        pb.log.debug(&#x27;A %s with this URL [%s] already exists.  Skipping&#x27;, options.type, pageName);
+                        return callback();
                     }
 
-                    //construct the page descriptor
-                    var pagedoc = {
-                        url: pageName,
-                        headline: BaseController.sanitize(rawPage.title[0]),
-                        publish_date: new Date(rawPage[&#x27;wp:post_date&#x27;][0]),
-                        page_layout: BaseController.sanitize(updatedContent, BaseController.getContentSanitizationRules()),
-                        page_topics: pageTopics,
-                        page_media: pageMedia,
-                        seo_title: BaseController.sanitize(rawPage.title[0]),
-                        author: defaultUserId
-                    }
-                    var newPage = pb.DocumentCreator.create(&#x27;page&#x27;, pagedoc);
-                    var dao = new pb.DAO();
-                    dao.save(newPage, callback);
-                });
-            });
-        };
-    });
-    
-    //article tasks
-    var articleTasks = pb.utils.getTasks(rawArticles, function(rawArticles, index) {
-        return function(callback) {
-            var rawArticle = rawArticles[index];
-            var articleName = rawArticle[&#x27;wp:post_name&#x27;][0];
-            
-            //output progress
-            pb.log.debug(&#x27;WPXMLParseService: Processing %s &quot;%s&quot;&#x27;, &#x27;article&#x27;, articleName);
-            
-            //check to see if the page already exists by URL
-            var options = {
-                type: &#x27;article&#x27;,
-                url: articleName,
-            };
-            var urlService = new pb.UrlService();
-            urlService.existsForType(options, function(err, exists) {
-                if (util.isError(err)) {
-                    return callback(err);
-                }
-                else if (exists) {
-                    pb.log.debug(&#x27;A %s with this URL [%s] already exists.  Skipping&#x27;, options.type, articleName);
-                    return callback();
-                }
-                
-                //look for associated topics
-                var articleTopics = [];
-                if (util.isArray(rawArticle.category)) {
-                    for(var i = 0; i &lt; rawArticle.category.length; i++) {
-                        if(pb.utils.isString(rawArticle.category[i])) {
+                    //look for associated topics
+                    var pageTopics = [];
+                    rawPage.category = rawPage.category || [];
+                    for(var i = 0; i &lt; rawPage.category.length; i++) {
+                        if(util.isString(rawPage.category[i])) {
                             for(var j = 0; j &lt; topics.length; j++) {
-                                if(topics[j].name == rawArticle.category[i]) {
-                                    articleTopics.push(topics[j]._id.toString());
+                                if(topics[j].name == rawPage.category[i]) {
+                                    pageTopics.push(topics[j][pb.DAO.getIdField()].toString());
                                 }
                             }
                         }
                     }
-                }
-                
-                //lookup author
-                var author;
-                var authorUsername = rawArticle[&#x27;dc:creator&#x27;][0];
-                for(i = 0; i &lt; users.length; i++) {
-                    if(users[i].username === authorUsername) {
-                        author = users[i][pb.DAO.getIdField()].toString();
-                    }
-                }
-                if(!author) {
-                    author = defaultUserId;
-                }
-                
-                //retrieve media content for article
-                pb.log.debug(&#x27;WPXMLParseService: Inspecting %s for media content&#x27;, articleName);
-                
-                self.retrieveMediaObjects(rawArticle[&#x27;content:encoded&#x27;][0], settings, function(err, updatedContent, mediaObjects) {
+
+                    //retrieve media content for page
+                    pb.log.debug(&#x27;WPXMLParseService: Inspecting %s for media content&#x27;, pageName);
+
+                    self.retrieveMediaObjects(rawPage[&#x27;content:encoded&#x27;][0], settings, function(err, updatedContent, mediaObjects) {
+                        if (util.isError(err)) {
+                            pb.log.error(&#x27;WPXMLParseService: Failed to retrieve 1 or more media objects for %s. %s&#x27;, options.type, err.stack);
+                        }
+                        updatedContent = updatedContent.split(&quot;\r\n&quot;).join(&quot;&lt;br/&gt;&quot;);
+
+                        //create page media references
+                        var pageMedia = [];
+                        if (util.isArray(mediaObjects)) {
+                            for(var i = 0; i &lt; mediaObjects.length; i++) {
+                                pageMedia.push(mediaObjects[i][pb.DAO.getIdField()].toString());
+                            }
+                        }
+
+                        //construct the page descriptor
+                        var title = BaseController.sanitize(rawPage.title[0]) || WPXMLParseService.uniqueStrVal(&#x27;Page&#x27;);
+                        var pagedoc = {
+                            url: pageName,
+                            headline: title,
+                            publish_date: new Date(rawPage[&#x27;wp:post_date&#x27;][0]),
+                            page_layout: BaseController.sanitize(updatedContent, BaseController.getContentSanitizationRules()),
+                            page_topics: pageTopics,
+                            page_media: pageMedia,
+                            seo_title: title,
+                            author: defaultUserId
+                        }
+                        var newPage = pb.DocumentCreator.create(&#x27;page&#x27;, pagedoc);
+                        var dao = new pb.DAO();
+                        dao.save(newPage, callback);
+                    });
+                });
+            };
+        });
+
+        //article tasks
+        var articleTasks = util.getTasks(rawArticles, function(rawArticles, index) {
+            return function(callback) {
+                var rawArticle = rawArticles[index];
+                var articleName = rawArticle[&#x27;wp:post_name&#x27;][0];
+
+                //output progress
+                pb.log.debug(&#x27;WPXMLParseService: Processing %s &quot;%s&quot;&#x27;, &#x27;article&#x27;, articleName);
+
+                //check to see if the page already exists by URL
+                var options = {
+                    type: &#x27;article&#x27;,
+                    url: articleName,
+                };
+                var urlService = new pb.UrlService();
+                urlService.existsForType(options, function(err, exists) {
                     if (util.isError(err)) {
-                        pb.log.error(&#x27;WPXMLParseService: Failed to retrieve 1 or more media objects for %s. %s&#x27;, options.type, err.stack);
+                        return callback(err);
                     }
-                    updatedContent = updatedContent.split(&quot;\r\n&quot;).join(&quot;&lt;br/&gt;&quot;);
-                    
-                    //create page media references
-                    var articleMedia = [];
-                    if (util.isArray(mediaObjects)) {
-                        for(var i = 0; i &lt; mediaObjects.length; i++) {
-                            articleMedia.push(mediaObjects[i][pb.DAO.getIdField()].toString());
+                    else if (exists) {
+                        pb.log.debug(&#x27;A %s with this URL [%s] already exists.  Skipping&#x27;, options.type, articleName);
+                        return callback();
+                    }
+
+                    //look for associated topics
+                    var articleTopics = [];
+                    if (util.isArray(rawArticle.category)) {
+                        for(var i = 0; i &lt; rawArticle.category.length; i++) {
+                            if(util.isString(rawArticle.category[i])) {
+                                for(var j = 0; j &lt; topics.length; j++) {
+                                    if(topics[j].name == rawArticle.category[i]) {
+                                        articleTopics.push(topics[j][pb.DAO.getIdField()].toString());
+                                    }
+                                }
+                            }
                         }
                     }
 
-                    //construct the article descriptor
-                    var articleDoc = {
-                        url: articleName,
-                        headline: BaseController.sanitize(rawArticle.title[0]),
-                        publish_date: new Date(rawArticle[&#x27;wp:post_date&#x27;][0]),
-                        article_layout: BaseController.sanitize(updatedContent, BaseController.getContentSanitizationRules()),
-                        article_topics: articleTopics,
-                        article_sections: [],
-                        article_media: articleMedia,
-                        seo_title: BaseController.sanitize(rawArticle.title[0]),
-                        author: author
-                    };
-                    var newArticle = pb.DocumentCreator.create(&#x27;article&#x27;, articleDoc);
-                    var dao = new pb.DAO();
-                    dao.save(newArticle, callback);
-                });
-            });
-        };
-    });
-    
-    //create a super set of tasks and execute them 1 at a time
-    var tasks = pageTasks.concat(articleTasks);
-    pb.log.debug(&quot;WPXMLParseService: Now processing %d pages and %d articles.&quot;, pageTasks.length, articleTasks.length);
-    async.series(tasks, cb);
-};
-
-WPXMLParseService.retrieveMediaObjects = function(content, settings, cb) {
-    
-    var handlers = [
-        {
-            name: &#x27;image&#x27;,
-            hasContent: function() {
-                return content.indexOf(&#x27;&lt;img&#x27;) &gt; -1;
-            },
-            getContentDetails: function() {
-                var startIndex = content.indexOf(&#x27;&lt;img&#x27;);
-                var endIndex1 = content.substr(startIndex).indexOf(&#x27;/&gt;&#x27;);
-                var endIndex2 = content.substr(startIndex).indexOf(&#x27;/img&gt;&#x27;);
-                var endIndex3 = content.substr(startIndex).indexOf(&#x27;&gt;&#x27;);
-                
-                var endIndex;
-                if(endIndex1 &gt; -1 &amp;&amp; endIndex1 &lt; endIndex2) {
-                    endIndex = endIndex1 + 2;
-                }
-                else if(endIndex2 &gt; -1) {
-                    endIndex = endIndex2 + 4;
-                }
-                else {
-                    endIndex = endIndex3 + 1;
-                }
-
-                var mediaString = content.substr(startIndex, endIndex);
-                var srcString = mediaString.substr(mediaString.indexOf(&#x27;src=&quot;&#x27;) + 5);
-                srcString = srcString.substr(0, srcString.indexOf(&#x27;&quot;&#x27;));
-                if(srcString.indexOf(&#x27;?&#x27;) &gt; -1) {
-                    srcString = srcString.substr(0, srcString.indexOf(&#x27;?&#x27;));
-                }
-                
-                return {
-                    source: srcString,
-                    replacement: mediaString
-                };
-            },
-            getMediaObject: function(details, cb) {
-                if(!settings.download_media) {
-                    return WPXMLParseService.createMediaObject(&#x27;image&#x27;, details.source, cb);
-                }
-                
-                //download it &amp; store it with the media service
-                WPXMLParseService.downloadMediaContent(details.source, function(err, location) {
-                    if (util.isError(err)) {
-                        return cb(err);   
+                    //lookup author
+                    var author;
+                    var authorUsername = rawArticle[&#x27;dc:creator&#x27;][0];
+                    for(i = 0; i &lt; users.length; i++) {
+                        if(users[i].username === authorUsername) {
+                            author = users[i][pb.DAO.getIdField()].toString();
+                        }
                     }
-                        
-                    //create the media object
-                    WPXMLParseService.createMediaObject(&#x27;image&#x27;, location, cb);
-                });
-            }
-        },
-        {
-            name: &#x27;youtube&#x27;,
-            hasContent: function() {
-                return content.indexOf(&#x27;[youtube=&#x27;) &gt; -1;
-            },
-            getContentDetails: function() {
-                var startIndex = content.indexOf(&#x27;[youtube=&#x27;);
-                var endIndex = content.substr(startIndex).indexOf(&#x27;]&#x27;) + 1;
-                var mediaString = content.substr(startIndex, endIndex);
-                var location = mediaString.substr(mediaString.indexOf(&#x27;?v=&#x27;) + 3, mediaString.substr(mediaString.indexOf(&#x27;?v=&#x27;) + 3).length - 1);
-                
-                return {
-                    source: location,
-                    replacement: mediaString
-                };
-            },
-            getMediaObject: function(details, cb) {
-                WPXMLParseService.createMediaObject(&#x27;youtube&#x27;, details.source, cb);
-            }
-        },
-        {
-            name: &#x27;daily_motion&#x27;,
-            hasContent: function() {
-                return content.indexOf(&#x27;[dailymotion&#x27;) &gt; -1;
-            },
-            getContentDetails: function() {
-                var startIndex = content.indexOf(&#x27;[dailymotion&#x27;);
-                var endIndex = content.substr(startIndex).indexOf(&#x27;]&#x27;) + 1;
-                var mediaString = content.substr(startIndex, endIndex);
-                var location = mediaString.substr(mediaString.indexOf(&#x27;id=&#x27;) + 3, mediaString.substr(mediaString.indexOf(&#x27;id=&#x27;) + 3).length - 1);
-                
-                return {
-                    source: location,
-                    replacement: mediaString
-                };
-            },
-            getMediaObject: function(details, cb) {
-                WPXMLParseService.createMediaObject(&#x27;daily_motion&#x27;, details.source, cb);
-            }
-        }
-    ];
-    
-    var handler;
-    var mediaObjects = [];
-    var whileFunc = function() {
-        
-        //reset the handler and search for the next piece of content by asking 
-        //which handler can find conent.
-        handler = null;
-        for (var i = 0; i &lt; handlers.length; i++) {
-            if (handlers[i].hasContent()) {
+                    if(!author) {
+                        author = defaultUserId;
+                    }
 
-                handler = handlers[i];
-                break;
-            }
-        }
-        return handler !== null;
+                    //retrieve media content for article
+                    pb.log.debug(&#x27;WPXMLParseService: Inspecting %s for media content&#x27;, articleName);
+
+                    self.retrieveMediaObjects(rawArticle[&#x27;content:encoded&#x27;][0], settings, function(err, updatedContent, mediaObjects) {
+                        if (util.isError(err)) {
+                            pb.log.error(&#x27;WPXMLParseService: Failed to retrieve 1 or more media objects for %s. %s&#x27;, options.type, err.stack);
+                        }
+                        updatedContent = updatedContent.split(&quot;\r\n&quot;).join(&quot;&lt;br/&gt;&quot;);
+
+                        //create page media references
+                        var articleMedia = [];
+                        if (util.isArray(mediaObjects)) {
+                            for(var i = 0; i &lt; mediaObjects.length; i++) {
+                                articleMedia.push(mediaObjects[i][pb.DAO.getIdField()].toString());
+                            }
+                        }
+
+                        //construct the article descriptor
+                        var title = BaseController.sanitize(rawArticle.title[0]) || WPXMLParseService.uniqueStrVal(&#x27;Article&#x27;);
+                        var articleDoc = {
+                            url: articleName,
+                            headline: title,
+                            publish_date: new Date(rawArticle[&#x27;wp:post_date&#x27;][0]),
+                            article_layout: BaseController.sanitize(updatedContent, BaseController.getContentSanitizationRules()),
+                            article_topics: articleTopics,
+                            article_sections: [],
+                            article_media: articleMedia,
+                            seo_title: title,
+                            author: author
+                        };
+                        var newArticle = pb.DocumentCreator.create(&#x27;article&#x27;, articleDoc);
+                        var dao = new pb.DAO();
+                        dao.save(newArticle, callback);
+                    });
+                });
+            };
+        });
+
+        //create a super set of tasks and execute them 1 at a time
+        var tasks = pageTasks.concat(articleTasks);
+        pb.log.debug(&quot;WPXMLParseService: Now processing %d pages and %d articles.&quot;, pageTasks.length, articleTasks.length);
+        async.series(tasks, cb);
     };
-    var doFunc = function(callback) {
-        
-        //extract the source string and string in content to be replaced
-        var details = handler.getContentDetails();
-        pb.log.debug(&quot;WPXMLParseService: Discovered media type [%s] with source [%s] and replacement [%s]&quot;, handler.name, details.source, details.replacement);
-        
-        //retrieve media object
-        handler.getMediaObject(details, function(err, mediaObj) {
-            if (util.isError(err)) {
-                pb.log.error(&#x27;WPXMLParseService: Failed to create media object. Source: [%s] Replacement: [%s]. %s&#x27;, details.source, details.replacement, err.stack); 
-            }
-            if (!mediaObj) {
-                
-                //we couldn&#x27;t get the media for whatever reason but we&#x27;ll leave 
-                //you a nice note to manually fix it.
-                content = content.replace(details.replacement, util.format(&quot;[Content: %s Goes Here]&quot;, details.source));
-                return callback();
-            }
-            
-            //persist the media descriptor
-            var mediaService = new pb.MediaService();
-            mediaService.save(mediaObj, function(err, results) {
-                if (util.isError(err)) {
-                    return callback(err);
+
+    WPXMLParseService.retrieveMediaObjects = function(content, settings, cb) {
+
+        var handlers = [
+            {
+                name: &#x27;image&#x27;,
+                hasContent: function() {
+                    return content.indexOf(&#x27;&lt;img&#x27;) &gt; -1;
+                },
+                getContentDetails: function() {
+                    var startIndex = content.indexOf(&#x27;&lt;img&#x27;);
+                    var endIndex1 = content.substr(startIndex).indexOf(&#x27;/&gt;&#x27;);
+                    var endIndex2 = content.substr(startIndex).indexOf(&#x27;/img&gt;&#x27;);
+                    var endIndex3 = content.substr(startIndex).indexOf(&#x27;&gt;&#x27;);
+
+                    var endIndex;
+                    if(endIndex1 &gt; -1 &amp;&amp; endIndex1 &lt; endIndex2) {
+                        endIndex = endIndex1 + 2;
+                    }
+                    else if(endIndex2 &gt; -1) {
+                        endIndex = endIndex2 + 4;
+                    }
+                    else {
+                        endIndex = endIndex3 + 1;
+                    }
+
+                    var mediaString = content.substr(startIndex, endIndex);
+                    var srcString = mediaString.substr(mediaString.indexOf(&#x27;src=&quot;&#x27;) + 5);
+                    srcString = srcString.substr(0, srcString.indexOf(&#x27;&quot;&#x27;));
+                    if(srcString.indexOf(&#x27;?&#x27;) &gt; -1) {
+                        srcString = srcString.substr(0, srcString.indexOf(&#x27;?&#x27;));
+                    }
+
+                    return {
+                        source: srcString,
+                        replacement: mediaString
+                    };
+                },
+                getMediaObject: function(details, cb) {
+                    if(!settings.download_media) {
+                        return WPXMLParseService.createMediaObject(&#x27;image&#x27;, details.source, cb);
+                    }
+
+                    //download it &amp; store it with the media service
+                    WPXMLParseService.downloadMediaContent(details.source, function(err, location) {
+                        if (util.isError(err)) {
+                            return cb(err);   
+                        }
+
+                        //create the media object
+                        WPXMLParseService.createMediaObject(&#x27;image&#x27;, location, cb);
+                    });
                 }
-                
-                //do the final replacement with the correctly formatted template engine flag
-                mediaObjects.push(mediaObj);
-                content = content.replace(details.replacement, util.format(&#x27;^media_display_%s/position:center^&#x27;, mediaObj[pb.DAO.getIdField()]));
-                callback();
+            },
+            {
+                name: &#x27;youtube&#x27;,
+                hasContent: function() {
+                    return content.indexOf(&#x27;[youtube=&#x27;) &gt; -1;
+                },
+                getContentDetails: function() {
+                    var startIndex = content.indexOf(&#x27;[youtube=&#x27;);
+                    var endIndex = content.substr(startIndex).indexOf(&#x27;]&#x27;) + 1;
+                    var mediaString = content.substr(startIndex, endIndex);
+                    var location = mediaString.substr(mediaString.indexOf(&#x27;?v=&#x27;) + 3, mediaString.substr(mediaString.indexOf(&#x27;?v=&#x27;) + 3).length - 1);
+
+                    return {
+                        source: location,
+                        replacement: mediaString
+                    };
+                },
+                getMediaObject: function(details, cb) {
+                    WPXMLParseService.createMediaObject(&#x27;youtube&#x27;, details.source, cb);
+                }
+            },
+            {
+                name: &#x27;daily_motion&#x27;,
+                hasContent: function() {
+                    return content.indexOf(&#x27;[dailymotion&#x27;) &gt; -1;
+                },
+                getContentDetails: function() {
+                    var startIndex = content.indexOf(&#x27;[dailymotion&#x27;);
+                    var endIndex = content.substr(startIndex).indexOf(&#x27;]&#x27;) + 1;
+                    var mediaString = content.substr(startIndex, endIndex);
+                    var location = mediaString.substr(mediaString.indexOf(&#x27;id=&#x27;) + 3, mediaString.substr(mediaString.indexOf(&#x27;id=&#x27;) + 3).length - 1);
+
+                    return {
+                        source: location,
+                        replacement: mediaString
+                    };
+                },
+                getMediaObject: function(details, cb) {
+                    WPXMLParseService.createMediaObject(&#x27;daily_motion&#x27;, details.source, cb);
+                }
+            }
+        ];
+
+        var handler;
+        var mediaObjects = [];
+        var whileFunc = function() {
+
+            //reset the handler and search for the next piece of content by asking 
+            //which handler can find conent.
+            handler = null;
+            for (var i = 0; i &lt; handlers.length; i++) {
+                if (handlers[i].hasContent()) {
+
+                    handler = handlers[i];
+                    break;
+                }
+            }
+            return handler !== null;
+        };
+        var doFunc = function(callback) {
+
+            //extract the source string and string in content to be replaced
+            var details = handler.getContentDetails();
+            pb.log.debug(&quot;WPXMLParseService: Discovered media type [%s] with source [%s] and replacement [%s]&quot;, handler.name, details.source, details.replacement);
+
+            //retrieve media object
+            handler.getMediaObject(details, function(err, mediaObj) {
+                if (util.isError(err)) {
+                    pb.log.error(&#x27;WPXMLParseService: Failed to create media object. Source: [%s] Replacement: [%s]. %s&#x27;, details.source, details.replacement, err.stack); 
+                }
+                if (!mediaObj) {
+
+                    //we couldn&#x27;t get the media for whatever reason but we&#x27;ll leave 
+                    //you a nice note to manually fix it.
+                    content = content.replace(details.replacement, util.format(&quot;[Content: %s Goes Here]&quot;, details.source));
+                    return callback();
+                }
+
+                //persist the media descriptor
+                var mediaService = new pb.MediaService();
+                mediaService.save(mediaObj, function(err, results) {
+                    if (util.isError(err)) {
+                        return callback(err);
+                    }
+
+                    //do the final replacement with the correctly formatted template engine flag
+                    mediaObjects.push(mediaObj);
+                    content = content.replace(details.replacement, util.format(&#x27;^media_display_%s/position:center^&#x27;, mediaObj[pb.DAO.getIdField()]));
+                    callback();
+                });
             });
+        };
+        async.whilst(whileFunc, doFunc, function(err){
+            cb(err, content, mediaObjects);
         });
     };
-    async.whilst(whileFunc, doFunc, function(err){
-        cb(err, content, mediaObjects);
-    });
-};
 
-WPXMLParseService.createMediaObject = function(mediaType, location, cb) {
-        
-    var options = {
-        where: {
-            location: location
-        },
-        limit: 1
+    WPXMLParseService.createMediaObject = function(mediaType, location, cb) {
+
+        var options = {
+            where: {
+                location: location
+            },
+            limit: 1
+        };
+        var mediaService = new pb.MediaService();
+        mediaService.get(options, function(err, mediaArray) {
+            if (util.isError(err)) {
+                return cb(err);   
+            }
+            else if(mediaArray.length &gt; 0) {
+                return cb(null, mediaArray[0]);
+            }
+
+            var isFile = location.indexOf(&#x27;/media&#x27;) === 0;
+            var mediadoc = {
+                is_file: isFile,
+                media_type: mediaType,
+                location: location,
+                thumb: location,
+                name: &#x27;Media_&#x27; + util.uniqueId(),
+                caption: &#x27;&#x27;,
+                media_topics: []
+            };
+
+            //persist the 
+            var newMedia = pb.DocumentCreator.create(&#x27;media&#x27;, mediadoc);
+            cb(null, newMedia);
+        });
     };
-    var mediaService = new pb.MediaService();
-    mediaService.get(options, function(err, mediaArray) {
-        if (util.isError(err)) {
-            return cb(err);   
-        }
-        else if(mediaArray.length &gt; 0) {
-            return cb(null, mediaArray[0]);
-        }
 
-        var isFile = location.indexOf(&#x27;/media&#x27;) === 0;
-        var mediadoc = {
-            is_file: isFile,
-            media_type: mediaType,
-            location: location,
-            thumb: location,
-            name: &#x27;Media_&#x27; + pb.utils.uniqueId(),
-            caption: &#x27;&#x27;,
-            media_topics: []
+    WPXMLParseService.downloadMediaContent = function(srcString, cb) {
+
+        //only load the modules into memory if we really have to.  Footprint isn&#x27;t 
+        //much but it all adds up
+        var ht = srcString.indexOf(&#x27;https://&#x27;) &gt;= 0 ? require(&#x27;https&#x27;) : require(&#x27;http&#x27;);
+
+        //create a functiont to download the content
+        var run = function() {
+            ht.get(srcString, function(res) {
+                WPXMLParseService.saveMediaContent(srcString, res, cb);
+            });
         };
 
-        //persist the 
-        var newMedia = pb.DocumentCreator.create(&#x27;media&#x27;, mediadoc);
-        cb(null, newMedia);
-    });
-};
+        //wrapper the whole thing in a domain to protect it from timeouts and other 
+        //crazy network errors.
+        var d = domain.create();
+        d.once(&#x27;error&#x27;, function(err) {
+            cb(err);
+        });
+        d.on(&#x27;error&#x27;, function(err) {/* generic handler so we catch any continuous errors */});
+        d.run(function() {
+            process.nextTick(run);
+        });
+    };
 
-WPXMLParseService.downloadMediaContent = function(srcString, cb) {
-    
-    //only load the modules into memory if we really have to.  Footprint isn&#x27;t 
-    //much but it all adds up
-    var ht = srcString.indexOf(&#x27;https://&#x27;) &gt;= 0 ? require(&#x27;https&#x27;) : require(&#x27;http&#x27;);
-    
-    //create a functiont to download the content
-    var run = function() {
-        ht.get(srcString, function(res) {
-            WPXMLParseService.saveMediaContent(srcString, res, cb);
+    WPXMLParseService.saveMediaContent = function(originalFilename, stream, cb) {
+        var mediaService = new pb.MediaService();
+        mediaService.setContentStream(stream, originalFilename, function(err, result) {
+            cb(err, result ? result.mediaPath : null);
         });
     };
     
-    //wrapper the whole thing in a domain to protect it from timeouts and other 
-    //crazy network errors.
-    var d = domain.create();
-    d.once(&#x27;error&#x27;, function(err) {
-        cb(err);
-    });
-    d.on(&#x27;error&#x27;, function(err) {/* generic handler so we catch any continuous errors */});
-    d.run(function() {
-        process.nextTick(run);
-    });
-};
+    WPXMLParseService.uniqueStrVal = function(prefix) {
+        return prefix + &#x27;-&#x27; + (DEFAULT_COUNTER++) + &#x27;-&#x27; + (new Date()).getTime();
+    };
 
-WPXMLParseService.saveMediaContent = function(originalFilename, stream, cb) {
-    var mediaService = new pb.MediaService();
-    mediaService.setContentStream(stream, originalFilename, function(err, result) {
-        cb(err, result ? result.mediaPath : null);
-    });
+    //exports
+    return WPXMLParseService;
 };
-
-//exports
-module.exports = WPXMLParseService;
 
     </pre>
 </div>

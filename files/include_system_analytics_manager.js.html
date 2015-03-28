@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,127 +391,162 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
+//dependencies
+var async  = require(&#x27;async&#x27;);
+var domain = require(&#x27;domain&#x27;);
+var util   = require(&#x27;../util.js&#x27;);
 
-function AnalyticsManager(){}
+module.exports = function AnalyticsManagerModule(pb) {
 
-//statics
-var PROVIDER_HOOKS = {};
+    /**
+     * Provides functionality to render HTML snippets to report metrics back to 
+     * registered analytics providers.
+     * @class AnalyticsManager
+     * @constructor
+     */
+    function AnalyticsManager(){}
 
-/**
- * Takes the provided request and session then checks with each of the 
- * registered analytics providers to ensure get the HTML snippets to be 
- * executed for analytics reporting.
- * @method gatherData
- * @param {Request} req The current incoming request
- * @param {Object} session The current user session
- * @param {Localization} ls An instance of the Localization service
- * @param {Function} cb A callback that provides two parameters.  An error, if 
- * occurred, and a TemplateValue representing the HTML snippets for the analytic 
- * providers.
- */ 
-AnalyticsManager.prototype.gatherData = function(req, session, ls, cb) {
-    var tasks = pb.utils.getTasks(Object.keys(PROVIDER_HOOKS), function(keys, i) {
-        return function(callback) {
-            if (pb.log.isSilly()) {
-                pb.log.silly(&quot;AnalyticsManager: Rendering provider [%s] for URL [%s:%s]&quot;, keys[i], req.method, req.url);
-            }
+    /**
+     * Stores the registered analytics providers
+     * @private
+     * @static
+     * @readonly
+     * @property PROVIDER_HOOKS
+     * @type {Object}
+     */
+    var PROVIDER_HOOKS = {};
 
-            var th = setTimeout(function() {
-                pb.log.warn(&quot;AnalyticsManager: Rendering for provider [%s] timed out&quot;, keys[i]);
+    /**
+     * Takes the provided request and session then checks with each of the 
+     * registered analytics providers to ensure get the HTML snippets to be 
+     * executed for analytics reporting.
+     * @method gatherData
+     * @param {Request} req The current incoming request
+     * @param {Object} session The current user session
+     * @param {Localization} ls An instance of the Localization service
+     * @param {Function} cb A callback that provides two parameters.  An error, if 
+     * occurred, and a TemplateValue representing the HTML snippets for the analytic 
+     * providers.
+     */ 
+    AnalyticsManager.prototype.gatherData = function(req, session, ls, cb) {
+        var tasks = util.getTasks(Object.keys(PROVIDER_HOOKS), function(keys, i) {
+            return function(callback) {
+                if (pb.log.isSilly()) {
+                    pb.log.silly(&quot;AnalyticsManager: Rendering provider [%s] for URL [%s:%s]&quot;, keys[i], req.method, req.url);
+                }
 
-                th = null;
-                callback(null, &#x27;&#x27;);
-            }, 25);
+                var th = setTimeout(function() {
+                    pb.log.warn(&quot;AnalyticsManager: Rendering for provider [%s] timed out&quot;, keys[i]);
 
-            var d = domain.create();
-            d.run(function() {
-                PROVIDER_HOOKS[keys[i]](req, session, ls, function(err, result) {
-                    if (util.isError(err)) {
-                        pb.log.error(&quot;AnalyticsManager: Rendering provider [%s] failed for URL [%s:%s]\n%s&quot;, keys[i], req.method, req.url, err.stack);
-                    }
+                    th = null;
+                    callback(null, &#x27;&#x27;);
+                }, 25);
 
+                var d = domain.create();
+                d.run(function() {
+                    PROVIDER_HOOKS[keys[i]](req, session, ls, function(err, result) {
+                        if (util.isError(err)) {
+                            pb.log.error(&quot;AnalyticsManager: Rendering provider [%s] failed for URL [%s:%s]\n%s&quot;, keys[i], req.method, req.url, err.stack);
+                        }
+
+                        if (th) {
+                            clearTimeout(th);
+                            th = null;
+
+                            //the error is left out on purpose.  It is logged above 
+                            //and we want all other providers to have a chance.
+                            callback(null, result);
+                        }
+                    });
+                });
+                d.on(&#x27;error&#x27;, function(err) {
+                    pb.log.error(&quot;AnalyticsManager: Rendering provider [%s] failed for URL [%s:%s]\n%s&quot;, keys[i], req.method, req.url, err.stack);
                     if (th) {
                         clearTimeout(th);
                         th = null;
-                        
-                        //the error is left out on purpose.  It is logged above 
-                        //and we want all other providers to have a chance.
-                        callback(null, result);
+
+                        callback(null, &#x27;&#x27;);
                     }
                 });
-            });
-            d.on(&#x27;error&#x27;, function(err) {
-                pb.log.error(&quot;AnalyticsManager: Rendering provider [%s] failed for URL [%s:%s]\n%s&quot;, keys[i], req.method, req.url, err.stack);
-                if (th) {
-                    clearTimeout(th);
-                    th = null;
-                    
-                    callback(null, &#x27;&#x27;);
-                }
-            });
-        };
-    });
-    async.parallel(tasks, function(err, results) {
-        cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
-    });
+            };
+        });
+        async.parallel(tasks, function(err, results) {
+            cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
+        });
+    };
+
+    /**
+     * Registers an alaytics provider.  When a template is being rendered and 
+     * encounters the ^analytics^ directive &quot;onPageRender&quot; is called.
+     * @static
+     * @method registerProvider
+     * @param {String} name The provider&#x27;s name
+     * @param {Function} onPageRendering A function that is called for every 
+     * requests that intends to execute HTML snippets to track analytics.  The 
+     * function is expected to take 4 parameters.  The first is the current Request 
+     * object.  The second is the current user session object. The third is an 
+     * instance of Localization.  The last is a callback that should be called with 
+     * two parameters.  The first is an error, if occurred and the second is raw 
+     * HTML string that represents the snippet to be executed by the analytics 
+     * plugin. 
+     */
+    AnalyticsManager.registerProvider = function(name, onPageRendering) {
+        if (!pb.validation.validateNonEmptyStr(name) || AnalyticsManager.isRegistered(name) || !util.isFunction(onPageRendering)) {
+            return false;
+        }
+
+        PROVIDER_HOOKS[name] = onPageRendering;
+        return true;
+    };
+    
+    /**
+     * Unregisters an analytics provider
+     * @static
+     * @method unregisterProvider
+     * @param {String} name
+     * @return {Boolean} TRUE if was unregistered, FALSE if not found
+     */
+    AnalyticsManager.unregisterProvider = function(name) {
+        if (!AnalyticsManager.isRegistered(name)) {
+            return false;
+        }
+        delete PROVIDER_HOOKS[name];
+        return true;
+    };
+
+    /**
+     * Indicates if an analytics provider with the specified name has already 
+     * registered itself.
+     * @static
+     * @method isRegistered
+     * @param {String} name The name of the analytics provider to check registration for
+     * @return {Boolean} TRUE when the provider is registered, FALSE if not
+     */
+    AnalyticsManager.isRegistered = function(name) {
+        return !util.isNullOrUndefined(PROVIDER_HOOKS[name]);
+    };
+
+    /**
+     * Called when a page is rendering.  It creates a new instance of the analytics 
+     * manager and constructs the javascript snippets (wrappered in TemplateValue) 
+     * needed for the analytics plugins
+     * @static
+     * @method onPageRender
+     * @param {Request} req
+     * @param {Object} session
+     * @param {Localization} ls
+     * @param {Function} cb A callback that provides two parameters.  An error, if 
+     * occurred, and a TemplateValue representing the HTML snippets for the analytic 
+     * providers.
+     */
+    AnalyticsManager.onPageRender = function(req, session, ls, cb) {
+        var managerInstance = new AnalyticsManager();
+        managerInstance.gatherData(req, session, ls, cb);
+    };
+
+    //exports
+    return AnalyticsManager;
 };
-
-/**
- * Registers an alaytics provider.  When a template is being rendered and 
- * encounters the ^analytics^ directive &quot;onPageRender&quot; is called.
- * @static
- * @method registerProvider
- * @param {String} name The provider&#x27;s name
- * @param {Function} onPageRendering A function that is called for every 
- * requests that intends to execute HTML snippets to track analytics.  The 
- * function is expected to take 4 parameters.  The first is the current Request 
- * object.  The second is the current user session object. The third is an 
- * instance of Localization.  The last is a callback that should be called with 
- * two parameters.  The first is an error, if occurred and the second is raw 
- * HTML string that represents the snippet to be executed by the analytics 
- * plugin. 
- */
-AnalyticsManager.registerProvider = function(name, onPageRendering) {
-    if (!pb.validation.validateNonEmptyStr(name) || AnalyticsManager.isRegistered(name) || !pb.utils.isFunction(onPageRendering)) {
-        return false;
-    }
-
-    PROVIDER_HOOKS[name] = onPageRendering;
-    return true;
-};
-
-/**
- * Indicates if an analytics provider with the specified name has already 
- * registered itself.
- * @static
- * @method isRegistered
- * @param {String} name The name of the analytics provider to check registration for
- * @return {Boolean} TRUE when the provider is registered, FALSE if not
- */
-AnalyticsManager.isRegistered = function(name) {
-    return PROVIDER_HOOKS[name] !== undefined;
-};
-
-/**
- * Called when a page is rendering.  It creates a new instance of the analytics 
- * manager and constructs the javascript snippets (wrappered in TemplateValue) 
- * needed for the analytics plugins
- * @static
- * @method onPageRender
- * @param {Request} req
- * @param {Object} session
- * @param {Localization} ls
- * @param {Function} cb A callback that provides two parameters.  An error, if 
- * occurred, and a TemplateValue representing the HTML snippets for the analytic 
- * providers.
- */
-AnalyticsManager.onPageRender = function(req, session, ls, cb) {
-    var managerInstance = new AnalyticsManager();
-    managerInstance.gatherData(req, session, ls, cb);
-};
-
-//exports
-module.exports = AnalyticsManager;
 
     </pre>
 </div>

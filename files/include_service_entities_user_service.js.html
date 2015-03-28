@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,344 +391,369 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Service for performing user specific operations.
- *
- * @module Services
- * @submodule Entities
- * @class UserService
- * @constructor
- */
-function UserService(){}
+//dependencies
+var async = require(&#x27;async&#x27;);
+var util  = require(&#x27;../../util.js&#x27;);
 
-/**
- * Gets the full name of a user
- *
- * @method getFullName
- * @param {String}   userId The object Id of the user
- * @param {Function} cb     Callback function
- */
-UserService.prototype.getFullName = function(userId, cb) {
-    if (!pb.validation.isId(userId, true)) {
-        return cb(new Error(&#x27;The userId parameter must be a valid ID value&#x27;));
-    }
+module.exports = function UserServiceModule(pb) {
 
-	var self = this;
-	var dao  = new pb.DAO();
-	dao.loadById(userId, &#x27;user&#x27;, function(err, author){
-		if (util.isError(err)) {
-			return callback(err, null);
-		}
+    /**
+     * Service for performing user specific operations.
+     *
+     * @module Services
+     * @submodule Entities
+     * @class UserService
+     * @constructor
+     */
+    function UserService(){}
 
-		cb(null, self.getFormattedName(author));
-	});
-};
-
-/**
- * Takes the specified user object and formats the first and last name.
- * @static
- * @method getFormattedName
- * @param {Object} user The user object to extract a name for.
- * @return {String} The user&#x27;s full name
- */
-UserService.prototype.getFormattedName = function(user) {
-	var name = user.username;
-	if (user.first_name) {
-		name = user.first_name + &#x27; &#x27; + user.last_name;
-	}
-	return name;
-};
-
-/**
- * Gets the full names for the supplied authors
- *
- * @method getAuthors
- * @param {Array}   objArry An array of user object
- * @param {Function} cb     Callback function
- */
-UserService.prototype.getAuthors = function(objArry, cb){
-	var self  = this;
-    
-    //retrieve unique author list
-    var authorIds = {};
-    for (var i = 0; i &lt; objArry.length; i++) {
-        authorIds[objArry[i].author] = true;
-    }
-    
-    //retrieve authors
-    var opts = {
-        select: {
-            username: 1,
-            first_name: 1,
-            last_name: 1
-        },
-        where: pb.DAO.getIDInWhere(Object.keys(authorIds))
-    };
-    var dao = new pb.DAO();
-    dao.q(&#x27;user&#x27;, opts, function(err, authors) {
-        if (util.isError(err)) {
-            return cb(err);   
+    /**
+     * Gets the full name of a user
+     *
+     * @method getFullName
+     * @param {String}   userId The object Id of the user
+     * @param {Function} cb     Callback function
+     */
+    UserService.prototype.getFullName = function(userId, cb) {
+        if (!pb.validation.isId(userId, true)) {
+            return cb(new Error(&#x27;The userId parameter must be a valid ID value&#x27;));
         }
-        
-        //convert results into searchable hash
-        var authLookup = pb.utils.arrayToObj(authors, function(authors, i) { return authors[i][pb.DAO.getIdField()].toString(); });
-        
-        //set the full name of the author
+
+        var self = this;
+        var dao  = new pb.DAO();
+        dao.loadById(userId, &#x27;user&#x27;, function(err, author){
+            if (util.isError(err)) {
+                return callback(err, null);
+            }
+
+            cb(null, self.getFormattedName(author));
+        });
+    };
+
+    /**
+     * Takes the specified user object and formats the first and last name.
+     * @static
+     * @method getFormattedName
+     * @param {Object} user The user object to extract a name for.
+     * @return {String} The user&#x27;s full name
+     */
+    UserService.prototype.getFormattedName = function(user) {
+        var name = user.username;
+        if (user.first_name) {
+            name = user.first_name + &#x27; &#x27; + user.last_name;
+        }
+        return name;
+    };
+
+    /**
+     * Gets the full names for the supplied authors
+     *
+     * @method getAuthors
+     * @param {Array}   objArry An array of user object
+     * @param {Function} cb     Callback function
+     */
+    UserService.prototype.getAuthors = function(objArry, cb){
+        var self  = this;
+
+        //retrieve unique author list
+        var authorIds = {};
         for (var i = 0; i &lt; objArry.length; i++) {
-            objArry[i].author_name = self.getFormattedName(authLookup[objArry[i].author]);
+            authorIds[objArry[i].author] = true;
+        }
+
+        //retrieve authors
+        var opts = {
+            select: {
+                username: 1,
+                first_name: 1,
+                last_name: 1
+            },
+            where: pb.DAO.getIdInWhere(Object.keys(authorIds))
+        };
+        var dao = new pb.DAO();
+        dao.q(&#x27;user&#x27;, opts, function(err, authors) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            //convert results into searchable hash
+            var authLookup = util.arrayToObj(authors, function(authors, i) { return authors[i][pb.DAO.getIdField()].toString(); });
+
+            //set the full name of the author
+            for (var i = 0; i &lt; objArry.length; i++) {
+                objArry[i].author_name = self.getFormattedName(authLookup[objArry[i].author]);
+            }
+
+            //callback with objects (not necessary but we do it anyway)
+            cb(null, objArry);
+        });
+    };
+
+    /**
+     * Retrieves the available access privileges to assign to a user
+     *
+     * @method getAdminOptions
+     * @param {Object} session The current session object
+     * @param {Object} ls      The localization object
+     */
+    UserService.prototype.getAdminOptions = function(session, ls) {
+        var adminOptions = [
+            {name: ls.get(&#x27;READER&#x27;), value: pb.SecurityService.ACCESS_USER},
+            {name: ls.get(&#x27;WRITER&#x27;), value: pb.SecurityService.ACCESS_WRITER},
+            {name: ls.get(&#x27;EDITOR&#x27;), value: pb.SecurityService.ACCESS_EDITOR}
+        ];
+
+        if(session.authentication.user.admin &gt;= pb.SecurityService.ACCESS_MANAGING_EDITOR) {
+            adminOptions.push({name: ls.get(&#x27;MANAGING_EDITOR&#x27;), value: pb.SecurityService.ACCESS_MANAGING_EDITOR});
+        }
+        if(session.authentication.user.admin &gt;= pb.SecurityService.ACCESS_ADMINISTRATOR) {
+            adminOptions.push({name: ls.get(&#x27;ADMINISTRATOR&#x27;), value: pb.SecurityService.ACCESS_ADMINISTRATOR});
+        }
+
+        return adminOptions;
+    };
+    
+    /**
+     * Retrieves a select list (id/name) of available system editors
+     * @deprecated since 0.4.0
+     * @method getEditorSelectList
+     * @param {String} currId The Id to be excluded from the list.
+     * @param {Function} cb A callback that takes two parameters.  The first is an
+     * error, if exists, the second is an array of objects that represent the
+     * editor select list.
+     */
+    UserService.prototype.getEditorSelectList = function(currId, cb) {
+        pb.log.warn(&#x27;UserService: getEditorSelectList is deprecated. Use getWriterOrEditorSelectList instead&#x27;);
+        this.getWriterOrEditorSelectList(currId, cb);
+    };
+
+    /**
+     * Retrieves a select list (id/name) of available system writers or editors
+     * @method getWriterOrEditorSelectList
+     * @param {String} currId The Id to be excluded from the list.
+     * @param {Boolean} [getWriters=false] Whether to retrieve all writers or just editors.
+     * @param {Function} cb A callback that takes two parameters.  The first is an
+     * error, if exists, the second is an array of objects that represent the
+     * editor select list.
+     */
+    UserService.prototype.getWriterOrEditorSelectList = function(currId, getWriters, cb) {
+        if (util.isFunction(getWriters)) {
+            cb = getWriters;
+            getWriters = false;
         }
         
-        //callback with objects (not necessary but we do it anyway)
-        cb(null, objArry);
-    });
-};
+        var self = this;
 
-/**
- * Retrieves the available access privileges to assign to a user
- *
- * @method getAdminOptions
- * @param {Object} session The current session object
- * @param {Object} ls      The localization object
- */
-UserService.prototype.getAdminOptions = function(session, ls) {
-	var adminOptions = [
-        {name: ls.get(&#x27;READER&#x27;), value: ACCESS_USER},
-        {name: ls.get(&#x27;WRITER&#x27;), value: ACCESS_WRITER},
-        {name: ls.get(&#x27;EDITOR&#x27;), value: ACCESS_EDITOR}
-    ];
-
-    if(session.authentication.user.admin &gt;= ACCESS_MANAGING_EDITOR) {
-        adminOptions.push({name: ls.get(&#x27;MANAGING_EDITOR&#x27;), value: ACCESS_MANAGING_EDITOR});
-    }
-    if(session.authentication.user.admin &gt;= ACCESS_ADMINISTRATOR) {
-        adminOptions.push({name: ls.get(&#x27;ADMINISTRATOR&#x27;), value: ACCESS_ADMINISTRATOR});
-    }
-
-    return adminOptions;
-};
-
-/**
- * Retrieves a select list (id/name) of available system editors
- * @method getEditorSelectList
- * @param {String} currId The Id to be excluded from the list.
- * @param {Function} cb A callback that takes two parameters.  The first is an
- * error, if exists, the second is an array of objects that represent the
- * editor select list.
- */
-UserService.prototype.getEditorSelectList = function(currId, cb) {
-    var self = this;
-    
-    var opts = {
-        select: {
-            _id: 1,
-            first_name: 1,
-            last_name: 1
-        },
-        where: {
-            admin: {
-                $gt: ACCESS_WRITER
+        var opts = {
+            select: {
+                first_name: 1,
+                last_name: 1
+            },
+            where: {
+                admin: {
+                    $gte: getWriters ? pb.SecurityService.ACCESS_WRITER : pb.SecurityService.ACCESS_EDITOR
+                }
             }
-        }
+        };
+        var dao = new pb.DAO();
+        dao.q(&#x27;user&#x27;, opts, function(err, data){
+            if (util.isError(err)) {
+                return cb(err, null);
+            }
+
+            var editors = [];
+            for(var i = 0; i &lt; data.length; i++) {
+
+                var editor = {
+                    name: self.getFormattedName(data[i])
+                };
+                editor[pb.DAO.getIdField()] = data[i][pb.DAO.getIdField()];
+
+                if(currId == data[i][pb.DAO.getIdField()].toString()) {
+                    editor.selected = &#x27;selected&#x27;;
+                }
+                editors.push(editor);
+            }
+            cb(null, editors);
+        });
     };
-    var dao     = new pb.DAO();
-	dao.q(&#x27;user&#x27;, opts, function(err, data){
-        if (util.isError(err)) {
-        	return cb(err, null);
-        }
 
-		var editors = [];
-		for(var i = 0; i &lt; data.length; i++) {
+    /**
+     * Sends a verification email to an unverified user
+     *
+     * @method sendVerificationEmail
+     * @param {Object}   user A user object
+     * @param {Function} cb   Callback function
+     */
+    UserService.prototype.sendVerificationEmail = function(user, cb) {
+        cb = cb || util.cb;
 
-			var editor = {
-                name: self.getFormattedName(data[i])
+        // We need to see if email settings have been saved with verification content
+        var emailService = new pb.EmailService();
+        emailService.getSettings(function(err, emailSettings) {
+            var options = {
+                to: user.email,
+                replacements: {
+                    &#x27;verification_url&#x27;: pb.config.siteRoot + &#x27;/actions/user/verify_email?email=&#x27; + user.email + &#x27;&amp;code=&#x27; + user.verification_code,
+                    &#x27;first_name&#x27;: user.first_name,
+                    &#x27;last_name&#x27;: user.last_name
+                }
             };
-            editor[pb.DAO.getIdField()] = data[i][pb.DAO.getIdField()];
-            
-            if(currId == data[i][pb.DAO.getIdField()].toString()) {
-                editor.selected = &#x27;selected&#x27;;
+            if(emailSettings.layout) {
+                options.subject= emailSettings.verification_subject;
+                options.layout = emailSettings.verification_content;
+                emailService.sendFromLayout(options, cb);
             }
-            editors.push(editor);
-        }
-        cb(null, editors);
-    });
-};
-
-/**
- * Sends a verification email to an unverified user
- *
- * @method sendVerificationEmail
- * @param {Object}   user A user object
- * @param {Function} cb   Callback function
- */
-UserService.prototype.sendVerificationEmail = function(user, cb) {
-	cb = cb || pb.utils.cb;
-
-	// We need to see if email settings have been saved with verification content
-	var options;
-	pb.email.getSettings(function(err, emailSettings) {
-		options = {
-			to: user.email,
-			replacements: {
-				&#x27;verification_url&#x27;: pb.config.siteRoot + &#x27;/actions/user/verify_email?email=&#x27; + user.email + &#x27;&amp;code=&#x27; + user.verification_code,
-				&#x27;first_name&#x27;: user.first_name,
-				&#x27;last_name&#x27;: user.last_name
-			}
-		};
-		if(emailSettings.layout) {
-			options.subject= emailSettings.verification_subject;
-			options.layout = emailSettings.verification_content;
-			pb.email.sendFromLayout(options, cb);
-		}
-		else {
-			options.subject = pb.config.siteName + &#x27; Account Confirmation&#x27;;
-			options.template = emailSettings.template;
-			pb.email.sendFromTemplate(options, cb);
-		}
-	});
-};
-
-/**
- * Sends a password reset email to a user
- *
- * @method sendPasswordResetEmail
- * @param {Object}   user          A user object
- * @param {Object}   passwordReset A password reset object containing the verification code
- * @param {Function} cb            Callback function
- */
-UserService.prototype.sendPasswordResetEmail = function(user, passwordReset, cb) {
-	cb = cb || pb.utils.cb;
-
-    var verficationUrl = pb.UrlService.urlJoin(pb.config.siteRoot, &#x27;/actions/user/reset_password&#x27;) + util.format(&#x27;?email=%s&amp;code=%s&#x27;, encodeURIComponent(user.email), encodeURIComponent(passwordReset.verification_code));
-	var options = {
-		to: user.email,
-		subject: pb.config.siteName + &#x27; Password Reset&#x27;,
-		template: &#x27;admin/elements/password_reset_email&#x27;,
-		replacements: {
-			&#x27;verification_url&#x27;: verficationUrl,
-			&#x27;first_name&#x27;: user.first_name,
-			&#x27;last_name&#x27;: user.last_name
-		}
-	};
-	pb.email.sendFromTemplate(options, cb);
-};
-
-/**
- * Checks to see if a proposed user name or email is already in the system
- *
- * @method isUserNameOrEmailTaken
- * @param {String}   username
- * @param {String}   email
- * @param {String}   id       User object Id to exclude from the search
- * @param {Function} cb       Callback function
- */
-UserService.prototype.isUserNameOrEmailTaken = function(username, email, id, cb) {
-	this.getExistingUsernameEmailCounts(username, email, id, function(err, results) {
-
-		var result = results === null;
-		if (!result) {
-
-			for(var key in results) {
-				result |= results[key] &gt; 0;
-			}
-		}
-		cb(err, result);
-	});
-};
-
-/**
- * Gets the total counts of a username and email in both the user and unverified_user collections
- *
- * @method getExistingUsernameEmailCounts
- * @param {String}   username
- * @param {String}   email
- * @param {String}   id       User object Id to exclude from the search
- * @param {Function} cb       Callback function
- */
-UserService.prototype.getExistingUsernameEmailCounts = function(username, email, id, cb) {
-    if (pb.utils.isFunction(id)) {
-        cb = id;
-        id = null;
-    }
-
-	var getWhere = function(where) {
-		if (id) {
-			where[pb.DAO.getIdField()] = {$ne: pb.DAO.getObjectID(id)};
-		}
-		return where;
-	};
-	var dao   = new pb.DAO();
-	var tasks = {
-		verified_username: function(callback) {
-            var expStr = pb.utils.escapeRegExp(username) + &#x27;$&#x27;;
-			dao.count(&#x27;user&#x27;, getWhere({username: new RegExp(expStr, &#x27;i&#x27;)}), callback);
-		},
-		verified_email: function(callback) {
-			dao.count(&#x27;user&#x27;, getWhere({email: email.toLowerCase()}), callback);
-		},
-		unverified_username: function(callback) {
-			dao.count(&#x27;unverified_user&#x27;, getWhere({username: new RegExp(username + &#x27;$&#x27;, &#x27;i&#x27;)}), callback);
-		},
-		unverified_email: function(callback) {
-			dao.count(&#x27;unverified_user&#x27;, getWhere({email: email.toLowerCase()}), callback);
-		},
-	};
-	async.series(tasks, cb);
-};
-
-/**
- * Retrieves users by their access level (role)
- * @method findByAccessLevel
- * @param {Integer} level The admin level of the users to find
- * @param {Object} [options] The search options
- * @param {Object} [options.select={}] The fields to return
- * @param {Array} [options.orderBy] The order to return the results in
- * @param {Integer} [options.limit] The maximum number of results to return
- * @param {offset} [options.offset=0] The number of results to skip before
- * returning results.
- * @param {Function} cb A callback that takes two parameters: an error, if
- * occurred, and the second is an array of User objects.
- */
-UserService.prototype.findByAccessLevel = function(level, options, cb) {
-    if (pb.utils.isFunction(options)) {
-        cb      = options;
-        options = {};
-    }
-    else if (!pb.utils.isObject(options)) {
-        throw new Error(&#x27;The options parameter must be an object&#x27;);
-    }
-
-    var opts = {
-        select: options.select,
-        where: {
-            admin: level
-        },
-        order: options.orderBy,
-        limit: options.limit,
-        offset: options.offset
+            else {
+                options.subject = pb.config.siteName + &#x27; Account Confirmation&#x27;;
+                options.template = emailSettings.template;
+                emailService.sendFromTemplate(options, cb);
+            }
+        });
     };
-    var dao = new pb.DAO();
-    dao.q(&#x27;user&#x27;, opts, cb);
-};
 
-/**
- * Verifies if a user has the provided access level or higher
- *
- * @method hasAccessLevel
- * @param {String}   uid         The user&#x27;s object Id
- * @param {Number}   accessLevel The access level to test against
- * @param {Function} cb          Callback function
- */
-UserService.prototype.hasAccessLevel = function(uid, accessLevel, cb) {
-	var where = pb.DAO.getIDWhere(uid);
-	where.admin = {$gte: accessLevel};
-	var dao = new pb.DAO();
-	dao.count(&#x27;user&#x27;, where, function(err, count) {
-		cb(err, count === 1);
-	});
-};
+    /**
+     * Sends a password reset email to a user
+     *
+     * @method sendPasswordResetEmail
+     * @param {Object}   user          A user object
+     * @param {Object}   passwordReset A password reset object containing the verification code
+     * @param {Function} cb            Callback function
+     */
+    UserService.prototype.sendPasswordResetEmail = function(user, passwordReset, cb) {
+        cb = cb || util.cb;
 
-//exports
-module.exports.UserService = UserService;
+        var verficationUrl = pb.UrlService.urlJoin(pb.config.siteRoot, &#x27;/actions/user/reset_password&#x27;) + util.format(&#x27;?email=%s&amp;code=%s&#x27;, encodeURIComponent(user.email), encodeURIComponent(passwordReset.verification_code));
+        var options = {
+            to: user.email,
+            subject: pb.config.siteName + &#x27; Password Reset&#x27;,
+            template: &#x27;admin/elements/password_reset_email&#x27;,
+            replacements: {
+                &#x27;verification_url&#x27;: verficationUrl,
+                &#x27;first_name&#x27;: user.first_name,
+                &#x27;last_name&#x27;: user.last_name
+            }
+        };
+        var emailService = new pb.EmailService();
+        emailService.sendFromTemplate(options, cb);
+    };
+
+    /**
+     * Checks to see if a proposed user name or email is already in the system
+     *
+     * @method isUserNameOrEmailTaken
+     * @param {String}   username
+     * @param {String}   email
+     * @param {String}   id       User object Id to exclude from the search
+     * @param {Function} cb       Callback function
+     */
+    UserService.prototype.isUserNameOrEmailTaken = function(username, email, id, cb) {
+        this.getExistingUsernameEmailCounts(username, email, id, function(err, results) {
+
+            var result = results === null;
+            if (!result) {
+
+                for(var key in results) {
+                    result |= results[key] &gt; 0;
+                }
+            }
+            cb(err, result);
+        });
+    };
+
+    /**
+     * Gets the total counts of a username and email in both the user and unverified_user collections
+     *
+     * @method getExistingUsernameEmailCounts
+     * @param {String}   username
+     * @param {String}   email
+     * @param {String}   id       User object Id to exclude from the search
+     * @param {Function} cb       Callback function
+     */
+    UserService.prototype.getExistingUsernameEmailCounts = function(username, email, id, cb) {
+        if (util.isFunction(id)) {
+            cb = id;
+            id = null;
+        }
+
+        var getWhere = function(where) {
+            if (id) {
+                where[pb.DAO.getIdField()] = pb.DAO.getNotIDField(id);
+            }
+            return where;
+        };
+        var dao   = new pb.DAO();
+        var tasks = {
+            verified_username: function(callback) {
+                var expStr = util.escapeRegExp(username) + &#x27;$&#x27;;
+                dao.count(&#x27;user&#x27;, getWhere({username: new RegExp(expStr, &#x27;i&#x27;)}), callback);
+            },
+            verified_email: function(callback) {
+                dao.count(&#x27;user&#x27;, getWhere({email: email.toLowerCase()}), callback);
+            },
+            unverified_username: function(callback) {
+                dao.count(&#x27;unverified_user&#x27;, getWhere({username: new RegExp(username + &#x27;$&#x27;, &#x27;i&#x27;)}), callback);
+            },
+            unverified_email: function(callback) {
+                dao.count(&#x27;unverified_user&#x27;, getWhere({email: email.toLowerCase()}), callback);
+            },
+        };
+        async.series(tasks, cb);
+    };
+
+    /**
+     * Retrieves users by their access level (role)
+     * @method findByAccessLevel
+     * @param {Integer} level The admin level of the users to find
+     * @param {Object} [options] The search options
+     * @param {Object} [options.select={}] The fields to return
+     * @param {Array} [options.orderBy] The order to return the results in
+     * @param {Integer} [options.limit] The maximum number of results to return
+     * @param {offset} [options.offset=0] The number of results to skip before
+     * returning results.
+     * @param {Function} cb A callback that takes two parameters: an error, if
+     * occurred, and the second is an array of User objects.
+     */
+    UserService.prototype.findByAccessLevel = function(level, options, cb) {
+        if (util.isFunction(options)) {
+            cb      = options;
+            options = {};
+        }
+        else if (!util.isObject(options)) {
+            throw new Error(&#x27;The options parameter must be an object&#x27;);
+        }
+
+        var opts = {
+            select: options.select,
+            where: {
+                admin: level
+            },
+            order: options.orderBy,
+            limit: options.limit,
+            offset: options.offset
+        };
+        var dao = new pb.DAO();
+        dao.q(&#x27;user&#x27;, opts, cb);
+    };
+
+    /**
+     * Verifies if a user has the provided access level or higher
+     *
+     * @method hasAccessLevel
+     * @param {String}   uid         The user&#x27;s object Id
+     * @param {Number}   accessLevel The access level to test against
+     * @param {Function} cb          Callback function
+     */
+    UserService.prototype.hasAccessLevel = function(uid, accessLevel, cb) {
+        var where = pb.DAO.getIdWhere(uid);
+        where.admin = {$gte: accessLevel};
+        var dao = new pb.DAO();
+        dao.count(&#x27;user&#x27;, where, function(err, count) {
+            cb(err, count === 1);
+        });
+    };
+    return UserService;
+};
 
     </pre>
 </div>

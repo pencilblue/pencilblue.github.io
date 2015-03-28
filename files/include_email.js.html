@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,152 +392,163 @@
 */
 
 //dependencies
-NodeMailer = require(&#x27;nodemailer&#x27;);
+var NodeMailer = require(&#x27;nodemailer&#x27;);
+var util       = require(&#x27;./util.js&#x27;);
 
-/**
- * Service for sending emails.
- *
- * @module Services
- * @class EmailService
- * @constructor
- */
-function EmailService(){}
+module.exports = function EmailServiceModule(pb) {
 
+    /**
+     * Service for sending emails.
+     *
+     * @module Services
+     * @class EmailService
+     * @constructor
+     */
+    function EmailService(){}
 
-/**
- * Retrieves a template and sends it as an email
- *
- * @method sendFromTemplate
- * @param {Object}   options Object containing the email settings and template name
- * @param {Function} cb      Callback function
- */
-EmailService.prototype.sendFromTemplate = function(options, cb){
-	var self = this;
-	var ts   = new pb.TemplateService();
-	if (options.replacements) {
-		for(var key in options.replacements) {
-			ts.registerLocal(key, options.replacements[key]);
-		}
-	}
-	ts.load(options.template, function(err, data) {
-
-		var body = &#x27;&#x27; + data;
-		self.send(options.from, options.to, options.subject, body, cb);
-	});
-};
-
-/**
-* Uses an HTML layout and sends it as an email
-*
-* @method sendFromTemplate
-* @param {Object}   options Object containing the email settings and template name
-* @param {Function} cb      Callback function
-*/
-EmailService.prototype.sendFromLayout = function(options, cb){
-	var self = this;
-	var layout = options.layout;
-	if (options.replacements) {
-		for(var key in options.replacements) {
-			layout.split(&#x27;^&#x27; + key + &#x27;^&#x27;).join(options.replacements[key]);
-		}
-	}
-	self.send(options.from, options.to, options.subject, layout, cb);
-};
-
-/**
- * Sends an email
- *
- * @method send
- * @param  {String}   from    From name
- * @param  {String}   to      To email address
- * @param  {String}   subject Email subject
- * @param  {String}   body    Email content
- * @param  {Function} cb      Callback function
- */
-EmailService.prototype.send = function(from, to, subject, body, cb) {
-
-	this.getSettings(function(err, emailSettings) {
-        if (util.isError(err)) {
-            throw err;
-        }
-        else if (!emailSettings) {
-            var err = new Error(&#x27;No Email settings available.  Go to the admin settings and put in SMTP settings&#x27;);
-            pb.log.error(err.stack);
-            return cb(err);
-        }
-
-        var options = {
-            service: emailSettings.service,
-            auth:
-            {
-                user: emailSettings.username,
-                pass: emailSettings.password
-            }
-        };
-        if (emailSettings.service == &#x27;custom&#x27;) {
-        	options.host = emailSettings.host,
-        	options.secureConnection = emailSettings.secure_connection,
-        	options.port = emailSettings.port;
-        }
-        var smtpTransport = NodeMailer.createTransport(&quot;SMTP&quot;, options);
-
-        var mailOptions =
-        {
-            from: from || (emailSettings.from_name + &#x27;&lt;&#x27; + emailSettings.from_address + &#x27;&gt;&#x27;),
-            to: to,
-            subject: subject,
-            html: body
-        };
-
-        smtpTransport.sendMail(mailOptions, function(err, response) {
-            if (util.isError(err)) {
-            	pb.log.error(&quot;EmailService: Failed to send email: &quot;, err.stack);
-            }
-            smtpTransport.close();
-
-            cb(err, response);
-        });
-    });
-};
-
-/**
- * Retrieves the email settings
- *
- * @method getSettings
- * @param {Function} cb Callback function
- */
-EmailService.prototype.getSettings = function(cb) {
-	var self = this;
-	pb.settings.get(&#x27;email_settings&#x27;, function(err, settings) {
-		var defaultSettings = self.getDefaultSettings();
-        cb(err, util.isError(err) || !settings ? defaultSettings : settings);
-    });
-};
-
-/**
- * Retrieves the default email settings from installation
- *
- * @method getDefaultSettings
- * @return {Object} Email settings
- */
-EmailService.prototype.getDefaultSettings = function() {
-	return {
-        from_name: &#x27;pencilblue&#x27;,
-        from_address: &#x27;no-reply@pencilblue.org&#x27;,
-        verification_subject: &#x27;pencilblue Account Confirmation&#x27;,
-		verification_content: &#x27;&#x27;,
-		template: &#x27;admin/elements/default_verification_email&#x27;,
+    /** 
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property DEFAULT_SETTINGS
+     * @type {Object}
+     */
+    var DEFAULT_SETTINGS = Object.freeze({
+        from_name: pb.config.siteName,
+        from_address: &#x27;no-reply@sample.com&#x27;,
+        verification_subject: pb.config.siteName+&#x27; Account Confirmation&#x27;,
+        verification_content: &#x27;&#x27;,
+        template: &#x27;admin/elements/default_verification_email&#x27;,
         service: &#x27;Gmail&#x27;,
         host: &#x27;&#x27;,
         secure_connection: 1,
         port: 465,
         username: &#x27;&#x27;,
         password: &#x27;&#x27;
-    };
-};
+    });
+    
+    /**
+     * Retrieves a template and sends it as an email
+     *
+     * @method sendFromTemplate
+     * @param {Object}   options Object containing the email settings and template name
+     * @param {Function} cb      Callback function
+     */
+    EmailService.prototype.sendFromTemplate = function(options, cb){
+        var self = this;
+        var ts   = new pb.TemplateService();
+        if (options.replacements) {
+            for(var key in options.replacements) {
+                ts.registerLocal(key, options.replacements[key]);
+            }
+        }
+        ts.load(options.template, function(err, data) {
 
-//exports
-module.exports.EmailService = EmailService;
+            var body = &#x27;&#x27; + data;
+            self.send(options.from, options.to, options.subject, body, cb);
+        });
+    };
+
+    /**
+    * Uses an HTML layout and sends it as an email
+    *
+    * @method sendFromTemplate
+    * @param {Object}   options Object containing the email settings and template name
+    * @param {Function} cb      Callback function
+    */
+    EmailService.prototype.sendFromLayout = function(options, cb){
+        var self = this;
+        var layout = options.layout;
+        if (options.replacements) {
+            for(var key in options.replacements) {
+                layout.split(&#x27;^&#x27; + key + &#x27;^&#x27;).join(options.replacements[key]);
+            }
+        }
+        self.send(options.from, options.to, options.subject, layout, cb);
+    };
+
+    /**
+     * Sends an email
+     *
+     * @method send
+     * @param  {String}   from    From name
+     * @param  {String}   to      To email address
+     * @param  {String}   subject Email subject
+     * @param  {String}   body    Email content
+     * @param  {Function} cb      Callback function
+     */
+    EmailService.prototype.send = function(from, to, subject, body, cb) {
+
+        this.getSettings(function(err, emailSettings) {
+            if (util.isError(err)) {
+                throw err;
+            }
+            else if (!emailSettings) {
+                var err = new Error(&#x27;No Email settings available.  Go to the admin settings and put in SMTP settings&#x27;);
+                pb.log.error(err.stack);
+                return cb(err);
+            }
+
+            var options = {
+                service: emailSettings.service,
+                auth:
+                {
+                    user: emailSettings.username,
+                    pass: emailSettings.password
+                }
+            };
+            if (emailSettings.service == &#x27;custom&#x27;) {
+                options.host = emailSettings.host,
+                options.secureConnection = emailSettings.secure_connection,
+                options.port = emailSettings.port;
+            }
+            var smtpTransport = NodeMailer.createTransport(&quot;SMTP&quot;, options);
+
+            var mailOptions = {
+                from: from || (emailSettings.from_name + &#x27;&lt;&#x27; + emailSettings.from_address + &#x27;&gt;&#x27;),
+                to: to,
+                subject: subject,
+                html: body
+            };
+
+            smtpTransport.sendMail(mailOptions, function(err, response) {
+                if (util.isError(err)) {
+                    pb.log.error(&quot;EmailService: Failed to send email: &quot;, err.stack);
+                }
+                smtpTransport.close();
+
+                cb(err, response);
+            });
+        });
+    };
+
+    /**
+     * Retrieves the email settings
+     *
+     * @method getSettings
+     * @param {Function} cb Callback function
+     */
+    EmailService.prototype.getSettings = function(cb) {
+        var self = this;
+        pb.settings.get(&#x27;email_settings&#x27;, function(err, settings) {
+            cb(err, util.isError(err) || !settings ? EmailService.getDefaultSettings() : settings);
+        });
+    };
+
+    /**
+     * Retrieves the default email settings from installation
+     *
+     * @method getDefaultSettings
+     * @return {Object} Email settings
+     */
+    EmailService.getDefaultSettings = function() {
+        return DEFAULT_SETTINGS;
+    };
+
+    //exports
+    return EmailService;
+};
 
     </pre>
 </div>

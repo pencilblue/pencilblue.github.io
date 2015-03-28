@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,67 +391,39 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Service for library settings retrieval
- *
- * @module Services
- * @class LibrariesService
- * @constructor
- */
-function LibrariesService(){}
+//dependencies
+var util = require(&#x27;./util.js&#x27;);
 
-/**
- * Retrieves the library settings
- *
- * @method getSettings
- * @param {Function} cb Callback function
- */
-LibrariesService.getSettings = function(cb){
-    pb.settings.get(&#x27;libraries_settings&#x27;, function(err, settings){
-        if(settings === null) {
-            settings = LibrariesService.getCDNDefaults();
-            pb.settings.set(&#x27;libraries_settings&#x27;, settings, pb.utils.cb);
-        }
-        else {
-            // Replace any missing libraries with CDN defaults
-            var newSettings = LibrariesService.getCDNDefaults();
-            pb.utils.merge(settings, newSettings);
-            settings = newSettings;
-        }
-        cb(err, settings);
-    });
-};
+module.exports = function LibrariesServiceModule(pb) {
 
-/**
- * Loads the libraries settings into template service globals. Called on system
- * startup
- *
- * @method init
- * @param  {Function} cb Callback function
- */
-LibrariesService.init = function(cb) {
-    LibrariesService.getSettings(function(err, settings) {
-        if(util.isError(err)) {
-            cb(err);
-            return;
-        }
-
-        for(var key in settings) {
-            pb.TemplateService.registerGlobal(key + &#x27;_src&#x27;, settings[key]);
-        }
-
-        cb(null, true);
-    });
-};
-
-/**
- * Retrieves the default library settings for CDNs
- *
- * @method getCDNDefaults
- * @return {Object} CDN defaults
- */
-LibrariesService.getCDNDefaults = function() {
-    return {
+    /**
+     * Service for library settings retrieval
+     *
+     * @module Services
+     * @class LibrariesService
+     * @constructor
+     */
+    function LibrariesService(){}
+    
+    /**
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property LIBRARIES_SETTINGS_REF
+     * @type {String}
+     */
+    var LIBRARIES_SETTINGS_REF = &#x27;libraries_settings&#x27;;
+    
+    /**
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property CDN_DEFAULTS
+     * @type {Object}
+     */
+    var CDN_DEFAULTS = Object.freeze({
         jquery: &#x27;//code.jquery.com/jquery-1.11.1.min.js&#x27;,
         jquery_ui_js: &#x27;//code.jquery.com/ui/1.10.4/jquery-ui.min.js&#x27;,
         jquery_ui_css: &#x27;//code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css&#x27;,
@@ -440,48 +450,109 @@ LibrariesService.getCDNDefaults = function() {
         ng_sortable_css: &#x27;/css/lib/ng-sortable/ng-sortable.min.css&#x27;,
         ng_sortable_style_css: &#x27;/css/lib/ng-sortable/ng-sortable.style.min.css&#x27;,
         ng_sortable_js: &#x27;/js/lib/ng-sortable/ng-sortable.min.js&#x27;
-    };
-};
+    });
+    
+    /**
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property BOWER_DEFAULTS
+     * @type {Object}
+     */
+    var BOWER_DEFAULTS = Object.freeze({
+            jquery: &#x27;/bower_components/jquery/dist/jquery.min.js&#x27;,
+            jquery_ui_js: &#x27;/bower_components/jqueryui/jquery-ui.min.js&#x27;,
+            jquery_ui_css: &#x27;/bower_components/jqueryui/themes/ui-lightness/jquery-ui.min.css&#x27;,
+            jquery_ui_touch_punch: &#x27;/bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js&#x27;,
+            jquery_file_upload_js: &#x27;/bower_components/jquery-file-upload/js/jquery.fileupload.js&#x27;,
+            jquery_file_upload_css: &#x27;/bower_components/jquery-file-upload/css/jquery.fileupload.css&#x27;,
+            jquery_iframe_transport: &#x27;/bower_components/jquery.iframe-transport/jquery.iframe-transport.js&#x27;,
+            jquery_datetime_picker_js: &#x27;/bower_components/datetimepicker/jquery.datetimepicker.js&#x27;,
+            jquery_datetime_picker_css: &#x27;/bower_components/datetimepicker/jquery.datetimepicker.css&#x27;,
+            jquery_validate: &#x27;/bower_components/jquery.validation/dist/jquery.validate.min.js&#x27;,
+            bootstrap_js: &#x27;/bower_components/bootstrap/dist/js/bootstrap.min.js&#x27;,
+            bootstrap_css: &#x27;/bower_components/bootstrap/dist/css/bootstrap.min.css&#x27;,
+            font_awesome: &#x27;/bower_components/fontawesome/css/font-awesome.min.css&#x27;,
+            angular: &#x27;/bower_components/angular/angular.min.js&#x27;,
+            angular_route: &#x27;/bower_components/angular-route/angular-route.min.js&#x27;,
+            angular_sanitize: &#x27;/bower_components/angular-sanitize/angular-sanitize.min.js&#x27;,
+            spin: &#x27;/bower_components/jquery.spinjs/libs/spin/spin.js&#x27;,
+            jquery_spin: &#x27;/bower_components/jquery.spinjs/dist/jquery.spin.min.js&#x27;,
+            he: &#x27;/bower_components/he/he.js&#x27;,
+            to_markdown: &#x27;/bower_components/to-markdown/src/to-markdown.js&#x27;,
+            markdown: &#x27;/bower_components/markdown/lib/markdown.js&#x27;,
+            angular_upload: &#x27;/bower_components/danialfarid-angular-file-upload/dist/angular-file-upload.min.js&#x27;,
+            angular_upload_shim: &#x27;/bower_components/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js&#x27;,
+            ng_sortable_css: &#x27;/bower_components/ng-sortable/dist/ng-sortable.min.css&#x27;,
+            ng_sortable_style_css: &#x27;/bower_components/ng-sortable/dist/ng-sortable.style.min.css&#x27;,
+            ng_sortable_js: &#x27;/bower_components/ng-sortable/dist/ng-sortable.min.js&#x27;
+        });
 
-/**
- * Retrieves the default library settings for Bower
- *
- * @method getBowerDefaults
- * @return {Object} Bower defaults
- */
-LibrariesService.getBowerDefaults = function() {
-    return {
-        jquery: &#x27;/bower_components/jquery/dist/jquery.min.js&#x27;,
-        jquery_ui_js: &#x27;/bower_components/jqueryui/jquery-ui.min.js&#x27;,
-        jquery_ui_css: &#x27;/bower_components/jqueryui/themes/ui-lightness/jquery-ui.min.css&#x27;,
-        jquery_ui_touch_punch: &#x27;/bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js&#x27;,
-        jquery_file_upload_js: &#x27;/bower_components/jquery-file-upload/js/jquery.fileupload.js&#x27;,
-        jquery_file_upload_css: &#x27;/bower_components/jquery-file-upload/css/jquery.fileupload.css&#x27;,
-        jquery_iframe_transport: &#x27;/bower_components/jquery.iframe-transport/jquery.iframe-transport.js&#x27;,
-        jquery_datetime_picker_js: &#x27;/bower_components/datetimepicker/jquery.datetimepicker.js&#x27;,
-        jquery_datetime_picker_css: &#x27;/bower_components/datetimepicker/jquery.datetimepicker.css&#x27;,
-        jquery_validate: &#x27;/bower_components/jquery.validation/dist/jquery.validate.min.js&#x27;,
-        bootstrap_js: &#x27;/bower_components/bootstrap/dist/js/bootstrap.min.js&#x27;,
-        bootstrap_css: &#x27;/bower_components/bootstrap/dist/css/bootstrap.min.css&#x27;,
-        font_awesome: &#x27;/bower_components/fontawesome/css/font-awesome.min.css&#x27;,
-        angular: &#x27;/bower_components/angular/angular.min.js&#x27;,
-        angular_route: &#x27;/bower_components/angular-route/angular-route.min.js&#x27;,
-        angular_sanitize: &#x27;/bower_components/angular-sanitize/angular-sanitize.min.js&#x27;,
-        spin: &#x27;/bower_components/jquery.spinjs/libs/spin/spin.js&#x27;,
-        jquery_spin: &#x27;/bower_components/jquery.spinjs/dist/jquery.spin.min.js&#x27;,
-        he: &#x27;/bower_components/he/he.js&#x27;,
-        to_markdown: &#x27;/bower_components/to-markdown/src/to-markdown.js&#x27;,
-        markdown: &#x27;/bower_components/markdown/lib/markdown.js&#x27;,
-        angular_upload: &#x27;/bower_components/danialfarid-angular-file-upload/dist/angular-file-upload.min.js&#x27;,
-        angular_upload_shim: &#x27;/bower_components/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js&#x27;,
-        ng_sortable_css: &#x27;/bower_components/ng-sortable/dist/ng-sortable.min.css&#x27;,
-        ng_sortable_style_css: &#x27;/bower_components/ng-sortable/dist/ng-sortable.style.min.css&#x27;,
-        ng_sortable_js: &#x27;/bower_components/ng-sortable/dist/ng-sortable.min.js&#x27;
-    };
-};
+    /**
+     * Retrieves the library settings
+     *
+     * @method getSettings
+     * @param {Function} cb Callback function
+     */
+    LibrariesService.prototype.getSettings = function(cb){
+        pb.settings.get(LIBRARIES_SETTINGS_REF, function(err, settings){
+            if (settings) {
+                return cb(err, settings);
+            }
 
-//exports
-module.exports.LibrariesService = LibrariesService;
+            //set default settings if they don&#x27;t exist
+            settings = LibrariesService.getCDNDefaults();
+            pb.settings.set(LIBRARIES_SETTINGS_REF, settings, function(err, result) {
+                cb(err, settings);
+            });
+        });
+    };
+
+    /**
+     * Loads the libraries settings into template service globals. Called on system
+     * startup
+     *
+     * @method init
+     * @param  {Function} cb Callback function
+     */
+    LibrariesService.init = function(cb) {
+        var instance = new LibrariesService();
+        instance.getSettings(function(err, settings) {
+            if(util.isError(err)) {
+                return cb(err);
+            }
+
+            Object.keys(settings).forEach(function(key) {
+                pb.TemplateService.registerGlobal(key + &#x27;_src&#x27;, settings[key]);
+            });
+            cb(null, true);
+        });
+    };
+
+    /**
+     * Retrieves the default library settings for CDNs
+     *
+     * @method getCDNDefaults
+     * @return {Object} CDN defaults
+     */
+    LibrariesService.getCDNDefaults = function() {
+        return util.clone(CDN_DEFAULTS);
+    };
+
+    /**
+     * Retrieves the default library settings for Bower
+     *
+     * @method getBowerDefaults
+     * @return {Object} Bower defaults
+     */
+    LibrariesService.getBowerDefaults = function() {
+        return util.clone(BOWER_DEFAULTS);
+    };
+
+    //exports
+    return LibrariesService;
+};
 
     </pre>
 </div>

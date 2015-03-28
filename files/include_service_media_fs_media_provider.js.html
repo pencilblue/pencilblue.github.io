@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,226 +392,233 @@
 */
 
 //dependencies
-var os = require(&#x27;os&#x27;);
+var os    = require(&#x27;os&#x27;);
+var fs    = require(&#x27;fs&#x27;);
+var path  = require(&#x27;path&#x27;);
+var async = require(&#x27;async&#x27;);
+var util  = require(&#x27;../../util.js&#x27;);
 
-/**
- * A media provider that uses the underlying file system as the method of 
- * storage.
- * @class FsMediaProvider
- * @constructor
- */
-function FsMediaProvider(parentDir) {
-    this.parentDir = parentDir || pb.config.media.parent_dir;
-};
+module.exports = function FsMediaProviderModule(pb) {
 
-/**
- * Retrieves the item on the file system as a stream. 
- * @method getStream
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Object} [options] Options for interacting with S3
- * @param {String} [options.bucket] The S3 bucket to interact with
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and a ReadableStream that contains the media content.
- */
-FsMediaProvider.prototype.getStream = function(mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    cb(null, fs.createReadStream(ap));
-};
+    /**
+     * A media provider that uses the underlying file system as the method of 
+     * storage.
+     * @class FsMediaProvider
+     * @constructor
+     */
+    function FsMediaProvider(parentDir) {
+        this.parentDir = parentDir || pb.config.media.parent_dir;
+    };
 
-/**
- * Retrieves the content from the file system as a String or Buffer.
- * @method get
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and an entity that contains the media content.
- */
-FsMediaProvider.prototype.get = function(mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    fs.readFile(ap, cb);
-};
+    /**
+     * Retrieves the item on the file system as a stream. 
+     * @method getStream
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Object} [options] Options for interacting with S3
+     * @param {String} [options.bucket] The S3 bucket to interact with
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and a ReadableStream that contains the media content.
+     */
+    FsMediaProvider.prototype.getStream = function(mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        cb(null, fs.createReadStream(ap));
+    };
 
-/**
- * Sets media content into the file system based on the specified media path and 
- * options.  The stream provided must be a ReadableStream.
- * @method setStream
- * @param {ReadableStream} stream The content stream
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and the success of the operation.
- */
-FsMediaProvider.prototype.setStream = function(stream, mediaPath, cb) {
-    
-    this.createWriteStream(mediaPath, function(err, fileStream) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
-        
-        pb.log.silly(&#x27;FsMediaProvider: Piping stream to [%s]&#x27;, mediaPath);
-        stream.pipe(fileStream);
-        stream.on(&#x27;end&#x27;, cb);
-        stream.on(&#x27;error&#x27;, cb);
-    });
-};
+    /**
+     * Retrieves the content from the file system as a String or Buffer.
+     * @method get
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and an entity that contains the media content.
+     */
+    FsMediaProvider.prototype.get = function(mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        fs.readFile(ap, cb);
+    };
 
-/**
- * Sets media content into an file system based on the specified media path and 
- * options.  The data must be in the form of a String or Buffer.
- * @method setStream
- * @param {String|Buffer} fileDataStrOrBuffOrStream The content to persist
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and the success of the operation.
- */
-FsMediaProvider.prototype.set = function(fileDataStrOrBuff, mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    this.mkdirs(ap, function(err) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
-        fs.writeFile(ap, fileDataStrOrBuff, cb);
-    });
-};
+    /**
+     * Sets media content into the file system based on the specified media path and 
+     * options.  The stream provided must be a ReadableStream.
+     * @method setStream
+     * @param {ReadableStream} stream The content stream
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and the success of the operation.
+     */
+    FsMediaProvider.prototype.setStream = function(stream, mediaPath, cb) {
 
-/**
- * Creates a writable stream to a file with the specified path.  The resource 
- * is overwritten if already exists.
- * @method createWriteStream
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and a WriteableStream.
- */
-FsMediaProvider.prototype.createWriteStream = function(mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    this.mkdirs(ap, function(err) {
-        if(util.isError(err)) {
-            return cb(err);
-        }
-        
-        try {
-            cb(null, fs.createWriteStream(ap));
-        }
-        catch(e) {
-            cb(e);
-        }
-    });
-};
-
-/**
- * Checks to see if the file actually exists on disk
- * @method exists
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and a Boolean.
- */
-FsMediaProvider.prototype.exists = function(mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    fs.exists(ap, function(exists) {
-        cb(null, exists);
-    });
-};
-
-/**
- * Deletes a file from the file system
- * @method delete
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and the success of the operation.
- */
-FsMediaProvider.prototype.delete = function(mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    fs.exists(ap, function(exists) {
-        fs.unlink(ap, cb);
-    });
-};
- 
-/**
- * Retrieve the stats on the file
- * @method stat
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and an object that contains the file stats
- */
-FsMediaProvider.prototype.stat = function(mediaPath, cb) {
-    var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
-    fs.stat(ap, cb);
-};
-
-/**
- * Recursively creates the directory structure based on the absolute file path 
- * provided.
- * @method mkdirs
- * @param {String} absoluteFilePath
- * @param {Function} A callback that provides two parameters: Error, if 
- * occurred and result of the attempt at the creation of each directory in the 
- * path.
- */
-FsMediaProvider.prototype.mkdirs = function(absoluteFilePath, cb) {
-    
-    var pieces = absoluteFilePath.split(path.sep);
-    pb.log.silly(&#x27;FsMediaProvider: Ensuring directories exist for path: %s&#x27;, absoluteFilePath);
-    
-    var curr      = &#x27;&#x27;;
-    var isWindows = os.type().toLowerCase().indexOf(&#x27;windows&#x27;) !== -1;
-    var tasks     = pb.utils.getTasks(pieces, function(pieces, i) {
-        return function(callback) {
-            
-            //we need to skip the first one bc it will probably be empty and we 
-            //want to skip the last one because it will probably be the file 
-            //name not a directory.
-            var p = pieces[i];
-            if (p.length === 0 || i &gt;= pieces.length - 1) {
-                return callback();   
+        this.createWriteStream(mediaPath, function(err, fileStream) {
+            if (util.isError(err)) {
+                return cb(err);
             }
-            
-            curr += (isWindows &amp;&amp; i === 0 ? &#x27;&#x27; : path.sep) + p;
-            fs.exists(curr, function(exists) {
-                if (exists) {
-                    pb.log.silly(&#x27;FsMediaProvider: Skipping creation of [%s] because it already exists&#x27;, curr);
-                    return callback();
-                }
-            
-                pb.log.silly(&#x27;FsMediaProvider: Creating directory [%s]&#x27;, curr);
-                fs.mkdir(curr, callback);
-            });
-        };
-    });
-    async.series(tasks, cb);
-};
-    
-/**
- * Generates an absolute path based on the parent directory and media path.  
- * The parent directory is expected to a single directory or set of directories 
- * nested under the DOCUMENT_ROOT.
- * @static
- * @method getMediaPath
- * @param {String} parentDir
- * @param {String} mediaPath
- * @return {String} Absolute path to the resource
- */
-FsMediaProvider.getMediaPath = function(parentDir, mediaPath) {
-  
-    var absolutePath = &#x27;&#x27;;
-    if (parentDir.indexOf(&#x27;/&#x27;) !== 0) {
-        
-        //we have a relative path meant to be from the project directory
-        absolutePath = path.join(DOCUMENT_ROOT, parentDir, mediaPath);
-    }
-    else {
-        absolutePath = path.join(parentDir, mediaPath);
-    }
-    return absolutePath;
-};
 
-//exports
-module.exports = FsMediaProvider;
+            pb.log.silly(&#x27;FsMediaProvider: Piping stream to [%s]&#x27;, mediaPath);
+            stream.pipe(fileStream);
+            stream.on(&#x27;end&#x27;, cb);
+            stream.on(&#x27;error&#x27;, cb);
+        });
+    };
+
+    /**
+     * Sets media content into an file system based on the specified media path and 
+     * options.  The data must be in the form of a String or Buffer.
+     * @method setStream
+     * @param {String|Buffer} fileDataStrOrBuffOrStream The content to persist
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and the success of the operation.
+     */
+    FsMediaProvider.prototype.set = function(fileDataStrOrBuff, mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        this.mkdirs(ap, function(err) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            fs.writeFile(ap, fileDataStrOrBuff, cb);
+        });
+    };
+
+    /**
+     * Creates a writable stream to a file with the specified path.  The resource 
+     * is overwritten if already exists.
+     * @method createWriteStream
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and a WriteableStream.
+     */
+    FsMediaProvider.prototype.createWriteStream = function(mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        this.mkdirs(ap, function(err) {
+            if(util.isError(err)) {
+                return cb(err);
+            }
+
+            try {
+                cb(null, fs.createWriteStream(ap));
+            }
+            catch(e) {
+                cb(e);
+            }
+        });
+    };
+
+    /**
+     * Checks to see if the file actually exists on disk
+     * @method exists
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and a Boolean.
+     */
+    FsMediaProvider.prototype.exists = function(mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        fs.exists(ap, function(exists) {
+            cb(null, exists);
+        });
+    };
+
+    /**
+     * Deletes a file from the file system
+     * @method delete
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and the success of the operation.
+     */
+    FsMediaProvider.prototype.delete = function(mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        fs.exists(ap, function(exists) {
+            fs.unlink(ap, cb);
+        });
+    };
+
+    /**
+     * Retrieve the stats on the file
+     * @method stat
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and an object that contains the file stats
+     */
+    FsMediaProvider.prototype.stat = function(mediaPath, cb) {
+        var ap = FsMediaProvider.getMediaPath(this.parentDir, mediaPath);
+        fs.stat(ap, cb);
+    };
+
+    /**
+     * Recursively creates the directory structure based on the absolute file path 
+     * provided.
+     * @method mkdirs
+     * @param {String} absoluteFilePath
+     * @param {Function} A callback that provides two parameters: Error, if 
+     * occurred and result of the attempt at the creation of each directory in the 
+     * path.
+     */
+    FsMediaProvider.prototype.mkdirs = function(absoluteFilePath, cb) {
+
+        var pieces = absoluteFilePath.split(path.sep);
+        pb.log.silly(&#x27;FsMediaProvider: Ensuring directories exist for path: %s&#x27;, absoluteFilePath);
+
+        var curr      = &#x27;&#x27;;
+        var isWindows = os.type().toLowerCase().indexOf(&#x27;windows&#x27;) !== -1;
+        var tasks     = util.getTasks(pieces, function(pieces, i) {
+            return function(callback) {
+
+                //we need to skip the first one bc it will probably be empty and we 
+                //want to skip the last one because it will probably be the file 
+                //name not a directory.
+                var p = pieces[i];
+                if (p.length === 0 || i &gt;= pieces.length - 1) {
+                    return callback();   
+                }
+
+                curr += (isWindows &amp;&amp; i === 0 ? &#x27;&#x27; : path.sep) + p;
+                fs.exists(curr, function(exists) {
+                    if (exists) {
+                        pb.log.silly(&#x27;FsMediaProvider: Skipping creation of [%s] because it already exists&#x27;, curr);
+                        return callback();
+                    }
+
+                    pb.log.silly(&#x27;FsMediaProvider: Creating directory [%s]&#x27;, curr);
+                    fs.mkdir(curr, callback);
+                });
+            };
+        });
+        async.series(tasks, cb);
+    };
+
+    /**
+     * Generates an absolute path based on the parent directory and media path.  
+     * The parent directory is expected to a single directory or set of directories 
+     * nested under the pb.config.docRoot.
+     * @static
+     * @method getMediaPath
+     * @param {String} parentDir
+     * @param {String} mediaPath
+     * @return {String} Absolute path to the resource
+     */
+    FsMediaProvider.getMediaPath = function(parentDir, mediaPath) {
+
+        var absolutePath = &#x27;&#x27;;
+        if (parentDir.indexOf(&#x27;/&#x27;) !== 0) {
+
+            //we have a relative path meant to be from the project directory
+            absolutePath = path.join(pb.config.docRoot, parentDir, mediaPath);
+        }
+        else {
+            absolutePath = path.join(parentDir, mediaPath);
+        }
+        return absolutePath;
+    };
+
+    //exports
+    return FsMediaProvider;
+};
 
     </pre>
 </div>

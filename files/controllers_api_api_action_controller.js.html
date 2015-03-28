@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,191 +392,197 @@
 */
 
 //dependencies
-var BaseController = pb.BaseController;
-var PluginService  = pb.PluginService;
-var RequestHandler = pb.RequestHandler;
+var async          = require(&#x27;async&#x27;);
+var util           = require(&#x27;../../include/util.js&#x27;);
 
-/**
- * Controller interface used to map simple actions to handlers and provide
- * a flow for validation and error handling.
- * @class ApiActionController
- * @constructor
- * @extends BaseController
- */
-function ApiActionController(){}
+module.exports = function ApiActionControllerModule(pb) {
 
-//inheritance
-util.inherits(ApiActionController, BaseController);
+    //module dependencies
+    var BaseController = pb.BaseController;
+    var PluginService  = pb.PluginService;
+    var RequestHandler = pb.RequestHandler;
+    
+    /**
+     * Controller interface used to map simple actions to handlers and provide
+     * a flow for validation and error handling.
+     * @class ApiActionController
+     * @constructor
+     * @extends BaseController
+     */
+    function ApiActionController(){}
 
-/**
- * Flag to indicate if the form should automatically sanitize the incoming
- * values.  In this case sanitize means it will attempt to strip away any
- * HTML tags to prevent HTML injection and XSS.
- * @property autoSanitize
- * @type {Boolean}
- */
-ApiActionController.prototype.autoSanitize = true;
+    //inheritance
+    util.inherits(ApiActionController, BaseController);
 
-/**
- * The entry point called by the RequestHandler.  Executes the calls to the
- * validation framework then, if passes, executes the action handler.
- * @method render
- * @param {Function} cb
- */
-ApiActionController.prototype.render = function(cb) {
+    /**
+     * Flag to indicate if the form should automatically sanitize the incoming
+     * values.  In this case sanitize means it will attempt to strip away any
+     * HTML tags to prevent HTML injection and XSS.
+     * @property autoSanitize
+     * @type {Boolean}
+     */
+    ApiActionController.prototype.autoSanitize = true;
 
-	//validate action
-	var self   = this;
-	var action = this.pathVars.action;
-	this.validateParameters(action, function(err, errors) {
-		var isError = util.isError(err);
-		//check for errors
-		if (isError || errors.length &gt; 0) {
-			var content = BaseController.apiResponse(BaseController.API_FAILURE, &#x27;&#x27;, errors);
-			cb({content: content, code: isError ? 500 : 400});
-			return;
-		}
+    /**
+     * The entry point called by the RequestHandler.  Executes the calls to the
+     * validation framework then, if passes, executes the action handler.
+     * @method render
+     * @param {Function} cb
+     */
+    ApiActionController.prototype.render = function(cb) {
 
-		//route to handler
-		self[action](cb);
-	});
-};
+        //validate action
+        var self   = this;
+        var action = this.pathVars.action;
+        this.validateParameters(action, function(err, errors) {
+            var isError = util.isError(err);
+            //check for errors
+            if (isError || errors.length &gt; 0) {
+                var content = BaseController.apiResponse(BaseController.API_FAILURE, &#x27;&#x27;, errors);
+                cb({content: content, code: isError ? 500 : 400});
+                return;
+            }
 
-/**
- * Provides the hash of all actions supported by this controller
- * @method getActions
- * @return {Object} An empty hash of actions since this is meant to be
- * overriden.
- */
-ApiActionController.prototype.getActions = function() {
-	return {};
-};
+            //route to handler
+            self[action](cb);
+        });
+    };
 
-/**
- * Validates the query, path, and post parameters in parallel and calls back
- * with any validation errors.
- * @method validateParameters
- * @param {String} action
- * @param {Function} cb
- */
-ApiActionController.prototype.validateParameters = function(action, cb) {
+    /**
+     * Provides the hash of all actions supported by this controller
+     * @method getActions
+     * @return {Object} An empty hash of actions since this is meant to be
+     * overriden.
+     */
+    ApiActionController.prototype.getActions = function() {
+        return {};
+    };
 
-	var actions = this.getActions();
-	if (!pb.validation.validateNonEmptyStr(action, true) || actions[action] === undefined) {
-		cb(null, [this.ls.get(&#x27;VALID_ACTION_REQUIRED&#x27;)]);
-		return;
-	}
-	else {
-		var self = this;
-		var tasks = [
-            function(callback) {
-            	self.validatePathParameters(action, callback);
-            },
-            function(callback) {
-            	self.validateQueryParameters(action, callback);
-            },
-            function(callback) {
-            	if (self.req.method.toUpperCase() === &#x27;POST&#x27;) {
-            		self.getPostParams(function(err, post) {
-            			if (util.isError(err)) {
-            				callback(err, []);
-            				return;
-            			}
+    /**
+     * Validates the query, path, and post parameters in parallel and calls back
+     * with any validation errors.
+     * @method validateParameters
+     * @param {String} action
+     * @param {Function} cb
+     */
+    ApiActionController.prototype.validateParameters = function(action, cb) {
 
-                        if (self.getAutoSanitize()) {
-                            self.sanitizeObject(post);
+        var actions = this.getActions();
+        if (!pb.validation.validateNonEmptyStr(action, true) || actions[action] === undefined) {
+            cb(null, [this.ls.get(&#x27;VALID_ACTION_REQUIRED&#x27;)]);
+            return;
+        }
+        else {
+            var self = this;
+            var tasks = [
+                function(callback) {
+                    self.validatePathParameters(action, callback);
+                },
+                function(callback) {
+                    self.validateQueryParameters(action, callback);
+                },
+                function(callback) {
+                    if (self.req.method.toUpperCase() === &#x27;POST&#x27;) {
+                        self.getPostParams(function(err, post) {
+                            if (util.isError(err)) {
+                                callback(err, []);
+                                return;
+                            }
+
+                            if (self.getAutoSanitize()) {
+                                self.sanitizeObject(post);
+                            }
+
+                            self.post = post;
+                            self.validatePostParameters(action, post, callback);
+                        });
+                    }
+                    else {
+                        callback(null, []);
+                    }
+                },
+            ];
+            async.parallel(tasks, function(err, results) {
+
+                var errors = [];
+                if (util.isArray(results)) {
+                    for (var i = 0; i &lt; results.length; i++) {
+                        if (util.isArray(results[i])) {
+                            util.arrayPushAll(results[i], errors);
                         }
+                    }
+                }
+                cb(err, errors);
+            });
+        }
+    };
 
-                        self.post = post;
-            			self.validatePostParameters(action, post, callback);
-            		});
-            	}
-            	else {
-            		callback(null, []);
-            	}
-            },
-        ];
-		async.parallel(tasks, function(err, results) {
+    /**
+     * @method getAutoSanitize
+     * @return {Boolean
+     */
+    ApiActionController.prototype.getAutoSanitize = function() {
+        return this.autoSanitize;
+    };
 
-			var errors = [];
-			if (util.isArray(results)) {
-				for (var i = 0; i &lt; results.length; i++) {
-					if (util.isArray(results[i])) {
-						pb.utils.arrayPushAll(results[i], errors);
-					}
-				}
-			}
-			cb(err, errors);
-		});
-	}
+    /**
+     * @method setAutoSanitize
+     * @param {Boolean} val
+     */
+    ApiActionController.prototype.setAutoSanitize = function(val) {
+        this.autoSanitize = val ? true : false;
+    };
+
+    /**
+     * Validates any path parameters for the specified action.  The callback will
+     * provide an array of validation errors. When the array is empty it is safe to
+     * assume that validation succeeded. The default implementation examines the
+     * value for the action in the value returned by ApiActionController#getActions.
+     * If the value evaluates to true then the implementation will validate that an
+     * &quot;id&quot; path parameter was passed.
+     * @method validatePathParameters
+     * @param {String} action
+     * @param {Function} cb
+     */
+    ApiActionController.prototype.validatePathParameters = function(action, cb) {
+        //validate identifier
+        var errors  = [];
+        var actions = this.getActions();
+        if (actions[action] &amp;&amp; !pb.validation.validateNonEmptyStr(this.pathVars.id, true)) {
+            errors.push(this.ls.get(&#x27;VALID_IDENTIFIER_REQUIRED&#x27;));
+        }
+        cb(null, errors);
+    };
+
+    /**
+     * Validates any query parameters for the specified action.  The callback will
+     * provide an array of validation errors. When the array is empty it is safe to
+     * assume that validation succeeded. The default implementation passes an empty
+     * error array.
+     * @method validateQueryParameters
+     * @param {String} action
+     * @param {Function} cb
+     */
+    ApiActionController.prototype.validateQueryParameters = function(action, cb) {
+        cb(null, []);
+    };
+
+    /**
+     * Validates any post parameters for the specified action.  The callback will
+     * provide an array of validation errors. When the array is empty it is safe to
+     * assume that validation succeeded. The default implementation passes an empty
+     * error array.
+     * @method validatePostParameters
+     * @param {String} action
+     * @param {Object} post
+     * @param {Function} cb
+     */
+    ApiActionController.prototype.validatePostParameters = function(action, post, cb) {
+        cb(null, []);
+    };
+
+    return ApiActionController;
 };
-
-/**
- * @method getAutoSanitize
- * @return {Boolean
- */
-ApiActionController.prototype.getAutoSanitize = function() {
-    return this.autoSanitize;
-};
-
-/**
- * @method setAutoSanitize
- * @param {Boolean} val
- */
-ApiActionController.prototype.setAutoSanitize = function(val) {
-    this.autoSanitize = val ? true : false;
-};
-
-/**
- * Validates any path parameters for the specified action.  The callback will
- * provide an array of validation errors. When the array is empty it is safe to
- * assume that validation succeeded. The default implementation examines the
- * value for the action in the value returned by ApiActionController#getActions.
- * If the value evaluates to true then the implementation will validate that an
- * &quot;id&quot; path parameter was passed.
- * @method validatePathParameters
- * @param {String} action
- * @param {Function} cb
- */
-ApiActionController.prototype.validatePathParameters = function(action, cb) {
-	//validate identifier
-	var errors  = [];
-	var actions = this.getActions();
-	if (actions[action] &amp;&amp; !pb.validation.validateNonEmptyStr(this.pathVars.id, true)) {
-		errors.push(this.ls.get(&#x27;VALID_IDENTIFIER_REQUIRED&#x27;));
-	}
-	cb(null, errors);
-};
-
-/**
- * Validates any query parameters for the specified action.  The callback will
- * provide an array of validation errors. When the array is empty it is safe to
- * assume that validation succeeded. The default implementation passes an empty
- * error array.
- * @method validateQueryParameters
- * @param {String} action
- * @param {Function} cb
- */
-ApiActionController.prototype.validateQueryParameters = function(action, cb) {
-	cb(null, []);
-};
-
-/**
- * Validates any post parameters for the specified action.  The callback will
- * provide an array of validation errors. When the array is empty it is safe to
- * assume that validation succeeded. The default implementation passes an empty
- * error array.
- * @method validatePostParameters
- * @param {String} action
- * @param {Object} post
- * @param {Function} cb
- */
-ApiActionController.prototype.validatePostParameters = function(action, post, cb) {
-	cb(null, []);
-};
-
-//exports
-module.exports.ApiActionController = ApiActionController;
 
     </pre>
 </div>

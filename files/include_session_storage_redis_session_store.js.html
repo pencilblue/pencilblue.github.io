@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,105 +391,114 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
+//dependencies
+var util = require(&#x27;../../util.js&#x27;);
+
 /**
- * Session storage backed by Redis
- *
  * @module Session
- * @class RedisSessionStore
- * @constructor
  */
-function RedisSessionStore(){
-	pb.log.debug(&quot;RedisSessionStore: Initialized&quot;);
+module.exports = function RedisSessionStoreModule(pb) {
+
+    /**
+     * Session storage backed by Redis
+     *
+     * @class RedisSessionStore
+     * @constructor
+     */
+    function RedisSessionStore(){};
+
+    /**
+     * The prefix to prepend to the session ID in order to construct a cache key
+     * @static
+     * @readonly
+     * @property SESSION_KEY_PREFIX
+     * @type {String}
+     */
+    RedisSessionStore.SESSION_KEY_PREFIX = &#x27;user-session-&#x27;;
+
+    /**
+     * Responsable for retrieving the session for persistent storage.
+     *
+     * @method get
+     * @param {String} sessionId The identifier of the session to retrieve.
+     * @param {Function} cb Callback of form cb(err, [Object])
+     */
+    RedisSessionStore.prototype.get = function(sessionId, cb){
+
+        var sid = RedisSessionStore.getSessionKey(sessionId);
+        pb.cache.get(sid, function(err, result){
+            cb(err, result ? JSON.parse(result) : null);
+        });
+    };
+
+    /**
+     * Responsable for persisting the session object between user requests
+     *
+     * @method set
+     * @param {Object} session The session object to store.  The session object must contain
+     * the following in addition to other data:
+     * &lt;pre&gt;
+     * {
+     * 	uid: [primitive]
+     * }
+     * &lt;/pre&gt;
+     * @param {Function} cb Callback of form cb(err, &#x27;OK&#x27;)
+     */
+    RedisSessionStore.prototype.set = function(session, cb){
+        var sid  = RedisSessionStore.getSessionKey(session.uid);
+        var json = JSON.stringify(session);
+
+        //in seconds
+        var millisFromNow = session.timeout - new Date().getTime();
+        var timeout       = Math.floor(millisFromNow / util.TIME.MILLIS_PER_SEC);
+        pb.cache.setex(sid, timeout, json, cb);
+    };
+
+    /**
+     * Deletes a session if it exists.
+     *
+     * @method clear
+     * @param {String} sessionId
+     * @param {Function} cb Callback of form cb(err, [int SESSIONS_CLEARED])
+     */
+    RedisSessionStore.prototype.clear = function(sessionId, cb){
+        var sid = RedisSessionStore.getSessionKey(sessionId);
+        pb.cache.del(sid, cb);
+    };
+    
+    /**
+     * Repsonsible for ensuring that the mechanism that expires sessions becomes
+     * active.
+     */
+    RedisSessionStore.prototype.start = function(cb){
+        pb.log.debug(&quot;RedisSessionStore: Initialized&quot;);
+        cb(null, true);
+    };
+    
+    /**
+     * Responsable for shutting down the session store and any resources used for
+     * reaping expired sessions.
+     * @method shutdown
+     * @param {Function} cb
+     */
+    RedisSessionStore.prototype.shutdown = function(cb){
+        pb.log.debug(&quot;RedisSessionStore: Shutting down...&quot;);
+        cb(null, true);
+    };
+
+    /**
+     * Constructs a session cache key provided a session id.
+     * @static
+     * @method getSessionKey
+     * @param {String} sessionId
+     * @return {String} [RedisSessionStore.SESSION_KEY_PREFIX][sessionId]
+     */
+    RedisSessionStore.getSessionKey = function(sessionId){
+        return RedisSessionStore.SESSION_KEY_PREFIX + sessionId;
+    };
+    
+    return RedisSessionStore;
 };
-
-/**
- * The prefix to prepend to the session ID in order to construct a cache key
- */
-RedisSessionStore.SESSION_KEY_PREFIX = &#x27;user-session-&#x27;;
-
-/**
- * Responsable for retrieving the session for persistent storage.
- *
- * @method get
- * @param {String} sessionId The identifier of the session to retrieve.
- * @param {Function} cb Callback of form cb(err, [Object])
- */
-RedisSessionStore.prototype.get = function(sessionId, cb){
-
-	var sid = RedisSessionStore.getSessionKey(sessionId);
-	pb.cache.get(sid, function(err, result){
-		if(err){
-			cb(err, null);
-		}
-		else{
-			cb(null, JSON.parse(result));
-		}
-	});
-};
-
-/**
- * Responsable for persisting the session object between user requests
- *
- * @method set
- * @param {Object} session The session object to store.  The session object must contain
- * the following in addition to other data:
- * &lt;pre&gt;
- * {
- * 	uid: [primitive]
- * }
- * &lt;/pre&gt;
- * @param {Function} cb Callback of form cb(err, &#x27;OK&#x27;)
- */
-RedisSessionStore.prototype.set = function(session, cb){
-	var sid  = RedisSessionStore.getSessionKey(session.uid);
-	var json = JSON.stringify(session);
-
-	//in seconds
-	var millisFromNow = session.timeout - new Date().getTime();
-	var timeout       = Math.floor(millisFromNow / pb.utils.TIME.MILLIS_PER_SEC);
-	pb.cache.setex(sid, timeout, json, cb);
-};
-
-/**
- * Deletes a session if it exists.
- *
- * @method clear
- * @param {String} sessionId
- * @param {Function} cb Callback of form cb(err, [int SESSIONS_CLEARED])
- */
-RedisSessionStore.prototype.clear = function(sessionId, cb){
-	var sid = RedisSessionStore.getSessionKey(sessionId);
-	pb.cache.del(sid, cb);
-};
-
-/**
- * Constructs a session cache key provided a session id.
- * @param {String} sessionId
- * @return {String} [RedisSessionStore.SESSION_KEY_PREFIX][sessionId]
- */
-RedisSessionStore.getSessionKey = function(sessionId){
-	return RedisSessionStore.SESSION_KEY_PREFIX + sessionId;
-};
-
-/**
- * Responsable for shutting down the session store and any resources used for
- * reaping expired sessions.
- */
-RedisSessionStore.shutdown = function(cb){
-	pb.log.debug(&quot;RedisSessionStore: Shutting down...&quot;);
-    cb(null, true);
-};
-
-/**
- * Repsonsible for ensuring that the mechanism that expires sessions becomes
- * active.
- */
-RedisSessionStore.startReaper = function(){
-	pb.log.debug(&quot;RedisSessionStore: Reaper active&quot;);
-};
-
-//export session store implementation
-module.exports = RedisSessionStore;
 
     </pre>
 </div>

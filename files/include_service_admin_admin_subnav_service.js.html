@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,109 +391,123 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Provides the ability to manage the admin section&#x27;s sub-nav.  It manages
- * callbacks for specific areas of the admin section that will build a structure
- * to represent the sub-nav.  This sub nav, when retrieved will combine all
- * registrants&#x27; pills into a single structure which can then be rendered in a UI.
- *
- * @module Services
- * @class AdminSubnavService
- * @constructor
- */
+var util = require(&#x27;../../util.js&#x27;);
 
-/**
- * Services calls for the admin interface
- *
- * @submodule Admin
- */
+module.exports = function AdminSubnavServiceModule(pb) {
 
-function AdminSubnavService(){}
+    /**
+     * Provides the ability to manage the admin section&#x27;s sub-nav.  It manages
+     * callbacks for specific areas of the admin section that will build a structure
+     * to represent the sub-nav.  This sub nav, when retrieved will combine all
+     * registrants&#x27; pills into a single structure which can then be rendered in a UI.
+     *
+     * @module Services
+     * @class AdminSubnavService
+     * @constructor
+     */
+    function AdminSubnavService(){}
 
-//statics
-var CALLBACKS = {};
+    /**
+     *
+     * @private
+     * @static
+     * @property CALLBACKS
+     * @type {Object}
+     */
+    var CALLBACKS = {};
 
-/**
- * Register a callback with the service
- *
- * @method registerFor
- * @param {String}   key            The key to register
- * @param {Function} getSubNavItems The callback function
- */
-AdminSubnavService.registerFor = function(key, getSubNavItems) {
-	if (!pb.validation.validateNonEmptyStr(key, true) || !pb.utils.isFunction(getSubNavItems)) {
-		return false;
-	}
+    /**
+     * Register a callback with the service
+     * @static
+     * @method registerFor
+     * @param {String}   key            The key to register
+     * @param {Function} getSubNavItems The callback function
+     */
+    AdminSubnavService.registerFor = function(key, getSubNavItems) {
+        if (!pb.validation.validateNonEmptyStr(key, true) || !util.isFunction(getSubNavItems)) {
+            return false;
+        }
 
-	if (CALLBACKS[key] === undefined) {
-		CALLBACKS[key] = [];
-	}
-    else if (CALLBACKS[key].indexOf(getSubNavItems) &gt; -1) {
+        if (util.isNullOrUndefined(CALLBACKS[key])) {
+            CALLBACKS[key] = [];
+        }
+        else if (CALLBACKS[key].indexOf(getSubNavItems) &gt; -1) {
+            return true;
+        }
+        else {
+            //hack in place until PB theme controllers are moved over or admin sub nav is URL based
+            //ensures that functions are only registered once by using a string comparison
+            var funcStr = getSubNavItems.toString();
+            for (var i = 0; i &lt; CALLBACKS[key].length; i++) {
+                if (CALLBACKS[key][i].toString() === funcStr) {
+                    return true;
+                }
+            }
+        }
+
+        CALLBACKS[key].push(getSubNavItems);
         return true;
-    }
-    
-	CALLBACKS[key].push(getSubNavItems);
-	return true;
-};
+    };
 
-/**
- * Unregisters a callback function
- * @static
- * @method unregisterFor
- * @param {String} key
- * @param {Function} Function to unregister
- * @return {Boolean} TRUE if function was unregistered, FALSE if not
- */
-AdminSubnavService.unregisterFor = function(key, registeredFunc) {
-    if (!pb.validation.validateNonEmptyStr(key, true) || !pb.utils.isFunction(registeredFunc)) {
-		return false;
-	}
-    else if (!util.isArray(CALLBACKS[key])) {
+    /**
+     * Unregisters a callback function
+     * @static
+     * @method unregisterFor
+     * @param {String} key
+     * @param {Function} Function to unregister
+     * @return {Boolean} TRUE if function was unregistered, FALSE if not
+     */
+    AdminSubnavService.unregisterFor = function(key, registeredFunc) {
+        if (!pb.validation.validateNonEmptyStr(key, true) || !util.isFunction(registeredFunc)) {
+            return false;
+        }
+        else if (!util.isArray(CALLBACKS[key])) {
+            return false;
+        }
+
+        var index = CALLBACKS[key].indexOf(registeredFunc);
+        if (index &gt; -1) {
+            CALLBACKS[key].splice(index, 1);
+            return true;
+        }
         return false;
-    }
-    
-    var index = CALLBACKS[key].indexOf(registeredFunc);
-    if (index &gt; -1) {
-        CALLBACKS[key].splice(index, 1);
-        return true;
-    }
-    return false;
+    };
+
+    /**
+     * Retrieves the sub-nav items
+     * @static
+     * @method get
+     * @param  {String} key        The key to retrieve
+     * @param  {Object} ls         The localization object
+     * @param  {String} activePill The name of the active sub-nav pill
+     * @param  {Object} [data]     Data object to send to the callback function
+     * @return {Object}            The sub-nav items
+     */
+    AdminSubnavService.get = function(key, ls, activePill, data) {
+        if (!util.isArray(CALLBACKS[key]) || CALLBACKS[key].length === 0) {
+            return [];
+        }
+
+        var navItems = [];
+        for(var i = 0; i &lt; CALLBACKS[key].length; i++) {
+
+            var items = CALLBACKS[key][i](key, ls, data);
+            if (util.isArray(items)) {
+
+                for (var j = 0; j &lt; items.length; j++) {
+                    if (items[j] &amp;&amp; items[j].name === activePill) {
+                        items[j].active = &#x27;active&#x27;;
+                    }
+                    navItems.push(items[j]);
+                }
+            }
+        }
+        return navItems;
+    };
+
+    //exports
+    return AdminSubnavService;
 };
-
-/**
- * Retrieves the sub-nav items
- *
- * @method get
- * @param  {String} key        The key to retrieve
- * @param  {Object} ls         The localization object
- * @param  {String} activePill The name of the active sub-nav pill
- * @param  {Object} [data]     Data object to send to the callback function
- * @return {Object}            The sub-nav items
- */
-AdminSubnavService.get = function(key, ls, activePill, data) {
-	if (CALLBACKS[key] === undefined || CALLBACKS[key].length === 0) {
-		return [];
-	}
-
-	var navItems = [];
-	for(var i = 0; i &lt; CALLBACKS[key].length; i++) {
-
-		var items = CALLBACKS[key][i](key, ls, data);
-		if (util.isArray(items)) {
-
-			for (var j = 0; j &lt; items.length; j++) {
-				if (items[j] &amp;&amp; items[j].name === activePill) {
-					items[j].active = &#x27;active&#x27;;
-				}
-				navItems.push(items[j]);
-			}
-		}
-	}
-	return navItems;
-};
-
-//exports
-module.exports = AdminSubnavService;
 
     </pre>
 </div>

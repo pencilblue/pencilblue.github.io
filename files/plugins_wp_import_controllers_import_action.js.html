@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -354,72 +392,78 @@
 */
 
 //dependencies
-var wpXMLParse = pb.plugins.getService(&#x27;wp_xml_parse&#x27;, &#x27;wp_import&#x27;);
+var fs         = require(&#x27;fs&#x27;);
+var formidable = require(&#x27;formidable&#x27;);
 
-/**
- * @class ImportWP
- * @constructor
- * @extends BaseController
- */
-function ImportWP(){}
+module.exports = function ImportWPActionControllerModule(pb) {
+    
+    //pb dependencies
+    var util       = pb.util;
+    var wpXMLParse = pb.PluginService.getService(&#x27;wp_xml_parse&#x27;, &#x27;wp_import&#x27;);
 
-//inheritance
-util.inherits(ImportWP, pb.BaseController);
+    /**
+     * @class ImportWPActionController
+     * @constructor
+     * @extends BaseController
+     */
+    function ImportWPActionController(){}
+    util.inherits(ImportWPActionController, pb.BaseController);
 
-/**
- * @see BaseController#render
- * @method render
- * @param {Function} cb
- */
-ImportWP.prototype.render = function(cb) {
-    var self  = this;
-    var files = [];
+    /**
+     * @see BaseController#render
+     * @method render
+     * @param {Function} cb
+     */
+    ImportWPActionController.prototype.render = function(cb) {
+        var self  = this;
+        var files = [];
 
-    var form = new formidable.IncomingForm();
-    form.on(&#x27;file&#x27;, function(field, file) {
-        files.push(file);
-    });
-    form.on(&#x27;error&#x27;, function(err) {
-        self.session.error = &#x27;loc_NO_FILE&#x27;;
-        cb({content: pb.BaseController.apiResponse(pb.BaseController.API_FAILURE, self.ls.get(&#x27;INVALID_FILE&#x27;))});
-    });
-    form.parse(this.req, function() {
+        var form = new formidable.IncomingForm();
+        form.on(&#x27;file&#x27;, function(field, file) {
+            files.push(file);
+        });
+        form.on(&#x27;error&#x27;, function(err) {
+            self.session.error = &#x27;loc_NO_FILE&#x27;;
+            cb({content: pb.BaseController.apiResponse(pb.BaseController.API_FAILURE, self.ls.get(&#x27;INVALID_FILE&#x27;))});
+        });
+        form.parse(this.req, function() {
 
-        fs.readFile(files[0].path, function(err, data) {
-            if(util.isError(err)) {
-                self.session.error = &#x27;NO_FILE&#x27;;
-                cb({content: pb.BaseController.apiResponse(pb.BaseController.API_FAILURE, self.ls.get(&#x27;INVALID_FILE&#x27;))});
-                return;
-            }
-
-            wpXMLParse.parse(data.toString(), self.session.authentication.user_id, function(err, users) {
-                if(err) {
-                    self.session.error = err.stack;
-                    return cb({content: pb.BaseController.apiResponse(pb.BaseController.API_FAILURE, self.ls.get(&#x27;ERROR_SAVING&#x27;))});
+            fs.readFile(files[0].path, function(err, data) {
+                if(util.isError(err)) {
+                    self.session.error = &#x27;NO_FILE&#x27;;
+                    cb({content: pb.BaseController.apiResponse(pb.BaseController.API_FAILURE, self.ls.get(&#x27;INVALID_FILE&#x27;))});
+                    return;
                 }
 
-                self.session.importedUsers = users;
-                cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, self.ls.get(&#x27;WP_IMPORT_SUCCESS&#x27;))});
+                wpXMLParse.parse(data.toString(), self.session.authentication.user_id, function(err, users) {
+                    if(err) {
+                        self.session.error = err.stack;
+                        return cb({content: pb.BaseController.apiResponse(pb.BaseController.API_FAILURE, self.ls.get(&#x27;ERROR_SAVING&#x27;))});
+                    }
+
+                    self.session.importedUsers = users;
+                    cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, self.ls.get(&#x27;WP_IMPORT_SUCCESS&#x27;))});
+                });
             });
         });
-    });
-};
+    };
 
-ImportWP.getRoutes = function(cb) {
-    var routes = [
-        {
-            method: &#x27;post&#x27;,
-            path: &#x27;/actions/admin/plugins/wp_import/settings/import&#x27;,
-            auth_required: true,
-            access_level: ACCESS_MANAGING_EDITOR,
-            content_type: &#x27;text/html&#x27;
-        }
-    ];
-    cb(null, routes);
-};
+    ImportWPActionController.getRoutes = function(cb) {
+        var routes = [
+            {
+                method: &#x27;post&#x27;,
+                path: &#x27;/actions/admin/plugins/wp_import/settings/import&#x27;,
+                auth_required: true,
+                access_level: pb.SecurityService.ACCESS_MANAGING_EDITOR,
+                content_type: &#x27;text/html&#x27;
+            }
+        ];
+        cb(null, routes);
+    };
 
-//exports
-module.exports = ImportWP;
+    //exports
+    return ImportWPActionController;
+};
 
     </pre>
 </div>

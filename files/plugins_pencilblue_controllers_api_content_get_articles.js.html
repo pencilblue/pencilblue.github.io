@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,89 +391,92 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Retrieve articles
- */
-
-
 //dependencies
-var BaseController  = pb.BaseController;
-var Comments        = require(path.join(DOCUMENT_ROOT, &#x27;/include/theme/comments&#x27;));
-var ArticleService  = require(path.join(DOCUMENT_ROOT, &#x27;/include/service/entities/article_service&#x27;)).ArticleService;
-var IndexController = require(&#x27;../../index.js&#x27;);
+var path  = require(&#x27;path&#x27;);
+var async = require(&#x27;async&#x27;);
 
-/**
- * Get articles within indices, for real time pagination
- */
-function GetArticles(){}
+module.exports = function(pb) {
+    
+    //pb dependencies
+    var util = pb.util;
+    var BaseController  = pb.BaseController;
+    var Comments        = pb.CommentService;
+    var ArticleService  = pb.ArticleService;
+    var IndexController = require(&#x27;../../index.js&#x27;)(pb);
 
-//inheritance
-util.inherits(GetArticles, IndexController);
+    /**
+     * Get articles within indices, for real time pagination
+     */
+    function GetArticles(){}
+    util.inherits(GetArticles, IndexController);
 
-GetArticles.prototype.render = function(cb) {
-	var self = this;
-	var get  = this.query;
+    GetArticles.prototype.render = function(cb) {
+        var self = this;
+        var get  = this.query;
 
-	pb.content.getSettings(function(err, contentSettings) {
+        var contentService = new pb.ContentService();
+        contentService.getSettings(function(err, contentSettings) {
 
-	    if(!get.limit || get.limit.length === 0)
-	    {
-	        get.limit = contentSettings.articles_per_page;
-	    }
-	    if(!get.offset)
-	    {
-	        get.offset = contentSettings.articles_per_page;
-	    }
+            if(!get.limit || get.limit.length === 0)
+            {
+                get.limit = contentSettings.articles_per_page;
+            }
+            if(!get.offset)
+            {
+                get.offset = contentSettings.articles_per_page;
+            }
 
-	    self.limit  = parseInt(get.limit);
-	    self.offset = parseInt(get.offset);
+            self.limit  = parseInt(get.limit);
+            self.offset = parseInt(get.offset);
 
-	    //create callback to be issued by all the find calls
-        var articleCallback = function(err, articles) {
-        	self.processArticles(articles, cb);
-        };
-
-        var service = new ArticleService();
-
-        if(get.section) {
-            service.findBySection(get.section, articleCallback);
-        }
-        else if(get.topic) {
-            service.findByTopic(get.topic, articleCallback);
-        }
-        else {
-            service.find({}, articleCallback);
-        }
-    });
-};
-
-GetArticles.prototype.processArticles = function(articles, cb) {
-	var self = this;
-
-	pb.content.getSettings(function(err, contentSettings) {
-
-        var cnt   = 0;
-        var tasks = pb.utils.getTasks(articles, function(content, i) {
-            return function(callback) {
-                if (i &lt; self.offset || i &gt;= (self.offset + self.limit)) {//TODO, limit articles in query, not through hackery
-                    callback(null, &#x27;&#x27;);
-                    return;
-                }
-                cnt++;
-                self.renderContent(content[i], contentSettings, {}, i, callback);
+            //create callback to be issued by all the find calls
+            var articleCallback = function(err, articles) {
+                self.processArticles(articles, cb);
             };
-        });
-        async.parallel(tasks, function(err, result) {
 
-            var data   = {count: cnt, articles: result.join(&#x27;&#x27;)};
-            var apiObj = BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;success&#x27;, data);
-            cb({content: apiObj});
+            var service = new ArticleService();
+
+            if(get.section) {
+                service.findBySection(get.section, articleCallback);
+            }
+            else if(get.topic) {
+                service.findByTopic(get.topic, articleCallback);
+            }
+            else {
+                service.find({}, articleCallback);
+            }
         });
-    });
+    };
+
+    GetArticles.prototype.processArticles = function(articles, cb) {
+        var self = this;
+
+        var contentService = new pb.ContentService();
+        contentService.getSettings(function(err, contentSettings) {
+
+            var cnt   = 0;
+            var tasks = util.getTasks(articles, function(content, i) {
+                return function(callback) {
+                    if (i &lt; self.offset || i &gt;= (self.offset + self.limit)) {//TODO, limit articles in query, not through hackery
+                        callback(null, &#x27;&#x27;);
+                        return;
+                    }
+                    cnt++;
+                    self.renderContent(content[i], contentSettings, {}, i, callback);
+                };
+            });
+            async.parallel(tasks, function(err, result) {
+
+                var data   = {count: cnt, articles: result.join(&#x27;&#x27;)};
+                var apiObj = BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;success&#x27;, data);
+                cb({content: apiObj});
+            });
+        });
+    };
+
+    //exports
+    return GetArticles;
 };
-
-//exports
-module.exports = GetArticles;
 
     </pre>
 </div>

@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,222 +391,297 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
+//dependencies
+var path   = require(&#x27;path&#x27;);
+var crypto = require(&#x27;crypto&#x27;);
+var util   = require(&#x27;../util.js&#x27;);
+
 /**
  * Tools for session storage
  *
  * @module Session
  */
+module.exports = function SessionModule(pb) {
+    
+    /**
+     * Responsible for managing user sessions
+     *
+     * @module Session
+     * @class SessionHandler
+     * @constructor
+     * @param {SessionStore} sesisonStore
+     */
+    function SessionHandler(sessionStore){
 
-/**
- * Responsible for managing user sessions
- *
- * @module Session
- * @class SessionHandler
- * @constructor
- */
-function SessionHandler(){
+        //ensure a session store was started
+        this.sessionStore = sessionStore;
+    };
 
-	//ensure a session store was started
-	SessionStore = SessionHandler.getSessionStore();
-	SessionStore.startReaper();
-	this.sessionStore = new SessionStore();
-};
+    /**
+     *
+     * @static
+     * @readonly
+     * @property HANDLER_PATH
+     * @type {String}
+     */
+    SessionHandler.HANDLER_PATH = path.join(pb.config.docRoot, &#x27;include&#x27;, &#x27;session&#x27;, &#x27;storage&#x27;, path.sep);
+    
+    /**
+     *
+     * @static
+     * @readonly
+     * @property HANDLER_SUFFIX
+     * @type {String}
+     */
+    SessionHandler.HANDLER_SUFFIX = &#x27;_session_store.js&#x27;;
+    
+    /**
+     *
+     * @static
+     * @readonly
+     * @property SID_KEY
+     * @type {String}
+     */
+    SessionHandler.SID_KEY = &#x27;uid&#x27;;
+    
+    /**
+     *
+     * @static
+     * @readonly
+     * @property TIMEOUT_KEY
+     * @type {String}
+     */
+    SessionHandler.TIMEOUT_KEY = &#x27;timeout&#x27;;
+    
+    /**
+     *
+     * @static
+     * @readonly
+     * @property COOKIE_HEADER
+     * @type {String}
+     */
+    SessionHandler.COOKIE_HEADER = &#x27;parsed_cookies&#x27;;
+    
+    /**
+     *
+     * @static
+     * @readonly
+     * @property COOKIE_NAME
+     * @type {String}
+     */
+    SessionHandler.COOKIE_NAME = &#x27;session_id&#x27;;
+    
+    /**
+     * 
+     * @method start
+     * @param {Function} cb
+     */
+    SessionHandler.prototype.start = function(cb) {
+        this.sessionStore.start(cb);
+    };
 
-//private static variables
-var SessionStore = null;
+    /**
+     * Retrieves a session for the current request.  When the session ID is
+     * available the existing session is retrieved otherwise a new session is
+     * created.
+     *
+     * @method open
+     * @param {Object} request The request descriptor
+     * @param {Function} cb The callback(ERROR, SESSION_OBJ)
+     */
+    SessionHandler.prototype.open = function(request, cb){
 
-//constants
-SessionHandler.HANDLER_PATH   = path.join(DOCUMENT_ROOT, &#x27;include&#x27;, &#x27;session&#x27;, &#x27;storage&#x27;, path.sep);
-SessionHandler.HANDLER_SUFFIX = &#x27;_session_store.js&#x27;;
-SessionHandler.SID_KEY        = &#x27;uid&#x27;;
-SessionHandler.TIMEOUT_KEY    = &#x27;timeout&#x27;;
-SessionHandler.COOKIE_HEADER  = &#x27;parsed_cookies&#x27;;
-SessionHandler.COOKIE_NAME    = &#x27;session_id&#x27;;
+        //check for active
+        var sid = SessionHandler.getSessionIdFromCookie(request);
+        if (!sid) {
+            cb(null, this.create(request));
+            return;
+        }
 
-/**
- * Retrieves a session for the current request.  When the session ID is
- * available the existing session is retrieved otherwise a new session is
- * created.
- *
- * @method open
- * @param {Object} request The request descriptor
- * @param {Function} cb The callback(ERROR, SESSION_OBJ)
- */
-SessionHandler.prototype.open = function(request, cb){
+        //check in local storage
+        var session = null;
 
-	//check for active
-	var sid = SessionHandler.getSessionIdFromCookie(request);
-	if (!sid) {
-		cb(null, this.create(request));
-		return;
-	}
+        //session not available locally so check persistent storage
+        var handler = this;
+        this.sessionStore.get(sid, function(err, result){
+            if(err){
+                cb(err, null);
+                return;
+            }
+            else if(result){
+                //handler.setLocal(result);
+                cb(null, result);
+                return;
+            }
 
-	//check in local storage
-	var session = null;
-	
-	//session not available locally so check persistent storage
-	var handler = this;
-	this.sessionStore.get(sid, function(err, result){
-		if(err){
-			cb(err, null);
-			return;
-		}
-		else if(result){
-			//handler.setLocal(result);
-			cb(null, result);
-			return;
-		}
+            //session not found create one
+            cb(null, handler.create(request));
+        });
+    };
 
-		//session not found create one
-		cb(null, handler.create(request));
-	});
-};
+    /**
+     * Closes the session and persists it when no other requests are currently
+     * accessing the session.
+     *
+     * @method close
+     * @param {Object} session
+     * @param {Function} cb
+     */
+    SessionHandler.prototype.close = function(session, cb) {
+        if(!session){
+            throw new Error(&quot;SessionHandler: Cannot close an empty session&quot;);
+        }
 
-/**
- * Closes the session and persists it when no other requests are currently
- * accessing the session.
- *
- * @method close
- * @param {Object} session
- * @param {Function} cb
- */
-SessionHandler.prototype.close = function(session, cb) {
-	if(!session){
-		throw new Error(&quot;SessionHandler: Cannot close an empty session&quot;);
-	}
+        if(typeof session != &#x27;object&#x27;){
+            throw new Error(&quot;SessionHandler: The session has not been opened or is already closed&quot;);
+        }
 
-	if(typeof session != &#x27;object&#x27;){
-		throw new Error(&quot;SessionHandler: The session has not been opened or is already closed&quot;);
-	}
+        //update timeout
+        session[SessionHandler.TIMEOUT_KEY] = new Date().getTime() + pb.config.session.timeout;
 
-	//update timeout
-	session[SessionHandler.TIMEOUT_KEY] = new Date().getTime() + pb.config.session.timeout;
+        //last active request using this session, persist it back to storage
+        if (session.end) {
+            this.sessionStore.clear(session.uid, cb);
+        }
+        else {
+            this.sessionStore.set(session, cb);
+        }
 
-	//last active request using this session, persist it back to storage
-    if (session.end) {
-        this.sessionStore.clear(session.uid, cb);
-    }
-    else {
-        this.sessionStore.set(session, cb);
-    }
+        //another request is using the session object so just call back OK
+        cb(null, true);
+    };
 
-	//another request is using the session object so just call back OK
-	cb(null, true);
-};
+    /**
+     * Sets the session in a state that it should be terminated after the last request has completed.
+     *
+     * @method end
+     * @param {Object} session
+     * @param {Function} cb
+     */
+    SessionHandler.prototype.end = function(session, cb) {
+        session.end = true;
+        cb(null, true);
+    };
 
-/**
- * Sets the session in a state that it should be terminated after the last request has completed.
- *
- * @method end
- * @param {Object} session
- * @param {Function} cb
- */
-SessionHandler.prototype.end = function(session, cb) {
-	session.end = true;
-	cb(null, true);
-};
+    /**
+     * Creates the shell of a session object
+     *
+     * @method create
+     * @param request
+     * @return {Object} Session
+     */
+    SessionHandler.prototype.create = function(request){
+        var session = {
+            authentication: {
+                user_id: null,
+                permissions: [],
+                admin_level: pb.SecurityService.ACCESS_USER
+            },
+            ip: request.connection.remoteAddress,
+            client_id: SessionHandler.getClientId(request)
+        };
+        session[SessionHandler.SID_KEY] = util.uniqueId();
+        return session;
+    };
+    
+    /**
+     * Shuts down the sesison handler and the associated session store
+     */
+    SessionHandler.prototype.shutdown = function(cb){
+        cb = cb || util.cb;
+        this.sessionStore.shutdown(cb);
+    };
 
-/**
- * Creates the shell of a session object
- *
- * @method create
- * @param request
- * @return {Object} Session
- */
-SessionHandler.prototype.create = function(request){
-	var session = {
-		authentication: {
-			user_id: null,
-			permissions: [],
-			admin_level: ACCESS_USER
-		},
-		ip: request.connection.remoteAddress,
-		client_id: SessionHandler.getClientId(request)
-	};
-	session[SessionHandler.SID_KEY] = pb.utils.uniqueId().toString();
-	return session;
-};
+    /**
+     * Generates a unique client ID based on the user agent and the remote address.
+     * @static
+     * @method getClientId
+     * @param {Object} request
+     * @return {String} Unique Id
+     */
+    SessionHandler.getClientId = function(request){
+        var whirlpool = crypto.createHash(&#x27;whirlpool&#x27;);
+        whirlpool.update(request.connection.remoteAddress + request.headers[&#x27;user-agent&#x27;]);
+        return whirlpool.digest(&#x27;hex&#x27;);
+    };
 
-/**
- * Generates a unique client ID based on the user agent and the remote address.
- *
- * @method getClientId
- * @param {Object} request
- * @return {String} Unique Id
- */
-SessionHandler.getClientId = function(request){
-    var whirlpool = crypto.createHash(&#x27;whirlpool&#x27;);
-    whirlpool.update(request.connection.remoteAddress + request.headers[&#x27;user-agent&#x27;]);
-    return whirlpool.digest(&#x27;hex&#x27;);
-};
+    /**
+     * Loads a session store prototype based on the system configuration
+     * @static
+     * @method getSessionStore
+     * @return {Function}
+     */
+    SessionHandler.getSessionStore = function(){
+        var possibleStores = [
+              SessionHandler.HANDLER_PATH + pb.config.session.storage + SessionHandler.HANDLER_SUFFIX,
+              pb.config.session.storage
+         ];
 
-/**
- * Loads a session store based on the configuration.
- *
- * @method getSessionStore
- * @return {Object}
- */
-SessionHandler.getSessionStore = function(){
-	var possibleStores = [
-          SessionHandler.HANDLER_PATH + pb.config.session.storage + SessionHandler.HANDLER_SUFFIX,
-          pb.config.session.storage
-     ];
-
- 	var sessionStorePrototype = null;
- 	for(var i = 0; i &lt; possibleStores.length; i++){
- 		try{
- 			sessionStorePrototype = require(possibleStores[i]);
- 			break;
- 		}
- 		catch(e){
- 			pb.log.debug(&quot;SessionHandler: Failed to load &quot;+possibleStores[i]);
- 		}
- 	}
-
- 	//ensure session store was loaded
- 	if (sessionStorePrototype == null){
-		throw new Error(&quot;Failed to initialize a session store. Choices were: &quot;+JSON.stringify(possibleStores));
-	}
- 	return sessionStorePrototype;
-};
-
-/**
- * Extracts the session id from the returned cookie
- *
- * @method getSessionIdFromCookie
- * @param {Object} request The object that describes the incoming user request
- * @return {string} Session Id if available NULL if it cannot be found
- */
-SessionHandler.getSessionIdFromCookie = function(request){
-
-	var sessionId = null;
-	if (request.headers[SessionHandler.COOKIE_HEADER]) {
-
-		// Discovered that sometimes the cookie string has trailing spaces
-        for(var key in request.headers[SessionHandler.COOKIE_HEADER]){
-        	if(key.trim() == &#x27;session_id&#x27;){
-                sessionId = request.headers[SessionHandler.COOKIE_HEADER][key];
+        var SessionStoreModule = null;
+        for(var i = 0; i &lt; possibleStores.length; i++){
+            try{
+                SessionStoreModule = require(possibleStores[i]);
                 break;
             }
+            catch(e){
+                pb.log.silly(&quot;SessionHandler: Failed to load &quot;+possibleStores[i]);
+            }
         }
-    }
-	return sessionId;
-};
 
-SessionHandler.getSessionCookie = function(session) {
-    return {session_id: session.uid, path: &#x27;/&#x27;};
-};
+        //ensure session store was loaded
+        if (SessionStoreModule == null){
+            throw new Error(&quot;Failed to initialize a session store. Exhausted posibilities: &quot;+JSON.stringify(possibleStores));
+        }
+        return SessionStoreModule(pb);
+    };
+    
+    /**
+     * Retrieves an instance of the SessionStore specified in the sytem configuration
+     * @static
+     * @method getSessionStore
+     * @return {SessionStore}
+     */
+    SessionHandler.getSessionStoreInstance = function() {
+        var SessionStorePrototype = SessionHandler.getSessionStore();
+        return new SessionStorePrototype();
+    };
 
-/**
- * Shuts down the sesison handler and the associated session store
- */
-SessionHandler.shutdown = function(cb){
-    cb = cb || pb.utils.cb;
-	SessionStore.shutdown(cb);
-};
+    /**
+     * Extracts the session id from the returned cookie
+     * @static
+     * @method getSessionIdFromCookie
+     * @param {Object} request The object that describes the incoming user request
+     * @return {string} Session Id if available NULL if it cannot be found
+     */
+    SessionHandler.getSessionIdFromCookie = function(request){
 
-//do module exports
-module.exports = SessionHandler;
+        var sessionId = null;
+        if (request.headers[SessionHandler.COOKIE_HEADER]) {
+
+            // Discovered that sometimes the cookie string has trailing spaces
+            for(var key in request.headers[SessionHandler.COOKIE_HEADER]){
+                if(key.trim() == &#x27;session_id&#x27;){
+                    sessionId = request.headers[SessionHandler.COOKIE_HEADER][key];
+                    break;
+                }
+            }
+        }
+        return sessionId;
+    };
+
+    /**
+     *
+     * @static
+     * @method getSessionCookie
+     * @param {Object} session
+     * @return {Object}
+     */
+    SessionHandler.getSessionCookie = function(session) {
+        return {session_id: session.uid, path: &#x27;/&#x27;};
+    };
+    
+    return SessionHandler;
+};
 
     </pre>
 </div>

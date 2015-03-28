@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -353,85 +391,89 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Returns the HTML for a media preview
- * @class GetMediaPreviewApiController
- * @constructor
- * @extends BaseController
- */
-function GetMediaPreviewApiController(){}
+module.exports = function(pb) {
+    
+    //pb dependencies
+    var util = pb.util;
+    
+    /**
+     * Returns the HTML for a media preview
+     * @class GetMediaPreviewApiController
+     * @constructor
+     * @extends BaseController
+     */
+    function GetMediaPreviewApiController(){}
+    util.inherits(GetMediaPreviewApiController, pb.BaseController);
 
-//inheritance
-util.inherits(GetMediaPreviewApiController, pb.BaseController);
+    /**
+     * Renders the preview
+     * @method render
+     * @param {Function} cb
+     */
+    GetMediaPreviewApiController.prototype.render = function(cb) {
+        var self = this;
+        var get  = this.query;
 
-/**
- * Renders the preview
- * @method render
- * @param {Function} cb
- */
-GetMediaPreviewApiController.prototype.render = function(cb) {
-    var self = this;
-    var get  = this.query;
+        //validate request
+        if (!pb.validation.isIdStr(get.id, true) &amp;&amp; !pb.validation.isStr(get.location, true)) {
+            return cb({
+                code: 400,
+                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, message)
+            });
+        }
 
-    //validate request
-    if (!pb.validation.isIdStr(get.id, true) &amp;&amp; !pb.validation.isStr(get.location, true)) {
-        return cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, message)
-        });
-    }
-
-    //retrieve rendering
-    var options = {
-        view: &#x27;view&#x27;
-    };
-    var ms = new pb.MediaService();
-    if (get.id) {
-        ms.renderById(get.id, options, function(err, html) {
-            self.renderComplete(err, html, cb);
-        });
-    }
-    else if (get.location &amp;&amp; get.type){
-        
+        //retrieve rendering
         var options = {
-            view: &#x27;view&#x27;,
-            location: get.location,
-            type: get.type
+            view: &#x27;view&#x27;
         };
-        ms.renderByLocation(options, function(err, html) {
-            self.renderComplete(err, html, cb);
-        });
-    }
-    else {
-        this.renderComplete(null, null, cb);
-    }
+        var ms = new pb.MediaService();
+        if (get.id) {
+            ms.renderById(get.id, options, function(err, html) {
+                self.renderComplete(err, html, cb);
+            });
+        }
+        else if (get.location &amp;&amp; get.type){
+
+            var options = {
+                view: &#x27;view&#x27;,
+                location: get.location,
+                type: get.type
+            };
+            ms.renderByLocation(options, function(err, html) {
+                self.renderComplete(err, html, cb);
+            });
+        }
+        else {
+            this.renderComplete(null, null, cb);
+        }
+    };
+
+    /**
+     * When the rendering is complete this function can be called to serialize the 
+     * result back to the client in the standard API wrapper format.
+     * @method renderComplete
+     * @param {Error} err
+     * @param {String} html
+     * @param {Function} cb
+     */
+    GetMediaPreviewApiController.prototype.renderComplete = function(err, html, cb) {
+        if (util.isError(err)) {
+            return this.reqHandler.serveError(err);
+        }
+        else if (!html) {
+            return cb({
+                code: 400,
+                content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, this.ls.get(&#x27;UNSUPPORTED_MEDIA&#x27;))
+            });
+        }
+
+        html = &#x27;&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;&#x27; + html + &#x27;&lt;/div&gt;&#x27;;
+        cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;&#x27;, html)});
+    };
+
+    //exports
+    return GetMediaPreviewApiController;
 };
-
-/**
- * When the rendering is complete this function can be called to serialize the 
- * result back to the client in the standard API wrapper format.
- * @method renderComplete
- * @param {Error} err
- * @param {String} html
- * @param {Function} cb
- */
-GetMediaPreviewApiController.prototype.renderComplete = function(err, html, cb) {
-    if (util.isError(err)) {
-        return this.reqHandler.serveError(err);
-    }
-    else if (!html) {
-        return cb({
-            code: 400,
-            content: pb.BaseController.apiResponse(pb.BaseController.API_ERROR, this.ls.get(&#x27;UNSUPPORTED_MEDIA&#x27;))
-        });
-    }
-
-    html = &#x27;&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;&#x27; + html + &#x27;&lt;/div&gt;&#x27;;
-    cb({content: pb.BaseController.apiResponse(pb.BaseController.API_SUCCESS, &#x27;&#x27;, html)});
-};
-
-//exports
-module.exports = GetMediaPreviewApiController;
 
     </pre>
 </div>

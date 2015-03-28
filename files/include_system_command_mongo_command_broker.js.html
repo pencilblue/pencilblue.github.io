@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -353,256 +391,264 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-/**
- * Brokers messages using Redis as the medium.  The implementation follows a
- * publish/subscribe model that allows for listening for changes based on a a
- * specified channel.
- * @class MongoCommandBroker
- * @constructor
- */
-function MongoCommandBroker(){
-    
+//dependencies
+var util    = require(&#x27;../../util.js&#x27;);
+var process = require(&#x27;process&#x27;);
+var domain  = require(&#x27;domain&#x27;);
+
+module.exports = function MongoCommandBrokerModule(pb) {
+
     /**
-     * The cursor that trails the collection looking for new items
-     * @property cursor
-     * @type {Cursor}
+     * Brokers messages using Redis as the medium.  The implementation follows a
+     * publish/subscribe model that allows for listening for changes based on a a
+     * specified channel.
+     * @class MongoCommandBroker
+     * @constructor
      */
-    this.cursor = null;
-};
+    function MongoCommandBroker(){
 
-//statics
-/**
- * The hash of handlers for each channel subscribed to
- * @private
- * @static
- * @property SUBSCRIBERS
- * @type {Object}
- */
-var SUBSCRIBERS = {};
+        /**
+         * The cursor that trails the collection looking for new items
+         * @property cursor
+         * @type {Cursor}
+         */
+        this.cursor = null;
+    };
 
-/**
- * The collection that stores the commands
- * @private
- * @static
- * @property COMMAND_Q_COLL
- * @type {String}
- */
-var COMMAND_Q_COLL = &#x27;command_queue&#x27;;
+    //statics
+    /**
+     * The hash of handlers for each channel subscribed to
+     * @private
+     * @static
+     * @property SUBSCRIBERS
+     * @type {Object}
+     */
+    var SUBSCRIBERS = {};
 
-/**
- * The maximum size, in bytes, of the collection
- * @property DEFAULT_MAX_SIZE
- * @type {Integer}
- */
-var DEFAULT_MAX_SIZE = 10000;
+    /**
+     * The collection that stores the commands
+     * @private
+     * @static
+     * @property COMMAND_Q_COLL
+     * @type {String}
+     */
+    var COMMAND_Q_COLL = &#x27;command_queue&#x27;;
 
-/**
- * Initializes the broker by creating the connections to Redis and registering
- * for the message event.
- * @method init
- * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
- */
-MongoCommandBroker.prototype.init = function(cb) {
-    
-    this._verifyEntity(function(err, isInitialized) {
-        if (isInitialized) {
-            pb.log.debug(&#x27;MongoCommandBroker: Initialized.&#x27;);
-        }
-        cb(err, isInitialized);
-    });
-};
+    /**
+     * The maximum size, in bytes, of the collection
+     * @property DEFAULT_MAX_SIZE
+     * @type {Integer}
+     */
+    var DEFAULT_MAX_SIZE = 10000;
 
-MongoCommandBroker.prototype._verifyEntity = function(cb) {
-    var self = this;
-    
-    //check if the collection already exists
-    var dao = new pb.DAO();
-    dao.entityExists(COMMAND_Q_COLL, function(err, exists) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
-        
-        //when it exists we&#x27;re done.  We&#x27;ll assume that it was capped 
-        //appropriately &amp; that it was seeded
-        if (exists) {
-            return cb(null, true);
-        }
-        
-        //create the capped collection needed to store the commands
-        var options = {
-            capped: true,
-            size: pb.config.command.size || DEFAULT_MAX_SIZE
-        };
-        dao.createEntity(COMMAND_Q_COLL, options, function(err, result) {
-            if (util.isError(err) || !result) {
-                return cb(err, false);
+    /**
+     * Initializes the broker by creating the connections to Redis and registering
+     * for the message event.
+     * @method init
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    MongoCommandBroker.prototype.init = function(cb) {
+
+        this._verifyEntity(function(err, isInitialized) {
+            if (isInitialized) {
+                pb.log.debug(&#x27;MongoCommandBroker: Initialized.&#x27;);
             }
-            
-            //Unfortunately, it turns out that MongoDB won’t keep a tailable 
-            //cursor open if the collection is empty, so let’s also create a 
-            //blank document to “prime” the collection.
-            var primerCommand = {
-                type: &quot;primer&quot;
-            };
-            self.publish(&#x27;primer&#x27;, primerCommand, function(err, result) {
-                cb(err, result ? true : false);
-            });
+            cb(err, isInitialized);
         });
-    });
-};
+    };
 
-/**
- * Shuts down the broker by closing the open connections to Redis.
- * @method shutdown
- * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
- */
-MongoCommandBroker.prototype.shutdown = function(cb) {
-    pb.log.debug(&#x27;MongoCommandBroker: Shutting down...&#x27;);
-    //TODO implement
-    cb(null, true);
-};
+    MongoCommandBroker.prototype._verifyEntity = function(cb) {
+        var self = this;
 
-/**
- * Called when a member of the cluster has published a command.  The function
- * inspects that it has a handler for the channel then delegates the command
- * back to the handler.
- * @method onCommandReceived
- * @param {String} channel The channel the message was pushed to
- * @param {String} commandStr The message that was published
- */
-MongoCommandBroker.prototype.onCommandReceived = function(channel, command) {
-    if (pb.log.isSilly()) {
-        pb.log.silly(&#x27;MongoCommandBroker: Command recieved [%s]%s&#x27;, channel, JSON.stringify(command));
-    }
-
-    if (SUBSCRIBERS[channel]) {
-        try{
-            SUBSCRIBERS[channel](channel, command);
-        }
-        catch(err){
-            pb.log.error(&#x27;MongoCommandHandler: An error occurred while attempting to handoff the command [%s]%s. %s&#x27;, channel, JSON.stringify(command), err.stack);
-        }
-    }
-    else {
-        pb.log.silly(&#x27;MongoCommandBroker: A message was received for channel [%s] but no handler was available to accept it. This is most likely normal&#x27;, channel);
-    }
-};
-
-/**
- * Sends a message to the specified channel
- * @method publish
- * @param {String} channel The channel to send the message to
- * @param {Object} command The command to send to the cluster
- * @param {Function} cb A callback that takes two parameters: cb(Error, 1 on success/FALSE on failure)
- */
-MongoCommandBroker.prototype.publish = function(channel, command, cb) {
-    if (!pb.utils.isObject(command)) {
-        throw new Error(&#x27;The channel string and command object are required!&#x27;);
-    }
-
-    if (pb.log.isSilly()) {
-        pb.log.silly(&#x27;MongoCommandBroker: Sending command [%s]%s&#x27;, channel, JSON.stringify(command));
-    }
-    
-    //send command
-    command.object_type = COMMAND_Q_COLL;
-    command.channel     = channel;
-    var dao = new pb.DAO();
-    dao.save(command, function(err, result) {
-        cb(err, result ? true : false);
-    });
-};
-
-/**
- * Registers a handler for messages on the specified channel.
- * @method subscribe
- * @param {String} channel The channel to listen for messages on
- * @param {Function} onCommandReceived A handler function that takes two
- * arguments: onCommandReceived(channel, message) where channel is a string and
- * message is an object.
- * @param {Function} cb A callback that takes two parameters: cb(Error, [RESULT])
- */
-MongoCommandBroker.prototype.subscribe = function(channel, onCommandReceived, cb) {
-    if (!pb.validation.validateNonEmptyStr(channel, true) || !pb.utils.isFunction(onCommandReceived)) {
-        cb(new Error(&#x27;A valid channel string and handler function is required&#x27;));
-        return;
-    }
-
-    //setup the one time subscribe callback
-    pb.log.debug(&#x27;MongoCommandBroker: Subcribing to channel [%s]&#x27;, channel);
-    
-    
-    //get a reference to the collection
-    var self = this;
-    var db = pb.dbm[pb.config.db.name];
-    db.collection(COMMAND_Q_COLL, function(err, collection) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
- 
-        //execute a seed query
-        var latest = collection.find({}).sort({ $natural: -1 }).limit(1);
- 
-        //pull off the 1st object as a no-op
-        latest.nextObject(function(err, doc) {
+        //check if the collection already exists
+        var dao = new pb.DAO();
+        dao.entityExists(COMMAND_Q_COLL, function(err, exists) {
             if (util.isError(err)) {
-                pb.log.error(&#x27;MongoCommandBroker: Error while waiting for the next command: %s&#x27;, err.stack);
+                return cb(err);
             }
 
-            //build afunction that is capable of being called multiple times.  
-            //It executes the actual query with a trailing cursor.  As each new 
-            //document is generated it is pull off and handed off to a delegate 
-            //for processing
-            var loop = function() {
-                var query = { created: { $gt: new Date() }};
+            //when it exists we&#x27;re done.  We&#x27;ll assume that it was capped 
+            //appropriately &amp; that it was seeded
+            if (exists) {
+                return cb(null, true);
+            }
 
-                var options = { tailable: true, awaitdata: true, numberOfRetries: -1 };
-                var cursor = collection.find(query, options).sort({ $natural: 1 });
-
-                (function next() {
-                    cursor.nextObject(function(err, command) {
-                        if (util.isError(err)) {
-                            throw err;
-                        }
-
-                        if (command) {
-                            self.onCommandReceived(command.channel, command);
-                        }
-                        
-                        process.nextTick(next);
-                    });
-                })();
+            //create the capped collection needed to store the commands
+            var options = {
+                capped: true,
+                size: pb.config.command.size || DEFAULT_MAX_SIZE
             };
-            
-            //wrap it all up in a container so we can mitigate the crises that 
-            //will inevitably ensue from dropped or timed out cursor connections.  
-            //In addition, we put failure tolerances in place so that we can 
-            //attempt to reconnect.
-            var eot = new pb.ErrorsOverTime(5, 3000, &#x27;MongoCommandBroker: &#x27;);
-            var d   = domain.create();
-            d.on(&#x27;error&#x27;, function(err) {
-                pb.log.error(&#x27;MongoCommandBroker: An error occurred while waiting for commands: %s&#x27;, err.stack || err.message);
-                pb.log.debug(&#x27;MongoCommandBroker: Reconnecting to %s collection&#x27;, COMMAND_Q_COLL);
+            dao.createEntity(COMMAND_Q_COLL, options, function(err, result) {
+                if (util.isError(err) || !result) {
+                    return cb(err, false);
+                }
 
-                //ensure we are still in bounds
-                eot.throwIfOutOfBounds(err);
-                
-                //when we are still within the acceptable fault tolerance try 
-                //to reconnect
-                loop();
+                //Unfortunately, it turns out that MongoDB won’t keep a tailable 
+                //cursor open if the collection is empty, so let’s also create a 
+                //blank document to “prime” the collection.
+                var primerCommand = {
+                    type: &quot;primer&quot;
+                };
+                self.publish(&#x27;primer&#x27;, primerCommand, function(err, result) {
+                    cb(err, result ? true : false);
+                });
             });
-            d.run(function() {
-                process.nextTick(loop);
-            });
-            
-            SUBSCRIBERS[channel] = onCommandReceived;
-            cb(null, true);
         });
-    });
-};
+    };
 
-//exports
-module.exports = MongoCommandBroker;
+    /**
+     * Shuts down the broker by closing the open connections to Redis.
+     * @method shutdown
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    MongoCommandBroker.prototype.shutdown = function(cb) {
+        pb.log.debug(&#x27;MongoCommandBroker: Shutting down...&#x27;);
+        //TODO implement
+        cb(null, true);
+    };
+
+    /**
+     * Called when a member of the cluster has published a command.  The function
+     * inspects that it has a handler for the channel then delegates the command
+     * back to the handler.
+     * @method onCommandReceived
+     * @param {String} channel The channel the message was pushed to
+     * @param {String} commandStr The message that was published
+     */
+    MongoCommandBroker.prototype.onCommandReceived = function(channel, command) {
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;MongoCommandBroker: Command recieved [%s]%s&#x27;, channel, JSON.stringify(command));
+        }
+
+        if (SUBSCRIBERS[channel]) {
+            try{
+                SUBSCRIBERS[channel](channel, command);
+            }
+            catch(err){
+                pb.log.error(&#x27;MongoCommandHandler: An error occurred while attempting to handoff the command [%s]%s. %s&#x27;, channel, JSON.stringify(command), err.stack);
+            }
+        }
+        else {
+            pb.log.silly(&#x27;MongoCommandBroker: A message was received for channel [%s] but no handler was available to accept it. This is most likely normal&#x27;, channel);
+        }
+    };
+
+    /**
+     * Sends a message to the specified channel
+     * @method publish
+     * @param {String} channel The channel to send the message to
+     * @param {Object} command The command to send to the cluster
+     * @param {Function} cb A callback that takes two parameters: cb(Error, 1 on success/FALSE on failure)
+     */
+    MongoCommandBroker.prototype.publish = function(channel, command, cb) {
+        if (!util.isObject(command)) {
+            throw new Error(&#x27;The channel string and command object are required!&#x27;);
+        }
+
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;MongoCommandBroker: Sending command [%s]%s&#x27;, channel, JSON.stringify(command));
+        }
+
+        //send command
+        command.object_type = COMMAND_Q_COLL;
+        command.channel     = channel;
+        var dao = new pb.DAO();
+        dao.save(command, function(err, result) {
+            cb(err, result ? true : false);
+        });
+    };
+
+    /**
+     * Registers a handler for messages on the specified channel.
+     * @method subscribe
+     * @param {String} channel The channel to listen for messages on
+     * @param {Function} onCommandReceived A handler function that takes two
+     * arguments: onCommandReceived(channel, message) where channel is a string and
+     * message is an object.
+     * @param {Function} cb A callback that takes two parameters: cb(Error, [RESULT])
+     */
+    MongoCommandBroker.prototype.subscribe = function(channel, onCommandReceived, cb) {
+        if (!pb.validation.validateNonEmptyStr(channel, true) || !util.isFunction(onCommandReceived)) {
+            cb(new Error(&#x27;A valid channel string and handler function is required&#x27;));
+            return;
+        }
+
+        //setup the one time subscribe callback
+        pb.log.debug(&#x27;MongoCommandBroker: Subcribing to channel [%s]&#x27;, channel);
+
+
+        //get a reference to the collection
+        var self = this;
+        var db = pb.dbm[pb.config.db.name];
+        db.collection(COMMAND_Q_COLL, function(err, collection) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            //execute a seed query
+            var latest = collection.find({}).sort({ $natural: -1 }).limit(1);
+
+            //pull off the 1st object as a no-op
+            latest.nextObject(function(err, doc) {
+                if (util.isError(err)) {
+                    pb.log.error(&#x27;MongoCommandBroker: Error while waiting for the next command: %s&#x27;, err.stack);
+                }
+
+                //build afunction that is capable of being called multiple times.  
+                //It executes the actual query with a trailing cursor.  As each new 
+                //document is generated it is pull off and handed off to a delegate 
+                //for processing
+                var loop = function() {
+                    var query = { created: { $gt: new Date() }};
+
+                    var options = { tailable: true, awaitdata: true, numberOfRetries: -1 };
+                    var cursor = collection.find(query, options).sort({ $natural: 1 });
+
+                    (function next() {
+                        cursor.nextObject(function(err, command) {
+                            if (util.isError(err)) {
+                                throw err;
+                            }
+
+                            if (command) {
+                                self.onCommandReceived(command.channel, command);
+                            }
+
+                            process.nextTick(next);
+                        });
+                    })();
+                };
+
+                //wrap it all up in a container so we can mitigate the crises that 
+                //will inevitably ensue from dropped or timed out cursor connections.  
+                //In addition, we put failure tolerances in place so that we can 
+                //attempt to reconnect.
+                var eot = new pb.ErrorsOverTime(5, 3000, &#x27;MongoCommandBroker: &#x27;);
+                var d   = domain.create();
+                d.on(&#x27;error&#x27;, function(err) {
+                    pb.log.error(&#x27;MongoCommandBroker: An error occurred while waiting for commands: %s&#x27;, err.stack || err.message);
+                    pb.log.debug(&#x27;MongoCommandBroker: Reconnecting to %s collection&#x27;, COMMAND_Q_COLL);
+
+                    //ensure we are still in bounds
+                    eot.throwIfOutOfBounds(err);
+
+                    //when we are still within the acceptable fault tolerance try 
+                    //to reconnect
+                    loop();
+                });
+                d.run(function() {
+                    process.nextTick(loop);
+                });
+
+                SUBSCRIBERS[channel] = onCommandReceived;
+                cb(null, true);
+            });
+        });
+    };
+
+    //exports
+    return MongoCommandBroker;
+};
 
     </pre>
 </div>

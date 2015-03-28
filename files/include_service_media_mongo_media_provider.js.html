@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.3.1</em>
+            <em>API Docs for: 0.4.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -49,11 +49,15 @@
             
                 <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
             
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
                 <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
             
                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
             
                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
             
                 <li><a href="../classes/BaseController.html">BaseController</a></li>
             
@@ -63,9 +67,11 @@
             
                 <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
             
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
                 <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
             
-                <li><a href="../classes/ClientJS.html">ClientJS</a></li>
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
             
                 <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
             
@@ -83,7 +89,7 @@
             
                 <li><a href="../classes/DAO.html">DAO</a></li>
             
-                <li><a href="../classes/DBEntityService.html">DBEntityService</a></li>
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
             
                 <li><a href="../classes/DBManager.html">DBManager</a></li>
             
@@ -105,6 +111,8 @@
             
                 <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
             
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
             
                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -119,9 +127,15 @@
             
                 <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
             
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
                 <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
             
-                <li><a href="../classes/ImportWP.html">ImportWP</a></li>
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
             
                 <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
             
@@ -141,7 +155,13 @@
             
                 <li><a href="../classes/Localization.html">Localization</a></li>
             
-                <li><a href="../classes/LocalizationController.html">LocalizationController</a></li>
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
             
                 <li><a href="../classes/ManageComments.html">ManageComments</a></li>
             
@@ -221,11 +241,21 @@
             
                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
             
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
             
                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
             
                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
             
                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
             
@@ -236,6 +266,8 @@
                 <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
             
                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
             
                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
             
@@ -255,6 +287,8 @@
             
                 <li><a href="../classes/UrlService.html">UrlService</a></li>
             
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
                 <li><a href="../classes/UserService.html">UserService</a></li>
             
                 <li><a href="../classes/Util.html">Util</a></li>
@@ -262,6 +296,8 @@
                 <li><a href="../classes/ValidationService.html">ValidationService</a></li>
             
                 <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
             
                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
             
@@ -276,6 +312,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
             
                 <li><a href="../modules/Database.html">Database</a></li>
             
@@ -337,7 +375,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2014  PencilBlue, LLC
+    Copyright (C) 2015  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -356,191 +394,226 @@
 //dependencies
 var MongoDB   = require(&#x27;mongodb&#x27;);
 var GridStore = MongoDB.GridStore;
+var util      = require(&#x27;../../util.js&#x27;);
 
-/**
- * A media provider that uses Mongo&#x27;s GridFS as the method of storage.
- * @class MongoMediaProvider
- * @constructor
- */
-function MongoMediaProvider() {};
+module.exports = function MongoMediaProviderModule(pb) {
 
-/**
- * Retrieves the item in GridFS as a stream. 
- * @method getStream
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Object} [options] Options for interacting with S3
- * @param {String} [options.bucket] The S3 bucket to interact with
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and a ReadableStream that contains the media content.
- */
-MongoMediaProvider.prototype.getStream = function(mediaPath, cb) {
-    
-    var db  = pb.dbm[pb.config.db.name];
-    var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
-    gs.open(function(err, gs) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
-        
-        cb(null, gs.stream(true));
-    });
-};
+    /**
+     * A media provider that uses Mongo&#x27;s GridFS as the method of storage.
+     * @class MongoMediaProvider
+     * @constructor
+     */
+    function MongoMediaProvider() {};
 
-/**
- * Retrieves the content from GridFS as a String or Buffer.
- * @method get
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and an entity that contains the media content.
- */
-MongoMediaProvider.prototype.get = function(mediaPath, cb) {
-    
-    var db  = pb.dbm[pb.config.db.name];
-    var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
-    gs.open(function(err, gs) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
-        
-        gs.read(function(err, data) {
+    /**
+     * Retrieves the item in GridFS as a stream. 
+     * @method getStream
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Object} [options] Options for interacting with S3
+     * @param {String} [options.bucket] The S3 bucket to interact with
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and a ReadableStream that contains the media content.
+     */
+    MongoMediaProvider.prototype.getStream = function(mediaPath, cb) {
+
+        pb.dbm.getDb(pb.config.db.name, function(err, db) {
             if (util.isError(err)) {
                 return cb(err);
             }
             
-            gs.close(function(err) {
-                cb(err, data);
+            var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
+            gs.open(function(err, gs) {
+                if (util.isError(err)) {
+                    return cb(err);
+                }
+
+                cb(null, gs.stream(true));
             });
         });
-    });
-};
-
-/**
- * Sets media content into GridFS based on the specified media path and 
- * options.  The stream provided must be a ReadableStream.
- * @method setStream
- * @param {ReadableStream} stream The content stream
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and the success of the operation.
- */
-MongoMediaProvider.prototype.setStream = function(stream, mediaPath, cb) {
-    var self = this;
-    
-    var buffers = [];
-    stream.on(&#x27;data&#x27;, function(buffer) {
-        buffers.push(buffer);
-    });
-    stream.on(&#x27;end&#x27;, function() {
-        
-        var buffer = Buffer.concat(buffers);
-        self.set(buffer, mediaPath, cb);
-    });
-    stream.on(&#x27;error&#x27;, function(err) {
-        cb(err);
-    });
-};
-
-/**
- * Sets media content into GridFS based on the specified media path and 
- * options.  The data must be in the form of a String or Buffer.
- * @method setStream
- * @param {String|Buffer} fileDataStrOrBuffOrStream The content to persist
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and the success of the operation.
- */
-MongoMediaProvider.prototype.set = function(fileDataStrOrBuff, mediaPath, cb) {
-    
-    var opt = {
-        content_type: &quot;application/octet-stream&quot;,
-        metadata:{
-            provider: &quot;MongoMediaProvider&quot;,
-            mediaPath: mediaPath
-        }
     };
-    var db  = pb.dbm[pb.config.db.name];
-    var gs  = new GridStore(db, mediaPath, &#x27;w&#x27;, opt);
-    gs.open(function(err, gs) {
-        gs.write(fileDataStrOrBuff, true, cb);
-    });
-};
 
-/**
- * Not Implemented
- * @method createWriteStream
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and a WriteableStream.
- */
-MongoMediaProvider.prototype.createWriteStream = function(mediaPath, cb) {
-    throw new Error(&#x27;Not implemented&#x27;);
-};
+    /**
+     * Retrieves the content from GridFS as a String or Buffer.
+     * @method get
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and an entity that contains the media content.
+     */
+    MongoMediaProvider.prototype.get = function(mediaPath, cb) {
 
-/**
- * Checks to see if the file actually exists in GridFS
- * @method exists
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and a Boolean.
- */
-MongoMediaProvider.prototype.exists = function(mediaPath, cb) {
-    
-    var db = pb.dbm[pb.config.db.name];
-    GridStore.exist(db, mediaPath, cb);
-};
+        pb.dbm.getDb(pb.config.db.name, function(err, db) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            
+            var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
+            gs.open(function(err, gs) {
+                if (util.isError(err)) {
+                    return cb(err);
+                }
 
-/**
- * Deletes a file from the GridFS
- * @method delete
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and the success of the operation.
- */
-MongoMediaProvider.prototype.delete = function(mediaPath, cb) {
-    
-    var db = pb.dbm[pb.config.db.name];
-    GridStore.unlink(db, mediaPath, cb);
-};
-        
-/**
- * Retrieve the stats on the file
- * @method stat
- * @param {String} mediaPath The path/key to the media.  Typically this is a 
- * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
- * @param {Function} cb A callback that provides two parameters: An Error, if 
- * occurred and an object that contains the file stats
- */
-MongoMediaProvider.prototype.stat = function(mediaPath, cb) {
-    
-    var db  = pb.dbm[pb.config.db.name];
-    var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
-    gs.open(function(err, gs) {
-        if (util.isError(err)) {
-            return cb(err);
-        }
-        
-        var stat = {
-            length: gs.length,
-            contentType: gs.contentType,
-            uploadDate: gs.uploadDate,
-            metadata: gs.metadata,
-            chunkSize: gs.chunkSize
-        };
-        gs.close(function(err) {
-            cb(err, stat);
+                gs.read(function(err, data) {
+                    if (util.isError(err)) {
+                        return cb(err);
+                    }
+
+                    gs.close(function(err) {
+                        cb(err, data);
+                    });
+                });
+            });
         });
-    });
-};
+    };
 
-//exports
-module.exports = MongoMediaProvider;
+    /**
+     * Sets media content into GridFS based on the specified media path and 
+     * options.  The stream provided must be a ReadableStream.
+     * @method setStream
+     * @param {ReadableStream} stream The content stream
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and the success of the operation.
+     */
+    MongoMediaProvider.prototype.setStream = function(stream, mediaPath, cb) {
+        var self = this;
+
+        var buffers = [];
+        stream.on(&#x27;data&#x27;, function(buffer) {
+            buffers.push(buffer);
+        });
+        stream.on(&#x27;end&#x27;, function() {
+
+            var buffer = Buffer.concat(buffers);
+            self.set(buffer, mediaPath, cb);
+        });
+        stream.on(&#x27;error&#x27;, function(err) {
+            cb(err);
+        });
+    };
+
+    /**
+     * Sets media content into GridFS based on the specified media path and 
+     * options.  The data must be in the form of a String or Buffer.
+     * @method setStream
+     * @param {String|Buffer} fileDataStrOrBuffOrStream The content to persist
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and the success of the operation.
+     */
+    MongoMediaProvider.prototype.set = function(fileDataStrOrBuff, mediaPath, cb) {
+
+        var opt = {
+            content_type: &quot;application/octet-stream&quot;,
+            metadata:{
+                provider: &quot;MongoMediaProvider&quot;,
+                mediaPath: mediaPath
+            }
+        };
+        
+        pb.dbm.getDb(pb.config.db.name, function(err, db) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            
+            var gs  = new GridStore(db, mediaPath, &#x27;w&#x27;, opt);
+            gs.open(function(err, gs) {
+                gs.write(fileDataStrOrBuff, true, cb);
+            });
+        });
+    };
+
+    /**
+     * Not Implemented
+     * @method createWriteStream
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and a WriteableStream.
+     */
+    MongoMediaProvider.prototype.createWriteStream = function(mediaPath, cb) {
+        throw new Error(&#x27;Not implemented&#x27;);
+    };
+
+    /**
+     * Checks to see if the file actually exists in GridFS
+     * @method exists
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and a Boolean.
+     */
+    MongoMediaProvider.prototype.exists = function(mediaPath, cb) {
+
+        pb.dbm.getDb(pb.config.db.name, function(err, db) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            
+            GridStore.exist(db, mediaPath, cb);
+        });
+    };
+
+    /**
+     * Deletes a file from the GridFS
+     * @method delete
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and the success of the operation.
+     */
+    MongoMediaProvider.prototype.delete = function(mediaPath, cb) {
+
+        pb.dbm.getDb(pb.config.db.name, function(err, db) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            
+            GridStore.unlink(db, mediaPath, cb);
+        });
+    };
+
+    /**
+     * Retrieve the stats on the file
+     * @method stat
+     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
+     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * occurred and an object that contains the file stats
+     */
+    MongoMediaProvider.prototype.stat = function(mediaPath, cb) {
+
+        pb.dbm.getDb(pb.config.db.name, function(err, db) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            
+            var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
+            gs.open(function(err, gs) {
+                if (util.isError(err)) {
+                    return cb(err);
+                }
+
+                var stat = {
+                    length: gs.length,
+                    contentType: gs.contentType,
+                    uploadDate: gs.uploadDate,
+                    metadata: gs.metadata,
+                    chunkSize: gs.chunkSize
+                };
+                gs.close(function(err) {
+                    cb(err, stat);
+                });
+            });
+        });
+    };
+
+    //exports
+    return MongoMediaProvider;
+};
 
     </pre>
 </div>
