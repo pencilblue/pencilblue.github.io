@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BaseApiController - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.4.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>BaseApiController Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/controllers_api_base_api_controller.js.html#l23"><code>controllers\api\base_api_controller.js:23</code></a>
+        </div>
+
+            Module: <a href="../modules/dao.html">dao</a>
+
+</div>
+
+
+<div class="box intro">
+    
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_BaseApiController" class="method item">
+    <h3 class="name"><code>BaseApiController</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l23"><code>controllers\api\base_api_controller.js:23</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_delete">delete</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_get">get</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getAll">getAll</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getPostDto">getPostDto</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_handleDelete">handleDelete</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_handleDelete">handleDelete</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_handleSave">handleSave</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_notFound">notFound</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_post">post</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_processOrder">processOrder</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_processQuery">processQuery</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_processSelect">processSelect</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_processWhere">processWhere</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_put">put</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_FIELD_OFF">FIELD_OFF</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_FIELD_ON">FIELD_ON</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_delete" class="method item">
+    <h3 class="name"><code>delete</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l252"><code>controllers\api\base_api_controller.js:252</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Deletes the resource with the specified ID from the URI path &quot;:id&quot;.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_get" class="method item">
+    <h3 class="name"><code>get</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l49"><code>controllers\api\base_api_controller.js:49</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves a resource by ID where :id is a path parameter</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getAll" class="method item">
+    <h3 class="name"><code>getAll</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l59"><code>controllers\api\base_api_controller.js:59</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves one or more resources from a collection.  The endpoint
+supports the following query string parameters:</p>
+<ul>
+<li>$select - A comma separated list of key/value pairs where a value 
+of 1 indicates the field will be returned and 0 indicates the 
+absensence.  $select=_id=1,name=1,description=0</li>
+<li>$order - A comma separated list of key/value pairs where a value of 
+1 indicates ascending a value of 0 or less indicates descending. 
+$order=name=1,created_date=0</li>
+<li>$limit - An integer representing the maximum number of results to 
+return</li>
+<li>$offset - An integer representing the number of items to skip before 
+returning results</li>
+<li>$where - Currently not supported</li>
+</ul>
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getPostDto" class="method item">
+    <h3 class="name"><code>getPostDto</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l230"><code>controllers\api\base_api_controller.js:230</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the request DTO.  The function ensures that the id field is
+removed.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_handleDelete" class="method item">
+    <h3 class="name"><code>handleDelete</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l262"><code>controllers\api\base_api_controller.js:262</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a handler that can be used to prepare a response for GET
+operations.  When the result is NULL a 404 is generated.  Otherwise a 200
+response along with the object serialized as JSON is the generated
+response</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Function</span>:
+                    <p>That can prepare a response and execute the callback</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_handleDelete" class="method item">
+    <h3 class="name"><code>handleDelete</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l309"><code>controllers\api\base_api_controller.js:309</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a handler that can be used to prepare a response for DELETE
+operations. When the item cannot be found a 404 is issued.  When the
+object is successfully delete a 204 status is provided</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Function</span>:
+                    <p>That can prepare a response and execute the callback</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_handleSave" class="method item">
+    <h3 class="name"><code>handleSave</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l287"><code>controllers\api\base_api_controller.js:287</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a handler that can be used to prepare a response for POST or PUT
+operations. Upon successful create a 201 status code is returned. Upon
+successful update a 200 status code is returned.  Validation errors are
+expected to be handled by the global error handler and should return 400</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Function</span>:
+                    <p>That can prepare a response and execute the callback</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_notFound" class="method item">
+    <h3 class="name"><code>notFound</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l334"><code>controllers\api\base_api_controller.js:334</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Calls back to the request handler with an error representing a 404 not
+found</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_post" class="method item">
+    <h3 class="name"><code>post</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l220"><code>controllers\api\base_api_controller.js:220</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a resource</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_processOrder" class="method item">
+    <h3 class="name"><code>processOrder</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>rawOrder</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l144"><code>controllers\api\base_api_controller.js:144</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Processes the value of a $order query string variable</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">rawOrder</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Contains the order statement and an array of failures</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_processQuery" class="method item">
+    <h3 class="name"><code>processQuery</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l83"><code>controllers\api\base_api_controller.js:83</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Prcoess the query string and builds the options for passing to the
+object service</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>The options representing the query</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_processSelect" class="method item">
+    <h3 class="name"><code>processSelect</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>rawSelect</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l183"><code>controllers\api\base_api_controller.js:183</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Processes the value of a $select query string variable</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">rawSelect</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Contains the select statement and an array of failures</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_processWhere" class="method item">
+    <h3 class="name"><code>processWhere</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>q</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l127"><code>controllers\api\base_api_controller.js:127</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Processes the query string to develop the where clause for the query request</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">q</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The hash of all query parameters from the request</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_put" class="method item">
+    <h3 class="name"><code>put</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/controllers_api_base_api_controller.js.html#l242"><code>controllers\api\base_api_controller.js:242</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Updates a resource with the ID specified in the body of the request.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_FIELD_OFF" class="property item">
+                        <h3 class="name"><code>FIELD_OFF</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/controllers_api_base_api_controller.js.html#l40"><code>controllers\api\base_api_controller.js:40</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Indicates if a field should be part of the projection</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_FIELD_ON" class="property item">
+                        <h3 class="name"><code>FIELD_ON</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/controllers_api_base_api_controller.js.html#l31"><code>controllers\api\base_api_controller.js:31</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Indicates if a field should be part of the projection</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\system\server_registration.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.4.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AdminChangePasswordController.html">AdminChangePasswordController</a></li>
+            
+                <li><a href="../classes/AdminIndexController.html">AdminIndexController</a></li>
+            
+                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+            
+                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+            
+                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+            
+                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+            
+                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+            
+                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+            
+                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+            
+                <li><a href="../classes/BaseController.html">BaseController</a></li>
+            
+                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+            
+                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+            
+                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+            
+                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+            
+                <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
+            
+                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+            
+                <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
+            
+                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+            
+                <li><a href="../classes/CommandService.html">CommandService</a></li>
+            
+                <li><a href="../classes/CommentService.html">CommentService</a></li>
+            
+                <li><a href="../classes/ContentService.html">ContentService</a></li>
+            
+                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+            
+                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+            
+                <li><a href="../classes/DAO.html">DAO</a></li>
+            
+                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+            
+                <li><a href="../classes/DBManager.html">DBManager</a></li>
+            
+                <li><a href="../classes/DeleteArticleActionController.html">DeleteArticleActionController</a></li>
+            
+                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
+            
+                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+            
+                <li><a href="../classes/EditMediaActionController.html">EditMediaActionController</a></li>
+            
+                <li><a href="../classes/EditObject.html">EditObject</a></li>
+            
+                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
+            
+                <li><a href="../classes/EmailService.html">EmailService</a></li>
+            
+                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+            
+                <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
+            
+                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+            
+                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+            
+                <li><a href="../classes/FormController.html">FormController</a></li>
+            
+                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+            
+                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+            
+                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
+            
+                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
+            
+                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
+            
+                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
+            
+                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+            
+                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
+            
+                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
+            
+                <li><a href="../classes/Index.html">Index</a></li>
+            
+                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+            
+                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
+            
+                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+            
+                <li><a href="../classes/JobService.html">JobService</a></li>
+            
+                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+            
+                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+            
+                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+            
+                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+            
+                <li><a href="../classes/Localization.html">Localization</a></li>
+            
+                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
+            
+                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
+            
+                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
+            
+                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
+            
+                <li><a href="../classes/ManageComments.html">ManageComments</a></li>
+            
+                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
+            
+                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
+            
+                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
+            
+                <li><a href="../classes/MediaForm.html">MediaForm</a></li>
+            
+                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+            
+                <li><a href="../classes/MediaService.html">MediaService</a></li>
+            
+                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+            
+                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+            
+                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+            
+                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+            
+                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+            
+                <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
+            
+                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
+            
+                <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
+            
+                <li><a href="../classes/NewObjectTypeActionController.html">NewObjectTypeActionController</a></li>
+            
+                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
+            
+                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
+            
+                <li><a href="../classes/ObjectFormController.html">ObjectFormController</a></li>
+            
+                <li><a href="../classes/PageController.html">PageController</a></li>
+            
+                <li><a href="../classes/PBError.html">PBError</a></li>
+            
+                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+            
+                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
+            
+                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
+            
+                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
+            
+                <li><a href="../classes/PluginDetailsViewController.html">PluginDetailsViewController</a></li>
+            
+                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
+            
+                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
+            
+                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
+            
+                <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
+            
+                <li><a href="../classes/PluginService.html">PluginService</a></li>
+            
+                <li><a href="../classes/PluginSettingsFormController.html">PluginSettingsFormController</a></li>
+            
+                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
+            
+                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
+            
+                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+            
+                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+            
+                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+            
+                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+            
+                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+            
+                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
+            
+                <li><a href="../classes/SectionService.html">SectionService</a></li>
+            
+                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+            
+                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+            
+                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+            
+                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+            
+                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
+            
+                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
+            
+                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+            
+                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+            
+                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
+            
+                <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
+            
+                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+            
+                <li><a href="../classes/System.html">System</a></li>
+            
+                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+            
+                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+            
+                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+            
+                <li><a href="../classes/TextService.html">TextService</a></li>
+            
+                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+            
+                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+            
+                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
+            
+                <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
+            
+                <li><a href="../classes/UrlService.html">UrlService</a></li>
+            
+                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+            
+                <li><a href="../classes/UserService.html">UserService</a></li>
+            
+                <li><a href="../classes/Util.html">Util</a></li>
+            
+                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+            
+                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+            
+                <li><a href="../classes/View Controller.html">View Controller</a></li>
+            
+                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+            
+                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+            
+                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
+            
+                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Admin.html">Admin</a></li>
+            
+                <li><a href="../modules/dao.html">dao</a></li>
+            
+                <li><a href="../modules/Database.html">Database</a></li>
+            
+                <li><a href="../modules/Entities.html">Entities</a></li>
+            
+                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+            
+                <li><a href="../modules/Model.html">Model</a></li>
+            
+                <li><a href="../modules/Security.html">Security</a></li>
+            
+                <li><a href="../modules/Services.html">Services</a></li>
+            
+                <li><a href="../modules/Session.html">Session</a></li>
+            
+                <li><a href="../modules/Storage.html">Storage</a></li>
+            
+                <li><a href="../modules/Theme.html">Theme</a></li>
+            
+                <li><a href="../modules/Validation.html">Validation</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: include\system\server_registration.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2015  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var cluster = require(&#x27;cluster&#x27;);
+var os      = require(&#x27;os&#x27;);
+var domain  = require(&#x27;domain&#x27;);
+var process = require(&#x27;process&#x27;);
+var async   = require(&#x27;async&#x27;);
+var util    = require(&#x27;../util.js&#x27;);
+
+module.exports = function ServerRegistrationModule(pb) {
+    
+    /**
+     * Singleton instance
+     * @private
+     * @static
+     * @property INSTANCE
+     * @type {ServerRegistration}
+     */
+    var INSTANCE = null;
+
+    /**
+     * Service that provides the ability for the process/node to register itself so
+     * that other nodes in the system can find it.  In addition, it helps with the
+     * health monitoring of the system.
+     * @class ServerRegistration
+     * @constructor
+     */
+    function ServerRegistration(provider){
+        if (!provider) {
+            throw new Error(&#x27;RegistrationProvider instance is required&#x27;);
+        }
+        this.provider = provider;
+        this.timerHandle = null;
+    };
+
+    /**
+     * The default set of functions that gather the default set of information.
+     * @private
+     * @property ITEM_CALLBACKS
+     * @type {Object}
+     */
+    var ITEM_CALLBACKS = {
+
+        //ip address
+        ip: function(cb) {
+            cb(null, ServerRegistration.getIp());
+        },
+
+        is_master: function(cb) {
+            cb(null, cluster.isMaster);
+        },
+
+        process_type: function(cb) {
+            cb(null, cluster.worker ? &#x27;Worker&#x27; : &#x27;Master&#x27;);
+        },
+
+        worker_id: function(cb) {
+            cb(null, cluster.worker ? cluster.worker.id : &#x27;M&#x27;);
+        },
+
+        port: function(cb) {
+            cb(null, pb.config.sitePort);
+        },
+
+        host: function(cb) {
+            cb(null, os.hostname());
+        },
+
+        pid: function(cb) {
+            cb(null, process.pid);
+        },
+
+        node_version: function(cb) {
+            cb(null, process.version);
+        },
+
+        active_plugins: function(cb) {
+            var pluginService = new pb.PluginService();
+            cb(null, pluginService.getActivePluginNames());
+        },
+
+        uptime: function(cb) {
+            cb(null, process.uptime());
+        },
+
+        mem_usage: function(cb) {
+            cb(null, process.memoryUsage());
+        },
+
+        cwd: function(cb) {
+            cb(null, process.cwd());
+        },
+
+        type: function(cb) {
+            cb(null, &#x27;pencilblue&#x27;);
+        },
+
+        pb_version: function(cb) {
+            cb(null, pb.config.version);
+        }
+    };
+
+    /**
+     * Retrieves the most recent status from the entire cluster.
+     * @method getClusterStatus
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Array)
+     */
+    ServerRegistration.prototype.getClusterStatus = function(cb) {
+        this.provider.get(cb);
+    };
+
+    /**
+     * Removes all entries from the server registry
+     * @static
+     * @method flush
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    ServerRegistration.prototype.flush = function(cb) {
+        this.provider.flush(cb);
+    };
+
+    /**
+     * Should only be called once at startup.  The function verifies that the
+     * registry is enabled and initializes the correct storage provider.
+     * @static
+     * @method init
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    ServerRegistration.prototype.init = function(cb) {
+        if (!pb.config.registry.enabled) {
+             return cb(null, false);
+         }
+         else if (this.timerHandle !== null) {
+             return cb(null, true);
+         }
+
+         //initialize the provider
+        var self = this;
+        this.provider.init(function(err, result) {
+            if (util.isError(err) || !result) {
+                return cb(err, false);
+            }
+
+            //do first update and schedule the rest
+            self.doRegistration();
+            this.timerHandle = setInterval(function() {
+                self.doRegistration();
+            }, pb.config.registry.update_interval);
+
+            cb(err, true);
+        });
+    };
+
+    /**
+     * Called during shutdown.  The function is responsible for clearing any
+     * scheduled updates and shutting down the storage provider.
+     * @static
+     * @method shutdown
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    ServerRegistration.prototype.shutdown = function(cb) {
+        cb = cb || util.cb;
+
+        if (!this.timerHandle) {
+            return cb(null, true);
+        }
+
+        clearInterval(this.timerHandle);
+        this.provider.shutdown(ServerRegistration.generateKey(), cb);
+    };
+
+    /**
+     * Registers a function to be called on every status update.  The function
+     * should take one parameter: a callback function that accepts two parameters,
+     * the first being an error if it occurred and the second being the current
+     * value for the information requested.
+     * @static
+     * @method addItem
+     * @param {String} name The name and/or description of the information being
+     * gathered
+     * @param {Function} The function to be called to gather the data.
+     * @return {Boolean} TRUE if the function is successfully registered, FALSE if not.
+     */
+    ServerRegistration.addItem = function(name, itemValueFunction) {
+         if (!pb.validation.validateNonEmptyStr(name, true) || !util.isFunction(itemValueFunction)) {
+             return false;
+         }
+
+         ITEM_CALLBACKS[name] = itemValueFunction;
+         return true;
+    };
+
+    /**
+     * Performs the request for information and persists it through the storage
+     * provider.
+     * @static
+     * @method doRegistration
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    ServerRegistration.prototype.doRegistration = function(cb) {
+        cb = cb || util.cb;
+
+        //ensure a provider was instantiated.  
+        //Server registration could be turned off.
+        if (!this.provider) {
+            return cb(null, false);
+        }
+
+        //create a function to execute when all items have been retrieved
+        var self = this;
+        var onItemsGathered = function(err, update) {
+            if (util.isError(err)) {
+                pb.log.error(&quot;ServerRegistration: Failed to gather all data for registration: %s&quot;, err.message);
+            }
+            else if (!util.isObject(update)) {
+                return cb(err, false);
+            }
+            
+            //perform the registration update
+            update.id          = ServerRegistration.generateKey();
+            update.last_update = new Date();
+            self.provider.set(update.id, update, function(err, result) {
+                ServerRegistration.logUpdateResult(update.id, update, err, result);
+                cb(err, result);
+            });
+         };
+
+         var d = domain.create();
+         d.on(&#x27;error&#x27;, function(err) {
+            pb.log.error(&#x27;ServerRegistration: Failed to perform update: %s&#x27;, err.stack);
+         });
+         d.run(function() {
+             async.parallel(ITEM_CALLBACKS, onItemsGathered);
+         });
+    };
+
+    /**
+     * 
+     * @static
+     * @method logUpdateResult
+     * @param {String} key
+     * @param {Object} update
+     * @param {Error} err
+     * @param {Boolean} result
+     */
+    ServerRegistration.logUpdateResult = function(key, update, err, result) {
+        if (pb.config.registry.logging_enabled) {
+            if (pb.log.isDebug()) {
+                pb.log.debug(&quot;ServerRegistration: Attempted to update registration. KEY=[%s] Result=[%s] ERROR=[%s]&quot;, key, util.inspect(result), err ? err.message : &#x27;NONE&#x27;);
+            }
+            if (pb.log.isSilly()) {
+                pb.log.silly(&quot;ServerRegistration: Last Update\n%s&quot;, util.inspect(update));
+            }
+        }
+    };
+
+    /**
+     * Generates the unique key for the PB process/node.
+     * @static
+     * @method generateKey
+     * @return {String} The unique identifier
+     */
+    ServerRegistration.generateKey = function() {
+        return ServerRegistration.getIp() + &#x27;:&#x27; + pb.config.sitePort + &#x27;:&#x27; + (cluster.worker ? cluster.worker.id : &#x27;M&#x27;) + &#x27;:&#x27; + os.hostname();
+    };
+
+    /**
+     * Retrieves a unique key for the server but not for the process
+     * @static
+     * @method generateServerKey
+     * @return {String} server key
+     */
+    ServerRegistration.generateServerKey = function() {
+        return ServerRegistration.getIp() + &#x27;:&#x27; + pb.config.sitePort + &#x27;:&#x27; + os.hostname();
+    };
+
+    /**
+     * Retrieves the first IP address found for the node.
+     * @static
+     * @method getIp
+     * @return {String} The first IP address found for the node
+     */
+    ServerRegistration.getIp = function() {
+         var interfaces = os.networkInterfaces();
+         var address = null;
+         for (k in interfaces) {
+             for (k2 in interfaces[k]) {
+                 var addr = interfaces[k][k2];
+                 if (addr.family == &#x27;IPv4&#x27; &amp;&amp; !addr.internal) {
+                     address = addr.address;
+                     break;
+                 }
+             }
+         }
+         return address;
+    };
+    
+    /**
+     * Retrieves the singleton instance of the service registry
+     * @static
+     * @method getInstance
+     * @param {RegistrationProvider} [provider]
+     * @return {ServerRegistration}
+     */
+    ServerRegistration.getInstance = function(provider) {
+        if (INSTANCE) {
+            return INSTANCE;
+        }
+        
+        //create a provider if not provided
+        var provider = null;
+        if (!provider) {
+            
+            var RegistrationProvider = null;
+            if (pb.config.registry.type === &#x27;redis&#x27;) {
+                RegistrationProvider = pb.RedisRegistrationProvider;
+            }
+            else if (pb.config.registry.type === &#x27;mongo&#x27;) {
+                RegistrationProvider = pb.MongoRegistrationProvider;
+            }
+            else {
+                RegistrationProvider = require(pb.config.registry.type)(pb);
+            }
+            provider = new RegistrationProvider();
+        }
+        
+        return INSTANCE = new ServerRegistration(provider);
+    };
+
+    return ServerRegistration;
+};
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

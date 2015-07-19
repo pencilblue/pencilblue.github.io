@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <link rel="icon" href="../assets/favicon.ico">
     <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
 </head>
 <body class="yui3-skin-sam">
@@ -14,12 +14,10 @@
 <div id="doc">
     <div id="hd" class="yui3-g header">
         <div class="yui3-u-3-4">
-            
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
-            
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.4.0</em>
+            <em>API Docs for: 0.4.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -27,370 +25,173 @@
         <div class="yui3-u-1-4">
             <div id="docs-sidebar" class="sidebar apidocs">
                 <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/AdminChangePasswordController.html">AdminChangePasswordController</a></li>
-            
-                <li><a href="../classes/AdminIndexController.html">AdminIndexController</a></li>
-            
-                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
-            
-                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
-            
-                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
-            
-                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
-            
-                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
-            
-                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
-            
-                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
-            
-                <li><a href="../classes/BaseController.html">BaseController</a></li>
-            
-                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
-            
-                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
-            
-                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
-            
-                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
-            
-                <li><a href="../classes/ChangePasswordFormController.html">ChangePasswordFormController</a></li>
-            
-                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
-            
-                <li><a href="../classes/ClusterApiController.html">ClusterApiController</a></li>
-            
-                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
-            
-                <li><a href="../classes/CommandService.html">CommandService</a></li>
-            
-                <li><a href="../classes/CommentService.html">CommentService</a></li>
-            
-                <li><a href="../classes/ContentService.html">ContentService</a></li>
-            
-                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
-            
-                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
-            
-                <li><a href="../classes/DAO.html">DAO</a></li>
-            
-                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
-            
-                <li><a href="../classes/DBManager.html">DBManager</a></li>
-            
-                <li><a href="../classes/DeleteArticleActionController.html">DeleteArticleActionController</a></li>
-            
-                <li><a href="../classes/DeleteMediaController.html">DeleteMediaController</a></li>
-            
-                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
-            
-                <li><a href="../classes/EditMediaActionController.html">EditMediaActionController</a></li>
-            
-                <li><a href="../classes/EditObject.html">EditObject</a></li>
-            
-                <li><a href="../classes/EditObjectType.html">EditObjectType</a></li>
-            
-                <li><a href="../classes/EmailService.html">EmailService</a></li>
-            
-                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
-            
-                <li><a href="../classes/ForgotPasswordController.html">ForgotPasswordController</a></li>
-            
-                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
-            
-                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
-            
-                <li><a href="../classes/FormController.html">FormController</a></li>
-            
-                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
-            
-                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
-            
-                <li><a href="../classes/GetMediaEmbedApiController.html">GetMediaEmbedApiController</a></li>
-            
-                <li><a href="../classes/GetMediaLinkApiController.html">GetMediaLinkApiController</a></li>
-            
-                <li><a href="../classes/GetMediaPreviewApiController.html">GetMediaPreviewApiController</a></li>
-            
-                <li><a href="../classes/HomePageSettings.html">HomePageSettings</a></li>
-            
-                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
-            
-                <li><a href="../classes/ImportTopics.html">ImportTopics</a></li>
-            
-                <li><a href="../classes/ImportWPActionController.html">ImportWPActionController</a></li>
-            
-                <li><a href="../classes/Index.html">Index</a></li>
-            
-                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
-            
-                <li><a href="../classes/JobApiController.html">JobApiController</a></li>
-            
-                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
-            
-                <li><a href="../classes/JobService.html">JobService</a></li>
-            
-                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
-            
-                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
-            
-                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
-            
-                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
-            
-                <li><a href="../classes/Localization.html">Localization</a></li>
-            
-                <li><a href="../classes/LocalizationApiController.html">LocalizationApiController</a></li>
-            
-                <li><a href="../classes/LoginActionController.html">LoginActionController</a></li>
-            
-                <li><a href="../classes/LoginViewController.html">LoginViewController</a></li>
-            
-                <li><a href="../classes/LogoutController.html">LogoutController</a></li>
-            
-                <li><a href="../classes/ManageComments.html">ManageComments</a></li>
-            
-                <li><a href="../classes/ManageObjects.html">ManageObjects</a></li>
-            
-                <li><a href="../classes/ManageObjectTypes.html">ManageObjectTypes</a></li>
-            
-                <li><a href="../classes/MediaContentController.html">MediaContentController</a></li>
-            
-                <li><a href="../classes/MediaForm.html">MediaForm</a></li>
-            
-                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
-            
-                <li><a href="../classes/MediaService.html">MediaService</a></li>
-            
-                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
-            
-                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
-            
-                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
-            
-                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
-            
-                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
-            
-                <li><a href="../classes/NavItemFormController.html">NavItemFormController</a></li>
-            
-                <li><a href="../classes/NewMediaApiController.html">NewMediaApiController</a></li>
-            
-                <li><a href="../classes/NewObjectActionController.html">NewObjectActionController</a></li>
-            
-                <li><a href="../classes/NewObjectTypeActionController.html">NewObjectTypeActionController</a></li>
-            
-                <li><a href="../classes/NewPagePostController.html">NewPagePostController</a></li>
-            
-                <li><a href="../classes/NotFoundController.html">NotFoundController</a></li>
-            
-                <li><a href="../classes/ObjectFormController.html">ObjectFormController</a></li>
-            
-                <li><a href="../classes/PageController.html">PageController</a></li>
-            
-                <li><a href="../classes/PBError.html">PBError</a></li>
-            
-                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
-            
-                <li><a href="../classes/PluginApi.html">PluginApi</a></li>
-            
-                <li><a href="../classes/PluginAvailableJob.html">PluginAvailableJob</a></li>
-            
-                <li><a href="../classes/PluginDependenciesJob.html">PluginDependenciesJob</a></li>
-            
-                <li><a href="../classes/PluginDetailsViewController.html">PluginDetailsViewController</a></li>
-            
-                <li><a href="../classes/PluginInitializeJob.html">PluginInitializeJob</a></li>
-            
-                <li><a href="../classes/PluginInstallJob.html">PluginInstallJob</a></li>
-            
-                <li><a href="../classes/PluginJobRunner.html">PluginJobRunner</a></li>
-            
-                <li><a href="../classes/PluginPublicContentController.html">PluginPublicContentController</a></li>
-            
-                <li><a href="../classes/PluginService.html">PluginService</a></li>
-            
-                <li><a href="../classes/PluginSettingsFormController.html">PluginSettingsFormController</a></li>
-            
-                <li><a href="../classes/PluginUninstallJob.html">PluginUninstallJob</a></li>
-            
-                <li><a href="../classes/RandomTextViewController.html">RandomTextViewController</a></li>
-            
-                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
-            
-                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
-            
-                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
-            
-                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
-            
-                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
-            
-                <li><a href="../classes/SaveHomePageSettings.html">SaveHomePageSettings</a></li>
-            
-                <li><a href="../classes/SectionService.html">SectionService</a></li>
-            
-                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
-            
-                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
-            
-                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
-            
-                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
-            
-                <li><a href="../classes/SetupActionController.html">SetupActionController</a></li>
-            
-                <li><a href="../classes/SetupViewController.html">SetupViewController</a></li>
-            
-                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
-            
-                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
-            
-                <li><a href="../classes/SortObjects.html">SortObjects</a></li>
-            
-                <li><a href="../classes/SortObjectsActionController.html">SortObjectsActionController</a></li>
-            
-                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
-            
-                <li><a href="../classes/System.html">System</a></li>
-            
-                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
-            
-                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
-            
-                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
-            
-                <li><a href="../classes/TextService.html">TextService</a></li>
-            
-                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
-            
-                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
-            
-                <li><a href="../classes/UploadMediaController.html">UploadMediaController</a></li>
-            
-                <li><a href="../classes/UrlApiController.html">UrlApiController</a></li>
-            
-                <li><a href="../classes/UrlService.html">UrlService</a></li>
-            
-                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
-            
-                <li><a href="../classes/UserService.html">UserService</a></li>
-            
-                <li><a href="../classes/Util.html">Util</a></li>
-            
-                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
-            
-                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
-            
-                <li><a href="../classes/View Controller.html">View Controller</a></li>
-            
-                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
-            
-                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
-            
-                <li><a href="../classes/WPXMLParseService.html">WPXMLParseService</a></li>
-            
-                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/Admin.html">Admin</a></li>
-            
-                <li><a href="../modules/dao.html">dao</a></li>
-            
-                <li><a href="../modules/Database.html">Database</a></li>
-            
-                <li><a href="../modules/Entities.html">Entities</a></li>
-            
-                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
-            
-                <li><a href="../modules/Model.html">Model</a></li>
-            
-                <li><a href="../modules/Security.html">Security</a></li>
-            
-                <li><a href="../modules/Services.html">Services</a></li>
-            
-                <li><a href="../modules/Session.html">Session</a></li>
-            
-                <li><a href="../modules/Storage.html">Storage</a></li>
-            
-                <li><a href="../modules/Theme.html">Theme</a></li>
-            
-                <li><a href="../modules/Validation.html">Validation</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="yui3-u-3-4">
                 <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>CustomObjectService Class</h1>
+<h1>CustomObjectService Class</h1>
 <div class="box meta">
-    
 
-    
 
-    
         <div class="foundat">
             Defined in: <a href="../files/include_service_entities_custom_object_service.js.html#l25"><code>include\service\entities\custom_object_service.js:25</code></a>
         </div>
-    
 
-    
-        
             Module: <a href="../modules/Services.html">Services</a>
-        
-    
 
-    
 </div>
-
 
 
 <div class="box intro">
@@ -399,507 +200,296 @@ the ability to eagerly fetch the related objects.</p>
 
 </div>
 
-
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_CustomObjectService" class="method item">
+<div id="method_CustomObjectService" class="method item">
     <h3 class="name"><code>CustomObjectService</code></h3>
 
-    
         <span class="paren">()</span>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l25"><code>include\service\entities\custom_object_service.js:25</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
         
     </div>
 
-    
 
-    
 
-    
+
 </div>
-
     </div>
-
 
 <div id="classdocs" class="tabview">
     <ul class="api-class-tabs">
         <li class="api-class-tab index"><a href="#index">Index</a></li>
 
-        
             <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
             <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
-        
-        
-        
     </ul>
 
     <div>
         <div id="index" class="api-class-tabpanel index">
             <h2 class="off-left">Item Index</h2>
 
-            
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                        
                             <li class="index-item method">
                                 <a href="#method_applyOrder">applyOrder</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_countByType">countByType</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_createErrorStr">createErrorStr</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_deleteById">deleteById</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_deleteForType">deleteForType</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_deleteTypeById">deleteTypeById</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_err">err</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_fetchChildren">fetchChildren</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_findByType">findByType</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_findByTypeWithOrdering">findByTypeWithOrdering</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_findTypes">findTypes</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_formatRawForType">formatRawForType</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_formatRawSortOrdering">formatRawSortOrdering</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_getCustTypeSimpleName">getCustTypeSimpleName</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_getReferenceTypes">getReferenceTypes</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_getStaticReferenceTypes">getStaticReferenceTypes</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_isCustomObjectType">isCustomObjectType</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_isReferenceFieldType">isReferenceFieldType</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadBy">loadBy</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadById">loadById</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadByName">loadByName</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadSortOrdering">loadSortOrdering</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadTypeBy">loadTypeBy</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadTypeById">loadTypeById</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_loadTypeByName">loadTypeByName</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_save">save</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_saveSortOrdering">saveSortOrdering</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_saveType">saveType</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_setFieldTypesUsed">setFieldTypesUsed</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_validate">validate</a>
 
-                                
-                                
                             </li>
-                        
+                            <li class="index-item method">
+                                <a href="#method_validateCustObjFields">validateCustObjFields</a>
+
+                            </li>
                             <li class="index-item method">
                                 <a href="#method_validateFieldDescriptor">validateFieldDescriptor</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_validateSortOrdering">validateSortOrdering</a>
 
-                                
-                                
                             </li>
-                        
                             <li class="index-item method">
                                 <a href="#method_validateType">validateType</a>
 
-                                
-                                
                             </li>
-                        
                     </ul>
                 </div>
-            
 
-            
                 <div class="index-section properties">
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                        
                             <li class="index-item property private">
                                 <a href="#property_AVAILABLE_FIELD_TYPES">AVAILABLE_FIELD_TYPES</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property private">
                                 <a href="#property_AVAILABLE_REFERENCE_TYPES">AVAILABLE_REFERENCE_TYPES</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property private">
                                 <a href="#property_CHILD_OBJECTS_TYPE">CHILD_OBJECTS_TYPE</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property">
                                 <a href="#property_CUST_OBJ_COLL">CUST_OBJ_COLL</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property">
                                 <a href="#property_CUST_OBJ_SORT_COLL">CUST_OBJ_SORT_COLL</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property">
                                 <a href="#property_CUST_OBJ_TYPE_COLL">CUST_OBJ_TYPE_COLL</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property private">
                                 <a href="#property_CUST_OBJ_TYPE_PREFIX">CUST_OBJ_TYPE_PREFIX</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property private">
                                 <a href="#property_NAME_FIELD">NAME_FIELD</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                             <li class="index-item property private">
                                 <a href="#property_PEER_OBJECT_TYPE">PEER_OBJECT_TYPE</a>
 
-                                
                                     <span class="flag static">static</span>
-                                
-                                
                             </li>
-                        
                     </ul>
                 </div>
-            
 
-            
 
-            
         </div>
 
-        
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-                
-                    <div id="method_applyOrder" class="method item">
+<div id="method_applyOrder" class="method item">
     <h3 class="name"><code>applyOrder</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObjects</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>sortOrder</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">Array</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1188"><code>include\service\entities\custom_object_service.js:1188</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -907,131 +497,80 @@ the ability to eagerly fetch the related objects.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjects</code>
                         <span class="type">Array</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The array of custom objects to be sorted</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">sortOrder</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The object describing the ordering of the objects</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Array</span>:
-                    
                     <p>A refernce to the sorted array of custom objects.  The
 reference is the same as provided to the function.</p>
 
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_countByType" class="method item">
+<div id="method_countByType" class="method item">
     <h3 class="name"><code>countByType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>type</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[where]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l507"><code>include\service\entities\custom_object_service.js:507</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l505"><code>include\service\entities\custom_object_service.js:505</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1039,52 +578,37 @@ reference is the same as provided to the function.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">type</code>
                         <span class="type">Object | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object type object or ID string</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[where]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The criteria for which objects to count</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is an
@@ -1093,81 +617,46 @@ specified critieria.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_createErrorStr" class="method item">
+<div id="method_createErrorStr" class="method item">
     <h3 class="name"><code>createErrorStr</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>errors</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>msg</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">String</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1247"><code>include\service\entities\custom_object_service.js:1247</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1175,19 +664,14 @@ specified critieria.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">errors</code>
                         <span class="type">Array</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>An array of objects where each object has a &quot;msg&quot; and
@@ -1195,98 +679,61 @@ a &quot;field&quot; property</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">msg</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">String</span>:
-                    
                     <p>HTML formatted string representing the errors</p>
 
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_deleteById" class="method item">
+<div id="method_deleteById" class="method item">
     <h3 class="name"><code>deleteById</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
-                        <code>UNKNOWN</code>
-                    
+                        <code>id</code>
                 </li>
-            
+                <li class="arg">
+                        <code>cb</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l933"><code>include\service\entities\custom_object_service.js:933</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l932"><code>include\service\entities\custom_object_service.js:932</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1294,93 +741,68 @@ a &quot;field&quot; property</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
-                        <code class="param-name">UNKNOWN</code>
+                        <code class="param-name">id</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_deleteForType" class="method item">
+<div id="method_deleteForType" class="method item">
     <h3 class="name"><code>deleteForType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options={}]</code>
-                    
                 </li>
-            
+                <li class="arg">
+                        <code>cb</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l977"><code>include\service\entities\custom_object_service.js:977</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1388,117 +810,81 @@ a &quot;field&quot; property</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">String | Object</span>
-                    
 
-                    
 
                     <div class="param-description">
-                        <p>A string ID of the custom object type or 
+                        <p>A string ID of the custom object type or
 the custom object type itself.</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options={}]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_deleteTypeById" class="method item">
+<div id="method_deleteTypeById" class="method item">
     <h3 class="name"><code>deleteTypeById</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>id</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options={}]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l943"><code>include\service\entities\custom_object_service.js:943</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1506,130 +892,80 @@ the custom object type itself.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">id</code>
                         <span class="type">String | ObjectID</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options={}]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_err" class="method item">
+<div id="method_err" class="method item">
     <h3 class="name"><code>err</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>field</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>err</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">Object</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1232"><code>include\service\entities\custom_object_service.js:1232</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1637,136 +973,82 @@ the custom object type itself.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">field</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The field in the object that contains the error</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">err</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A string description of the error</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Object</span>:
-                    
                     <p>An object that describes the validation error</p>
 
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_fetchChildren" class="method item">
+<div id="method_fetchChildren" class="method item">
     <h3 class="name"><code>fetchChildren</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObj</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>options</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l245"><code>include\service\entities\custom_object_service.js:245</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1774,49 +1056,35 @@ the custom object type itself.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObj</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object to inspect</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">options</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The options specified for the retrieval</p>
 
                     </div>
 
-                    
                         <ul class="params-list">
-                            
                             <li class="param">
-                                
                                     <code class="param-name">fetch_depth</code>
                                     <span class="type">Integer</span>
-                                
 
                                 <div class="param-description">
                                     <p>The number of levels of peer and child
@@ -1824,20 +1092,13 @@ objects to retrieve</p>
 
                                 </div>
 
-                                
                             </li>
-                            
                         </ul>
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object type for the specified
@@ -1845,16 +1106,11 @@ custom object.  This can also be the ID string value.</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback function that takes two parameters. The
@@ -1862,81 +1118,45 @@ first is an Error, if occurred. The second is the specified custom object.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_findByType" class="method item">
+<div id="method_findByType" class="method item">
     <h3 class="name"><code>findByType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>type</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l429"><code>include\service\entities\custom_object_service.js:429</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -1944,19 +1164,14 @@ first is an Error, if occurred. The second is the specified custom object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">type</code>
                         <span class="type">Object | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object type object or the ID of the
@@ -1964,33 +1179,23 @@ object as a string</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>See DAO.q()</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two arguments. The first is an
@@ -1999,81 +1204,45 @@ specified criteria.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_findByTypeWithOrdering" class="method item">
+<div id="method_findByTypeWithOrdering" class="method item">
     <h3 class="name"><code>findByTypeWithOrdering</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>The</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options={}]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l195"><code>include\service\entities\custom_object_service.js:195</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2081,19 +1250,14 @@ specified criteria.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">The</code>
                         <span class="type">Object | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>custom object type descriptor object or the ID
@@ -2101,17 +1265,12 @@ string of the type descriptor.</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options={}]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The filters and other flags.  The options object
@@ -2119,15 +1278,11 @@ supports the same fields as the DAO.query function.</p>
 
                     </div>
 
-                    
                         <ul class="params-list">
-                            
                             <li class="param">
-                                
                                     <code class="param-name optional">[fetch_depth=0]</code>
                                     <span class="type">Integer</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
-                                
 
                                 <div class="param-description">
                                     <p>The depth indicates how many levels
@@ -2136,20 +1291,13 @@ references will be left as ID strings.</p>
 
                                 </div>
 
-                                
                             </li>
-                            
                         </ul>
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is any
@@ -2158,69 +1306,39 @@ assigned for the custom object or by name if no ordering exists.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_findTypes" class="method item">
+<div id="method_findTypes" class="method item">
     <h3 class="name"><code>findTypes</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l476"><code>include\service\entities\custom_object_service.js:476</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2228,19 +1346,14 @@ assigned for the custom object or by name if no ordering exists.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is an
@@ -2248,77 +1361,43 @@ error, if occurred.  The second is an array of custom object type objects.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_formatRawForType" class="method item">
+<div id="method_formatRawForType" class="method item">
     <h3 class="name"><code>formatRawForType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>post</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1051"><code>include\service\entities\custom_object_service.js:1051</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2326,35 +1405,25 @@ error, if occurred.  The second is an array of custom object type objects.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">post</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The raw post object</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object type describes the data in the
@@ -2362,81 +1431,46 @@ post obj.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_formatRawSortOrdering" class="method item">
+<div id="method_formatRawSortOrdering" class="method item">
     <h3 class="name"><code>formatRawSortOrdering</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>post</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>sortOrder</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">Object</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1124"><code>include\service\entities\custom_object_service.js:1124</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2444,124 +1478,77 @@ post obj.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">post</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">sortOrder</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
-                        <p>the existing sort order object that the post data 
+                        <p>the existing sort order object that the post data
 will be merged with</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Object</span>:
-                    
                     <p>The formatted sort ordering object</p>
 
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_getCustTypeSimpleName" class="method item">
+<div id="method_getCustTypeSimpleName" class="method item">
     <h3 class="name"><code>getCustTypeSimpleName</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>name</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">String</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1036"><code>include\service\entities\custom_object_service.js:1036</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2570,99 +1557,59 @@ prefixed to indicate that it is custom</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">name</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">String</span>:
-                    
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_getReferenceTypes" class="method item">
+<div id="method_getReferenceTypes" class="method item">
     <h3 class="name"><code>getReferenceTypes</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l849"><code>include\service\entities\custom_object_service.js:849</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l848"><code>include\service\entities\custom_object_service.js:848</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2671,19 +1618,14 @@ referenced as a child or peer object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters: The first, an
@@ -2692,65 +1634,37 @@ types that can be referenced as a peer or child object.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_getStaticReferenceTypes" class="method item">
+<div id="method_getStaticReferenceTypes" class="method item">
     <h3 class="name"><code>getStaticReferenceTypes</code></h3>
 
-    
         <span class="paren">()</span>
-    
 
-    
         <span class="returns-inline">
             <span class="type">Array</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1004"><code>include\service\entities\custom_object_service.js:1004</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2758,82 +1672,47 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Array</span>:
-                    
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_isCustomObjectType" class="method item">
+<div id="method_isCustomObjectType" class="method item">
     <h3 class="name"><code>isCustomObjectType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>objType</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">Boolean</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1025"><code>include\service\entities\custom_object_service.js:1025</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2841,105 +1720,63 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">objType</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Boolean</span>:
-                    
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_isReferenceFieldType" class="method item">
+<div id="method_isReferenceFieldType" class="method item">
     <h3 class="name"><code>isReferenceFieldType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>fieldType</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
         <span class="returns-inline">
             <span class="type">Boolean</span>
         </span>
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1014"><code>include\service\entities\custom_object_service.js:1014</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -2947,117 +1784,68 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">fieldType</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Boolean</span>:
-                    
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadBy" class="method item">
+<div id="method_loadBy" class="method item">
     <h3 class="name"><code>loadBy</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>type</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>where</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l560"><code>include\service\entities\custom_object_service.js:560</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l558"><code>include\service\entities\custom_object_service.js:558</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3065,145 +1853,89 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">type</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">where</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadById" class="method item">
+<div id="method_loadById" class="method item">
     <h3 class="name"><code>loadById</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>id</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l535"><code>include\service\entities\custom_object_service.js:535</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l533"><code>include\service\entities\custom_object_service.js:533</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3211,136 +1943,82 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">id</code>
                         <span class="type">ObjectID | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadByName" class="method item">
+<div id="method_loadByName" class="method item">
     <h3 class="name"><code>loadByName</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>type</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>name</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code class="optional">[options]</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l546"><code>include\service\entities\custom_object_service.js:546</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l544"><code>include\service\entities\custom_object_service.js:544</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3348,141 +2026,88 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">type</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The ID string of the custom object type</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">name</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The unique name of the custom object</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadSortOrdering" class="method item">
+<div id="method_loadSortOrdering" class="method item">
     <h3 class="name"><code>loadSortOrdering</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l410"><code>include\service\entities\custom_object_service.js:410</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3490,34 +2115,24 @@ types that can be referenced as a peer or child object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters.  The first is an
@@ -3525,75 +2140,42 @@ error, if occurred.  The second is the sort ordering object if found.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadTypeBy" class="method item">
+<div id="method_loadTypeBy" class="method item">
     <h3 class="name"><code>loadTypeBy</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>where</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l617"><code>include\service\entities\custom_object_service.js:617</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l615"><code>include\service\entities\custom_object_service.js:615</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3601,108 +2183,65 @@ error, if occurred.  The second is the sort ordering object if found.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">where</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadTypeById" class="method item">
+<div id="method_loadTypeById" class="method item">
     <h3 class="name"><code>loadTypeById</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>id</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l594"><code>include\service\entities\custom_object_service.js:594</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l592"><code>include\service\entities\custom_object_service.js:592</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3710,108 +2249,65 @@ error, if occurred.  The second is the sort ordering object if found.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">id</code>
                         <span class="type">ObjectID | String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_loadTypeByName" class="method item">
+<div id="method_loadTypeByName" class="method item">
     <h3 class="name"><code>loadTypeByName</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>name</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l604"><code>include\service\entities\custom_object_service.js:604</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l602"><code>include\service\entities\custom_object_service.js:602</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3819,114 +2315,68 @@ error, if occurred.  The second is the sort ordering object if found.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">name</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_save" class="method item">
+<div id="method_save" class="method item">
     <h3 class="name"><code>save</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObj</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l881"><code>include\service\entities\custom_object_service.js:881</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l880"><code>include\service\entities\custom_object_service.js:880</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -3934,51 +2384,36 @@ error, if occurred.  The second is the sort ordering object if found.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObj</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The object to validate</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object type to validate against</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is an
@@ -3987,75 +2422,42 @@ result of the persistence operation.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_saveSortOrdering" class="method item">
+<div id="method_saveSortOrdering" class="method item">
     <h3 class="name"><code>saveSortOrdering</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>sortOrder</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l128"><code>include\service\entities\custom_object_service.js:128</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -4063,108 +2465,65 @@ result of the persistence operation.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">sortOrder</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_saveType" class="method item">
+<div id="method_saveType" class="method item">
     <h3 class="name"><code>saveType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l908"><code>include\service\entities\custom_object_service.js:908</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l907"><code>include\service\entities\custom_object_service.js:907</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -4172,35 +2531,25 @@ result of the persistence operation.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The object to persist</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is an
@@ -4209,77 +2558,43 @@ result of the persistence operation.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_setFieldTypesUsed" class="method item">
+<div id="method_setFieldTypesUsed" class="method item">
     <h3 class="name"><code>setFieldTypesUsed</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObjTypes</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>ls</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
         <span class="flag static">static</span>
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l1151"><code>include\service\entities\custom_object_service.js:1151</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -4288,115 +2603,69 @@ the &quot;fieldTypesUsed&quot; property for the object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjTypes</code>
                         <span class="type">Array</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The array of custom object type objects to inspect</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">ls</code>
                         <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_validate" class="method item">
+<div id="method_validate" class="method item">
     <h3 class="name"><code>validate</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObj</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l632"><code>include\service\entities\custom_object_service.js:632</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l630"><code>include\service\entities\custom_object_service.js:630</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -4404,51 +2673,36 @@ the &quot;fieldTypesUsed&quot; property for the object.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObj</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The object to validate</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The custom object type to validate against</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is an
@@ -4457,79 +2711,129 @@ the array is empty it is safe to assume that the object is valid.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
+<div id="method_validateCustObjFields" class="method item">
+    <h3 class="name"><code>validateCustObjFields</code></h3>
 
-                
-                    <div id="method_validateFieldDescriptor" class="method item">
-    <h3 class="name"><code>validateFieldDescriptor</code></h3>
-
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
-                        <code>field</code>
-                    
+                        <code>custObj</code>
                 </li>
-            
                 <li class="arg">
-                    
-                        <code>customTypes</code>
-                    
+                        <code>custObjType</code>
                 </li>
-            
+                <li class="arg">
+                        <code>cb</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
-        <span class="returns-inline">
-            <span class="type">Array</span>
-        </span>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l822"><code>include\service\entities\custom_object_service.js:822</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l704"><code>include\service\entities\custom_object_service.js:704</code></a>
         </p>
 
 
-        
 
-        
+    </div>
+
+    <div class="description">
+        <p>Validates the fields of a custom object</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">custObj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The object to validate</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">custObjType</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The custom object type to validate against</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters. The first is an
+error if occurred. The second is an array of validation error objects.  If
+the array is empty it is safe to assume that the object is valid.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_validateFieldDescriptor" class="method item">
+    <h3 class="name"><code>validateFieldDescriptor</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>field</code>
+                </li>
+                <li class="arg">
+                        <code>customTypes</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_custom_object_service.js.html#l821"><code>include\service\entities\custom_object_service.js:821</code></a>
+        </p>
+
+
+
     </div>
 
     <div class="description">
@@ -4537,123 +2841,75 @@ the array is empty it is safe to assume that the object is valid.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">field</code>
                         <span class="type">String</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">customTypes</code>
                         <span class="type">Array</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
         <div class="returns">
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                
-                    
                         <span class="type">Array</span>:
-                    
                     <p>An array of objects that contain two properties: field and
 error</p>
 
-                
             </div>
         </div>
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_validateSortOrdering" class="method item">
+<div id="method_validateSortOrdering" class="method item">
     <h3 class="name"><code>validateSortOrdering</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>sortOrdering</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
         <a href="../files/include_service_entities_custom_object_service.js.html#l151"><code>include\service\entities\custom_object_service.js:151</code></a>
-        
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -4661,34 +2917,24 @@ error</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">sortOrdering</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                          
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback that takes two parameters. The first is an
@@ -4697,75 +2943,42 @@ If the array is empty them it is safe to assume that the object is valid.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
-                    <div id="method_validateType" class="method item">
+<div id="method_validateType" class="method item">
     <h3 class="name"><code>validateType</code></h3>
 
-    
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
-            
                 <li class="arg">
-                    
                         <code>custObjType</code>
-                    
                 </li>
-            
                 <li class="arg">
-                    
                         <code>cb</code>
-                    
                 </li>
-            
             </ul><span class="paren">)</span>
         </div>
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
     <div class="meta">
-        
-            
-                
                 <p>
-                
                 Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l745"><code>include\service\entities\custom_object_service.js:745</code></a>
-        
+        <a href="../files/include_service_entities_custom_object_service.js.html#l744"><code>include\service\entities\custom_object_service.js:744</code></a>
         </p>
 
 
-        
 
-        
     </div>
 
     <div class="description">
@@ -4773,35 +2986,25 @@ If the array is empty them it is safe to assume that the object is valid.</p>
 
     </div>
 
-    
         <div class="params">
             <h4>Parameters:</h4>
 
             <ul class="params-list">
-            
                 <li class="param">
-                    
                         <code class="param-name">custObjType</code>
                         <span class="type">Object</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>The object to validate</p>
 
                     </div>
 
-                    
                 </li>
-            
                 <li class="param">
-                    
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                    
 
-                    
 
                     <div class="param-description">
                         <p>A callback function that provides two parameters: The
@@ -4811,462 +3014,254 @@ assume that validation passed.</p>
 
                     </div>
 
-                    
                 </li>
-            
             </ul>
         </div>
-    
 
-    
 
-    
+
 </div>
-
-                
             </div>
-        
 
-        
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                
                     <div id="property_AVAILABLE_FIELD_TYPES" class="property item private">
-    <h3 class="name"><code>AVAILABLE_FIELD_TYPES</code></h3>
-    <span class="type">Object</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l95"><code>include\service\entities\custom_object_service.js:95</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>AVAILABLE_FIELD_TYPES</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l95"><code>include\service\entities\custom_object_service.js:95</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_AVAILABLE_REFERENCE_TYPES" class="property item private">
-    <h3 class="name"><code>AVAILABLE_REFERENCE_TYPES</code></h3>
-    <span class="type">Object</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l112"><code>include\service\entities\custom_object_service.js:112</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>AVAILABLE_REFERENCE_TYPES</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l112"><code>include\service\entities\custom_object_service.js:112</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_CHILD_OBJECTS_TYPE" class="property item private">
-    <h3 class="name"><code>CHILD_OBJECTS_TYPE</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l77"><code>include\service\entities\custom_object_service.js:77</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>CHILD_OBJECTS_TYPE</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l77"><code>include\service\entities\custom_object_service.js:77</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_CUST_OBJ_COLL" class="property item">
-    <h3 class="name"><code>CUST_OBJ_COLL</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l37"><code>include\service\entities\custom_object_service.js:37</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>CUST_OBJ_COLL</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l37"><code>include\service\entities\custom_object_service.js:37</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_CUST_OBJ_SORT_COLL" class="property item">
-    <h3 class="name"><code>CUST_OBJ_SORT_COLL</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l51"><code>include\service\entities\custom_object_service.js:51</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>CUST_OBJ_SORT_COLL</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l51"><code>include\service\entities\custom_object_service.js:51</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_CUST_OBJ_TYPE_COLL" class="property item">
-    <h3 class="name"><code>CUST_OBJ_TYPE_COLL</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l44"><code>include\service\entities\custom_object_service.js:44</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>CUST_OBJ_TYPE_COLL</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l44"><code>include\service\entities\custom_object_service.js:44</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_CUST_OBJ_TYPE_PREFIX" class="property item private">
-    <h3 class="name"><code>CUST_OBJ_TYPE_PREFIX</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l86"><code>include\service\entities\custom_object_service.js:86</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>CUST_OBJ_TYPE_PREFIX</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l86"><code>include\service\entities\custom_object_service.js:86</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_NAME_FIELD" class="property item private">
-    <h3 class="name"><code>NAME_FIELD</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l59"><code>include\service\entities\custom_object_service.js:59</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>NAME_FIELD</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l59"><code>include\service\entities\custom_object_service.js:59</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_PEER_OBJECT_TYPE" class="property item private">
-    <h3 class="name"><code>PEER_OBJECT_TYPE</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-        <span class="flag static">static</span>
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/include_service_entities_custom_object_service.js.html#l68"><code>include\service\entities\custom_object_service.js:68</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
+                        <h3 class="name"><code>PEER_OBJECT_TYPE</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l68"><code>include\service\entities\custom_object_service.js:68</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
             </div>
-        
 
-        
 
-        
     </div>
 </div>
-
                     </div>
                 </div>
             </div>
