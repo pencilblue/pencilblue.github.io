@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -215,9 +233,12 @@ module.exports = function CustomObjectServiceModule(pb) {
      * @class CustomObjectService
      * @constructor
      */
-    function CustomObjectService() {
+    function CustomObjectService(siteUid, onlyThisSite) {
         this.typesCache = {};
         this.typesNametoId = {};
+
+        this.site = pb.SiteService.getCurrentSite(siteUid);
+        this.siteQueryService = new pb.SiteQueryService({site: this.site, onlyThisSite: onlyThisSite});
     }
 
     //statics
@@ -548,6 +569,10 @@ module.exports = function CustomObjectServiceModule(pb) {
             if (util.isError(err)) {
                return cb(err);
             }
+            else if (util.isNullOrUndefined(custObjType)) {
+                return cb(new Error(&#x27;An invalid custom object type: &#x27; + custObjType + &#x27; was found.&#x27;));
+            }
+
             var tasks = util.getTasks(Object.keys(custObjType.fields), function(fieldNames, i) {
                 return function(callback) {
 
@@ -644,8 +669,7 @@ module.exports = function CustomObjectServiceModule(pb) {
         options.where.type = typeStr;
 
         var self = this;
-        var dao  = new pb.DAO();
-        dao.q(CustomObjectService.CUST_OBJ_COLL, options, function(err, custObjs) {
+        self.siteQueryService.q(CustomObjectService.CUST_OBJ_COLL, options, function(err, custObjs) {
             if (util.isArray(custObjs)) {
 
                 var tasks = util.getTasks(custObjs, function(custObjs, i) {
@@ -673,8 +697,8 @@ module.exports = function CustomObjectServiceModule(pb) {
             select: pb.DAO.PROJECT_ALL,
             order: {NAME_FIELD: pb.DAO.ASC}
         };
-        var dao  = new pb.DAO();
-        dao.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, custObjTypes) {
+
+        this.siteQueryService.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, custObjTypes) {
             if (util.isArray(custObjTypes)) {
                 //currently, mongo cannot do case-insensitive sorts.  We do it manually
                 //until a solution for https://jira.mongodb.org/browse/SERVER-90 is merged.
@@ -763,12 +787,16 @@ module.exports = function CustomObjectServiceModule(pb) {
         }
 
         if (type) {
-            where.type = type;
+            var typeStr = type;
+            if (util.isObject(type)) {
+                typeStr = type[pb.DAO.getIdField()] + &#x27;&#x27;;
+            }
+
+            where.type = typeStr;
         }
 
         var self = this;
-        var dao  = new pb.DAO();
-        dao.loadByValues(where, CustomObjectService.CUST_OBJ_COLL, function(err, custObj) {
+        self.siteQueryService.loadByValues(where, CustomObjectService.CUST_OBJ_COLL, function(err, custObj) {
             if (util.isObject(custObj)) {
                 return self.fetchChildren(custObj, options, type, cb);
             }
@@ -810,8 +838,7 @@ module.exports = function CustomObjectServiceModule(pb) {
             return cb(Error(&quot;The where parameter must be provided in order to load a custom object type&quot;));
         }
 
-        var dao = new pb.DAO();
-        dao.loadByValues(where, CustomObjectService.CUST_OBJ_TYPE_COLL, cb);
+        this.siteQueryService.loadByValues(where, CustomObjectService.CUST_OBJ_TYPE_COLL, cb);
     };
 
     /**
@@ -852,7 +879,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                     errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name cannot be empty&#x27;));
                     return callback(null);
                 }
-                
+
                 //test for HTML
                 var sanitized = pb.BaseController.sanitize(custObj.name);
                 if (sanitized !== custObj.name) {
@@ -944,7 +971,6 @@ module.exports = function CustomObjectServiceModule(pb) {
 
         var self   = this;
         var errors = [];
-        var dao    = new pb.DAO();
         var tasks  = [
 
             //validate the name
@@ -964,7 +990,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                 //test uniqueness of name
                 var where = {};
                 where[NAME_FIELD] = new RegExp(&#x27;^&#x27;+util.escapeRegExp(custObjType.name)+&#x27;$&#x27;, &#x27;i&#x27;);
-                dao.unique(CustomObjectService.CUST_OBJ_TYPE_COLL, where, custObjType[pb.DAO.getIdField()], function(err, isUnique){
+                self.siteQueryService.unique(CustomObjectService.CUST_OBJ_TYPE_COLL, where, custObjType[pb.DAO.getIdField()], function(err, isUnique){
                     if(!isUnique) {
                         errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name &#x27;+custObjType.name+&#x27; is not unique&#x27;));
                     }
@@ -1050,8 +1076,8 @@ module.exports = function CustomObjectServiceModule(pb) {
             where: pb.DAO.ANYWHERE,
             select: select
         };
-        var dao  = new pb.DAO();
-        dao.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, types) {
+
+        this.siteQueryService.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, types) {
             if (util.isError(err)) {
                 return cb(err);
             }
@@ -1087,7 +1113,7 @@ module.exports = function CustomObjectServiceModule(pb) {
             }
 
             var dao = new pb.DAO();
-            dao.save(custObj, cb);
+            self.siteQueryService.save(custObj, cb);
         });
     };
 
@@ -1111,8 +1137,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                 return cb(err, errors);
             }
 
-            var dao = new pb.DAO();
-            dao.save(custObjType, cb);
+            self.siteQueryService.save(custObjType, cb);
         });
     };
 
@@ -1140,7 +1165,7 @@ module.exports = function CustomObjectServiceModule(pb) {
             options = {};
         }
 
-        if (!pb.validation.isIdStr(id, true)) {
+        if (!pb.validation.isId(id, true)) {
             return cb(new Error(&#x27;INVALID_UID&#x27;));
         }
 
@@ -1164,7 +1189,7 @@ module.exports = function CustomObjectServiceModule(pb) {
     /**
      * Deletes all custom objects of a specified type
      * @method deleteForType
-     * @param {String|Object} custObjType A string ID of the custom object type or 
+     * @param {String|Object} custObjType A string ID of the custom object type or
      * the custom object type itself.
      * @param {Object} [options={}]
      * @param {Function} cb
@@ -1176,7 +1201,7 @@ module.exports = function CustomObjectServiceModule(pb) {
             typeId = custObjType.toString();
         }
         var dao = new pb.DAO();
-        dao.delete({type: custObjType}, CustomObjectService.CUST_OBJ_COLL, cb);
+        dao.delete({type: typeId}, CustomObjectService.CUST_OBJ_COLL, cb);
     };
 
     CustomObjectService.prototype.typeExists = function(typeName, cb) {
@@ -1184,8 +1209,8 @@ module.exports = function CustomObjectServiceModule(pb) {
         var where = {
             name: new RegExp(&#x27;^&#x27;+util.escapeRegExp(typeName)+&#x27;$&#x27;, &#x27;ig&#x27;)
         };
-        var dao = new pb.DAO();
-        dao.exists(CustomObjectService.CUST_OBJ_TYPE_COLL, where, cb);
+
+        this.siteQueryService.exists(CustomObjectService.CUST_OBJ_TYPE_COLL, where, cb);
     };
 
     /**
@@ -1270,7 +1295,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                 if (!util.isBoolean(post[key])) {
 
                     if (util.isString(post[key])) {
-                        post[key] = &quot;true&quot; === post[key].toLowerCase();   
+                        post[key] = &quot;true&quot; === post[key].toLowerCase();
                     }
                     else if (!isNaN(post[key])) {
                         post[key] = post[key] ? true : false;
@@ -1285,7 +1310,7 @@ module.exports = function CustomObjectServiceModule(pb) {
             else if(custObjType.fields[key].field_type == CHILD_OBJECTS_TYPE) {
                 if(util.isString(post[key])) {
 
-                    //strips out any non ID strings.  
+                    //strips out any non ID strings.
                     //TODO This should really move to validation.
                     post[key] = post[key].split(&#x27;,&#x27;);
                     for (var i = post[key].length - 1; i &gt;= 0; i--) {
@@ -1296,8 +1321,8 @@ module.exports = function CustomObjectServiceModule(pb) {
                 }
             }
             else if (custObjType.fields[key].field_type == PEER_OBJECT_TYPE) {
-                //do nothing because it can only been a string ID.  Validation 
-                //should verify this before persistence. 
+                //do nothing because it can only been a string ID.  Validation
+                //should verify this before persistence.
             }
             else if (util.isString(post[key])){
 
@@ -1310,10 +1335,10 @@ module.exports = function CustomObjectServiceModule(pb) {
 
     /**
      * Formats the raw post data for a sort ordering
-     * @static 
+     * @static
      * @method formatRawSortOrdering
      * @param {Object} post
-     * @param {Object} sortOrder the existing sort order object that the post data 
+     * @param {Object} sortOrder the existing sort order object that the post data
      * will be merged with
      * @return {Object} The formatted sort ordering object
      */
@@ -1349,13 +1374,13 @@ module.exports = function CustomObjectServiceModule(pb) {
         }
 
         var map                 = {};
-        map.text                = ls.get(&#x27;TEXT&#x27;);
-        map.number              = ls.get(&#x27;NUMBER&#x27;);
-        map.wysiwyg             = ls.get(&#x27;WYSIWYG&#x27;);
-        map.boolean             = ls.get(&#x27;BOOLEAN&#x27;).toLowerCase();
-        map.date                = ls.get(&#x27;DATE&#x27;);
-        map[PEER_OBJECT_TYPE]   = ls.get(&#x27;PEER_OBJECT&#x27;);
-        map[CHILD_OBJECTS_TYPE] = ls.get(&#x27;CHILD_OBJECTS&#x27;);
+        map.text                = ls.g(&#x27;custom_objects.TEXT&#x27;);
+        map.number              = ls.g(&#x27;custom_objects.NUMBER&#x27;);
+        map.wysiwyg             = ls.g(&#x27;generic.WYSIWYG&#x27;);
+        map.boolean             = ls.g(&#x27;custom_objects.BOOLEAN&#x27;).toLowerCase();
+        map.date                = ls.g(&#x27;generic.DATE&#x27;);
+        map[PEER_OBJECT_TYPE]   = ls.g(&#x27;custom_objects.PEER_OBJECT&#x27;);
+        map[CHILD_OBJECTS_TYPE] = ls.g(&#x27;custom_objects.CHILD_OBJECTS&#x27;);
 
         // Make the list of field types used in each custom object type, for display
         for(var i = 0; i &lt; custObjTypes.length; i++) {

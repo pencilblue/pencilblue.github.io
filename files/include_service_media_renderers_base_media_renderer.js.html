@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -206,7 +224,7 @@
 var HtmlEncoder = require(&#x27;htmlencode&#x27;);
 
 module.exports = function BaseMediaRenderer(pb) {
-    
+
     //pb dependencies
     var util = pb.util;
 
@@ -241,10 +259,26 @@ module.exports = function BaseMediaRenderer(pb) {
             style = {};
         }
 
-        return &#x27;&lt;&#x27;+elementName+&#x27; src=&quot;&#x27; + HtmlEncoder.htmlEncode(srcUrl) + &#x27;&quot; &#x27; + 
-            BaseMediaRenderer.getAttributeStr(attrs) + 
-            BaseMediaRenderer.getStyleAttrStr(style) + 
+        return &#x27;&lt;&#x27;+elementName+&#x27; src=&quot;&#x27; + HtmlEncoder.htmlEncode(srcUrl) + &#x27;&quot; &#x27; +
+            BaseMediaRenderer.getAttributeStr(attrs) +
+            BaseMediaRenderer.getStyleAttrStr(style) +
             &#x27;&gt;&lt;/&#x27; + elementName + &#x27;&gt;&#x27;;
+    };
+
+    /**
+     * Retrieves the source URI that will be used when generating the rendering.
+     * This base implementation prepends the configured media urlRoot value to the media URI.
+     * @static
+     * @method getEmbedUrl
+     * @param {String} mediaId The unique (only to the type) media identifier
+     * @return {String} A properly formatted URI string that points to the resource
+     * represented by the media Id
+     */
+    BaseMediaRenderer.getEmbedUrl = function(mediaId) {
+        if(mediaId.indexOf(&#x27;http://&#x27;) === 0 || mediaId.indexOf(&#x27;https://&#x27;) === 0 || mediaId.indexOf(&#x27;//&#x27;) === 0) {
+          return mediaId;
+        }
+        return pb.UrlService.urlJoin(pb.config.media.urlRoot, mediaId);
     };
 
     /**
@@ -266,7 +300,7 @@ module.exports = function BaseMediaRenderer(pb) {
     };
 
     /**
-     * Generates a style string from a hash of key/value pairs.  The string 
+     * Generates a style string from a hash of key/value pairs.  The string
      * includes the &#x27;sytle=&quot;[STUFF HERE]&quot;&#x27; wrapper
      * @static
      * @method getStyleAttrStr

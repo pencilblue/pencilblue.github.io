@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -186,7 +204,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_dao_db_manager.js.html#l27"><code>include\dao\db_manager.js:27</code></a>
+            Defined in: <a href="../files/include_dao_db_manager.js.html#l54"><code>include\dao\db_manager.js:54</code></a>
         </div>
 
             Module: <a href="../modules/Database.html">Database</a>
@@ -227,12 +245,33 @@ and DB references.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_compareIndices">compareIndices</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_dropUnconfiguredIndices">dropUnconfiguredIndices</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_ensureIndices">ensureIndices</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_getDb">getDb</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getStoredInidices">getStoredInidices</a>
 
                             </li>
                             <li class="index-item method">
                                 <a href="#method_hasConnected">hasConnected</a>
 
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isProtectedIndex">isProtectedIndex</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_processIndices">processIndices</a>
@@ -250,8 +289,18 @@ and DB references.</p>
 
                     <ul class="index-list properties">
                             <li class="index-item property private">
+                                <a href="#property_CHUNKS_NAMESPACE">CHUNKS_NAMESPACE</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property private">
                                 <a href="#property_dbs">dbs</a>
 
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_FILES_NAMESPACE">FILES_NAMESPACE</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item property private">
                                 <a href="#property_PROTOCOL_PREFIX">PROTOCOL_PREFIX</a>
@@ -261,6 +310,11 @@ and DB references.</p>
                             <li class="index-item property private">
                                 <a href="#property_system">system</a>
 
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_SYSTEM_NAMESPACE_PREFIX">SYSTEM_NAMESPACE_PREFIX</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                     </ul>
                 </div>
@@ -298,7 +352,7 @@ and DB references.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_db_manager.js.html#l105"><code>include\dao\db_manager.js:105</code></a>
+        <a href="../files/include_dao_db_manager.js.html#l134"><code>include\dao\db_manager.js:134</code></a>
         </p>
 
 
@@ -374,7 +428,7 @@ and DB references.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_db_manager.js.html#l236"><code>include\dao\db_manager.js:236</code></a>
+        <a href="../files/include_dao_db_manager.js.html#l378"><code>include\dao\db_manager.js:378</code></a>
         </p>
 
 
@@ -432,6 +486,214 @@ and DB references.</p>
 
 
 </div>
+<div id="method_compareIndices" class="method item">
+    <h3 class="name"><code>compareIndices</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>stored</code>
+                </li>
+                <li class="arg">
+                        <code>defined</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_db_manager.js.html#l289"><code>include\dao\db_manager.js:289</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Compares an index stored in Mongo to an index declared in pb.config</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">stored</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">defined</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_dropUnconfiguredIndices" class="method item">
+    <h3 class="name"><code>dropUnconfiguredIndices</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>procedures</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_db_manager.js.html#l233"><code>include\dao\db_manager.js:233</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sorts through all created indices and drops any index not declared in pb.config</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">procedures</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_ensureIndices" class="method item">
+    <h3 class="name"><code>ensureIndices</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>procedures</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_db_manager.js.html#l197"><code>include\dao\db_manager.js:197</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Ensures all indices declared are defined on Mongo server</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">procedures</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_getDb" class="method item">
     <h3 class="name"><code>getDb</code></h3>
 
@@ -456,7 +718,7 @@ and DB references.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_db_manager.js.html#l53"><code>include\dao\db_manager.js:53</code></a>
+        <a href="../files/include_dao_db_manager.js.html#l80"><code>include\dao\db_manager.js:80</code></a>
         </p>
 
 
@@ -498,6 +760,59 @@ and DB references.</p>
 
 
 </div>
+<div id="method_getStoredInidices" class="method item">
+    <h3 class="name"><code>getStoredInidices</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_db_manager.js.html#l304"><code>include\dao\db_manager.js:304</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Yields all indices currently in the entire database</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_hasConnected" class="method item">
     <h3 class="name"><code>hasConnected</code></h3>
 
@@ -522,7 +837,7 @@ and DB references.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_db_manager.js.html#l121"><code>include\dao\db_manager.js:121</code></a>
+        <a href="../files/include_dao_db_manager.js.html#l150"><code>include\dao\db_manager.js:150</code></a>
         </p>
 
 
@@ -564,6 +879,69 @@ initialized</p>
 
 
 </div>
+<div id="method_isProtectedIndex" class="method item">
+    <h3 class="name"><code>isProtectedIndex</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>indexNamespace</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_db_manager.js.html#l413"><code>include\dao\db_manager.js:413</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">indexNamespace</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_processIndices" class="method item">
     <h3 class="name"><code>processIndices</code></h3>
 
@@ -588,7 +966,7 @@ initialized</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_db_manager.js.html#l133"><code>include\dao\db_manager.js:133</code></a>
+        <a href="../files/include_dao_db_manager.js.html#l162"><code>include\dao\db_manager.js:162</code></a>
         </p>
 
 
@@ -612,7 +990,7 @@ tasks.</p>
 
                     <div class="param-description">
                         <p>An array of objects that describe the index to
-place upon a collection.  The object contains three properties.<br>
+place upon a collection.  The object contains three properties.
 &quot;collection&quot; a string that represents the name of the collection to build an
 index for.  &quot;specs&quot; is an object that describes which fields to index.  The
 keys are the field names and the value is -1 for descending order and 1 for
@@ -671,7 +1049,7 @@ defer the reporting of an error until the end.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_db_manager.js.html#l190"><code>include\dao\db_manager.js:190</code></a>
+        <a href="../files/include_dao_db_manager.js.html#l332"><code>include\dao\db_manager.js:332</code></a>
         </p>
 
 
@@ -718,6 +1096,32 @@ defer the reporting of an error until the end.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property_CHUNKS_NAMESPACE" class="property item private">
+                        <h3 class="name"><code>CHUNKS_NAMESPACE</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_dao_db_manager.js.html#l36"><code>include\dao\db_manager.js:36</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_dbs" class="property item private">
                         <h3 class="name"><code>dbs</code></h3>
                         <span class="type">Object</span>
@@ -730,7 +1134,7 @@ defer the reporting of an error until the end.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_dao_db_manager.js.html#l45"><code>include\dao\db_manager.js:45</code></a>
+                            <a href="../files/include_dao_db_manager.js.html#l72"><code>include\dao\db_manager.js:72</code></a>
                             </p>
                     
                     
@@ -739,6 +1143,32 @@ defer the reporting of an error until the end.</p>
                         <div class="description">
                             <p>Keeps track of all active DBs with active connection pools.</p>
                     
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_FILES_NAMESPACE" class="property item private">
+                        <h3 class="name"><code>FILES_NAMESPACE</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_dao_db_manager.js.html#l27"><code>include\dao\db_manager.js:27</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
                         </div>
                     
                     
@@ -757,7 +1187,7 @@ defer the reporting of an error until the end.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_dao_db_manager.js.html#l226"><code>include\dao\db_manager.js:226</code></a>
+                            <a href="../files/include_dao_db_manager.js.html#l368"><code>include\dao\db_manager.js:368</code></a>
                             </p>
                     
                     
@@ -783,7 +1213,7 @@ defer the reporting of an error until the end.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_dao_db_manager.js.html#l37"><code>include\dao\db_manager.js:37</code></a>
+                            <a href="../files/include_dao_db_manager.js.html#l64"><code>include\dao\db_manager.js:64</code></a>
                             </p>
                     
                     
@@ -792,6 +1222,32 @@ defer the reporting of an error until the end.</p>
                         <div class="description">
                             <p>Reference to the system instance of System</p>
                     
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_SYSTEM_NAMESPACE_PREFIX" class="property item private">
+                        <h3 class="name"><code>SYSTEM_NAMESPACE_PREFIX</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_dao_db_manager.js.html#l45"><code>include\dao\db_manager.js:45</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
                         </div>
                     
                     

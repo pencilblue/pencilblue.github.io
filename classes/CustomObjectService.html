@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -485,7 +503,7 @@ the ability to eagerly fetch the related objects.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1188"><code>include\service\entities\custom_object_service.js:1188</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1195"><code>include\service\entities\custom_object_service.js:1195</code></a>
         </p>
 
 
@@ -566,7 +584,7 @@ reference is the same as provided to the function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l505"><code>include\service\entities\custom_object_service.js:505</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l511"><code>include\service\entities\custom_object_service.js:511</code></a>
         </p>
 
 
@@ -652,7 +670,7 @@ specified critieria.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1247"><code>include\service\entities\custom_object_service.js:1247</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1254"><code>include\service\entities\custom_object_service.js:1254</code></a>
         </p>
 
 
@@ -729,7 +747,7 @@ a &quot;field&quot; property</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l932"><code>include\service\entities\custom_object_service.js:932</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l939"><code>include\service\entities\custom_object_service.js:939</code></a>
         </p>
 
 
@@ -798,7 +816,7 @@ a &quot;field&quot; property</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l977"><code>include\service\entities\custom_object_service.js:977</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l984"><code>include\service\entities\custom_object_service.js:984</code></a>
         </p>
 
 
@@ -880,7 +898,7 @@ the custom object type itself.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l943"><code>include\service\entities\custom_object_service.js:943</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l950"><code>include\service\entities\custom_object_service.js:950</code></a>
         </p>
 
 
@@ -961,7 +979,7 @@ the custom object type itself.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1232"><code>include\service\entities\custom_object_service.js:1232</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1239"><code>include\service\entities\custom_object_service.js:1239</code></a>
         </p>
 
 
@@ -1044,7 +1062,7 @@ the custom object type itself.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l245"><code>include\service\entities\custom_object_service.js:245</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l248"><code>include\service\entities\custom_object_service.js:248</code></a>
         </p>
 
 
@@ -1152,7 +1170,7 @@ first is an Error, if occurred. The second is the specified custom object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l429"><code>include\service\entities\custom_object_service.js:429</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l436"><code>include\service\entities\custom_object_service.js:436</code></a>
         </p>
 
 
@@ -1238,7 +1256,7 @@ specified criteria.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l195"><code>include\service\entities\custom_object_service.js:195</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l198"><code>include\service\entities\custom_object_service.js:198</code></a>
         </p>
 
 
@@ -1334,7 +1352,7 @@ assigned for the custom object or by name if no ordering exists.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l476"><code>include\service\entities\custom_object_service.js:476</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l482"><code>include\service\entities\custom_object_service.js:482</code></a>
         </p>
 
 
@@ -1393,7 +1411,7 @@ error, if occurred.  The second is an array of custom object type objects.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1051"><code>include\service\entities\custom_object_service.js:1051</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1058"><code>include\service\entities\custom_object_service.js:1058</code></a>
         </p>
 
 
@@ -1466,7 +1484,7 @@ post obj.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1124"><code>include\service\entities\custom_object_service.js:1124</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1131"><code>include\service\entities\custom_object_service.js:1131</code></a>
         </p>
 
 
@@ -1544,7 +1562,7 @@ will be merged with</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1036"><code>include\service\entities\custom_object_service.js:1036</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1043"><code>include\service\entities\custom_object_service.js:1043</code></a>
         </p>
 
 
@@ -1605,7 +1623,7 @@ prefixed to indicate that it is custom</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l848"><code>include\service\entities\custom_object_service.js:848</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l856"><code>include\service\entities\custom_object_service.js:856</code></a>
         </p>
 
 
@@ -1660,7 +1678,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1004"><code>include\service\entities\custom_object_service.js:1004</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1011"><code>include\service\entities\custom_object_service.js:1011</code></a>
         </p>
 
 
@@ -1708,7 +1726,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1025"><code>include\service\entities\custom_object_service.js:1025</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1032"><code>include\service\entities\custom_object_service.js:1032</code></a>
         </p>
 
 
@@ -1772,7 +1790,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1014"><code>include\service\entities\custom_object_service.js:1014</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1021"><code>include\service\entities\custom_object_service.js:1021</code></a>
         </p>
 
 
@@ -1841,7 +1859,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l558"><code>include\service\entities\custom_object_service.js:558</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l564"><code>include\service\entities\custom_object_service.js:564</code></a>
         </p>
 
 
@@ -1931,7 +1949,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l533"><code>include\service\entities\custom_object_service.js:533</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l539"><code>include\service\entities\custom_object_service.js:539</code></a>
         </p>
 
 
@@ -2014,7 +2032,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l544"><code>include\service\entities\custom_object_service.js:544</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l550"><code>include\service\entities\custom_object_service.js:550</code></a>
         </p>
 
 
@@ -2103,7 +2121,7 @@ types that can be referenced as a peer or child object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l410"><code>include\service\entities\custom_object_service.js:410</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l417"><code>include\service\entities\custom_object_service.js:417</code></a>
         </p>
 
 
@@ -2171,7 +2189,7 @@ error, if occurred.  The second is the sort ordering object if found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l615"><code>include\service\entities\custom_object_service.js:615</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l625"><code>include\service\entities\custom_object_service.js:625</code></a>
         </p>
 
 
@@ -2237,7 +2255,7 @@ error, if occurred.  The second is the sort ordering object if found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l592"><code>include\service\entities\custom_object_service.js:592</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l602"><code>include\service\entities\custom_object_service.js:602</code></a>
         </p>
 
 
@@ -2303,7 +2321,7 @@ error, if occurred.  The second is the sort ordering object if found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l602"><code>include\service\entities\custom_object_service.js:602</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l612"><code>include\service\entities\custom_object_service.js:612</code></a>
         </p>
 
 
@@ -2372,7 +2390,7 @@ error, if occurred.  The second is the sort ordering object if found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l880"><code>include\service\entities\custom_object_service.js:880</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l888"><code>include\service\entities\custom_object_service.js:888</code></a>
         </p>
 
 
@@ -2453,7 +2471,7 @@ result of the persistence operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l128"><code>include\service\entities\custom_object_service.js:128</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l131"><code>include\service\entities\custom_object_service.js:131</code></a>
         </p>
 
 
@@ -2519,7 +2537,7 @@ result of the persistence operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l907"><code>include\service\entities\custom_object_service.js:907</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l915"><code>include\service\entities\custom_object_service.js:915</code></a>
         </p>
 
 
@@ -2590,7 +2608,7 @@ result of the persistence operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l1151"><code>include\service\entities\custom_object_service.js:1151</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l1158"><code>include\service\entities\custom_object_service.js:1158</code></a>
         </p>
 
 
@@ -2661,7 +2679,7 @@ the &quot;fieldTypesUsed&quot; property for the object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l630"><code>include\service\entities\custom_object_service.js:630</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l639"><code>include\service\entities\custom_object_service.js:639</code></a>
         </p>
 
 
@@ -2745,7 +2763,7 @@ the array is empty it is safe to assume that the object is valid.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l704"><code>include\service\entities\custom_object_service.js:704</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l713"><code>include\service\entities\custom_object_service.js:713</code></a>
         </p>
 
 
@@ -2829,7 +2847,7 @@ the array is empty it is safe to assume that the object is valid.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l821"><code>include\service\entities\custom_object_service.js:821</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l829"><code>include\service\entities\custom_object_service.js:829</code></a>
         </p>
 
 
@@ -2905,7 +2923,7 @@ error</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l151"><code>include\service\entities\custom_object_service.js:151</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l154"><code>include\service\entities\custom_object_service.js:154</code></a>
         </p>
 
 
@@ -2974,7 +2992,7 @@ If the array is empty them it is safe to assume that the object is valid.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_custom_object_service.js.html#l744"><code>include\service\entities\custom_object_service.js:744</code></a>
+        <a href="../files/include_service_entities_custom_object_service.js.html#l753"><code>include\service\entities\custom_object_service.js:753</code></a>
         </p>
 
 
@@ -3039,7 +3057,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l95"><code>include\service\entities\custom_object_service.js:95</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l98"><code>include\service\entities\custom_object_service.js:98</code></a>
                             </p>
                     
                     
@@ -3065,7 +3083,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l112"><code>include\service\entities\custom_object_service.js:112</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l115"><code>include\service\entities\custom_object_service.js:115</code></a>
                             </p>
                     
                     
@@ -3091,7 +3109,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l77"><code>include\service\entities\custom_object_service.js:77</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l80"><code>include\service\entities\custom_object_service.js:80</code></a>
                             </p>
                     
                     
@@ -3116,7 +3134,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l37"><code>include\service\entities\custom_object_service.js:37</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l40"><code>include\service\entities\custom_object_service.js:40</code></a>
                             </p>
                     
                     
@@ -3141,7 +3159,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l51"><code>include\service\entities\custom_object_service.js:51</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l54"><code>include\service\entities\custom_object_service.js:54</code></a>
                             </p>
                     
                     
@@ -3166,7 +3184,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l44"><code>include\service\entities\custom_object_service.js:44</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l47"><code>include\service\entities\custom_object_service.js:47</code></a>
                             </p>
                     
                     
@@ -3192,7 +3210,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l86"><code>include\service\entities\custom_object_service.js:86</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l89"><code>include\service\entities\custom_object_service.js:89</code></a>
                             </p>
                     
                     
@@ -3218,7 +3236,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l59"><code>include\service\entities\custom_object_service.js:59</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l62"><code>include\service\entities\custom_object_service.js:62</code></a>
                             </p>
                     
                     
@@ -3244,7 +3262,7 @@ assume that validation passed.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_custom_object_service.js.html#l68"><code>include\service\entities\custom_object_service.js:68</code></a>
+                            <a href="../files/include_service_entities_custom_object_service.js.html#l71"><code>include\service\entities\custom_object_service.js:71</code></a>
                             </p>
                     
                     

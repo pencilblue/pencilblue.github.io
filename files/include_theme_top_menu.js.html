@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -230,7 +248,7 @@ module.exports = function TopMenuServiceModule(pb) {
      * @param {Localization} localizationService An instance of Localization to
      * translate default items
      * @param {Object} [options] An optional argument to provide more flexibility
-     * to the menu construction.
+     * to the menu construction. (pass in site: siteUId to select the proper tenant)
      * @param {String} [options.currUrl] The current request URL.
      * @param {Function} cb Callback function that takes three parameters. The
      * first are the theme&#x27;s settings, the second is the navigation structure, and
@@ -247,23 +265,26 @@ module.exports = function TopMenuServiceModule(pb) {
             throw new Error(&#x27;The options parameter must be an object&#x27;);
         }
 
+        var siteUId = pb.SiteService.getCurrentSite(options.site);
+
         var getTopMenu = function(session, localizationService, options, cb) {
             var tasks = {
                 themeSettings: function(callback) {
-                    pb.settings.get(&#x27;site_logo&#x27;, function(err, logo) {
+                    var settingService = pb.SettingServiceFactory.getService(siteUId);
+                    settingService.get(&#x27;site_logo&#x27;, function(err, logo) {
                         callback(null, {site_logo: logo});
                     });
                 },
 
                 formattedSections: function(callback) {
-                    var sectionService = new SectionService();
+                    var sectionService = new SectionService({site: siteUId});
                     sectionService.getFormattedSections(localizationService, options.currUrl, function(err, formattedSections) {
                         callback(null, formattedSections);
                     });
                 },
 
                 accountButtons: function(callback) {
-                    TopMenuService.getAccountButtons(session, localizationService, callback);
+                    TopMenuService.getAccountButtons(session, localizationService, options.site, callback);
                 }
             };
             async.parallel(tasks, function(err, result) {
@@ -279,10 +300,17 @@ module.exports = function TopMenuServiceModule(pb) {
      * @method getAccountButtons
      * @param {Object}   session
      * @param {Object}   ls      The localization service
+     * @param {String}   [site]    The current site
      * @param {Function} cb      Callback function
      */
-    TopMenuService.getAccountButtons = function(session, ls, cb) {
-        var contentService = new pb.ContentService();
+    TopMenuService.getAccountButtons = function(session, ls, site, cb) {
+
+        if (util.isFunction(site)) {
+            cb = site;
+            site = pb.siteService.GLOBAL_SITE;
+        }
+
+        var contentService = new pb.ContentService({site: site});
         contentService.getSettings(function(err, contentSettings) {
             if (util.isError(err)) {
                 return cb(err);
@@ -295,17 +323,17 @@ module.exports = function TopMenuServiceModule(pb) {
                     accountButtons = [
                         {
                             icon: &#x27;user&#x27;,
-                            title: ls.get(&#x27;ACCOUNT&#x27;),
+                            title: ls.g(&#x27;admin.ACCOUNT&#x27;),
                             href: &#x27;/user/manage_account&#x27;
                         },
                         {
                             icon: &#x27;rss&#x27;,
-                            title: ls.get(&#x27;SUBSCRIBE&#x27;),
+                            title: ls.g(&#x27;generic.SUBSCRIBE&#x27;),
                             href: &#x27;/feed&#x27;
                         },
                         {
                             icon: &#x27;power-off&#x27;,
-                            title: ls.get(&#x27;LOGOUT&#x27;),
+                            title: ls.g(&#x27;generic.LOGOUT&#x27;),
                             href: &#x27;/actions/logout&#x27;
                         }
                     ];
@@ -316,12 +344,12 @@ module.exports = function TopMenuServiceModule(pb) {
                     [
                         {
                             icon: &#x27;user&#x27;,
-                            title: ls.get(&#x27;ACCOUNT&#x27;),
+                            title: ls.g(&#x27;admin.ACCOUNT&#x27;),
                             href: &#x27;/user/sign_up&#x27;
                         },
                         {
                             icon: &#x27;rss&#x27;,
-                            title: ls.get(&#x27;SUBSCRIBE&#x27;),
+                            title: ls.g(&#x27;generic.SUBSCRIBE&#x27;),
                             href: &#x27;/feed&#x27;
                         }
                     ];
@@ -332,7 +360,7 @@ module.exports = function TopMenuServiceModule(pb) {
                 [
                     {
                         icon: &#x27;rss&#x27;,
-                        title: ls.get(&#x27;SUBSCRIBE&#x27;),
+                        title: ls.g(&#x27;generic.SUBSCRIBE&#x27;),
                         href: &#x27;/feed&#x27;
                     }
                 ];
@@ -354,7 +382,7 @@ module.exports = function TopMenuServiceModule(pb) {
             cb = options;
             options = {};
         }
-        
+
         var ts = new pb.TemplateService(options);
         ts.load(&#x27;elements/top_menu/link&#x27;, function(err, linkTemplate) {
             ts.load(&#x27;elements/top_menu/dropdown&#x27;, function(err, dropdownTemplate) {
@@ -417,7 +445,7 @@ module.exports = function TopMenuServiceModule(pb) {
             });
         });
     };
-    
+
     /**
      * @method getNavItems
      * @param {Object} options

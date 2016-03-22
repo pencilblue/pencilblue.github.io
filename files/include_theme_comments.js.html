@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -186,21 +204,21 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+ Copyright (C) 2015  PencilBlue, LLC
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-*/
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
 
 //dependencies
 var util  = require(&#x27;../util.js&#x27;);
@@ -214,11 +232,11 @@ var registered = false;
  * @submodule Theme
  */
 module.exports = function CommentServiceModule(pb) {
-    
+
     //pb dependencies
     var BaseObjectService = pb.BaseObjectService;
     var ValidationService = pb.ValidationService;
-    
+
     /**
      * Retrieves comment information
      *
@@ -233,33 +251,33 @@ module.exports = function CommentServiceModule(pb) {
         if (!util.isObject(context)) {
             context = {};
         }
-        
+
         context.type = TYPE;
         CommentService.super_.call(this, context);
-        
+
         /**
          *
          * @property userService
          * @type {UserService}
          */
         this.userService = new pb.UserService(context);
-        
+
         /**
          *
          * @property articleService
-         * @type {ArticleService} 
+         * @type {ArticleService}
          */
         this.articleService = new pb.ArticleServiceV2(context);
-        
+
         /**
          *
          * @property contentService
          * @type {ContentService}
          */
-        this.contentService = new pb.ContentService();
+        this.contentService = new pb.ContentService(context);
     }
     util.inherits(CommentService, BaseObjectService);
-    
+
     /**
      * @private
      * @static
@@ -268,7 +286,7 @@ module.exports = function CommentServiceModule(pb) {
      * @type {String}
      */
     var TYPE = &#x27;comment&#x27;;
-    
+
     /**
      * Validates a comment
      * @method validate
@@ -282,78 +300,78 @@ module.exports = function CommentServiceModule(pb) {
         if (!ValidationService.isNonEmptyStr(obj.content, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;content&#x27;, &#x27;Content is required&#x27;));
         }
-        
+
         if (!ValidationService.isIdStr(obj.commenter)) {
             errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;An invalid commenter ID was provided&#x27;));
         }
-        
+
         if (!ValidationService.isIdStr(obj.article, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;article&#x27;, &#x27;The article ID is required&#x27;));
         }
-        
+
         var principal = pb.SecurityService.getPrincipal(context.session);
         var isAdmin = pb.SecurityService.isAuthorized(context.session, {admin_level: pb.SecurityService.ACCESS_ADMINISTRATOR});
-        
+
         if (!ValidationService.isIdStr(obj.commenter)) {
             errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;An invalid commenter ID was provided&#x27;));
         }
         else if (context.isUpdate) {
-            
+
             if (obj.commenter === null &amp;&amp; !isAdmin) {
-            
+
                 //you can&#x27;t edit an anonymous comment unless you are an admin
                 errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;Only admins can edit anonymous comments&#x27;));
             }
             else if (principal &amp;&amp; obj.commenter !== principal[pb.DAO.getIdField()].toString() &amp;&amp; !isAdmin) {
-             
+
                 //you can&#x27;t edit a comment unless it is your comment or you are an admin
                 errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;Only admins can edit another user\&#x27;s comment&#x27;));
             }
         }
         else if (context.isCreate) {
-            
+
             if (principal !== null &amp;&amp; obj.commenter === null) {
-                
+
                 //you can&#x27;t create a comment anonymously if you are authenticated
                 errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;An authenticated user must be the comment creator&#x27;));
             }
         }
-        
+
         var self = this;
         var tasks = [
-            
+
             //validate commenter exists
             function(callback) {
                 if (!ValidationService.isIdStr(obj.commenter, true)) {
                     return callback();
                 }
-                
+
                 //check for existence of user
                 self.userService.get(obj.commenter, function(err, user) {
                     if (!util.isObject(user)) {
-                         errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;An invalid  commenter ID was provided&#x27;));
+                        errors.push(BaseObjectService.validationFailure(&#x27;commenter&#x27;, &#x27;An invalid  commenter ID was provided&#x27;));
                     }
                     callback(err);
                 });
             },
-            
-            
+
+
             //validate article exists
             function(callback) {
-                
+
                 //retrieve the article to ensure it exists
                 self.articleService.get(obj.article, function(err, article) {
                     if (!util.isObject(article)) {
                         errors.push(BaseObjectService.validationFailure(&#x27;article&#x27;, &#x27;An invalid article ID was provided&#x27;));
                         return callback(err);
                     }
-                    
+
                     //ensure the article supports comments
                     if (!article.allow_comments) {
                         errors.push(BaseObjectService.validationFailure(&#x27;article&#x27;, &#x27;The specified article does not allow comments&#x27;));
                         return callback(err);
                     }
-                    
+
                     //ensure the site supports comments
                     self.contentService.get(function(err, settings) {
                         if (util.isObject(settings) &amp;&amp; !settings.allow_comments) {
@@ -397,20 +415,32 @@ module.exports = function CommentServiceModule(pb) {
      * @method getCommentingUser
      * @param {Object} user A user object
      */
-    CommentService.getCommentingUser = function(user) {
+    CommentService.prototype.getCommentingUser = function(user) {
         return {
             photo: user.photo,
-            name: pb.users.getFormattedName(user),
+            name: this.userService.getFormattedName(user),
             position: user.position
         };
     };
-    
+
     /**
-     * 
+     * Retrieves the necessary user information for a commenter
      * @static
-     * @method 
+     * @method getCommentingUser
+     * @param {Object} user A user object
+     */
+    CommentService.getCommentingUser = function(user) {
+        pb.log.warn(&#x27;CommentService: Static function getCommentingUser is deprecated.  Create an instance and call it instead&#x27;);
+        var service = new CommentService({});
+        return service.getCommentingUser(user);
+    };
+
+    /**
+     *
+     * @static
+     * @method
      * @param {Object} context
-     * @param {TopicService} service An instance of the service that triggered 
+     * @param {TopicService} service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
@@ -420,41 +450,41 @@ module.exports = function CommentServiceModule(pb) {
         dto.content = BaseObjectService.sanitize(dto.content);
         cb(null);
     };
-    
+
     /**
-     * 
+     *
      * @static
-     * @method 
+     * @method
      * @param {Object} context
-     * @param {TopicService} service An instance of the service that triggered 
+     * @param {TopicService} service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
     CommentService.merge = function(context, cb) {
         if (context.isCreate) {
             context.object.article = context.data.article;
-            
+
             var principal = pb.SecurityService.getPrincipal(context.session);
             context.object.commenter = principal === null ? null : principal[pb.DAO.getIdField()] + &#x27;&#x27;;
         }
         context.object.content = context.data.content;
         cb(null);
     };
-    
+
     /**
-     * 
+     *
      * @static
      * @method validate
      * @param {Object} context
      * @param {Object} context.data The DTO that was provided for persistence
-     * @param {TopicService} context.service An instance of the service that triggered 
+     * @param {TopicService} context.service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
     CommentService.validate = function(context, cb) {
         context.service.validate(context, cb);
     };
-    
+
     //Event Registries
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.FORMAT, CommentService.format);
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.MERGE, CommentService.merge);

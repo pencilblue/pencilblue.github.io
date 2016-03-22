@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -208,7 +226,6 @@ var path    = require(&#x27;path&#x27;);
 var cluster = require(&#x27;cluster&#x27;);
 var process = require(&#x27;process&#x27;);
 var util    = require(&#x27;./util.js&#x27;);
-var process = require(&#x27;process&#x27;);
 var winston = require(&#x27;winston&#x27;);
 
 /**
@@ -225,7 +242,7 @@ var winston = require(&#x27;winston&#x27;);
 function Configuration(){}
 
 /**
- * 
+ *
  * @static
  * @readonly
  * @property DOCUMENT_ROOT
@@ -234,7 +251,7 @@ function Configuration(){}
 Configuration.DOCUMENT_ROOT = __dirname.substr(0, __dirname.indexOf(path.sep+&#x27;include&#x27;));
 
 /**
- * 
+ *
  * @static
  * @readonly
  * @property EXTERNAL_ROOT
@@ -242,25 +259,6 @@ Configuration.DOCUMENT_ROOT = __dirname.substr(0, __dirname.indexOf(path.sep+&#x
  */
 Configuration.EXTERNAL_ROOT = path.join(path.sep, &#x27;etc&#x27;, &#x27;pencilblue&#x27;);
 
-/**
- * Ascending index value
- * @private
- * @static
- * @readonly
- * @property ASC
- * @type {Integer}
- */
-var ASC  = 1;
-
-/**
- * Descending index value
- * @private
- * @static
- * @readonly
- * @property DESC
- * @type {Integer}
- */
-var DESC = -1;
 
 /**
  * The default logging directory absolute file path
@@ -283,7 +281,7 @@ var LOG_DIR = path.join(Configuration.DOCUMENT_ROOT, &#x27;log&#x27;);
 var LOG_FILE = path.join(LOG_DIR, &#x27;pencilblue.log&#x27;);
 
 /**
- * The configuration module overrides file name 
+ * The configuration module overrides file name
  * @private
  * @static
  * @readonly
@@ -302,588 +300,324 @@ var CONFIG_MODULE_NAME  = &#x27;config.js&#x27;;
  */
 var OVERRIDE_FILE_PATHS = [
     path.join(Configuration.DOCUMENT_ROOT, CONFIG_MODULE_NAME),
-    path.join(Configuration.EXTERNAL_ROOT, CONFIG_MODULE_NAME),
+    path.join(Configuration.EXTERNAL_ROOT, CONFIG_MODULE_NAME)
 ];
 
 /**
- * @private
- * @static
- * @readonly
- * @property BASE_CONFIG
- */
-var BASE_CONFIG = {
-
-    //The name of the site.
-	siteName: &#x27;pencilblue&#x27;,
-
-    //The root of the site.  This host part should ALWAYS match the value of
-    //the siteIP
-	siteRoot: &#x27;http://localhost:8080&#x27;,
-
-    //The hostname or IP address that the web server instance will bind to
-	siteIP:   &#x27;0.0.0.0&#x27;,
-
-    //The primary port to listen for traffic on.  Some environment such as
-    //heroku force you to use whatever port they have available.  In such cases
-    //the port is passed as an environment variable.
-	sitePort: process.env.port || process.env.PORT || 8080,
-
-    //the absolute file path to the directory where installation lives
-	docRoot:  Configuration.DOCUMENT_ROOT,
-
-    //provides a configuration for connecting to persistent storage.  The
-    //default configuration is meant for mongodb.
-	db: {
-        type:&#x27;mongo&#x27;,
-		servers: [
-          &#x27;127.0.0.1:27017&#x27;
-        ],
-
-        //the name of the default DB for the system
-        name: &#x27;pencil_blue&#x27;,
-
-        //http://docs.mongodb.org/manual/core/write-concern/
-        writeConcern: 1,
-
-        //PB provides the ability to log queries.  This is handy during
-        //development to see how many trips to the DB a single request is
-        //making.  The queries log at level &quot;info&quot;.
-        query_logging: false,
-
-        //http://mongodb.github.io/node-mongodb-native/api-generated/db.html#authenticate
-        authentication: {
-            un: null,
-            pw: null,
-            options: {
-                //authMechanism: &quot;MONGODB-CR&quot;|&quot;GSSAPI&quot;|&quot;PLAIN&quot;, //Defaults to MONGODB-CR
-                //authdb: &quot;db name here&quot;, //Defaults to the db attempted to be connected to
-                //authSource: &quot;db name here&quot;, //Defaults to value of authdb
-            }
-        },
-
-        //This option instructs the child to skip the checks to ensure that the
-        //indices are built.  It makes the assumption that the user doesn&#x27;t care
-        //or that they are already in place.  This would typically be used in a
-        //large production system where load can burst.  In that particular case
-        //you wouldn&#x27;t want to let your instances annoy the DB to check for
-        //indices because it would cause greater strain on the DB under heavy
-        //load.
-        skip_index_check: false,
-
-        //The indices that will be ensured by the system.  This list is checked
-        //at startup by every child process.  The override config.json file may
-        //also provide this attribute.  In that case the items in that array
-        //will be added to the those that already exist.  NOTE: duplicates can
-        //exist.
-        indices: [
-
-            //user
-            {
-                collection: &#x27;user&#x27;,
-                spec: {username: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;user&#x27;,
-                spec: {email: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;user&#x27;,
-                spec: {username: ASC, password: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;user&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;user&#x27;,
-                spec: {admin: DESC},
-                options: {}
-            },
-            
-            //unverified user
-            {
-                collection: &#x27;unverified_user&#x27;,
-                spec: { last_modified: ASC },
-                options: { expireAfterSeconds: 2592000 }
-            },
-
-            //theme settings
-            {
-                collection: &#x27;theme_settings&#x27;,
-                spec: {plugin_uid: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;theme_settings&#x27;,
-                spec: {plugin_id: ASC},
-                options: {}
-            },
-
-            //plugin settings
-            {
-                collection: &#x27;plugin_settings&#x27;,
-                spec: {plugin_uid: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;plugin_settings&#x27;,
-                spec: {plugin_id: ASC},
-                options: {unique: true}
-            },
-
-            //settings
-            {
-                collection: &#x27;setting&#x27;,
-                spec: {key: ASC},
-                options: {unique: true}
-            },
-
-            //section
-            {
-                collection: &#x27;section&#x27;,
-                spec: {parent: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;section&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //plugin
-            {
-                collection: &#x27;plugin&#x27;,
-                spec: {uid: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;plugin&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //password reset
-            {
-                collection: &#x27;password_reset&#x27;,
-                spec: {verification_code: ASC},
-                options: {unique: true}
-            },
-
-            //media
-            {
-                collection: &#x27;media&#x27;,
-                spec: {location: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;media&#x27;,
-                spec: {name: ASC},
-                options: {}//TODO make unique once validation is in place
-            },
-            {
-                collection: &#x27;media&#x27;,
-                spec: {media_type: ASC},
-                options: {}//TODO make unique once validation is in place
-            },
-            {
-                collection: &#x27;media&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //job run
-            //NOTHING YET
-
-            //job log
-            {
-                collection: &#x27;job_log&#x27;,
-                spec: {job_id: ASC},
-                options: {}//TODO make unique once validation is in place
-            },
-            {
-                collection: &#x27;job_log&#x27;,
-                spec: {job_id: ASC, created: ASC},
-                options: {}//TODO make unique once validation is in place
-            },
-            {
-                collection: &#x27;job_log&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //custom object type
-            {
-                collection: &#x27;custom_object_type&#x27;,
-                spec: {name: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;custom_object_type&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //custom objects
-            {
-                collection: &#x27;custom_object&#x27;,
-                spec: {name: ASC, type: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;custom_object&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //article
-            {
-                collection: &#x27;article&#x27;,
-                spec: {url: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {headline: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {publish_date: DESC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {publish_date: DESC, draft: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {author: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {author: ASC, publish_date: DESC, draft: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {article_media: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {article_topics: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {article_sections: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;article&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-            
-            //comment
-            {
-                collection: &#x27;comment&#x27;,
-                spec: {article: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;comment&#x27;,
-                spec: {commenter: ASC},
-                options: {}
-            },
-
-            //topic
-            {
-                collection: &#x27;topic&#x27;,
-                spec: {name: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;topic&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-
-            //page
-            {
-                collection: &#x27;page&#x27;,
-                spec: {url: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {headline: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {publish_date: DESC},
-                options: {}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {publish_date: DESC, draft: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {author: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {author: ASC, publish_date: DESC, draft: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {page_media: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {page_topics: ASC},
-                options: {}
-            },
-            {
-                collection: &#x27;page&#x27;,
-                spec: {created: ASC},
-                options: {}
-            },
-            
-            //lock
-            {
-                collection: &#x27;lock&#x27;,
-                spec: {name: ASC},
-                options: {unique: true}
-            },
-            {
-                collection: &#x27;lock&#x27;,
-                spec: {timeout: ASC},
-                options: {expireAfterSeconds: 0}
-            }
-        ]
-	},
-
-    //PB supports redis as a caching layer out of the box.  For development
-    //purposes the &quot;fake-redis&quot; module can be used by setting the fake property
-    //to true.
-	cache: {
-		fake: true,
-		host: &quot;localhost&quot;,
-		port: 6379,
-        //auth_pass: &quot;password here&quot;
-	},
-
-    //PB supports two session stores out of the box: mongo &amp; redis.  The
-    //timeout value is in ms.
-	session: {
-		storage: &quot;redis&quot;,
-		timeout: 2000000
-	},
-
-    //The logging settings.  The level property specifies at what level to log.  
-    //It can be of any of the following: silly, debug, info, warn, error.  The 
-    //file property specifes the absolute file path where the log file should 
-    //be written.  If no value is provided the file transport will not be 
-    //configured. The &quot;showErrors&quot; property indicates if the stack trace should 
-    //be included in the serialization of the error.
-    logging: {
-        
-        level: &quot;info&quot;,
-        file: LOG_FILE,
-        showErrors: true
-    },
-
-    //System settings always have the persistent storage layer on.  Optionally,
-    //the cache and/or memory can be used.  It is not recommended to use memory
-    //unless you are developing locally with a single worker.  Memory is not
-    //synced across cluster workers so be careful if this option is set to true.
-	settings: {
-		use_memory: true,
-		use_cache: false,
-        
-        //The timeout specifies how long in milliseconds a setting will exist 
-        //in memory before being flushed.  A value of 0 indicates that the 
-        //values will not be purged from memory once expired.
-        memory_timeout: 0,
-	},
-
-    //The template engine can take advantage of caching so that they are not
-    //retrieved and compiled from disk on each request.  In a development
-    //environment it is ok because you will want to see the changes you make
-    //after each tweak.
-	templates: {
-		use_memory: true,
-		use_cache: false,
-        
-        //The timeout specifies how long in milliseconds a setting will exist 
-        //in memory before being flushed.  A value of 0 indicates that the 
-        //values will not be purged from memory once expired.
-        memory_timeout: 0,
-	},
-
-    //Plugins can also take advantage of the caching.  This prevents a DB call
-    //to lookup active plugins and their settings.
-	plugins: {
-		caching: {
-			use_memory: true,
-			use_cache: false,
-            
-            //The timeout specifies how long in milliseconds a setting will exist 
-            //in memory before being flushed.  A value of 0 indicates that the 
-            //values will not be purged from memory once expired.
-            memory_timeout: 0,
-		}
-	},
-
-    //PB provides a process registry.  It utilizes the cache to register
-    //properties about itself that are available via API or in the admin
-    //console.  This makes it easy to assist in monitoring your cluster and
-    //processes in production or development.  The type value can be one of
-    //three values: &#x27;redis&#x27;, &#x27;mongo&#x27; or an absolute path that implements the
-    //functions necessary to be a registration storage provider.The update
-    //interval specifies how many ms to wait before updating the registry with
-    //fresh data about itself.  The key specifies what the base of the cache
-    //key looks like.
-	registry: {
-		enabled: true,
-        logging_enabled: false,
-        type: &quot;redis&quot;,
-		update_interval: 10000,
-		key: &#x27;server_registry&#x27;
-	},
-
-    //PB aims to help developers scale.  The system can take advantage of
-    //Node&#x27;s cluster module to scale across the system cores. In order to
-    //protect against repeated catastrophic failures the system allows for
-    //&quot;fatal_error_count&quot; errors to occur outside of &quot;fatal_error_timeout&quot; secs.
-    //If the maximum number of failures occur inside of the allowed timeframe
-    //the master process and all the worker children will shutdown.
-    cluster: {
-        fatal_error_timeout: 2000,
-        fatal_error_count: 5,
-        
-        //This value descibes the number of child processes to spawn when the 
-        //master process is started in self managed mode.  The value can also 
-        //be set to &quot;auto&quot;.  This will instruct the master process to inspect 
-        //the number of cores on the server and spawn a child process for each 
-        //core.
-        workers: 1,
-        
-        //The self managed flag indicates whether or not PencilBlue should 
-        //start a master process who&#x27;s sole responsibility is to watch over the 
-        //child workers that it spawns.  The default, TRUE, allows for 
-        //PencilBlue to watch for failures and decide on its own whether or not 
-        //to attempt to continue.  When FALSE, PB starts as a stand alone 
-        //process.  Set to FALSE when you want to debug a single process or 
-        //when operating in a cloud environment that manages the instances on 
-        //each server.
-        self_managed: true
-    },
-
-    //PB supports two methods of handling SSL.  Standard point to a cert as
-    //described by the options below and SSL termination and the use of the
-    //&quot;X-FORWARDED-PROTO&quot; header.  Node does not gracefully handle the redirect
-    //of HTTP traffic to HTTPS.  PB handles this for you in what we call the
-    //handoff.  PB will start a second http server listening on the
-    //&quot;handoff_port&quot;.  When traffic is received it will be redirected to the
-    //URL of the form &quot;siteRoot+[URL PATH]&quot;.  The port will only show if
-    //specified by the &quot;use_handoff_port_in_redirect&quot; property.
-    server: {
-        ssl: {
-            enabled: false,
-            handoff_port: 8080,
-            use_x_forwarded: false,
-            use_handoff_port_in_redirect: false,
-            key: &quot;ssl/key.pem&quot;,
-            cert: &quot;ssl/cert.crt&quot;,
-            chain: &quot;ssl/chain.crt&quot;
-        },
-
-        //when non-empty, a header (X-POWERED-BY) will be added to each outgoing
-        //response with &quot;PencilBlue&quot;.  Cheesy but it helps the BuiltWith tools
-        //of the world kep track of who uses what
-        x_powered_by: &quot;PencilBlue&quot;
-    },
-
-    //PB uses a publish subscribe model to announce events to other members of
-    //the cluster.  Out of the box PB provides a Redis implementation but it is
-    //also possible to provide a custom implementation. AMQP would be a good
-    //future implementation just as an example.  Custom implementations can be
-    //used by providing the absolute path to the implementation in the &quot;broker&quot;
-    //field.
-    command: {
-        broker: &#x27;redis&#x27;,
-        timeout: 3000
-    },
-
-    //The media block specifies the options for how media is persisted.  
-    //PencilBlue provides two storage engines out of the box.  The first is 
-    //&#x27;fs&#x27; which is the regular file system.  This is the default option.  
-    //However, as soon as PB is clustered on two or more nodes this **MUST** be 
-    //changed to a different provider.  The second provider, &#x27;mongo&#x27;, is a media 
-    //storage mechanism powered by MongoDB&#x27;s GridFS.  The &#x27;mongo&#x27; provider does 
-    //support the distributed PencilBlue configuration although it is not 
-    //recommended for large scale use.  Systems that have larger or more 
-    //performant data needs should look at other plugins to support that need.
-    media: {
-
-        provider: &#x27;fs&#x27;,
-        parent_dir: &#x27;public&#x27;,
-        
-        //The maximum size of media files that can be uploaded to the server in 
-        //bytes
-        max_upload_size: 2 * 1024 * 1024
-    },
-    
-    //Contains all of the configuration for localization and internationalization. 
-    localization: {
-        
-        //The default locale is the fallback when localization fails for the user&#x27;s desired language.
-        defaultLocale: &#x27;en-US&#x27;
-    },
-    
-    //The locking service provides a common mechanism for processes to reserve 
-    //access to resources during critical operations.  When the locks exist, 
-    //other PB instances will not hinder the other process from completing its 
-    //task.  
-    locks: {
-        
-        //By default, the db will be used as the store for the locks.  Another 
-        //out of the box provider is &#x27;cache&#x27;.  It leverages the cache as a 
-        //store.  Custom implementations are also acceptable.  The relative 
-        //path from the installation root to the module should be provided.
-        provider: &#x27;db&#x27;,
-        
-        //The default amount of time that a lock will be persisted in seconds.
-        timeout: 30
-    },
-    
-    //Pulls in the package.json file for PB and extracts the version so it is 
-    //available in the configuration.
-    version: require(path.join(Configuration.DOCUMENT_ROOT, &#x27;package.json&#x27;)).version,
-};
-
-/** 
  * Retrieve the base configuration
- * @static
- * @method getBaseConfig
- * @return {Object}
  */
-Configuration.getBaseConfig = function() {
-    return util.clone(BASE_CONFIG);
+Configuration.getBaseConfig = function(multisite) {
+    return {
+
+        //The name of the site.
+        siteName: &#x27;pencilblue&#x27;,
+
+        //The root of the site.  This host part should ALWAYS match the value of
+        //the siteIP
+        siteRoot: &#x27;http://localhost:8080&#x27;,
+
+        //The hostname or IP address that the web server instance will bind to
+        siteIP:   &#x27;0.0.0.0&#x27;,
+
+        //The primary port to listen for traffic on.  Some environment such as
+        //heroku force you to use whatever port they have available.  In such cases
+        //the port is passed as an environment variable.
+        sitePort: process.env.port || process.env.PORT || 8080,
+
+        //the absolute file path to the directory where installation lives
+        docRoot:  Configuration.DOCUMENT_ROOT,
+
+        //enables/disables multiple sites in a single pencilblue instance (multitenancy)
+        multisite: {
+            enabled: false,
+
+            // When multisite.enabled is true, this is the hostname that will resolve to the global namespace.
+            // Only Admin routes will be activated for this hostname.
+            globalRoot: &#x27;http://global.localhost:8080&#x27;
+        },
+
+        //provides a configuration for connecting to persistent storage.  The
+        //default configuration is meant for mongodb.
+        db: {
+            type:&#x27;mongo&#x27;,
+            servers: [
+                &#x27;127.0.0.1:27017&#x27;
+            ],
+
+            //the name of the default DB for the system
+            name: &#x27;pencil_blue&#x27;,
+
+            options: {
+
+                //http://docs.mongodb.org/manual/core/write-concern/
+                w: 1
+            },
+
+            //PB provides the ability to log queries.  This is handy during
+            //development to see how many trips to the DB a single request is
+            //making.  The queries log at level &quot;info&quot;.
+            query_logging: false,
+
+            //http://mongodb.github.io/node-mongodb-native/api-generated/db.html#authenticate
+            authentication: {
+                un: null,
+                pw: null,
+                options: {
+                    //authMechanism: &quot;MONGODB-CR&quot;|&quot;GSSAPI&quot;|&quot;PLAIN&quot;, //Defaults to MONGODB-CR
+                    //authdb: &quot;db name here&quot;, //Defaults to the db attempted to be connected to
+                    //authSource: &quot;db name here&quot;, //Defaults to value of authdb
+                }
+            },
+
+            //This option instructs the child to skip the checks to ensure that the
+            //indices are built.  It makes the assumption that the user doesn&#x27;t care
+            //or that they are already in place.  This would typically be used in a
+            //large production system where load can burst.  In that particular case
+            //you wouldn&#x27;t want to let your instances annoy the DB to check for
+            //indices because it would cause greater strain on the DB under heavy
+            //load.
+            skip_index_check: false,
+
+            //The indices that will be ensured by the system.  This list is checked
+            //at startup by every child process.  The override config.json file may
+            //also provide this attribute.  In that case the items in that array
+            //will be added to the those that already exist.  This attributes is generated
+            //based on the multisite boolean setting.  NOTE: duplicates can
+            //exist.
+            indices: require(&#x27;./dao/indices.js&#x27;)(multisite)
+        },
+
+        //PB supports redis as a caching layer out of the box.  For development
+        //purposes the &quot;fake-redis&quot; module can be used by setting the fake property
+        //to true.
+        cache: {
+            fake: true,
+            host: &quot;localhost&quot;,
+            port: 6379
+            //auth_pass: &quot;password here&quot;
+        },
+
+        //PB supports two session stores out of the box: mongo &amp; redis.  The
+        //timeout value is in ms.
+        session: {
+            storage: &quot;redis&quot;,
+            timeout: 2000000
+        },
+
+        //The logging settings.  The level property specifies at what level to log.
+        //It can be of any of the following: silly, debug, info, warn, error.  The
+        //file property specifes the absolute file path where the log file should
+        //be written.  If no value is provided the file transport will not be
+        //configured. The &quot;showErrors&quot; property indicates if the stack trace should
+        //be included in the serialization of the error.
+        logging: {
+
+            level: &quot;info&quot;,
+            file: LOG_FILE,
+            showErrors: true
+        },
+
+        //System settings always have the persistent storage layer on.  Optionally,
+        //the cache and/or memory can be used.  It is not recommended to use memory
+        //unless you are developing locally with a single worker.  Memory is not
+        //synced across cluster workers so be careful if this option is set to true.
+        settings: {
+            use_memory: true,
+            use_cache: false,
+
+            //The timeout specifies how long in milliseconds a setting will exist
+            //in memory before being flushed.  A value of 0 indicates that the
+            //values will not be purged from memory once expired.
+            memory_timeout: 0
+        },
+
+        //The template engine can take advantage of caching so that they are not
+        //retrieved and compiled from disk on each request.  In a development
+        //environment it is ok because you will want to see the changes you make
+        //after each tweak.
+        templates: {
+            use_memory: true,
+            use_cache: false,
+
+            // syncSettingsAtStartup will automatically keep all plugins
+            // per site up to date with its details.json counterpart.
+            // Existing plugin settings will not be affected. New
+            // settings will be added, removed settings will be deleted.
+            // NOTE: This can affect your spin up time slightly. This
+            // delay will scale with your number of sites and plugins.
+            syncSettingsAtStartup: false,
+
+            //The timeout specifies how long in milliseconds a setting will exist
+            //in memory before being flushed.  A value of 0 indicates that the
+            //values will not be purged from memory once expired.
+            memory_timeout: 0
+        },
+
+        //Plugins can also take advantage of the caching.  This prevents a DB call
+        //to lookup active plugins and their settings.
+        plugins: {
+            caching: {
+                use_memory: true,
+                use_cache: false,
+
+                //The timeout specifies how long in milliseconds a setting will exist
+                //in memory before being flushed.  A value of 0 indicates that the
+                //values will not be purged from memory once expired.
+                memory_timeout: 0
+            },
+
+            //The default plugin.  Allows for the default plugin to be
+            //referenced from a single location.  The property can be overriden
+            //but may have unexpected behavior.
+            default: &#x27;pencilblue&#x27;
+        },
+
+        //PB provides a process registry.  It utilizes the cache to register
+        //properties about itself that are available via API or in the admin
+        //console.  This makes it easy to assist in monitoring your cluster and
+        //processes in production or development.  The type value can be one of
+        //three values: &#x27;redis&#x27;, &#x27;mongo&#x27; or an absolute path that implements the
+        //functions necessary to be a registration storage provider.The update
+        //interval specifies how many ms to wait before updating the registry with
+        //fresh data about itself.  The key specifies what the base of the cache
+        //key looks like.
+        registry: {
+            enabled: true,
+            logging_enabled: false,
+            type: &quot;redis&quot;,
+            update_interval: 10000,
+            key: &#x27;server_registry&#x27;
+        },
+
+        //PB aims to help developers scale.  The system can take advantage of
+        //Node&#x27;s cluster module to scale across the system cores. In order to
+        //protect against repeated catastrophic failures the system allows for
+        //&quot;fatal_error_count&quot; errors to occur outside of &quot;fatal_error_timeout&quot; secs.
+        //If the maximum number of failures occur inside of the allowed timeframe
+        //the master process and all the worker children will shutdown.
+        cluster: {
+            fatal_error_timeout: 2000,
+            fatal_error_count: 5,
+
+            //This value descibes the number of child processes to spawn when the
+            //master process is started in self managed mode.  The value can also
+            //be set to &quot;auto&quot;.  This will instruct the master process to inspect
+            //the number of cores on the server and spawn a child process for each
+            //core.
+            workers: 1,
+
+            //The self managed flag indicates whether or not PencilBlue should
+            //start a master process who&#x27;s sole responsibility is to watch over the
+            //child workers that it spawns.  The default, TRUE, allows for
+            //PencilBlue to watch for failures and decide on its own whether or not
+            //to attempt to continue.  When FALSE, PB starts as a stand alone
+            //process.  Set to FALSE when you want to debug a single process or
+            //when operating in a cloud environment that manages the instances on
+            //each server.
+            self_managed: true
+        },
+
+        //PB supports two methods of handling SSL.  Standard point to a cert as
+        //described by the options below and SSL termination and the use of the
+        //&quot;X-FORWARDED-PROTO&quot; header.  Node does not gracefully handle the redirect
+        //of HTTP traffic to HTTPS.  PB handles this for you in what we call the
+        //handoff.  PB will start a second http server listening on the
+        //&quot;handoff_port&quot;.  When traffic is received it will be redirected to the
+        //URL of the form &quot;siteRoot+[URL PATH]&quot;.  The port will only show if
+        //specified by the &quot;use_handoff_port_in_redirect&quot; property.
+        server: {
+            ssl: {
+                enabled: false,
+                handoff_port: 8080,
+                handoff_ip: &#x27;0.0.0.0&#x27;,
+                use_x_forwarded: false,
+                use_handoff_port_in_redirect: false,
+                key: &quot;ssl/key.pem&quot;,
+                cert: &quot;ssl/cert.crt&quot;,
+
+                //The certificate authority, or chain, is optional.  It is
+                //recommended to keep the paths consistent and place the CA cert
+                //at: &quot;ssl/chain.crt&quot;
+                chain: null
+            },
+
+            //when non-empty, a header (X-POWERED-BY) will be added to each outgoing
+            //response with &quot;PencilBlue&quot;.  Cheesy but it helps the BuiltWith tools
+            //of the world kep track of who uses what
+            x_powered_by: &quot;PencilBlue&quot;
+        },
+
+        //PB uses a publish subscribe model to announce events to other members of
+        //the cluster.  Out of the box PB provides a Redis implementation but it is
+        //also possible to provide a custom implementation. AMQP would be a good
+        //future implementation just as an example.  Custom implementations can be
+        //used by providing the absolute path to the implementation in the &quot;broker&quot;
+        //field.
+        command: {
+            broker: &#x27;redis&#x27;,
+            timeout: 3000
+        },
+
+        //The media block specifies the options for how media is persisted.
+        //PencilBlue provides two storage engines out of the box.  The first is
+        //&#x27;fs&#x27; which is the regular file system.  This is the default option.
+        //However, as soon as PB is clustered on two or more nodes this **MUST** be
+        //changed to a different provider.  The second provider, &#x27;mongo&#x27;, is a media
+        //storage mechanism powered by MongoDB&#x27;s GridFS.  The &#x27;mongo&#x27; provider does
+        //support the distributed PencilBlue configuration although it is not
+        //recommended for large scale use.  Systems that have larger or more
+        //performant data needs should look at other plugins to support that need.
+        media: {
+
+            provider: &#x27;fs&#x27;,
+            parent_dir: &#x27;public&#x27;,
+
+            //The root media URL.  Example values: &#x27;//cdn.mydomain.com&#x27; or
+            //&#x27;http://example-bucket.s3-website-us-east-1.amazonaws.com&#x27;.  Use this
+            //if media is served from a domain other than the site root.
+            urlRoot: &#x27;&#x27;,
+
+            //The maximum size of media files that can be uploaded to the server in
+            //bytes
+            max_upload_size: 2 * 1024 * 1024
+        },
+
+        //Contains all of the configuration for localization and internationalization.
+        localization: {
+
+            //The default locale is the fallback when localization fails for the user&#x27;s desired language.
+            defaultLocale: &#x27;en-US&#x27;
+        },
+
+        //The locking service provides a common mechanism for processes to reserve
+        //access to resources during critical operations.  When the locks exist,
+        //other PB instances will not hinder the other process from completing its
+        //task.
+        locks: {
+
+            //By default, the db will be used as the store for the locks.  Another
+            //out of the box provider is &#x27;cache&#x27;.  It leverages the cache as a
+            //store.  Custom implementations are also acceptable.  The relative
+            //path from the installation root to the module should be provided.
+            provider: &#x27;db&#x27;,
+
+            //The default amount of time that a lock will be persisted in seconds.
+            timeout: 30
+        },
+
+        //Configures the AnalyticsManager
+        analytics: {
+
+            //the amount of time that the analytics manager will wait, in
+            //milliseconds, for a provider to complete its rendering before
+            //moving on
+            timeout: 50
+        },
+
+        //Pulls in the package.json file for PB and extracts the version so it is
+        //available in the configuration.
+        version: require(path.join(Configuration.DOCUMENT_ROOT, &#x27;package.json&#x27;)).version
+    };
 };
 
 /**
@@ -942,20 +676,28 @@ Configuration.load = function(filePaths) {
 };
 
 /**
- * 
+ *
  * @static
  * @method mergeWithBase
  */
 Configuration.mergeWithBase = function(overrides) {
-    
+
+    var multisite = overrides &amp;&amp; overrides.multisite ? overrides.multisite.enabled : false;
+    var baseConfig = Configuration.getBaseConfig(multisite);
+
     //merge in all overrides with the base configuration
-    var config = util.deepMerge(overrides, Configuration.getBaseConfig());
+    var config = util.deepMerge(overrides, baseConfig);
 
     //special check to ensure that there is no ending slash on the site root
     if (config.siteRoot.lastIndexOf(&#x27;/&#x27;) === (config.siteRoot.length - 1)) {
         config.siteRoot = config.siteRoot.substring(0, config.siteRoot.length - 1);
     }
-    
+
+    //special check to ensure that there is no ending slash on the media root
+    if (config.media.urlRoot.lastIndexOf(&#x27;/&#x27;) === (config.media.urlRoot.length - 1)) {
+        config.media.urlRoot = config.media.urlRoot.substring(0, config.media.urlRoot.length - 1);
+    }
+
 	return config;
 };
 

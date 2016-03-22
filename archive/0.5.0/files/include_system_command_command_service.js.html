@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\system\command\command_service.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.5.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include\system\command\command_service.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2015  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var process = require(&#x27;process&#x27;);
+var async   = require(&#x27;async&#x27;);
+var domain  = require(&#x27;domain&#x27;);
+var util    = require(&#x27;../../util.js&#x27;);
+
+module.exports = function CommandServiceModule(pb) {
+
+    /**
+     * Provides a mechanism to send commands to all members of the cluster or a
+     * specific member.
+     * @class CommandService
+     * @constructor
+     * @param {CommandBroker} broker
+     */
+    function CommandService(broker){
+        if (!broker) {
+            throw new Error(&#x27;The broker parameter is required&#x27;);
+        }
+        this.broker           = broker;
+        this.registrants      = {};
+        this.awaitingResponse = {};
+    };
+    
+    /**
+     * The singleton instance
+     * @private
+     * @static
+     * @property INSTANCE
+     * @type {CommandService}
+     */
+    var INSTANCE = null;
+    
+    /**
+     * The default timeout in milliseconds (2 seconds)
+     * @private
+     * @static
+     * @readonly
+     * @property DEFAULT_TIMEOUT
+     * @type {Integer}
+     */
+    var DEFAULT_TIMEOUT = 2000;
+  
+    /**
+     * A hash of the brokers that are available out of the box
+     * @private
+     * @static
+     * @property AWAITING_RESPONSE
+     * @type {Object}
+     */
+    var DEFALULT_BROKERS = {
+        redis: pb.RedisCommandBroker,
+        mongo: pb.MongoCommandBroker
+    };
+
+    /**
+     * Initializes the service and the broker implementation.  The broker is
+     * determined by the configuration value of &quot;command.broker&quot;.  This value can
+     * be &quot;redis&quot; for the out of the box implementation for Redis or an absolute
+     * path to another implementation.
+     * @method init
+     * @param {Function} cb A callback that takes two parameters: cb(Error, TRUE/FALSE)
+     */
+    CommandService.prototype.init = function(cb) {
+        pb.log.debug(&#x27;CommandService: Initializing...&#x27;);
+
+        //instantiate the command broker
+        var self = this;
+        this.broker.init(function(err, result) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            self.broker.subscribe(pb.ServerRegistration.generateKey(), CommandService.onCommandReceived(self), cb);
+        });
+
+        //register for events
+        pb.system.registerShutdownHook(&#x27;CommandService&#x27;, function(cb) {
+            self.shutdown(cb);
+        });
+    };
+
+    /**
+     * Shuts down the command service and the broker if initialized
+     * @method shutdown
+     * @param {Function} cb A callback that takes two parameters: cb(Error, TRUE/FALSE)
+     */
+    CommandService.prototype.shutdown = function(cb) {
+        pb.log.debug(&#x27;CommandService: Shutting down...&#x27;);
+
+        this.registrants = {};
+        if (!this.broker) {
+            return cb(null, true);
+        }
+        this.broker.shutdown(cb);
+    };
+
+    /**
+     * Registers a handler for incoming commands of the specified type.
+     * @method registerForType
+     * @param {String} type The name/type of the command to handle
+     * @param {Function} handler A function that takes two parameters:
+     * handler(channel, command). where channel is a string and command is an
+     * object.
+     * @return {Boolean} TRUE if the the handler was registered, FALSE if not.
+     */
+    CommandService.prototype.registerForType = function(type, handler) {
+        if (!pb.validation.validateNonEmptyStr(type, true) || !util.isFunction(handler)) {
+            return false;
+        }
+
+        //ensure there is a holder for the type
+        if (!this.registrants[type]) {
+            this.registrants[type] = [];
+        }
+
+        this.registrants[type].push(handler);
+        return true;
+    };
+
+    /**
+     * Unregisters a handler for the specified type.
+     * @method unregisterForType
+     * @param {String} type The name/type of the command that the handler is
+     * registered for
+     * @param {Function} handler The handler function to unregister
+     * @return {Boolean} TRUE if the handler was unregistered, FALSE if not.
+     */
+    CommandService.prototype.unregisterForType = function(type, handler) {
+        if (!pb.validation.validateNonEmptyStr(type, true) || !util.isFunction(handler) || !util.isArray(this.registrants[type])) {
+            return false;
+        }
+
+        //search for registrant.  remove it if found
+        for (var i = 0; i &lt; this.registrants[type].length; i++) {
+            if (handler === this.registrants[type][i]) {
+                this.registrants[type].splice(i, 1);
+                return true;
+            }
+        }
+        return false;
+    };
+
+    /**
+     * Responsible for delegating out the received command to the registered
+     * handlers.  The command parameter must be an object, must have a type
+     * property that is a string, and must have a registered handler for the
+     * specified type.
+     * @method notifyOfCommand
+     * @param {Object} command The command to delegate
+     */
+    CommandService.prototype.notifyOfCommand = function(command) {
+        if (!util.isObject(command)) {
+            return;
+        }
+
+        var type = command.type;
+        if (!pb.validation.validateNonEmptyStr(type, true)) {
+            return;
+        }
+
+        if (!util.isArray(this.registrants[type])) {
+            pb.log.warn(&#x27;CommandService: Command of type [%s] was received but there are no registered handlers.&#x27;, type);
+            return;
+        }
+
+        //check if this is a response to a message that was sent
+        if (command.replyTo) {
+            if (this.awaitingResponse[command.replyTo]) {
+                this.awaitingResponse[command.replyTo](command);
+            }
+            else {
+                pb.log.warn(&#x27;CommandService: The command was in reply to [%s] but no callback was registered. Skipping.&#x27;, command.replyTo);
+            }
+            return;
+        }
+
+        //emit command to each handler
+        var self = this;
+        var emitFunction = function(type, i, command){
+            return function() {
+                self.registrants[type][i](command);
+            };
+        };
+        for (var i = 0; i &lt; this.registrants[type].length; i++) {
+            process.nextTick(emitFunction(type, i, command));
+        }
+    };
+
+    /**
+     * Sends a command to all processes iin the cluster and waits for a response
+     * from all before calling back.
+     * @method sendCommandToAllGetResponses
+     * @param {String} type The name/type of the command being sent
+     * @param {Object} [options] The options for the command.  The options object
+     * becomes the command object.  Custom properties to be part of the command can
+     * be added.  However, certain properties do have special meaning such as &quot;id&quot;,
+     * &quot;to&quot;, &quot;from&quot;, &quot;timeout&quot;, &quot;includeme&quot;.  These special properties may be
+     * overriden by this function or one it calls in order for the commands to
+     * function properly.
+     * @param {String} [options.id]
+     * @param {Boolean} [options.ignoreme]
+     * @param {Integer} [options.timeout=2000] Timeout in milliseconds for each
+     * process to respond.
+     * @param {Function} [options.progress] A function called right before each
+     * command is sent.  The function should take two parameters.  The first is the
+     * index of the task being executed and the second is the total number of tasks.
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Array)
+     */
+    CommandService.prototype.sendCommandToAllGetResponses = function(type, options, cb) {
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+        else if (!options) {
+            options = {};
+        }
+        else if (!util.isObject(options)) {
+            cb(new Error(&#x27;The options parameter must be an object&#x27;));
+            return;
+        }
+
+        //set the progress callback
+        var progressCb = null;
+        if (util.isFunction(options.progress)) {
+            progressCb = options.progress;
+        }
+        delete options.progress;
+
+        //get all proceses in the cluster
+        var self = this;
+        var serverResigration = pb.ServerRegistration.getInstance();
+        serverResigration.getClusterStatus(function(err, statuses) {
+            if (util.isError(err)) {
+                cb(err);
+                return;
+            }
+
+            var me    = null;
+            var myKey = pb.ServerRegistration.generateKey();
+            var tasks = util.getTasks(statuses, function(statuses, i) {
+                if (myKey === statuses[i]._id) {
+                    me = i;
+                }
+
+                //create the task function
+                return function(callback) {
+
+                    //make progress callback
+                    if (progressCb) {
+                        progressCb(i, statuses.length);
+                    }
+
+                    //create command
+                    var opts = util.clone(options);
+                    opts.to  = statuses[i].id;
+
+                    //execute command against the cluster
+                    self.sendCommandGetResponse(type, opts, function(err, command) {
+                        var result = {
+                            err: err ? err.stack : undefined,
+                            command: command
+                        };
+                        callback(null, result);
+                    });
+                };
+            });
+
+            //remove me if specified
+            if (options.ignoreme &amp;&amp; me !== null) {
+                tasks.splice(me, 1);
+            }
+
+            //send commands for each process
+            async.series(tasks, cb);
+        });
+    };
+
+    /**
+     * Sends a command to a single process in the cluster expecting a response.
+     * @method sendCommandGetResponse
+     * @param {String} type
+     * @param {Object} options
+     * @param{Function} onResponse
+     */
+    CommandService.prototype.sendCommandGetResponse = function(type, options, onResponse) {
+        if (!util.isObject(options) || !pb.validation.validateNonEmptyStr(options.to, true)) {
+            return onResponse(new Error(&#x27;A to field must be provided when expecting a response to a message.&#x27;));
+        }
+
+        var self   = this;
+        var doSend = function(type, options, onResponse) {
+
+            var timeout = options.timeout || pb.config.command.timeout || DEFAULT_TIMEOUT;
+            var d       = domain.create();
+            d.on(&#x27;error&#x27;, onResponse);
+            d.run(function() {
+                self.sendCommand(type, options, function(err, commandId) {
+                    if (util.isError(err)) {
+                        onResponse(err);
+                        return;
+                    }
+                    else if (!pb.validation.validateNonEmptyStr(commandId, true)) {
+                        onResponse(new Error(&#x27;Failed to publish the command to the cluster&#x27;));
+                        return;
+                    }
+
+                    var handle = setTimeout(function() {
+                        delete self.awaitingResponse[commandId];
+                        onResponse(new Error(&#x27;Timed out waiting for response to command [&#x27;+commandId+&#x27;]&#x27;));
+                        handle = null;
+                    }, timeout);
+                    self.awaitingResponse[commandId] = function(command) {
+                        if (handle) {
+                            clearTimeout(handle);
+                            handle = null;
+                            onResponse(null, command);
+                        }
+                        else {
+                            pb.log.silly(&#x27;CommandService: A response to command [%s] came back but it was after the timeout. %s&#x27;, commandId, JSON.stringify(command));
+                        }
+                        delete self.awaitingResponse[commandId];
+                    };
+                });
+            });
+        }
+        doSend(type, options, onResponse);
+    };
+
+    /**
+     * Provides a mechanism to respond to a the entity that sent the command.
+     * @method sendInResponseTo
+     * @param {Object} command The command that was sent to ths process
+     * @param {Object} responseCommand The command to send back to the entity that sent the first command.
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Command ID)
+     */
+    CommandService.prototype.sendInResponseTo = function(command, responseCommand, cb) {
+        if (!util.isObject(command)) {
+            return cb(new Error(&#x27;The command parameter must be an object&#x27;));
+        }
+
+        if (!util.isObject(responseCommand)) {
+            responseCommand = {};
+        }
+
+        //ensure a callback
+        cb = cb || util.cb;
+
+        //complete the response
+        responseCommand.id      = util.uniqueId();
+        responseCommand.to      = command.from;
+        responseCommand.replyTo = command.id;
+
+        //send the response
+        var type = responseCommand.type || command.type;
+        this.sendCommand(type, responseCommand, cb);
+    };
+
+    /**
+     * Sends a command to the cluster
+     * @method sendCommand
+     * @param {String} type The command name/type
+     * @param {Object} [options] The options that will be serialized and sent to the other processes in the cluster
+     * @param {String} [options.to] The cluster process that should handle the message
+     * @param {Function} [cb] A callback that provides two parameters: cb(Error, Command ID)
+     */
+    CommandService.prototype.sendCommand = function(type, options, cb) {
+        if (!pb.validation.validateNonEmptyStr(type, true)) {
+            return cb(new Error(&quot;The command type is required&quot;));
+        }
+        else if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+        else if (!pb.validation.validateObject(options, false)) {
+            return cb(new Error(&#x27;When provided the options parameter must be an object&#x27;));
+        }
+
+        //ensure a callback is provided
+        cb = cb || util.cb;
+
+        //ensure an options object
+        if (!options) {
+            options = {};
+        }
+
+        //set who its from
+        options.from = pb.ServerRegistration.generateKey();
+        options.type = type;
+        options.date = new Date();
+
+        //ensure each command is sent with an ID.  Allow the ID to already be set
+        //in the event that we are sending a response.
+        if (!options.id) {
+            options.id = util.uniqueId();
+        }
+
+        //instruct the broker to broadcast the command
+        this.broker.publish(options.to, options, function(err, result) {
+            cb(err, result ? options.id : null);
+        });
+    };
+
+    /**
+     * The global handler for incoming commands.  It registers itself with the
+     * broker and then when messages are received it verifies that the message is
+     * meant for this member of the cluster (or all members) then proceeds to
+     * handoff to the function that will delegate out to the handlers.
+     * @static
+     * @method onCommandReceived
+     * @param {String} channel The channel to listen for incoming commands
+     * @param {Object} command The command to verify and delegate
+     * @return {Function}
+     */
+    CommandService.onCommandReceived = function(commandService) {
+        return function(channel, command) {
+            
+            var uid = pb.ServerRegistration.generateKey();
+            if (command.to === uid || command.to === null || command.to === undefined) {
+                commandService.notifyOfCommand(command);
+            }
+            else {
+                //skip because it isn&#x27;t addressed to us
+                pb.log.silly(&#x27;CommandService: The command was not addressed to me [%s] but to [%s]. Skipping.&#x27;, uid, command.to);
+            }
+        };
+    };
+    
+    /**
+     * Retrieves the singleton instance of CommandService.
+     * @static
+     * @method getInstance
+     * @return {CommandService}
+     */
+    CommandService.getInstance = function() {
+        if (INSTANCE) {
+            return INSTANCE;
+        }
+        
+        //figure out which broker to use
+        var CommandBroker = null;
+        if (DEFALULT_BROKERS[pb.config.command.broker]) {
+            CommandBroker = DEFALULT_BROKERS[pb.config.command.broker]
+        }
+        else {
+            CommandBroker = require(pb.config.command.broker)(pb);
+        }
+        
+        var broker = new CommandBroker();
+        return INSTANCE = new CommandService(broker);
+    };
+
+    return CommandService;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

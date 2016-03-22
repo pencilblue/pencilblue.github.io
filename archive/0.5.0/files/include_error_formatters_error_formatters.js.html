@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\error\formatters\error_formatters.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.5.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include\error\formatters\error_formatters.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2015  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var HtmlEncoder = require(&#x27;htmlencode&#x27;);
+
+module.exports = function(pb) {
+    
+    //pb dependencies
+    var util = pb.util;
+    
+    /**
+     * Provides functions and mechanisms to serialize errors
+     * @class ErrorFormatters
+     * @constructor
+     */
+    function ErrorFormatters() {}
+    
+    /**
+     * The fallback MIME type
+     * @private
+     * @static
+     * @readonly
+     * @property DEFAULT_MIME
+     * @type {String}
+     */
+    var DEFAULT_MIME = &#x27;text/html&#x27;;
+    
+    /**
+     * Error code when a validation failure occurs
+     * @private
+     * @static
+     * @readonly
+     * @property BAD_REQUEST
+     * @type {Integer}
+     */
+    var BAD_REQUEST = 400;
+    
+    /**
+     * Converts an error to a plain object that can be serialized
+     * @private
+     * @static
+     * @method convertToObject
+     * @param {Object} params
+     * @return {Object}
+     */
+    var convertToObject = function(params) {
+        var content = {
+            code: params.error.code,
+            message: params.error.message
+        };
+        if (pb.config.logging.showErrors) {
+            content.stack = params.error.stack;
+        }
+        if (params.error.code === BAD_REQUEST) {
+            delete content.stack;
+            content.validationErrors = params.error.validationErrors;
+        }
+        return content;
+    };
+
+    /**
+     * Serializes an error as JSON
+     * @static
+     * @method html
+     * @param {Object} params
+     * @param {String} params.mime The MIME type of the format to render
+     * @param {Error} params.error The error to be rendered
+     * @param {Request} [params.request]
+     * @param {Localization} [params.localization]
+     * @param {Function} cb
+     */
+    ErrorFormatters.json = function(params, cb){
+        cb(
+            null,
+            JSON.stringify(convertToObject(params))
+        );
+    };
+
+    /**
+     * Serializes an error as HTML
+     * @static
+     * @method html
+     * @param {Object} params
+     * @param {String} params.mime The MIME type of the format to render
+     * @param {Error} params.error The error to be rendered
+     * @param {Request} [params.request]
+     * @param {Localization} [params.localization]
+     * @param {Function} cb
+     */
+    ErrorFormatters.html = function(params, cb) {
+        cb(
+            null,
+            &#x27;&lt;html&gt;&lt;body&gt;&lt;h2&gt;Whoops! Something unexpected happened.&lt;/h2&gt;&lt;br/&gt;&lt;pre&gt;&#x27; +
+            params.error.stack +
+            &#x27;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&#x27;
+        );
+    };
+    
+    /**
+     * Serializes an error as XML
+     * @static
+     * @method html
+     * @param {Object} params
+     * @param {String} params.mime The MIME type of the format to render
+     * @param {Error} params.error The error to be rendered
+     * @param {Request} [params.request]
+     * @param {Localization} [params.localization]
+     * @param {Function} cb
+     */
+    ErrorFormatters.xml = function(params, cb) {
+        
+        var xmlObj = function(key, obj) {
+            var xml = &#x27;&lt;&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27;
+            util.forEach(obj, function(val, key) {
+                
+                if (util.isArray(val)) {
+                    xml += xmlArray(key, val);
+                }
+                else if (util.isObject(val)) {
+                    xml += xmlObj(key, val);
+                }
+                else {
+                    xml += &#x27;&lt;&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27; + HtmlEncoder.htmlEncode(val + &#x27;&#x27;) + &#x27;&lt;/&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27;;
+                }
+            });
+            xml += &#x27;&lt;/&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27;;
+            return xml;
+        };
+        var xmlArray = function(key, obj) {
+            var xml = &#x27;&#x27;;
+            util.forEach(obj, function(val, i) {
+                
+                if (util.isArray(val)) {
+                    xml += xmlArray(key+&#x27;_&#x27;+i, val);
+                }
+                else if (util.isObject(val)) {
+                    xml += xmlObj(key, val);
+                }
+                else {
+                    xml += &#x27;&lt;&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27; + HtmlEncoder.htmlEncode(val + &#x27;&#x27;) + &#x27;&lt;/&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27;;
+                }
+            });
+            return xml;
+        };
+        var xmlPrimitive = function(key, val) {
+            return &#x27;&lt;&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27; + HtmlEncoder.htmlEncode(val + &#x27;&#x27;) + &#x27;&lt;/&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27;;
+        };
+        cb(
+            null,
+            xmlObj(&#x27;error&#x27;, convertToObject(params))
+        );
+    };
+    
+    /**
+     * Registers a function to be mapped to a given MIME type.  The function 
+     * will be expected to serialize any given Error to the format specified by 
+     * the MIME type
+     * @static
+     * @method register
+     * @param {String} mime The mime type to register the provider for
+     * @param {Function} A function that takes two parameters.  The first is an 
+     * object that provides the error and the second parameter is the callback.
+     * @return {Boolean} TRUE when the provider was registered, FALSE if not
+     */
+    ErrorFormatters.register = function(mime, formatterFunction) {
+        if (!util.isString(mime) || !util.isFunction(formatterFunction)) {
+            return false;
+        }
+        MIME_MAP[mime] = formatterFunction;
+        return true;
+    };
+    
+    /**
+     * Unregisters the provider for the given MIME type.  If a default MIME 
+     * type is specified the current formatter will be unregistered and set to 
+     * the default implementation
+     * @static
+     * @method unregister
+     * @param {String} mime The MIME type to unregister
+     * @return {Boolean} TRUE when the provider was found and unregistered, 
+     * FALSE if not
+     */
+    ErrorFormatters.unregister = function(mime) {
+        if (util.isFunction(MIME_MAP[mime])) {
+            delete MIME_MAP[mime];
+            
+            //set the defaults back if we have them
+            if (util.isFunction(DEFAULTS[mime])) {
+                MIME_MAP[mime] = DEFAULTS[mime];
+            }
+            return true;
+        }
+        return false;
+    };
+    
+    /**
+     * Formats an error for the provided MIME type
+     * @static
+     * @method formatForMime
+     * @param {Object} params
+     * @param {String} params.mime The MIME type of the format to render
+     * @param {Error} params.error The error to be rendered
+     * @param {Request} [params.request]
+     * @param {Localization} [params.localization]
+     * @param {Function} cb
+     */
+    ErrorFormatters.formatForMime = function(params, cb) {
+        if (!util.isObject(params)) {
+            return cb(new Error(&#x27;The params parameter must be an object&#x27;));
+        }
+        else if (!util.isString(params.mime)) {
+            return cb(new Error(&#x27;The params.mime parameter must be a string&#x27;));
+        }
+        else if (!util.isError(params.error)) {
+            return cb(new Error(&#x27;The params.error parameter must be an Error&#x27;));
+        }
+        
+        //find the formatter, fall back to HTML if not provided
+        var mime      = params.mime;
+        var formatter = MIME_MAP[mime];
+        if (util.isNullOrUndefined(formatter)) {
+            mime      = DEFAULT_MIME;
+            formatter = MIME_MAP[mime];
+        }
+        
+        //execute the formatter
+        formatter(params, function(err, content) {
+            cb(
+                err, 
+                {
+                    mime: mime,
+                    content: content
+                }
+            );
+        });
+    };
+    
+    /**
+     * Retrieves the formatter for the specified MIME type
+     * @static
+     * @method get
+     * @param {String} mime
+     * @return {Function} formatter for the specified MIME. &#x27;undefined&#x27; if does 
+     * not exist.
+     */
+    ErrorFormatters.get = function(mime) {
+        return MIME_MAP[mime];
+    };
+         
+    /**
+     * Contains the default mapping of MIME type to function that will serialize 
+     * the error to that format
+     * @private
+     * @static
+     * @property DEFAULTS
+     * @type {Object}
+     */
+    var DEFAULTS = Object.freeze({
+        &#x27;application/json&#x27;: ErrorFormatters.json,
+        &#x27;text/json&#x27;: ErrorFormatters.json,
+        &#x27;text/html&#x27;: ErrorFormatters.html,
+        &#x27;application/xml&#x27;: ErrorFormatters.xml,
+        &#x27;text/xml&#x27;: ErrorFormatters.xml,
+    });
+            
+    /**
+     * Contains the mapping of MIME type to function that will serialize the 
+     * error to that format
+     * @private
+     * @static
+     * @property MIME_MAP
+     * @type {Object}
+     */
+    var MIME_MAP = util.merge(DEFAULTS, {});
+
+    return ErrorFormatters;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

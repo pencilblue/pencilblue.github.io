@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -209,6 +227,7 @@ module.exports = function AdminNavigationModule(pb) {
 
     //PB dependencies
     var SecurityService = pb.SecurityService;
+    var GLOBAL_SITE = pb.SiteService.GLOBAL_SITE;
 
     /**
      * Provides function to construct the structure needed to display the navigation
@@ -228,7 +247,7 @@ module.exports = function AdminNavigationModule(pb) {
      * @property additions
      * @type {Array}
      */
-    AdminNavigation.additions = [];
+    AdminNavigation.additions = {};
 
     /**
      *
@@ -244,172 +263,205 @@ module.exports = function AdminNavigationModule(pb) {
      * @private
      * @static
      * @readonly
-     * @property DEFAULT_NAV
-     * @type {Array}
+     * @property MULTISITE_NAV
+     * @return {Array}
      */
-    var DEFAULT_NAV = Object.freeze([
-        {
-            id: &#x27;content&#x27;,
-            title: &#x27;CONTENT&#x27;,
-            icon: &#x27;quote-right&#x27;,
-            href: &#x27;#&#x27;,
-            access: SecurityService.ACCESS_WRITER,
-            children: [
-                {
-                    id: &#x27;navigation&#x27;,
-                    title: &#x27;NAVIGATION&#x27;,
-                    icon: &#x27;th-large&#x27;,
-                    href: &#x27;/admin/content/navigation&#x27;,
-                    access: SecurityService.ACCESS_EDITOR
-                },
-                {
-                    id: &#x27;topics&#x27;,
-                    title: &#x27;TOPICS&#x27;,
-                    icon: &#x27;tags&#x27;,
-                    href: &#x27;/admin/content/topics&#x27;,
-                    access: SecurityService.ACCESS_EDITOR
-                },
-                {
-                    id: &#x27;pages&#x27;,
-                    title: &#x27;PAGES&#x27;,
-                    icon: &#x27;file-o&#x27;,
-                    href: &#x27;/admin/content/pages&#x27;,
-                    access: SecurityService.ACCESS_EDITOR
-                },
-                {
-                    id: &#x27;articles&#x27;,
-                    title: &#x27;ARTICLES&#x27;,
-                    icon: &#x27;files-o&#x27;,
-                    href: &#x27;/admin/content/articles&#x27;,
-                    access: SecurityService.ACCESS_WRITER
-                },
-                {
-                    id: &#x27;media&#x27;,
-                    title: &#x27;MEDIA&#x27;,
-                    icon: &#x27;camera&#x27;,
-                    href: &#x27;/admin/content/media&#x27;,
-                    access: SecurityService.ACCESS_WRITER
-                },
-                {
-                    id: &#x27;comments&#x27;,
-                    title: &#x27;COMMENTS&#x27;,
-                    icon: &#x27;comments&#x27;,
-                    href: &#x27;/admin/content/comments&#x27;,
-                    access: SecurityService.ACCESS_EDITOR
-                },
-                {
-                    id: &#x27;custom_objects&#x27;,
-                    title: &#x27;CUSTOM_OBJECTS&#x27;,
-                    icon: &#x27;sitemap&#x27;,
-                    href: &#x27;/admin/content/objects/types&#x27;,
-                    access: SecurityService.ACCESS_EDITOR
-                }
-            ]
-        },
-        {
-            id: &#x27;plugins&#x27;,
-            title: &#x27;PLUGINS&#x27;,
-            icon: &#x27;puzzle-piece&#x27;,
-            href: &#x27;#&#x27;,
-            access: SecurityService.ACCESS_ADMINISTRATOR,
-            children: [
-                {
-                    divider: true,
-                    id: &#x27;manage&#x27;,
-                    title: &#x27;MANAGE&#x27;,
-                    icon: &#x27;upload&#x27;,
-                    href: &#x27;/admin/plugins&#x27;
-                },
-                {
-                    id: &#x27;themes&#x27;,
-                    title: &#x27;THEMES&#x27;,
-                    icon: &#x27;magic&#x27;,
-                    href: &#x27;/admin/themes&#x27;
-                }
-            ]
-        },
-        {
-            id: &#x27;users&#x27;,
-            title: &#x27;USERS&#x27;,
-            icon: &#x27;users&#x27;,
-            href: &#x27;#&#x27;,
-            access: SecurityService.ACCESS_EDITOR,
-            children: [
-                {
-                    id: &#x27;manage&#x27;,
-                    title: &#x27;MANAGE&#x27;,
-                    icon: &#x27;users&#x27;,
-                    href: &#x27;/admin/users&#x27;,
-                    access: SecurityService.ACCESS_EDITOR
-                },
-                {
-                    id: &#x27;permissions&#x27;,
-                    title: &#x27;PERMISSIONS&#x27;,
-                    icon: &#x27;lock&#x27;,
-                    href: &#x27;/admin/users/permissions&#x27;,
-                    access: SecurityService.ACCESS_ADMINISTRATOR
-                },
-            ]
-        },
-        {
+    var MULTISITE_NAV = Object.freeze({
+            id: &#x27;site_entity&#x27;,
+            title: &#x27;admin.MANAGE_SITES&#x27;,
+            icon: &#x27;sitemap&#x27;,
+            href: &#x27;/admin/sites&#x27;,
+            access: SecurityService.ACCESS_ADMINISTRATOR
+
+        }
+    );
+
+    /**
+     *
+     * @private
+     * @static
+     * @readonly
+     * @property CONTENT_NAV
+     * @return {Array}
+     */
+    var CONTENT_NAV = Object.freeze({
+        id: &#x27;content&#x27;,
+        title: &#x27;generic.CONTENT&#x27;,
+        icon: &#x27;quote-right&#x27;,
+        href: &#x27;#&#x27;,
+        access: SecurityService.ACCESS_WRITER,
+        children: [
+            {
+                id: &#x27;navigation&#x27;,
+                title: &#x27;generic.NAVIGATION&#x27;,
+                icon: &#x27;th-large&#x27;,
+                href: &#x27;/admin/content/navigation&#x27;,
+                access: SecurityService.ACCESS_EDITOR
+            },
+            {
+                id: &#x27;topics&#x27;,
+                title: &#x27;admin.TOPICS&#x27;,
+                icon: &#x27;tags&#x27;,
+                href: &#x27;/admin/content/topics&#x27;,
+                access: SecurityService.ACCESS_EDITOR
+            },
+            {
+                id: &#x27;pages&#x27;,
+                title: &#x27;admin.PAGES&#x27;,
+                icon: &#x27;file-o&#x27;,
+                href: &#x27;/admin/content/pages&#x27;,
+                access: SecurityService.ACCESS_EDITOR
+            },
+            {
+                id: &#x27;articles&#x27;,
+                title: &#x27;admin.ARTICLES&#x27;,
+                icon: &#x27;files-o&#x27;,
+                href: &#x27;/admin/content/articles&#x27;,
+                access: SecurityService.ACCESS_WRITER
+            },
+            {
+                id: &#x27;media&#x27;,
+                title: &#x27;admin.MEDIA&#x27;,
+                icon: &#x27;camera&#x27;,
+                href: &#x27;/admin/content/media&#x27;,
+                access: SecurityService.ACCESS_WRITER
+            },
+            {
+                id: &#x27;comments&#x27;,
+                title: &#x27;generic.COMMENTS&#x27;,
+                icon: &#x27;comments&#x27;,
+                href: &#x27;/admin/content/comments&#x27;,
+                access: SecurityService.ACCESS_EDITOR
+            },
+            {
+                id: &#x27;custom_objects&#x27;,
+                title: &#x27;admin.CUSTOM_OBJECTS&#x27;,
+                icon: &#x27;cubes&#x27;,
+                href: &#x27;/admin/content/objects/types&#x27;,
+                access: SecurityService.ACCESS_EDITOR
+            }
+        ]
+    });
+
+    var PLUGINS_NAV = Object.freeze({
+        id: &#x27;plugins&#x27;,
+        title: &#x27;admin.PLUGINS&#x27;,
+        icon: &#x27;puzzle-piece&#x27;,
+        href: &#x27;#&#x27;,
+        access: SecurityService.ACCESS_ADMINISTRATOR,
+        children: [
+            {
+                divider: true,
+                id: &#x27;manage&#x27;,
+                title: &#x27;generic.MANAGE&#x27;,
+                icon: &#x27;upload&#x27;,
+                href: &#x27;/admin/plugins&#x27;
+            },
+            {
+                id: &#x27;themes&#x27;,
+                title: &#x27;admin.THEMES&#x27;,
+                icon: &#x27;magic&#x27;,
+                href: &#x27;/admin/themes&#x27;
+            }
+        ]
+    });
+
+    var USERS_NAV = Object.freeze({
+        id: &#x27;users&#x27;,
+        title: &#x27;admin.USERS&#x27;,
+        icon: &#x27;users&#x27;,
+        href: &#x27;#&#x27;,
+        access: SecurityService.ACCESS_EDITOR,
+        children: [
+            {
+                id: &#x27;manage&#x27;,
+                title: &#x27;generic.MANAGE&#x27;,
+                icon: &#x27;users&#x27;,
+                href: &#x27;/admin/users&#x27;,
+                access: SecurityService.ACCESS_EDITOR
+            },
+            {
+                id: &#x27;permissions&#x27;,
+                title: &#x27;generic.PERMISSIONS&#x27;,
+                icon: &#x27;lock&#x27;,
+                href: &#x27;/admin/users/permissions&#x27;,
+                access: SecurityService.ACCESS_ADMINISTRATOR
+            }
+        ]
+    });
+
+    var VIEW_SITE_NAV = Object.freeze({
+        id: &#x27;view_site&#x27;,
+        title: &#x27;admin.VIEW_SITE&#x27;,
+        icon: &#x27;desktop&#x27;,
+        href: &#x27;/&#x27;,
+        access: SecurityService.ACCESS_WRITER
+    });
+
+    var LOGOUT_NAV = Object.freeze({
+        id: &#x27;logout&#x27;,
+        title: &#x27;generic.LOGOUT&#x27;,
+        icon: &#x27;power-off&#x27;,
+        href: &#x27;/actions/logout&#x27;,
+        access: SecurityService.ACCESS_WRITER
+    });
+
+    function buildSettingsNavigation(site) {
+        var settingsNav = {
             id: &#x27;settings&#x27;,
-            title: &#x27;SETTINGS&#x27;,
+            title: &#x27;admin.SETTINGS&#x27;,
             icon: &#x27;cogs&#x27;,
             href: &#x27;#&#x27;,
             access: SecurityService.ACCESS_ADMINISTRATOR,
             children: [
                 {
                     id: &#x27;site_settings&#x27;,
-                    title: &#x27;SITE_SETTINGS&#x27;,
+                    title: &#x27;admin.SITE_SETTINGS&#x27;,
                     icon: &#x27;cog&#x27;,
-                    href: &#x27;/admin/site_settings&#x27;
+                    href: &#x27;/admin/site_settings&#x27;,
+                    access: SecurityService.ACCESS_ADMINISTRATOR
                 },
                 {
                     id: &#x27;content_settings&#x27;,
-                    title: &#x27;CONTENT&#x27;,
+                    title: &#x27;admin.CONTENT&#x27;,
                     icon: &#x27;quote-right&#x27;,
-                    href: &#x27;/admin/site_settings/content&#x27;
+                    href: &#x27;/admin/site_settings/content&#x27;,
+                    access: SecurityService.ACCESS_ADMINISTRATOR
                 },
                 {
                     id: &#x27;email_settings&#x27;,
-                    title: &#x27;EMAIL&#x27;,
+                    title: &#x27;users.EMAIL&#x27;,
                     icon: &#x27;envelope&#x27;,
-                    href: &#x27;/admin/site_settings/email&#x27;
-                },
-                {
-                    id: &#x27;library_settings&#x27;,
-                    title: &#x27;LIBRARIES&#x27;,
-                    icon: &#x27;book&#x27;,
-                    href: &#x27;/admin/site_settings/libraries&#x27;
+                    href: &#x27;/admin/site_settings/email&#x27;,
+                    access: SecurityService.ACCESS_ADMINISTRATOR
                 }
             ]
-        },
-        {
-            id: &#x27;view_site&#x27;,
-            title: &#x27;VIEW_SITE&#x27;,
-            icon: &#x27;desktop&#x27;,
-            href: &#x27;/&#x27;,
-            access: SecurityService.ACCESS_WRITER
-        },
-        {
-            id: &#x27;logout&#x27;,
-            title: &#x27;LOGOUT&#x27;,
-            icon: &#x27;power-off&#x27;,
-            href: &#x27;/actions/logout&#x27;,
-            access: SecurityService.ACCESS_WRITER
-        }
-    ]);
+        };
 
-    /**
-     *
-     * @private
-     * @static
-     * @method getDefaultNavigation
-     * @return {Array}
-     */
-    function getDefaultNavigation() {
-        return util.clone(DEFAULT_NAV);
+        if (pb.SiteService.isGlobal(site)) {
+            settingsNav.children.push({
+                id: &#x27;library_settings&#x27;,
+                title: &#x27;site_settings.LIBRARIES&#x27;,
+                icon: &#x27;book&#x27;,
+                href: &#x27;/admin/site_settings/libraries&#x27;,
+                access: SecurityService.ACCESS_ADMINISTRATOR
+            });
+        }
+        return Object.freeze(settingsNav);
     }
+
+    function getDefaultNavigation(site) {
+        return util.clone([CONTENT_NAV, PLUGINS_NAV, USERS_NAV, buildSettingsNavigation(site), VIEW_SITE_NAV, LOGOUT_NAV]);
+    }
+
+    function getMultiSiteNavigation() {
+        return util.clone([MULTISITE_NAV]);
+    }
+
+    function getGlobalScopeNavigation(site) {
+        return util.clone([PLUGINS_NAV, USERS_NAV, buildSettingsNavigation(site), LOGOUT_NAV]);
+    }
+
 
     /**
      *
@@ -418,8 +470,8 @@ module.exports = function AdminNavigationModule(pb) {
      * @method getAdditions
      * @return {Array}
      */
-    function getAdditions() {
-        return util.clone(AdminNavigation.additions);
+    function getAdditions(site) {
+        return getAdditionsInScope(AdminNavigation.additions, site);
     }
 
     /**
@@ -429,8 +481,24 @@ module.exports = function AdminNavigationModule(pb) {
      * @method getChildrenAdditions
      * @return {Object}
      */
-    function getChildrenAdditions() {
-        return util.clone(AdminNavigation.childrenAdditions);
+    function getChildrenAdditions(site) {
+        return getAdditionsInScope(AdminNavigation.childrenAdditions, site);
+    }
+
+    /**
+     * @private
+     * @method getAdditionsInScope
+     * @param {Object} additions
+     * @param {String} site
+     */
+    function getAdditionsInScope(additions, site) {
+        if (additions.hasOwnProperty(site)) {
+            return util.clone(additions[site]);
+        }
+        else if (additions.hasOwnProperty(pb.SiteService.GLOBAL_SITE)) {
+            return util.clone(additions[pb.SiteService.GLOBAL_SITE]);
+        }
+        return util.clone(additions);
     }
 
     /**
@@ -440,14 +508,26 @@ module.exports = function AdminNavigationModule(pb) {
      * @method buildNavigation
      * @return {Array}
      */
-    function buildNavigation() {
+    function buildNavigation(site) {
         var i;
         var navigation = [];
-        var defaultNavigation = getDefaultNavigation();
-        var additions = getAdditions();
-        var childrenAdditions = getChildrenAdditions();
+        var additions = getAdditions(site);
+        var childrenAdditions = getChildrenAdditions(site);
 
-        util.arrayPushAll(defaultNavigation, navigation);
+        if (pb.config.multisite.enabled) {
+            var multiSiteAdditions = getMultiSiteNavigation();
+            util.arrayPushAll(multiSiteAdditions, navigation);
+        }
+
+        if (pb.config.multisite.enabled &amp;&amp; pb.SiteService.isGlobal(site)) {
+            // Don&#x27;t include content or view site in the nav for multitenancy global scope.
+            util.arrayPushAll(getGlobalScopeNavigation(site), navigation);
+        }
+        else {
+            var defaultNavigation = getDefaultNavigation(site);
+            util.arrayPushAll(defaultNavigation, navigation);
+        }
+
         util.arrayPushAll(additions, navigation);
 
         //retrieve the nav items to iterate over
@@ -473,7 +553,7 @@ module.exports = function AdminNavigationModule(pb) {
 
 
             if (!util.isArray(nav.children)) {
-                navigation[i].children = [];
+                nav.children = [];
             }
             util.arrayPushAll(children, nav.children);
         });
@@ -485,13 +565,13 @@ module.exports = function AdminNavigationModule(pb) {
      * @private
      * @static
      * @method localizeNavigation
-     * @param navigation
-     * @param ls
-     * @return {*}
+     * @param {Array} navigation
+     * @param {Localization} ls
+     * @return {Array}
      */
     function localizeNavigation(navigation, ls) {
         navigation.forEach(function(nav) {
-            nav.title = ls.get(nav.title);
+            nav.title = ls.g(nav.title);
             if(util.isArray(nav.children)) {
                 nav.children = localizeNavigation(nav.children, ls);
             }
@@ -507,9 +587,9 @@ module.exports = function AdminNavigationModule(pb) {
      * @param {Array} navigation
      * @return {boolean}
      */
-    function isDuplicate(id, navigation) {
+    function isDuplicate(id, navigation, site) {
         if (!navigation) {
-            navigation = buildNavigation();
+            navigation = buildNavigation(site);
         }
 
         for (var i = 0; i &lt; navigation.length; i++) {
@@ -518,11 +598,18 @@ module.exports = function AdminNavigationModule(pb) {
             if (node.id === id) {
                 return true;
             }
-            if (node.children &amp;&amp; isDuplicate(id, node.children)) {
+            if (node.children &amp;&amp; isDuplicate(id, node.children, site)) {
                 return true;
             }
         }
         return false;
+    }
+
+    function exists(id, site) {
+        var isGlobal = pb.SiteService.isGlobal(site);
+        var nav = buildNavigation(site);
+        return isDuplicate(id, nav) ||
+          (!isGlobal &amp;&amp; isDuplicate(id, buildNavigation(pb.SiteService.GLOBAL_SITE)));
     }
 
     /**
@@ -532,8 +619,8 @@ module.exports = function AdminNavigationModule(pb) {
      * @param {String} id
      * @return {Boolean}
      */
-    function isDefaultNode(id) {
-        return isDuplicate(id, getDefaultNavigation());
+    function isDefaultNode(id, site) {
+        return isDuplicate(id, getDefaultNavigation(site));
     }
 
     /**
@@ -545,34 +632,49 @@ module.exports = function AdminNavigationModule(pb) {
      * @param {Object} ls Localization service
      * @return {object} Admin navigation
      */
-    AdminNavigation.get = function (session, activeMenuItems, ls) {
+    AdminNavigation.get = function (session, activeMenuItems, ls, site) {
         var navigation = AdminNavigation.removeUnauthorized(
             session,
-            buildNavigation(),
+            buildNavigation(site),
             activeMenuItems
         );
 
         return localizeNavigation(navigation, ls);
     };
 
+    AdminNavigation.addChild = function(parentId, node) {
+        AdminNavigation.addChildToSite(parentId, node, pb.SiteService.GLOBAL_SITE);
+    }
+
     /**
      * Adds a new child node to an existing top level node
      * @static
-     * @method addChild
+     * @method addChildToSite
      * @param {String} parentId
      * @param {Object} node
+     * @param {String} site - site unique id
      * @return {Boolean}
      */
-    AdminNavigation.addChild = function (parentId, node) {
-        if (isDuplicate(node.id)) {
+    AdminNavigation.addChildToSite = function (parentId, node, site) {
+        if (util.isNullOrUndefined(site)) {
+            site = GLOBAL_SITE;
+        }
+        if (exists(node.id, site)) {
             return false;
         }
 
-        if (!AdminNavigation.childrenAdditions[parentId]) {
-            AdminNavigation.childrenAdditions[parentId] = [];
+        var additionsMap;
+        if (!(site in AdminNavigation.childrenAdditions)) {
+            additionsMap = AdminNavigation.childrenAdditions[site] = {};
+        } else {
+            additionsMap = AdminNavigation.childrenAdditions[site];
         }
 
-        AdminNavigation.childrenAdditions[parentId].push(node);
+        if (!additionsMap[parentId]) {
+            additionsMap[parentId] = [];
+        }
+
+        additionsMap[parentId].push(node);
         return true;
     };
 
@@ -581,15 +683,34 @@ module.exports = function AdminNavigationModule(pb) {
      * @static
      * @method add
      * @param {Object} node
+     * @param {String} [site=&#x27;global&#x27;]
      * @return {Boolean}
      */
-    AdminNavigation.add = function (node) {
-        if (isDuplicate(node.id)) {
+    AdminNavigation.add = function(node, site) {
+        if (util.isNullOrUndefined(site)) {
+            site = GLOBAL_SITE;
+        }
+        if (exists(node.id, site)) {
             return false;
         }
 
-        AdminNavigation.additions.push(node);
+        if (!(site in AdminNavigation.additions)) {
+            AdminNavigation.additions[site] = [];
+        }
+        AdminNavigation.additions[site].push(node);
         return true;
+    };
+
+    /**
+     * Adds a new top level node
+     * @static
+     * @method addToSite
+     * @param {Object} node
+     * @param {String} site
+     * @return {Boolean}
+     */
+    AdminNavigation.addToSite = function (node, site) {
+        return AdminNavigation.add(node, site);
     };
 
     /**
@@ -597,11 +718,14 @@ module.exports = function AdminNavigationModule(pb) {
      * @static
      * @method remove
      * @param id
-     * @param navigation
+     * @param {String} [site=&#x27;global&#x27;]
      * @return {boolean}
      */
-    AdminNavigation.remove = function (id) {
-        if (!isDuplicate(id, buildNavigation())) {
+    AdminNavigation.remove = function(id, site) {
+        if (util.isNullOrUndefined(site)) {
+            site = GLOBAL_SITE;
+        }
+        if (!isDuplicate(id, buildNavigation(site))) {
             return false;
         }
 
@@ -625,13 +749,30 @@ module.exports = function AdminNavigationModule(pb) {
             return navigation;
         }
 
-        AdminNavigation.additions = removeNode(id, AdminNavigation.additions);
+        AdminNavigation.additions[site] = removeNode(id, AdminNavigation.additions[site]);
 
-        util.forEach(AdminNavigation.childrenAdditions, function(node, parentId) {
-            AdminNavigation.childrenAdditions[parentId] = removeNode(id, node);
+        var childAdditionsMap = AdminNavigation.childrenAdditions[site];
+        util.forEach(childAdditionsMap, function(value, key) {
+            if(key === id){
+                delete childAdditionsMap[key];
+            }else {
+                childAdditionsMap[key] = removeNode(id, value);
+            }
         });
 
         return true;
+    };
+
+    /**
+     * Remove a navigation node
+     * @static
+     * @method removeFromSite
+     * @param id
+     * @param {String} site
+     * @return {boolean}
+     */
+    AdminNavigation.removeFromSite = function (id, site) {
+        return AdminNavigation.remove(id, site);
     };
 
     /**

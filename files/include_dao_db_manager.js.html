@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -212,6 +230,33 @@ var util     = require(&#x27;../util.js&#x27;);
 module.exports = function DBManagerModule(pb) {
 
     /**
+     * @private
+     * @static
+     * @readonly
+     * @property FILES_NAMESPACE
+     * @type {String}
+     */
+    var FILES_NAMESPACE = &#x27;fs.files&#x27;;
+
+    /**
+     * @private
+     * @static
+     * @readonly
+     * @property CHUNKS_NAMESPACE
+     * @type {String}
+     */
+    var CHUNKS_NAMESPACE = &#x27;fs.chunks&#x27;;
+
+    /**
+     * @private
+     * @static
+     * @readonly
+     * @property SYSTEM_NAMESPACE_PREFIX
+     * @type {String}
+     */
+    var SYSTEM_NAMESPACE_PREFIX = &#x27;system.&#x27;;
+
+    /**
      * Wrapper that protects against direct access to the active connection pools
      * and DB references.
      *
@@ -257,13 +302,15 @@ module.exports = function DBManagerModule(pb) {
                 return cb(null, dbs[name]);
             }
 
+            //clone the config and set the name that is being asked for
+            var config  = util.clone(pb.config);
+            config.db.name = name;
+
             //build the connection string for the mongo cluster
             var dbURL   = DBManager.buildConnectionStr(pb.config);
-            var options = {
-                w: pb.config.db.writeConcern
-            };
+            var options = config.db.options;
 
-            pb.log.debug(&quot;Attempting connection to: %s&quot;, dbURL);
+            pb.log.debug(&quot;Attempting connection to: %s with options: %s&quot;, dbURL, JSON.stringify(options));
             var self = this;
             mongo.connect(dbURL, options, function(err, db){
                 if (err) {
@@ -290,7 +337,7 @@ module.exports = function DBManagerModule(pb) {
         };
 
         /**
-         * 
+         *
          * @method authenticate
          * @param {Object} auth
          * @param {Db} db
@@ -321,37 +368,50 @@ module.exports = function DBManagerModule(pb) {
          * Takes an Array of indexing procedures and delegates them out to paralleled
          * tasks.
          * @method processIndices
-         * @param {Array} procedures An array of objects that describe the index to 
-         * place upon a collection.  The object contains three properties.  
-         * &quot;collection&quot; a string that represents the name of the collection to build an 
-         * index for.  &quot;specs&quot; is an object that describes which fields to index.  The 
-         * keys are the field names and the value is -1 for descending order and 1 for 
-         * ascending.  &quot;options&quot; is an object that that provides specific index 
-         * properties such as unique or sparse.  See 
-         * http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#ensureindex 
+         * @param {Array} procedures An array of objects that describe the index to
+         * place upon a collection.  The object contains three properties.
+         * &quot;collection&quot; a string that represents the name of the collection to build an
+         * index for.  &quot;specs&quot; is an object that describes which fields to index.  The
+         * keys are the field names and the value is -1 for descending order and 1 for
+         * ascending.  &quot;options&quot; is an object that that provides specific index
+         * properties such as unique or sparse.  See
+         * http://mongodb.github.io/node-mongodb-native/api-generated/collection.html#ensureindex
          * for specific MongoDB implementation details for specs and options.
-         * @param {Function} cb A callback that provides two parameters: The first, an 
-         * Error, if occurred.  Secondly, an object that contains two properties. 
-         * &quot;result&quot; an array of the results where each object in the array represents 
-         * the result of the request to ensure the index.  &quot;errors&quot; an array of errors 
-         * that occurred while indexing.  The function does not terminate after the 
-         * first error.  Instead it allows all indices to attempt to be created and 
+         * @param {Function} cb A callback that provides two parameters: The first, an
+         * Error, if occurred.  Secondly, an object that contains two properties.
+         * &quot;result&quot; an array of the results where each object in the array represents
+         * the result of the request to ensure the index.  &quot;errors&quot; an array of errors
+         * that occurred while indexing.  The function does not terminate after the
+         * first error.  Instead it allows all indices to attempt to be created and
          * defer the reporting of an error until the end.
          */
         this.processIndices = function(procedures, cb) {
+            var self = this;
             if (!util.isArray(procedures)) {
-                cb(new Error(&#x27;The procedures parameter must be an array of Objects&#x27;));
-                return;
+                return cb(new Error(&#x27;The procedures parameter must be an array of Objects&#x27;));
             }
 
+            this.dropUnconfiguredIndices(procedures, function(err) {
+                if(util.isError(err)) {
+                    return cb(new Error(util.format(&#x27;DBManager: Error occurred during index check/deletion ERROR[%s]&#x27;, err.stack)));
+                }
+                self.ensureIndices(procedures, cb);
+            });
+        };
+
+        /**
+         * Ensures all indices declared are defined on Mongo server
+         * @method ensureIndices
+         * @param {Array} procedures
+         * @param {Function} cb
+         */
+        this.ensureIndices = function (procedures, cb) {
             //to prevent a cirular dependency we do the require for DAO here.
             var DAO = require(&#x27;./dao.js&#x27;)(pb);
-
             //create the task list for executing indices.
             var errors = [];
             var tasks = util.getTasks(procedures, function(procedures, i) {
                 return function(callback) {
-
                     var dao = new DAO();
                     dao.ensureIndex(procedures[i], function(err, result) {
                         if (util.isError(err)) {
@@ -372,6 +432,106 @@ module.exports = function DBManagerModule(pb) {
                 };
                 cb(err, result);
             });
+        };
+
+
+        /**
+         * Sorts through all created indices and drops any index not declared in pb.config
+         * @method dropUnconfiguredIndices
+         * @param {Array} procedures
+         * @param {Function} cb
+         */
+        this.dropUnconfiguredIndices = function(procedures, cb) {
+            var self = this;
+            //to prevent a cirular dependency we do the require for DAO here.
+            var DAO = require(&#x27;./dao.js&#x27;)(pb);
+            this.getStoredIndices(function(err, storedIndices) {
+                if(util.isError(err)) {
+                    cb(new Error(&#x27;DBManager: Failed to get stored indices ERROR[%s]&#x27;, err.stack));
+                    return;
+                }
+                var dao = new DAO();
+
+                var tasks = util.getTasks(storedIndices, function(indices, i) {
+                    return function(callback) {
+                        var index = indices[i];
+
+                        //special condition: When mongo is used as the media
+                        //storage provider two special collections are created:
+                        //&quot;fs.chunks&quot; and &quot;fs.files&quot;.  These indices should be
+                        //left alone and ignored.
+                        if (DBManager.isProtectedIndex(index.ns)) {
+                            pb.log.silly(&quot;DBManager: Skipping protected index for %s&quot;, index.ns);
+                            return callback();
+                        }
+
+                        var filteredIndex = procedures.filter(function(procedure) {
+                            var ns = pb.config.db.name + &#x27;.&#x27; + procedure.collection;
+                            var result = ns === index.ns &amp;&amp; self.compareIndices(index, procedure);
+                            return result;
+                        });
+                        var indexCollection = index.ns.split(&#x27;.&#x27;)[1];
+
+                        //ignore any index relating to the &quot;_id&quot; field.
+                        //ignore all indices of the &quot;session&quot; collection as it is managed elsewhere.
+                        //use length and null/undefined check for if the index in question is defined in pb.config.indices.
+                        if(index.name === &#x27;_id_&#x27; || indexCollection === &#x27;session&#x27; || (filteredIndex.length !== 0 &amp;&amp; !util.isNullOrUndefined(filteredIndex))) {
+                            return callback();
+                        }
+
+                        dao.dropIndex(indexCollection, index.name, function (err, result) {
+                            if (util.isError(err)) {
+                                pb.log.error(&#x27;DBManager: Failed to drop undeclared INDEX=[%s] RESULT=[%s] ERROR[%s]&#x27;, JSON.stringify(index), util.inspect(result), err.stack);
+                            }
+                            callback(err, result);
+                        });
+                    };
+                });
+                async.parallel(tasks, cb);
+            });
+        };
+
+        /**
+         * Compares an index stored in Mongo to an index declared in pb.config
+         * @method compareIndices
+         * @param {Object} stored
+         * @param {Object} defined
+         * @return {boolean}
+         */
+        this.compareIndices = function(stored, defined) {
+            var keys = Object.keys(stored.key);
+            var specs = Object.keys(defined.spec);
+            var result =  JSON.stringify(keys) === JSON.stringify(specs);
+            return result;
+
+        };
+
+        /**
+         * Yields all indices currently in the entire database
+         * @method getStoredInidices
+         * @param {Function} cb
+         */
+        this.getStoredIndices = function(cb) {
+            dbs[pb.config.db.name].collections(function(err, collections) {
+                var tasks = util.getTasks(collections, function(collections, i) {
+                    return function(callback) {
+                        collections[i].indexes(function(err, indexes) {
+                            if(util.isError(err)) {
+                                pb.log.error(&quot;Error retrieving indices from db: &quot; + err);
+                            }
+                            callback(err, indexes);
+                        });
+                    };
+                });
+                async.parallel(tasks, function(err, results) {
+                    cb(err, Array.prototype.concat.apply([], results));
+                });
+            });
+        };
+
+        this.processMigration = function(cb) {
+            var DBMigrate = require(&#x27;./db_migrate.js&#x27;)(pb);
+            new DBMigrate().run(cb);
         };
 
         /**
@@ -421,7 +581,7 @@ module.exports = function DBManagerModule(pb) {
     var PROTOCOL_PREFIX = &#x27;mongodb://&#x27;;
 
     /**
-     * 
+     *
      * @static
      * @method buildConnectionStr
      * @param {Object} config
@@ -431,6 +591,7 @@ module.exports = function DBManagerModule(pb) {
      */
     DBManager.buildConnectionStr = function(config) {
         var str = PROTOCOL_PREFIX;
+        var options = &#x27;?&#x27;;
         for (var i = 0; i &lt; config.db.servers.length; i++) {
 
             //check for prefix for backward compatibility
@@ -438,14 +599,35 @@ module.exports = function DBManagerModule(pb) {
             if (hostAndPort.indexOf(PROTOCOL_PREFIX) === 0) {
                 hostAndPort = hostAndPort.substring(PROTOCOL_PREFIX.length);
             }
+
+            //check for options
+            var parts = hostAndPort.split(&#x27;?&#x27;);
+            if (parts.length &gt; 1) {
+                options += (options.length &gt; 1 ? &#x27;&amp;&#x27; : &#x27;&#x27;) + parts[1];
+            }
+            hostAndPort = parts[0];
+
             if (i &gt; 0) {
                 str += &#x27;,&#x27;;
             }
             str += hostAndPort;
         };
-        return pb.UrlService.urlJoin(str, config.db.name);
+        return pb.UrlService.urlJoin(str, config.db.name) + options;
     };
-    
+
+    /**
+     *
+     * @static
+     * @method isProtectedIndex
+     * @param {String} indexNamespace
+     * @return {Boolean}
+     */
+    DBManager.isProtectedIndex = function(indexNamespace) {
+        return indexNamespace.indexOf(FILES_NAMESPACE, indexNamespace.length - FILES_NAMESPACE.length) !== -1 ||
+        indexNamespace.indexOf(CHUNKS_NAMESPACE, indexNamespace - CHUNKS_NAMESPACE.length) !== -1 ||
+        indexNamespace.indexOf(SYSTEM_NAMESPACE_PREFIX) !== -1;
+    };
+
     //exports
     return DBManager;
 };

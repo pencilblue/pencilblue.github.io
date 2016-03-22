@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -208,12 +226,12 @@ var async       = require(&#x27;async&#x27;);
 var HtmlEncoder = require(&#x27;htmlencode&#x27;);
 
 module.exports = function(pb) {
-    
+
     //pb dependencies
     var DAO          = pb.DAO;
     var Localization = pb.Localization;
     var ClientJs     = pb.ClientJs;
-    
+
     /**
      * Renders a 1 or more pieces of content such as articles or pages
      * @class ContentViewLoader
@@ -227,16 +245,19 @@ module.exports = function(pb) {
      * @param {String} context.activeTheme
      */
     function ContentViewLoader(context) {
-        
         this.ts = context.ts;
         this.ls = context.ls;
         this.req = context.req;
-        this.contentSettings = context.contentSettings; 
+        this.contentSettings = context.contentSettings;
         this.session = context.session;
         this.service = context.service;
+        this.site = context.site;
+        this.siteObj = context.siteObj;
+        this.hostname = context.hostname;
+        this.onlyThisSite = context.onlyThisSite;
         this.activeTheme = context.activeTheme;
     };
-    
+
     /**
      *
      * @private
@@ -245,7 +266,7 @@ module.exports = function(pb) {
      * @type {String}
      */
     var DISPLAY_NONE_STYLE_ATTR = &#x27;display:none;&#x27;;
-    
+
     /**
      *
      * @method getMetaInfo
@@ -256,7 +277,7 @@ module.exports = function(pb) {
     ContentViewLoader.prototype.renderSingle = function(content, options, cb) {
         this.render([content], options, cb);
     };
-    
+
     /**
      *
      * @method render
@@ -269,12 +290,12 @@ module.exports = function(pb) {
      */
     ContentViewLoader.prototype.render = function(contentArray, options, cb) {
         var self = this;
-        
+
         this.gatherData(contentArray, options, function(err, data) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             self.setMetaInfo(data.meta, options);
             self.ts.registerLocal(&#x27;current_url&#x27;, self.req.url);
             self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(data.nav.navigation, false));
@@ -291,7 +312,7 @@ module.exports = function(pb) {
             self.ts.registerLocal(&#x27;articles&#x27;, function(flag, cb) {
                 self.onContent(contentArray, options, cb);
             });
-            
+
             self.getTemplate(contentArray, options, function(err, template) {
                 if (util.isError(err)) {
                     return cb(err);
@@ -301,7 +322,7 @@ module.exports = function(pb) {
             });
         });
     };
-    
+
     /**
      *
      * @method getTemplate
@@ -378,7 +399,7 @@ module.exports = function(pb) {
     ContentViewLoader.prototype.getDefaultTemplatePath = function() {
         return &#x27;index&#x27;;
     };
-    
+
     /**
      *
      * @method onContent
@@ -402,7 +423,7 @@ module.exports = function(pb) {
             cb(err, new pb.TemplateValue(content.join(&#x27;&#x27;), false));
         });
     };
-    
+
     /**
      *
      * @method gatherData
@@ -416,11 +437,12 @@ module.exports = function(pb) {
 
             //navigation
             nav: function(callback) {
-                
+
                 var opts = {
                     currUrl: self.req.url,
                     session: self.session,
                     ls: self.ls,
+                    site: self.site,
                     activeTheme: self.activeTheme
                 };
                 var topMenuService = new pb.TopMenuService();
@@ -430,13 +452,13 @@ module.exports = function(pb) {
             meta: function(callback) {
                 self.getMetaInfo(contentArray, options, callback);
             },
-            
+
             contentSettings: function(callback) {
                 if (util.isObject(self.contentSettings)) {
                     return callback(null, self.contentSettings);
                 }
-                
-                var contentService = new pb.ContentService();
+
+                var contentService = new pb.ContentService({site: self.site, onlyThisSite: self.onlyThisSite});
                 contentService.getSettings(function(err, contentSettings) {
                     self.contentSettings = contentSettings;
                     callback(err, contentSettings);
@@ -445,9 +467,9 @@ module.exports = function(pb) {
         };
         async.parallel(tasks, cb);
     };
-    
+
     /**
-     * 
+     *
      * @method onAngular
      * @param {Array} contentArray
      * @param {Object} options
@@ -460,7 +482,7 @@ module.exports = function(pb) {
         var angularData = pb.ClientJs.getAngularController(objects, [&#x27;ngSanitize&#x27;]);
         cb(null, angularData);
     };
-    
+
     /**
      *
      * @method onPageName
@@ -471,7 +493,7 @@ module.exports = function(pb) {
     ContentViewLoader.prototype.onPageName = function(contentArray, options, cb) {
         var content = contentArray[0];
         if (!util.isObject(content)) {
-            return cb(null, options.metaTitle || pb.config.siteName);
+            return cb(null, options.metaTitle || this.siteObj.displayName);
         }
 
         var name = &#x27;&#x27;;
@@ -487,10 +509,10 @@ module.exports = function(pb) {
         else {
             name = options.metaTitle || &#x27;&#x27;;
         }
-        
-        cb(null, name ? name + &#x27; | &#x27; + pb.config.siteName : pb.config.siteName);
+
+        cb(null, name ? name + &#x27; | &#x27; + this.siteObj.displayName : this.siteObj.displayName);
     };
-    
+
     /**
      *
      * @method onInfiniteScroll
@@ -514,9 +536,9 @@ module.exports = function(pb) {
         var val = new pb.TemplateValue(infiniteScrollScript, false);
         cb(null, val);
     };
-    
+
     /**
-     * 
+     *
      * @method setMetaInfo
      * @param {Object} options
      */
@@ -525,9 +547,9 @@ module.exports = function(pb) {
         this.ts.registerLocal(&#x27;meta_desc&#x27;, options.metaDescription || meta.description);
         this.ts.registerLocal(&#x27;meta_title&#x27;, options.metaTitle || meta.title);
         this.ts.registerLocal(&#x27;meta_thumbnail&#x27;, meta.thumbnail || &#x27;&#x27;);
-        this.ts.registerLocal(&#x27;meta_lang&#x27;, Localization.getDefaultLocale());
+        this.ts.registerLocal(&#x27;meta_lang&#x27;, options.metaLang || this.ls.language);
     };
-    
+
     /**
      *
      * @method getMetaInfo
@@ -541,7 +563,7 @@ module.exports = function(pb) {
         }
         this.service.getMetaInfo(contentArray[0], cb);
     };
-    
+
     /**
      *
      * @method renderContent
@@ -551,7 +573,7 @@ module.exports = function(pb) {
      */
     ContentViewLoader.prototype.renderContent = function(content, options, cb) {
         var self = this;
-        
+
         //set recurring params
         if (util.isNullOrUndefined(options.contentIndex)) {
             options.contentIndex = 0;
@@ -594,11 +616,20 @@ module.exports = function(pb) {
                 cb(err, new pb.TemplateValue(comments, false));
             });
         });
-        ats.load(&#x27;elements/article&#x27;, cb);
-        
+        ats.load(self.getDefaultContentTemplatePath(), cb);
+
         options.contentIndex++;
     };
-    
+
+    /**
+     *
+     * @method getDefaultContentTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultContentTemplatePath = function() {
+        return &#x27;elements/article&#x27;;
+    };
+
     /**
      *
      * @method renderComments
@@ -630,7 +661,7 @@ module.exports = function(pb) {
 
             var tasks = util.getTasks(content.comments, function(comments, i) {
                 return function(callback) {
-                    
+
                     var cts = ts.getChildInstance();
                     self.renderComment(comments[i], cts, callback);
                 };
@@ -639,9 +670,18 @@ module.exports = function(pb) {
                 cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
             });
         });
-        ts.load(&#x27;elements/comments&#x27;, cb);
+        ts.load(self.getDefaultCommentsTemplatePath(), cb);
     };
-    
+
+    /**
+     *
+     * @method getDefaultCommentsTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultCommentsTemplatePath = function() {
+        return &#x27;elements/comments&#x27;;
+    };
+
     /**
      *
      * @method renderComment
@@ -650,7 +690,7 @@ module.exports = function(pb) {
      * @param {Function} cb
      */
     ContentViewLoader.prototype.renderComment = function(comment, cts, cb) {
-        
+
         cts.reprocess = false;
         cts.registerLocal(&#x27;commenter_photo&#x27;, comment.commenter_photo ? comment.commenter_photo : &#x27;&#x27;);
         cts.registerLocal(&#x27;display_photo&#x27;, comment.commenter_photo ? &#x27;block&#x27; : &#x27;none&#x27;);
@@ -658,9 +698,18 @@ module.exports = function(pb) {
         cts.registerLocal(&#x27;commenter_position&#x27;, comment.commenter_position ? &#x27;, &#x27; + comment.commenter_position : &#x27;&#x27;);
         cts.registerLocal(&#x27;content&#x27;, comment.content);
         cts.registerLocal(&#x27;timestamp&#x27;, comment.timestamp);
-        cts.load(&#x27;elements/comments/comment&#x27;, cb);
+        cts.load(this.getDefaultCommentTemplatePath(), cb);
     };
-    
+
+    /**
+     *
+     * @method getDefaultCommentTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultCommentTemplatePath = function() {
+        return &#x27;elements/comments/comment&#x27;;
+    };
+
     /**
      *
      * @method onCommentingUserPhoto
@@ -675,9 +724,9 @@ module.exports = function(pb) {
         }
         cb(null, val);
     };
-    
+
     /**
-     * 
+     *
      * @method onCommentingUserPosition
      * @param {Object} content
      * @param {Object} options
@@ -690,7 +739,7 @@ module.exports = function(pb) {
         }
         cb(null, val);
     };
-    
+
     /**
      *
      * @method onContentPermalink
@@ -701,7 +750,7 @@ module.exports = function(pb) {
     ContentViewLoader.prototype.onContentPermalink = function(content, options, cb) {
         cb(null, this.createContentPermalink(content));
     };
-    
+
     /**
      *
      * @method onContentHeadline
@@ -714,7 +763,7 @@ module.exports = function(pb) {
         var val = new pb.TemplateValue(&#x27;&lt;a href=&quot;&#x27; + url + &#x27;&quot;&gt;&#x27; + HtmlEncoder.htmlEncode(content.headline) + &#x27;&lt;/a&gt;&#x27;, false);
         cb(null, val);
     };
-    
+
     /**
      *
      * @method createContentPermalink
@@ -723,9 +772,9 @@ module.exports = function(pb) {
      */
     ContentViewLoader.prototype.createContentPermalink = function(content) {
         var prefix = &#x27;/&#x27; + this.service.getType();
-        return pb.UrlService.createSystemUrl(pb.UrlService.urlJoin(prefix, content.url));
+        return pb.UrlService.createSystemUrl(pb.UrlService.urlJoin(prefix, content.url), { hostname: this.hostname });
     };
-    
+
     /**
      *
      * @static
@@ -736,9 +785,9 @@ module.exports = function(pb) {
     ContentViewLoader.getDisplayAttr = function(val) {
         return val ? &#x27;&#x27; : DISPLAY_NONE_STYLE_ATTR;
     };
-    
+
     /**
-     * When passed a value it is evaluated as a boolean.  If evaluated to TRUE 
+     * When passed a value it is evaluated as a boolean.  If evaluated to TRUE
      * the value is returned, if FALSE empty string is returned
      * @static
      * @method valOrEmpty
@@ -748,9 +797,10 @@ module.exports = function(pb) {
     ContentViewLoader.valOrEmpty = function(val) {
         return val ? val : &#x27;&#x27;;
     };
-    
+
     return ContentViewLoader;
 };
+
     </pre>
 </div>
                     </div>

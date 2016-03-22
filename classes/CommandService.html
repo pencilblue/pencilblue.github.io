@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -282,6 +300,10 @@ specific member.</p>
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_isRegistered">isRegistered</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_notifyOfCommand">notifyOfCommand</a>
 
                             </li>
@@ -335,8 +357,18 @@ specific member.</p>
 
                                     <span class="flag static">static</span>
                             </li>
+                            <li class="index-item property">
+                                <a href="#property_ERROR_INDEX">ERROR_INDEX</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
                             <li class="index-item property private">
                                 <a href="#property_INSTANCE">INSTANCE</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_NOT_FOUND">NOT_FOUND</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -368,7 +400,7 @@ specific member.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l446"><code>include\system\command\command_service.js:446</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l484"><code>include\system\command\command_service.js:484</code></a>
         </p>
 
 
@@ -412,7 +444,7 @@ specific member.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l73"><code>include\system\command\command_service.js:73</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l91"><code>include\system\command\command_service.js:91</code></a>
         </p>
 
 
@@ -448,6 +480,87 @@ path to another implementation.</p>
 
 
 </div>
+<div id="method_isRegistered" class="method item">
+    <h3 class="name"><code>isRegistered</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>type</code>
+                </li>
+                <li class="arg">
+                        <code>handler</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_system_command_command_service.js.html#l174"><code>include\system\command\command_service.js:174</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Determines if the provided handler is registered for the given type.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">type</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">handler</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+                    <p>The index in the storage array where the handle to
+the function is kept.  CommandService.NOT_FOUND if the handle is not
+registered for the type.  CommandService.ERROR_INDEX when the
+parameters are invalid.</p>
+
+            </div>
+        </div>
+
+
+</div>
 <div id="method_notifyOfCommand" class="method item">
     <h3 class="name"><code>notifyOfCommand</code></h3>
 
@@ -469,7 +582,7 @@ path to another implementation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l161"><code>include\system\command\command_service.js:161</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l197"><code>include\system\command\command_service.js:197</code></a>
         </p>
 
 
@@ -533,7 +646,7 @@ specified type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l421"><code>include\system\command\command_service.js:421</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l459"><code>include\system\command\command_service.js:459</code></a>
         </p>
 
 
@@ -614,7 +727,7 @@ handoff to the function that will delegate out to the handlers.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l115"><code>include\system\command\command_service.js:115</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l133"><code>include\system\command\command_service.js:133</code></a>
         </p>
 
 
@@ -696,7 +809,7 @@ object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l376"><code>include\system\command\command_service.js:376</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l414"><code>include\system\command\command_service.js:414</code></a>
         </p>
 
 
@@ -793,7 +906,7 @@ object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l296"><code>include\system\command\command_service.js:296</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l332"><code>include\system\command\command_service.js:332</code></a>
         </p>
 
 
@@ -828,6 +941,27 @@ object.</p>
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">to</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[timeout]</code>
+                                    <span class="type">Integer</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">onResponse</code>
@@ -872,7 +1006,7 @@ object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l207"><code>include\system\command\command_service.js:207</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l243"><code>include\system\command\command_service.js:243</code></a>
         </p>
 
 
@@ -1008,7 +1142,7 @@ index of the task being executed and the second is the total number of tasks.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l347"><code>include\system\command\command_service.js:347</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l385"><code>include\system\command\command_service.js:385</code></a>
         </p>
 
 
@@ -1084,7 +1218,7 @@ index of the task being executed and the second is the total number of tasks.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l100"><code>include\system\command\command_service.js:100</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l118"><code>include\system\command\command_service.js:118</code></a>
         </p>
 
 
@@ -1144,7 +1278,7 @@ index of the task being executed and the second is the total number of tasks.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_system_command_command_service.js.html#l138"><code>include\system\command\command_service.js:138</code></a>
+        <a href="../files/include_system_command_command_service.js.html#l157"><code>include\system\command\command_service.js:157</code></a>
         </p>
 
 
@@ -1257,6 +1391,32 @@ registered for</p>
                     
                     
                     </div>
+                    <div id="property_ERROR_INDEX" class="property item">
+                        <h3 class="name"><code>ERROR_INDEX</code></h3>
+                        <span class="type">Number</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_system_command_command_service.js.html#l73"><code>include\system\command\command_service.js:73</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Indicates that an error occurrred while attempting to check if a handler was registered</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_INSTANCE" class="property item private">
                         <h3 class="name"><code>INSTANCE</code></h3>
                         <span class="type"><a href="../classes/CommandService.html" class="crosslink">CommandService</a></span>
@@ -1278,6 +1438,32 @@ registered for</p>
                     
                         <div class="description">
                             <p>The singleton instance</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_NOT_FOUND" class="property item">
+                        <h3 class="name"><code>NOT_FOUND</code></h3>
+                        <span class="type">Number</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_system_command_command_service.js.html#l82"><code>include\system\command\command_service.js:82</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Indicates that the handler was not found</p>
                     
                         </div>
                     

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -211,22 +229,25 @@ var domain  = require(&#x27;domain&#x27;);
 var util    = require(&#x27;../util.js&#x27;);
 
 /**
- * 
+ *
  * @class System
  * @constructor
  * @param {Object} pb The PencilBlue namespace
  */
 module.exports = function System(pb){
-    
+
+    //pb dependencies
+    var log = pb.log;
+
     /**
      *
      * @private
      * @static
-     * @property 
+     * @property
      * @type {Object}
      */
     var SHUTDOWN_HOOKS = {};
-    
+
     /**
      *
      * @private
@@ -234,7 +255,7 @@ module.exports = function System(pb){
      * @type {Array}
      */
     var SHUTDOWN_PRIORITY = [];
-    
+
     /**
      *
      * @private
@@ -242,7 +263,7 @@ module.exports = function System(pb){
      * @type {Boolean}
      */
     var IS_SHUTTING_DOWN = false;
-    
+
     /**
      *
      * @private
@@ -250,7 +271,7 @@ module.exports = function System(pb){
      * @type {Integer}
      */
     var DISCONNECTS_CNT = 0;
-    
+
     /**
      *
      * @private
@@ -258,7 +279,7 @@ module.exports = function System(pb){
      * @type {Array}
      */
     var DISCONNECTS = [];
-    
+
     /**
      *
      * @private
@@ -267,10 +288,10 @@ module.exports = function System(pb){
      * @type {Array}
      */
     var FORCE_PROCESS_EXIT_TIMEOUT = 5*1000;
-    
+
     /**
      *
-     * @method onStart 
+     * @method onStart
      * @param {Function} onChildRunning
      */
     this.onStart = function(onChildRunning) {
@@ -286,8 +307,8 @@ module.exports = function System(pb){
     };
 
     /**
-     * 
-     * @method 
+     *
+     * @method
      */
     this.onMasterRunning = function() {
 
@@ -300,7 +321,7 @@ module.exports = function System(pb){
         for (var i = 0; i &lt; workerCnt; i++) {
             cluster.fork();
         }
-        
+
         var self = this;
         cluster.on(&#x27;disconnect&#x27;, function(worker) {
             self.onWorkerDisconntect(worker)
@@ -310,8 +331,8 @@ module.exports = function System(pb){
     };
 
     /**
-     * 
-     * @method 
+     *
+     * @method
      */
     this.onWorkerDisconntect = function(worker) {
         pb.log.debug(&#x27;System[%s]: Worker [%d] disconnected&#x27;, this.getWorkerId(), worker.id);
@@ -349,24 +370,24 @@ module.exports = function System(pb){
     };
 
     /**
-     * 
-     * @method 
+     *
+     * @method
      */
     this.isShuttingDown = function() {
         return IS_SHUTTING_DOWN;
     };
 
     /**
-     * 
-     * @method 
+     *
+     * @method
      */
     this.getWorkerId = function() {
         return cluster.worker ? cluster.worker.id : &#x27;M&#x27;;
     };
 
     /**
-     * 
-     * @method 
+     *
+     * @method
      */
     this.registerShutdownHook = function(name, shutdownHook) {
         if (typeof name !== &#x27;string&#x27;) {
@@ -389,7 +410,7 @@ module.exports = function System(pb){
         if (!util.isFunction(cb)) {
             cb = util.cb;
         }
-        
+
         //notify of shutdown
         var self = this;
         pb.log.debug(&#x27;System[%s]: Shutting down...&#x27;, this.getWorkerId());
@@ -432,7 +453,7 @@ module.exports = function System(pb){
                 clearTimeout(toh);
                 toh = null;
             }
-            
+
             //kill off the process when instructed
             if (killProcess) {
                 process.exit();
@@ -446,23 +467,23 @@ module.exports = function System(pb){
                 process.exit();
             }, FORCE_PROCESS_EXIT_TIMEOUT);
         }
-        
+
     };
-    
+
     /**
-     * Registers signal handlers (SIGTERM, SIGINT) that will call shutdown when 
+     * Registers signal handlers (SIGTERM, SIGINT) that will call shutdown when
      * triggered
      * @method registerSignalHandlers
-     * @param {Boolean} [killProcess] When TRUE or not provided the variable 
-     * instructs the handlers to kill off the process in addition to shutting 
+     * @param {Boolean} [killProcess] When TRUE or not provided the variable
+     * instructs the handlers to kill off the process in addition to shutting
      * down PencilBlue services
      */
     this.registerSignalHandlers = function(killProcess) {
         var self = this;
-        
+
         //determine if th process should be killed off
         killProcess = killProcess || util.isNullOrUndefined(killProcess);
-        
+
         // listen for TERM signal .e.g. kill
         process.on (&#x27;SIGTERM&#x27;, function() {
             log.debug(&#x27;System[%s]: SIGTERM detected %s&#x27;, self.getWorkerId(), IS_SHUTTING_DOWN ? &#x27;but is already shutting down&#x27; : &#x27;&#x27;);
@@ -478,9 +499,9 @@ module.exports = function System(pb){
                 self.shutdown(killProcess);
             }
         });
-        
+
         process.on (&#x27;uncaughtException&#x27;, function(err) {
-            log.debug(&#x27;System[%s]: uncaughtException detected %s: &#x27;, self.getWorkerId(), IS_SHUTTING_DOWN ? &#x27;but is already shutting down&#x27; : &#x27;&#x27;, err.stack);
+            log.error(&#x27;System[%s]: uncaught Exception detected %s: %s&#x27;, self.getWorkerId(), IS_SHUTTING_DOWN ? &#x27;but is already shutting down&#x27; : &#x27;&#x27;, err.stack);
             if (!IS_SHUTTING_DOWN) {
                 self.shutdown(killProcess);
             }

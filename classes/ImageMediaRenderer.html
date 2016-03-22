@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -285,6 +303,11 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_getSupportedExtensions">getSupportedExtensions</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_getSupportedTypes">getSupportedTypes</a>
 
                                     <span class="flag static">static</span>
@@ -370,7 +393,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l209"><code>include\service\media\renderers\image_media_renderer.js:209</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l219"><code>include\service\media\renderers\image_media_renderer.js:219</code></a>
         </p>
 
 
@@ -438,7 +461,7 @@ represented by the media Id</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l146"><code>include\service\media\renderers\image_media_renderer.js:146</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l156"><code>include\service\media\renderers\image_media_renderer.js:156</code></a>
         </p>
 
 
@@ -494,7 +517,7 @@ provided will be a supported type by the renderer.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l221"><code>include\service\media\renderers\image_media_renderer.js:221</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l231"><code>include\service\media\renderers\image_media_renderer.js:231</code></a>
         </p>
 
 
@@ -540,7 +563,7 @@ insight on how to generate the embed URL.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l232"><code>include\service\media\renderers\image_media_renderer.js:232</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l242"><code>include\service\media\renderers\image_media_renderer.js:242</code></a>
         </p>
 
 
@@ -615,7 +638,7 @@ Object if meta was collected.  NULL if no meta was collected</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l113"><code>include\service\media\renderers\image_media_renderer.js:113</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l123"><code>include\service\media\renderers\image_media_renderer.js:123</code></a>
         </p>
 
 
@@ -654,7 +677,7 @@ Object if meta was collected.  NULL if no meta was collected</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l261"><code>include\service\media\renderers\image_media_renderer.js:261</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l271"><code>include\service\media\renderers\image_media_renderer.js:271</code></a>
         </p>
 
 
@@ -696,7 +719,7 @@ where it was found or a direct link to the content.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l90"><code>include\service\media\renderers\image_media_renderer.js:90</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l100"><code>include\service\media\renderers\image_media_renderer.js:100</code></a>
         </p>
 
 
@@ -738,6 +761,48 @@ where it was found or a direct link to the content.</p>
 
 
 </div>
+<div id="method_getSupportedExtensions" class="method item">
+    <h3 class="name"><code>getSupportedExtensions</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l90"><code>include\service\media\renderers\image_media_renderer.js:90</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the supported extension types for the renderer.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_getSupportedTypes" class="method item">
     <h3 class="name"><code>getSupportedTypes</code></h3>
 
@@ -757,7 +822,7 @@ where it was found or a direct link to the content.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l101"><code>include\service\media\renderers\image_media_renderer.js:101</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l111"><code>include\service\media\renderers\image_media_renderer.js:111</code></a>
         </p>
 
 
@@ -805,7 +870,7 @@ where it was found or a direct link to the content.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l248"><code>include\service\media\renderers\image_media_renderer.js:248</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l258"><code>include\service\media\renderers\image_media_renderer.js:258</code></a>
         </p>
 
 
@@ -875,7 +940,7 @@ NULL if no thumbnail is available</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l135"><code>include\service\media\renderers\image_media_renderer.js:135</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l145"><code>include\service\media\renderers\image_media_renderer.js:145</code></a>
         </p>
 
 
@@ -939,7 +1004,7 @@ NULL if no thumbnail is available</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l123"><code>include\service\media\renderers\image_media_renderer.js:123</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l133"><code>include\service\media\renderers\image_media_renderer.js:133</code></a>
         </p>
 
 
@@ -1008,7 +1073,7 @@ NULL if no thumbnail is available</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l181"><code>include\service\media\renderers\image_media_renderer.js:181</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l191"><code>include\service\media\renderers\image_media_renderer.js:191</code></a>
         </p>
 
 
@@ -1133,7 +1198,7 @@ formatted string</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l158"><code>include\service\media\renderers\image_media_renderer.js:158</code></a>
+        <a href="../files/include_service_media_renderers_image_media_renderer.js.html#l168"><code>include\service\media\renderers\image_media_renderer.js:168</code></a>
         </p>
 
 

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -206,10 +224,10 @@
 var util = require(&#x27;../../util.js&#x27;);
 
 module.exports = function(pb) {
-    
+
     //pb dependencies
     var BaseObjectService = pb.BaseObjectService;
-    
+
     /**
      * @private
      * @static
@@ -218,7 +236,7 @@ module.exports = function(pb) {
      * @type {String}
      */
     var TYPE = &#x27;topic&#x27;;
-    
+
     /**
      * Provides interactions with topics
      * @class TopicService
@@ -230,18 +248,18 @@ module.exports = function(pb) {
         if (!util.isObject(context)) {
             context = {};
         }
-        
+
         context.type = TYPE;
         TopicService.super_.call(this, context);
     }
     util.inherits(TopicService, BaseObjectService);
-    
+
     /**
-     * 
+     *
      * @static
-     * @method 
+     * @method
      * @param {Object} context
-     * @param {TopicService} service An instance of the service that triggered 
+     * @param {TopicService} service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
@@ -250,13 +268,13 @@ module.exports = function(pb) {
         dto.name = pb.BaseController.sanitize(dto.name);
         cb(null);
     };
-    
+
     /**
-     * 
+     *
      * @static
-     * @method 
+     * @method
      * @param {Object} context
-     * @param {TopicService} service An instance of the service that triggered 
+     * @param {TopicService} service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
@@ -264,30 +282,30 @@ module.exports = function(pb) {
         context.object.name = context.data.name;
         cb(null);
     };
-    
+
     /**
-     * 
+     *
      * @static
      * @method validate
      * @param {Object} context
      * @param {Object} context.data The DTO that was provided for persistence
-     * @param {TopicService} context.service An instance of the service that triggered 
+     * @param {TopicService} context.service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
     TopicService.validate = function(context, cb) {
         var obj = context.data;
         var errors = context.validationErrors;
-        
+
         if (!pb.ValidationService.isNonEmptyStr(obj.name, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;name&#x27;, &#x27;Name is required&#x27;));
-            
+
             //no need to check the DB.  Short circuit it here
             return cb(null, errors);
         }
 
         //validate name is not taken
-        var where = pb.DAO.getNotIDWhere(obj[pb.DAO.getIdField()]);
+        var where = pb.DAO.getNotIdWhere(obj[pb.DAO.getIdField()]);
         where.name = new RegExp(&#x27;^&#x27; + util.escapeRegExp(obj.name) + &#x27;$&#x27;, &#x27;i&#x27;);
         context.service.dao.exists(TYPE, where, function(err, exists) {
             if (util.isError(err)) {
@@ -299,12 +317,12 @@ module.exports = function(pb) {
             cb(null, errors);
         });
     };
-    
+
     //Event Registries
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.FORMAT, TopicService.format);
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.MERGE, TopicService.merge);
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.VALIDATE, TopicService.validate);
-    
+
     //exports
     return TopicService;
 };

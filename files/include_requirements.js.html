@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -213,7 +231,7 @@ var path = require(&#x27;path&#x27;);
  * @return {Object} The pb namespace
  */
 module.exports = function PB(config) {
-    
+
     //define what will become the global entry point into the server api.
     var pb = {};
 
@@ -231,7 +249,7 @@ module.exports = function PB(config) {
 
     //initialize logging
     pb.log    = require(path.join(config.docRoot, &#x27;/include/utils/logging.js&#x27;))(config);
-    
+
     //setup the System instance
     pb.System = require(path.join(config.docRoot, &#x27;include/system/system.js&#x27;));
     pb.system = new pb.System(pb);
@@ -252,7 +270,7 @@ module.exports = function PB(config) {
     var ValidationModule = require(path.join(config.docRoot, &#x27;/include/validation/validation_service.js&#x27;));
     pb.ValidationService = ValidationModule(pb);
     pb.validation        = pb.ValidationService;
-    
+
     //lock services
     pb.locks = {
         providers: {
@@ -267,7 +285,14 @@ module.exports = function PB(config) {
     pb.SessionHandler = SessionModule(pb);
     pb.session        = new pb.SessionHandler(pb.SessionHandler.getSessionStoreInstance());
 
-    //setup object services
+    pb.BaseObjectService = require(path.join(config.docRoot, &#x27;/include/service/base_object_service.js&#x27;))(pb);
+
+    //setup site service
+    pb.SiteService = require(path.join(config.docRoot, &#x27;/include/service/entities/site_service.js&#x27;))(pb);
+    pb.SiteQueryService = require(path.join(config.docRoot, &#x27;/include/service/entities/site_query_service.js&#x27;))(pb);
+
+
+  //setup object services
     pb.SimpleLayeredService         = require(path.join(config.docRoot, &#x27;/include/service/simple_layered_service.js&#x27;))(pb);
     pb.MemoryEntityService          = require(path.join(config.docRoot, &#x27;/include/service/memory_entity_service.js&#x27;))(pb);
     pb.CacheEntityService           = require(path.join(config.docRoot, &#x27;/include/service/cache_entity_service.js&#x27;))(pb);
@@ -289,9 +314,9 @@ module.exports = function PB(config) {
     var Authentication                = require(path.join(config.docRoot, &#x27;/include/security/authentication&#x27;))(pb);
     pb.UsernamePasswordAuthentication = Authentication.UsernamePasswordAuthentication;
     pb.FormAuthentication             = Authentication.FormAuthentication;
+    pb.TokenAuthentication            = Authentication.TokenAuthentication;
 
     //setup user service
-    pb.BaseObjectService = require(path.join(config.docRoot, &#x27;/include/service/base_object_service.js&#x27;))(pb);
     pb.UserService       = require(path.join(config.docRoot, &#x27;/include/service/entities/user_service.js&#x27;))(pb);
     Object.defineProperty(pb, &#x27;users&#x27;, {
         get: function() {
@@ -307,11 +332,14 @@ module.exports = function PB(config) {
     pb.FormBodyParser      = BodyParsers.FormBodyParser;
     pb.BaseController      = require(path.join(config.docRoot, &#x27;/controllers/base_controller.js&#x27;))(pb);
     pb.BaseApiController   = require(path.join(config.docRoot, &#x27;/controllers/api/base_api_controller.js&#x27;))(pb);
+    pb.BaseAdminController = require(path.join(config.docRoot, &#x27;/controllers/admin/base_admin_controller.js&#x27;))(pb);
     pb.ViewController      = require(path.join(config.docRoot, &#x27;/controllers/view_controller.js&#x27;))(pb);
     pb.FormController      = require(path.join(config.docRoot, &#x27;/controllers/form_controller.js&#x27;))(pb);
     pb.DeleteController    = require(path.join(config.docRoot, &#x27;/controllers/delete_controller.js&#x27;))(pb);
     pb.ApiActionController = require(path.join(config.docRoot, &#x27;/controllers/api/api_action_controller.js&#x27;))(pb);
+    pb.ErrorViewController = require(path.join(config.docRoot, &#x27;/controllers/error_controller.js&#x27;))(pb);
     pb.RequestHandler      = require(path.join(config.docRoot, &#x27;/include/http/request_handler.js&#x27;))(pb);
+    pb.HttpStatus          = require(&#x27;http-status-codes&#x27;);
 
     //setup errors
     pb.PBError    = require(path.join(config.docRoot, &#x27;/include/error/pb_error.js&#x27;))(pb);
@@ -345,6 +373,10 @@ module.exports = function PB(config) {
     pb.PluginDependenciesJob = require(path.join(config.docRoot, &#x27;/include/service/jobs/plugins/plugin_dependencies_job.js&#x27;))(pb);
     pb.PluginInitializeJob   = require(path.join(config.docRoot, &#x27;/include/service/jobs/plugins/plugin_initialize_job.js&#x27;))(pb);
     pb.PluginInstallJob      = require(path.join(config.docRoot, &#x27;/include/service/jobs/plugins/plugin_install_job.js&#x27;))(pb);
+    pb.SiteJobRunner         = require(path.join(config.docRoot, &#x27;/include/service/jobs/sites/site_job_runner.js&#x27;))(pb);
+    pb.SiteActivateJob       = require(path.join(config.docRoot, &#x27;/include/service/jobs/sites/site_activate_job.js&#x27;))(pb);
+    pb.SiteDeactivateJob     = require(path.join(config.docRoot, &#x27;/include/service/jobs/sites/site_deactivate_job.js&#x27;))(pb);
+    pb.SiteCreateEditJob     = require(path.join(config.docRoot, &#x27;/include/service/jobs/sites/site_create_edit_job.js&#x27;))(pb);
 
     //Email settings and functions
     pb.EmailService = require(path.join(config.docRoot, &#x27;/include/email&#x27;))(pb);
@@ -371,13 +403,14 @@ module.exports = function PB(config) {
             pb.log.warn(&#x27;PencilBlue: pb.js is deprecated.  Use pb.ClientJs instead&#x27;);
             return pb.ClientJS;
         }
-    });						
+    });
     pb.AdminNavigation    = require(path.join(config.docRoot, &#x27;/include/admin_navigation&#x27;))(pb);			// Admin Navigation
     pb.AdminSubnavService = require(path.join(config.docRoot, &#x27;/include/service/admin/admin_subnav_service.js&#x27;))(pb);
     pb.AnalyticsManager   = require(path.join(config.docRoot, &#x27;/include/system/analytics_manager.js&#x27;))(pb);
     pb.UrlService         = require(path.join(config.docRoot, &#x27;/include/service/entities/url_service.js&#x27;))(pb);
     pb.CallHomeService    = require(path.join(config.docRoot, &#x27;/include/system/call_home_service.js&#x27;))(pb);
     pb.JobService         = require(path.join(config.docRoot, &#x27;/include/service/entities/job_service.js&#x27;))(pb);
+    pb.TokenService       = require(path.join(config.docRoot, &#x27;/include/service/entities/token_service.js&#x27;))(pb);
 
     //create plugin service
     pb.PluginService = require(path.join(config.docRoot, &#x27;/include/service/entities/plugin_service.js&#x27;))(pb);
@@ -388,12 +421,16 @@ module.exports = function PB(config) {
         }
     });
 
+    //create plugin setting service
+    pb.PluginSettingService = require(path.join(config.docRoot, &#x27;/include/service/entities/plugin_setting_service.js&#x27;))(pb);
+    pb.PluginRepository = require(path.join(config.docRoot, &#x27;/include/repository/plugin_repository.js&#x27;))(pb);
+
     //media renderers
     pb.media = {
         renderers: {
             BaseMediaRenderer: require(path.join(config.docRoot, &#x27;/include/service/media/renderers/base_media_renderer.js&#x27;))(pb),
         },
-        
+
         providers: {
             FsMediaProvider: require(path.join(config.docRoot, &#x27;/include/service/media/fs_media_provider.js&#x27;))(pb),
             MongoMediaProvider: require(path.join(config.docRoot, &#x27;/include/service/media/mongo_media_provider.js&#x27;))(pb)
@@ -409,15 +446,16 @@ module.exports = function PB(config) {
     pb.media.renderers.SlideShareMediaRenderer = require(path.join(config.docRoot, &#x27;/include/service/media/renderers/slideshare_media_renderer.js&#x27;))(pb),
     pb.media.renderers.TrinketMediaRenderer = require(path.join(config.docRoot, &#x27;/include/service/media/renderers/trinket_media_renderer.js&#x27;))(pb),
     pb.media.renderers.StorifyMediaRenderer = require(path.join(config.docRoot, &#x27;/include/service/media/renderers/storify_media_renderer.js&#x27;))(pb),
-    pb.media.renderers.KickStarterMediaRenderer = require(path.join(config.docRoot, &#x27;/include/service/media/renderers/kickstarter_media_renderer.js&#x27;))(pb)
-    
+    pb.media.renderers.KickStarterMediaRenderer = require(path.join(config.docRoot, &#x27;/include/service/media/renderers/kickstarter_media_renderer.js&#x27;))(pb);
+    pb.media.renderers.PdfMediaRenderer = require(path.join(config.docRoot, &#x27;/include/service/media/renderers/pdf_media_renderer.js&#x27;))(pb);
+
     //providers and service
     pb.MediaService = require(path.join(config.docRoot, &#x27;/include/service/entities/media_service.js&#x27;))(pb);
 
     //content services
     pb.SectionService = require(config.docRoot+&#x27;/include/service/entities/section_service.js&#x27;)(pb);
     pb.TopMenuService = require(config.docRoot+&#x27;/include/theme/top_menu.js&#x27;)(pb);
-    
+
     //object services
     pb.TopicService         = require(path.join(config.docRoot, &#x27;/include/service/entities/topic_service.js&#x27;))(pb);
     pb.ContentObjectService = require(path.join(config.docRoot, &#x27;/include/service/entities/content/content_object_service.js&#x27;))(pb);
@@ -426,14 +464,17 @@ module.exports = function PB(config) {
     pb.PageRenderer         = require(path.join(config.docRoot, &#x27;/include/service/entities/content/page_renderer.js&#x27;))(pb);
     pb.PageService          = require(path.join(config.docRoot, &#x27;/include/service/entities/content/page_service.js&#x27;))(pb);
     pb.ContentViewLoader    = require(path.join(config.docRoot, &#x27;/include/service/entities/content/content_view_loader.js&#x27;))(pb);
-    
+
+    pb.SiteMapService = require(path.join(config.docRoot, &#x27;/include/service/entities/site_map_service.js&#x27;))(pb);
+
     var ArticleServiceModule = require(path.join(config.docRoot, &#x27;/include/service/entities/article_service.js&#x27;))(pb);
     pb.ArticleService        = ArticleServiceModule.ArticleService;
     pb.MediaLoader           = ArticleServiceModule.MediaLoader;
     pb.CommentService        = require(config.docRoot+&#x27;/include/theme/comments.js&#x27;)(pb);
-    
+
     return pb;
 };
+
     </pre>
 </div>
                     </div>

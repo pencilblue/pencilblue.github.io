@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -254,22 +272,7 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getEmbedUrl">getEmbedUrl</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_getIcon">getIcon</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getIcon">getIcon</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getMediaId">getMediaId</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -284,22 +287,7 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getMeta">getMeta</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_getName">getName</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getName">getName</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getNativeUrl">getNativeUrl</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -314,12 +302,7 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getStyle">getStyle</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getSupportedTypes">getSupportedTypes</a>
+                                <a href="#method_getSupportedExtensions">getSupportedExtensions</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -334,16 +317,6 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getThumbnail">getThumbnail</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getType">getType</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_getType">getType</a>
 
                                     <span class="flag static">static</span>
@@ -354,22 +327,7 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_isSupported">isSupported</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_render">render</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_render">render</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_renderByUrl">renderByUrl</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -391,22 +349,7 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item property private">
-                                <a href="#property_STYLES">STYLES</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item property private">
                                 <a href="#property_SUPPORTED">SUPPORTED</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item property private">
-                                <a href="#property_SUPPORTED">SUPPORTED</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item property private">
-                                <a href="#property_TYPE">TYPE</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -449,75 +392,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l230"><code>include\service\media\renderers\video_media_renderer.js:230</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the source URI that will be used when generating the rendering</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">mediaId</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <p>The unique (only to the type) media identifier</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-                    <p>A properly formatted URI string that points to the resource
-represented by the media Id</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getEmbedUrl" class="method item">
-    <h3 class="name"><code>getEmbedUrl</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>mediaId</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l227"><code>include\service\media\renderers\audio_media_renderer.js:227</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l240"><code>include\service\media\renderers\video_media_renderer.js:240</code></a>
         </p>
 
 
@@ -585,72 +460,7 @@ represented by the media Id</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l147"><code>include\service\media\renderers\video_media_renderer.js:147</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the Font Awesome icon class.  It is safe to assume that the type
-provided will be a supported type by the renderer.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">type</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getIcon" class="method item">
-    <h3 class="name"><code>getIcon</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>type</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l144"><code>include\service\media\renderers\audio_media_renderer.js:144</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l157"><code>include\service\media\renderers\video_media_renderer.js:157</code></a>
         </p>
 
 
@@ -706,41 +516,7 @@ provided will be a supported type by the renderer.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l242"><code>include\service\media\renderers\video_media_renderer.js:242</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the unique identifier from the URL provided.  The value should
-distinguish the media resource from the others of this type and provide
-insight on how to generate the embed URL.</p>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_getMediaId" class="method item">
-    <h3 class="name"><code>getMediaId</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l239"><code>include\service\media\renderers\audio_media_renderer.js:239</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l252"><code>include\service\media\renderers\video_media_renderer.js:252</code></a>
         </p>
 
 
@@ -786,91 +562,7 @@ insight on how to generate the embed URL.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l253"><code>include\service\media\renderers\video_media_renderer.js:253</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves any meta data about the media represented by the URL.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">urlStr</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">isFile</code>
-                        <span class="type">Boolean</span>
-
-
-                    <div class="param-description">
-                        <p>indicates if the URL points to a file that was
-uploaded to the PB server</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback that provides an Error if occurred and an
-Object if meta was collected.  NULL if no meta was collected</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_getMeta" class="method item">
-    <h3 class="name"><code>getMeta</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-                <li class="arg">
-                        <code>isFile</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l250"><code>include\service\media\renderers\audio_media_renderer.js:250</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l263"><code>include\service\media\renderers\video_media_renderer.js:263</code></a>
         </p>
 
 
@@ -933,648 +625,6 @@ Object if meta was collected.  NULL if no meta was collected</p>
 
         <span class="returns-inline">
             <span class="type">String</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l111"><code>include\service\media\renderers\audio_media_renderer.js:111</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the name of the renderer.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getName" class="method item">
-    <h3 class="name"><code>getName</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l114"><code>include\service\media\renderers\video_media_renderer.js:114</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the name of the renderer.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getNativeUrl" class="method item">
-    <h3 class="name"><code>getNativeUrl</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l282"><code>include\service\media\renderers\video_media_renderer.js:282</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the native URL for the media resource.  This can be the raw page
-where it was found or a direct link to the content.</p>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_getNativeUrl" class="method item">
-    <h3 class="name"><code>getNativeUrl</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l279"><code>include\service\media\renderers\audio_media_renderer.js:279</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the native URL for the media resource.  This can be the raw page
-where it was found or a direct link to the content.</p>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_getStyle" class="method item">
-    <h3 class="name"><code>getStyle</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>viewType</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l88"><code>include\service\media\renderers\audio_media_renderer.js:88</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the style for the specified type of view</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">viewType</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <p>The view type calling for a styling</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>a hash of style properties</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getStyle" class="method item">
-    <h3 class="name"><code>getStyle</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>viewType</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l91"><code>include\service\media\renderers\video_media_renderer.js:91</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the style for the specified type of view</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">viewType</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <p>The view type calling for a styling</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>a hash of style properties</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getSupportedTypes" class="method item">
-    <h3 class="name"><code>getSupportedTypes</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l99"><code>include\service\media\renderers\audio_media_renderer.js:99</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the supported media types as a hash.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getSupportedTypes" class="method item">
-    <h3 class="name"><code>getSupportedTypes</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l102"><code>include\service\media\renderers\video_media_renderer.js:102</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the supported media types as a hash.</p>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getThumbnail" class="method item">
-    <h3 class="name"><code>getThumbnail</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l266"><code>include\service\media\renderers\audio_media_renderer.js:266</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves a URI to a thumbnail for the media resource</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">urlStr</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback where the first parameter is an Error if
-occurred and the second is the URI string to the thumbnail.  Empty string or
-NULL if no thumbnail is available</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_getThumbnail" class="method item">
-    <h3 class="name"><code>getThumbnail</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l269"><code>include\service\media\renderers\video_media_renderer.js:269</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves a URI to a thumbnail for the media resource</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">urlStr</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback where the first parameter is an Error if
-occurred and the second is the URI string to the thumbnail.  Empty string or
-NULL if no thumbnail is available</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_getType" class="method item">
-    <h3 class="name"><code>getType</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l136"><code>include\service\media\renderers\video_media_renderer.js:136</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Gets the specific type of the media resource represented by the provided URL</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">urlStr</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getType" class="method item">
-    <h3 class="name"><code>getType</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l133"><code>include\service\media\renderers\audio_media_renderer.js:133</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Gets the specific type of the media resource represented by the provided URL</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">urlStr</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_isSupported" class="method item">
-    <h3 class="name"><code>isSupported</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Boolean</span>
         </span>
 
 
@@ -1595,7 +645,309 @@ NULL if no thumbnail is available</p>
     </div>
 
     <div class="description">
-        <p>Determines if the URL to a media object is supported by this renderer</p>
+        <p>Retrieves the name of the renderer.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getNativeUrl" class="method item">
+    <h3 class="name"><code>getNativeUrl</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l292"><code>include\service\media\renderers\video_media_renderer.js:292</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the native URL for the media resource.  This can be the raw page
+where it was found or a direct link to the content.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_getStyle" class="method item">
+    <h3 class="name"><code>getStyle</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>viewType</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l101"><code>include\service\media\renderers\video_media_renderer.js:101</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the style for the specified type of view</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">viewType</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The view type calling for a styling</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>a hash of style properties</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getSupportedExtensions" class="method item">
+    <h3 class="name"><code>getSupportedExtensions</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l91"><code>include\service\media\renderers\video_media_renderer.js:91</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the supported extension types for the renderer.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getSupportedTypes" class="method item">
+    <h3 class="name"><code>getSupportedTypes</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l112"><code>include\service\media\renderers\video_media_renderer.js:112</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the supported media types as a hash.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getThumbnail" class="method item">
+    <h3 class="name"><code>getThumbnail</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>urlStr</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l279"><code>include\service\media\renderers\video_media_renderer.js:279</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves a URI to a thumbnail for the media resource</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">urlStr</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback where the first parameter is an Error if
+occurred and the second is the URI string to the thumbnail.  Empty string or
+NULL if no thumbnail is available</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getType" class="method item">
+    <h3 class="name"><code>getType</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>urlStr</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l146"><code>include\service\media\renderers\video_media_renderer.js:146</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Gets the specific type of the media resource represented by the provided URL</p>
 
     </div>
 
@@ -1620,9 +972,7 @@ NULL if no thumbnail is available</p>
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Boolean</span>:
-                    <p>TRUE if the URL is supported by the renderer, FALSE if not</p>
-
+                        <span class="type">String</span>:
             </div>
         </div>
 
@@ -1653,7 +1003,7 @@ NULL if no thumbnail is available</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l121"><code>include\service\media\renderers\audio_media_renderer.js:121</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l134"><code>include\service\media\renderers\video_media_renderer.js:134</code></a>
         </p>
 
 
@@ -1722,132 +1072,7 @@ NULL if no thumbnail is available</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l179"><code>include\service\media\renderers\audio_media_renderer.js:179</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Renders the media resource via the media descriptor object.  It is only
-guaranteed that the &quot;location&quot; property will be available at the time of
-rendering.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">media</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">location</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    <p>The unique resource identifier (only to the
-media type) for the media resource</p>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[attrs]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>A hash of all attributes (excluding style)
-that will be applied to the element generated by the rendering</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[style]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>A hash of all attributes that will be
-applied to the style of the element generated by the rendering.</p>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback where the first parameter is an Error if
-occurred and the second is the rendering of the media resource as a HTML
-formatted string</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_render" class="method item">
-    <h3 class="name"><code>render</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>media</code>
-                </li>
-                <li class="arg">
-                        <code class="optional">[options]</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l182"><code>include\service\media\renderers\video_media_renderer.js:182</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l192"><code>include\service\media\renderers\video_media_renderer.js:192</code></a>
         </p>
 
 
@@ -1972,117 +1197,7 @@ formatted string</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l156"><code>include\service\media\renderers\audio_media_renderer.js:156</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Renders the media resource via the raw URL to the resource</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">urlStr</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[attrs]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>A hash of all attributes (excluding style)
-that will be applied to the element generated by the rendering</p>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[style]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    <p>A hash of all attributes that will be
-applied to the style of the element generated by the rendering.</p>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback where the first parameter is an Error if
-occurred and the second is the rendering of the media resource as a HTML
-formatted string</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_renderByUrl" class="method item">
-    <h3 class="name"><code>renderByUrl</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>urlStr</code>
-                </li>
-                <li class="arg">
-                        <code class="optional">[options]</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l159"><code>include\service\media\renderers\video_media_renderer.js:159</code></a>
+        <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l169"><code>include\service\media\renderers\video_media_renderer.js:169</code></a>
         </p>
 
 
@@ -2182,33 +1297,6 @@ formatted string</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l63"><code>include\service\media\renderers\audio_media_renderer.js:63</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Provides the styles used by each type of view</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_STYLES" class="property item private">
-                        <h3 class="name"><code>STYLES</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
                             <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l66"><code>include\service\media\renderers\video_media_renderer.js:66</code></a>
                             </p>
                     
@@ -2236,33 +1324,6 @@ formatted string</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l43"><code>include\service\media\renderers\audio_media_renderer.js:43</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The list of supported extensions</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_SUPPORTED" class="property item private">
-                        <h3 class="name"><code>SUPPORTED</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
                             <a href="../files/include_service_media_renderers_video_media_renderer.js.html#l43"><code>include\service\media\renderers\video_media_renderer.js:43</code></a>
                             </p>
                     
@@ -2271,33 +1332,6 @@ formatted string</p>
                     
                         <div class="description">
                             <p>The list of supported extensions</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_TYPE" class="property item private">
-                        <h3 class="name"><code>TYPE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_media_renderers_audio_media_renderer.js.html#l34"><code>include\service\media\renderers\audio_media_renderer.js:34</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The media type supported by the provider</p>
                     
                         </div>
                     

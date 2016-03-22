@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -294,11 +312,23 @@ needs access to a posted form.</p>
 
                             </li>
                             <li class="index-item method inherited">
+                                <a href="#method_getTemplateServiceInstance">getTemplateServiceInstance</a>
+
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_hasRequiredParams">hasRequiredParams</a>
 
                             </li>
                             <li class="index-item method inherited">
                                 <a href="#method_init">init</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_initSync">initSync</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_onLocalizedAlternateFlagFound">onLocalizedAlternateFlagFound</a>
 
                             </li>
                             <li class="index-item method">
@@ -356,6 +386,10 @@ needs access to a posted form.</p>
                                 <a href="#property_autoSanitize">autoSanitize</a>
 
                             </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_ts">ts</a>
+
+                            </li>
                     </ul>
                 </div>
 
@@ -389,7 +423,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_checkForFormRefill">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l376"><code>controllers\base_controller.js:376</code></a>
+        <a href="../files/controllers_base_controller.js.html#l479"><code>controllers\base_controller.js:479</code></a>
         </p>
 
 
@@ -454,7 +488,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_displayErrorOrSuccessCallback">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l216"><code>controllers\base_controller.js:216</code></a>
+        <a href="../files/controllers_base_controller.js.html#l316"><code>controllers\base_controller.js:316</code></a>
         </p>
 
 
@@ -522,7 +556,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_formError">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l202"><code>controllers\base_controller.js:202</code></a>
+        <a href="../files/controllers_base_controller.js.html#l302"><code>controllers\base_controller.js:302</code></a>
         </p>
 
 
@@ -635,7 +669,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getJSONPostParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l281"><code>controllers\base_controller.js:281</code></a>
+        <a href="../files/controllers_base_controller.js.html#l382"><code>controllers\base_controller.js:382</code></a>
         </p>
 
 
@@ -685,7 +719,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPageName">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l238"><code>controllers\base_controller.js:238</code></a>
+        <a href="../files/controllers_base_controller.js.html#l338"><code>controllers\base_controller.js:338</code></a>
         </p>
 
 
@@ -732,7 +766,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPostData">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l310"><code>controllers\base_controller.js:310</code></a>
+        <a href="../files/controllers_base_controller.js.html#l413"><code>controllers\base_controller.js:413</code></a>
         </p>
 
 
@@ -784,7 +818,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPostParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l257"><code>controllers\base_controller.js:257</code></a>
+        <a href="../files/controllers_base_controller.js.html#l357"><code>controllers\base_controller.js:357</code></a>
         </p>
 
 
@@ -833,7 +867,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getSanitizationRules">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l418"><code>controllers\base_controller.js:418</code></a>
+        <a href="../files/controllers_base_controller.js.html#l522"><code>controllers\base_controller.js:522</code></a>
         </p>
 
 
@@ -873,7 +907,7 @@ needs access to a posted form.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getServiceContext">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l169"><code>controllers\base_controller.js:169</code></a>
+        <a href="../files/controllers_base_controller.js.html#l269"><code>controllers\base_controller.js:269</code></a>
         </p>
 
 
@@ -892,6 +926,69 @@ service prototypes</p>
 
             <div class="returns-description">
                         <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getTemplateServiceInstance" class="method item inherited">
+    <h3 class="name"><code>getTemplateServiceInstance</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>props</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#method_getTemplateServiceInstance">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l169"><code>controllers\base_controller.js:169</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a TemplateService instance</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">props</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>:
             </div>
         </div>
 
@@ -921,7 +1018,7 @@ service prototypes</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_hasRequiredParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l339"><code>controllers\base_controller.js:339</code></a>
+        <a href="../files/controllers_base_controller.js.html#l442"><code>controllers\base_controller.js:442</code></a>
         </p>
 
 
@@ -986,7 +1083,7 @@ service prototypes</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_init">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l86"><code>controllers\base_controller.js:86</code></a>
+        <a href="../files/controllers_base_controller.js.html#l89"><code>controllers\base_controller.js:89</code></a>
         </p>
 
 
@@ -1100,6 +1197,126 @@ a variety of request specified properties.  By default the function transfers th
                     <div class="param-description">
                         <p>A callback that takes a single optional argument: cb(Error)</p>
 
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_initSync" class="method item inherited">
+    <h3 class="name"><code>initSync</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#method_initSync">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l161"><code>controllers\base_controller.js:161</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Provides a synchronous function means to initialize a controller.  It is
+meant to be called from the &quot;init&quot; function called by the request handler.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>See &quot;init&quot; for more details on properties</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onLocalizedAlternateFlagFound" class="method item inherited">
+    <h3 class="name"><code>onLocalizedAlternateFlagFound</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>routeLocalized</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#method_onLocalizedAlternateFlagFound">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l229"><code>controllers\base_controller.js:229</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">routeLocalized</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
                     </div>
 
                 </li>
@@ -1267,7 +1484,7 @@ parameters as JSON.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_redirect">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l458"><code>controllers\base_controller.js:458</code></a>
+        <a href="../files/controllers_base_controller.js.html#l562"><code>controllers\base_controller.js:562</code></a>
         </p>
 
 
@@ -1383,7 +1600,7 @@ parameters will be sanitized.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_requiresClientLocalization">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l179"><code>controllers\base_controller.js:179</code></a>
+        <a href="../files/controllers_base_controller.js.html#l279"><code>controllers\base_controller.js:279</code></a>
         </p>
 
 
@@ -1429,7 +1646,7 @@ parameters will be sanitized.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_requiresClientLocalizationCallback">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l188"><code>controllers\base_controller.js:188</code></a>
+        <a href="../files/controllers_base_controller.js.html#l288"><code>controllers\base_controller.js:288</code></a>
         </p>
 
 
@@ -1491,7 +1708,7 @@ parameters will be sanitized.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_sanitizeObject">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l394"><code>controllers\base_controller.js:394</code></a>
+        <a href="../files/controllers_base_controller.js.html#l497"><code>controllers\base_controller.js:497</code></a>
         </p>
 
 
@@ -1600,7 +1817,7 @@ to BaseController.getSanitizationRules.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_setFormFieldValues">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l366"><code>controllers\base_controller.js:366</code></a>
+        <a href="../files/controllers_base_controller.js.html#l469"><code>controllers\base_controller.js:469</code></a>
         </p>
 
 
@@ -1652,7 +1869,7 @@ to BaseController.getSanitizationRules.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_setPageName">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l248"><code>controllers\base_controller.js:248</code></a>
+        <a href="../files/controllers_base_controller.js.html#l348"><code>controllers\base_controller.js:348</code></a>
         </p>
 
 
@@ -1701,7 +1918,7 @@ to BaseController.getSanitizationRules.</p>
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/BaseController.html#property_activeTheme">BaseController</a>:
-                            <a href="../files/controllers_base_controller.js.html#l149"><code>controllers\base_controller.js:149</code></a>
+                            <a href="../files/controllers_base_controller.js.html#l135"><code>controllers\base_controller.js:135</code></a>
                             </p>
                     
                     
@@ -1735,6 +1952,30 @@ to BaseController.getSanitizationRules.</p>
                             <p>Instructs the controller to automatically sanitize any incoming post data
                     when set to TRUE.</p>
                     
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_ts" class="property item inherited">
+                        <h3 class="name"><code>ts</code></h3>
+                        <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/BaseController.html#property_ts">BaseController</a>:
+                            <a href="../files/controllers_base_controller.js.html#l129"><code>controllers\base_controller.js:129</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
                         </div>
                     
                     

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -213,8 +231,17 @@ module.exports = function(pb) {
      * @class ContentService
      * @constructor
      */
-    function ContentService(){}
-    
+    function ContentService(options) {
+        if(options) {
+            this.siteUid = pb.SiteService.getCurrentSite(options.site) || pb.SiteService.GLOBAL_SITE;
+            this.onlyThisSite = options.onlyThisSite || false;
+        } else {
+            this.siteUid = pb.SiteService.GLOBAL_SITE;
+            this.onlyThisSite = false;
+        }
+        this.settingService = pb.SettingServiceFactory.getServiceBySite(this.siteUid, this.onlyThisSite);
+    }
+
     /**
      *
      * @private
@@ -224,7 +251,7 @@ module.exports = function(pb) {
      * @type {String}
      */
     var CONTENT_SETTINGS_REF = &#x27;content_settings&#x27;;
-    
+
     /**
      *
      * @private
@@ -260,22 +287,23 @@ module.exports = function(pb) {
     ContentService.prototype.getSettings = function(cb){
         this.get(cb);
     };
-    
+
     /**
-     * Retrieves the content settings.  When settings are not found in storage 
+     * Retrieves the content settings.  When settings are not found in storage
      * the service will generate defaults and persist them.
      * @method get
      * @param {Function} cb Callback function
      */
     ContentService.prototype.get = function(cb) {
-        pb.settings.get(CONTENT_SETTINGS_REF, function(err, settings){
+        var self = this;
+        this.settingService.get(CONTENT_SETTINGS_REF, function(err, settings){
             if (settings) {
                 return cb(err, settings);
             }
 
             //set default settings if they don&#x27;t exist
             settings = ContentService.getDefaultSettings();
-            pb.settings.set(CONTENT_SETTINGS_REF, settings, function(err, result) {
+            self.settingService.set(CONTENT_SETTINGS_REF, settings, function(err, result) {
                 cb(err, settings);
             });
         });
@@ -312,7 +340,7 @@ module.exports = function(pb) {
     };
 
     /**
-     * 
+     *
      * @static
      * @method getTimestampText
      * @param {Object} options
@@ -338,18 +366,18 @@ module.exports = function(pb) {
 
         var dateString = format;
         var monthNames = [
-          ls.get(&#x27;JAN&#x27;),
-          ls.get(&#x27;FEB&#x27;),
-          ls.get(&#x27;MAR&#x27;),
-          ls.get(&#x27;APR&#x27;),
-          ls.get(&#x27;MAY&#x27;),
-          ls.get(&#x27;JUN&#x27;),
-          ls.get(&#x27;JUL&#x27;),
-          ls.get(&#x27;AUG&#x27;),
-          ls.get(&#x27;SEP&#x27;),
-          ls.get(&#x27;OCT&#x27;),
-          ls.get(&#x27;NOV&#x27;),
-          ls.get(&#x27;DEC&#x27;)
+          ls.g(&#x27;timestamp.JAN&#x27;),
+          ls.g(&#x27;timestamp.FEB&#x27;),
+          ls.g(&#x27;timestamp.MAR&#x27;),
+          ls.g(&#x27;timestamp.APR&#x27;),
+          ls.g(&#x27;timestamp.MAY&#x27;),
+          ls.g(&#x27;timestamp.JUN&#x27;),
+          ls.g(&#x27;timestamp.JUL&#x27;),
+          ls.g(&#x27;timestamp.AUG&#x27;),
+          ls.g(&#x27;timestamp.SEP&#x27;),
+          ls.g(&#x27;timestamp.OCT&#x27;),
+          ls.g(&#x27;timestamp.NOV&#x27;),
+          ls.g(&#x27;timestamp.DEC&#x27;)
         ];
 
         var month = date.getMonth() + 1;
@@ -358,11 +386,11 @@ module.exports = function(pb) {
         month = (twoDigitDate &amp;&amp; month &lt; 10) ? &#x27;0&#x27; + month : month.toString();
         day   = (twoDigitDate &amp;&amp; day &lt; 10) ? &#x27;0&#x27; + day : day.toString();
 
-        dateString = dateString.split(&#x27;YYYY&#x27;).join(date.getFullYear());
-        dateString = dateString.split(&#x27;yy&#x27;).join(date.getYear());
-        dateString = dateString.split(&#x27;M&#x27;).join(monthNames[date.getMonth()]);
-        dateString = dateString.split(&#x27;mm&#x27;).join(month);
-        dateString = dateString.split(&#x27;dd&#x27;).join(day);
+        dateString = dateString.split(&#x27;YYYY&#x27;).join(date.getFullYear())
+            .split(&#x27;yy&#x27;).join(date.getYear())
+            .split(&#x27;M&#x27;).join(monthNames[date.getMonth()])
+            .split(&#x27;mm&#x27;).join(month)
+            .split(&#x27;dd&#x27;).join(day);
 
         if (typeof displayTime !== &#x27;undefined&#x27; &amp;&amp; displayTime) {
 
@@ -373,13 +401,14 @@ module.exports = function(pb) {
             }
             var ampm = &#x27;&#x27;;
 
+            //format for 12 hour time
             if(timeFormat == &#x27;12&#x27;) {
                 if(hours &gt; 12) {
                     hours -= 12;
-                    ampm = &#x27; &#x27;+ls.get(&#x27;TIME_PM&#x27;);
+                    ampm = &#x27; &#x27; + ls.g(&#x27;timestamp.TIME_PM&#x27;);
                 }
                 else {
-                    ampm = &#x27; &#x27;+ls.get(&#x27;TIME_AM&#x27;);
+                    ampm = &#x27; &#x27; + ls.g(&#x27;timestamp.TIME_AM&#x27;);
                 }
             }
             if(twoDigitTime &amp;&amp; hours &lt; 10) {

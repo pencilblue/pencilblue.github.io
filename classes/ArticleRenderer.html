@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -205,7 +223,13 @@ loader can complete the render of content</p>
 <div id="method_ArticleRenderer" class="method item">
     <h3 class="name"><code>ArticleRenderer</code></h3>
 
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
 
 
 
@@ -228,6 +252,61 @@ loader can complete the render of content</p>
         
     </div>
 
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">hostname</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">site</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">onlyThisSite</code>
+                                    <span class="type">Boolean</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[userService]</code>
+                                    <span class="type"><a href="../classes/UserService.html" class="crosslink">UserService</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
 
 
 
@@ -317,14 +396,19 @@ loader can complete the render of content</p>
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                            <li class="index-item property">
-                                <a href="#property_commentService">commentService</a>
+                            <li class="index-item property private">
+                                <a href="#property_ANONYMOUS_COMMENTER">ANONYMOUS_COMMENTER</a>
 
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item property private">
                                 <a href="#property_READ_MORE_FLAG">READ_MORE_FLAG</a>
 
                                     <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_userService">userService</a>
+
                             </li>
                     </ul>
                 </div>
@@ -359,7 +443,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l413"><code>include\service\entities\content\article_renderer.js:413</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l434"><code>include\service\entities\content\article_renderer.js:434</code></a>
         </p>
 
 
@@ -421,7 +505,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l277"><code>include\service\entities\content\article_renderer.js:277</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l298"><code>include\service\entities\content\article_renderer.js:298</code></a>
         </p>
 
 
@@ -486,7 +570,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l108"><code>include\service\entities\content\article_renderer.js:108</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l128"><code>include\service\entities\content\article_renderer.js:128</code></a>
         </p>
 
 
@@ -554,7 +638,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l182"><code>include\service\entities\content\article_renderer.js:182</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l202"><code>include\service\entities\content\article_renderer.js:202</code></a>
         </p>
 
 
@@ -629,7 +713,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l148"><code>include\service\entities\content\article_renderer.js:148</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l168"><code>include\service\entities\content\article_renderer.js:168</code></a>
         </p>
 
 
@@ -694,7 +778,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l341"><code>include\service\entities\content\article_renderer.js:341</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l362"><code>include\service\entities\content\article_renderer.js:362</code></a>
         </p>
 
 
@@ -762,7 +846,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l164"><code>include\service\entities\content\article_renderer.js:164</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l184"><code>include\service\entities\content\article_renderer.js:184</code></a>
         </p>
 
 
@@ -837,7 +921,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l134"><code>include\service\entities\content\article_renderer.js:134</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l154"><code>include\service\entities\content\article_renderer.js:154</code></a>
         </p>
 
 
@@ -905,7 +989,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l214"><code>include\service\entities\content\article_renderer.js:214</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l234"><code>include\service\entities\content\article_renderer.js:234</code></a>
         </p>
 
 
@@ -978,7 +1062,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l382"><code>include\service\entities\content\article_renderer.js:382</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l403"><code>include\service\entities\content\article_renderer.js:403</code></a>
         </p>
 
 
@@ -1024,7 +1108,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l390"><code>include\service\entities\content\article_renderer.js:390</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l411"><code>include\service\entities\content\article_renderer.js:411</code></a>
         </p>
 
 
@@ -1091,7 +1175,7 @@ allow for layout parameter to have any name.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l370"><code>include\service\entities\content\article_renderer.js:370</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l391"><code>include\service\entities\content\article_renderer.js:391</code></a>
         </p>
 
 
@@ -1166,7 +1250,7 @@ allow for layout parameter to have any name.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l359"><code>include\service\entities\content\article_renderer.js:359</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l380"><code>include\service\entities\content\article_renderer.js:380</code></a>
         </p>
 
 
@@ -1241,7 +1325,7 @@ allow for layout parameter to have any name.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l52"><code>include\service\entities\content\article_renderer.js:52</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l72"><code>include\service\entities\content\article_renderer.js:72</code></a>
         </p>
 
 
@@ -1391,7 +1475,7 @@ number of content objects that will be processed for this request</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_article_renderer.js.html#l401"><code>include\service\entities\content\article_renderer.js:401</code></a>
+        <a href="../files/include_service_entities_content_article_renderer.js.html#l422"><code>include\service\entities\content\article_renderer.js:422</code></a>
         </p>
 
 
@@ -1399,7 +1483,7 @@ number of content objects that will be processed for this request</p>
     </div>
 
     <div class="description">
-        <p>A workaround to allow this prototype to operate on articles and pages.<br>
+        <p>A workaround to allow this prototype to operate on articles and pages.
 The layout parameter is not the same.  Until we introduce breaking
 changes this will have to do.</p>
 
@@ -1440,18 +1524,20 @@ changes this will have to do.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_commentService" class="property item">
-                        <h3 class="name"><code>commentService</code></h3>
-                        <span class="type"><a href="../classes/CommentService.html" class="crosslink">CommentService</a></span>
+                    <div id="property_ANONYMOUS_COMMENTER" class="property item private">
+                        <h3 class="name"><code>ANONYMOUS_COMMENTER</code></h3>
+                        <span class="type">String</span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
+                            <span class="flag static">static</span>
                     
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_content_article_renderer.js.html#l35"><code>include\service\entities\content\article_renderer.js:35</code></a>
+                            <a href="../files/include_service_entities_content_article_renderer.js.html#l63"><code>include\service\entities\content\article_renderer.js:63</code></a>
                             </p>
                     
                     
@@ -1477,7 +1563,7 @@ changes this will have to do.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_content_article_renderer.js.html#l43"><code>include\service\entities\content\article_renderer.js:43</code></a>
+                            <a href="../files/include_service_entities_content_article_renderer.js.html#l54"><code>include\service\entities\content\article_renderer.js:54</code></a>
                             </p>
                     
                     
@@ -1485,6 +1571,31 @@ changes this will have to do.</p>
                     
                         <div class="description">
                             
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_userService" class="property item">
+                        <h3 class="name"><code>userService</code></h3>
+                        <span class="type"><a href="../classes/UserService.html" class="crosslink">UserService</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_content_article_renderer.js.html#l46"><code>include\service\entities\content\article_renderer.js:46</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Instance of user service.  No context is provided and therefore can only be used</p>
+                    
                         </div>
                     
                     

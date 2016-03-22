@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -186,7 +204,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_admin_navigation.js.html#l26"><code>include\admin_navigation.js:26</code></a>
+            Defined in: <a href="../files/include_admin_navigation.js.html#l27"><code>include\admin_navigation.js:27</code></a>
         </div>
 
             Module: <a href="../modules/Admin.html">Admin</a><br>
@@ -224,7 +242,12 @@ in the Admin section of the application.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_addChild">addChild</a>
+                                <a href="#method_addChildToSite">addChildToSite</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addToSite">addToSite</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -244,12 +267,11 @@ in the Admin section of the application.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method private">
-                                <a href="#method_getChildrenAdditions">getChildrenAdditions</a>
+                                <a href="#method_getAdditionsInScope">getAdditionsInScope</a>
 
-                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item method private">
-                                <a href="#method_getDefaultNavigation">getDefaultNavigation</a>
+                                <a href="#method_getChildrenAdditions">getChildrenAdditions</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -270,6 +292,11 @@ in the Admin section of the application.</p>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_remove">remove</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_removeFromSite">removeFromSite</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -296,7 +323,12 @@ in the Admin section of the application.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item property private">
-                                <a href="#property_DEFAULT_NAV">DEFAULT_NAV</a>
+                                <a href="#property_CONTENT_NAV">CONTENT_NAV</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_MULTISITE_NAV">MULTISITE_NAV</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -317,6 +349,9 @@ in the Admin section of the application.</p>
                 <li class="arg">
                         <code>node</code>
                 </li>
+                <li class="arg">
+                        <code class="optional">[site=&#x27;global&#x27;]</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -334,7 +369,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l392"><code>include\admin_navigation.js:392</code></a>
+        <a href="../files/include_admin_navigation.js.html#l476"><code>include\admin_navigation.js:476</code></a>
         </p>
 
 
@@ -360,6 +395,17 @@ in the Admin section of the application.</p>
                     </div>
 
                 </li>
+                <li class="param">
+                        <code class="param-name optional">[site=&#x27;global&#x27;]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
             </ul>
         </div>
 
@@ -373,8 +419,8 @@ in the Admin section of the application.</p>
 
 
 </div>
-<div id="method_addChild" class="method item">
-    <h3 class="name"><code>addChild</code></h3>
+<div id="method_addChildToSite" class="method item">
+    <h3 class="name"><code>addChildToSite</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -383,6 +429,9 @@ in the Admin section of the application.</p>
                 </li>
                 <li class="arg">
                         <code>node</code>
+                </li>
+                <li class="arg">
+                        <code>site</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -401,7 +450,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l371"><code>include\admin_navigation.js:371</code></a>
+        <a href="../files/include_admin_navigation.js.html#l444"><code>include\admin_navigation.js:444</code></a>
         </p>
 
 
@@ -430,6 +479,96 @@ in the Admin section of the application.</p>
                 <li class="param">
                         <code class="param-name">node</code>
                         <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li>site unique id</li>
+</ul>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_addToSite" class="method item">
+    <h3 class="name"><code>addToSite</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>node</code>
+                </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_admin_navigation.js.html#l499"><code>include\admin_navigation.js:499</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Adds a new top level node</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">node</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
 
 
                     <div class="param-description">
@@ -470,7 +609,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l249"><code>include\admin_navigation.js:249</code></a>
+        <a href="../files/include_admin_navigation.js.html#l299"><code>include\admin_navigation.js:299</code></a>
         </p>
 
 
@@ -523,7 +662,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l352"><code>include\admin_navigation.js:352</code></a>
+        <a href="../files/include_admin_navigation.js.html#l421"><code>include\admin_navigation.js:421</code></a>
         </p>
 
 
@@ -606,7 +745,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l227"><code>include\admin_navigation.js:227</code></a>
+        <a href="../files/include_admin_navigation.js.html#l261"><code>include\admin_navigation.js:261</code></a>
         </p>
 
 
@@ -625,6 +764,72 @@ in the Admin section of the application.</p>
                         <span class="type">Array</span>:
             </div>
         </div>
+
+
+</div>
+<div id="method_getAdditionsInScope" class="method item private">
+    <h3 class="name"><code>getAdditionsInScope</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>additions</code>
+                </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_admin_navigation.js.html#l283"><code>include\admin_navigation.js:283</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">additions</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
 
 
 </div>
@@ -648,7 +853,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l238"><code>include\admin_navigation.js:238</code></a>
+        <a href="../files/include_admin_navigation.js.html#l272"><code>include\admin_navigation.js:272</code></a>
         </p>
 
 
@@ -665,48 +870,6 @@ in the Admin section of the application.</p>
 
             <div class="returns-description">
                         <span class="type">Object</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getDefaultNavigation" class="method item private">
-    <h3 class="name"><code>getDefaultNavigation</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Array</span>
-        </span>
-
-
-        <span class="flag private">private</span>
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_admin_navigation.js.html#l216"><code>include\admin_navigation.js:216</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Array</span>:
             </div>
         </div>
 
@@ -738,7 +901,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l341"><code>include\admin_navigation.js:341</code></a>
+        <a href="../files/include_admin_navigation.js.html#l410"><code>include\admin_navigation.js:410</code></a>
         </p>
 
 
@@ -805,7 +968,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l315"><code>include\admin_navigation.js:315</code></a>
+        <a href="../files/include_admin_navigation.js.html#l377"><code>include\admin_navigation.js:377</code></a>
         </p>
 
 
@@ -868,7 +1031,7 @@ in the Admin section of the application.</p>
         </div>
 
         <span class="returns-inline">
-            <span class="type"></span>
+            <span class="type">Array</span>
         </span>
 
 
@@ -882,7 +1045,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l297"><code>include\admin_navigation.js:297</code></a>
+        <a href="../files/include_admin_navigation.js.html#l359"><code>include\admin_navigation.js:359</code></a>
         </p>
 
 
@@ -899,7 +1062,7 @@ in the Admin section of the application.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">navigation</code>
-                        <span class="type">Object</span>
+                        <span class="type">Array</span>
 
 
                     <div class="param-description">
@@ -909,7 +1072,7 @@ in the Admin section of the application.</p>
                 </li>
                 <li class="param">
                         <code class="param-name">ls</code>
-                        <span class="type">Object</span>
+                        <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
 
 
                     <div class="param-description">
@@ -924,7 +1087,7 @@ in the Admin section of the application.</p>
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type"></span>:
+                        <span class="type">Array</span>:
             </div>
         </div>
 
@@ -939,7 +1102,7 @@ in the Admin section of the application.</p>
                         <code>id</code>
                 </li>
                 <li class="arg">
-                        <code>navigation</code>
+                        <code class="optional">[site=&#x27;global&#x27;]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -958,7 +1121,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l408"><code>include\admin_navigation.js:408</code></a>
+        <a href="../files/include_admin_navigation.js.html#l511"><code>include\admin_navigation.js:511</code></a>
         </p>
 
 
@@ -985,8 +1148,86 @@ in the Admin section of the application.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">navigation</code>
+                        <code class="param-name optional">[site=&#x27;global&#x27;]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_removeFromSite" class="method item">
+    <h3 class="name"><code>removeFromSite</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_admin_navigation.js.html#l561"><code>include\admin_navigation.js:561</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Remove a navigation node</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
                         <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
 
 
                     <div class="param-description">
@@ -1038,7 +1279,7 @@ in the Admin section of the application.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_admin_navigation.js.html#l450"><code>include\admin_navigation.js:450</code></a>
+        <a href="../files/include_admin_navigation.js.html#l573"><code>include\admin_navigation.js:573</code></a>
         </p>
 
 
@@ -1114,7 +1355,7 @@ in the Admin section of the application.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_admin_navigation.js.html#l37"><code>include\admin_navigation.js:37</code></a>
+                            <a href="../files/include_admin_navigation.js.html#l38"><code>include\admin_navigation.js:38</code></a>
                             </p>
                     
                     
@@ -1140,7 +1381,7 @@ in the Admin section of the application.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_admin_navigation.js.html#l46"><code>include\admin_navigation.js:46</code></a>
+                            <a href="../files/include_admin_navigation.js.html#l47"><code>include\admin_navigation.js:47</code></a>
                             </p>
                     
                     
@@ -1153,9 +1394,9 @@ in the Admin section of the application.</p>
                     
                     
                     </div>
-                    <div id="property_DEFAULT_NAV" class="property item private">
-                        <h3 class="name"><code>DEFAULT_NAV</code></h3>
-                        <span class="type">Array</span>
+                    <div id="property_CONTENT_NAV" class="property item private">
+                        <h3 class="name"><code>CONTENT_NAV</code></h3>
+                        <span class="type">Unknown</span>
                     
                     
                             <span class="flag private">private</span>
@@ -1166,7 +1407,33 @@ in the Admin section of the application.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_admin_navigation.js.html#l55"><code>include\admin_navigation.js:55</code></a>
+                            <a href="../files/include_admin_navigation.js.html#l74"><code>include\admin_navigation.js:74</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_MULTISITE_NAV" class="property item private">
+                        <h3 class="name"><code>MULTISITE_NAV</code></h3>
+                        <span class="type">Unknown</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_admin_navigation.js.html#l56"><code>include\admin_navigation.js:56</code></a>
                             </p>
                     
                     

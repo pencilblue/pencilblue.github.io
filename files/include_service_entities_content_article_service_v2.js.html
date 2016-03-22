@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -186,28 +204,28 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-	Copyright (C) 2015  PencilBlue, LLC
+ Copyright (C) 2015  PencilBlue, LLC
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-*/
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
 
 //dependencies
 var util  = require(&#x27;../../../util.js&#x27;);
 var async = require(&#x27;async&#x27;);
 
 module.exports = function(pb) {
-    
+
     //pb dependencies
     var DAO                  = pb.DAO;
     var BaseObjectService    = pb.BaseObjectService;
@@ -220,19 +238,21 @@ module.exports = function(pb) {
      * @class ArticleServiceV2
      * @constructor
      * @extends BaseObjectService
+     * @param {Object} context
      */
     function ArticleServiceV2(context){
         if (!util.isObject(context)) {
             context = {};
         }
-        
+        this.site = pb.SiteService.getCurrentSite(context.site);
+        this.onlyThisSite = context.onlyThisSite;
         context.type = TYPE;
         ArticleServiceV2.super_.call(this, context);
     }
     util.inherits(ArticleServiceV2, ContentObjectService);
-    
+
     /**
-     * 
+     *
      * @private
      * @static
      * @readonly
@@ -240,7 +260,7 @@ module.exports = function(pb) {
      * @type {String}
      */
     var TYPE = &#x27;article&#x27;;
-    
+
     /**
      * Provides the options for rendering
      * @method getRenderOptions
@@ -259,16 +279,16 @@ module.exports = function(pb) {
             };
         }
     };
-    
+
     /**
      * Retrieves an instance of a content renderer
      * @method getRenderer
      * @return {ArticleRenderer}
      */
     ArticleServiceV2.prototype.getRenderer = function() {
-        return new pb.ArticleRenderer();
+        return new pb.ArticleRenderer(this.context);
     };
-    
+
     /**
      * Retrieves articles based on the section
      * @method getBySection
@@ -281,22 +301,22 @@ module.exports = function(pb) {
             cb = options;
             options = {};
         }
-        
+
         //ensure a where clause exists
         if (!util.isObject(options.where)) {
             options.where = {};
         }
-        
+
         //add where clause to search based on section
         var section = sectionId;
         if (util.isObject(section)) {
             section = section[pb.DAO.getIdField()] + &#x27;&#x27;;
         }
         options.where.article_sections = section;
-        
+
         this.getAll(options, cb);
     };
-    
+
     /**
      * Extracts an array of Topic IDs from the content that the content is associated with.
      * @method getTopicsForContent
@@ -306,13 +326,13 @@ module.exports = function(pb) {
     ArticleServiceV2.prototype.getTopicsForContent = function(content) {
         return content.article_topics;
     };
-    
+
     /**
-     * 
+     *
      * @static
-     * @method 
+     * @method
      * @param {Object} context
-     * @param {ArticleServiceV2} service An instance of the service that triggered 
+     * @param {ArticleServiceV2} service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
@@ -326,29 +346,29 @@ module.exports = function(pb) {
         dto.meta_desc = BaseObjectService.sanitize(dto.meta_desc);
         dto.url = BaseObjectService.sanitize(dto.url);
         dto.publish_date = BaseObjectService.getDate(dto.publish_date);
-        
+
         if (util.isArray(dto.meta_keywords)) {
             for (var i = 0; i &lt; dto.meta_keywords.length; i++) {
-                dto.meta_keywords[i] = BaseObjectService.getDate(dto.meta_keywords[i]);  
+                dto.meta_keywords[i] = BaseObjectService.sanitize(dto.meta_keywords[i]);
             }
         }
-        
+
         cb(null);
     };
-    
+
     /**
-     * 
+     *
      * @static
-     * @method 
+     * @method
      * @param {Object} context
-     * @param {ArticleServiceV2} context.service An instance of the service that triggered 
+     * @param {ArticleServiceV2} context.service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
     ArticleServiceV2.merge = function(context, cb) {
         var dto = context.data;
         var obj = context.object;
-        
+
         obj.author = dto.author;
         obj.publish_date = dto.publish_date;
         obj.meta_keywords = dto.meta_keywords;
@@ -369,29 +389,29 @@ module.exports = function(pb) {
 
         cb(null);
     };
-    
+
     /**
-     * 
+     *
      * @static
      * @method validate
      * @param {Object} context
      * @param {Object} context.data The DTO that was provided for persistence
-     * @param {ArticleServiceV2} context.service An instance of the service that triggered 
+     * @param {ArticleServiceV2} context.service An instance of the service that triggered
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
     ArticleServiceV2.validate = function(context, cb) {
         var obj = context.data;
         var errors = context.validationErrors;
-        
+
         if (!ValidationService.isIdStr(obj.author, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;author&#x27;, &#x27;Author is required&#x27;));
         }
-        
+
         if (!ValidationService.isDate(obj.publish_date, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;publish_date&#x27;, &#x27;Publish date is required&#x27;));
         }
-        
+
         if (!util.isArray(obj.meta_keywords)) {
             if (!util.isNullOrUndefined(obj.meta_keywords)) {
                 errors.push(BaseObjectService.validationFailure(&#x27;meta_keywords&#x27;, &#x27;Meta Keywords must be an array&#x27;));
@@ -399,13 +419,13 @@ module.exports = function(pb) {
         }
         else {
             obj.meta_keywords.forEach(function(keyword, i) {
-                
+
                 if (!ValidationService.isNonEmptyStr(keyword, true)) {
                     errors.push(BaseObjectService.validationFailure(&#x27;meta_keywords[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid meta keyword was provided&#x27;));
                 }
             });
         }
-        
+
         if (!util.isArray(obj.article_media)) {
             if (!util.isNullOrUndefined(obj.article_media)) {
                 errors.push(BaseObjectService.validationFailure(&#x27;article_media&#x27;, &#x27;Article Media must be an array&#x27;));
@@ -413,13 +433,13 @@ module.exports = function(pb) {
         }
         else {
             obj.article_media.forEach(function(mediaId, i) {
-                
+
                 if (!ValidationService.isIdStr(mediaId, true)) {
                     errors.push(BaseObjectService.validationFailure(&#x27;article_media[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid media ID was provided&#x27;));
                 }
             });
         }
-        
+
         if (!util.isArray(obj.article_sections)) {
             if (!util.isNullOrUndefined(obj.article_sections)) {
                 errors.push(BaseObjectService.validationFailure(&#x27;article_sections&#x27;, &#x27;Article sections must be an array&#x27;));
@@ -427,13 +447,13 @@ module.exports = function(pb) {
         }
         else {
             obj.article_sections.forEach(function(sectionId, i) {
-                
+
                 if (!ValidationService.isIdStr(sectionId, true)) {
                     errors.push(BaseObjectService.validationFailure(&#x27;article_sections[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid section ID was provided&#x27;));
                 }
             });
         }
-        
+
         if (!util.isArray(obj.article_topics)) {
             if (!util.isNullOrUndefined(obj.article_topics)) {
                 errors.push(BaseObjectService.validationFailure(&#x27;article_topics&#x27;, &#x27;Article topics must be an array&#x27;));
@@ -441,19 +461,19 @@ module.exports = function(pb) {
         }
         else {
             obj.article_topics.forEach(function(topicId, i) {
-                
+
                 if (!ValidationService.isIdStr(topicId, true)) {
                     errors.push(BaseObjectService.validationFailure(&#x27;article_topics[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid topic ID was provided&#x27;));
                 }
             });
         }
-        
+
         if (!ValidationService.isNonEmptyStr(obj.url, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;url&#x27;, &#x27;An invalid URL slug was provided&#x27;));
         }
-        
+
         if (!util.isNullOrUndefined(obj.template)) {
-            
+
             if (!ValidationService.isStr(obj.template, false)) {
                 errors.push(BaseObjectService.validationFailure(&#x27;template&#x27;, &#x27;The template must take the form of [PLUGIN]|[TEMPLATE_NAME]&#x27;));
             }
@@ -464,46 +484,46 @@ module.exports = function(pb) {
                 }
             }
         }
-        
+
         if (!ValidationService.isNonEmptyStr(obj.headline, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;headline&#x27;, &#x27;The headline is required&#x27;));
         }
-        
+
         if (!ValidationService.isNonEmptyStr(obj.subheading, false)) {
             errors.push(BaseObjectService.validationFailure(&#x27;subheading&#x27;, &#x27;An invalid subheading was provided&#x27;));
         }
-        
+
         if (!util.isBoolean(obj.allow_comments)) {
             errors.push(BaseObjectService.validationFailure(&#x27;allow_comments&#x27;, &#x27;An invalid allow comments value was provided&#x27;));
         }
-        
+
         if (!ValidationService.isStr(obj.focus_keyword, false)) {
             errors.push(BaseObjectService.validationFailure(&#x27;focus_keyword&#x27;, &#x27;An invalid focus keyword was provided&#x27;));
         }
-        
+
         if (!ValidationService.isStr(obj.seo_title, false)) {
             errors.push(BaseObjectService.validationFailure(&#x27;seo_title&#x27;, &#x27;An invalid SEO title was provided&#x27;));
         }
-        
+
         if (!ValidationService.isStr(obj.meta_desc, false)) {
             errors.push(BaseObjectService.validationFailure(&#x27;meta_desc&#x27;, &#x27;An invalid meta description was provided&#x27;));
         }
-        
+
         if (!ValidationService.isIdStr(obj.thumbnail, false)) {
             errors.push(BaseObjectService.validationFailure(&#x27;thumbnail&#x27;, &#x27;An invalid thumbnail media ID was provided&#x27;));
         }
-        
+
         if (obj.draft !== 1 &amp;&amp; obj.draft !== 0) {
             errors.push(BaseObjectService.validationFailure(&#x27;draft&#x27;, &#x27;An invalid draft value was provided.  Must be 1 or 0&#x27;));
         }
-        
+
         if (!ValidationService.isNonEmptyStr(obj.article_layout, true)) {
             errors.push(BaseObjectService.validationFailure(&#x27;article_layout&#x27;, &#x27;The layout is required&#x27;));
         }
-        
+
         cb(null);
     };
-    
+
     /**
      *
      * @static
@@ -513,7 +533,7 @@ module.exports = function(pb) {
     ArticleServiceV2.setSectionClause = function(where, sectionId) {
         where.article_sections = sectionId + &#x27;&#x27;;
     };
-    
+
     /**
      *
      * @static
@@ -523,12 +543,12 @@ module.exports = function(pb) {
     ArticleServiceV2.setTopicClause = function(where, topicId) {
         where.article_topics = topicId + &#x27;&#x27;;
     };
-    
+
     //Event Registries
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.FORMAT, ArticleServiceV2.format);
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.MERGE, ArticleServiceV2.merge);
     BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.VALIDATE, ArticleServiceV2.validate);
-    
+
     return ArticleServiceV2;
 };
     </pre>

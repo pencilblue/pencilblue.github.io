@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -321,6 +339,11 @@
 
                                     <span class="flag static">static</span>
                             </li>
+                            <li class="index-item property">
+                                <a href="#property_MULTI_DELIMITER">MULTI_DELIMITER</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
                     </ul>
                 </div>
 
@@ -351,7 +374,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l252"><code>controllers\api\base_api_controller.js:252</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l262"><code>controllers\api\base_api_controller.js:262</code></a>
         </p>
 
 
@@ -404,7 +427,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l49"><code>controllers\api\base_api_controller.js:49</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l59"><code>controllers\api\base_api_controller.js:59</code></a>
         </p>
 
 
@@ -457,7 +480,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l59"><code>controllers\api\base_api_controller.js:59</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l69"><code>controllers\api\base_api_controller.js:69</code></a>
         </p>
 
 
@@ -468,15 +491,15 @@
         <p>Retrieves one or more resources from a collection.  The endpoint
 supports the following query string parameters:</p>
 <ul>
-<li>$select - A comma separated list of key/value pairs where a value 
-of 1 indicates the field will be returned and 0 indicates the 
+<li>$select - A comma separated list of key/value pairs where a value
+of 1 indicates the field will be returned and 0 indicates the
 absensence.  $select=_id=1,name=1,description=0</li>
-<li>$order - A comma separated list of key/value pairs where a value of 
-1 indicates ascending a value of 0 or less indicates descending. 
+<li>$order - A comma separated list of key/value pairs where a value of
+1 indicates ascending a value of 0 or less indicates descending.
 $order=name=1,created_date=0</li>
-<li>$limit - An integer representing the maximum number of results to 
+<li>$limit - An integer representing the maximum number of results to
 return</li>
-<li>$offset - An integer representing the number of items to skip before 
+<li>$offset - An integer representing the number of items to skip before
 returning results</li>
 <li>$where - Currently not supported</li>
 </ul>
@@ -520,7 +543,7 @@ returning results</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l230"><code>controllers\api\base_api_controller.js:230</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l240"><code>controllers\api\base_api_controller.js:240</code></a>
         </p>
 
 
@@ -568,7 +591,7 @@ removed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l262"><code>controllers\api\base_api_controller.js:262</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l272"><code>controllers\api\base_api_controller.js:272</code></a>
         </p>
 
 
@@ -636,7 +659,7 @@ response</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l309"><code>controllers\api\base_api_controller.js:309</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l319"><code>controllers\api\base_api_controller.js:319</code></a>
         </p>
 
 
@@ -703,7 +726,7 @@ object is successfully delete a 204 status is provided</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l287"><code>controllers\api\base_api_controller.js:287</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l297"><code>controllers\api\base_api_controller.js:297</code></a>
         </p>
 
 
@@ -762,7 +785,7 @@ expected to be handled by the global error handler and should return 400</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l334"><code>controllers\api\base_api_controller.js:334</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l344"><code>controllers\api\base_api_controller.js:344</code></a>
         </p>
 
 
@@ -800,7 +823,7 @@ found</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l220"><code>controllers\api\base_api_controller.js:220</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l230"><code>controllers\api\base_api_controller.js:230</code></a>
         </p>
 
 
@@ -856,7 +879,7 @@ found</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l144"><code>controllers\api\base_api_controller.js:144</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l154"><code>controllers\api\base_api_controller.js:154</code></a>
         </p>
 
 
@@ -915,7 +938,7 @@ found</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l83"><code>controllers\api\base_api_controller.js:83</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l93"><code>controllers\api\base_api_controller.js:93</code></a>
         </p>
 
 
@@ -965,7 +988,7 @@ object service</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l183"><code>controllers\api\base_api_controller.js:183</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l193"><code>controllers\api\base_api_controller.js:193</code></a>
         </p>
 
 
@@ -1030,7 +1053,7 @@ object service</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l127"><code>controllers\api\base_api_controller.js:127</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l137"><code>controllers\api\base_api_controller.js:137</code></a>
         </p>
 
 
@@ -1091,7 +1114,7 @@ object service</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_api_base_api_controller.js.html#l242"><code>controllers\api\base_api_controller.js:242</code></a>
+        <a href="../files/controllers_api_base_api_controller.js.html#l252"><code>controllers\api\base_api_controller.js:252</code></a>
         </p>
 
 
@@ -1174,6 +1197,33 @@ object service</p>
                     
                         <div class="description">
                             <p>Indicates if a field should be part of the projection</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_MULTI_DELIMITER" class="property item">
+                        <h3 class="name"><code>MULTI_DELIMITER</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/controllers_api_base_api_controller.js.html#l49"><code>controllers\api\base_api_controller.js:49</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The delimiter used when multiple values are provided for a single query
+                    parameter</p>
                     
                         </div>
                     

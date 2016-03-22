@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -325,6 +343,7 @@ module.exports = function DAOModule(pb) {
             order: opts.order || DAO.NATURAL_ORDER,
             limit: 1
         };
+
         this.q(collection, options, function(err, result){
            cb(err, util.isArray(result) &amp;&amp; result.length &gt; 0 ? result[0] : null);
         });
@@ -388,7 +407,7 @@ module.exports = function DAOModule(pb) {
 
         //set the exclusion
         if (exclusionId) {
-            where[DAO.getIdField()] = DAO.getNotIDField(exclusionId);
+            where[DAO.getIdField()] = DAO.getNotIdField(exclusionId);
         }
 
         //checks to see how many docs were available
@@ -550,8 +569,8 @@ module.exports = function DAOModule(pb) {
     };
 
     /**
-     * Inserts or replaces an existing document with the specified DB Object. 
-     * An insert is distinguished from an update based the presence of the _id 
+     * Inserts or replaces an existing document with the specified DB Object.
+     * An insert is distinguished from an update based the presence of the _id
      * field.
      * @method save
      * @param {Object} dbObj The system object to persist
@@ -574,7 +593,7 @@ module.exports = function DAOModule(pb) {
         //ensure an object_type was specified &amp; update common fields
         dbObj.object_type = dbObj.object_type || options.object_type;
         DAO.updateChangeHistory(dbObj);
-        
+
         //log interaction
         if (pb.config.db.query_logging) {
             var msg;
@@ -644,7 +663,7 @@ module.exports = function DAOModule(pb) {
 
                 item.object_type = collection;
                 DAO.updateChangeHistory(item);
-                if (item[DAO.getIdField()]) {
+                if (item._id) {
                     batch.update(item);
                 }
                 else {
@@ -803,7 +822,7 @@ module.exports = function DAOModule(pb) {
             db.collection(collection).ensureIndex(spec, options, cb);
         });
     };
-    
+
     /**
      * Retrieves indexes for the specified collection
      * @method indexInfo
@@ -820,11 +839,11 @@ module.exports = function DAOModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             db.indexInformation(collection, options, cb);
         });
     };
-    
+
     /**
      * Drops the specified index from the given collection
      * @method dropIndex
@@ -838,7 +857,7 @@ module.exports = function DAOModule(pb) {
             cb = options;
             options = {};
         }
-        
+
         pb.dbm.getDb(this.dbName, function(err, db) {
             if (util.isError(err)) {
                 return cb(err);
@@ -856,17 +875,8 @@ module.exports = function DAOModule(pb) {
      * exists, FALSE if not.
      */
     DAO.prototype.entityExists = function(entity, cb) {
-        var options = {
-            namesOnly: true
-        };
-
-        pb.dbm.getDb(this.dbName, function(err, db) {
-            if (util.isError(err)) {
-                return cb(err);
-            }
-            db.listCollections({name: entity}, options).toArray(function(err, results) {
-                cb(err, util.isArray(results) &amp;&amp; results.length === 1);
-            });
+        this.listCollections({name: entity}, function(err, results) {
+            cb(err, util.isArray(results) &amp;&amp; results.length === 1);
         });
     };
 
@@ -893,6 +903,31 @@ module.exports = function DAOModule(pb) {
                 return cb(err);
             }
             db.createCollection(entityName, options, cb);
+        });
+    };
+
+    /**
+     * Gets all collection names
+     * @method listCollections
+     * @param {Object} [filter] The filter to specify what collection(s) to search for
+     * @param {Function} cb A callback that takes two parameters. The first, an
+     * Error, if occurred. The second is the result listCollections command.
+     */
+    DAO.prototype.listCollections = function(filter, cb) {
+        var options = {
+          namesOnly: true
+        };
+
+        pb.dbm.getDb(this.dbName, function(err, db) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            db.listCollections(filter, options).toArray(function(err, results) {
+                if (util.isError(err)) {
+                    return cb(err)
+                }
+                cb(err, results);
+            });
         });
     };
 

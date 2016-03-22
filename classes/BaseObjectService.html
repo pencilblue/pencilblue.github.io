@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -290,8 +308,16 @@ triggered the operation.</p>
                                 <a href="#method__emit">_emit</a>
 
                             </li>
+                            <li class="index-item method protected">
+                                <a href="#method__get">_get</a>
+
+                            </li>
                             <li class="index-item method private">
                                 <a href="#method__retrieveOnUpdateAndMerge">_retrieveOnUpdateAndMerge</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_add">add</a>
 
                             </li>
                             <li class="index-item method">
@@ -317,7 +343,7 @@ triggered the operation.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getAll">getAll</a>
+                                <a href="#method_get">get</a>
 
                             </li>
                             <li class="index-item method">
@@ -325,11 +351,7 @@ triggered the operation.</p>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getAll">getAll</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_getAll">getAll</a>
+                                <a href="#method_getAllWithCount">getAllWithCount</a>
 
                             </li>
                             <li class="index-item method">
@@ -352,7 +374,16 @@ triggered the operation.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_getIdWhere">getIdWhere</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_getLimit">getLimit</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getPagedResult">getPagedResult</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -395,9 +426,17 @@ triggered the operation.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_save">save</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_setMaxListeners">setMaxListeners</a>
 
                                     <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_update">update</a>
+
                             </li>
                             <li class="index-item method">
                                 <a href="#method_validationError">validationError</a>
@@ -526,7 +565,7 @@ triggered the operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l598"><code>include\service\base_object_service.js:598</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l666"><code>include\service\base_object_service.js:666</code></a>
         </p>
 
 
@@ -577,6 +616,86 @@ triggered the operation.</p>
 
 
 </div>
+<div id="method__get" class="method item protected">
+    <h3 class="name"><code>_get</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag protected">protected</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l387"><code>include\service\base_object_service.js:387</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method__retrieveOnUpdateAndMerge" class="method item private">
     <h3 class="name"><code>_retrieveOnUpdateAndMerge</code></h3>
 
@@ -584,6 +703,9 @@ triggered the operation.</p>
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
                         <code>dto</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -602,7 +724,7 @@ triggered the operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l501"><code>include\service\base_object_service.js:501</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l555"><code>include\service\base_object_service.js:555</code></a>
         </p>
 
 
@@ -632,12 +754,112 @@ executed with the merged object.</p>
 
                 </li>
                 <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[isCreate]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
 
 
                     <div class="param-description">
                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_add" class="method item">
+    <h3 class="name"><code>add</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l423"><code>include\service\base_object_service.js:423</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Attempts to persist the DTO as an add.  The function executes a series of events:</p>
+<ol>
+<li>The format event is fired</li>
+<li>When an ID is provided the object is retrieved from the database otherwise a new object is created.</li>
+<li>The merge event is triggered</li>
+<li>The validate event is triggered. If validation errors are detected the process halts and the function calls back with an error.</li>
+<li>The beforeSave event is triggered</li>
+<li>The object is persisted</li>
+<li>The afterSave event is triggered</li>
+</ol>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters.  The first is
+an error, if occurred. The second is the object that matches the specified query</p>
+
                     </div>
 
                 </li>
@@ -672,7 +894,7 @@ executed with the merged object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l646"><code>include\service\base_object_service.js:646</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l714"><code>include\service\base_object_service.js:714</code></a>
         </p>
 
 
@@ -822,7 +1044,7 @@ the specified query</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l544"><code>include\service\base_object_service.js:544</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l612"><code>include\service\base_object_service.js:612</code></a>
         </p>
 
 
@@ -898,7 +1120,7 @@ the specified query</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l561"><code>include\service\base_object_service.js:561</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l629"><code>include\service\base_object_service.js:629</code></a>
         </p>
 
 
@@ -965,7 +1187,7 @@ the specified query</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l685"><code>include\service\base_object_service.js:685</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l753"><code>include\service\base_object_service.js:753</code></a>
         </p>
 
 
@@ -1005,8 +1227,8 @@ the current principal did not have authroization to perform.</p>
 
 
 </div>
-<div id="method_getAll" class="method item">
-    <h3 class="name"><code>getAll</code></h3>
+<div id="method_get" class="method item">
+    <h3 class="name"><code>get</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1029,7 +1251,7 @@ the current principal did not have authroization to perform.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l350"><code>include\service\base_object_service.js:350</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l348"><code>include\service\base_object_service.js:348</code></a>
         </p>
 
 
@@ -1054,7 +1276,7 @@ trigger the &quot;get&quot; event.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                 </li>
@@ -1201,8 +1423,8 @@ of the query.</p>
 
 
 </div>
-<div id="method_getAll" class="method item">
-    <h3 class="name"><code>getAll</code></h3>
+<div id="method_getAllWithCount" class="method item">
+    <h3 class="name"><code>getAllWithCount</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -1251,7 +1473,7 @@ note that there is hard limit on the number of results the returned.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                         <ul class="params-list">
@@ -1326,126 +1548,6 @@ of the query.</p>
 
 
 </div>
-<div id="method_getAll" class="method item">
-    <h3 class="name"><code>getAll</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code class="optional">[options]</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_base_object_service.js.html#l414"><code>include\service\base_object_service.js:414</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Attempts to persist the DTO.  The function executes a series of events:</p>
-<ol>
-<li>The format event is fired</li>
-<li>When an ID is provided the object is retrieved from the database otherwise a new object is created.</li>
-<li>The merge event is triggered</li>
-<li>The validate event is triggered. If validation errors are detected the process halts and the function calls back with an error.</li>
-<li>The beforeSave event is triggered</li>
-<li>The object is persisted</li>
-<li>The afterSave event is triggered</li>
-</ol>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[select]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[where]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[order]</code>
-                                    <span class="type">Array</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                            <li class="param">
-                                    <code class="param-name optional">[offset]</code>
-                                    <span class="type">Integer</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback that takes two parameters.  The first is
-an error, if occurred. The second is the object that matches the specified query</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
 <div id="method_getContentSanitizationRules" class="method item">
     <h3 class="name"><code>getContentSanitizationRules</code></h3>
 
@@ -1465,7 +1567,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l717"><code>include\service\base_object_service.js:717</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l785"><code>include\service\base_object_service.js:785</code></a>
         </p>
 
 
@@ -1578,7 +1680,7 @@ that are allowed to have HTML</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l766"><code>include\service\base_object_service.js:766</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l834"><code>include\service\base_object_service.js:834</code></a>
         </p>
 
 
@@ -1637,7 +1739,7 @@ value is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l753"><code>include\service\base_object_service.js:753</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l821"><code>include\service\base_object_service.js:821</code></a>
         </p>
 
 
@@ -1649,6 +1751,70 @@ value is returned.</p>
 
     </div>
 
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getIdWhere" class="method item">
+    <h3 class="name"><code>getIdWhere</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>dto</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l601"><code>include\service\base_object_service.js:601</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates the where clause that creates a lookup by the key that indicates
+uniqueness for the collection</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+            </ul>
+        </div>
 
         <div class="returns">
             <h4>Returns:</h4>
@@ -1685,7 +1851,7 @@ value is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l779"><code>include\service\base_object_service.js:779</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l847"><code>include\service\base_object_service.js:847</code></a>
         </p>
 
 
@@ -1726,6 +1892,105 @@ be the minimum of the MAX_RESULTS constant and the specified limit.</p>
 
 
 </div>
+<div id="method_getPagedResult" class="method item">
+    <h3 class="name"><code>getPagedResult</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>dataArray</code>
+                </li>
+                <li class="arg">
+                        <code>total</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[limit]</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[offset]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l860"><code>include\service\base_object_service.js:860</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Builds a paged result object</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">dataArray</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        <p>The array of items to return</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">total</code>
+                        <span class="type">Integer</span>
+
+
+                    <div class="param-description">
+                        <p>The total number of items available in the collection</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[limit]</code>
+                        <span class="type">Integer</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The maximum number of items to return</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[offset]</code>
+                        <span class="type">Integer</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The number of items skipped</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_getSingle" class="method item">
     <h3 class="name"><code>getSingle</code></h3>
 
@@ -1750,7 +2015,7 @@ be the minimum of the MAX_RESULTS constant and the specified limit.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l389"><code>include\service\base_object_service.js:389</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l398"><code>include\service\base_object_service.js:398</code></a>
         </p>
 
 
@@ -1907,7 +2172,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l850"><code>include\service\base_object_service.js:850</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l937"><code>include\service\base_object_service.js:937</code></a>
         </p>
 
 
@@ -1974,7 +2239,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l792"><code>include\service\base_object_service.js:792</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l879"><code>include\service\base_object_service.js:879</code></a>
         </p>
 
 
@@ -2051,7 +2316,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l804"><code>include\service\base_object_service.js:804</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l891"><code>include\service\base_object_service.js:891</code></a>
         </p>
 
 
@@ -2125,7 +2390,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l828"><code>include\service\base_object_service.js:828</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l915"><code>include\service\base_object_service.js:915</code></a>
         </p>
 
 
@@ -2192,7 +2457,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l816"><code>include\service\base_object_service.js:816</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l903"><code>include\service\base_object_service.js:903</code></a>
         </p>
 
 
@@ -2269,7 +2534,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l699"><code>include\service\base_object_service.js:699</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l767"><code>include\service\base_object_service.js:767</code></a>
         </p>
 
 
@@ -2319,6 +2584,96 @@ an error, if occurred. The second is the object that matches the specified query
 
 
 </div>
+<div id="method_save" class="method item">
+    <h3 class="name"><code>save</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l471"><code>include\service\base_object_service.js:471</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Attempts to persist the DTO.  The function executes a series of events:</p>
+<ol>
+<li>The format event is fired</li>
+<li>When an ID is provided the object is retrieved from the database otherwise a new object is created.</li>
+<li>The merge event is triggered</li>
+<li>The validate event is triggered. If validation errors are detected the process halts and the function calls back with an error.</li>
+<li>The beforeSave event is triggered</li>
+<li>The object is persisted</li>
+<li>The afterSave event is triggered</li>
+</ol>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[isCreate]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters.  The first is
+an error, if occurred. The second is the object that matches the specified query</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_setMaxListeners" class="method item">
     <h3 class="name"><code>setMaxListeners</code></h3>
 
@@ -2344,7 +2699,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l839"><code>include\service\base_object_service.js:839</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l926"><code>include\service\base_object_service.js:926</code></a>
         </p>
 
 
@@ -2383,6 +2738,84 @@ an error, if occurred. The second is the object that matches the specified query
 
 
 </div>
+<div id="method_update" class="method item">
+    <h3 class="name"><code>update</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l447"><code>include\service\base_object_service.js:447</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Attempts to persist the DTO as an update.  The function executes a series of events:</p>
+<ol>
+<li>The format event is fired</li>
+<li>When an ID is provided the object is retrieved from the database otherwise a new object is created.</li>
+<li>The merge event is triggered</li>
+<li>The validate event is triggered. If validation errors are detected the process halts and the function calls back with an error.</li>
+<li>The beforeSave event is triggered</li>
+<li>The object is persisted</li>
+<li>The afterSave event is triggered</li>
+</ol>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters.  The first is
+an error, if occurred. The second is the object that matches the specified query</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_validationError" class="method item">
     <h3 class="name"><code>validationError</code></h3>
 
@@ -2408,7 +2841,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l671"><code>include\service\base_object_service.js:671</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l739"><code>include\service\base_object_service.js:739</code></a>
         </p>
 
 
@@ -2475,7 +2908,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l630"><code>include\service\base_object_service.js:630</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l698"><code>include\service\base_object_service.js:698</code></a>
         </p>
 
 
@@ -2746,7 +3179,7 @@ an error, if occurred. The second is the object that matches the specified query
                         </div>
                     
                         <div class="description">
-                            <p>An instance of DAO to be used to interact with the persitence layer</p>
+                            <p>An instance of DAO to be used to interact with the persistence layer</p>
                     
                         </div>
                     

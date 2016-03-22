@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -202,12 +220,15 @@
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
 
-//dependencies 
+//dependencies
 var url  = require(&#x27;url&#x27;);
 var util = require(&#x27;../include/util.js&#x27;);
 
 module.exports = function BaseControllerModule(pb) {
-    
+
+    // pb dependancies
+    var SiteService = pb.SiteService;
+
     /**
      * The base controller provides functions for the majority of
      * the heavy lifing for a controller. It accepts and provides access to
@@ -254,9 +275,9 @@ module.exports = function BaseControllerModule(pb) {
      * @type {String}
      */
     var ALERT_PATTERN = &#x27;&lt;div class=&quot;alert %s error_success&quot;&gt;%s&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;&lt;/div&gt;&#x27;;
-    
+
     /**
-     * A mapping that converts the HTTP standard for content-type encoding and 
+     * A mapping that converts the HTTP standard for content-type encoding and
      * what the Buffer prototype expects
      * @static
      * @private
@@ -269,7 +290,7 @@ module.exports = function BaseControllerModule(pb) {
         &#x27;US-ASCII&#x27;: &#x27;ascii&#x27;,
         &#x27;UTF-16LE&#x27;: &#x27;utf16le&#x27;
     });
-    
+
     /**
      * Responsible for initializing a controller.  Properties from the
      * RequestHandler are passed down so that the controller has complete access to
@@ -293,6 +314,7 @@ module.exports = function BaseControllerModule(pb) {
      *  @param {Function} cb A callback that takes a single optional argument: cb(Error)
      */
     BaseController.prototype.init = function(props, cb) {
+        var self = this;
         this.reqHandler          = props.request_handler;
         this.req                 = props.request;
         this.res                 = props.response;
@@ -300,61 +322,157 @@ module.exports = function BaseControllerModule(pb) {
         this.body                = props.body;
         this.localizationService = props.localization_service;
         this.ls                  = this.localizationService;
-        this.pathVars            = props.path_vars;
+        this.pathVars            = props.pathVars;
         this.query               = props.query;
         this.pageName            = &#x27;&#x27;;
+        this.siteObj             = props.siteObj;
+        this.site                = props.site;
+        this.siteName            = props.siteName;
+        this.hostname            = SiteService.getHostWithProtocol(self.siteObj.hostname) || pb.config.siteRoot;
+        this.referer             = this.req.headers.referer;
 
-        var self   = this;
-        var tsOpts = {
-            ls: this.localizationService,
-            activeTheme: props.activeTheme
-        };
-        this.templateService = new pb.TemplateService(tsOpts);
-        this.templateService.registerLocal(&#x27;locale&#x27;, this.ls.language);
-        this.templateService.registerLocal(&#x27;error_success&#x27;, function(flag, cb) {
-            self.displayErrorOrSuccessCallback(flag, cb);
-        });
-        this.templateService.registerLocal(&#x27;page_name&#x27;, function(flag, cb) {
-            cb(null, self.getPageName());
-        });
-        this.templateService.registerLocal(&#x27;localization_script&#x27;, function(flag, cb) {
-            self.requiresClientLocalizationCallback(flag, cb);
-        });
-        this.templateService.registerLocal(&#x27;analytics&#x27;, function(flag, cb) {
-            pb.AnalyticsManager.onPageRender(self.req, self.session, self.ls, cb);
-        });
-        this.templateService.registerLocal(&#x27;wysiwyg&#x27;, function(flag, cb) {
-            var wysiwygId = util.uniqueId();
-
-            self.templateService.registerLocal(&#x27;wys_id&#x27;, wysiwygId);
-            self.templateService.load(&#x27;admin/elements/wysiwyg&#x27;, function(err, data) {
-                cb(err, new pb.TemplateValue(data, false));
-            });
-        });
-        this.ts = this.templateService;
-        
         /**
-         *
+         * @property ts
+         * @type {TemplateService}
+         */
+        this.ts = this.getTemplateServiceInstance(props);
+
+        /**
          * @property activeTheme
          * @type {String}
          */
         this.activeTheme = props.activeTheme;
-        
-        //build out a base service context that can be cloned and passed to any 
+
+        //build out a base service context that can be cloned and passed to any
         //service objects
         this.context = {
             req: this.req,
             session: this.session,
             ls: this.ls,
             ts: this.ts,
-            activeTheme: this.activeTheme
+            site: this.site,
+            hostname: this.hostname,
+            activeTheme: this.activeTheme,
+            onlyThisSite: true,
+            siteObj: this.siteObj
         };
+
+        //call the initSync function
+        this.initSync(props);
 
         cb();
     };
-    
+
     /**
-     * Retrieves a context object that contains the necessary information for 
+     * Provides a synchronous function means to initialize a controller.  It is
+     * meant to be called from the &quot;init&quot; function called by the request handler.
+     * @method initSync
+     * @param {Object} context See &quot;init&quot; for more details on properties
+     */
+    BaseController.prototype.initSync = function(/*context*/) {};
+
+    /**
+     * Creates a TemplateService instance
+     * @method getTemplateServiceInstance
+     * @param {Object} props
+     * @return {TemplateService}
+     */
+    BaseController.prototype.getTemplateServiceInstance = function(props) {
+        var self = this;
+
+        //create options
+        var tsOpts = {
+            ls: this.localizationService,
+            activeTheme: props.activeTheme,
+            site: this.site
+        };
+
+        //create instance
+        var ts = new pb.TemplateService(tsOpts);
+
+        //configure for common flags
+        var model = {
+
+            meta_lang: this.ls.language,
+
+            error_success: function(flag, cb) {
+                self.displayErrorOrSuccessCallback(flag, cb);
+            },
+
+            page_name: function(flag, cb) {
+                cb(null, self.getPageName());
+            },
+
+            localization_script: function(flag, cb) {
+                self.requiresClientLocalizationCallback(flag, cb);
+            },
+
+            analytics: function(flag, cb) {
+                pb.AnalyticsManager.onPageRender(self.req, self.session, self.ls, cb);
+            },
+
+            wysiwyg: function(flag, cb) {
+                var wysiwygId = util.uniqueId();
+
+                self.ts.registerLocal(&#x27;wys_id&#x27;, wysiwygId);
+                self.ts.load(&#x27;admin/elements/wysiwyg&#x27;, function(err, data) {
+                    cb(err, new pb.TemplateValue(data, false));
+                });
+            },
+
+            site_root: self.hostname,
+            site_name: self.siteName,
+
+            localized_alternate: function(flag, cb) {
+                self.onLocalizedAlternateFlagFound(props.routeLocalized, cb);
+            }
+        };
+        ts.registerModel(model);
+        return ts;
+    };
+
+    /**
+     * @method onLocalizedAlternateFlagFound
+     * @param {Boolean} routeLocalized
+     * @param {Function} cb
+     */
+    BaseController.prototype.onLocalizedAlternateFlagFound = function(routeLocalized, cb) {
+        if (!routeLocalized) {
+            return cb(null, &#x27;&#x27;);
+        }
+
+        var val = &#x27;&#x27;;
+        var self = this;
+        Object.keys(this.siteObj.supportedLocales).forEach(function(locale) {
+            var path = self.req.url;
+            var isLocalizedPath = !!self.pathVars.locale &amp;&amp; path.indexOf(self.pathVars.locale) &gt;= 0;
+            if (self.ls.language === locale &amp;&amp; !isLocalizedPath) {
+                //skip current language.  We don&#x27;t need to list it as an alternate
+                return;
+            }
+            var relationship = self.ls.language === locale ? &#x27;canonical&#x27; : &#x27;alternate&#x27;;
+
+            var urlOpts = {
+                hostname: self.hostname,
+                locale: undefined
+            };
+            if (self.ls.language === locale) {
+                path = path.replace(locale + &#x27;/&#x27;, &#x27;&#x27;).replace(locale, &#x27;&#x27;);
+            }
+            else if (isLocalizedPath) {
+                path = path.replace(self.pathVars.locale, locale);
+            }
+            else {
+                urlOpts.locale = locale;
+            }
+            var url = pb.UrlService.createSystemUrl(path, urlOpts);
+            val += &#x27;&lt;link rel=&quot;&#x27; + relationship + &#x27;&quot; hreflang=&quot;&#x27; + locale + &#x27;&quot; href=&quot;&#x27; + url + &#x27;&quot; /&gt;\n&#x27;;
+        });
+        cb(null, new pb.TemplateValue(val, false));
+    };
+
+    /**
+     * Retrieves a context object that contains the necessary information for
      * service prototypes
      * @method getServiceContext
      * @return {Object}
@@ -396,7 +514,7 @@ module.exports = function BaseControllerModule(pb) {
     BaseController.prototype.formError = function(message, redirectLocation, cb) {
 
         this.session.error = message;
-        var uri = pb.UrlService.createSystemUrl(redirectLocation);
+        var uri = pb.UrlService.createSystemUrl(redirectLocation, { hostname: this.hostname });
         cb(pb.RequestHandler.generateRedirect(uri));
     };
 
@@ -448,17 +566,18 @@ module.exports = function BaseControllerModule(pb) {
      */
     BaseController.prototype.getPostParams = function(cb) {
         var self = this;
-        
+
         this.getPostData(function(err, raw){
+            //Handle error
             if (util.isError(err)) {
-                cb(err, null);
-                return;
+                pb.log.error(&quot;BaseController.getPostParams encountered an error. ERROR[%s]&quot;, err.stack);
+                return cb(err, null);
             }
 
             //lookup encoding
             var encoding = pb.BaseBodyParser.getContentEncoding(self.req);
             encoding = ENCODING_MAPPING[encoding] ? ENCODING_MAPPING[encoding] : &#x27;utf8&#x27;;
-            
+
             //convert to string
             var postParams = url.parse(&#x27;?&#x27; + raw.toString(encoding), true).query;
             cb(null, postParams);
@@ -472,12 +591,14 @@ module.exports = function BaseControllerModule(pb) {
      */
     BaseController.prototype.getJSONPostParams = function(cb) {
         var self = this;
-        
+
         this.getPostData(function(err, raw){
+            //Handle error
             if (util.isError(err)) {
+                pb.log.error(&quot;BaseController.getJSONPostParams encountered an error. ERROR[%s]&quot;, err.stack);
                 return cb(err, null);
             }
-            
+
             //lookup encoding
             var encoding = pb.BaseBodyParser.getContentEncoding(self.req);
             encoding = ENCODING_MAPPING[encoding] ? ENCODING_MAPPING[encoding] : &#x27;utf8&#x27;;
@@ -502,11 +623,11 @@ module.exports = function BaseControllerModule(pb) {
     BaseController.prototype.getPostData = function(cb) {
         var buffers     = [];
         var totalLength = 0;
-        
+
         this.req.on(&#x27;data&#x27;, function (data) {
             buffers.push(data);
             totalLength += data.length;
-            
+
             // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
             if (totalLength &gt; 1e6) {
                 // FLOOD ATTACK OR FAULTY CLIENT, NUKE REQUEST
@@ -516,7 +637,7 @@ module.exports = function BaseControllerModule(pb) {
             }
         });
         this.req.on(&#x27;end&#x27;, function () {
-            
+
             //create one big buffer.
             var body = Buffer.concat (buffers, totalLength);
             cb(null, body);
@@ -575,7 +696,7 @@ module.exports = function BaseControllerModule(pb) {
             delete this.session.fieldValues;
         }
 
-        cb(result);
+        cb(null, result);
     };
 
     /**
@@ -589,6 +710,7 @@ module.exports = function BaseControllerModule(pb) {
      */
     BaseController.prototype.sanitizeObject = function(obj) {
         if (!util.isObject(obj)) {
+            pb.log.warn(&quot;BaseController.sanitizeObject was not passed an object.&quot;);
             return;
         }
 

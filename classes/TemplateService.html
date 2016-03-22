@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -216,6 +234,9 @@ call backs.</p>
                 <li class="arg">
                         <code class="optional">[localizationService]</code>
                 </li>
+                <li class="arg">
+                        <code>siteUid</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -256,6 +277,17 @@ call backs.</p>
                     </div>
 
                 </li>
+                <li class="param">
+                        <code class="param-name">siteUid</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>context site for this service</p>
+
+                    </div>
+
+                </li>
             </ul>
         </div>
 
@@ -283,6 +315,11 @@ call backs.</p>
                             <li class="index-item method private">
                                 <a href="#method__getActiveTheme">_getActiveTheme</a>
 
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_blacklistTemplate">blacklistTemplate</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_compile">compile</a>
@@ -328,7 +365,16 @@ call backs.</p>
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_init">init</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_isFlag">isFlag</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isTemplateBlacklisted">isTemplateBlacklisted</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -351,6 +397,10 @@ call backs.</p>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_registerLocal">registerLocal</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_registerModel">registerModel</a>
 
                             </li>
                             <li class="index-item method">
@@ -380,6 +430,11 @@ call backs.</p>
                                 <a href="#property_activeTheme">activeTheme</a>
 
                             </li>
+                            <li class="index-item property private">
+                                <a href="#property_CUSTOM_PATH_PREFIX">CUSTOM_PATH_PREFIX</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
                             <li class="index-item property">
                                 <a href="#property_localCallbacks">localCallbacks</a>
 
@@ -387,6 +442,11 @@ call backs.</p>
                             <li class="index-item property">
                                 <a href="#property_localizationService">localizationService</a>
 
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_MIS_CACHE">MIS_CACHE</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item property">
                                 <a href="#property_pluginService">pluginService</a>
@@ -397,11 +457,11 @@ call backs.</p>
 
                             </li>
                             <li class="index-item property">
-                                <a href="#property_theme">theme</a>
+                                <a href="#property_settingService">settingService</a>
 
                             </li>
                             <li class="index-item property">
-                                <a href="#property_unregisteredFlagTemplate">unregisteredFlagTemplate</a>
+                                <a href="#property_siteUid">siteUid</a>
 
                             </li>
                             <li class="index-item property private">
@@ -409,7 +469,15 @@ call backs.</p>
 
                             </li>
                             <li class="index-item property">
+                                <a href="#property_theme">theme</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#property_unregisteredFlagHandler">unregisteredFlagHandler</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_unregisteredFlagTemplate">unregisteredFlagTemplate</a>
 
                             </li>
                     </ul>
@@ -443,7 +511,7 @@ call backs.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l238"><code>include\service\entities\template_service.js:238</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l285"><code>include\service\entities\template_service.js:285</code></a>
         </p>
 
 
@@ -473,6 +541,85 @@ from the settings service.</p>
             </ul>
         </div>
 
+
+
+</div>
+<div id="method_blacklistTemplate" class="method item">
+    <h3 class="name"><code>blacklistTemplate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>theme</code>
+                </li>
+                <li class="arg">
+                        <code>relativePath</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l920"><code>include\service\entities\template_service.js:920</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Blacklists a template for a theme.  This means that the template service
+will not consider this theme and path combination the next time it is
+prompted to check for its existence</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">theme</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">relativePath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
 
 
 </div>
@@ -507,7 +654,7 @@ from the settings service.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l682"><code>include\service\entities\template_service.js:682</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l831"><code>include\service\entities\template_service.js:831</code></a>
         </p>
 
 
@@ -580,7 +727,13 @@ string value of the part.</p>
 <div id="method_getAvailableContentTemplates" class="method item">
     <h3 class="name"><code>getAvailableContentTemplates</code></h3>
 
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>site</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
 
         <span class="returns-inline">
             <span class="type">Array</span>
@@ -595,7 +748,7 @@ string value of the part.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l620"><code>include\service\entities\template_service.js:620</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l768"><code>include\service\entities\template_service.js:768</code></a>
         </p>
 
 
@@ -608,6 +761,22 @@ Articles and pages.</p>
 
     </div>
 
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
 
         <div class="returns">
             <h4>Returns:</h4>
@@ -639,7 +808,7 @@ Articles and pages.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l589"><code>include\service\entities\template_service.js:589</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l737"><code>include\service\entities\template_service.js:737</code></a>
         </p>
 
 
@@ -687,7 +856,7 @@ Articles and pages.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l669"><code>include\service\entities\template_service.js:669</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l818"><code>include\service\entities\template_service.js:818</code></a>
         </p>
 
 
@@ -754,7 +923,7 @@ the provided path is relative to the pencilblue/plugins/[themeName]/templates/ d
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l656"><code>include\service\entities\template_service.js:656</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l805"><code>include\service\entities\template_service.js:805</code></a>
         </p>
 
 
@@ -820,7 +989,7 @@ the provided path is relative to the pencilblue/plugins/pencilblue/templates/ di
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l252"><code>include\service\entities\template_service.js:252</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l299"><code>include\service\entities\template_service.js:299</code></a>
         </p>
 
 
@@ -891,7 +1060,7 @@ directories:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l538"><code>include\service\entities\template_service.js:538</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l686"><code>include\service\entities\template_service.js:686</code></a>
         </p>
 
 
@@ -942,7 +1111,7 @@ directories:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l181"><code>include\service\entities\template_service.js:181</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l228"><code>include\service\entities\template_service.js:228</code></a>
         </p>
 
 
@@ -994,7 +1163,7 @@ directories:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l477"><code>include\service\entities\template_service.js:477</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l562"><code>include\service\entities\template_service.js:562</code></a>
         </p>
 
 
@@ -1078,7 +1247,7 @@ replacement or a value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l456"><code>include\service\entities\template_service.js:456</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l541"><code>include\service\entities\template_service.js:541</code></a>
         </p>
 
 
@@ -1124,6 +1293,39 @@ processing of the sub-template.</p>
 
 
 </div>
+<div id="method_init" class="method item">
+    <h3 class="name"><code>init</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l197"><code>include\service\entities\template_service.js:197</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets up the default flags required for the template service,
+including the flags that were previously considered to be global but
+now requires to be instanced with the TemplateService</p>
+
+    </div>
+
+
+
+
+</div>
 <div id="method_isFlag" class="method item">
     <h3 class="name"><code>isFlag</code></h3>
 
@@ -1152,7 +1354,7 @@ processing of the sub-template.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l608"><code>include\service\entities\template_service.js:608</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l756"><code>include\service\entities\template_service.js:756</code></a>
         </p>
 
 
@@ -1201,6 +1403,83 @@ processing of the sub-template.</p>
 
 
 </div>
+<div id="method_isTemplateBlacklisted" class="method item">
+    <h3 class="name"><code>isTemplateBlacklisted</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>theme</code>
+                </li>
+                <li class="arg">
+                        <code>relativePath</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l908"><code>include\service\entities\template_service.js:908</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks to see if a template has been blacklisted</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">theme</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">relativePath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_load" class="method item">
     <h3 class="name"><code>load</code></h3>
 
@@ -1225,7 +1504,7 @@ processing of the sub-template.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l312"><code>include\service\entities\template_service.js:312</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l384"><code>include\service\entities\template_service.js:384</code></a>
         </p>
 
 
@@ -1295,7 +1574,7 @@ second parameter that is the transformed content.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l339"><code>include\service\entities\template_service.js:339</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l411"><code>include\service\entities\template_service.js:411</code></a>
         </p>
 
 
@@ -1364,7 +1643,7 @@ parameter that is the populated template with any registered flags replaced.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l389"><code>include\service\entities\template_service.js:389</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l462"><code>include\service\entities\template_service.js:462</code></a>
         </p>
 
 
@@ -1451,7 +1730,7 @@ the carrot (^) prefix or postfix.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l640"><code>include\service\entities\template_service.js:640</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l789"><code>include\service\entities\template_service.js:789</code></a>
         </p>
 
 
@@ -1533,7 +1812,7 @@ transformation or the value to substitute in place of the flag.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l523"><code>include\service\entities\template_service.js:523</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l608"><code>include\service\entities\template_service.js:608</code></a>
         </p>
 
 
@@ -1588,6 +1867,96 @@ transformation or the value to substitute in place of the flag.</p>
 
 
 </div>
+<div id="method_registerModel" class="method item">
+    <h3 class="name"><code>registerModel</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>model</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[modelName]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l623"><code>include\service\entities\template_service.js:623</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Registers a model with the template service.  It processes each
+key/value pair in the object and creates a dot notated string
+registration.  For the object { key: 'value' } with a model name of
+&quot;item&quot; would result in 1 local value registration in which the key would
+be &quot;item.key&quot;.  If no model name existed the registered key would be:
+&quot;key&quot;. The algorithm fails fast.  On the first bad registeration the
+algorithm stops registering keys and returns.  Additionally, if a bad
+model object is pass an Error object is thrown.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">model</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The model is inspect</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[modelName]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The optional name of the model.  The name
+will prefix all of the model's keys.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE when all keys were successfully registered.
+FALSE if a single items fails to register.</p>
+
+            </div>
+        </div>
+
+
+</div>
 <div id="method_setGlobalUnregisteredFlagHandler" class="method item">
     <h3 class="name"><code>setGlobalUnregisteredFlagHandler</code></h3>
 
@@ -1612,7 +1981,7 @@ transformation or the value to substitute in place of the flag.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l209"><code>include\service\entities\template_service.js:209</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l256"><code>include\service\entities\template_service.js:256</code></a>
         </p>
 
 
@@ -1621,7 +1990,7 @@ transformation or the value to substitute in place of the flag.</p>
 
     <div class="description">
         <p>When a flag is encountered that is not registered with the engine the
-handler is called as a fail safe unless there is a locally registered handler.<br>
+handler is called as a fail safe unless there is a locally registered handler.
 It is expected to return a string that will be put in the place of the flag.</p>
 
     </div>
@@ -1676,7 +2045,7 @@ It is expected to return a string that will be put in the place of the flag.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l227"><code>include\service\entities\template_service.js:227</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l274"><code>include\service\entities\template_service.js:274</code></a>
         </p>
 
 
@@ -1731,7 +2100,7 @@ processing of items.  See the sample plugin for an example.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l171"><code>include\service\entities\template_service.js:171</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l218"><code>include\service\entities\template_service.js:218</code></a>
         </p>
 
 
@@ -1788,7 +2157,7 @@ processing of items.  See the sample plugin for an example.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l191"><code>include\service\entities\template_service.js:191</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l238"><code>include\service\entities\template_service.js:238</code></a>
         </p>
 
 
@@ -1847,7 +2216,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l68"><code>include\service\entities\template_service.js:68</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l69"><code>include\service\entities\template_service.js:69</code></a>
                             </p>
                     
                     
@@ -1855,6 +2224,33 @@ will be put in the place of the flag.</p>
                     
                         <div class="description">
                             
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_CUSTOM_PATH_PREFIX" class="property item private">
+                        <h3 class="name"><code>CUSTOM_PATH_PREFIX</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_template_service.js.html#l165"><code>include\service\entities\template_service.js:165</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The absolute path to the plugins directory</p>
+                    
                         </div>
                     
                     
@@ -1871,7 +2267,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l51"><code>include\service\entities\template_service.js:51</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l52"><code>include\service\entities\template_service.js:52</code></a>
                             </p>
                     
                     
@@ -1895,7 +2291,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l59"><code>include\service\entities\template_service.js:59</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l60"><code>include\service\entities\template_service.js:60</code></a>
                             </p>
                     
                     
@@ -1903,6 +2299,34 @@ will be put in the place of the flag.</p>
                     
                         <div class="description">
                             
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_MIS_CACHE" class="property item private">
+                        <h3 class="name"><code>MIS_CACHE</code></h3>
+                        <span class="type">Object</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_template_service.js.html#l155"><code>include\service\entities\template_service.js:155</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Tracks the template keys that do not exist on disk.  This allows us to
+                    skip disk reads after the first request for a non-existent template</p>
+                    
                         </div>
                     
                     
@@ -1919,7 +2343,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l119"><code>include\service\entities\template_service.js:119</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l133"><code>include\service\entities\template_service.js:133</code></a>
                             </p>
                     
                     
@@ -1943,7 +2367,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l105"><code>include\service\entities\template_service.js:105</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l107"><code>include\service\entities\template_service.js:107</code></a>
                             </p>
                     
                     
@@ -1958,8 +2382,32 @@ will be put in the place of the flag.</p>
                     
                     
                     </div>
-                    <div id="property_theme" class="property item">
-                        <h3 class="name"><code>theme</code></h3>
+                    <div id="property_settingService" class="property item">
+                        <h3 class="name"><code>settingService</code></h3>
+                        <span class="type"><a href="../classes/SettingService.html" class="crosslink">SettingService</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_template_service.js.html#l127"><code>include\service\entities\template_service.js:127</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_siteUid" class="property item">
+                        <h3 class="name"><code>siteUid</code></h3>
                         <span class="type">String</span>
                     
                     
@@ -1969,32 +2417,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l73"><code>include\service\entities\template_service.js:73</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The prioritized theme when selecting templates</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_unregisteredFlagTemplate" class="property item">
-                        <h3 class="name"><code>unregisteredFlagTemplate</code></h3>
-                        <span class="type">Function</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l113"><code>include\service\entities\template_service.js:113</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l121"><code>include\service\entities\template_service.js:121</code></a>
                             </p>
                     
                     
@@ -2019,7 +2442,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l139"><code>include\service\entities\template_service.js:139</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l174"><code>include\service\entities\template_service.js:174</code></a>
                             </p>
                     
                     
@@ -2028,6 +2451,31 @@ will be put in the place of the flag.</p>
                         <div class="description">
                             <p>A container that provides the mapping for global call backs.  These should
                     only be added to at the start of the application or on plugin install/update.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_theme" class="property item">
+                        <h3 class="name"><code>theme</code></h3>
+                        <span class="type">String</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_template_service.js.html#l74"><code>include\service\entities\template_service.js:74</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The prioritized theme when selecting templates</p>
                     
                         </div>
                     
@@ -2045,7 +2493,7 @@ will be put in the place of the flag.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/include_service_entities_template_service.js.html#l162"><code>include\service\entities\template_service.js:162</code></a>
+                            <a href="../files/include_service_entities_template_service.js.html#l188"><code>include\service\entities\template_service.js:188</code></a>
                             </p>
                     
                     
@@ -2054,6 +2502,30 @@ will be put in the place of the flag.</p>
                         <div class="description">
                             <p>The default handler for unregistered flags.  It outputs the flag back out.</p>
                     
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_unregisteredFlagTemplate" class="property item">
+                        <h3 class="name"><code>unregisteredFlagTemplate</code></h3>
+                        <span class="type">Function</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/include_service_entities_template_service.js.html#l115"><code>include\service\entities\template_service.js:115</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
                         </div>
                     
                     

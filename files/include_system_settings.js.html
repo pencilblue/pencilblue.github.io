@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -206,7 +224,7 @@
 var util = require(&#x27;../util.js&#x27;);
 
 module.exports = function SettingsModule(pb) {
-    
+
     /**
      * SettingServiceFactory - Creates a service that will provide access to settings
      * @class SettingsServiceFactory
@@ -224,40 +242,239 @@ module.exports = function SettingsModule(pb) {
     var count = 1;
 
     /**
+     * The collection that contains settings
+     * @private
+     * @static
+     * @readonly
+     * @property TYPE
+     * @type {String}
+     */
+    var TYPE = &#x27;setting&#x27;;
+
+    /**
+     * Creates a new instance of settings service with specified site, using the memory and cache settings of pb config
+     *
+     * @static
+     * @method getServiceBySite
+     * @param {String} site
+     * @param {Boolean=} onlyThisSite
+     */
+    SettingServiceFactory.getServiceBySite = function (site, onlyThisSite) {
+        if (pb.config.multisite.enabled) {
+            return SettingServiceFactory.getService(pb.config.settings.use_memory, pb.config.settings.use_cache, site, onlyThisSite);
+        }
+        return SettingServiceFactory.getService(pb.config.settings.use_memory, pb.config.settings.use_cache);
+    };
+
+    /**
      * Creates a new instance of the settings service
      * @static
      * @method getService
      * @param {Boolean} useMemory
      * @param {Boolean} useCache
      * @return {SimpleLayeredService}
+     * @param site {String} siteId
+     * @param onlyThisSite {Boolean} whether this service should only return setting specified by site
      */
-    SettingServiceFactory.getService = function(useMemory, useCache) {
-        var objType    = &#x27;setting&#x27;;
+    SettingServiceFactory.getService = function(useMemory, useCache, site, onlyThisSite) {
         var keyField   = &#x27;key&#x27;;
         var valueField = &#x27;value&#x27;;
         var services = [];
 
+        var options = {
+            objType: TYPE,
+            valueField: valueField,
+            keyField: keyField,
+            timeout: pb.config.settings.memory_timeout,
+            site: site,
+            onlyThisSite: onlyThisSite
+        };
+
         //add in-memory service
         if (useMemory){
-            var options = {
-                objType: objType,
-                valueField: valueField,
-                keyField: keyField,
-                timeout: pb.config.settings.memory_timeout
-            };
             services.push(new pb.MemoryEntityService(options));
         }
 
         //add cache service
         if (useCache) {
-            services.push(new pb.CacheEntityService(objType, valueField, keyField));
+            services.push(new pb.CacheEntityService(options));
         }
 
         //always add db service
-        services.push(new pb.DBEntityService(objType, valueField, keyField));
+        services.push(new pb.DBEntityService(options));
 
         return new pb.SimpleLayeredService(services, &#x27;SettingService&#x27; + count++);
     };
+
+    /**
+     * @method getBaseObjectService
+     * @param {Object} options
+     * @param {String} options.site
+     * @param {Boolean} options.onlyThisSite
+     */
+    SettingServiceFactory.getBaseObjectService = function(options) {
+        return new SettingService(options);
+    };
+
+    /**
+     * @class SettingService
+     * @constructor
+     * @param {Object} options
+     * @param {String} options.site
+     * @param {Boolean} options.onlyThisSite
+     */
+    function SettingService(options) {
+
+        /**
+         * @property cacheService
+         * @type {SimpleLayeredService}
+         */
+        this.cacheService = SettingServiceFactory.getServiceBySite(options.site, options.onlyThisSite);
+
+        options.type = TYPE;
+        SettingService.super_.call(this, options);
+    }
+    util.inherits(SettingService, pb.BaseObjectService);
+
+    /**
+     * @protected
+     * @method _get
+     * @param {String} id
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    SettingService.prototype._get = function(id, options, cb) {
+        this.cacheService.get(id, function(err, result) {
+            cb(err, util.isNullOrUndefined(result) ? null : { key: id, value: result });
+        });
+    };
+
+    /**
+     * Constructs the where condition that uniquely identifies the DTO from the
+     * persistence store.  If the clause cannot be constructed the function
+     * should return null
+     * @method getIdWhere
+     * @param {Object} dto
+     * @return {Object}
+     */
+    SettingService.prototype.getIdWhere = function(dto) {
+        return dto.key ? { key: dto.key } : null;
+    };
+
+    /**
+     * Deletes an object by key
+     * @method deleteById
+     * @param {String} id
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    SettingService.prototype.deleteById = function(id, options, cb) {
+        if (util.isFunction(options)) {
+            cb      = options;
+            options = {};
+        }
+        options.where = { key: id };
+
+        this.deleteSingle(options, cb);
+    };
+
+    /**
+     * @static
+     * @method afterSave
+     * @param {Object} context
+     * @param {Function} cb
+     */
+    SettingService.afterSave = function(context, cb) {
+        context.service.cacheService.set(context.data.key, context.data.value, cb);
+    };
+
+    /**
+     * Purges the data from the cache after it is deleted from the persistence
+     * store
+     * @static
+     * @method afterDelete
+     * @param {Object} context
+     * @param {Function} cb Takes a single error, if exists
+     */
+    SettingService.afterDelete = function(context, cb) {
+        context.service.cacheService.purge(context.data.key, cb);
+    };
+
+    /**
+     * Formats the data before it is merged
+     * @static
+     * @method format
+     * @param {Object} context
+     * @param {Function} cb Takes a single error, if exists
+     */
+    SettingService.format = function(context, cb) {
+        var dto = context.data;
+        dto.key = pb.BaseController.sanitize(dto.key);
+        if (util.isString(dto.value)) {
+            dto.value = pb.BaseController.sanitize(dto.value);
+        }
+        cb(null);
+    };
+
+    /**
+     *
+     * @static
+     * @method
+     * @param {Object} context
+     * @param {SettingService} service An instance of the service that triggered
+     * the event that called this handler
+     * @param {Function} cb A callback that takes a single parameter: an error if occurred
+     */
+    SettingService.merge = function(context, cb) {
+        var obj = context.object;
+        var dto = context.data;
+        if (context.isCreate) {
+            obj.key = dto.key;
+        }
+        obj.value = dto.value;
+        cb(null);
+    };
+
+    /**
+     *
+     * @static
+     * @method validate
+     * @param {Object} context
+     * @param {Object} context.data The DTO that was provided for persistence
+     * @param {TopicService} context.service An instance of the service that triggered
+     * the event that called this handler
+     * @param {Function} cb A callback that takes a single parameter: an error if occurred
+     */
+    SettingService.validate = function(context, cb) {
+        var obj = context.data;
+        var errors = context.validationErrors;
+
+        if (!pb.ValidationService.isNonEmptyStr(obj.key, true)) {
+            errors.push(pb.BaseObjectService.validationFailure(&#x27;key&#x27;, &#x27;Key is required&#x27;));
+
+            //no need to check the DB.  Short circuit it here
+            return cb(null, errors);
+        }
+
+        //validate key is not taken
+        var where = { key: new RegExp(&#x27;^&#x27; + util.escapeRegExp(obj.key) + &#x27;$&#x27;, &#x27;i&#x27;) };
+        context.service.dao.exists(TYPE, where, function(err, exists) {console.log(context);
+            if (exists &amp;&amp; context.isCreate) {
+                errors.push(pb.BaseObjectService.validationFailure(&#x27;key&#x27;, &#x27;key already exists&#x27;));
+            }
+            else if (!exists &amp;&amp; context.isUpdate) {
+                errors.push(pb.BaseObjectService.validationFailure(&#x27;key&#x27;, &#x27;The setting should already exist&#x27;));
+            }
+            cb(err, errors);
+        });
+    };
+
+    //registrations
+    pb.BaseObjectService.on(TYPE + &#x27;.&#x27; + pb.BaseObjectService.AFTER_DELETE, SettingService.afterDelete);
+    pb.BaseObjectService.on(TYPE + &#x27;.&#x27; + pb.BaseObjectService.AFTER_SAVE, SettingService.afterSave);
+    pb.BaseObjectService.on(TYPE + &#x27;.&#x27; + pb.BaseObjectService.FORMAT, SettingService.format);
+    pb.BaseObjectService.on(TYPE + &#x27;.&#x27; + pb.BaseObjectService.MERGE, SettingService.merge);
+    pb.BaseObjectService.on(TYPE + &#x27;.&#x27; + pb.BaseObjectService.VALIDATE, SettingService.validate);
 
     //exports
     return SettingServiceFactory;

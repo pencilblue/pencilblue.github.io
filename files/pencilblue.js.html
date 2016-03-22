@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -209,6 +227,7 @@ var https       = require(&#x27;https&#x27;);
 var async       = require(&#x27;async&#x27;);
 var npm         = require(&#x27;npm&#x27;);
 var util        = require(&#x27;./include/util.js&#x27;);
+var ServerInitializer = require(&#x27;./include/http/server_initializer.js&#x27;);
 var HtmlEncoder = require(&#x27;htmlencode&#x27;);
 
 
@@ -221,16 +240,25 @@ var HtmlEncoder = require(&#x27;htmlencode&#x27;);
  * @constructor
  */
 function PencilBlue(config){
-    
+
     /**
-     * 
-     * @private 
+     *
+     * @private
      * @static
      * @property pb
      * @type {Object}
      */
     var pb = require(&#x27;./lib&#x27;)(config);
-    
+
+    /**
+     * The number of requests served by this instance
+     * @private
+     * @static
+     * @property requestsServed
+     * @type {Integer}
+     */
+    var requestsServed = 0;
+
     /**
      * To be called when the configuration is loaded.  The function is responsible
      * for triggered the startup of the HTTP connection listener as well as start a
@@ -238,19 +266,20 @@ function PencilBlue(config){
      * @method init
      */
     this.init = function(){
-        var self = this;
-        
         var tasks = [
             this.initModules,
             this.initRequestHandler,
             this.initDBConnections,
             this.initDBIndices,
-            util.wrapTask(this, this.initServer),
+            this.initSiteMigration,
             this.initSessions,
             this.initPlugins,
+            this.initSites,
             this.initServerRegistration,
             this.initCommandService,
-            this.initLibraries
+            this.initLibraries,
+            this.registerMetrics,
+            util.wrapTask(this, this.initServer),
         ];
         async.series(tasks, function(err, results) {
             if (util.isError(err)) {
@@ -259,7 +288,7 @@ function PencilBlue(config){
             pb.log.info(&#x27;PencilBlue: Ready to run!&#x27;);
         });
     };
-    
+
     /**
      * Ensures that any log messages by the NPM module are forwarded as output
      * to the system logs
@@ -271,14 +300,12 @@ function PencilBlue(config){
         npm.on(&#x27;log&#x27;, function(message) {
             pb.log.info(message);
         });
-        
+
         HtmlEncoder.EncodeType = &#x27;numerical&#x27;;
-        
-        pb.Localization.init();
-        
-        cb(null, true);
+
+        pb.Localization.init(cb);
     };
-    
+
     /**
      * Initializes the request handler.  This causes all system routes to be
      * registered.
@@ -290,7 +317,7 @@ function PencilBlue(config){
         pb.RequestHandler.init();
         cb(null, true);
     }
-    
+
     /**
      * Starts the session handler
      * @method initSessions
@@ -307,13 +334,36 @@ function PencilBlue(config){
      * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
      */
     this.initPlugins = function(cb) {
-        
+
         //initialize command listeners
         pb.PluginService.init();
-        
+
         //initialize the plugins
         var pluginService = new pb.PluginService();
         pluginService.initPlugins(cb);
+    };
+
+    /**
+     * Move a single tenant solution to a multi-tenant solution.
+     * @static
+     * @method initSiteMigration
+     * @param {Function} cb - callback function
+     */
+    this.initSiteMigration = function(cb) {
+        pb.dbm.processMigration(cb);
+    };
+
+    /**
+     * Initializes site(s).
+     * @method initSites
+     * @static
+     * @param {Function} cb - callback function
+     */
+    this.initSites = function(cb) {
+        pb.SiteService.init();
+
+        var siteService = new pb.SiteService();
+        siteService.initSites(cb);
     };
 
     /**
@@ -338,7 +388,7 @@ function PencilBlue(config){
     };
 
     /**
-     * Checks to see if the process should verify that the indices are valid and in 
+     * Checks to see if the process should verify that the indices are valid and in
      * place.
      * @static
      * @method initDBIndices
@@ -364,51 +414,28 @@ function PencilBlue(config){
      * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
      */
     this.initServer = function(cb){
-        pb.log.debug(&#x27;Starting server...&#x27;);
-
         var self = this;
-        try{
-            if (pb.config.server.ssl.enabled) {
-
-                //set SSL options
-                var options = {
-                    key: fs.readFileSync(pb.config.server.ssl.key),
-                    cert: fs.readFileSync(pb.config.server.ssl.cert),
-                    ca: fs.readFileSync(pb.config.server.ssl.chain)
-                };
-                pb.server = https.createServer(options, function(req, res) {
-                    self.onHttpConnect(req, res);
-                });
-
-                //create an http server that redirects to SSL site
-                pb.handOffServer = http.createServer(function(req, res) {
-                    self.onHttpConnectForHandoff(req, res); 
-                });
-                pb.handOffServer.listen(pb.config.server.ssl.handoff_port, function() {
-                    pb.log.info(&#x27;PencilBlue: Handoff HTTP server running on port: %d&#x27;, pb.config.server.ssl.handoff_port);
-                });
+        var context = {
+            config: pb.config,
+            log: pb.log,
+            onRequest: function(req, res) {
+                self.onHttpConnect(req, res);
+            },
+            onHandoffRequest: function(req, res) {
+                self.onHttpConnectForHandoff(req, res);
             }
-            else {
-                pb.server = http.createServer(function(req, res) {
-                    self.onHttpConnect(req, res);
-                });
+        };
+        var Initializer = pb.config.server.initializer || ServerInitializer;
+        var initializer = new Initializer(pb);
+        initializer.init(context, function(err, servers) {
+            if (util.isError(err)) {
+                return cb(err);
             }
+            pb.server = servers.server;
+            pb.handOffServer = servers.handOffServer;
 
-            //start the server
-            var onServerStartError = function(err) {
-                err.message = util.format(&quot;Failed to start HTTP server on PORT=[%s] binding to SITE_IP=[%s]: %s&quot;, pb.config.sitePort, pb.config.siteIP, err.message);
-                cb(err, false);
-            };
-            pb.server.once(&#x27;error&#x27;, onServerStartError);
-            pb.server.listen(pb.config.sitePort, pb.config.siteIP, function() {
-                pb.log.info(&#x27;PencilBlue: %s running at site root [%s] on port [%d]&#x27;, pb.config.siteName, pb.config.siteRoot, pb.config.sitePort);
-                pb.server.removeListener(&#x27;error&#x27;, onServerStartError);
-                cb(null, true);
-            });
-        }
-        catch(e) {
-            cb(e, false);
-        }
+            cb(err, true);
+        });
     };
 
     /**
@@ -420,25 +447,25 @@ function PencilBlue(config){
      * @static
      * @method onHttpConnect
      * @param {Request} req The incoming request
-     * @param {Response} resp The outgoing response
+     * @param {Response} res The outgoing response
      */
-    this.onHttpConnect = function(req, resp){
+    this.onHttpConnect = function(req, res){
         if (pb.log.isSilly()) {
-            req.uid = util.uniqueId();
-            pb.log.silly(&#x27;New Request: &#x27;+req.uid);
+            pb.log.silly(&#x27;New Request: %s&#x27;, (req.uid = util.uniqueId()));
         }
+
+        //bump the counter for the instance
+        requestsServed++;
 
         //check to see if we should inspect the x-forwarded-proto header for SSL
         //load balancers use this for SSL termination relieving the stress of SSL
-        //computation on more powerful load balancers.  For me it is a giant pain
-        //in the ass when all I want to do is simple load balancing.
+        //computation on more powerful load balancers.
         if (pb.config.server.ssl.use_x_forwarded &amp;&amp; req.headers[&#x27;x-forwarded-proto&#x27;] !== &#x27;https&#x27;) {
-            this.onHttpConnectForHandoff(req, resp);
-            return;
+            return this.onHttpConnectForHandoff(req, res);
         }
 
         //route the request
-        var handler = new pb.RequestHandler(pb.server, req, resp);
+        var handler = new pb.RequestHandler(pb.server, req, res);
         handler.handleRequest();
     };
 
@@ -497,24 +524,55 @@ function PencilBlue(config){
     };
 
     /**
+     * Initializes the metric registrations to measure request counts
+     * @static
+     * @method registerMetrics
+     * @param {Function} cb
+     */
+    this.registerMetrics = function(cb) {
+
+        //total number of requests served
+        pb.ServerRegistration.addItem(&#x27;requests&#x27;, function(callback) {
+            callback(null, requestsServed);
+        });
+
+        //current requests
+        pb.ServerRegistration.addItem(&#x27;currentRequests&#x27;, function(callback) {
+            pb.server.getConnections(callback);
+        });
+
+        //analytics average
+        pb.ServerRegistration.addItem(&#x27;analytics&#x27;, function(callback) {
+            callback(null, pb.AnalyticsManager.getStats());
+        });
+
+        cb(null, true);
+    };
+
+    /**
      * Starts up the instance of PencilBlue
      * @method start
      */
     this.start = function() {
         var self = this;
+        pb.system.registerSignalHandlers(true);
         pb.system.onStart(function(){
             self.init();
         });
     };
 };
 
-//start system only when the module is called directly
-if (require.main === module) {
-    
+PencilBlue.startInstance = function() {
     var Configuration = require(&#x27;./include/config.js&#x27;);
     var config        = Configuration.load();
     var pb            = new PencilBlue(config);
     pb.start();
+    return pb;
+};
+
+//start system only when the module is called directly
+if (require.main === module) {
+    PencilBlue.startInstance();
 }
 
 //exports

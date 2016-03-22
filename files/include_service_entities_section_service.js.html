@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.0</em>
+            <em>API Docs for: 0.5.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -46,6 +46,8 @@
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
                                 <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
                                 <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
                                 <li><a href="../classes/BaseController.html">BaseController</a></li>
@@ -69,11 +71,13 @@
                                 <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
                                 <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
                                 <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
                                 <li><a href="../classes/DeleteController.html">DeleteController</a></li>
                                 <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
                                 <li><a href="../classes/FormController.html">FormController</a></li>
@@ -100,8 +104,11 @@
                                 <li><a href="../classes/PageService.html">PageService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
                                 <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
                                 <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
                                 <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
@@ -109,16 +116,27 @@
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
                                 <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
                                 <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
                                 <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
                                 <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
                                 <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
                                 <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
                                 <li><a href="../classes/System.html">System</a></li>
                                 <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
                                 <li><a href="../classes/TemplateService.html">TemplateService</a></li>
                                 <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
                                 <li><a href="../classes/TopicService.html">TopicService</a></li>
                                 <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
                                 <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
@@ -213,8 +231,15 @@ module.exports = function SectionServiceModule(pb) {
      * Service for managing the site&#x27;s navigation
      * @class SectionService
      * @constructor
+     * @param {String} site uid
+     * @param {Boolean} onlyThisSite should section service only return value set specifically by site rather than defaulting to global
      */
-    function SectionService(){}
+    function SectionService(options) {
+        this.site = pb.SiteService.getCurrentSite(options.site) || pb.SiteService.GLOBAL_SITE;
+        this.onlyThisSite = options.onlyThisSite || false;
+        this.settings = pb.SettingServiceFactory.getServiceBySite(this.site, this.onlyThisSite);
+        this.siteQueryService = new pb.SiteQueryService({site: this.site, onlyThisSite: this.onlyThisSite});
+    }
 
     /**
      *
@@ -233,7 +258,7 @@ module.exports = function SectionServiceModule(pb) {
     };
 
     /**
-     * 
+     *
      * @static
      * @method getPillNavOptions
      * @param {String} activePill
@@ -258,6 +283,8 @@ module.exports = function SectionServiceModule(pb) {
      * @param {Function} cb
      */
     SectionService.prototype.removeFromSectionMap = function(section, sectionMap, cb) {
+        var self = this;
+
         if (!cb) {
             cb         = sectionMap;
             sectionMap = null;
@@ -275,12 +302,11 @@ module.exports = function SectionServiceModule(pb) {
                 callback(null, sectionMap);
             }
             else {
-                pb.settings.get(&#x27;section_map&#x27;, callback);
+                self.settings.get(&#x27;section_map&#x27;, callback);
             }
         };
 
         //retrieve map
-        var self = this;
         getSectionMap(sectionMap, function(err, sectionMap) {
             if (util.isError(err)) {
                 cb(err, false);
@@ -296,7 +322,7 @@ module.exports = function SectionServiceModule(pb) {
 
             //when the section map was not provided persist it back
             if (sectionMapWasNull) {
-                pb.settings.set(&#x27;section_map&#x27;, sectionMap, function(err, result) {
+                self.settings.set(&#x27;section_map&#x27;, sectionMap, function(err, result) {
                     cb(err, orphans);
                 });
             }
@@ -338,8 +364,43 @@ module.exports = function SectionServiceModule(pb) {
         return orphans;
     };
 
+        /**
+     *
+     * @private
+     * @method getSectionMapIndex
+     * @param {String} sid
+     * @param {Array} sectionMap
+     * @return {Object}
+     */
+    SectionService.prototype.getSectionMapIndex = function(sid, sectionMap) {
+
+        //inspect the top level
+        var result = {
+            index: -1,
+            childIndex: -1
+        };
+        for (var i = sectionMap.length - 1; i &gt;= 0; i--) {
+
+            var item = sectionMap[i];
+            if (item.uid === sid) {
+                result.index = i;
+            }
+            else if (util.isArray(item.children)) {
+
+                for (var j = item.children.length - 1; j &gt;= 0; j--) {
+
+                    var child = item.children[j];
+                    if (child.uid === sid) {
+                        result.childIndex = j;
+                    }
+                }
+            }
+        }
+        return result;
+    };
+
     /**
-     * 
+     *
      * @method updateNavMap
      * @param {Object} section
      * @param {Function} cb
@@ -349,16 +410,14 @@ module.exports = function SectionServiceModule(pb) {
 
         //do validation
         if (!util.isObject(section) || !section[pb.DAO.getIdField()]) {
-            cb(new Error(&quot;A valid section object must be provided&quot;, false));
-            return;
+            return cb(new Error(&quot;A valid section object must be provided&quot;, false));
         }
 
         //retrieve the section map
         var sid = section[pb.DAO.getIdField()].toString();
-        pb.settings.get(&#x27;section_map&#x27;, function(err, sectionMap) {
+        self.settings.get(&#x27;section_map&#x27;, function(err, sectionMap) {
             if (util.isError(err)) {
-                cb(err, false);
-                return;
+                return cb(err, false);
             }
 
             //create it if not already done
@@ -367,25 +426,57 @@ module.exports = function SectionServiceModule(pb) {
                 sectionMap = [];
             }
 
+            //check if the section already exist in sectionMap
+            var sectionIndex = self.getSectionMapIndex(sid, sectionMap);
             //remove the section from the map
-            self._removeFromSectionMap(sid, sectionMap);
+            var orphans = self._removeFromSectionMap(sid, sectionMap);
 
             //make a top level item if there is no parent or the map was originally
             //empty (means its impossible for there to be a parent)
+            var navItem = {
+                uid: sid,
+                children: orphans
+            };
             if (mapWasNull || !section.parent) {
-                sectionMap.push({uid: sid, children: []});
+
+                //we are attaching the items back to a parent.  There are no
+                //orphans to return in the callback.
+                orphans = [];
+
+                if (sectionIndex.index &gt; -1) {
+                    sectionMap.splice(sectionIndex.index, 0, navItem);
+                }
+                else {
+                    sectionMap.push(navItem);
+                }
             }
             else {//set as child of parent in map
 
+                //we only support two levels so ensure we drop any children
+                navItem.children = undefined;
+
                 for (var i = 0; i &lt; sectionMap.length; i++) {
                     if (sectionMap[i].uid == section.parent) {
-                        sectionMap[i].children.push({uid: sid});
+                        if (sectionIndex.childIndex &gt; -1) {
+                            sectionMap[i].children.splice(sectionIndex.childIndex, 0, navItem);
+                        }
+                        else {
+                            sectionMap[i].children.push(navItem);
+                        }
                         break;
                     }
                 }
             }
 
-            pb.settings.set(&#x27;section_map&#x27;, sectionMap, cb);
+            self.settings.set(&#x27;section_map&#x27;, sectionMap, function(err, settingSaveResult){
+                if (util.isError(err)){
+                    return cb(err);
+                }
+                else if (!settingSaveResult) {
+                    return cb(new Error(&#x27;Failed to persist cached navigation map&#x27;));
+                }
+                cb(null, orphans);
+            });
         });
     };
 
@@ -405,27 +496,27 @@ module.exports = function SectionServiceModule(pb) {
     };
 
     /**
-     * 
+     *
      * @method getFormattedSections
      * @param {Localization} localizationService
      * @param {String} [currUrl]
      * @param {Function} cb
      */
     SectionService.prototype.getFormattedSections = function(localizationService, currUrl, cb) {
+        var self = this;
         if (util.isFunction(currUrl)) {
             cb      = currUrl;
             currUrl = null;
         }
 
-        pb.settings.get(&#x27;section_map&#x27;, function(err, sectionMap) {
+        self.settings.get(&#x27;section_map&#x27;, function(err, sectionMap) {
             if (util.isError(err) || sectionMap == null) {
                 cb(err, []);
                 return;
             }
 
             //retrieve sections
-            var dao = new pb.DAO();
-            dao.q(&#x27;section&#x27;, function(err, sections) {
+            self.siteQueryService.q(&#x27;section&#x27;, function(err, sections) {
                 if (util.isError(err)) {
                     return cb(err, []);
                 }
@@ -434,10 +525,10 @@ module.exports = function SectionServiceModule(pb) {
                 for(var i = 0; i &lt; sectionMap.length; i++) {
                     var section    = SectionService.getSectionData(sectionMap[i].uid, sections, currUrl);
                     if (util.isNullOrUndefined(section)) {
-                        pb.log.error(&#x27;SectionService: The navigation map is out of sync.  Root [%s] could not be found.&#x27;, sectionMap[i].uid);
+                        pb.log.error(&#x27;SectionService: The navigation map is out of sync.  Root [%s] could not be found for site [%s].&#x27;, sectionMap[i].uid, self.site);
                         continue;
                     }
-                    
+
                     if(sectionMap[i].children.length === 0) {
                         formattedSections.push(section);
                     }
@@ -449,7 +540,7 @@ module.exports = function SectionServiceModule(pb) {
                             for(var j = 0; j &lt; sectionMap[i].children.length; j++) {
                                 var child = SectionService.getSectionData(sectionMap[i].children[j].uid, sections, currUrl);
                                 if (util.isNullOrUndefined(child)) {
-                                    pb.log.error(&#x27;SectionService: The navigation map is out of sync.  Child [%s] could not be found.&#x27;, sectionMap[i].children[j].uid);
+                                    pb.log.error(&#x27;SectionService: The navigation map is out of sync.  Child [%s] could not be found for site [%s].&#x27;, sectionMap[i].children[j].uid, self.site);
                                     continue;
                                 }
 
@@ -493,8 +584,7 @@ module.exports = function SectionServiceModule(pb) {
             where: where,
             order: {&#x27;name&#x27;: pb.DAO.ASC}
         };
-        var dao = new pb.DAO();
-        dao.q(&#x27;section&#x27;, opts, cb);
+        this.siteQueryService.q(&#x27;section&#x27;, opts, cb);
     };
 
     /**
@@ -577,7 +667,7 @@ module.exports = function SectionServiceModule(pb) {
             //validate for each type of nav item
             switch(navItem.type) {
             case &#x27;container&#x27;:
-                onDone(null, errors);
+                onDone(null, []);
                 break;
             case &#x27;section&#x27;:
                 self.validateSectionNavItem(navItem, onDone);
@@ -626,8 +716,7 @@ module.exports = function SectionServiceModule(pb) {
         var where = {
             name: navItem.name
         };
-        var dao = new pb.DAO();
-        dao.unique(&#x27;section&#x27;, where, navItem[pb.DAO.getIdField()], function(err, unique) {
+        this.siteQueryService.unique(&#x27;section&#x27;, where, navItem[pb.DAO.getIdField()], function(err, unique) {
             var error = null;
             if (!unique) {
                 error = {field: &#x27;name&#x27;, message: &#x27;The provided name is not unique&#x27;};
@@ -687,9 +776,10 @@ module.exports = function SectionServiceModule(pb) {
             function(callback) {
 
                 var params = {
-                    type: &#x27;section&#x27;, 
-                    id: navItem[pb.DAO.getIdField()], 
-                    url: navItem.url
+                    type: &#x27;section&#x27;,
+                    id: navItem[pb.DAO.getIdField()],
+                    url: navItem.url,
+                    site: self.site
                 };
                 var urlService = new pb.UrlService();
                 urlService.existsForType(params, function(err, exists) {
@@ -737,7 +827,6 @@ module.exports = function SectionServiceModule(pb) {
         if (!pb.validation.validateNonEmptyStr(parent, false)) {
             error = {field: &#x27;parent&#x27;, message: &#x27;The parent must be a valid nav item container ID&#x27;};
             cb(null, error);
-            return;
         }
         else if (parent) {
 
@@ -785,7 +874,7 @@ module.exports = function SectionServiceModule(pb) {
     };
 
     /**
-     * 
+     *
      * @method validateNavItemEditor
      * @param {String} editor
      * @param {Function} cb
@@ -809,7 +898,7 @@ module.exports = function SectionServiceModule(pb) {
     };
 
     /**
-     * 
+     *
      * @method save
      * @param {Object} navItem
      * @param {Object} [options]
@@ -832,14 +921,20 @@ module.exports = function SectionServiceModule(pb) {
             }
 
             //persist the changes
-            var dao = new pb.DAO();
-            dao.save(navItem, function(err, data) {
+            self.siteQueryService.save(navItem, function(err, data) {
                 if(util.isError(err)) {
                     return cb(err);
                 }
 
                 //update the navigation map
-                self.updateNavMap(navItem, function() {
+                self.updateNavMap(navItem, function(err, orphans) {
+                    if (util.isError(err)) {
+                        return cb(err);
+                    }
+                    else if (orphans.length === 0) {
+                        //we kept the children so there is nothing to do
+                        return cb(null, true);
+                    }
 
                     //ok, now we can delete the orhphans if they exist
                     self.deleteChildren(navItem[pb.DAO.getIdField()], cb);
@@ -849,11 +944,12 @@ module.exports = function SectionServiceModule(pb) {
     };
 
     /**
-     * 
+     *
      * @static
      * @method getSectionData
-     * @param {String} editor
-     * @param {Function} cb
+     * @param {String} uid
+     * @param {Object} navItems
+     * @param {String} currUrl
      */
     SectionService.getSectionData = function(uid, navItems, currUrl) {
         var self = this;
@@ -894,7 +990,7 @@ module.exports = function SectionServiceModule(pb) {
             navItem.url = pb.UrlService.urlJoin(&#x27;/page&#x27;, navItem.item);
         }
         else {
-            navItem.url = &#x27;#&#x27;;
+            navItem.url = &#x27;#&#x27; + (navItem.name || &#x27;&#x27;);
         }
     };
 
@@ -912,23 +1008,23 @@ module.exports = function SectionServiceModule(pb) {
         return [
             {
                 value: &quot;container&quot;,
-                label: ls.get(&#x27;CONTAINER&#x27;)
+                label: ls.g(&#x27;generic.CONTAINER&#x27;)
             },
             {
                 value: &quot;section&quot;,
-                label: ls.get(&#x27;SECTION&#x27;)
+                label: ls.g(&#x27;generic.SECTION&#x27;)
             },
             {
                 value: &quot;article&quot;,
-                label: ls.get(&#x27;ARTICLE&#x27;)
+                label: ls.g(&#x27;generic.ARTICLE&#x27;)
             },
             {
                 value: &quot;page&quot;,
-                label: ls.get(&#x27;PAGE&#x27;)
+                label: ls.g(&#x27;generic.PAGE&#x27;)
             },
             {
                 value: &quot;link&quot;,
-                label: ls.get(&#x27;LINK&#x27;)
+                label: ls.g(&#x27;generic.LINK&#x27;)
             },
         ];
     };
