@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_content_page_renderer.js.html#l23"><code>include\service\entities\content\page_renderer.js:23</code></a>
+            Defined in: <a href="../files/include_service_entities_content_page_renderer.js.html#l23"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;page_renderer.js:23</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -223,7 +224,13 @@ loader can complete the render of content</p>
 <div id="method_PageRenderer" class="method item">
     <h3 class="name"><code>PageRenderer</code></h3>
 
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
 
 
 
@@ -235,7 +242,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_page_renderer.js.html#l23"><code>include\service\entities\content\page_renderer.js:23</code></a>
+        <a href="../files/include_service_entities_content_page_renderer.js.html#l23"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;page_renderer.js:23</code></a>
         </p>
 
 
@@ -246,6 +253,22 @@ loader can complete the render of content</p>
         
     </div>
 
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
 
 
 
@@ -318,7 +341,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_page_renderer.js.html#l40"><code>include\service\entities\content\page_renderer.js:40</code></a>
+        <a href="../files/include_service_entities_content_page_renderer.js.html#l43"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;page_renderer.js:43</code></a>
         </p>
 
 
@@ -364,7 +387,7 @@ loader can complete the render of content</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_page_renderer.js.html#l48"><code>include\service\entities\content\page_renderer.js:48</code></a>
+        <a href="../files/include_service_entities_content_page_renderer.js.html#l51"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;page_renderer.js:51</code></a>
         </p>
 
 
@@ -428,7 +451,7 @@ allow for layout parameter to have any name.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_page_renderer.js.html#l59"><code>include\service\entities\content\page_renderer.js:59</code></a>
+        <a href="../files/include_service_entities_content_page_renderer.js.html#l62"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;page_renderer.js:62</code></a>
         </p>
 
 
@@ -436,7 +459,7 @@ allow for layout parameter to have any name.</p>
     </div>
 
     <div class="description">
-        <p>A workaround to allow this prototype to operate on articles and pages.<br>
+        <p>A workaround to allow this prototype to operate on articles and pages.
 The layout parameter is not the same.  Until we introduce breaking
 changes this will have to do.</p>
 
@@ -477,30 +500,30 @@ changes this will have to do.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_commentService" class="property item">
-                        <h3 class="name"><code>commentService</code></h3>
-                        <span class="type"><a href="../classes/CommentService.html" class="crosslink">CommentService</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_content_page_renderer.js.html#l31"><code>include\service\entities\content\page_renderer.js:31</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_commentService" class="property item">
+    <h3 class="name"><code>commentService</code></h3>
+    <span class="type"><a href="../classes/CommentService.html" class="crosslink">CommentService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_content_page_renderer.js.html#l32"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;page_renderer.js:32</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

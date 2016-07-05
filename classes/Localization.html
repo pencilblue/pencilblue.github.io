@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_localization.js.html#l29"><code>include\localization.js:29</code></a>
+            Defined in: <a href="../files/include_localization.js.html#l29"><code>include&#x2F;localization.js:29</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -322,9 +323,10 @@ assists in the determination of the best language for the given user.</p>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_localize">localize</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method private">
                                 <a href="#method_parseLocale">parseLocale</a>
@@ -475,7 +477,7 @@ assists in the determination of the best language for the given user.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l611"><code>include\localization.js:611</code></a>
+        <a href="../files/include_localization.js.html#l612"><code>include&#x2F;localization.js:612</code></a>
         </p>
 
 
@@ -501,6 +503,29 @@ the packaged can be scoped to a specific plugin.</p>
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[language]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when passing locale as an object</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[countryCode]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">localizations</code>
@@ -524,7 +549,7 @@ the packaged can be scoped to a specific plugin.</p>
 
                         <ul class="params-list">
                             <li class="param">
-                                    <code class="param-name optional">[string]</code>
+                                    <code class="param-name optional">[plugin=SYSTEM]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
 
@@ -580,7 +605,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l594"><code>include\localization.js:594</code></a>
+        <a href="../files/include_localization.js.html#l595"><code>include&#x2F;localization.js:595</code></a>
         </p>
 
 
@@ -628,7 +653,7 @@ the packaged can be scoped to a specific plugin.</p>
 
                         <ul class="params-list">
                             <li class="param">
-                                    <code class="param-name optional">[string]</code>
+                                    <code class="param-name optional">[plugin]</code>
                                     <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
 
@@ -687,7 +712,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l673"><code>include\localization.js:673</code></a>
+        <a href="../files/include_localization.js.html#l676"><code>include&#x2F;localization.js:676</code></a>
         </p>
 
 
@@ -802,7 +827,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l691"><code>include\localization.js:691</code></a>
+        <a href="../files/include_localization.js.html#l694"><code>include&#x2F;localization.js:694</code></a>
         </p>
 
 
@@ -820,13 +845,36 @@ the packaged can be scoped to a specific plugin.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">locale</code>
-                        <span class="type">String</span>
+                        <span class="type">String | Object</span>
 
 
                     <div class="param-description">
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[language]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when passing locale as an object</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[countryCode]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">key</code>
@@ -907,7 +955,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l1048"><code>include\localization.js:1048</code></a>
+        <a href="../files/include_localization.js.html#l1062"><code>include&#x2F;localization.js:1062</code></a>
         </p>
 
 
@@ -978,7 +1026,7 @@ property &quot;plugin&quot; that is a string.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l444"><code>include\localization.js:444</code></a>
+        <a href="../files/include_localization.js.html#l443"><code>include&#x2F;localization.js:443</code></a>
         </p>
 
 
@@ -997,7 +1045,7 @@ header in the request</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">request</code>
-                        <span class="type">Object | String</span>
+                        <span class="type">Request | String</span>
 
 
                     <div class="param-description">
@@ -1058,7 +1106,7 @@ header in the request</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l898"><code>include\localization.js:898</code></a>
+        <a href="../files/include_localization.js.html#l910"><code>include&#x2F;localization.js:910</code></a>
         </p>
 
 
@@ -1123,7 +1171,7 @@ header in the request</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l1105"><code>include\localization.js:1105</code></a>
+        <a href="../files/include_localization.js.html#l1120"><code>include&#x2F;localization.js:1120</code></a>
         </p>
 
 
@@ -1193,7 +1241,7 @@ values live</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l1024"><code>include\localization.js:1024</code></a>
+        <a href="../files/include_localization.js.html#l1038"><code>include&#x2F;localization.js:1038</code></a>
         </p>
 
 
@@ -1253,9 +1301,6 @@ format (lang-COUNTRY)</p>
                         <code>key</code>
                 </li>
                 <li class="arg">
-                        <code>params</code>
-                </li>
-                <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
             </ul><span class="paren">)</span>
@@ -1274,7 +1319,7 @@ format (lang-COUNTRY)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l267"><code>include\localization.js:267</code></a>
+        <a href="../files/include_localization.js.html#l268"><code>include&#x2F;localization.js:268</code></a>
         </p>
 
 
@@ -1292,16 +1337,6 @@ format (lang-COUNTRY)</p>
                 <li class="param">
                         <code class="param-name">key</code>
                         <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">params</code>
-                        <span class="type">Object</span>
 
 
                     <div class="param-description">
@@ -1380,7 +1415,7 @@ format (lang-COUNTRY)</p>
         </div>
 
         <span class="returns-inline">
-            <span class="type">String</span>
+            <span class="type">String | Null</span>
         </span>
 
         <span class="flag deprecated" title="Since 0.5.0">deprecated</span>
@@ -1393,7 +1428,7 @@ format (lang-COUNTRY)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l210"><code>include\localization.js:210</code></a>
+        <a href="../files/include_localization.js.html#l211"><code>include&#x2F;localization.js:211</code></a>
         </p>
 
 
@@ -1408,7 +1443,7 @@ considered to be injectable values.  The function will call &quot;util.format&qu
 situations where the key is found and the nuber of arguments passed to the
 function is greater than 1.  See
 <a href="http://nodejs.org/api/util.html#util_util_format_format">http://nodejs.org/api/util.html#util_util_format_format</a> for details on
-suppored formatting.</p>
+supported formatting.</p>
 
     </div>
 
@@ -1428,7 +1463,7 @@ suppored formatting.</p>
                 </li>
                 <li class="param">
                         <code class="param-name optional">[args]</code>
-                        <span class="type">String | Integer | Float | Object</span>
+                        <span class="type">String | Integer | Number | Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
@@ -1446,7 +1481,7 @@ parameters to be injected into the localization value</p>
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">String</span>:
+                        <span class="type">String | Null</span>:
                     <p>The formatted and localized string</p>
 
             </div>
@@ -1473,7 +1508,7 @@ parameters to be injected into the localization value</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l875"><code>include\localization.js:875</code></a>
+        <a href="../files/include_localization.js.html#l887"><code>include&#x2F;localization.js:887</code></a>
         </p>
 
 
@@ -1529,7 +1564,7 @@ will fall back to english. The locale is expected to be of the form:
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l541"><code>include\localization.js:541</code></a>
+        <a href="../files/include_localization.js.html#l540"><code>include&#x2F;localization.js:540</code></a>
         </p>
 
 
@@ -1599,7 +1634,7 @@ will fall back to english. The locale is expected to be of the form:
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l888"><code>include\localization.js:888</code></a>
+        <a href="../files/include_localization.js.html#l900"><code>include&#x2F;localization.js:900</code></a>
         </p>
 
 
@@ -1641,7 +1676,7 @@ will fall back to english. The locale is expected to be of the form:
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l959"><code>include\localization.js:959</code></a>
+        <a href="../files/include_localization.js.html#l971"><code>include&#x2F;localization.js:971</code></a>
         </p>
 
 
@@ -1687,7 +1722,7 @@ the locale).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l468"><code>include\localization.js:468</code></a>
+        <a href="../files/include_localization.js.html#l467"><code>include&#x2F;localization.js:467</code></a>
         </p>
 
 
@@ -1746,7 +1781,7 @@ send the user based on their list of acceptable languages.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l519"><code>include\localization.js:519</code></a>
+        <a href="../files/include_localization.js.html#l518"><code>include&#x2F;localization.js:518</code></a>
         </p>
 
 
@@ -1814,7 +1849,7 @@ of the dash represent the country code.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l1091"><code>include\localization.js:1091</code></a>
+        <a href="../files/include_localization.js.html#l1106"><code>include&#x2F;localization.js:1106</code></a>
         </p>
 
 
@@ -1855,7 +1890,7 @@ keys.</p>
 
 
 </div>
-<div id="method_localize" class="method item">
+<div id="method_localize" class="method item deprecated">
     <h3 class="name"><code>localize</code></h3>
 
         <div class="args">
@@ -1876,6 +1911,7 @@ keys.</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1885,7 +1921,7 @@ keys.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l170"><code>include\localization.js:170</code></a>
+        <a href="../files/include_localization.js.html#l170"><code>include&#x2F;localization.js:170</code></a>
         </p>
 
 
@@ -1976,7 +2012,7 @@ them with the specified values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l1066"><code>include\localization.js:1066</code></a>
+        <a href="../files/include_localization.js.html#l1080"><code>include&#x2F;localization.js:1080</code></a>
         </p>
 
 
@@ -2003,6 +2039,19 @@ function throws an error when it finds invalid format.</p>
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[language]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when passing an object</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
             </ul>
         </div>
@@ -2042,7 +2091,7 @@ function throws an error when it finds invalid format.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l980"><code>include\localization.js:980</code></a>
+        <a href="../files/include_localization.js.html#l992"><code>include&#x2F;localization.js:992</code></a>
         </p>
 
 
@@ -2061,13 +2110,37 @@ and country code into an object.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">filePath</code>
-                        <span class="type">String</span>
+                        <span class="type">String | Object</span>
 
 
                     <div class="param-description">
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[language]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when passing filePath as an object</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[countryCode]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when passing filePath as an object</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
             </ul>
         </div>
@@ -2093,6 +2166,9 @@ and country code into an object.</p>
                 <li class="arg">
                         <code>localizations</code>
                 </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -2111,7 +2187,7 @@ and country code into an object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l581"><code>include\localization.js:581</code></a>
+        <a href="../files/include_localization.js.html#l580"><code>include&#x2F;localization.js:580</code></a>
         </p>
 
 
@@ -2146,6 +2222,28 @@ and country code into an object.</p>
                          
                     </div>
 
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[plugin]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
             </ul>
         </div>
@@ -2191,7 +2289,7 @@ and country code into an object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l912"><code>include\localization.js:912</code></a>
+        <a href="../files/include_localization.js.html#l924"><code>include&#x2F;localization.js:924</code></a>
         </p>
 
 
@@ -2282,7 +2380,7 @@ provided a value the defaultVal parameter value is used.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l767"><code>include\localization.js:767</code></a>
+        <a href="../files/include_localization.js.html#l769"><code>include&#x2F;localization.js:769</code></a>
         </p>
 
 
@@ -2308,6 +2406,29 @@ operation can be scoped to a single plugin.</p>
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[language]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when locale is passed as an object</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[countryCode]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name optional">[options]</code>
@@ -2376,7 +2497,7 @@ operation can be scoped to a single plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l788"><code>include\localization.js:788</code></a>
+        <a href="../files/include_localization.js.html#l794"><code>include&#x2F;localization.js:794</code></a>
         </p>
 
 
@@ -2403,6 +2524,29 @@ Additionally, the operation can be scoped to a single plugin.</p>
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[language]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Only required when passing locale as an object</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[countryCode]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">key</code>
@@ -2455,380 +2599,380 @@ Additionally, the operation can be scoped to a single plugin.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_ACCEPT_LANG_HEADER" class="property item">
-                        <h3 class="name"><code>ACCEPT_LANG_HEADER</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l101"><code>include\localization.js:101</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_activeTheme" class="property item">
-                        <h3 class="name"><code>activeTheme</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l67"><code>include\localization.js:67</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The currently active theme that should be prioritized when
-                    performing key lookup</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_cache" class="property item">
-                        <h3 class="name"><code>cache</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l60"><code>include\localization.js:60</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Stores the keys already retrieved for the instance to prevent duplicate retrieval.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_JS_EXT" class="property item">
-                        <h3 class="name"><code>JS_EXT</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l76"><code>include\localization.js:76</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_KEY_SEP" class="property item">
-                        <h3 class="name"><code>KEY_SEP</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l119"><code>include\localization.js:119</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_keys" class="property item">
-                        <h3 class="name"><code>keys</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l154"><code>include\localization.js:154</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_language Really should be renamed to locale in the future" class="property item">
-                        <h3 class="name"><code>language Really should be renamed to locale in the future</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l47"><code>include\localization.js:47</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>expected to be lowercase and of the form &quot;en-us&quot;</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_LOCALE_PART_SEP" class="property item">
-                        <h3 class="name"><code>LOCALE_PART_SEP</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l110"><code>include\localization.js:110</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_localeObj" class="property item">
-                        <h3 class="name"><code>localeObj</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l54"><code>include\localization.js:54</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_PARAM_REPLACEMENT_REGEX" class="property item">
-                        <h3 class="name"><code>PARAM_REPLACEMENT_REGEX</code></h3>
-                        <span class="type">RegExp</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l162"><code>include\localization.js:162</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_PREFIX" class="property item">
-                        <h3 class="name"><code>PREFIX</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l92"><code>include\localization.js:92</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_SEP" class="property item">
-                        <h3 class="name"><code>SEP</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l83"><code>include\localization.js:83</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_storage" class="property item">
-                        <h3 class="name"><code>storage</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l128"><code>include\localization.js:128</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_supported" class="property item">
-                        <h3 class="name"><code>supported</code></h3>
-                        <span class="type">Locales</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l137"><code>include\localization.js:137</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_supportedLookup" class="property item">
-                        <h3 class="name"><code>supportedLookup</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_localization.js.html#l146"><code>include\localization.js:146</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_ACCEPT_LANG_HEADER" class="property item">
+    <h3 class="name"><code>ACCEPT_LANG_HEADER</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l101"><code>include&#x2F;localization.js:101</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_activeTheme" class="property item">
+    <h3 class="name"><code>activeTheme</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l67"><code>include&#x2F;localization.js:67</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The currently active theme that should be prioritized when
+performing key lookup</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_cache" class="property item">
+    <h3 class="name"><code>cache</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l60"><code>include&#x2F;localization.js:60</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Stores the keys already retrieved for the instance to prevent duplicate retrieval.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_JS_EXT" class="property item">
+    <h3 class="name"><code>JS_EXT</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l76"><code>include&#x2F;localization.js:76</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_KEY_SEP" class="property item">
+    <h3 class="name"><code>KEY_SEP</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l119"><code>include&#x2F;localization.js:119</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_keys" class="property item">
+    <h3 class="name"><code>keys</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l154"><code>include&#x2F;localization.js:154</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_language Really should be renamed to locale in the future" class="property item">
+    <h3 class="name"><code>language Really should be renamed to locale in the future</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l47"><code>include&#x2F;localization.js:47</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>expected to be lowercase and of the form &quot;en-us&quot;</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_LOCALE_PART_SEP" class="property item">
+    <h3 class="name"><code>LOCALE_PART_SEP</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l110"><code>include&#x2F;localization.js:110</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_localeObj" class="property item">
+    <h3 class="name"><code>localeObj</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l54"><code>include&#x2F;localization.js:54</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_PARAM_REPLACEMENT_REGEX" class="property item">
+    <h3 class="name"><code>PARAM_REPLACEMENT_REGEX</code></h3>
+    <span class="type">RegExp</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l162"><code>include&#x2F;localization.js:162</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_PREFIX" class="property item">
+    <h3 class="name"><code>PREFIX</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l92"><code>include&#x2F;localization.js:92</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_SEP" class="property item">
+    <h3 class="name"><code>SEP</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l83"><code>include&#x2F;localization.js:83</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_storage" class="property item">
+    <h3 class="name"><code>storage</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l128"><code>include&#x2F;localization.js:128</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_supported" class="property item">
+    <h3 class="name"><code>supported</code></h3>
+    <span class="type">Locales</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l137"><code>include&#x2F;localization.js:137</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_supportedLookup" class="property item">
+    <h3 class="name"><code>supportedLookup</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_localization.js.html#l146"><code>include&#x2F;localization.js:146</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

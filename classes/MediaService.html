@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,20 +205,109 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_media_service.js.html#l27"><code>include\service\entities\media_service.js:27</code></a>
+            Defined in: <a href="../files/include_service_entities_media_service.js.html#l27"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:27</code></a>
         </div>
 
-            Module: <a href="../modules/Entities.html">Entities</a><br>
-            Parent Module: <a href="../modules/Services.html">Services</a>
+            Module: <a href="../modules/Services.html">Services</a>
 
 </div>
 
+    <div class="box deprecated">
+        <p>
+            This class is deprecated.
+        </p>
+    </div>
 
 <div class="box intro">
     <p>Provides information on media</p>
 
 </div>
 
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_MediaService" class="method item deprecated">
+    <h3 class="name"><code>MediaService</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>provider</code>
+                </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
+                <li class="arg">
+                        <code>onlyThisSite</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_media_service.js.html#l27"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:27</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">provider</code>
+                        <span class="type">MediaProvider</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Site uid to be used for this service</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">onlyThisSite</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                        <p>Whether this service should only return media associated with specified site
+or fallback to global if not found in specified site</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+    </div>
 
 <div id="classdocs" class="tabview">
     <ul class="api-class-tabs">
@@ -256,30 +346,35 @@
                                 <a href="#method_existsByPath">existsByPath</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_extractNextMediaFlag">extractNextMediaFlag</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_findProviderType">findProviderType</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_formatMedia">formatMedia</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_generateFilename">generateFilename</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_generateMediaPath">generateMediaPath</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_get">get</a>
@@ -290,63 +385,70 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getContentStreamByPath">getContentStreamByPath</a>
+                                <a href="#method_getContentStreamById">getContentStreamById</a>
 
                             </li>
-                            <li class="index-item method deprecated">
-                                <a href="#method_getInstance">getInstance</a>
+                            <li class="index-item method">
+                                <a href="#method_getContentStreamByPath">getContentStreamByPath</a>
 
-                                    <span class="flag static">static</span>
-                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getMediaDescriptor">getMediaDescriptor</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getMediaFlag">getMediaFlag</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getMediaIcon">getMediaIcon</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getRendererByType">getRendererByType</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getRendererByType">getRendererByType</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getStyleForPosition">getStyleForPosition</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getStyleForView">getStyleForView</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getSupportedExtensions">getSupportedExtensions</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_isFile">isFile</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_isRegistered">isRegistered</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_isValidFilePath">isValidFilePath</a>
@@ -356,15 +458,17 @@
                                 <a href="#method_loadById">loadById</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_loadMediaProvider">loadMediaProvider</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_registerRenderer">registerRenderer</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_render">render</a>
@@ -398,10 +502,11 @@
                                 <a href="#method_statByPath">statByPath</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_unregisterRenderer">unregisterRenderer</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_validate">validate</a>
@@ -419,25 +524,9 @@
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private deprecated">
-                                <a href="#property_INSTANCE">INSTANCE</a>
-
-                                    <span class="flag static">static</span>
-                                    <span class="flag deprecated">deprecated</span>
-                            </li>
-                            <li class="index-item property private">
-                                <a href="#property_MEDIA_PROVIDERS">MEDIA_PROVIDERS</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
                             <li class="index-item property">
                                 <a href="#property_provider">provider</a>
 
-                            </li>
-                            <li class="index-item property private">
-                                <a href="#property_REGISTERED_MEDIA_RENDERERS">REGISTERED_MEDIA_RENDERERS</a>
-
-                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item property">
                                 <a href="#property_site">site</a>
@@ -481,7 +570,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l735"><code>include\service\entities\media_service.js:735</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l643"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:643</code></a>
         </p>
 
 
@@ -552,7 +641,7 @@ is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l289"><code>include\service\entities\media_service.js:289</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l270"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:270</code></a>
         </p>
 
 
@@ -620,7 +709,7 @@ is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l134"><code>include\service\entities\media_service.js:134</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l91"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:91</code></a>
         </p>
 
 
@@ -653,7 +742,8 @@ is returned will include:</p>
 
 
                     <div class="param-description">
-                         
+                        <p>not used in implementation</p>
+
                     </div>
 
                 </li>
@@ -697,7 +787,7 @@ is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l316"><code>include\service\entities\media_service.js:316</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l297"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:297</code></a>
         </p>
 
 
@@ -762,7 +852,7 @@ is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l306"><code>include\service\entities\media_service.js:306</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l287"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:287</code></a>
         </p>
 
 
@@ -803,7 +893,7 @@ is returned will include:</p>
 
 
 </div>
-<div id="method_extractNextMediaFlag" class="method item">
+<div id="method_extractNextMediaFlag" class="method item deprecated">
     <h3 class="name"><code>extractNextMediaFlag</code></h3>
 
         <div class="args">
@@ -818,6 +908,7 @@ is returned will include:</p>
             <span class="type">Object</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -828,7 +919,7 @@ is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l691"><code>include\service\entities\media_service.js:691</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l621"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:621</code></a>
         </p>
 
 
@@ -837,7 +928,7 @@ is returned will include:</p>
 
     <div class="description">
         <p>Given a content string the function will search for and extract the first
-occurance of a media flag. The parsed value that is returned will include:</p>
+occurrence of a media flag. The parsed value that is returned will include:</p>
 <ul>
 <li>startIndex - The index where the flag was found to start</li>
 <li>endIndex - The position in the content string of the last character of the media flag</li>
@@ -878,7 +969,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
 
 
 </div>
-<div id="method_findProviderType" class="method item">
+<div id="method_findProviderType" class="method item deprecated">
     <h3 class="name"><code>findProviderType</code></h3>
 
         <span class="paren">()</span>
@@ -887,6 +978,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
             <span class="type">MediaProvider</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -897,7 +989,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l946"><code>include\service\entities\media_service.js:946</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l756"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:756</code></a>
         </p>
 
 
@@ -920,7 +1012,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
 
 
 </div>
-<div id="method_formatMedia" class="method item">
+<div id="method_formatMedia" class="method item deprecated">
     <h3 class="name"><code>formatMedia</code></h3>
 
         <div class="args">
@@ -935,6 +1027,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
             <span class="type">Array</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -945,7 +1038,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l847"><code>include\service\entities\media_service.js:847</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l716"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:716</code></a>
         </p>
 
 
@@ -987,7 +1080,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
 
 
 </div>
-<div id="method_generateFilename" class="method item">
+<div id="method_generateFilename" class="method item deprecated">
     <h3 class="name"><code>generateFilename</code></h3>
 
         <div class="args">
@@ -1002,6 +1095,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1012,7 +1106,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l810"><code>include\service\entities\media_service.js:810</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l690"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:690</code></a>
         </p>
 
 
@@ -1051,7 +1145,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
 
 
 </div>
-<div id="method_generateMediaPath" class="method item">
+<div id="method_generateMediaPath" class="method item deprecated">
     <h3 class="name"><code>generateMediaPath</code></h3>
 
         <div class="args">
@@ -1066,6 +1160,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1076,7 +1171,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l797"><code>include\service\entities\media_service.js:797</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l677"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:677</code></a>
         </p>
 
 
@@ -1139,7 +1234,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l207"><code>include\service\entities\media_service.js:207</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l164"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:164</code></a>
         </p>
 
 
@@ -1268,7 +1363,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l241"><code>include\service\entities\media_service.js:241</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l198"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:198</code></a>
         </p>
 
 
@@ -1285,6 +1380,71 @@ occurance of a media flag. The parsed value that is returned will include:</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">mediaPath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getContentStreamById" class="method item">
+    <h3 class="name"><code>getContentStreamById</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_media_service.js.html#l218"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:218</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
                         <span class="type">String</span>
 
 
@@ -1333,7 +1493,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l251"><code>include\service\entities\media_service.js:251</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l208"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:208</code></a>
         </p>
 
 
@@ -1374,82 +1534,13 @@ occurance of a media flag. The parsed value that is returned will include:</p>
 
 
 </div>
-<div id="method_getInstance" class="method item deprecated">
-    <h3 class="name"><code>getInstance</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code class="optional">[context]</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">MediaProvider</span>
-        </span>
-
-        <span class="flag deprecated">deprecated</span>
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l909"><code>include\service\entities\media_service.js:909</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the singleton instance of MediaProvider.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name optional">[context]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">MediaProvider</span>:
-            </div>
-        </div>
-
-
-</div>
 <div id="method_getMediaDescriptor" class="method item">
     <h3 class="name"><code>getMediaDescriptor</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>mediaURL</code>
-                </li>
-                <li class="arg">
-                        <code>isFile</code>
+                        <code>mediaUrl</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -1467,7 +1558,7 @@ occurance of a media flag. The parsed value that is returned will include:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l404"><code>include\service\entities\media_service.js:404</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l383"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:383</code></a>
         </p>
 
 
@@ -1484,23 +1575,12 @@ occurance of a media flag. The parsed value that is returned will include:</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">mediaURL</code>
+                        <code class="param-name">mediaUrl</code>
                         <span class="type">String</span>
 
 
                     <div class="param-description">
                          
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">isFile</code>
-                        <span class="type">Boolean</span>
-
-
-                    <div class="param-description">
-                        <p>Indicates if the media resource was uploaded to the server.</p>
-
                     </div>
 
                 </li>
@@ -1523,7 +1603,7 @@ by the given media URL</p>
 
 
 </div>
-<div id="method_getMediaFlag" class="method item">
+<div id="method_getMediaFlag" class="method item deprecated">
     <h3 class="name"><code>getMediaFlag</code></h3>
 
         <div class="args">
@@ -1541,6 +1621,7 @@ by the given media URL</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1551,7 +1632,7 @@ by the given media URL</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l661"><code>include\service\entities\media_service.js:661</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l606"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:606</code></a>
         </p>
 
 
@@ -1604,7 +1685,7 @@ rendering element.</p>
 
 
 </div>
-<div id="method_getMediaIcon" class="method item">
+<div id="method_getMediaIcon" class="method item deprecated">
     <h3 class="name"><code>getMediaIcon</code></h3>
 
         <div class="args">
@@ -1619,6 +1700,7 @@ rendering element.</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1629,7 +1711,7 @@ rendering element.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l831"><code>include\service\entities\media_service.js:831</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l703"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:703</code></a>
         </p>
 
 
@@ -1668,7 +1750,7 @@ rendering element.</p>
 
 
 </div>
-<div id="method_getRendererByType" class="method item">
+<div id="method_getRendererByType" class="method item deprecated">
     <h3 class="name"><code>getRendererByType</code></h3>
 
         <div class="args">
@@ -1686,6 +1768,7 @@ rendering element.</p>
             <span class="type">MediaRenderer</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1696,7 +1779,7 @@ rendering element.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l630"><code>include\service\entities\media_service.js:630</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l591"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:591</code></a>
         </p>
 
 
@@ -1750,7 +1833,7 @@ none support the given URL.</p>
 
 
 </div>
-<div id="method_getRendererByType" class="method item">
+<div id="method_getRendererByType" class="method item deprecated">
     <h3 class="name"><code>getRendererByType</code></h3>
 
         <div class="args">
@@ -1765,6 +1848,7 @@ none support the given URL.</p>
             <span class="type">MediaRenderer</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1775,7 +1859,7 @@ none support the given URL.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l604"><code>include\service\entities\media_service.js:604</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l577"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:577</code></a>
         </p>
 
 
@@ -1818,7 +1902,7 @@ none support the given type.</p>
 
 
 </div>
-<div id="method_getStyleForPosition" class="method item">
+<div id="method_getStyleForPosition" class="method item deprecated">
     <h3 class="name"><code>getStyleForPosition</code></h3>
 
         <div class="args">
@@ -1833,6 +1917,7 @@ none support the given type.</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1843,7 +1928,7 @@ none support the given type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l778"><code>include\service\entities\media_service.js:778</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l661"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:661</code></a>
         </p>
 
 
@@ -1888,7 +1973,7 @@ provided position.</p>
 
 
 </div>
-<div id="method_getStyleForView" class="method item">
+<div id="method_getStyleForView" class="method item deprecated">
     <h3 class="name"><code>getStyleForView</code></h3>
 
         <div class="args">
@@ -1906,6 +1991,7 @@ provided position.</p>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1916,7 +2002,7 @@ provided position.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l582"><code>include\service\entities\media_service.js:582</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l560"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:560</code></a>
         </p>
 
 
@@ -1975,7 +2061,7 @@ to the base style for the given view</p>
 
 
 </div>
-<div id="method_getSupportedExtensions" class="method item">
+<div id="method_getSupportedExtensions" class="method item deprecated">
     <h3 class="name"><code>getSupportedExtensions</code></h3>
 
         <span class="paren">()</span>
@@ -1984,6 +2070,7 @@ to the base style for the given view</p>
             <span class="type">Array</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1994,7 +2081,7 @@ to the base style for the given view</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l876"><code>include\service\entities\media_service.js:876</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l729"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:729</code></a>
         </p>
 
 
@@ -2020,7 +2107,7 @@ that can be uploaded into the system.</p>
 
 
 </div>
-<div id="method_isFile" class="method item">
+<div id="method_isFile" class="method item deprecated">
     <h3 class="name"><code>isFile</code></h3>
 
         <div class="args">
@@ -2032,6 +2119,7 @@ that can be uploaded into the system.</p>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -2042,7 +2130,7 @@ that can be uploaded into the system.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l393"><code>include\service\entities\media_service.js:393</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l370"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:370</code></a>
         </p>
 
 
@@ -2076,7 +2164,7 @@ only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.</p>
 
 
 </div>
-<div id="method_isRegistered" class="method item">
+<div id="method_isRegistered" class="method item deprecated">
     <h3 class="name"><code>isRegistered</code></h3>
 
         <div class="args">
@@ -2091,6 +2179,7 @@ only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.</p>
             <span class="type">Boolean</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -2101,7 +2190,7 @@ only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l366"><code>include\service\entities\media_service.js:366</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l344"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:344</code></a>
         </p>
 
 
@@ -2167,7 +2256,7 @@ only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l336"><code>include\service\entities\media_service.js:336</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l317"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:317</code></a>
         </p>
 
 
@@ -2235,7 +2324,7 @@ only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l123"><code>include\service\entities\media_service.js:123</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l80"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:80</code></a>
         </p>
 
 
@@ -2280,7 +2369,7 @@ occurred and a media descriptor if found.</p>
 
 
 </div>
-<div id="method_loadMediaProvider" class="method item">
+<div id="method_loadMediaProvider" class="method item deprecated">
     <h3 class="name"><code>loadMediaProvider</code></h3>
 
         <div class="args">
@@ -2295,6 +2384,7 @@ occurred and a media descriptor if found.</p>
             <span class="type">MediaProvider</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -2305,7 +2395,7 @@ occurred and a media descriptor if found.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l929"><code>include\service\entities\media_service.js:929</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l742"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:742</code></a>
         </p>
 
 
@@ -2357,7 +2447,7 @@ provider can be loaded.</p>
 
 
 </div>
-<div id="method_registerRenderer" class="method item">
+<div id="method_registerRenderer" class="method item deprecated">
     <h3 class="name"><code>registerRenderer</code></h3>
 
         <div class="args">
@@ -2372,6 +2462,7 @@ provider can be loaded.</p>
             <span class="type">Boolean</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -2382,7 +2473,7 @@ provider can be loaded.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l350"><code>include\service\entities\media_service.js:350</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l331"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:331</code></a>
         </p>
 
 
@@ -2451,7 +2542,7 @@ provider can be loaded.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l552"><code>include\service\entities\media_service.js:552</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l530"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:530</code></a>
         </p>
 
 
@@ -2550,7 +2641,7 @@ exists and the rendered HTML content for the media resource.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>The</code>
+                        <code>flag</code>
                 </li>
                 <li class="arg">
                         <code>options</code>
@@ -2571,7 +2662,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l515"><code>include\service\entities\media_service.js:515</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l493"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:493</code></a>
         </p>
 
 
@@ -2588,12 +2679,12 @@ exists and the rendered HTML content for the media resource.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">The</code>
-                        <span class="type">String</span>
+                        <code class="param-name">flag</code>
+                        <span class="type">String | Object</span>
 
 
                     <div class="param-description">
-                        <p>media resource ID</p>
+                        <p>The media resource ID</p>
 
                     </div>
 
@@ -2670,7 +2761,7 @@ exists and the rendered HTML content for the media resource.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>The</code>
+                        <code>id</code>
                 </li>
                 <li class="arg">
                         <code>options</code>
@@ -2691,7 +2782,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l484"><code>include\service\entities\media_service.js:484</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l465"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:465</code></a>
         </p>
 
 
@@ -2709,12 +2800,12 @@ id.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">The</code>
+                        <code class="param-name">id</code>
                         <span class="type">String</span>
 
 
                     <div class="param-description">
-                        <p>media resource ID</p>
+                        <p>The media resource ID</p>
 
                     </div>
 
@@ -2809,7 +2900,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l454"><code>include\service\entities\media_service.js:454</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l432"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:432</code></a>
         </p>
 
 
@@ -2893,6 +2984,16 @@ provided by the default style associated with the view.</p>
                                 </div>
 
                             </li>
+                            <li class="param">
+                                    <code class="param-name optional">[isFile=false]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
                         </ul>
                 </li>
                 <li class="param">
@@ -2940,7 +3041,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l151"><code>include\service\entities\media_service.js:151</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l108"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:108</code></a>
         </p>
 
 
@@ -2973,7 +3074,8 @@ exists and the rendered HTML content for the media resource.</p>
 
 
                     <div class="param-description">
-                         
+                        <p>Options object is not actually used in this implementation</p>
+
                     </div>
 
                 </li>
@@ -3020,7 +3122,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l261"><code>include\service\entities\media_service.js:261</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l242"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:242</code></a>
         </p>
 
 
@@ -3098,7 +3200,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l275"><code>include\service\entities\media_service.js:275</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l256"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:256</code></a>
         </p>
 
 
@@ -3173,7 +3275,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l326"><code>include\service\entities\media_service.js:326</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l307"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:307</code></a>
         </p>
 
 
@@ -3214,13 +3316,13 @@ exists and the rendered HTML content for the media resource.</p>
 
 
 </div>
-<div id="method_unregisterRenderer" class="method item">
+<div id="method_unregisterRenderer" class="method item deprecated">
     <h3 class="name"><code>unregisterRenderer</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>interfaceImplementation</code>
+                        <code>interfaceToUnregister</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -3229,6 +3331,7 @@ exists and the rendered HTML content for the media resource.</p>
             <span class="type">Boolean</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -3239,7 +3342,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l377"><code>include\service\entities\media_service.js:377</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l357"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:357</code></a>
         </p>
 
 
@@ -3256,7 +3359,7 @@ exists and the rendered HTML content for the media resource.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">interfaceImplementation</code>
+                        <code class="param-name">interfaceToUnregister</code>
                         <span class="type">Function | Object</span>
 
 
@@ -3305,7 +3408,7 @@ exists and the rendered HTML content for the media resource.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_media_service.js.html#l177"><code>include\service\entities\media_service.js:177</code></a>
+        <a href="../files/include_service_entities_media_service.js.html#l134"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:134</code></a>
         </p>
 
 
@@ -3354,184 +3457,104 @@ occurred.  The second is an array of validation error objects.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_COLL" class="property item">
-                        <h3 class="name"><code>COLL</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l81"><code>include\service\entities\media_service.js:81</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The collection where media descriptors are persisted</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_INSTANCE" class="property item private deprecated">
-                        <h3 class="name"><code>INSTANCE</code></h3>
-                        <span class="type">MediaProvider</span>
-                    
-                            <span class="flag deprecated">deprecated</span>
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l72"><code>include\service\entities\media_service.js:72</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_MEDIA_PROVIDERS" class="property item private">
-                        <h3 class="name"><code>MEDIA_PROVIDERS</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l90"><code>include\service\entities\media_service.js:90</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_provider" class="property item">
-                        <h3 class="name"><code>provider</code></h3>
-                        <span class="type">MediaProvider</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l65"><code>include\service\entities\media_service.js:65</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_REGISTERED_MEDIA_RENDERERS" class="property item private">
-                        <h3 class="name"><code>REGISTERED_MEDIA_RENDERERS</code></h3>
-                        <span class="type">Array</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l101"><code>include\service\entities\media_service.js:101</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Contains the list of media renderers</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_site" class="property item">
-                        <h3 class="name"><code>site</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l41"><code>include\service\entities\media_service.js:41</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_siteQueryService" class="property item">
-                        <h3 class="name"><code>siteQueryService</code></h3>
-                        <span class="type"><a href="../classes/SiteQueryService.html" class="crosslink">SiteQueryService</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_media_service.js.html#l52"><code>include\service\entities\media_service.js:52</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_COLL" class="property item">
+    <h3 class="name"><code>COLL</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_media_service.js.html#l71"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:71</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The collection where media descriptors are persisted</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_provider" class="property item">
+    <h3 class="name"><code>provider</code></h3>
+    <span class="type">MediaProvider</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_media_service.js.html#l64"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:64</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_site" class="property item">
+    <h3 class="name"><code>site</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_media_service.js.html#l40"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:40</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_siteQueryService" class="property item">
+    <h3 class="name"><code>siteQueryService</code></h3>
+    <span class="type"><a href="../classes/SiteQueryService.html" class="crosslink">SiteQueryService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_media_service.js.html#l51"><code>include&#x2F;service&#x2F;entities&#x2F;media_service.js:51</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

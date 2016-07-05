@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_session_storage_mongo_session_store.js.html#l24"><code>include\session\storage\mongo_session_store.js:24</code></a>
+            Defined in: <a href="../files/include_session_storage_mongo_session_store.js.html#l24"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:24</code></a>
         </div>
 
             Module: <a href="../modules/Session.html">Session</a>
@@ -241,6 +242,11 @@
                             <li class="index-item method">
                                 <a href="#method_get">get</a>
 
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getHandler">getHandler</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getSessionQuery">getSessionQuery</a>
@@ -308,7 +314,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_session_storage_mongo_session_store.js.html#l88"><code>include\session\storage\mongo_session_store.js:88</code></a>
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l88"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:88</code></a>
         </p>
 
 
@@ -375,7 +381,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_session_storage_mongo_session_store.js.html#l53"><code>include\session\storage\mongo_session_store.js:53</code></a>
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l53"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:53</code></a>
         </p>
 
 
@@ -419,6 +425,69 @@
 
 
 </div>
+<div id="method_getHandler" class="method item">
+    <h3 class="name"><code>getHandler</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l150"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:150</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Function</span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_getSessionQuery" class="method item">
     <h3 class="name"><code>getSessionQuery</code></h3>
 
@@ -443,7 +512,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_session_storage_mongo_session_store.js.html#l138"><code>include\session\storage\mongo_session_store.js:138</code></a>
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l138"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:138</code></a>
         </p>
 
 
@@ -507,7 +576,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_session_storage_mongo_session_store.js.html#l65"><code>include\session\storage\mongo_session_store.js:65</code></a>
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l65"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:65</code></a>
         </p>
 
 
@@ -575,7 +644,7 @@ the following in addition to other data:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_session_storage_mongo_session_store.js.html#l100"><code>include\session\storage\mongo_session_store.js:100</code></a>
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l100"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:100</code></a>
         </p>
 
 
@@ -623,7 +692,7 @@ reaping expired sessions.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_session_storage_mongo_session_store.js.html#l111"><code>include\session\storage\mongo_session_store.js:111</code></a>
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l111"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:111</code></a>
         </p>
 
 
@@ -645,60 +714,60 @@ active.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_INDEX_MOD_LOCK_KEY" class="property item private">
-                        <h3 class="name"><code>INDEX_MOD_LOCK_KEY</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_session_storage_mongo_session_store.js.html#l43"><code>include\session\storage\mongo_session_store.js:43</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The cache lock key used when the index is needed to be modified</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_SESSION_COLLECTION_NAME" class="property item private">
-                        <h3 class="name"><code>SESSION_COLLECTION_NAME</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_session_storage_mongo_session_store.js.html#l33"><code>include\session\storage\mongo_session_store.js:33</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The mongo collection that stores the sessions</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_INDEX_MOD_LOCK_KEY" class="property item private">
+    <h3 class="name"><code>INDEX_MOD_LOCK_KEY</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l43"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:43</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The cache lock key used when the index is needed to be modified</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_SESSION_COLLECTION_NAME" class="property item private">
+    <h3 class="name"><code>SESSION_COLLECTION_NAME</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_session_storage_mongo_session_store.js.html#l33"><code>include&#x2F;session&#x2F;storage&#x2F;mongo_session_store.js:33</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The mongo collection that stores the sessions</p>
+
+    </div>
+
+
+
+</div>
             </div>
 
 

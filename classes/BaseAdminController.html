@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -207,7 +208,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/controllers_admin_base_admin_controller.js.html#l24"><code>controllers\admin\base_admin_controller.js:24</code></a>
+            Defined in: <a href="../files/controllers_admin_base_admin_controller.js.html#l24"><code>controllers&#x2F;admin&#x2F;base_admin_controller.js:24</code></a>
         </div>
 
             Module: <a href="../modules/dao.html">dao</a>
@@ -237,7 +238,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_admin_base_admin_controller.js.html#l24"><code>controllers\admin\base_admin_controller.js:24</code></a>
+        <a href="../files/controllers_admin_base_admin_controller.js.html#l24"><code>controllers&#x2F;admin&#x2F;base_admin_controller.js:24</code></a>
         </p>
 
 
@@ -370,6 +371,56 @@
 
                             </li>
                             <li class="index-item property inherited">
+                                <a href="#property_body">body</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_context">context</a>
+
+                            </li>
+                            <li class="index-item property deprecated inherited">
+                                <a href="#property_localizationService">localizationService</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_ls">ls</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_pageName">pageName</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_pathVars">pathVars</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_query">query</a>
+
+                            </li>
+                            <li class="index-item property deprecated inherited">
+                                <a href="#property_referer">referer</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_req">req</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_reqHandler">reqHandler</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_res">res</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_session">session</a>
+
+                            </li>
+                            <li class="index-item property inherited">
                                 <a href="#property_ts">ts</a>
 
                             </li>
@@ -406,7 +457,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_checkForFormRefill">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l479"><code>controllers\base_controller.js:479</code></a>
+        <a href="../files/controllers_base_controller.js.html#l557"><code>controllers&#x2F;base_controller.js:557</code></a>
         </p>
 
 
@@ -471,7 +522,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_displayErrorOrSuccessCallback">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l316"><code>controllers\base_controller.js:316</code></a>
+        <a href="../files/controllers_base_controller.js.html#l388"><code>controllers&#x2F;base_controller.js:388</code></a>
         </p>
 
 
@@ -533,7 +584,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_admin_base_admin_controller.js.html#l47"><code>controllers\admin\base_admin_controller.js:47</code></a>
+        <a href="../files/controllers_admin_base_admin_controller.js.html#l47"><code>controllers&#x2F;admin&#x2F;base_admin_controller.js:47</code></a>
         </p>
 
 
@@ -592,7 +643,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_formError">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l302"><code>controllers\base_controller.js:302</code></a>
+        <a href="../files/controllers_base_controller.js.html#l374"><code>controllers&#x2F;base_controller.js:374</code></a>
         </p>
 
 
@@ -676,7 +727,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/controllers_admin_base_admin_controller.js.html#l59"><code>controllers\admin\base_admin_controller.js:59</code></a>
+        <a href="../files/controllers_admin_base_admin_controller.js.html#l59"><code>controllers&#x2F;admin&#x2F;base_admin_controller.js:59</code></a>
         </p>
 
 
@@ -769,7 +820,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getJSONPostParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l382"><code>controllers\base_controller.js:382</code></a>
+        <a href="../files/controllers_base_controller.js.html#l460"><code>controllers&#x2F;base_controller.js:460</code></a>
         </p>
 
 
@@ -818,7 +869,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPageName">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l338"><code>controllers\base_controller.js:338</code></a>
+        <a href="../files/controllers_base_controller.js.html#l410"><code>controllers&#x2F;base_controller.js:410</code></a>
         </p>
 
 
@@ -863,7 +914,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPostData">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l413"><code>controllers\base_controller.js:413</code></a>
+        <a href="../files/controllers_base_controller.js.html#l491"><code>controllers&#x2F;base_controller.js:491</code></a>
         </p>
 
 
@@ -915,7 +966,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPostParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l357"><code>controllers\base_controller.js:357</code></a>
+        <a href="../files/controllers_base_controller.js.html#l429"><code>controllers&#x2F;base_controller.js:429</code></a>
         </p>
 
 
@@ -964,7 +1015,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getSanitizationRules">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l522"><code>controllers\base_controller.js:522</code></a>
+        <a href="../files/controllers_base_controller.js.html#l600"><code>controllers&#x2F;base_controller.js:600</code></a>
         </p>
 
 
@@ -1004,7 +1055,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getServiceContext">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l269"><code>controllers\base_controller.js:269</code></a>
+        <a href="../files/controllers_base_controller.js.html#l341"><code>controllers&#x2F;base_controller.js:341</code></a>
         </p>
 
 
@@ -1051,7 +1102,7 @@ service prototypes
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getTemplateServiceInstance">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l169"><code>controllers\base_controller.js:169</code></a>
+        <a href="../files/controllers_base_controller.js.html#l241"><code>controllers&#x2F;base_controller.js:241</code></a>
         </p>
 
 
@@ -1113,7 +1164,7 @@ service prototypes
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_hasRequiredParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l442"><code>controllers\base_controller.js:442</code></a>
+        <a href="../files/controllers_base_controller.js.html#l520"><code>controllers&#x2F;base_controller.js:520</code></a>
         </p>
 
 
@@ -1181,7 +1232,7 @@ service prototypes
                 BaseController
             </a>
             but overwritten in
-        <a href="../files/controllers_admin_base_admin_controller.js.html#l33"><code>controllers\admin\base_admin_controller.js:33</code></a>
+        <a href="../files/controllers_admin_base_admin_controller.js.html#l33"><code>controllers&#x2F;admin&#x2F;base_admin_controller.js:33</code></a>
         </p>
 
 
@@ -1244,7 +1295,7 @@ service prototypes
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_initSync">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l161"><code>controllers\base_controller.js:161</code></a>
+        <a href="../files/controllers_base_controller.js.html#l233"><code>controllers&#x2F;base_controller.js:233</code></a>
         </p>
 
 
@@ -1300,7 +1351,7 @@ meant to be called from the "init" function called by the request handler.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_onLocalizedAlternateFlagFound">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l229"><code>controllers\base_controller.js:229</code></a>
+        <a href="../files/controllers_base_controller.js.html#l301"><code>controllers&#x2F;base_controller.js:301</code></a>
         </p>
 
 
@@ -1365,7 +1416,7 @@ meant to be called from the "init" function called by the request handler.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_redirect">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l562"><code>controllers\base_controller.js:562</code></a>
+        <a href="../files/controllers_base_controller.js.html#l640"><code>controllers&#x2F;base_controller.js:640</code></a>
         </p>
 
 
@@ -1424,7 +1475,7 @@ meant to be called from the "init" function called by the request handler.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_requiresClientLocalization">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l279"><code>controllers\base_controller.js:279</code></a>
+        <a href="../files/controllers_base_controller.js.html#l351"><code>controllers&#x2F;base_controller.js:351</code></a>
         </p>
 
 
@@ -1470,7 +1521,7 @@ meant to be called from the "init" function called by the request handler.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_requiresClientLocalizationCallback">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l288"><code>controllers\base_controller.js:288</code></a>
+        <a href="../files/controllers_base_controller.js.html#l360"><code>controllers&#x2F;base_controller.js:360</code></a>
         </p>
 
 
@@ -1532,7 +1583,7 @@ meant to be called from the "init" function called by the request handler.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_sanitizeObject">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l497"><code>controllers\base_controller.js:497</code></a>
+        <a href="../files/controllers_base_controller.js.html#l575"><code>controllers&#x2F;base_controller.js:575</code></a>
         </p>
 
 
@@ -1588,7 +1639,7 @@ to BaseController.getSanitizationRules.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_setFormFieldValues">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l469"><code>controllers\base_controller.js:469</code></a>
+        <a href="../files/controllers_base_controller.js.html#l547"><code>controllers&#x2F;base_controller.js:547</code></a>
         </p>
 
 
@@ -1640,7 +1691,7 @@ to BaseController.getSanitizationRules.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_setPageName">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l348"><code>controllers\base_controller.js:348</code></a>
+        <a href="../files/controllers_base_controller.js.html#l420"><code>controllers&#x2F;base_controller.js:420</code></a>
         </p>
 
 
@@ -1676,54 +1727,346 @@ to BaseController.getSanitizationRules.
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_activeTheme" class="property item inherited">
-                        <h3 class="name"><code>activeTheme</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/BaseController.html#property_activeTheme">BaseController</a>:
-                            <a href="../files/controllers_base_controller.js.html#l135"><code>controllers\base_controller.js:135</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_ts" class="property item inherited">
-                        <h3 class="name"><code>ts</code></h3>
-                        <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/BaseController.html#property_ts">BaseController</a>:
-                            <a href="../files/controllers_base_controller.js.html#l129"><code>controllers\base_controller.js:129</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_activeTheme" class="property item inherited">
+    <h3 class="name"><code>activeTheme</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_activeTheme">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l203"><code>controllers&#x2F;base_controller.js:203</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_body" class="property item inherited">
+    <h3 class="name"><code>body</code></h3>
+    <span class="type">Object | Null</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_body">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l143"><code>controllers&#x2F;base_controller.js:143</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The deserialized body of the request.  This field is only ever populted if the executing route specifies the
+"request_body" attribute and provides valid MIME types that map to a registered body parser
+    </div>
+
+
+
+</div>
+<div id="property_context" class="property item inherited">
+    <h3 class="name"><code>context</code></h3>
+    <span class="type">Req: Request, session: object, ls: Localization, ts: TemplateService, site: string, hostname: string, activeTheme: string, onlyThisSite: boolean, siteObj: object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_context">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l211"><code>controllers&#x2F;base_controller.js:211</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_localizationService" class="property item deprecated inherited">
+    <h3 class="name"><code>localizationService</code></h3>
+    <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
+
+        <span class="flag deprecated" title="Use this.ls">deprecated</span>
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_localizationService">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l151"><code>controllers&#x2F;base_controller.js:151</code></a>
+        </p>
+
+            <p>Deprecated: Use this.ls</p>
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_ls" class="property item inherited">
+    <h3 class="name"><code>ls</code></h3>
+    <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_ls">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l158"><code>controllers&#x2F;base_controller.js:158</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_pageName" class="property item inherited">
+    <h3 class="name"><code>pageName</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_pageName">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l178"><code>controllers&#x2F;base_controller.js:178</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The title of the view to be rendered, if there is a view
+    </div>
+
+
+
+</div>
+<div id="property_pathVars" class="property item inherited">
+    <h3 class="name"><code>pathVars</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_pathVars">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l164"><code>controllers&#x2F;base_controller.js:164</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The hash of key/value pairs that represent the variables passed in the route path
+    </div>
+
+
+
+</div>
+<div id="property_query" class="property item inherited">
+    <h3 class="name"><code>query</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_query">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l171"><code>controllers&#x2F;base_controller.js:171</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The hash of key/value pairs that represent the variables passed as query string parameters
+    </div>
+
+
+
+</div>
+<div id="property_referer" class="property item deprecated inherited">
+    <h3 class="name"><code>referer</code></h3>
+    <span class="type">String</span>
+
+        <span class="flag deprecated">deprecated</span>
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_referer">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l189"><code>controllers&#x2F;base_controller.js:189</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The referring URL
+    </div>
+
+
+
+</div>
+<div id="property_req" class="property item inherited">
+    <h3 class="name"><code>req</code></h3>
+    <span class="type">Request</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_req">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l122"><code>controllers&#x2F;base_controller.js:122</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The current request object
+    </div>
+
+
+
+</div>
+<div id="property_reqHandler" class="property item inherited">
+    <h3 class="name"><code>reqHandler</code></h3>
+    <span class="type"><a href="../classes/RequestHandler.html" class="crosslink">RequestHandler</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_reqHandler">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l115"><code>controllers&#x2F;base_controller.js:115</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The instance of the request handler that processed the request
+    </div>
+
+
+
+</div>
+<div id="property_res" class="property item inherited">
+    <h3 class="name"><code>res</code></h3>
+    <span class="type">Response</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_res">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l129"><code>controllers&#x2F;base_controller.js:129</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The current response object
+    </div>
+
+
+
+</div>
+<div id="property_session" class="property item inherited">
+    <h3 class="name"><code>session</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_session">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l136"><code>controllers&#x2F;base_controller.js:136</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The session object that represents the calling entity
+    </div>
+
+
+
+</div>
+<div id="property_ts" class="property item inherited">
+    <h3 class="name"><code>ts</code></h3>
+    <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseController.html#property_ts">BaseController</a>:
+        <a href="../files/controllers_base_controller.js.html#l197"><code>controllers&#x2F;base_controller.js:197</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

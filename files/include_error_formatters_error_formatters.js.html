@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\error\formatters\error_formatters.js - PencilBlue</title>
+    <title>include/error/formatters/error_formatters.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\error\formatters\error_formatters.js</h1>
+<h1 class="file-heading">File: include/error/formatters/error_formatters.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -225,17 +226,17 @@ var path        = require(&#x27;path&#x27;);
 var HtmlEncoder = require(&#x27;htmlencode&#x27;);
 
 module.exports = function(pb) {
-    
+
     //pb dependencies
     var util = pb.util;
-    
+
     /**
      * Provides functions and mechanisms to serialize errors
      * @class ErrorFormatters
      * @constructor
      */
     function ErrorFormatters() {}
-    
+
     /**
      * The fallback MIME type
      * @private
@@ -245,7 +246,7 @@ module.exports = function(pb) {
      * @type {String}
      */
     var DEFAULT_MIME = &#x27;text/html&#x27;;
-    
+
     /**
      * Error code when a validation failure occurs
      * @private
@@ -255,7 +256,7 @@ module.exports = function(pb) {
      * @type {Integer}
      */
     var BAD_REQUEST = 400;
-    
+
     /**
      * Converts an error to a plain object that can be serialized
      * @private
@@ -278,7 +279,7 @@ module.exports = function(pb) {
         }
         return content;
     };
-    
+
     /**
      * @private
      * @static
@@ -318,7 +319,7 @@ module.exports = function(pb) {
      */
     ErrorFormatters.html = function(params, cb) {
         if (params.errorCount &gt; 1) {
-            
+
             //we know we&#x27;ve hit a recursive error situation.  Bail out
             return cb(
                 null,
@@ -327,7 +328,7 @@ module.exports = function(pb) {
                 &#x27;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&#x27;
             );
         }
-        
+
         //let the default error controller handle it.
         var code = params.error.code || 500;
         var ErrorController  = null;
@@ -341,14 +342,14 @@ module.exports = function(pb) {
                 //we&#x27;ve seen it and it didn&#x27;t exist or had a syntax error.  Moving on!
                 continue;
             }
-            
+
             //attempt to load the controller
             try {
                 ErrorController = require(paths[i])(pb);
                 break;
             }
             catch(e){
-                
+
                 //we failed so make sure don&#x27;t do that again...
                 failedControllerPaths[paths[i]];
             }
@@ -365,7 +366,7 @@ module.exports = function(pb) {
         };
         params.reqHandler.doRender(context);
     };
-    
+
     /**
      * Serializes an error as XML
      * @static
@@ -378,11 +379,11 @@ module.exports = function(pb) {
      * @param {Function} cb
      */
     ErrorFormatters.xml = function(params, cb) {
-        
+
         var xmlObj = function(key, obj) {
             var xml = &#x27;&lt;&#x27;+HtmlEncoder.htmlEncode(key)+&#x27;&gt;&#x27;
             util.forEach(obj, function(val, key) {
-                
+
                 if (util.isArray(val)) {
                     xml += xmlArray(key, val);
                 }
@@ -399,7 +400,7 @@ module.exports = function(pb) {
         var xmlArray = function(key, obj) {
             var xml = &#x27;&#x27;;
             util.forEach(obj, function(val, i) {
-                
+
                 if (util.isArray(val)) {
                     xml += xmlArray(key+&#x27;_&#x27;+i, val);
                 }
@@ -420,15 +421,15 @@ module.exports = function(pb) {
             xmlObj(&#x27;error&#x27;, convertToObject(params))
         );
     };
-    
+
     /**
-     * Registers a function to be mapped to a given MIME type.  The function 
-     * will be expected to serialize any given Error to the format specified by 
+     * Registers a function to be mapped to a given MIME type.  The function
+     * will be expected to serialize any given Error to the format specified by
      * the MIME type
      * @static
      * @method register
      * @param {String} mime The mime type to register the provider for
-     * @param {Function} A function that takes two parameters.  The first is an 
+     * @param {Function} A function that takes two parameters.  The first is an
      * object that provides the error and the second parameter is the callback.
      * @return {Boolean} TRUE when the provider was registered, FALSE if not
      */
@@ -439,21 +440,21 @@ module.exports = function(pb) {
         MIME_MAP[mime] = formatterFunction;
         return true;
     };
-    
+
     /**
-     * Unregisters the provider for the given MIME type.  If a default MIME 
-     * type is specified the current formatter will be unregistered and set to 
+     * Unregisters the provider for the given MIME type.  If a default MIME
+     * type is specified the current formatter will be unregistered and set to
      * the default implementation
      * @static
      * @method unregister
      * @param {String} mime The MIME type to unregister
-     * @return {Boolean} TRUE when the provider was found and unregistered, 
+     * @return {Boolean} TRUE when the provider was found and unregistered,
      * FALSE if not
      */
     ErrorFormatters.unregister = function(mime) {
         if (util.isFunction(MIME_MAP[mime])) {
             delete MIME_MAP[mime];
-            
+
             //set the defaults back if we have them
             if (util.isFunction(DEFAULTS[mime])) {
                 MIME_MAP[mime] = DEFAULTS[mime];
@@ -462,7 +463,7 @@ module.exports = function(pb) {
         }
         return false;
     };
-    
+
     /**
      * Formats an error for the provided MIME type
      * @static
@@ -484,7 +485,7 @@ module.exports = function(pb) {
         else if (!util.isError(params.error)) {
             return cb(new Error(&#x27;The params.error parameter must be an Error&#x27;));
         }
-        
+
         //find the formatter, fall back to HTML if not provided
         var mime      = params.mime;
         var formatter = MIME_MAP[mime];
@@ -492,11 +493,11 @@ module.exports = function(pb) {
             mime      = DEFAULT_MIME;
             formatter = MIME_MAP[mime];
         }
-        
+
         //execute the formatter
         formatter(params, function(err, content) {
             cb(
-                err, 
+                err,
                 {
                     mime: mime,
                     content: content
@@ -504,21 +505,21 @@ module.exports = function(pb) {
             );
         });
     };
-    
+
     /**
      * Retrieves the formatter for the specified MIME type
      * @static
      * @method get
      * @param {String} mime
-     * @return {Function} formatter for the specified MIME. &#x27;undefined&#x27; if does 
+     * @return {Function} formatter for the specified MIME. &#x27;undefined&#x27; if does
      * not exist.
      */
     ErrorFormatters.get = function(mime) {
         return MIME_MAP[mime];
     };
-         
+
     /**
-     * Contains the default mapping of MIME type to function that will serialize 
+     * Contains the default mapping of MIME type to function that will serialize
      * the error to that format
      * @private
      * @static
@@ -532,9 +533,9 @@ module.exports = function(pb) {
         &#x27;application/xml&#x27;: ErrorFormatters.xml,
         &#x27;text/xml&#x27;: ErrorFormatters.xml,
     });
-            
+
     /**
-     * Contains the mapping of MIME type to function that will serialize the 
+     * Contains the mapping of MIME type to function that will serialize the
      * error to that format
      * @private
      * @static

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_dao_dao.js.html#l24"><code>include\dao\dao.js:24</code></a>
+            Defined in: <a href="../files/include_dao_dao.js.html#l24"><code>include&#x2F;dao&#x2F;dao.js:24</code></a>
         </div>
 
             Module: <a href="../modules/Database.html">Database</a>
@@ -298,10 +299,11 @@
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getIDInWhere">getIDInWhere</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getIdWhere">getIdWhere</a>
@@ -314,19 +316,13 @@
                                     <span class="flag static">static</span>
                                     <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method deprecated">
-                                <a href="#method_getNotIDField">getNotIDField</a>
-
-                                    <span class="flag static">static</span>
-                                    <span class="flag deprecated">deprecated</span>
-                            </li>
                             <li class="index-item method">
                                 <a href="#method_getNotIdField">getNotIdField</a>
 
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method deprecated">
-                                <a href="#method_getNotIDWhere">getNotIDWhere</a>
+                                <a href="#method_getNotIDField">getNotIDField</a>
 
                                     <span class="flag static">static</span>
                                     <span class="flag deprecated">deprecated</span>
@@ -337,7 +333,7 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method deprecated">
-                                <a href="#method_getObjectID">getObjectID</a>
+                                <a href="#method_getNotIDWhere">getNotIDWhere</a>
 
                                     <span class="flag static">static</span>
                                     <span class="flag deprecated">deprecated</span>
@@ -346,6 +342,12 @@
                                 <a href="#method_getObjectId">getObjectId</a>
 
                                     <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method deprecated">
+                                <a href="#method_getObjectID">getObjectID</a>
+
+                                    <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_indexInfo">indexInfo</a>
@@ -366,6 +368,11 @@
                             <li class="index-item method">
                                 <a href="#method_loadByValues">loadByValues</a>
 
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_mapSimpleIdField">mapSimpleIdField</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_q">q</a>
@@ -484,7 +491,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l289"><code>include\dao\dao.js:289</code></a>
+        <a href="../files/include_dao_dao.js.html#l288"><code>include&#x2F;dao&#x2F;dao.js:288</code></a>
         </p>
 
 
@@ -628,7 +635,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l957"><code>include\dao\dao.js:957</code></a>
+        <a href="../files/include_dao_dao.js.html#l969"><code>include&#x2F;dao&#x2F;dao.js:969</code></a>
         </p>
 
 
@@ -703,7 +710,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l565"><code>include\dao\dao.js:565</code></a>
+        <a href="../files/include_dao_dao.js.html#l570"><code>include&#x2F;dao&#x2F;dao.js:570</code></a>
         </p>
 
 
@@ -775,7 +782,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l147"><code>include\dao\dao.js:147</code></a>
+        <a href="../files/include_dao_dao.js.html#l147"><code>include&#x2F;dao&#x2F;dao.js:147</code></a>
         </p>
 
 
@@ -857,7 +864,7 @@ for doing the heavy lifting and returning the result back to the calling intity.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l678"><code>include\dao\dao.js:678</code></a>
+        <a href="../files/include_dao_dao.js.html#l683"><code>include&#x2F;dao&#x2F;dao.js:683</code></a>
         </p>
 
 
@@ -944,7 +951,7 @@ Error, if occurred. The second is the result of the creation command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l523"><code>include\dao\dao.js:523</code></a>
+        <a href="../files/include_dao_dao.js.html#l528"><code>include&#x2F;dao&#x2F;dao.js:528</code></a>
         </p>
 
 
@@ -1043,7 +1050,7 @@ from persistence.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l503"><code>include\dao\dao.js:503</code></a>
+        <a href="../files/include_dao_dao.js.html#l508"><code>include&#x2F;dao&#x2F;dao.js:508</code></a>
         </p>
 
 
@@ -1140,7 +1147,7 @@ execution of the command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l642"><code>include\dao\dao.js:642</code></a>
+        <a href="../files/include_dao_dao.js.html#l647"><code>include&#x2F;dao&#x2F;dao.js:647</code></a>
         </p>
 
 
@@ -1227,7 +1234,7 @@ execution of the command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l587"><code>include\dao\dao.js:587</code></a>
+        <a href="../files/include_dao_dao.js.html#l592"><code>include&#x2F;dao&#x2F;dao.js:592</code></a>
         </p>
 
 
@@ -1333,7 +1340,7 @@ specify the options for the index.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l664"><code>include\dao\dao.js:664</code></a>
+        <a href="../files/include_dao_dao.js.html#l669"><code>include&#x2F;dao&#x2F;dao.js:669</code></a>
         </p>
 
 
@@ -1406,7 +1413,7 @@ exists, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l169"><code>include\dao\dao.js:169</code></a>
+        <a href="../files/include_dao_dao.js.html#l169"><code>include&#x2F;dao&#x2F;dao.js:169</code></a>
         </p>
 
 
@@ -1482,7 +1489,7 @@ exists, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l357"><code>include\dao\dao.js:357</code></a>
+        <a href="../files/include_dao_dao.js.html#l361"><code>include&#x2F;dao&#x2F;dao.js:361</code></a>
         </p>
 
 
@@ -1490,7 +1497,7 @@ exists, FALSE if not.</p>
     </div>
 
     <div class="description">
-        <p>Retrieves a refernce to the DB with active connection</p>
+        <p>Retrieves a reference to the DB with active connection</p>
 
     </div>
 
@@ -1533,7 +1540,7 @@ exists, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l946"><code>include\dao\dao.js:946</code></a>
+        <a href="../files/include_dao_dao.js.html#l958"><code>include&#x2F;dao&#x2F;dao.js:958</code></a>
         </p>
 
 
@@ -1587,7 +1594,7 @@ The default implementation returns the mongo field '_id'.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l800"><code>include\dao\dao.js:800</code></a>
+        <a href="../files/include_dao_dao.js.html#l806"><code>include&#x2F;dao&#x2F;dao.js:806</code></a>
         </p>
 
 
@@ -1650,7 +1657,7 @@ specified array of values.</p>
                         <code>objArray</code>
                 </li>
                 <li class="arg">
-                        <code>idProp</code>
+                        <code class="optional">[idProp]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1669,7 +1676,7 @@ specified array of values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l769"><code>include\dao\dao.js:769</code></a>
+        <a href="../files/include_dao_dao.js.html#l775"><code>include&#x2F;dao&#x2F;dao.js:775</code></a>
         </p>
 
 
@@ -1698,8 +1705,9 @@ specified array of values.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">idProp</code>
+                        <code class="param-name optional">[idProp]</code>
                         <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1723,7 +1731,7 @@ specified array of values.</p>
 
 
 </div>
-<div id="method_getIDInWhere" class="method item">
+<div id="method_getIDInWhere" class="method item deprecated">
     <h3 class="name"><code>getIDInWhere</code></h3>
 
         <div class="args">
@@ -1741,6 +1749,7 @@ specified array of values.</p>
             <span class="type">Object</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1751,7 +1760,7 @@ specified array of values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l755"><code>include\dao\dao.js:755</code></a>
+        <a href="../files/include_dao_dao.js.html#l760"><code>include&#x2F;dao&#x2F;dao.js:760</code></a>
         </p>
 
 
@@ -1830,7 +1839,7 @@ specified array of values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l742"><code>include\dao\dao.js:742</code></a>
+        <a href="../files/include_dao_dao.js.html#l747"><code>include&#x2F;dao&#x2F;dao.js:747</code></a>
         </p>
 
 
@@ -1898,7 +1907,7 @@ specified array of values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l729"><code>include\dao\dao.js:729</code></a>
+        <a href="../files/include_dao_dao.js.html#l734"><code>include&#x2F;dao&#x2F;dao.js:734</code></a>
         </p>
 
 
@@ -1941,6 +1950,51 @@ specified array of values.</p>
 
 
 </div>
+<div id="method_getNotIdField" class="method item">
+    <h3 class="name"><code>getNotIdField</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l872"><code>include&#x2F;dao&#x2F;dao.js:872</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a where clause that indicates to select where the '_id' field does
+not equal the specified value.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Where clause</p>
+
+            </div>
+        </div>
+
+
+</div>
 <div id="method_getNotIDField" class="method item deprecated">
     <h3 class="name"><code>getNotIDField</code></h3>
 
@@ -1961,7 +2015,7 @@ specified array of values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l853"><code>include\dao\dao.js:853</code></a>
+        <a href="../files/include_dao_dao.js.html#l859"><code>include&#x2F;dao&#x2F;dao.js:859</code></a>
         </p>
 
 
@@ -1988,10 +2042,16 @@ not equal the specified value.</p>
 
 
 </div>
-<div id="method_getNotIdField" class="method item">
-    <h3 class="name"><code>getNotIdField</code></h3>
+<div id="method_getNotIdWhere" class="method item">
+    <h3 class="name"><code>getNotIdWhere</code></h3>
 
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>oid</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
 
         <span class="returns-inline">
             <span class="type">Object</span>
@@ -2007,7 +2067,7 @@ not equal the specified value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l866"><code>include\dao\dao.js:866</code></a>
+        <a href="../files/include_dao_dao.js.html#l846"><code>include&#x2F;dao&#x2F;dao.js:846</code></a>
         </p>
 
 
@@ -2015,11 +2075,27 @@ not equal the specified value.</p>
     </div>
 
     <div class="description">
-        <p>Creates a where clause that indicates to select where the '_id' field does
-not equal the specified value.</p>
+        <p>Creates a basic where clause based on not equalling the specified Id</p>
 
     </div>
 
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">oid</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Object Id String</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
 
         <div class="returns">
             <h4>Returns:</h4>
@@ -2059,7 +2135,7 @@ not equal the specified value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l827"><code>include\dao\dao.js:827</code></a>
+        <a href="../files/include_dao_dao.js.html#l833"><code>include&#x2F;dao&#x2F;dao.js:833</code></a>
         </p>
 
 
@@ -2101,8 +2177,8 @@ not equal the specified value.</p>
 
 
 </div>
-<div id="method_getNotIdWhere" class="method item">
-    <h3 class="name"><code>getNotIdWhere</code></h3>
+<div id="method_getObjectId" class="method item">
+    <h3 class="name"><code>getObjectId</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -2126,79 +2202,10 @@ not equal the specified value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l840"><code>include\dao\dao.js:840</code></a>
+        <a href="../files/include_dao_dao.js.html#l896"><code>include&#x2F;dao&#x2F;dao.js:896</code></a>
         </p>
 
 
-
-    </div>
-
-    <div class="description">
-        <p>Creates a basic where clause based on not equalling the specified Id</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">oid</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <p>Object Id String</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>Where clause</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getObjectID" class="method item deprecated">
-    <h3 class="name"><code>getObjectID</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>oid</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-        <span class="flag deprecated" title="since 0.4.0">deprecated</span>
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_dao_dao.js.html#l877"><code>include\dao\dao.js:877</code></a>
-        </p>
-
-
-            <p>Deprecated: since 0.4.0</p>
 
     </div>
 
@@ -2237,8 +2244,8 @@ not equal the specified value.</p>
 
 
 </div>
-<div id="method_getObjectId" class="method item">
-    <h3 class="name"><code>getObjectId</code></h3>
+<div id="method_getObjectID" class="method item deprecated">
+    <h3 class="name"><code>getObjectID</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -2252,6 +2259,7 @@ not equal the specified value.</p>
             <span class="type">Object</span>
         </span>
 
+        <span class="flag deprecated" title="since 0.4.0">deprecated</span>
 
 
 
@@ -2262,10 +2270,11 @@ not equal the specified value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l890"><code>include\dao\dao.js:890</code></a>
+        <a href="../files/include_dao_dao.js.html#l883"><code>include&#x2F;dao&#x2F;dao.js:883</code></a>
         </p>
 
 
+            <p>Deprecated: since 0.4.0</p>
 
     </div>
 
@@ -2331,7 +2340,7 @@ not equal the specified value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l621"><code>include\dao\dao.js:621</code></a>
+        <a href="../files/include_dao_dao.js.html#l626"><code>include&#x2F;dao&#x2F;dao.js:626</code></a>
         </p>
 
 
@@ -2408,7 +2417,7 @@ not equal the specified value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l704"><code>include\dao\dao.js:704</code></a>
+        <a href="../files/include_dao_dao.js.html#l709"><code>include&#x2F;dao&#x2F;dao.js:709</code></a>
         </p>
 
 
@@ -2484,7 +2493,7 @@ Error, if occurred. The second is the result listCollections command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l88"><code>include\dao\dao.js:88</code></a>
+        <a href="../files/include_dao_dao.js.html#l88"><code>include&#x2F;dao&#x2F;dao.js:88</code></a>
         </p>
 
 
@@ -2565,7 +2574,7 @@ Error, if occurred. The second is the result listCollections command.</p>
                         <code>collection</code>
                 </li>
                 <li class="arg">
-                        <code>opts</code>
+                        <code class="optional">[opts]</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -2583,7 +2592,7 @@ Error, if occurred. The second is the result listCollections command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l101"><code>include\dao\dao.js:101</code></a>
+        <a href="../files/include_dao_dao.js.html#l101"><code>include&#x2F;dao&#x2F;dao.js:101</code></a>
         </p>
 
 
@@ -2633,12 +2642,13 @@ Error, if occurred. The second is the result listCollections command.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">opts</code>
+                        <code class="param-name optional">[opts]</code>
                         <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
-                        <p>Key value pair object to exclude the retrival of data</p>
+                        <p>Key value pair object to exclude the retrieval of data</p>
 
                     </div>
 
@@ -2672,7 +2682,7 @@ Error, if occurred. The second is the result listCollections command.</p>
                         <code>collection</code>
                 </li>
                 <li class="arg">
-                        <code>opts</code>
+                        <code class="optional">[opts]</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -2690,7 +2700,7 @@ Error, if occurred. The second is the result listCollections command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l117"><code>include\dao\dao.js:117</code></a>
+        <a href="../files/include_dao_dao.js.html#l117"><code>include&#x2F;dao&#x2F;dao.js:117</code></a>
         </p>
 
 
@@ -2729,12 +2739,13 @@ Error, if occurred. The second is the result listCollections command.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">opts</code>
+                        <code class="param-name optional">[opts]</code>
                         <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
-                        <p>Key value pair object to exclude the retrival of data</p>
+                        <p>Key value pair object to exclude the retrieval of data</p>
 
                     </div>
 
@@ -2753,6 +2764,70 @@ Error, if occurred. The second is the result listCollections command.</p>
             </ul>
         </div>
 
+
+
+</div>
+<div id="method_mapSimpleIdField" class="method item">
+    <h3 class="name"><code>mapSimpleIdField</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>doc</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l981"><code>include&#x2F;dao&#x2F;dao.js:981</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Used to help transition over to eliminating the MongoDB _id field.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">doc</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
 
 
 </div>
@@ -2783,7 +2858,7 @@ Error, if occurred. The second is the result listCollections command.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l214"><code>include\dao\dao.js:214</code></a>
+        <a href="../files/include_dao_dao.js.html#l213"><code>include&#x2F;dao&#x2F;dao.js:213</code></a>
         </p>
 
 
@@ -2943,7 +3018,7 @@ items returned by the query.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l366"><code>include\dao\dao.js:366</code></a>
+        <a href="../files/include_dao_dao.js.html#l370"><code>include&#x2F;dao&#x2F;dao.js:370</code></a>
         </p>
 
 
@@ -3032,7 +3107,7 @@ error, if occurred.  The second is the object that was persisted</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l417"><code>include\dao\dao.js:417</code></a>
+        <a href="../files/include_dao_dao.js.html#l422"><code>include&#x2F;dao&#x2F;dao.js:422</code></a>
         </p>
 
 
@@ -3127,7 +3202,7 @@ described here: <a href="http://mongodb.github.io/node-mongodb-native/api-genera
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l277"><code>include\dao\dao.js:277</code></a>
+        <a href="../files/include_dao_dao.js.html#l276"><code>include&#x2F;dao&#x2F;dao.js:276</code></a>
         </p>
 
 
@@ -3196,7 +3271,7 @@ provided as the second argument in the callback.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l926"><code>include\dao\dao.js:926</code></a>
+        <a href="../files/include_dao_dao.js.html#l938"><code>include&#x2F;dao&#x2F;dao.js:938</code></a>
         </p>
 
 
@@ -3272,7 +3347,7 @@ its own properties.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l183"><code>include\dao\dao.js:183</code></a>
+        <a href="../files/include_dao_dao.js.html#l183"><code>include&#x2F;dao&#x2F;dao.js:183</code></a>
         </p>
 
 
@@ -3361,7 +3436,7 @@ its own properties.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l906"><code>include\dao\dao.js:906</code></a>
+        <a href="../files/include_dao_dao.js.html#l912"><code>include&#x2F;dao&#x2F;dao.js:912</code></a>
         </p>
 
 
@@ -3409,7 +3484,7 @@ its own properties.</p>
                         <code>updates</code>
                 </li>
                 <li class="arg">
-                        <code>options</code>
+                        <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -3427,7 +3502,7 @@ its own properties.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_dao_dao.js.html#l472"><code>include\dao\dao.js:472</code></a>
+        <a href="../files/include_dao_dao.js.html#l477"><code>include&#x2F;dao&#x2F;dao.js:477</code></a>
         </p>
 
 
@@ -3477,8 +3552,9 @@ its own properties.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">options</code>
+                        <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -3533,160 +3609,160 @@ finds more than 1</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_ANYWHERE" class="property item">
-                        <h3 class="name"><code>ANYWHERE</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_dao_dao.js.html#l55"><code>include\dao\dao.js:55</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Static variable to indicate that documents should be retrieve from anywhere</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_ASC" class="property item">
-                        <h3 class="name"><code>ASC</code></h3>
-                        <span class="type">Number</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_dao_dao.js.html#l72"><code>include\dao\dao.js:72</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Static varible to sort ascending</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_dbName" class="property item">
-                        <h3 class="name"><code>dbName</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_dao_dao.js.html#l36"><code>include\dao\dao.js:36</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The name of the DB that this instance is intended to interact with.  By
-                    default, it goes to the name of the DB provided by system configuration
-                    property <a href="http://db.name">db.name</a>.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_DESC" class="property item">
-                        <h3 class="name"><code>DESC</code></h3>
-                        <span class="type">Number</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_dao_dao.js.html#l80"><code>include\dao\dao.js:80</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Static variable to sort descending</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_NATURAL_ORDER" class="property item">
-                        <h3 class="name"><code>NATURAL_ORDER</code></h3>
-                        <span class="type">Array</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_dao_dao.js.html#l63"><code>include\dao\dao.js:63</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Static variable to indicate that documents should be returned in their
-                    natural order</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_PROJECT_ALL" class="property item">
-                        <h3 class="name"><code>PROJECT_ALL</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_dao_dao.js.html#l46"><code>include\dao\dao.js:46</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Static variable to indicate that all indices of a document should be
-                    retrieved</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_ANYWHERE" class="property item">
+    <h3 class="name"><code>ANYWHERE</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l55"><code>include&#x2F;dao&#x2F;dao.js:55</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Static variable to indicate that documents should be retrieve from anywhere</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_ASC" class="property item">
+    <h3 class="name"><code>ASC</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l72"><code>include&#x2F;dao&#x2F;dao.js:72</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Static varible to sort ascending</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_dbName" class="property item">
+    <h3 class="name"><code>dbName</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l36"><code>include&#x2F;dao&#x2F;dao.js:36</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The name of the DB that this instance is intended to interact with.  By
+default, it goes to the name of the DB provided by system configuration
+property <a href="http://db.name">db.name</a>.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_DESC" class="property item">
+    <h3 class="name"><code>DESC</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l80"><code>include&#x2F;dao&#x2F;dao.js:80</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Static variable to sort descending</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_NATURAL_ORDER" class="property item">
+    <h3 class="name"><code>NATURAL_ORDER</code></h3>
+    <span class="type">Array</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l63"><code>include&#x2F;dao&#x2F;dao.js:63</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Static variable to indicate that documents should be returned in their
+natural order</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_PROJECT_ALL" class="property item">
+    <h3 class="name"><code>PROJECT_ALL</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_dao_dao.js.html#l46"><code>include&#x2F;dao&#x2F;dao.js:46</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Static variable to indicate that all indices of a document should be
+retrieved</p>
+
+    </div>
+
+
+
+</div>
             </div>
 
 

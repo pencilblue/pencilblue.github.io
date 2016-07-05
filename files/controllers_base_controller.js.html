@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>controllers\base_controller.js - PencilBlue</title>
+    <title>controllers/base_controller.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: controllers\base_controller.js</h1>
+<h1 class="file-heading">File: controllers/base_controller.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -219,6 +220,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var url  = require(&#x27;url&#x27;);
@@ -315,21 +317,88 @@ module.exports = function BaseControllerModule(pb) {
      */
     BaseController.prototype.init = function(props, cb) {
         var self = this;
-        this.reqHandler          = props.request_handler;
-        this.req                 = props.request;
-        this.res                 = props.response;
-        this.session             = props.session;
-        this.body                = props.body;
+
+        /**
+         * The instance of the request handler that processed the request
+         * @property reqHandler
+         * @type {RequestHandler}
+         */
+        this.reqHandler = props.request_handler;
+
+        /**
+         * The current request object
+         * @property req
+         * @type {Request}
+         */
+        this.req = props.request;
+
+        /**
+         * The current response object
+         * @property res
+         * @type {Response}
+         */
+        this.res = props.response;
+
+        /**
+         * The session object that represents the calling entity
+         * @property session
+         * @type {object}
+         */
+        this.session = props.session;
+
+        /**
+         * The deserialized body of the request.  This field is only ever populted if the executing route specifies the
+         * &quot;request_body&quot; attribute and provides valid MIME types that map to a registered body parser
+         * @property body
+         * @type {object|null}
+         */
+        this.body = props.body;
+
+        /**
+         * @deprecated Use this.ls
+         * @property localizationService
+         * @type {Localization}
+         */
         this.localizationService = props.localization_service;
-        this.ls                  = this.localizationService;
-        this.pathVars            = props.pathVars;
-        this.query               = props.query;
+
+        /**
+         * @property ls
+         * @type {Localization}
+         */
+        this.ls = props.localization_service;
+
+        /**
+         * The hash of key/value pairs that represent the variables passed in the route path
+         * @property pathVars
+         * @type {object}
+         */
+        this.pathVars = props.pathVars;
+
+        /**
+         * The hash of key/value pairs that represent the variables passed as query string parameters
+         * @property query
+         * @type {object}
+         */
+        this.query = props.query;
+
+        /**
+         * The title of the view to be rendered, if there is a view
+         * @property pageName
+         * @type {string}
+         */
         this.pageName            = &#x27;&#x27;;
         this.siteObj             = props.siteObj;
         this.site                = props.site;
         this.siteName            = props.siteName;
         this.hostname            = SiteService.getHostWithProtocol(self.siteObj.hostname) || pb.config.siteRoot;
-        this.referer             = this.req.headers.referer;
+
+        /**
+         * The referring URL
+         * @deprecated
+         * @property referer
+         * @type {string}
+         */
+        this.referer = this.req.headers.referer;
 
         /**
          * @property ts
@@ -345,6 +414,10 @@ module.exports = function BaseControllerModule(pb) {
 
         //build out a base service context that can be cloned and passed to any
         //service objects
+        /**
+         * @property context
+         * @type {{req: Request, session: object, ls: Localization, ts: TemplateService, site: string, hostname: string, activeTheme: string, onlyThisSite: boolean, siteObj: object}}
+         */
         this.context = {
             req: this.req,
             session: this.session,
@@ -382,7 +455,7 @@ module.exports = function BaseControllerModule(pb) {
 
         //create options
         var tsOpts = {
-            ls: this.localizationService,
+            ls: this.ls,
             activeTheme: props.activeTheme,
             site: this.site
         };
@@ -528,12 +601,12 @@ module.exports = function BaseControllerModule(pb) {
         if(this.session.error) {
             var error = this.session.error;
             delete this.session.error;
-            cb(null, new pb.TemplateValue(util.format(ALERT_PATTERN, &#x27;alert-danger&#x27;, this.localizationService.get(error)), false));
+            cb(null, new pb.TemplateValue(util.format(ALERT_PATTERN, &#x27;alert-danger&#x27;, this.ls.get(error)), false));
         }
         else if(this.session.success) {
             var success = this.session.success;
             delete this.session.success;
-            cb(null, new pb.TemplateValue(util.format(ALERT_PATTERN, &#x27;alert-success&#x27;, this.localizationService.get(success)), false));
+            cb(null, new pb.TemplateValue(util.format(ALERT_PATTERN, &#x27;alert-success&#x27;, this.ls.get(success)), false));
         }
         else {
             cb(null, &#x27;&#x27;);
@@ -580,6 +653,12 @@ module.exports = function BaseControllerModule(pb) {
 
             //convert to string
             var postParams = url.parse(&#x27;?&#x27; + raw.toString(encoding), true).query;
+
+            //In Node v6 a breaking change was introduced into the &quot;querystring&quot; module to prevent reserved words from
+            // being passed in as query string parameters and overriding prototype functions.
+            // This fix allows for users to continue on with V6 until another viable option comes along
+            postParams.hawOwnProperty = Object.prototype.hasOwnProperty;
+
             cb(null, postParams);
         });
     };
@@ -655,16 +734,16 @@ module.exports = function BaseControllerModule(pb) {
         for (var i = 0; i &lt; requiredParameters.length; i++) {
 
             if (typeof queryObject[requiredParameters[i]] === &#x27;undefined&#x27;) {
-                return this.localizationService.get(&#x27;FORM_INCOMPLETE&#x27;);
+                return this.ls.get(&#x27;FORM_INCOMPLETE&#x27;);
             }
             else if (queryObject[requiredParameters[i]].length === 0) {
-                return this.localizationService.get(&#x27;FORM_INCOMPLETE&#x27;);
+                return this.ls.get(&#x27;FORM_INCOMPLETE&#x27;);
             }
         }
 
         if(queryObject.password &amp;&amp; queryObject.confirm_password) {
             if(queryObject.password !== queryObject.confirm_password) {
-                return this.localizationService.get(&#x27;PASSWORD_MISMATCH&#x27;);
+                return this.ls.get(&#x27;PASSWORD_MISMATCH&#x27;);
             }
         }
 
@@ -715,13 +794,13 @@ module.exports = function BaseControllerModule(pb) {
         }
 
         var rules = this.getSanitizationRules();
-        for(var prop in obj) {
+        Object.keys(obj).forEach(function(prop) {
             if (util.isString(obj[prop])) {
 
                 var config = rules[prop];
-                obj[prop] = BaseController.sanitize(obj[prop], config);
+                obj[prop] = pb.BaseObjectService.sanitize(obj[prop], config);
             }
-        }
+        });
     };
 
     /**
@@ -783,10 +862,10 @@ module.exports = function BaseControllerModule(pb) {
     BaseController.apiResponse = function(cd, msg, dta) {
         if(typeof msg === &#x27;undefined&#x27;) {
             switch(cd) {
-                case BaseController.FAILURE:
+                case BaseController.API_FAILURE:
                     msg = &#x27;FAILURE&#x27;;
                     break;
-                case BaseController.SUCCESS:
+                case BaseController.API_SUCCESS:
                     msg = &#x27;SUCCESS&#x27;;
                     break;
                 default:

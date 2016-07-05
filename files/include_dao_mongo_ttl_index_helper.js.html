@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\dao\mongo\ttl_index_helper.js - PencilBlue</title>
+    <title>include/dao/mongo/ttl_index_helper.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\dao\mongo\ttl_index_helper.js</h1>
+<h1 class="file-heading">File: include/dao/mongo/ttl_index_helper.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -225,7 +226,7 @@ var util  = require(&#x27;../../util.js&#x27;);
 var async = require(&#x27;async&#x27;);
 
 module.exports = function(pb) {
-    
+
     /**
      *
      * Used to change the TTL index on a collection without elevated permissions
@@ -233,7 +234,7 @@ module.exports = function(pb) {
      * @constructor
      */
     function TTLIndexHelper() {
-    
+
         /**
          *
          * @property lockService
@@ -241,7 +242,7 @@ module.exports = function(pb) {
          */
         this.lockService = new pb.LockService();
     }
-    
+
     /**
      *
      * @private
@@ -251,19 +252,19 @@ module.exports = function(pb) {
      * @type {String}
      */
     var INDEX_MOD_KEY_PREFIX = &#x27;TTL_INDEX_MOD_LOCK_&#x27;;
-    
+
     /**
-     * 
+     *
      * @method ensureIndex
      * @param {Object} procedure
      * @param {Function} cb
      */
     TTLIndexHelper.prototype.ensureIndex = function(procedure, cb) {
         var self = this;
-        
+
         var collection = procedure.collection;
         var expiry = procedure.options.expireAfterSeconds;
-        
+
         //ensure an index exists.  According to the MongoDB documentation ensure
         //index cannot modify a TTL value once it is created.  Therefore, we have
         //to ensure that the index exists and then send the collection modification
@@ -273,29 +274,29 @@ module.exports = function(pb) {
         var key = INDEX_MOD_KEY_PREFIX + collection;
         var dao = new pb.DAO();
         var tasks = [
-            
+
             //ensure the index is there
             function(callback) {
                 dao.ensureIndex(procedure, callback);
             },
-            
+
             //check to see if the index has the correct expiry
             function(index, callback) {
                 indexName = index;
                 self.hasCorrectTTLIndex(collection, index, expiry, callback);
             },
-            
+
             //acquire lock when index does not match otherwise pass null to indicate we are done
             function(hasCorrectExpiry, callback) {
                 if (hasCorrectExpiry) {
                     return callback(null, null);
                 }
-            
+
                 pb.log.silly(&#x27;TTLIndexHelper:[%s:%s] An incorrect TTL index was detected.  Attempting to acquire lock to modify it.&#x27;, collection, indexName);
                 self.lockService.acquire(key, callback);
             },
-            
-            //drop index when lock is acquired.  If NULL, the expiry is fine.  
+
+            //drop index when lock is acquired.  If NULL, the expiry is fine.
             //If false assume that another process is handling it.
             function(acquiredLock, callback) {
                 if (acquiredLock === null) {
@@ -305,28 +306,28 @@ module.exports = function(pb) {
                     pb.log.silly(&#x27;TTLIndexHelper:[%s:%s] Failed to acquire index mod lock.  Assuming another PB instance is handling it&#x27;, collection, indexName);
                     return callback(null, null);
                 }
-                
+
                 pb.log.silly(&#x27;TTLIndexHelper:[%s:%s] Lock acquired, dropping the index before recreating it&#x27;, collection, indexName);
                 acquiredLock = true;
                 dao.dropIndex(collection, indexName, callback);
             },
-            
+
             //re-create the index when the result is not null
             function(dropResult, callback) {
                 if (dropResult === null) {
                     return callback(null, true);
                 }
-                
+
                 pb.log.silly(&#x27;TTLIndexHelper:[%s:%s] Rebuilding TTL index&#x27;, collection, indexName);
                 dao.ensureIndex(procedure, callback);
             },
-            
+
             //drop the lock
             function(indexName, callback) {
                 if (!acquiredLock) {
                     return callback(null, indexName);
                 }
-                
+
                 pb.log.silly(&#x27;TTLIndexHelper:[%s:%s] Dropping index modification lock&#x27;, collection, indexName);
                 self.lockService.release(key, function(err, result) {
                     callback(err, indexName);
@@ -338,27 +339,27 @@ module.exports = function(pb) {
             cb(err, !util.isNullOrUndefined(result));
         });
     };
-    
+
     /**
-     * Retrieves and compares the expiry of a TTL index on the specified 
-     * collection to the expiry provided.  Calls back with TRUE if and only if 
+     * Retrieves and compares the expiry of a TTL index on the specified
+     * collection to the expiry provided.  Calls back with TRUE if and only if
      * the index is found the expiries match.
      * @method hasCorrectTTLIndex
      * @param {String} collection
      * @param {String} indexName
-     * @param {Integer} expectedExpiry 
+     * @param {Integer} expectedExpiry
      * @param {Function} cb
      */
     TTLIndexHelper.prototype.hasCorrectTTLIndex = function(collection, indexName, expectedExpiry, cb) {
-        
+
         var dao = new pb.DAO();
         dao.indexInfo(collection, {full: true}, function(err, indexes) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             for (var i = 0; i &lt; indexes.length; i++) {
-                
+
                 var index = indexes[i];
                 if (index.name === indexName) {
                     return cb(null, expectedExpiry === index.expireAfterSeconds);
@@ -367,9 +368,10 @@ module.exports = function(pb) {
             cb(new Error(&#x27;The index &#x27;+indexName+&#x27; on collection &#x27;+collection+&#x27; could not be found&#x27;), false);
         });
     };
-    
+
     return TTLIndexHelper;
 };
+
     </pre>
 </div>
                     </div>

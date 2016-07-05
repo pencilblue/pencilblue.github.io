@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -207,7 +208,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_topic_service.js.html#l35"><code>include\service\entities\topic_service.js:35</code></a>
+            Defined in: <a href="../files/include_service_entities_topic_service.js.html#l35"><code>include&#x2F;service&#x2F;entities&#x2F;topic_service.js:35</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -243,7 +244,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_topic_service.js.html#l35"><code>include\service\entities\topic_service.js:35</code></a>
+        <a href="../files/include_service_entities_topic_service.js.html#l35"><code>include&#x2F;service&#x2F;entities&#x2F;topic_service.js:35</code></a>
         </p>
 
 
@@ -293,62 +294,11 @@
 
                     <ul class="index-list methods extends">
                             <li class="index-item method protected inherited">
+                                <a href="#method__emit">_emit</a>
+
+                            </li>
+                            <li class="index-item method protected inherited">
                                 <a href="#method__get">_get</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_"></a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_validate">validate</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_getType">getType</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_getContext">getContext</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_getAll">getAll</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_count">count</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_getAllWithCount">getAllWithCount</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_get">get</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_"></a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_getSingle">getSingle</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_add">add</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_update">update</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#method_save">save</a>
 
                             </li>
                             <li class="index-item method private inherited">
@@ -356,7 +306,11 @@
 
                             </li>
                             <li class="index-item method inherited">
-                                <a href="#method_getIdWhere">getIdWhere</a>
+                                <a href="#method_add">add</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_count">count</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -367,9 +321,56 @@
                                 <a href="#method_deleteSingle">deleteSingle</a>
 
                             </li>
-                            <li class="index-item method private inherited">
-                                <a href="#method__emit">_emit</a>
+                            <li class="index-item method">
+                                <a href="#method_format">format</a>
 
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_get">get</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getAll">getAll</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getAllWithCount">getAllWithCount</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getContext">getContext</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getIdWhere">getIdWhere</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getSingle">getSingle</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getType">getType</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_merge">merge</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_save">save</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_update">update</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_validate">validate</a>
+
+                                    <span class="flag static">static</span>
                             </li>
                     </ul>
                 </div>
@@ -400,6 +401,85 @@
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
+<div id="method__emit" class="method item protected inherited">
+    <h3 class="name"><code>_emit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event</code>
+                </li>
+                <li class="arg">
+                        <code>data</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag protected">protected</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method__emit">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l675"><code>include&#x2F;service&#x2F;base_object_service.js:675</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">data</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method__get" class="method item protected inherited">
     <h3 class="name"><code>_get</code></h3>
 
@@ -428,7 +508,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseObjectService.html#method__get">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l387"><code>include\service\base_object_service.js:387</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l376"><code>include&#x2F;service&#x2F;base_object_service.js:376</code></a>
         </p>
 
 
@@ -480,16 +560,16 @@
 
 
 </div>
-<div id="method_" class="method item">
-    <h3 class="name"><code></code></h3>
+<div id="method__retrieveOnUpdateAndMerge" class="method item private inherited">
+    <h3 class="name"><code>_retrieveOnUpdateAndMerge</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>context</code>
+                        <code>dto</code>
                 </li>
                 <li class="arg">
-                        <code>service</code>
+                        <code>options</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -499,16 +579,16 @@
 
 
 
+        <span class="flag private">private</span>
 
 
-        <span class="flag static">static</span>
 
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_entities_topic_service.js.html#l52"><code>include\service\entities\topic_service.js:52</code></a>
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method__retrieveOnUpdateAndMerge">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l547"><code>include&#x2F;service&#x2F;base_object_service.js:547</code></a>
         </p>
 
 
@@ -516,7 +596,10 @@
     </div>
 
     <div class="description">
-        
+        When an ID is available in the DTO the function attempts to retrieve the
+existing object.  If it is not available a new object is created.  The
+merge event is then called.  After the merge is complete the callback is
+executed with the merged object.
     </div>
 
         <div class="params">
@@ -524,7 +607,7 @@
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">context</code>
+                        <code class="param-name">dto</code>
                         <span class="type">Object</span>
 
 
@@ -534,16 +617,26 @@
 
                 </li>
                 <li class="param">
-                        <code class="param-name">service</code>
-                        <span class="type"><a href="../classes/TopicService.html" class="crosslink">TopicService</a></span>
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
 
 
                     <div class="param-description">
-                        <p>An instance of the service that triggered
-the event that called this handler</p>
-
+                         
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[isCreate]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">cb</code>
@@ -551,8 +644,7 @@ the event that called this handler</p>
 
 
                     <div class="param-description">
-                        <p>A callback that takes a single parameter: an error if occurred</p>
-
+                         
                     </div>
 
                 </li>
@@ -562,8 +654,332 @@ the event that called this handler</p>
 
 
 </div>
-<div id="method_validate" class="method item">
-    <h3 class="name"><code>validate</code></h3>
+<div id="method_add" class="method item inherited">
+    <h3 class="name"><code>add</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>dto</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method_add">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l412"><code>include&#x2F;service&#x2F;base_object_service.js:412</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Attempts to persist the DTO as an add.  The function executes a series of events:
+1) The format event is fired
+2) When an ID is provided the object is retrieved from the database otherwise a new object is created.
+3) The merge event is triggered
+4) The validate event is triggered. If validation errors are detected the process halts and the function calls back with an error.
+5) The beforeSave event is triggered
+6) The object is persisted
+7) The afterSave event is triggered
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        A callback that takes two parameters.  The first is
+an error, if occurred. The second is the object that matches the specified query
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_count" class="method item inherited">
+    <h3 class="name"><code>count</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method_count">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l271"><code>include&#x2F;service&#x2F;base_object_service.js:271</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Executes a count of resources against the persistence layer. The
+function will callback with an array of results.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[where]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        A callback that takes two parameters.  The first is
+an error, if occurred. The second is the number of results that match
+the specified query
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_deleteById" class="method item inherited">
+    <h3 class="name"><code>deleteById</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method_deleteById">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l620"><code>include&#x2F;service&#x2F;base_object_service.js:620</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Deletes an object by ID
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_deleteSingle" class="method item inherited">
+    <h3 class="name"><code>deleteSingle</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method_deleteSingle">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l637"><code>include&#x2F;service&#x2F;base_object_service.js:637</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Deletes a single item based on the specified query in the options
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        See BaseObjectService#getSingle
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[where]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_format" class="method item">
+    <h3 class="name"><code>format</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -587,7 +1003,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_topic_service.js.html#l81"><code>include\service\entities\topic_service.js:81</code></a>
+        <a href="../files/include_service_entities_topic_service.js.html#l52"><code>include&#x2F;service&#x2F;entities&#x2F;topic_service.js:52</code></a>
         </p>
 
 
@@ -612,16 +1028,6 @@ the event that called this handler</p>
                     </div>
 
                         <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">data</code>
-                                    <span class="type">Object</span>
-
-                                <div class="param-description">
-                                    <p>The DTO that was provided for persistence</p>
-
-                                </div>
-
-                            </li>
                             <li class="param">
                                     <code class="param-name">service</code>
                                     <span class="type"><a href="../classes/TopicService.html" class="crosslink">TopicService</a></span>
@@ -652,61 +1058,23 @@ the event that called this handler</p>
 
 
 </div>
-<div id="method_getType" class="method item inherited">
-    <h3 class="name"><code>getType</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_getType">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l205"><code>include\service\base_object_service.js:205</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        Retrieves the object type supported by the service
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">String</span>:
-                    The object type supported
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getContext" class="method item inherited">
-    <h3 class="name"><code>getContext</code></h3>
+<div id="method_get" class="method item inherited">
+    <h3 class="name"><code>get</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code class="optional">[data]</code>
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
 
 
 
@@ -716,8 +1084,8 @@ the event that called this handler</p>
 
     <div class="meta">
                 <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_getContext">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l214"><code>include\service\base_object_service.js:214</code></a>
+                <a href="../classes/BaseObjectService.html#method_get">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l336"><code>include&#x2F;service&#x2F;base_object_service.js:336</code></a>
         </p>
 
 
@@ -725,7 +1093,9 @@ the event that called this handler</p>
     </div>
 
     <div class="description">
-        Retrieves a context object to be passed to event listeners
+        Retrieves a resource by ID. The function will callback with the object
+that was found or NULL if no object could be found. The function will
+trigger the "get" event.
     </div>
 
         <div class="params">
@@ -733,8 +1103,18 @@ the event that called this handler</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name optional">[data]</code>
-                        <span class="type">String | Object | Number | Boolean</span>
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
@@ -743,16 +1123,21 @@ the event that called this handler</p>
                     </div>
 
                 </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>(Error, object|null) A callback that takes two parameters.  The first is
+an error, if occurred. The second is the object with the specified ID</p>
+
+                    </div>
+
+                </li>
             </ul>
         </div>
 
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-            </div>
-        </div>
 
 
 </div>
@@ -780,7 +1165,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseObjectService.html#method_getAll">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l228"><code>include\service\base_object_service.js:228</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l216"><code>include&#x2F;service&#x2F;base_object_service.js:216</code></a>
         </p>
 
 
@@ -880,87 +1265,6 @@ of the query.</p>
 
 
 </div>
-<div id="method_count" class="method item inherited">
-    <h3 class="name"><code>count</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code class="optional">[options]</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_count">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l283"><code>include\service\base_object_service.js:283</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        Executes a count of resources against the persistence layer. The
-function will callback with an array of results.
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[where]</code>
-                                    <span class="type">Object</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        A callback that takes two parameters.  The first is
-an error, if occurred. The second is the number of results that match
-the specified query
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
 <div id="method_getAllWithCount" class="method item inherited">
     <h3 class="name"><code>getAllWithCount</code></h3>
 
@@ -985,7 +1289,7 @@ the specified query
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseObjectService.html#method_getAllWithCount">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l310"><code>include\service\base_object_service.js:310</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l298"><code>include&#x2F;service&#x2F;base_object_service.js:298</code></a>
         </p>
 
 
@@ -1084,20 +1388,20 @@ of the query.
 
 
 </div>
-<div id="method_get" class="method item inherited">
-    <h3 class="name"><code>get</code></h3>
+<div id="method_getContext" class="method item inherited">
+    <h3 class="name"><code>getContext</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code class="optional">[options]</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
+                        <code class="optional">[data]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
 
 
 
@@ -1107,8 +1411,8 @@ of the query.
 
     <div class="meta">
                 <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_get">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l348"><code>include\service\base_object_service.js:348</code></a>
+                <a href="../classes/BaseObjectService.html#method_getContext">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l203"><code>include&#x2F;service&#x2F;base_object_service.js:203</code></a>
         </p>
 
 
@@ -1116,9 +1420,7 @@ of the query.
     </div>
 
     <div class="description">
-        Retrieves a resource by ID. The function will callback with the object
-that was found or NULL if no object could be found. The function will
-trigger the "get" event.
+        Retrieves a context object to be passed to event listeners
     </div>
 
         <div class="params">
@@ -1126,8 +1428,8 @@ trigger the "get" event.
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
+                        <code class="param-name optional">[data]</code>
+                        <span class="type">String | Object | Number | Boolean</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
@@ -1136,53 +1438,44 @@ trigger the "get" event.
                     </div>
 
                 </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback that takes two parameters.  The first is
-an error, if occurred. The second is the object with the specified ID</p>
-
-                    </div>
-
-                </li>
             </ul>
         </div>
 
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
 
 
 </div>
-<div id="method_" class="method item">
-    <h3 class="name"><code></code></h3>
+<div id="method_getIdWhere" class="method item inherited">
+    <h3 class="name"><code>getIdWhere</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>context</code>
-                </li>
-                <li class="arg">
-                        <code>service</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
+                        <code>dto</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
 
 
 
 
-        <span class="flag static">static</span>
 
 
 
     <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_entities_topic_service.js.html#l67"><code>include\service\entities\topic_service.js:67</code></a>
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method_getIdWhere">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l602"><code>include&#x2F;service&#x2F;base_object_service.js:602</code></a>
         </p>
 
 
@@ -1190,7 +1483,8 @@ an error, if occurred. The second is the object with the specified ID</p>
     </div>
 
     <div class="description">
-        
+        Creates the where clause that creates a lookup by the key that indicates
+uniqueness for the collection
     </div>
 
         <div class="params">
@@ -1198,7 +1492,7 @@ an error, if occurred. The second is the object with the specified ID</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">context</code>
+                        <code class="param-name">dto</code>
                         <span class="type">Object</span>
 
 
@@ -1207,32 +1501,16 @@ an error, if occurred. The second is the object with the specified ID</p>
                     </div>
 
                 </li>
-                <li class="param">
-                        <code class="param-name">service</code>
-                        <span class="type"><a href="../classes/TopicService.html" class="crosslink">TopicService</a></span>
-
-
-                    <div class="param-description">
-                        <p>An instance of the service that triggered
-the event that called this handler</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback that takes a single parameter: an error if occurred</p>
-
-                    </div>
-
-                </li>
             </ul>
         </div>
 
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
 
 
 </div>
@@ -1260,7 +1538,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseObjectService.html#method_getSingle">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l398"><code>include\service\base_object_service.js:398</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l387"><code>include&#x2F;service&#x2F;base_object_service.js:387</code></a>
         </p>
 
 
@@ -1348,11 +1626,135 @@ an error, if occurred. The second is the object that matches the specified query
 
 
 </div>
-<div id="method_add" class="method item inherited">
-    <h3 class="name"><code>add</code></h3>
+<div id="method_getType" class="method item inherited">
+    <h3 class="name"><code>getType</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#method_getType">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l194"><code>include&#x2F;service&#x2F;base_object_service.js:194</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Retrieves the object type supported by the service
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    The object type supported
+            </div>
+        </div>
+
+
+</div>
+<div id="method_merge" class="method item">
+    <h3 class="name"><code>merge</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_topic_service.js.html#l67"><code>include&#x2F;service&#x2F;entities&#x2F;topic_service.js:67</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">service</code>
+                                    <span class="type"><a href="../classes/TopicService.html" class="crosslink">TopicService</a></span>
+
+                                <div class="param-description">
+                                    <p>An instance of the service that triggered
+the event that called this handler</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes a single parameter: an error if occurred</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_save" class="method item inherited">
+    <h3 class="name"><code>save</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>dto</code>
+                </li>
                 <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
@@ -1371,8 +1773,8 @@ an error, if occurred. The second is the object that matches the specified query
 
     <div class="meta">
                 <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_add">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l423"><code>include\service\base_object_service.js:423</code></a>
+                <a href="../classes/BaseObjectService.html#method_save">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l462"><code>include&#x2F;service&#x2F;base_object_service.js:462</code></a>
         </p>
 
 
@@ -1380,7 +1782,7 @@ an error, if occurred. The second is the object that matches the specified query
     </div>
 
     <div class="description">
-        Attempts to persist the DTO as an add.  The function executes a series of events:
+        Attempts to persist the DTO.  The function executes a series of events:
 1) The format event is fired
 2) When an ID is provided the object is retrieved from the database otherwise a new object is created.
 3) The merge event is triggered
@@ -1395,6 +1797,16 @@ an error, if occurred. The second is the object that matches the specified query
 
             <ul class="params-list">
                 <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -1404,6 +1816,18 @@ an error, if occurred. The second is the object that matches the specified query
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[isCreate]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">cb</code>
@@ -1428,6 +1852,9 @@ an error, if occurred. The second is the object that matches the specified query
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
+                        <code>dto</code>
+                </li>
+                <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
@@ -1446,7 +1873,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseObjectService.html#method_update">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l447"><code>include\service\base_object_service.js:447</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l437"><code>include&#x2F;service&#x2F;base_object_service.js:437</code></a>
         </p>
 
 
@@ -1469,6 +1896,16 @@ an error, if occurred. The second is the object that matches the specified query
 
             <ul class="params-list">
                 <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -1496,13 +1933,13 @@ an error, if occurred. The second is the object that matches the specified query
 
 
 </div>
-<div id="method_save" class="method item inherited">
-    <h3 class="name"><code>save</code></h3>
+<div id="method_validate" class="method item">
+    <h3 class="name"><code>validate</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code class="optional">[options]</code>
+                        <code>context</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -1514,403 +1951,14 @@ an error, if occurred. The second is the object that matches the specified query
 
 
 
+        <span class="flag static">static</span>
 
 
 
     <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_save">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l471"><code>include\service\base_object_service.js:471</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        Attempts to persist the DTO.  The function executes a series of events:
-1) The format event is fired
-2) When an ID is provided the object is retrieved from the database otherwise a new object is created.
-3) The merge event is triggered
-4) The validate event is triggered. If validation errors are detected the process halts and the function calls back with an error.
-5) The beforeSave event is triggered
-6) The object is persisted
-7) The afterSave event is triggered
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[isCreate]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        A callback that takes two parameters.  The first is
-an error, if occurred. The second is the object that matches the specified query
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method__retrieveOnUpdateAndMerge" class="method item private inherited">
-    <h3 class="name"><code>_retrieveOnUpdateAndMerge</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>dto</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method__retrieveOnUpdateAndMerge">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l555"><code>include\service\base_object_service.js:555</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        When an ID is available in the DTO the function attempts to retrieve the
-existing object.  If it is not available a new object is created.  The
-merge event is then called.  After the merge is complete the callback is
-executed with the merged object.
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">dto</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name optional">[isCreate]</code>
-                                    <span class="type">Boolean</span>
-                                    <span class="flag optional" title="This parameter is optional.">optional</span>
-
-                                <div class="param-description">
-                                    
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_getIdWhere" class="method item inherited">
-    <h3 class="name"><code>getIdWhere</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>dto</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_getIdWhere">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l601"><code>include\service\base_object_service.js:601</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        Creates the where clause that creates a lookup by the key that indicates
-uniqueness for the collection
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">dto</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-            </div>
-        </div>
-
-
-</div>
-<div id="method_deleteById" class="method item inherited">
-    <h3 class="name"><code>deleteById</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>id</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_deleteById">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l612"><code>include\service\base_object_service.js:612</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        Deletes an object by ID
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">id</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_deleteSingle" class="method item inherited">
-    <h3 class="name"><code>deleteSingle</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>options</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method_deleteSingle">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l629"><code>include\service\base_object_service.js:629</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        Deletes a single item based on the specified query in the options
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method__emit" class="method item private inherited">
-    <h3 class="name"><code>_emit</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>event</code>
-                </li>
-                <li class="arg">
-                        <code>data</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/BaseObjectService.html#method__emit">BaseObjectService</a>:
-        <a href="../files/include_service_base_object_service.js.html#l666"><code>include\service\base_object_service.js:666</code></a>
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_topic_service.js.html#l81"><code>include&#x2F;service&#x2F;entities&#x2F;topic_service.js:81</code></a>
         </p>
 
 
@@ -1926,17 +1974,7 @@ uniqueness for the collection
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">event</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">data</code>
+                        <code class="param-name">context</code>
                         <span class="type">Object</span>
 
 
@@ -1944,6 +1982,29 @@ uniqueness for the collection
                          
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    <p>The DTO that was provided for persistence</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">service</code>
+                                    <span class="type"><a href="../classes/TopicService.html" class="crosslink">TopicService</a></span>
+
+                                <div class="param-description">
+                                    <p>An instance of the service that triggered
+the event that called this handler</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">cb</code>
@@ -1951,7 +2012,8 @@ uniqueness for the collection
 
 
                     <div class="param-description">
-                         
+                        <p>A callback that takes a single parameter: an error if occurred</p>
+
                     </div>
 
                 </li>
@@ -1966,80 +2028,80 @@ uniqueness for the collection
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_dao" class="property item inherited">
-                        <h3 class="name"><code>dao</code></h3>
-                        <span class="type"><a href="../classes/DAO.html" class="crosslink">DAO</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/BaseObjectService.html#property_dao">BaseObjectService</a>:
-                            <a href="../files/include_service_base_object_service.js.html#l58"><code>include\service\base_object_service.js:58</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            An instance of DAO to be used to interact with the persistence layer
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_TYPE" class="property item private">
-                        <h3 class="name"><code>TYPE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_topic_service.js.html#l26"><code>include\service\entities\topic_service.js:26</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_type" class="property item inherited">
-                        <h3 class="name"><code>type</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/BaseObjectService.html#property_type">BaseObjectService</a>:
-                            <a href="../files/include_service_base_object_service.js.html#l51"><code>include\service\base_object_service.js:51</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            Represents the name of the collection to interact with
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_dao" class="property item inherited">
+    <h3 class="name"><code>dao</code></h3>
+    <span class="type"><a href="../classes/DAO.html" class="crosslink">DAO</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#property_dao">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l59"><code>include&#x2F;service&#x2F;base_object_service.js:59</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        An instance of DAO to be used to interact with the persistence layer
+    </div>
+
+
+
+</div>
+<div id="property_TYPE" class="property item private">
+    <h3 class="name"><code>TYPE</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_topic_service.js.html#l26"><code>include&#x2F;service&#x2F;entities&#x2F;topic_service.js:26</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_type" class="property item inherited">
+    <h3 class="name"><code>type</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/BaseObjectService.html#property_type">BaseObjectService</a>:
+        <a href="../files/include_service_base_object_service.js.html#l52"><code>include&#x2F;service&#x2F;base_object_service.js:52</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        Represents the name of the collection to interact with
+    </div>
+
+
+
+</div>
             </div>
 
 

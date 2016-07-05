@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\service\entities\content\article_service_v2.js - PencilBlue</title>
+    <title>include/service/entities/content/article_service_v2.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\service\entities\content\article_service_v2.js</h1>
+<h1 class="file-heading">File: include/service/entities/content/article_service_v2.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
- Copyright (C) 2015  PencilBlue, LLC
+ Copyright (C) 2016  PencilBlue, LLC
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -221,16 +222,16 @@
  */
 
 //dependencies
-var util  = require(&#x27;../../../util.js&#x27;);
+var util = require(&#x27;../../../util.js&#x27;);
 var async = require(&#x27;async&#x27;);
 
-module.exports = function(pb) {
+module.exports = function (pb) {
 
     //pb dependencies
-    var DAO                  = pb.DAO;
-    var BaseObjectService    = pb.BaseObjectService;
+    var DAO = pb.DAO;
+    var BaseObjectService = pb.BaseObjectService;
     var ContentObjectService = pb.ContentObjectService;
-    var ValidationService    = pb.ValidationService;
+    var ValidationService = pb.ValidationService;
 
     /**
      * Provides functions to interact with articles
@@ -240,7 +241,7 @@ module.exports = function(pb) {
      * @extends BaseObjectService
      * @param {Object} context
      */
-    function ArticleServiceV2(context){
+    function ArticleServiceV2(context) {
         if (!util.isObject(context)) {
             context = {};
         }
@@ -267,7 +268,7 @@ module.exports = function(pb) {
      * @param {Object} options
      * @return {Object}
      */
-    ArticleServiceV2.prototype.getRenderOptions = function(options, isMultiple) {
+    ArticleServiceV2.prototype.getRenderOptions = function (options, isMultiple) {
         if (isMultiple) {
             return {
                 readMore: options &amp;&amp; options.readMore !== undefined ? options.readMore : true
@@ -285,7 +286,7 @@ module.exports = function(pb) {
      * @method getRenderer
      * @return {ArticleRenderer}
      */
-    ArticleServiceV2.prototype.getRenderer = function() {
+    ArticleServiceV2.prototype.getRenderer = function () {
         return new pb.ArticleRenderer(this.context);
     };
 
@@ -296,7 +297,7 @@ module.exports = function(pb) {
      * @param {Object} [options]
      * @param {Function} cb
      */
-    ArticleServiceV2.prototype.getBySection = function(sectionId, options, cb) {
+    ArticleServiceV2.prototype.getBySection = function (sectionId, options, cb) {
         if (util.isFunction(options)) {
             cb = options;
             options = {};
@@ -323,7 +324,7 @@ module.exports = function(pb) {
      * @param {Object} content
      * @return {Array} An array of strings representing the Topic IDs
      */
-    ArticleServiceV2.prototype.getTopicsForContent = function(content) {
+    ArticleServiceV2.prototype.getTopicsForContent = function (content) {
         return content.article_topics;
     };
 
@@ -336,7 +337,7 @@ module.exports = function(pb) {
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
-    ArticleServiceV2.format = function(context, cb) {
+    ArticleServiceV2.format = function (context, cb) {
         var dto = context.data;
         dto.headline = BaseObjectService.sanitize(dto.headline);
         dto.subheading = BaseObjectService.sanitize(dto.subheading);
@@ -365,7 +366,7 @@ module.exports = function(pb) {
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
-    ArticleServiceV2.merge = function(context, cb) {
+    ArticleServiceV2.merge = function (context, cb) {
         var dto = context.data;
         var obj = context.object;
 
@@ -400,7 +401,7 @@ module.exports = function(pb) {
      * the event that called this handler
      * @param {Function} cb A callback that takes a single parameter: an error if occurred
      */
-    ArticleServiceV2.validate = function(context, cb) {
+    ArticleServiceV2.validate = function (context, cb) {
         var obj = context.data;
         var errors = context.validationErrors;
 
@@ -418,10 +419,10 @@ module.exports = function(pb) {
             }
         }
         else {
-            obj.meta_keywords.forEach(function(keyword, i) {
+            obj.meta_keywords.forEach(function (keyword, i) {
 
                 if (!ValidationService.isNonEmptyStr(keyword, true)) {
-                    errors.push(BaseObjectService.validationFailure(&#x27;meta_keywords[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid meta keyword was provided&#x27;));
+                    errors.push(BaseObjectService.validationFailure(&#x27;meta_keywords[&#x27; + i + &#x27;]&#x27;, &#x27;An invalid meta keyword was provided&#x27;));
                 }
             });
         }
@@ -432,10 +433,10 @@ module.exports = function(pb) {
             }
         }
         else {
-            obj.article_media.forEach(function(mediaId, i) {
+            obj.article_media.forEach(function (mediaId, i) {
 
                 if (!ValidationService.isIdStr(mediaId, true)) {
-                    errors.push(BaseObjectService.validationFailure(&#x27;article_media[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid media ID was provided&#x27;));
+                    errors.push(BaseObjectService.validationFailure(&#x27;article_media[&#x27; + i + &#x27;]&#x27;, &#x27;An invalid media ID was provided&#x27;));
                 }
             });
         }
@@ -446,10 +447,10 @@ module.exports = function(pb) {
             }
         }
         else {
-            obj.article_sections.forEach(function(sectionId, i) {
+            obj.article_sections.forEach(function (sectionId, i) {
 
                 if (!ValidationService.isIdStr(sectionId, true)) {
-                    errors.push(BaseObjectService.validationFailure(&#x27;article_sections[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid section ID was provided&#x27;));
+                    errors.push(BaseObjectService.validationFailure(&#x27;article_sections[&#x27; + i + &#x27;]&#x27;, &#x27;An invalid section ID was provided&#x27;));
                 }
             });
         }
@@ -460,10 +461,10 @@ module.exports = function(pb) {
             }
         }
         else {
-            obj.article_topics.forEach(function(topicId, i) {
+            obj.article_topics.forEach(function (topicId, i) {
 
                 if (!ValidationService.isIdStr(topicId, true)) {
-                    errors.push(BaseObjectService.validationFailure(&#x27;article_topics[&#x27;+i+&#x27;]&#x27;, &#x27;An invalid topic ID was provided&#x27;));
+                    errors.push(BaseObjectService.validationFailure(&#x27;article_topics[&#x27; + i + &#x27;]&#x27;, &#x27;An invalid topic ID was provided&#x27;));
                 }
             });
         }
@@ -477,7 +478,7 @@ module.exports = function(pb) {
             if (!ValidationService.isStr(obj.template, false)) {
                 errors.push(BaseObjectService.validationFailure(&#x27;template&#x27;, &#x27;The template must take the form of [PLUGIN]|[TEMPLATE_NAME]&#x27;));
             }
-            else if (obj.template.length &gt; 0){
+            else if (obj.template.length &gt; 0) {
                 var parts = obj.template.split(&#x27;|&#x27;);
                 if (parts.length !== 2) {
                     errors.push(BaseObjectService.validationFailure(&#x27;template&#x27;, &#x27;The template must take the form of [PLUGIN]|[TEMPLATE_NAME]&#x27;));
@@ -530,7 +531,7 @@ module.exports = function(pb) {
      * @method setSectionClause
      * @param {Object} where
      */
-    ArticleServiceV2.setSectionClause = function(where, sectionId) {
+    ArticleServiceV2.setSectionClause = function (where, sectionId) {
         where.article_sections = sectionId + &#x27;&#x27;;
     };
 
@@ -540,7 +541,7 @@ module.exports = function(pb) {
      * @method setTopicClause
      * @param {Object} where
      */
-    ArticleServiceV2.setTopicClause = function(where, topicId) {
+    ArticleServiceV2.setTopicClause = function (where, topicId) {
         where.article_topics = topicId + &#x27;&#x27;;
     };
 
@@ -551,6 +552,7 @@ module.exports = function(pb) {
 
     return ArticleServiceV2;
 };
+
     </pre>
 </div>
                     </div>

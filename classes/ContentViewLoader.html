@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_content_content_view_loader.js.html#l30"><code>include\service\entities\content\content_view_loader.js:30</code></a>
+            Defined in: <a href="../files/include_service_entities_content_content_view_loader.js.html#l30"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:30</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -240,7 +241,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l30"><code>include\service\entities\content\content_view_loader.js:30</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l30"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:30</code></a>
         </p>
 
 
@@ -320,6 +321,25 @@
                                 </div>
 
                             </li>
+                            <li class="param">
+                                    <code class="param-name optional">[commentService]</code>
+                                    <span class="type"><a href="../classes/CommentService.html" class="crosslink">CommentService</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">siteObj</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
                         </ul>
                 </li>
             </ul>
@@ -380,10 +400,6 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_getMetaInfo">getMetaInfo</a>
-
-                            </li>
-                            <li class="index-item method">
                                 <a href="#method_getTemplate">getTemplate</a>
 
                             </li>
@@ -436,6 +452,10 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_renderSingle">renderSingle</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_setMetaInfo">setMetaInfo</a>
 
                             </li>
@@ -451,6 +471,10 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_commentService">commentService</a>
+
+                            </li>
                             <li class="index-item property private">
                                 <a href="#property_DISPLAY_NONE_STYLE_ATTR">DISPLAY_NONE_STYLE_ATTR</a>
 
@@ -489,7 +513,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l562"><code>include\service\entities\content\content_view_loader.js:562</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l570"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:570</code></a>
         </p>
 
 
@@ -554,7 +578,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l222"><code>include\service\entities\content\content_view_loader.js:222</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l230"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:230</code></a>
         </p>
 
 
@@ -623,7 +647,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l471"><code>include\service\entities\content\content_view_loader.js:471</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l479"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:479</code></a>
         </p>
 
 
@@ -663,7 +687,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l499"><code>include\service\entities\content\content_view_loader.js:499</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l507"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:507</code></a>
         </p>
 
 
@@ -703,7 +727,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l419"><code>include\service\entities\content\content_view_loader.js:419</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l427"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:427</code></a>
         </p>
 
 
@@ -743,7 +767,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l189"><code>include\service\entities\content\content_view_loader.js:189</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l197"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:197</code></a>
         </p>
 
 
@@ -790,7 +814,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l573"><code>include\service\entities\content\content_view_loader.js:573</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l581"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:581</code></a>
         </p>
 
 
@@ -834,84 +858,6 @@
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>content</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l65"><code>include\service\entities\content\content_view_loader.js:65</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">content</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_getMetaInfo" class="method item">
-    <h3 class="name"><code>getMetaInfo</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
                         <code>contentArray</code>
                 </li>
                 <li class="arg">
@@ -933,7 +879,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l348"><code>include\service\entities\content\content_view_loader.js:348</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l356"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:356</code></a>
         </p>
 
 
@@ -1011,7 +957,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l121"><code>include\service\entities\content\content_view_loader.js:121</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l129"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:129</code></a>
         </p>
 
 
@@ -1124,7 +1070,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l266"><code>include\service\entities\content\content_view_loader.js:266</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l274"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:274</code></a>
         </p>
 
 
@@ -1202,7 +1148,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l508"><code>include\service\entities\content\content_view_loader.js:508</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l516"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:516</code></a>
         </p>
 
 
@@ -1280,7 +1226,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l523"><code>include\service\entities\content\content_view_loader.js:523</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l531"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:531</code></a>
         </p>
 
 
@@ -1358,7 +1304,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l198"><code>include\service\entities\content\content_view_loader.js:198</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l206"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:206</code></a>
         </p>
 
 
@@ -1436,7 +1382,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l549"><code>include\service\entities\content\content_view_loader.js:549</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l557"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:557</code></a>
         </p>
 
 
@@ -1514,7 +1460,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l538"><code>include\service\entities\content\content_view_loader.js:538</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l546"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:546</code></a>
         </p>
 
 
@@ -1592,7 +1538,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l311"><code>include\service\entities\content\content_view_loader.js:311</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l319"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:319</code></a>
         </p>
 
 
@@ -1670,7 +1616,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l281"><code>include\service\entities\content\content_view_loader.js:281</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l289"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:289</code></a>
         </p>
 
 
@@ -1748,7 +1694,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l76"><code>include\service\entities\content\content_view_loader.js:76</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l84"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:84</code></a>
         </p>
 
 
@@ -1861,7 +1807,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l480"><code>include\service\entities\content\content_view_loader.js:480</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l488"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:488</code></a>
         </p>
 
 
@@ -1939,7 +1885,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l428"><code>include\service\entities\content\content_view_loader.js:428</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l436"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:436</code></a>
         </p>
 
 
@@ -2017,7 +1963,85 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l362"><code>include\service\entities\content\content_view_loader.js:362</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l370"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:370</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">content</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_renderSingle" class="method item">
+    <h3 class="name"><code>renderSingle</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>content</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l73"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:73</code></a>
         </p>
 
 
@@ -2089,7 +2113,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l335"><code>include\service\entities\content\content_view_loader.js:335</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l343"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:343</code></a>
         </p>
 
 
@@ -2145,7 +2169,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_content_content_view_loader.js.html#l584"><code>include\service\entities\content\content_view_loader.js:584</code></a>
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l592"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:592</code></a>
         </p>
 
 
@@ -2190,32 +2214,56 @@ the value is returned, if FALSE empty string is returned</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_DISPLAY_NONE_STYLE_ATTR" class="property item private">
-                        <h3 class="name"><code>DISPLAY_NONE_STYLE_ATTR</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_content_content_view_loader.js.html#l56"><code>include\service\entities\content\content_view_loader.js:56</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_commentService" class="property item">
+    <h3 class="name"><code>commentService</code></h3>
+    <span class="type"><a href="../classes/CommentService.html" class="crosslink">CommentService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l57"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:57</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_DISPLAY_NONE_STYLE_ATTR" class="property item private">
+    <h3 class="name"><code>DISPLAY_NONE_STYLE_ATTR</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_content_content_view_loader.js.html#l64"><code>include&#x2F;service&#x2F;entities&#x2F;content&#x2F;content_view_loader.js:64</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

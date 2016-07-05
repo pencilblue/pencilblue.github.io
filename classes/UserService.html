@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_user_service.js.html#l30"><code>include\service\entities\user_service.js:30</code></a>
+            Defined in: <a href="../files/include_service_entities_user_service.js.html#l31"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:31</code></a>
         </div>
 
             Module: <a href="../modules/Entities.html">Entities</a><br>
@@ -240,6 +241,10 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_determineUserSiteScope">determineUserSiteScope</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_findByAccessLevel">findByAccessLevel</a>
 
                             </li>
@@ -249,6 +254,10 @@
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getAuthors">getAuthors</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getByUsernameOrEmail">getByUsernameOrEmail</a>
 
                             </li>
                             <li class="index-item method deprecated">
@@ -278,17 +287,17 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#method_isUsernameInUse">isUsernameInUse</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isUsernameInUse">isUsernameInUse</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_"></a>
 
                                     <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_isUsernameInUse">isUsernameInUse</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#method_isUsernameInUse">isUsernameInUse</a>
-
                             </li>
                             <li class="index-item method">
                                 <a href="#method_"></a>
@@ -304,9 +313,10 @@
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_sendPasswordResetEmail">sendPasswordResetEmail</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_sendVerificationEmail">sendVerificationEmail</a>
@@ -378,7 +388,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l428"><code>include\service\entities\user_service.js:428</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l438"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:438</code></a>
         </p>
 
 
@@ -455,6 +465,81 @@ case ignored.</p>
 
 
 </div>
+<div id="method_determineUserSiteScope" class="method item">
+    <h3 class="name"><code>determineUserSiteScope</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>accessLevel</code>
+                </li>
+                <li class="arg">
+                        <code>siteId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_user_service.js.html#l537"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:537</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">accessLevel</code>
+                        <span class="type">Integer</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">siteId</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"></span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_findByAccessLevel" class="method item">
     <h3 class="name"><code>findByAccessLevel</code></h3>
 
@@ -482,7 +567,7 @@ case ignored.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l475"><code>include\service\entities\user_service.js:475</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l485"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:485</code></a>
         </p>
 
 
@@ -574,7 +659,7 @@ returning results.</p>
 
 
                     <div class="param-description">
-                        <p>A callback that takes two parameters: an error, if
+                        <p>(Error, Array) A callback that takes two parameters: an error, if
 occurred, and the second is an array of User objects.</p>
 
                     </div>
@@ -613,7 +698,7 @@ occurred, and the second is an array of User objects.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l148"><code>include\service\entities\user_service.js:148</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l148"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:148</code></a>
         </p>
 
 
@@ -688,7 +773,7 @@ occurred, and the second is an array of User objects.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l104"><code>include\service\entities\user_service.js:104</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l104"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:104</code></a>
         </p>
 
 
@@ -721,7 +806,88 @@ occurred, and the second is an array of User objects.</p>
 
 
                     <div class="param-description">
-                        <p>Callback function</p>
+                        <p>(Error, Array)</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getByUsernameOrEmail" class="method item">
+    <h3 class="name"><code>getByUsernameOrEmail</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>usernameOrEmail</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[options]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_user_service.js.html#l253"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:253</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">usernameOrEmail</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>See UserService#getSingle</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>(Error, object) The user object</p>
 
                     </div>
 
@@ -757,7 +923,7 @@ occurred, and the second is an array of User objects.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l183"><code>include\service\entities\user_service.js:183</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l183"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:183</code></a>
         </p>
 
 
@@ -791,7 +957,7 @@ occurred, and the second is an array of User objects.</p>
 
 
                     <div class="param-description">
-                        <p>A callback that takes two parameters.  The first is an
+                        <p>(Error, Array) A callback that takes two parameters.  The first is an
 error, if exists, the second is an array of objects that represent the
 editor select list.</p>
 
@@ -816,7 +982,7 @@ editor select list.</p>
                         <code>email</code>
                 </li>
                 <li class="arg">
-                        <code>id</code>
+                        <code class="optional">[id]</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -834,7 +1000,7 @@ editor select list.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l359"><code>include\service\entities\user_service.js:359</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l369"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:369</code></a>
         </p>
 
 
@@ -871,8 +1037,9 @@ editor select list.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">id</code>
+                        <code class="param-name optional">[id]</code>
                         <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -887,7 +1054,7 @@ editor select list.</p>
 
 
                     <div class="param-description">
-                        <p>Callback function</p>
+                        <p>(Error, object)</p>
 
                     </div>
 
@@ -923,7 +1090,7 @@ editor select list.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l89"><code>include\service\entities\user_service.js:89</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l89"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:89</code></a>
         </p>
 
 
@@ -989,7 +1156,7 @@ editor select list.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l66"><code>include\service\entities\user_service.js:66</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l67"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:67</code></a>
         </p>
 
 
@@ -1022,7 +1189,7 @@ editor select list.</p>
 
 
                     <div class="param-description">
-                        <p>Callback function</p>
+                        <p>(Error, string)</p>
 
                     </div>
 
@@ -1060,7 +1227,7 @@ editor select list.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l197"><code>include\service\entities\user_service.js:197</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l197"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:197</code></a>
         </p>
 
 
@@ -1145,7 +1312,7 @@ editor select list.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l510"><code>include\service\entities\user_service.js:510</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l520"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:520</code></a>
         </p>
 
 
@@ -1200,88 +1367,6 @@ editor select list.</p>
 
 
 </div>
-<div id="method_" class="method item">
-    <h3 class="name"><code></code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>context</code>
-                </li>
-                <li class="arg">
-                        <code>service</code>
-                </li>
-                <li class="arg">
-                        <code>cb</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l655"><code>include\service\entities\user_service.js:655</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">context</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">service</code>
-                        <span class="type"><a href="../classes/UserService.html" class="crosslink">UserService</a></span>
-
-
-                    <div class="param-description">
-                        <p>An instance of the service that triggered
-the event that called this handler</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">cb</code>
-                        <span class="type">Function</span>
-
-
-                    <div class="param-description">
-                        <p>A callback that takes a single parameter: an error if occurred</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
 <div id="method_isUsernameInUse" class="method item">
     <h3 class="name"><code>isUsernameInUse</code></h3>
 
@@ -1309,7 +1394,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l414"><code>include\service\entities\user_service.js:414</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l424"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:424</code></a>
         </p>
 
 
@@ -1403,7 +1488,7 @@ case ignored.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l400"><code>include\service\entities\user_service.js:400</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l410"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:410</code></a>
         </p>
 
 
@@ -1479,9 +1564,6 @@ case ignored.</p>
                         <code>context</code>
                 </li>
                 <li class="arg">
-                        <code>service</code>
-                </li>
-                <li class="arg">
                         <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
@@ -1498,7 +1580,7 @@ case ignored.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l680"><code>include\service\entities\user_service.js:680</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l697"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:697</code></a>
         </p>
 
 
@@ -1522,18 +1604,39 @@ case ignored.</p>
                          
                     </div>
 
-                </li>
-                <li class="param">
-                        <code class="param-name">service</code>
-                        <span class="type"><a href="../classes/UserService.html" class="crosslink">UserService</a></span>
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">service</code>
+                                    <span class="type"><a href="../classes/UserService.html" class="crosslink">UserService</a></span>
 
-
-                    <div class="param-description">
-                        <p>An instance of the service that triggered
+                                <div class="param-description">
+                                    <p>An instance of the service that triggered
 the event that called this handler</p>
 
-                    </div>
+                                </div>
 
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    <p>The DTO</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">object</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    <p>The entity object to be persisted</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">cb</code>
@@ -1541,7 +1644,96 @@ the event that called this handler</p>
 
 
                     <div class="param-description">
-                        <p>A callback that takes a single parameter: an error if occurred</p>
+                        <p>(Error) A callback that takes a single parameter: an error if occurred</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_" class="method item">
+    <h3 class="name"><code></code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_user_service.js.html#l671"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:671</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">service</code>
+                                    <span class="type"><a href="../classes/UserService.html" class="crosslink">UserService</a></span>
+
+                                <div class="param-description">
+                                    <p>An instance of the service that triggered
+the event that called this handler</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>(Error) A callback that takes a single parameter: an error if occurred</p>
 
                     </div>
 
@@ -1582,7 +1774,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l336"><code>include\service\entities\user_service.js:336</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l346"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:346</code></a>
         </p>
 
 
@@ -1671,7 +1863,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l721"><code>include\service\entities\user_service.js:721</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l740"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:740</code></a>
         </p>
 
 
@@ -1738,7 +1930,7 @@ the event that called this handler</p>
 
 
 </div>
-<div id="method_sendPasswordResetEmail" class="method item">
+<div id="method_sendPasswordResetEmail" class="method item deprecated">
     <h3 class="name"><code>sendPasswordResetEmail</code></h3>
 
         <div class="args">
@@ -1756,6 +1948,7 @@ the event that called this handler</p>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1765,7 +1958,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l299"><code>include\service\entities\user_service.js:299</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l324"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:324</code></a>
         </p>
 
 
@@ -1809,7 +2002,7 @@ the event that called this handler</p>
 
 
                     <div class="param-description">
-                        <p>Callback function</p>
+                        <p>(Error)</p>
 
                     </div>
 
@@ -1844,7 +2037,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l253"><code>include\service\entities\user_service.js:253</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l278"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:278</code></a>
         </p>
 
 
@@ -1912,7 +2105,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l538"><code>include\service\entities\user_service.js:538</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l554"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:554</code></a>
         </p>
 
 
@@ -1966,7 +2159,7 @@ the event that called this handler</p>
 
 
                     <div class="param-description">
-                        <p>A callback that takes a single parameter: an error if occurred</p>
+                        <p>(Error) A callback that takes a single parameter: an error if occurred</p>
 
                     </div>
 
@@ -2002,7 +2195,7 @@ the event that called this handler</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_user_service.js.html#l707"><code>include\service\entities\user_service.js:707</code></a>
+        <a href="../files/include_service_entities_user_service.js.html#l726"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:726</code></a>
         </p>
 
 
@@ -2072,58 +2265,58 @@ the event that called this handler</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_TYPE" class="property item private">
-                        <h3 class="name"><code>TYPE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_user_service.js.html#l48"><code>include\service\entities\user_service.js:48</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_UNVERIFIED_TYPE" class="property item private">
-                        <h3 class="name"><code>UNVERIFIED_TYPE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_user_service.js.html#l57"><code>include\service\entities\user_service.js:57</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_TYPE" class="property item private">
+    <h3 class="name"><code>TYPE</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_user_service.js.html#l49"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:49</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_UNVERIFIED_TYPE" class="property item private">
+    <h3 class="name"><code>UNVERIFIED_TYPE</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_user_service.js.html#l58"><code>include&#x2F;service&#x2F;entities&#x2F;user_service.js:58</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

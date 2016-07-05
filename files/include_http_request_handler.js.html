@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\http\request_handler.js - PencilBlue</title>
+    <title>include/http/request_handler.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\http\request_handler.js</h1>
+<h1 class="file-heading">File: include/http/request_handler.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -224,7 +225,6 @@
 var url     = require(&#x27;url&#x27;);
 var fs      = require(&#x27;fs&#x27;);
 var path    = require(&#x27;path&#x27;);
-var process = require(&#x27;process&#x27;);
 var async   = require(&#x27;async&#x27;);
 var domain  = require(&#x27;domain&#x27;);
 var Cookies = require(&#x27;cookies&#x27;);
@@ -276,6 +276,16 @@ module.exports = function RequestHandlerModule(pb) {
         &#x27;application/x-www-form-urlencoded&#x27;: pb.FormBodyParser,
         &#x27;multipart/form-data&#x27;: pb.FormBodyParser
     };
+
+    /**
+     * Provides the list of directories that are publicly available
+     * @private
+     * @static
+     * @readonly
+     * @property PUBLIC_ROUTE_PREFIXES
+     * @type {Array}
+     */
+    var PUBLIC_ROUTE_PREFIXES = [&#x27;/js/&#x27;, &#x27;/css/&#x27;, &#x27;/fonts/&#x27;, &#x27;/img/&#x27;, &#x27;/localization/&#x27;, &#x27;/favicon.ico&#x27;, &#x27;/docs/&#x27;, &#x27;/bower_components/&#x27;];
 
     /**
      * The fallback theme (pencilblue)
@@ -544,7 +554,7 @@ module.exports = function RequestHandlerModule(pb) {
             descriptor.method = descriptor.method.toUpperCase();
         }
         else {
-            descriptor.method = &#x27;ALL&#x27;
+            descriptor.method = &#x27;ALL&#x27;;
         }
 
         //make sure we get a valid prototype back
@@ -764,17 +774,19 @@ module.exports = function RequestHandlerModule(pb) {
      * Derives the locale and localization instance.
      * @method deriveLocalization
      * @param {Object} context
-     * @param {Object} context.session
+     * @param {Object} [context.session]
      * @param {String} [context.routeLocalization]
      */
     RequestHandler.prototype.deriveLocalization = function(context) {
         var opts = {};
 
         var sources = [
-            context.routeLocalization,
-            context.session.locale,
-            this.req.headers[pb.Localization.ACCEPT_LANG_HEADER]
+            context.routeLocalization
         ];
+        if (context.session) {
+            sources.push(context.session.locale);
+        }
+        sources.push(this.req.headers[pb.Localization.ACCEPT_LANG_HEADER]);
         if (this.siteObj) {
             opts.supported = Object.keys(this.siteObj.supportedLocales);
             sources.push(this.siteObj.defaultLocale);
@@ -802,8 +814,7 @@ module.exports = function RequestHandlerModule(pb) {
         var self = this;
         fs.readFile(absolutePath, function(err, content){
             if (err) {
-                self.serve404();
-                return;
+                return self.serve404();
             }
 
             //build response structure
@@ -863,9 +874,8 @@ module.exports = function RequestHandlerModule(pb) {
      * @return {Boolean} TRUE if mapped to a public resource directory, FALSE if not
      */
     RequestHandler.isPublicRoute = function(path){
-        var publicRoutes = [&#x27;/js/&#x27;, &#x27;/css/&#x27;, &#x27;/fonts/&#x27;, &#x27;/img/&#x27;, &#x27;/localization/&#x27;, &#x27;/favicon.ico&#x27;, &#x27;/docs/&#x27;, &#x27;/bower_components/&#x27;];
-        for (var i = 0; i &lt; publicRoutes.length; i++) {
-            if (path.indexOf(publicRoutes[i]) == 0) {
+        for (var i = 0; i &lt; PUBLIC_ROUTE_PREFIXES.length; i++) {
+            if (path.indexOf(PUBLIC_ROUTE_PREFIXES[i]) === 0) {
                 return true;
             }
         }
@@ -920,11 +930,12 @@ module.exports = function RequestHandlerModule(pb) {
         getActiveTheme(function(error, activeTheme) {
 
             //build out params for handlers
+            self.localizationService = self.localizationService || self.deriveLocalization({});
             var params = {
                 mime: self.themeRoute &amp;&amp; self.themeRoute.content_type ? self.themeRoute.content_type : &#x27;text/html&#x27;,
                 error: err,
                 request: self.req,
-                localization: self.localization,
+                localization: self.localizationService,
                 activeTheme: activeTheme,
                 reqHandler: self,
                 errorCount: self.errorCount
@@ -1244,10 +1255,11 @@ module.exports = function RequestHandlerModule(pb) {
      * by gathering all initialization parameters and calling the controller&#x27;s
      * &quot;init&quot; function.
      * @method doRender
-     * @param {Object} pathVars The URL path&#x27;s variables
-     * @param {BaseController} cInstance An instance of the controller to be executed
-     * @param {Object} themeRoute
-     * @param {String} activeTheme The user set active theme
+     * @param {object} context
+     * @param {Object} context.pathVars The URL path&#x27;s variables
+     * @param {BaseController} context.cInstance An instance of the controller to be executed
+     * @param {Object} context.themeRoute
+     * @param {String} context.activeTheme The user set active theme
      */
     RequestHandler.prototype.doRender = function(context) {
         var self  = this;

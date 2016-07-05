@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\service\media\mongo_media_provider.js - PencilBlue</title>
+    <title>include/service/media/mongo_media_provider.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\service\media\mongo_media_provider.js</h1>
+<h1 class="file-heading">File: include/service/media/mongo_media_provider.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -237,13 +238,13 @@ module.exports = function MongoMediaProviderModule(pb) {
     function MongoMediaProvider(/*context*/) {};
 
     /**
-     * Retrieves the item in GridFS as a stream. 
+     * Retrieves the item in GridFS as a stream.
      * @method getStream
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
      * @param {Object} [options] Options for interacting with S3
      * @param {String} [options.bucket] The S3 bucket to interact with
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and a ReadableStream that contains the media content.
      */
     MongoMediaProvider.prototype.getStream = function(mediaPath, cb) {
@@ -252,7 +253,7 @@ module.exports = function MongoMediaProviderModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
             gs.open(function(err, gs) {
                 if (util.isError(err)) {
@@ -267,9 +268,9 @@ module.exports = function MongoMediaProviderModule(pb) {
     /**
      * Retrieves the content from GridFS as a String or Buffer.
      * @method get
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and an entity that contains the media content.
      */
     MongoMediaProvider.prototype.get = function(mediaPath, cb) {
@@ -278,7 +279,7 @@ module.exports = function MongoMediaProviderModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
             gs.open(function(err, gs) {
                 if (util.isError(err)) {
@@ -299,13 +300,13 @@ module.exports = function MongoMediaProviderModule(pb) {
     };
 
     /**
-     * Sets media content into GridFS based on the specified media path and 
+     * Sets media content into GridFS based on the specified media path and
      * options.  The stream provided must be a ReadableStream.
      * @method setStream
      * @param {ReadableStream} stream The content stream
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and the success of the operation.
      */
     MongoMediaProvider.prototype.setStream = function(stream, mediaPath, cb) {
@@ -326,13 +327,13 @@ module.exports = function MongoMediaProviderModule(pb) {
     };
 
     /**
-     * Sets media content into GridFS based on the specified media path and 
+     * Sets media content into GridFS based on the specified media path and
      * options.  The data must be in the form of a String or Buffer.
      * @method setStream
      * @param {String|Buffer} fileDataStrOrBuffOrStream The content to persist
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and the success of the operation.
      */
     MongoMediaProvider.prototype.set = function(fileDataStrOrBuff, mediaPath, cb) {
@@ -344,12 +345,12 @@ module.exports = function MongoMediaProviderModule(pb) {
                 mediaPath: mediaPath
             }
         };
-        
+
         pb.dbm.getDb(pb.config.db.name, function(err, db) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             var gs  = new GridStore(db, mediaPath, &#x27;w&#x27;, opt);
             gs.open(function(err, gs) {
                 gs.write(fileDataStrOrBuff, true, cb);
@@ -360,9 +361,9 @@ module.exports = function MongoMediaProviderModule(pb) {
     /**
      * Not Implemented
      * @method createWriteStream
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and a WriteableStream.
      */
     MongoMediaProvider.prototype.createWriteStream = function(mediaPath, cb) {
@@ -372,9 +373,9 @@ module.exports = function MongoMediaProviderModule(pb) {
     /**
      * Checks to see if the file actually exists in GridFS
      * @method exists
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and a Boolean.
      */
     MongoMediaProvider.prototype.exists = function(mediaPath, cb) {
@@ -383,7 +384,7 @@ module.exports = function MongoMediaProviderModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             GridStore.exist(db, mediaPath, cb);
         });
     };
@@ -391,9 +392,9 @@ module.exports = function MongoMediaProviderModule(pb) {
     /**
      * Deletes a file from the GridFS
      * @method delete
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and the success of the operation.
      */
     MongoMediaProvider.prototype.delete = function(mediaPath, cb) {
@@ -402,7 +403,7 @@ module.exports = function MongoMediaProviderModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             GridStore.unlink(db, mediaPath, cb);
         });
     };
@@ -410,9 +411,9 @@ module.exports = function MongoMediaProviderModule(pb) {
     /**
      * Retrieve the stats on the file
      * @method stat
-     * @param {String} mediaPath The path/key to the media.  Typically this is a 
+     * @param {String} mediaPath The path/key to the media.  Typically this is a
      * path such as: /media/2014/9/540a3ff0e30ddfb9e60000be-1409957872680.jpg
-     * @param {Function} cb A callback that provides two parameters: An Error, if 
+     * @param {Function} cb A callback that provides two parameters: An Error, if
      * occurred and an object that contains the file stats
      */
     MongoMediaProvider.prototype.stat = function(mediaPath, cb) {
@@ -421,7 +422,7 @@ module.exports = function MongoMediaProviderModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             var gs  = new GridStore(db, mediaPath, &#x27;r&#x27;);
             gs.open(function(err, gs) {
                 if (util.isError(err)) {

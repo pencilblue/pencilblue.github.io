@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\service\entities\content\content_view_loader.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.5.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include\service\entities\content\content_view_loader.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+	Copyright (C) 2015  PencilBlue, LLC
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var util        = require(&#x27;../../../util.js&#x27;);
+var async       = require(&#x27;async&#x27;);
+var HtmlEncoder = require(&#x27;htmlencode&#x27;);
+
+module.exports = function(pb) {
+
+    //pb dependencies
+    var DAO          = pb.DAO;
+    var Localization = pb.Localization;
+    var ClientJs     = pb.ClientJs;
+
+    /**
+     * Renders a 1 or more pieces of content such as articles or pages
+     * @class ContentViewLoader
+     * @constructor
+     * @param {Object} context
+     * @param {TemplateService} context.ts
+     * @param {Localization} context.ls
+     * @param {Object} [context.contentSettings]
+     * @param {Object} context.session
+     * @param {ContentObjectService} context.service
+     * @param {String} context.activeTheme
+     */
+    function ContentViewLoader(context) {
+        this.ts = context.ts;
+        this.ls = context.ls;
+        this.req = context.req;
+        this.contentSettings = context.contentSettings;
+        this.session = context.session;
+        this.service = context.service;
+        this.site = context.site;
+        this.siteObj = context.siteObj;
+        this.hostname = context.hostname;
+        this.onlyThisSite = context.onlyThisSite;
+        this.activeTheme = context.activeTheme;
+    };
+
+    /**
+     *
+     * @private
+     * @static
+     * @property DISPLAY_NONE_STYLE_ATTR
+     * @type {String}
+     */
+    var DISPLAY_NONE_STYLE_ATTR = &#x27;display:none;&#x27;;
+
+    /**
+     *
+     * @method getMetaInfo
+     * @param {Object} content
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.renderSingle = function(content, options, cb) {
+        this.render([content], options, cb);
+    };
+
+    /**
+     *
+     * @method render
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Boolean} [options.useDefaultTemplate] Forces the default theme template to be selected
+     * @param {Object} [options.topic] The topic represented by the collection of content to be rendered
+     * @param {Object} [options.section] The section represented by the collection of content to be rendered
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.render = function(contentArray, options, cb) {
+        var self = this;
+
+        this.gatherData(contentArray, options, function(err, data) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            self.setMetaInfo(data.meta, options);
+            self.ts.registerLocal(&#x27;current_url&#x27;, self.req.url);
+            self.ts.registerLocal(&#x27;navigation&#x27;, new pb.TemplateValue(data.nav.navigation, false));
+            self.ts.registerLocal(&#x27;account_buttons&#x27;, new pb.TemplateValue(data.nav.accountButtons, false));
+            self.ts.registerLocal(&#x27;infinite_scroll&#x27;, function(flag, cb) {
+                self.onInfiniteScroll(contentArray, options, cb);
+            });
+            self.ts.registerLocal(&#x27;page_name&#x27;, function(flag, cb) {
+                self.onPageName(contentArray, options, cb);
+            });
+            self.ts.registerLocal(&#x27;angular&#x27;, function(flag, cb) {
+                self.onAngular(contentArray, options, cb);
+            });
+            self.ts.registerLocal(&#x27;articles&#x27;, function(flag, cb) {
+                self.onContent(contentArray, options, cb);
+            });
+
+            self.getTemplate(contentArray, options, function(err, template) {
+                if (util.isError(err)) {
+                    return cb(err);
+                }
+
+                self.ts.load(template, cb);
+            });
+        });
+    };
+
+    /**
+     *
+     * @method getTemplate
+     * @param {Array|Object} content
+     * @param {Object} options
+     * @param {Boolean} [options.useDefaultTemplate] Forces the default theme template to be selected
+     * @param {Object} [options.topic] The topic represented by the collection of content to be rendered
+     * @param {Object} [options.section] The section represented by the collection of content to be rendered
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.getTemplate = function(content, options, cb) {
+
+        //check if we should just use whatever default there is.
+        //this could fall back to an active theme or the default pencilblue theme.
+        if (options.useDefaultTemplate || util.isObject(options.topic) || util.isObject(options.section)) {
+            return cb(null, this.getDefaultTemplatePath());
+        }
+
+        //now we are dealing with a single page or article. the template will be
+        //judged based off the article&#x27;s preference.
+        if (util.isArray(content) &amp;&amp; content.length &gt; 0) {
+            content = content[0];
+        }
+        var uidAndTemplate = content.template;
+
+        //when no template is specified or is empty we no that the article has no
+        //preference and we can fall back on the default (index).  We depend on the
+        //template service to determine who has priority based on the active theme
+        //then defaulting back to pencilblue.
+        if (!pb.validation.validateNonEmptyStr(uidAndTemplate, true)) {
+            var defautTemplatePath = this.getDefaultTemplatePath();
+            pb.log.silly(&quot;ContentController: No template specified, defaulting to %s.&quot;, defautTemplatePath);
+            return cb(null, defautTemplatePath);
+        }
+
+        //we now know that the template was specified.  We have to split the value
+        //to extract the intended theme and the template path
+        var pieces = uidAndTemplate.split(&#x27;|&#x27;);
+
+        //for backward compatibility we let the template service determine where to
+        //find the template when no template is specified.  This mostly catches the
+        //default case of &quot;index&quot;
+        if (pieces.length === 1) {
+
+            pb.log.silly(&quot;ContentController: No theme specified, Template Service will delegate [%s]&quot;, pieces[0]);
+            return cb(null, pieces[0]);
+        }
+        else if (pieces.length &lt;= 0) {
+
+            //shit&#x27;s broke. This should never be the case but better safe than sorry
+            return cb(new Error(&quot;The content&#x27;s template property provided an invalid value of [&quot;+content.template+&#x27;]&#x27;), null);
+        }
+
+        //the theme is specified, we ensure that the theme is installed and
+        //initialized otherwise we let the template service figure out how to
+        //delegate.
+        if (!pb.PluginService.isActivePlugin(pieces[0])) {
+            pb.log.silly(&quot;ContentController: Theme [%s] is not active, Template Service will delegate [%s]&quot;, pieces[0], pieces[1]);
+            return cb(null, pieces[1]);
+        }
+
+        //the theme is OK. We don&#x27;t gaurantee that the template is on the disk but we can testify that it SHOULD.  We set the
+        //prioritized theme for the template service.
+        pb.log.silly(&quot;ContentController: Prioritizing Theme [%s] for template [%s]&quot;, pieces[0], pieces[1]);
+        this.ts.setTheme(pieces[0]);
+        cb(null, pieces[1]);
+    };
+
+    /**
+     *
+     * @method getDefaultTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultTemplatePath = function() {
+        return &#x27;index&#x27;;
+    };
+
+    /**
+     *
+     * @method onContent
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onContent = function(contentArray, options, cb) {
+        var self  = this;
+        var limit = Math.min(this.contentSettings.articles_per_page, contentArray.length);
+
+        var tasks = util.getTasks(contentArray, function(contentArray, i) {
+            return function(callback) {
+                if (i &gt;= limit) {
+                    return callback(null, &#x27;&#x27;);
+                }
+                self.renderContent(contentArray[i], options, callback);
+            };
+        });
+        async.series(tasks, function(err, content) {
+            cb(err, new pb.TemplateValue(content.join(&#x27;&#x27;), false));
+        });
+    };
+
+    /**
+     *
+     * @method gatherData
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.gatherData = function(contentArray, options, cb) {
+        var self  = this;
+        var tasks = {
+
+            //navigation
+            nav: function(callback) {
+
+                var opts = {
+                    currUrl: self.req.url,
+                    session: self.session,
+                    ls: self.ls,
+                    site: self.site,
+                    activeTheme: self.activeTheme
+                };
+                var topMenuService = new pb.TopMenuService();
+                topMenuService.getNavItems(opts, callback);
+            },
+
+            meta: function(callback) {
+                self.getMetaInfo(contentArray, options, callback);
+            },
+
+            contentSettings: function(callback) {
+                if (util.isObject(self.contentSettings)) {
+                    return callback(null, self.contentSettings);
+                }
+
+                var contentService = new pb.ContentService({site: self.site, onlyThisSite: self.onlyThisSite});
+                contentService.getSettings(function(err, contentSettings) {
+                    self.contentSettings = contentSettings;
+                    callback(err, contentSettings);
+                });
+            }
+        };
+        async.parallel(tasks, cb);
+    };
+
+    /**
+     *
+     * @method onAngular
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onAngular = function(contentArray, options, cb) {
+        var objects = {
+            trustHTML: &#x27;function(string){return $sce.trustAsHtml(string);}&#x27;
+        };
+        var angularData = pb.ClientJs.getAngularController(objects, [&#x27;ngSanitize&#x27;]);
+        cb(null, angularData);
+    };
+
+    /**
+     *
+     * @method onPageName
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onPageName = function(contentArray, options, cb) {
+        var content = contentArray[0];
+        if (!util.isObject(content)) {
+            return cb(null, options.metaTitle || this.siteObj.displayName);
+        }
+
+        var name = &#x27;&#x27;;
+        if(util.isObject(options.section)) {
+            name = options.section.name;
+        }
+        else if (util.isObject(options.topic)) {
+            name = options.topic.name;
+        }
+        else if (contentArray.length === 1) {
+            name = content.headline;
+        }
+        else {
+            name = options.metaTitle || &#x27;&#x27;;
+        }
+
+        cb(null, name ? name + &#x27; | &#x27; + this.siteObj.displayName : this.siteObj.displayName);
+    };
+
+    /**
+     *
+     * @method onInfiniteScroll
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onInfiniteScroll = function(contentArray, options, cb) {
+        if(contentArray.length &lt;= 1) {
+            return cb(null, &#x27;&#x27;);
+        }
+
+        var infiniteScrollScript = pb.ClientJs.includeJS(&#x27;/js/infinite_article_scroll.js&#x27;);
+        if(util.isObject(options.section)) {
+            infiniteScrollScript += pb.ClientJs.getJSTag(&#x27;var infiniteScrollSection = &quot;&#x27; + options.section[pb.DAO.getIdField()] + &#x27;&quot;;&#x27;);
+        }
+        else if(util.isObject(options.topic)) {
+            infiniteScrollScript += pb.ClientJs.getJSTag(&#x27;var infiniteScrollTopic = &quot;&#x27; + options.topic.topic[pb.DAO.getIdField()] + &#x27;&quot;;&#x27;);
+        }
+
+        var val = new pb.TemplateValue(infiniteScrollScript, false);
+        cb(null, val);
+    };
+
+    /**
+     *
+     * @method setMetaInfo
+     * @param {Object} options
+     */
+    ContentViewLoader.prototype.setMetaInfo = function(meta, options) {
+        this.ts.registerLocal(&#x27;meta_keywords&#x27;, meta.keywords);
+        this.ts.registerLocal(&#x27;meta_desc&#x27;, options.metaDescription || meta.description);
+        this.ts.registerLocal(&#x27;meta_title&#x27;, options.metaTitle || meta.title);
+        this.ts.registerLocal(&#x27;meta_thumbnail&#x27;, meta.thumbnail || &#x27;&#x27;);
+        this.ts.registerLocal(&#x27;meta_lang&#x27;, options.metaLang || this.ls.language);
+    };
+
+    /**
+     *
+     * @method getMetaInfo
+     * @param {Array} contentArray
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.getMetaInfo = function(contentArray, options, cb) {
+        if (contentArray.length === 0) {
+            return cb(null, {});
+        }
+        this.service.getMetaInfo(contentArray[0], cb);
+    };
+
+    /**
+     *
+     * @method renderContent
+     * @param {Object} content
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.renderContent = function(content, options, cb) {
+        var self = this;
+
+        //set recurring params
+        if (util.isNullOrUndefined(options.contentIndex)) {
+            options.contentIndex = 0;
+        }
+
+        var isPage           = this.service.getType() === &#x27;page&#x27;;
+        var showByLine       = this.contentSettings.display_bylines &amp;&amp; !isPage;
+        var showTimestamp    = this.contentSettings.display_timestamp &amp;&amp; !isPage;
+        var ats              = self.ts.getChildInstance();
+        var contentUrlPrefix = &#x27;/&#x27; + this.service.getType() + &#x27;/&#x27;;
+        self.ts.reprocess = false;
+        ats.registerLocal(&#x27;article_permalink&#x27;, function(flag, cb) {
+            self.onContentPermalink(content, options, cb);
+        });
+        ats.registerLocal(&#x27;article_headline&#x27;, function(flag, cb) {
+            self.onContentHeadline(content, options, cb);
+        });
+        ats.registerLocal(&#x27;article_headline_nolink&#x27;, content.headline);
+        ats.registerLocal(&#x27;article_subheading&#x27;, ContentViewLoader.valOrEmpty(content.subheading));
+        ats.registerLocal(&#x27;article_subheading_display&#x27;, ContentViewLoader.getDisplayAttr(content.subheading));
+        ats.registerLocal(&#x27;article_id&#x27;, content[pb.DAO.getIdField()] + &#x27;&#x27;);
+        ats.registerLocal(&#x27;article_index&#x27;, options.contentIndex);
+        ats.registerLocal(&#x27;article_timestamp&#x27;, showTimestamp &amp;&amp; content.timestamp ? content.timestamp : &#x27;&#x27;);
+        ats.registerLocal(&#x27;article_timestamp_display&#x27;, ContentViewLoader.getDisplayAttr(showTimestamp));
+        ats.registerLocal(&#x27;article_layout&#x27;, new pb.TemplateValue(content.layout, false));
+        ats.registerLocal(&#x27;article_url&#x27;, content.url);
+        ats.registerLocal(&#x27;display_byline&#x27;, ContentViewLoader.getDisplayAttr(showByLine));
+        ats.registerLocal(&#x27;author_photo&#x27;, ContentViewLoader.valOrEmpty(content.author_photo));
+        ats.registerLocal(&#x27;author_photo_display&#x27;, ContentViewLoader.getDisplayAttr(content.author_photo));
+        ats.registerLocal(&#x27;author_name&#x27;, ContentViewLoader.valOrEmpty(content.author_name));
+        ats.registerLocal(&#x27;author_position&#x27;, ContentViewLoader.valOrEmpty(content.author_position));
+        ats.registerLocal(&#x27;media_body_style&#x27;, ContentViewLoader.valOrEmpty(content.media_body_style));
+        ats.registerLocal(&#x27;comments&#x27;, function(flag, cb) {
+            if (isPage || !pb.ArticleService.allowComments(self.contentSettings, content)) {
+                return cb(null, &#x27;&#x27;);
+            }
+
+            var ts = ats.getChildInstance();
+            self.renderComments(content, ts, function(err, comments) {
+                cb(err, new pb.TemplateValue(comments, false));
+            });
+        });
+        ats.load(self.getDefaultContentTemplatePath(), cb);
+
+        options.contentIndex++;
+    };
+
+    /**
+     *
+     * @method getDefaultContentTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultContentTemplatePath = function() {
+        return &#x27;elements/article&#x27;;
+    };
+
+    /**
+     *
+     * @method renderComments
+     * @param {Object} content
+     * @param {TemplateService} ts
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.renderComments = function(content, ts, cb) {
+        var self           = this;
+        var commentingUser = null;
+        if(pb.security.isAuthenticated(this.session)) {
+            commentingUser = pb.CommentService.getCommentingUser(this.session.authentication.user);
+        }
+
+        ts.registerLocal(&#x27;user_photo&#x27;, function(flag, cb) {
+            self.onCommentingUserPhoto(content, commentingUser, cb);
+        });
+        ts.registerLocal(&#x27;user_position&#x27;, function(flag, cb) {
+            self.onCommentingUserPosition(content, commentingUser, cb);
+        });
+        ts.registerLocal(&#x27;user_name&#x27;, commentingUser ? commentingUser.name : &#x27;&#x27;);
+        ts.registerLocal(&#x27;display_submit&#x27;, commentingUser ? &#x27;block&#x27; : &#x27;none&#x27;);
+        ts.registerLocal(&#x27;display_login&#x27;, commentingUser ? &#x27;none&#x27; : &#x27;block&#x27;);
+        ts.registerLocal(&#x27;comments_length&#x27;, util.isArray(content.comments) ? content.comments.length : 0);
+        ts.registerLocal(&#x27;individual_comments&#x27;, function(flag, cb) {
+            if (!util.isArray(content.comments) || content.comments.length == 0) {
+                return cb(null, &#x27;&#x27;);
+            }
+
+            var tasks = util.getTasks(content.comments, function(comments, i) {
+                return function(callback) {
+
+                    var cts = ts.getChildInstance();
+                    self.renderComment(comments[i], cts, callback);
+                };
+            });
+            async.parallel(tasks, function(err, results) {
+                cb(err, new pb.TemplateValue(results.join(&#x27;&#x27;), false));
+            });
+        });
+        ts.load(self.getDefaultCommentsTemplatePath(), cb);
+    };
+
+    /**
+     *
+     * @method getDefaultCommentsTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultCommentsTemplatePath = function() {
+        return &#x27;elements/comments&#x27;;
+    };
+
+    /**
+     *
+     * @method renderComment
+     * @param {Object} comment
+     * @param {TemplateService} cts
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.renderComment = function(comment, cts, cb) {
+
+        cts.reprocess = false;
+        cts.registerLocal(&#x27;commenter_photo&#x27;, comment.commenter_photo ? comment.commenter_photo : &#x27;&#x27;);
+        cts.registerLocal(&#x27;display_photo&#x27;, comment.commenter_photo ? &#x27;block&#x27; : &#x27;none&#x27;);
+        cts.registerLocal(&#x27;commenter_name&#x27;, comment.commenter_name);
+        cts.registerLocal(&#x27;commenter_position&#x27;, comment.commenter_position ? &#x27;, &#x27; + comment.commenter_position : &#x27;&#x27;);
+        cts.registerLocal(&#x27;content&#x27;, comment.content);
+        cts.registerLocal(&#x27;timestamp&#x27;, comment.timestamp);
+        cts.load(this.getDefaultCommentTemplatePath(), cb);
+    };
+
+    /**
+     *
+     * @method getDefaultCommentTemplatePath
+     * @return {String}
+     */
+    ContentViewLoader.prototype.getDefaultCommentTemplatePath = function() {
+        return &#x27;elements/comments/comment&#x27;;
+    };
+
+    /**
+     *
+     * @method onCommentingUserPhoto
+     * @param {Object} content
+     * @param {Object} commentingUser
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onCommentingUserPhoto = function(content, commentingUser, cb) {
+        var val = &#x27;&#x27;;
+        if (commentingUser) {
+            val = commentingUser.photo || &#x27;&#x27;;
+        }
+        cb(null, val);
+    };
+
+    /**
+     *
+     * @method onCommentingUserPosition
+     * @param {Object} content
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onCommentingUserPosition = function(content, commentingUser, cb) {
+        var val = &#x27;&#x27;;
+        if (commentingUser &amp;&amp; util.isArray(commentingUser.position) &amp;&amp; commentingUser.position.length &gt; 0) {
+            val = &#x27;, &#x27; + commentingUser.position;
+        }
+        cb(null, val);
+    };
+
+    /**
+     *
+     * @method onContentPermalink
+     * @param {Object} content
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onContentPermalink = function(content, options, cb) {
+        cb(null, this.createContentPermalink(content));
+    };
+
+    /**
+     *
+     * @method onContentHeadline
+     * @param {Object} content
+     * @param {Object} options
+     * @param {Function} cb
+     */
+    ContentViewLoader.prototype.onContentHeadline = function(content, options, cb) {
+        var url = this.createContentPermalink(content);
+        var val = new pb.TemplateValue(&#x27;&lt;a href=&quot;&#x27; + url + &#x27;&quot;&gt;&#x27; + HtmlEncoder.htmlEncode(content.headline) + &#x27;&lt;/a&gt;&#x27;, false);
+        cb(null, val);
+    };
+
+    /**
+     *
+     * @method createContentPermalink
+     * @param {Object} content
+     * @return {String}
+     */
+    ContentViewLoader.prototype.createContentPermalink = function(content) {
+        var prefix = &#x27;/&#x27; + this.service.getType();
+        return pb.UrlService.createSystemUrl(pb.UrlService.urlJoin(prefix, content.url), { hostname: this.hostname });
+    };
+
+    /**
+     *
+     * @static
+     * @method getDisplayAttr
+     * @param {*} val
+     * @return {String}
+     */
+    ContentViewLoader.getDisplayAttr = function(val) {
+        return val ? &#x27;&#x27; : DISPLAY_NONE_STYLE_ATTR;
+    };
+
+    /**
+     * When passed a value it is evaluated as a boolean.  If evaluated to TRUE
+     * the value is returned, if FALSE empty string is returned
+     * @static
+     * @method valOrEmpty
+     * @param {*} val
+     * @return {*}
+     */
+    ContentViewLoader.valOrEmpty = function(val) {
+        return val ? val : &#x27;&#x27;;
+    };
+
+    return ContentViewLoader;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

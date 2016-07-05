@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\system\server_registration.js - PencilBlue</title>
+    <title>include/system/server_registration.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\system\server_registration.js</h1>
+<h1 class="file-heading">File: include/system/server_registration.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -224,12 +225,11 @@
 var cluster = require(&#x27;cluster&#x27;);
 var os      = require(&#x27;os&#x27;);
 var domain  = require(&#x27;domain&#x27;);
-var process = require(&#x27;process&#x27;);
 var async   = require(&#x27;async&#x27;);
 var util    = require(&#x27;../util.js&#x27;);
 
 module.exports = function ServerRegistrationModule(pb) {
-    
+
     /**
      * Singleton instance
      * @private
@@ -319,7 +319,7 @@ module.exports = function ServerRegistrationModule(pb) {
         pb_version: function(cb) {
             cb(null, pb.config.version);
         },
-        
+
         update_interval: function(cb) {
             cb(null, pb.config.registry.update_interval);
         }
@@ -425,7 +425,7 @@ module.exports = function ServerRegistrationModule(pb) {
     ServerRegistration.prototype.doRegistration = function(cb) {
         cb = cb || util.cb;
 
-        //ensure a provider was instantiated.  
+        //ensure a provider was instantiated.
         //Server registration could be turned off.
         if (!this.provider) {
             return cb(null, false);
@@ -440,7 +440,7 @@ module.exports = function ServerRegistrationModule(pb) {
             else if (!util.isObject(update)) {
                 return cb(err, false);
             }
-            
+
             //perform the registration update
             update.id          = ServerRegistration.generateKey();
             update.last_update = new Date();
@@ -460,7 +460,7 @@ module.exports = function ServerRegistrationModule(pb) {
     };
 
     /**
-     * 
+     *
      * @static
      * @method logUpdateResult
      * @param {String} key
@@ -519,7 +519,7 @@ module.exports = function ServerRegistrationModule(pb) {
          }
          return address;
     };
-    
+
     /**
      * Retrieves the singleton instance of the service registry
      * @static
@@ -531,11 +531,11 @@ module.exports = function ServerRegistrationModule(pb) {
         if (INSTANCE) {
             return INSTANCE;
         }
-        
+
         //create a provider if not provided
         var provider = null;
         if (!provider) {
-            
+
             var RegistrationProvider = null;
             if (pb.config.registry.type === &#x27;redis&#x27;) {
                 RegistrationProvider = pb.RedisRegistrationProvider;
@@ -548,7 +548,7 @@ module.exports = function ServerRegistrationModule(pb) {
             }
             provider = new RegistrationProvider();
         }
-        
+
         return INSTANCE = new ServerRegistration(provider);
     };
 

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_util.js.html#l27"><code>include\util.js:27</code></a>
+            Defined in: <a href="../files/include_util.js.html#l28"><code>include&#x2F;util.js:28</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -291,6 +292,11 @@
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getExtension">getExtension</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFileExtensionFilter">getFileExtensionFilter</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -421,7 +427,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l62"><code>include\util.js:62</code></a>
+        <a href="../files/include_util.js.html#l63"><code>include&#x2F;util.js:63</code></a>
         </p>
 
 
@@ -483,7 +489,7 @@ function will throw the error.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l402"><code>include\util.js:402</code></a>
+        <a href="../files/include_util.js.html#l403"><code>include&#x2F;util.js:403</code></a>
         </p>
 
 
@@ -543,7 +549,7 @@ function will throw the error.</p>
                         <code>array</code>
                 </li>
                 <li class="arg">
-                        <code>defaultVal</code>
+                        <code class="optional">[defaultVal=true]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -562,7 +568,7 @@ function will throw the error.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l222"><code>include\util.js:222</code></a>
+        <a href="../files/include_util.js.html#l224"><code>include&#x2F;util.js:224</code></a>
         </p>
 
 
@@ -590,8 +596,9 @@ function will throw the error.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">defaultVal</code>
+                        <code class="param-name optional">[defaultVal=true]</code>
                         <span class="type"></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -646,7 +653,7 @@ function will throw the error.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l251"><code>include\util.js:251</code></a>
+        <a href="../files/include_util.js.html#l253"><code>include&#x2F;util.js:253</code></a>
         </p>
 
 
@@ -740,7 +747,7 @@ representing the value of the derived property for that item.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l420"><code>include\util.js:420</code></a>
+        <a href="../files/include_util.js.html#l421"><code>include&#x2F;util.js:421</code></a>
         </p>
 
 
@@ -769,7 +776,7 @@ and the result is not needed.</p>
         </div>
 
         <span class="returns-inline">
-            <span class="type">Object</span>
+            <span class="type">Object | Array</span>
         </span>
 
 
@@ -782,7 +789,7 @@ and the result is not needed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l36"><code>include\util.js:36</code></a>
+        <a href="../files/include_util.js.html#l37"><code>include&#x2F;util.js:37</code></a>
         </p>
 
 
@@ -817,7 +824,7 @@ WARNING: Objects with circular dependencies will cause an error to be thrown.</p
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Object</span>:
+                        <span class="type">Object | Array</span>:
                     <p>Cloned object</p>
 
             </div>
@@ -850,7 +857,7 @@ WARNING: Objects with circular dependencies will cause an error to be thrown.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l378"><code>include\util.js:378</code></a>
+        <a href="../files/include_util.js.html#l379"><code>include&#x2F;util.js:379</code></a>
         </p>
 
 
@@ -919,7 +926,7 @@ WARNING: Objects with circular dependencies will cause an error to be thrown.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l48"><code>include\util.js:48</code></a>
+        <a href="../files/include_util.js.html#l49"><code>include&#x2F;util.js:49</code></a>
         </p>
 
 
@@ -995,7 +1002,7 @@ unintended side-effects as well as cause errors due to circular dependencies.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l97"><code>include\util.js:97</code></a>
+        <a href="../files/include_util.js.html#l98"><code>include&#x2F;util.js:98</code></a>
         </p>
 
 
@@ -1062,7 +1069,7 @@ unintended side-effects as well as cause errors due to circular dependencies.</p
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l191"><code>include\util.js:191</code></a>
+        <a href="../files/include_util.js.html#l192"><code>include&#x2F;util.js:192</code></a>
         </p>
 
 
@@ -1095,7 +1102,7 @@ unintended side-effects as well as cause errors due to circular dependencies.</p
 
                     <div class="param-description">
                         <p>A function that accepts 4 parameters.  The value
-of the current property or index.  The current index (property name if object).  The iterable.<br>
+of the current property or index.  The current index (property name if object).  The iterable.
 Finally, the numerical index if the iterable is an object.</p>
 
                     </div>
@@ -1132,7 +1139,7 @@ Finally, the numerical index if the iterable is an object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l495"><code>include\util.js:495</code></a>
+        <a href="../files/include_util.js.html#l496"><code>include&#x2F;util.js:496</code></a>
         </p>
 
 
@@ -1204,7 +1211,7 @@ Finally, the numerical index if the iterable is an object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l702"><code>include\util.js:702</code></a>
+        <a href="../files/include_util.js.html#l703"><code>include&#x2F;util.js:703</code></a>
         </p>
 
 
@@ -1282,6 +1289,70 @@ a resource</p>
 
 
 </div>
+<div id="method_getFileExtensionFilter" class="method item">
+    <h3 class="name"><code>getFileExtensionFilter</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>extension</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Function</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_util.js.html#l741"><code>include&#x2F;util.js:741</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a filter function to be used with the getFiles function to skip files that are not of the specified type</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">extension</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Function</span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_getFiles" class="method item">
     <h3 class="name"><code>getFiles</code></h3>
 
@@ -1310,7 +1381,7 @@ a resource</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l534"><code>include\util.js:534</code></a>
+        <a href="../files/include_util.js.html#l535"><code>include&#x2F;util.js:535</code></a>
         </p>
 
 
@@ -1422,7 +1493,7 @@ function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l141"><code>include\util.js:141</code></a>
+        <a href="../files/include_util.js.html#l142"><code>include&#x2F;util.js:142</code></a>
         </p>
 
 
@@ -1511,7 +1582,7 @@ async.series(tasks, util.cb);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l332"><code>include\util.js:332</code></a>
+        <a href="../files/include_util.js.html#l334"><code>include&#x2F;util.js:334</code></a>
         </p>
 
 
@@ -1591,7 +1662,7 @@ property name of each object in the array that holds the hash key.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l744"><code>include\util.js:744</code></a>
+        <a href="../files/include_util.js.html#l759"><code>include&#x2F;util.js:759</code></a>
         </p>
 
 
@@ -1662,7 +1733,7 @@ properties of prototypes</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l75"><code>include\util.js:75</code></a>
+        <a href="../files/include_util.js.html#l76"><code>include&#x2F;util.js:76</code></a>
         </p>
 
 
@@ -1745,7 +1816,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l357"><code>include\util.js:357</code></a>
+        <a href="../files/include_util.js.html#l358"><code>include&#x2F;util.js:358</code></a>
         </p>
 
 
@@ -1812,7 +1883,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l484"><code>include\util.js:484</code></a>
+        <a href="../files/include_util.js.html#l485"><code>include&#x2F;util.js:485</code></a>
         </p>
 
 
@@ -1876,7 +1947,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l462"><code>include\util.js:462</code></a>
+        <a href="../files/include_util.js.html#l463"><code>include&#x2F;util.js:463</code></a>
         </p>
 
 
@@ -1940,7 +2011,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l473"><code>include\util.js:473</code></a>
+        <a href="../files/include_util.js.html#l474"><code>include&#x2F;util.js:474</code></a>
         </p>
 
 
@@ -2004,7 +2075,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l440"><code>include\util.js:440</code></a>
+        <a href="../files/include_util.js.html#l441"><code>include&#x2F;util.js:441</code></a>
         </p>
 
 
@@ -2068,7 +2139,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l451"><code>include\util.js:451</code></a>
+        <a href="../files/include_util.js.html#l452"><code>include&#x2F;util.js:452</code></a>
         </p>
 
 
@@ -2134,7 +2205,7 @@ the array</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l111"><code>include\util.js:111</code></a>
+        <a href="../files/include_util.js.html#l112"><code>include&#x2F;util.js:112</code></a>
         </p>
 
 
@@ -2211,7 +2282,7 @@ the second parameter instead of creating a new object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l668"><code>include\util.js:668</code></a>
+        <a href="../files/include_util.js.html#l669"><code>include&#x2F;util.js:669</code></a>
         </p>
 
 
@@ -2286,7 +2357,7 @@ will not be created.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l309"><code>include\util.js:309</code></a>
+        <a href="../files/include_util.js.html#l311"><code>include&#x2F;util.js:311</code></a>
         </p>
 
 
@@ -2361,7 +2432,7 @@ for each object in the array.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l127"><code>include\util.js:127</code></a>
+        <a href="../files/include_util.js.html#l128"><code>include&#x2F;util.js:128</code></a>
         </p>
 
 
@@ -2406,7 +2477,7 @@ objects have a property with the same name, &quot;b&quot;'s value will be preser
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l430"><code>include\util.js:430</code></a>
+        <a href="../files/include_util.js.html#l431"><code>include&#x2F;util.js:431</code></a>
         </p>
 
 
@@ -2462,7 +2533,7 @@ objects have a property with the same name, &quot;b&quot;'s value will be preser
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_util.js.html#l168"><code>include\util.js:168</code></a>
+        <a href="../files/include_util.js.html#l169"><code>include&#x2F;util.js:169</code></a>
         </p>
 
 
@@ -2483,7 +2554,7 @@ prototype function needs to be called with a specific context.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">context</code>
-                        <span class="type">Function</span>
+                        <span class="type"></span>
 
 
                     <div class="param-description">
@@ -2534,32 +2605,32 @@ when executed.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_TIME" class="property item">
-                        <h3 class="name"><code>TIME</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_util.js.html#l761"><code>include\util.js:761</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Provides typical conversions for time</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_TIME" class="property item">
+    <h3 class="name"><code>TIME</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_util.js.html#l776"><code>include&#x2F;util.js:776</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Provides typical conversions for time</p>
+
+    </div>
+
+
+
+</div>
             </div>
 
 

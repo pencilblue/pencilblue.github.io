@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_base_object_service.js.html#l29"><code>include\service\base_object_service.js:29</code></a>
+            Defined in: <a href="../files/include_service_base_object_service.js.html#l30"><code>include&#x2F;service&#x2F;base_object_service.js:30</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -244,7 +245,7 @@ triggered the operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l29"><code>include\service\base_object_service.js:29</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l30"><code>include&#x2F;service&#x2F;base_object_service.js:30</code></a>
         </p>
 
 
@@ -304,7 +305,7 @@ triggered the operation.</p>
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                            <li class="index-item method private">
+                            <li class="index-item method protected">
                                 <a href="#method__emit">_emit</a>
 
                             </li>
@@ -401,12 +402,22 @@ triggered the operation.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_notFound">notFound</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_on">on</a>
 
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_once">once</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_parseBoolean">parseBoolean</a>
 
                                     <span class="flag static">static</span>
                             </li>
@@ -455,37 +466,37 @@ triggered the operation.</p>
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_AFTER_DELETE">AFTER_DELETE</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_AFTER_SAVE">AFTER_SAVE</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_BEFORE_COUNT">BEFORE_COUNT</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_BEFORE_DELETE">BEFORE_DELETE</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_BEFORE_GET">BEFORE_GET</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_BEFORE_GET_ALL">BEFORE_GET_ALL</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_BEFORE_SAVE">BEFORE_SAVE</a>
 
                                     <span class="flag static">static</span>
@@ -494,17 +505,17 @@ triggered the operation.</p>
                                 <a href="#property_dao">dao</a>
 
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_FORMAT">FORMAT</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_GET_ALL">GET_ALL</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_GET_ALL">GET_ALL</a>
 
                                     <span class="flag static">static</span>
@@ -514,7 +525,7 @@ triggered the operation.</p>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_MERGE">MERGE</a>
 
                                     <span class="flag static">static</span>
@@ -523,7 +534,7 @@ triggered the operation.</p>
                                 <a href="#property_type">type</a>
 
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_VALIDATE">VALIDATE</a>
 
                                     <span class="flag static">static</span>
@@ -537,7 +548,7 @@ triggered the operation.</p>
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method__emit" class="method item private">
+<div id="method__emit" class="method item protected">
     <h3 class="name"><code>_emit</code></h3>
 
         <div class="args">
@@ -556,7 +567,7 @@ triggered the operation.</p>
 
 
 
-        <span class="flag private">private</span>
+        <span class="flag protected">protected</span>
 
 
 
@@ -565,7 +576,7 @@ triggered the operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l666"><code>include\service\base_object_service.js:666</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l675"><code>include&#x2F;service&#x2F;base_object_service.js:675</code></a>
         </p>
 
 
@@ -644,7 +655,7 @@ triggered the operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l387"><code>include\service\base_object_service.js:387</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l376"><code>include&#x2F;service&#x2F;base_object_service.js:376</code></a>
         </p>
 
 
@@ -724,7 +735,7 @@ triggered the operation.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l555"><code>include\service\base_object_service.js:555</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l547"><code>include&#x2F;service&#x2F;base_object_service.js:547</code></a>
         </p>
 
 
@@ -797,6 +808,9 @@ executed with the merged object.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
+                        <code>dto</code>
+                </li>
+                <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
@@ -815,7 +829,7 @@ executed with the merged object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l423"><code>include\service\base_object_service.js:423</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l412"><code>include&#x2F;service&#x2F;base_object_service.js:412</code></a>
         </p>
 
 
@@ -840,6 +854,16 @@ executed with the merged object.</p>
             <h4>Parameters:</h4>
 
             <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
                 <li class="param">
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
@@ -894,7 +918,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l714"><code>include\service\base_object_service.js:714</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l723"><code>include&#x2F;service&#x2F;base_object_service.js:723</code></a>
         </p>
 
 
@@ -958,7 +982,7 @@ don't follow proper procedure have their results excluded.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l283"><code>include\service\base_object_service.js:283</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l271"><code>include&#x2F;service&#x2F;base_object_service.js:271</code></a>
         </p>
 
 
@@ -1044,7 +1068,7 @@ the specified query</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l612"><code>include\service\base_object_service.js:612</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l620"><code>include&#x2F;service&#x2F;base_object_service.js:620</code></a>
         </p>
 
 
@@ -1102,7 +1126,7 @@ the specified query</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>options</code>
+                        <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -1120,7 +1144,7 @@ the specified query</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l629"><code>include\service\base_object_service.js:629</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l637"><code>include&#x2F;service&#x2F;base_object_service.js:637</code></a>
         </p>
 
 
@@ -1137,14 +1161,28 @@ the specified query</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">options</code>
+                        <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
-                        
+                        <p>See BaseObjectService#getSingle</p>
+
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[where]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">cb</code>
@@ -1168,7 +1206,7 @@ the specified query</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>message</code>
+                        <code class="optional">[message]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1187,7 +1225,7 @@ the specified query</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l753"><code>include\service\base_object_service.js:753</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l762"><code>include&#x2F;service&#x2F;base_object_service.js:762</code></a>
         </p>
 
 
@@ -1205,8 +1243,9 @@ the current principal did not have authroization to perform.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">message</code>
+                        <code class="param-name optional">[message]</code>
                         <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1233,6 +1272,9 @@ the current principal did not have authroization to perform.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
+                        <code>id</code>
+                </li>
+                <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
@@ -1251,7 +1293,7 @@ the current principal did not have authroization to perform.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l348"><code>include\service\base_object_service.js:348</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l336"><code>include&#x2F;service&#x2F;base_object_service.js:336</code></a>
         </p>
 
 
@@ -1270,6 +1312,16 @@ trigger the &quot;get&quot; event.</p>
 
             <ul class="params-list">
                 <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
+                <li class="param">
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
@@ -1286,7 +1338,7 @@ trigger the &quot;get&quot; event.</p>
 
 
                     <div class="param-description">
-                        <p>A callback that takes two parameters.  The first is
+                        <p>(Error, object|null) A callback that takes two parameters.  The first is
 an error, if occurred. The second is the object with the specified ID</p>
 
                     </div>
@@ -1322,7 +1374,7 @@ an error, if occurred. The second is the object with the specified ID</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l228"><code>include\service\base_object_service.js:228</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l216"><code>include&#x2F;service&#x2F;base_object_service.js:216</code></a>
         </p>
 
 
@@ -1447,7 +1499,7 @@ of the query.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l310"><code>include\service\base_object_service.js:310</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l298"><code>include&#x2F;service&#x2F;base_object_service.js:298</code></a>
         </p>
 
 
@@ -1567,7 +1619,7 @@ of the query.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l785"><code>include\service\base_object_service.js:785</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l807"><code>include&#x2F;service&#x2F;base_object_service.js:807</code></a>
         </p>
 
 
@@ -1615,7 +1667,7 @@ that are allowed to have HTML</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l214"><code>include\service\base_object_service.js:214</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l203"><code>include&#x2F;service&#x2F;base_object_service.js:203</code></a>
         </p>
 
 
@@ -1680,7 +1732,7 @@ that are allowed to have HTML</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l834"><code>include\service\base_object_service.js:834</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l856"><code>include&#x2F;service&#x2F;base_object_service.js:856</code></a>
         </p>
 
 
@@ -1739,7 +1791,7 @@ value is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l821"><code>include\service\base_object_service.js:821</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l843"><code>include&#x2F;service&#x2F;base_object_service.js:843</code></a>
         </p>
 
 
@@ -1786,7 +1838,7 @@ value is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l601"><code>include\service\base_object_service.js:601</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l602"><code>include&#x2F;service&#x2F;base_object_service.js:602</code></a>
         </p>
 
 
@@ -1851,7 +1903,7 @@ uniqueness for the collection</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l847"><code>include\service\base_object_service.js:847</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l869"><code>include&#x2F;service&#x2F;base_object_service.js:869</code></a>
         </p>
 
 
@@ -1923,7 +1975,7 @@ be the minimum of the MAX_RESULTS constant and the specified limit.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l860"><code>include\service\base_object_service.js:860</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l882"><code>include&#x2F;service&#x2F;base_object_service.js:882</code></a>
         </p>
 
 
@@ -2015,7 +2067,7 @@ be the minimum of the MAX_RESULTS constant and the specified limit.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l398"><code>include\service\base_object_service.js:398</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l387"><code>include&#x2F;service&#x2F;base_object_service.js:387</code></a>
         </p>
 
 
@@ -2122,7 +2174,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l205"><code>include\service\base_object_service.js:205</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l194"><code>include&#x2F;service&#x2F;base_object_service.js:194</code></a>
         </p>
 
 
@@ -2172,7 +2224,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l937"><code>include\service\base_object_service.js:937</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l986"><code>include&#x2F;service&#x2F;base_object_service.js:986</code></a>
         </p>
 
 
@@ -2211,6 +2263,71 @@ an error, if occurred. The second is the object that matches the specified query
 
 
 </div>
+<div id="method_notFound" class="method item">
+    <h3 class="name"><code>notFound</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[message]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Error</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l776"><code>include&#x2F;service&#x2F;base_object_service.js:776</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a new Error representative of the inability to locate the requested resource</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[message]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Error</span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_on" class="method item">
     <h3 class="name"><code>on</code></h3>
 
@@ -2226,7 +2343,7 @@ an error, if occurred. The second is the object that matches the specified query
         </div>
 
         <span class="returns-inline">
-            <span class="type">?</span>
+            <span class="type"></span>
         </span>
 
 
@@ -2239,7 +2356,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l879"><code>include\service\base_object_service.js:879</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l928"><code>include&#x2F;service&#x2F;base_object_service.js:928</code></a>
         </p>
 
 
@@ -2282,7 +2399,7 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">?</span>:
+                        <span class="type"></span>:
             </div>
         </div>
 
@@ -2303,7 +2420,7 @@ an error, if occurred. The second is the object that matches the specified query
         </div>
 
         <span class="returns-inline">
-            <span class="type">?</span>
+            <span class="type"></span>
         </span>
 
 
@@ -2316,7 +2433,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l891"><code>include\service\base_object_service.js:891</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l940"><code>include&#x2F;service&#x2F;base_object_service.js:940</code></a>
         </p>
 
 
@@ -2359,7 +2476,72 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">?</span>:
+                        <span class="type"></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_parseBoolean" class="method item">
+    <h3 class="name"><code>parseBoolean</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>val</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l901"><code>include&#x2F;service&#x2F;base_object_service.js:901</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Extracts a boolean value from the provided value.  Null or undefined values will return false.  Strings of '1' or
+'true' (case sensitive) will return TRUE.  All other values will return false.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">val</code>
+                        <span class="type">String | Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
             </div>
         </div>
 
@@ -2377,7 +2559,7 @@ an error, if occurred. The second is the object that matches the specified query
         </div>
 
         <span class="returns-inline">
-            <span class="type">?</span>
+            <span class="type"></span>
         </span>
 
 
@@ -2390,7 +2572,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l915"><code>include\service\base_object_service.js:915</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l964"><code>include&#x2F;service&#x2F;base_object_service.js:964</code></a>
         </p>
 
 
@@ -2423,7 +2605,7 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">?</span>:
+                        <span class="type"></span>:
             </div>
         </div>
 
@@ -2444,7 +2626,7 @@ an error, if occurred. The second is the object that matches the specified query
         </div>
 
         <span class="returns-inline">
-            <span class="type">?</span>
+            <span class="type"></span>
         </span>
 
 
@@ -2457,7 +2639,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l903"><code>include\service\base_object_service.js:903</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l952"><code>include&#x2F;service&#x2F;base_object_service.js:952</code></a>
         </p>
 
 
@@ -2500,7 +2682,7 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">?</span>:
+                        <span class="type"></span>:
             </div>
         </div>
 
@@ -2534,7 +2716,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l767"><code>include\service\base_object_service.js:767</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l789"><code>include&#x2F;service&#x2F;base_object_service.js:789</code></a>
         </p>
 
 
@@ -2590,6 +2772,9 @@ an error, if occurred. The second is the object that matches the specified query
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
+                        <code>dto</code>
+                </li>
+                <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
@@ -2608,7 +2793,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l471"><code>include\service\base_object_service.js:471</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l462"><code>include&#x2F;service&#x2F;base_object_service.js:462</code></a>
         </p>
 
 
@@ -2633,6 +2818,16 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Parameters:</h4>
 
             <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
                 <li class="param">
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
@@ -2686,7 +2881,7 @@ an error, if occurred. The second is the object that matches the specified query
         </div>
 
         <span class="returns-inline">
-            <span class="type">?</span>
+            <span class="type">EventEmitter</span>
         </span>
 
 
@@ -2699,7 +2894,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l926"><code>include\service\base_object_service.js:926</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l975"><code>include&#x2F;service&#x2F;base_object_service.js:975</code></a>
         </p>
 
 
@@ -2732,7 +2927,7 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">?</span>:
+                        <span class="type">EventEmitter</span>:
             </div>
         </div>
 
@@ -2743,6 +2938,9 @@ an error, if occurred. The second is the object that matches the specified query
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>dto</code>
+                </li>
                 <li class="arg">
                         <code class="optional">[options]</code>
                 </li>
@@ -2762,7 +2960,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l447"><code>include\service\base_object_service.js:447</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l437"><code>include&#x2F;service&#x2F;base_object_service.js:437</code></a>
         </p>
 
 
@@ -2787,6 +2985,16 @@ an error, if occurred. The second is the object that matches the specified query
             <h4>Parameters:</h4>
 
             <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">dto</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                </li>
                 <li class="param">
                         <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
@@ -2841,7 +3049,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l739"><code>include\service\base_object_service.js:739</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l748"><code>include&#x2F;service&#x2F;base_object_service.js:748</code></a>
         </p>
 
 
@@ -2859,7 +3067,7 @@ an error, if occurred. The second is the object that matches the specified query
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">validationFailures</code>
-                        <span class="type">Array</span>
+                        <span class="type">Array | String</span>
 
 
                     <div class="param-description">
@@ -2908,7 +3116,7 @@ an error, if occurred. The second is the object that matches the specified query
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_base_object_service.js.html#l698"><code>include\service\base_object_service.js:698</code></a>
+        <a href="../files/include_service_base_object_service.js.html#l707"><code>include&#x2F;service&#x2F;base_object_service.js:707</code></a>
         </p>
 
 
@@ -2966,416 +3174,404 @@ an error, if occurred. The second is the object that matches the specified query
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_AFTER_DELETE" class="property item private">
-                        <h3 class="name"><code>AFTER_DELETE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l194"><code>include\service\base_object_service.js:194</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when the delete function is called and after
-                    the delete operation has completed successfully.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_AFTER_SAVE" class="property item private">
-                        <h3 class="name"><code>AFTER_SAVE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l173"><code>include\service\base_object_service.js:173</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when a DTO is passed to the save function
-                    and after the save operation has completed successfully.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_BEFORE_COUNT" class="property item private">
-                        <h3 class="name"><code>BEFORE_COUNT</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l77"><code>include\service\base_object_service.js:77</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered before the count query is executed</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_BEFORE_DELETE" class="property item private">
-                        <h3 class="name"><code>BEFORE_DELETE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l184"><code>include\service\base_object_service.js:184</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when the delete function is called.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_BEFORE_GET" class="property item private">
-                        <h3 class="name"><code>BEFORE_GET</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l108"><code>include\service\base_object_service.js:108</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered before the query is executed to retrieve
-                    an item by ID</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_BEFORE_GET_ALL" class="property item private">
-                        <h3 class="name"><code>BEFORE_GET_ALL</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l87"><code>include\service\base_object_service.js:87</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered before the query is executed to retrieve
-                    results</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_BEFORE_SAVE" class="property item private">
-                        <h3 class="name"><code>BEFORE_SAVE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l161"><code>include\service\base_object_service.js:161</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when a DTO is passed to the save function
-                    and aftr the validate event has completed.  When validation failures
-                    occur this event will not fire.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_dao" class="property item">
-                        <h3 class="name"><code>dao</code></h3>
-                        <span class="type"><a href="../classes/DAO.html" class="crosslink">DAO</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l58"><code>include\service\base_object_service.js:58</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>An instance of DAO to be used to interact with the persistence layer</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_FORMAT" class="property item private">
-                        <h3 class="name"><code>FORMAT</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l129"><code>include\service\base_object_service.js:129</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when a DTO is passed to the save function</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_GET_ALL" class="property item private">
-                        <h3 class="name"><code>GET_ALL</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l98"><code>include\service\base_object_service.js:98</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when querying for one or more resources</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_GET_ALL" class="property item private">
-                        <h3 class="name"><code>GET_ALL</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l119"><code>include\service\base_object_service.js:119</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when retrieving a resource by ID</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_MAX_RESULTS" class="property item private">
-                        <h3 class="name"><code>MAX_RESULTS</code></h3>
-                        <span class="type">Integer</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l66"><code>include\service\base_object_service.js:66</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The maximum allowed number of results allowed to be returned when using
-                    the paging wrapper</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_MERGE" class="property item private">
-                        <h3 class="name"><code>MERGE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l139"><code>include\service\base_object_service.js:139</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when a DTO is passed to the save function
-                    and after the format event has completed</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_type" class="property item">
-                        <h3 class="name"><code>type</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l51"><code>include\service\base_object_service.js:51</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Represents the name of the collection to interact with</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_VALIDATE" class="property item private">
-                        <h3 class="name"><code>VALIDATE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_base_object_service.js.html#l150"><code>include\service\base_object_service.js:150</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The event that is triggered when a DTO is passed to the save function
-                    and after the merge event has completed</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_AFTER_DELETE" class="property item">
+    <h3 class="name"><code>AFTER_DELETE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l184"><code>include&#x2F;service&#x2F;base_object_service.js:184</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when the delete function is called and after
+the delete operation has completed successfully.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_AFTER_SAVE" class="property item">
+    <h3 class="name"><code>AFTER_SAVE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l165"><code>include&#x2F;service&#x2F;base_object_service.js:165</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when a DTO is passed to the save function
+and after the save operation has completed successfully.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_BEFORE_COUNT" class="property item">
+    <h3 class="name"><code>BEFORE_COUNT</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l78"><code>include&#x2F;service&#x2F;base_object_service.js:78</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered before the count query is executed</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_BEFORE_DELETE" class="property item">
+    <h3 class="name"><code>BEFORE_DELETE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l175"><code>include&#x2F;service&#x2F;base_object_service.js:175</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when the delete function is called.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_BEFORE_GET" class="property item">
+    <h3 class="name"><code>BEFORE_GET</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l106"><code>include&#x2F;service&#x2F;base_object_service.js:106</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered before the query is executed to retrieve
+an item by ID</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_BEFORE_GET_ALL" class="property item">
+    <h3 class="name"><code>BEFORE_GET_ALL</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l87"><code>include&#x2F;service&#x2F;base_object_service.js:87</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered before the query is executed to retrieve
+results</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_BEFORE_SAVE" class="property item">
+    <h3 class="name"><code>BEFORE_SAVE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l154"><code>include&#x2F;service&#x2F;base_object_service.js:154</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when a DTO is passed to the save function
+and aftr the validate event has completed.  When validation failures
+occur this event will not fire.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_dao" class="property item">
+    <h3 class="name"><code>dao</code></h3>
+    <span class="type"><a href="../classes/DAO.html" class="crosslink">DAO</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l59"><code>include&#x2F;service&#x2F;base_object_service.js:59</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>An instance of DAO to be used to interact with the persistence layer</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_FORMAT" class="property item">
+    <h3 class="name"><code>FORMAT</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l125"><code>include&#x2F;service&#x2F;base_object_service.js:125</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when a DTO is passed to the save function</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_GET_ALL" class="property item">
+    <h3 class="name"><code>GET_ALL</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l97"><code>include&#x2F;service&#x2F;base_object_service.js:97</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when querying for one or more resources</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_GET_ALL" class="property item">
+    <h3 class="name"><code>GET_ALL</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l116"><code>include&#x2F;service&#x2F;base_object_service.js:116</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when retrieving a resource by ID</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_MAX_RESULTS" class="property item private">
+    <h3 class="name"><code>MAX_RESULTS</code></h3>
+    <span class="type">Integer</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l67"><code>include&#x2F;service&#x2F;base_object_service.js:67</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The maximum allowed number of results allowed to be returned when using
+the paging wrapper</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_MERGE" class="property item">
+    <h3 class="name"><code>MERGE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l134"><code>include&#x2F;service&#x2F;base_object_service.js:134</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when a DTO is passed to the save function
+and after the format event has completed</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_type" class="property item">
+    <h3 class="name"><code>type</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l52"><code>include&#x2F;service&#x2F;base_object_service.js:52</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Represents the name of the collection to interact with</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_VALIDATE" class="property item">
+    <h3 class="name"><code>VALIDATE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_base_object_service.js.html#l144"><code>include&#x2F;service&#x2F;base_object_service.js:144</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event that is triggered when a DTO is passed to the save function
+and after the merge event has completed</p>
+
+    </div>
+
+
+
+</div>
             </div>
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\service\entities\site_service.js - PencilBlue</title>
+    <title>include/service/entities/site_service.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\service\entities\site_service.js</h1>
+<h1 class="file-heading">File: include/service/entities/site_service.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
- Copyright (C) 2015  PencilBlue, LLC
+ Copyright (C) 2016  PencilBlue, LLC
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -327,7 +328,7 @@ module.exports = function SiteServiceModule(pb) {
      */
     SiteService.prototype.getAllSites = function(cb) {
         var dao = new pb.DAO();
-        dao.q(SITE_COLL, { select: pb.DAO.SELECT_ALL, where: {} }, cb);
+        dao.q(SITE_COLL, { select: pb.DAO.PROJECT_ALL, where: {} }, cb);
     };
 
     /**
@@ -337,7 +338,7 @@ module.exports = function SiteServiceModule(pb) {
      */
     SiteService.prototype.getActiveSites = function(cb) {
         var dao = new pb.DAO();
-        dao.q(SITE_COLL, { select: pb.DAO.SELECT_ALL, where: {active: true} }, cb);
+        dao.q(SITE_COLL, { select: pb.DAO.PROJECT_ALL, where: {active: true} }, cb);
     };
 
     /**
@@ -377,7 +378,7 @@ module.exports = function SiteServiceModule(pb) {
      */
     SiteService.prototype.getSiteNameByUid = function(uid, cb) {
         var dao = new pb.DAO();
-        dao.q(SITE_COLL, {select: pb.DAO.SELECT_ALL, where: {uid: uid} }, function(err, result) {
+        dao.q(SITE_COLL, {select: pb.DAO.PROJECT_ALL, where: {uid: uid} }, function(err, result) {
             var siteName = (!uid || uid === SiteService.GLOBAL_SITE) ? &#x27;global&#x27; : &#x27;&#x27;;
 
             if (pb.util.isError(err)) {
@@ -495,7 +496,7 @@ module.exports = function SiteServiceModule(pb) {
      */
     SiteService.prototype.editSite = function(options, cb) {
         cb = cb || util.cb;
-        var name = util.format(&quot;EDIT_SITE%s&quot;, options.site);
+        var name = util.format(&quot;EDIT_SITE%s&quot;, options.uid);
         var job = new pb.SiteCreateEditJob();
         job.setRunAsInitiator(true);
         job.init(name);
@@ -508,10 +509,8 @@ module.exports = function SiteServiceModule(pb) {
      * Creates a site and saves it to the database.
      * @method createSite
      * @param {Object} options - object containing site fields
-     * @param {String} options.uid - site unique id
      * @param {String} options.hostname - result of site hostname edit/create
      * @param {String} options.displayName - result of site display name edit/create
-     * @param {String} id - the site unique identifier for the database
      * @param {Function} cb - callback function
      */
     SiteService.prototype.createSite = function(options, cb) {
@@ -698,13 +697,13 @@ module.exports = function SiteServiceModule(pb) {
     };
 
     /**
-     * Returns true if siteid given is global or non-existant (to remain backwards compatible)
+     * Returns true if siteId given is global or non-existent (to remain backwards compatible)
      * @method isGlobal
-     * @param {String} siteid - the site id to check
+     * @param {String} siteId - the site id to check
      * @return {Boolean} true if global or does not exist
      */
-    SiteService.isGlobal = function (siteid) {
-        return (!siteid || siteid === SiteService.GLOBAL_SITE);
+    SiteService.isGlobal = function (siteId) {
+        return (!siteId || siteId === SiteService.GLOBAL_SITE);
     };
 
     /**
@@ -773,14 +772,14 @@ module.exports = function SiteServiceModule(pb) {
      * @param {String} siteId
      * @param {Function} cb
      */
-    SiteService.prototype.deleteSiteSpecificContent = function (siteid, cb) {
+    SiteService.prototype.deleteSiteSpecificContent = function (siteId, cb) {
         var siteQueryService = new pb.SiteQueryService();
         siteQueryService.getCollections(function(err, allCollections) {
             var dao = new pb.DAO();
 
             var tasks = util.getTasks(allCollections, function (collections, i) {
                 return function (taskCallback) {
-                    dao.delete({site: siteid}, collections[i].name, function (err, commandResult) {
+                    dao.delete({site: siteId}, collections[i].name, function (err, commandResult) {
                         if (util.isError(err) || !commandResult) {
                             return taskCallback(err);
                         }
@@ -794,7 +793,7 @@ module.exports = function SiteServiceModule(pb) {
                     pb.log.error(err);
                     return cb(err);
                 }
-                pb.log.silly(&quot;Successfully deleted site %s from database&quot;, siteid);
+                pb.log.silly(&quot;Successfully deleted site %s from database&quot;, siteId);
                 cb(null, results);
             });
         });
@@ -811,7 +810,7 @@ module.exports = function SiteServiceModule(pb) {
             displayName: pb.config.siteName,
             uid: pb.SiteService.GLOBAL_SITE,
             hostname: pb.config.multisite.enabled ? url.parse(pb.config.multisite.globalRoot).host : url.parse(pb.config.siteRoot).host,
-            active: pb.config.multisite.enabled ? false : true,
+            active: !pb.config.multisite.enabled,
             defaultLocale: pb.Localization.getDefaultLocale(),
             supportedLocales: util.arrayToObj(pb.Localization.getSupported(), function(a, i) { return a[i]; }, function() { return true; }),
             prevHostnames: []

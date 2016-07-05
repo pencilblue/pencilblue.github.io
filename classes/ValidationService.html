@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,11 +205,10 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_validation_validation_service.js.html#l25"><code>include\validation\validation_service.js:25</code></a>
+            Defined in: <a href="../files/include_validation_validation_service.js.html#l25"><code>include&#x2F;validation&#x2F;validation_service.js:25</code></a>
         </div>
 
-            Module: <a href="../modules/Validation.html">Validation</a><br>
-            Parent Module: <a href="../modules/Services.html">Services</a>
+            Module: <a href="../modules/Services.html">Services</a>
 
 </div>
 
@@ -235,7 +235,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l25"><code>include\validation\validation_service.js:25</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l25"><code>include&#x2F;validation&#x2F;validation_service.js:25</code></a>
         </p>
 
 
@@ -357,9 +357,10 @@
 
                                     <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_validateEmail">validateEmail</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method deprecated">
                                 <a href="#method_validateNonEmptyStr">validateNonEmptyStr</a>
@@ -441,7 +442,7 @@
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -456,7 +457,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l297"><code>include\validation\validation_service.js:297</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l295"><code>include&#x2F;validation&#x2F;validation_service.js:295</code></a>
         </p>
 
 
@@ -483,8 +484,9 @@
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -523,7 +525,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l397"><code>include\validation\validation_service.js:397</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l395"><code>include&#x2F;validation&#x2F;validation_service.js:395</code></a>
         </p>
 
 
@@ -541,7 +543,7 @@
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">val</code>
-                        <span class="type">Boolean</span>
+                        <span class="type"></span>
 
 
                     <div class="param-description">
@@ -573,6 +575,9 @@
                 <li class="arg">
                         <code>val</code>
                 </li>
+                <li class="arg">
+                        <code class="optional">[required=false]</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -590,7 +595,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l420"><code>include\validation\validation_service.js:420</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l418"><code>include&#x2F;validation&#x2F;validation_service.js:418</code></a>
         </p>
 
 
@@ -614,6 +619,17 @@
                     <div class="param-description">
                         <p>The value under test</p>
 
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[required=false]</code>
+                        <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
                     </div>
 
                 </li>
@@ -648,10 +664,9 @@
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/Services.html">Services</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/include_utils_logging.js.html#l59"><code>include\utils\logging.js:59</code></a>
+        <a href="../files/include_utils_logging.js.html#l59"><code>include&#x2F;utils&#x2F;logging.js:59</code></a>
         </p>
 
 
@@ -683,7 +698,7 @@
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -698,7 +713,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l129"><code>include\validation\validation_service.js:129</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l127"><code>include&#x2F;validation&#x2F;validation_service.js:127</code></a>
         </p>
 
 
@@ -725,8 +740,9 @@
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -765,7 +781,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l408"><code>include\validation\validation_service.js:408</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l406"><code>include&#x2F;validation&#x2F;validation_service.js:406</code></a>
         </p>
 
 
@@ -820,7 +836,7 @@ string.</p>
                         <code class="optional">[required=false]</code>
                 </li>
                 <li class="arg">
-                        <code>Indicates</code>
+                        <code>strict</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -839,7 +855,7 @@ string.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l358"><code>include\validation\validation_service.js:358</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l356"><code>include&#x2F;validation&#x2F;validation_service.js:356</code></a>
         </p>
 
 
@@ -857,7 +873,7 @@ string.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">val</code>
-                        <span class="type">Float</span>
+                        <span class="type"></span>
 
 
                     <div class="param-description">
@@ -880,12 +896,12 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">Indicates</code>
+                        <code class="param-name">strict</code>
                         <span class="type">Boolean</span>
 
 
                     <div class="param-description">
-                        <p>if the value must be a number rather than a string representing a number.</p>
+                        <p>Indicates if the value must be a number rather than a string representing a number.</p>
 
                     </div>
 
@@ -933,7 +949,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l100"><code>include\validation\validation_service.js:100</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l98"><code>include&#x2F;validation&#x2F;validation_service.js:98</code></a>
         </p>
 
 
@@ -1016,7 +1032,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l81"><code>include\validation\validation_service.js:81</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l79"><code>include&#x2F;validation&#x2F;validation_service.js:79</code></a>
         </p>
 
 
@@ -1083,7 +1099,7 @@ FALSE, null will be an acceptable value.</p>
                         <code class="optional">[required=false]</code>
                 </li>
                 <li class="arg">
-                        <code>Indicates</code>
+                        <code>strict</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1102,7 +1118,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l336"><code>include\validation\validation_service.js:336</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l334"><code>include&#x2F;validation&#x2F;validation_service.js:334</code></a>
         </p>
 
 
@@ -1143,12 +1159,12 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">Indicates</code>
+                        <code class="param-name">strict</code>
                         <span class="type">Boolean</span>
 
 
                     <div class="param-description">
-                        <p>if the value must be a number rather than a string representing a number.</p>
+                        <p>Indicates if the value must be a number rather than a string representing a number.</p>
 
                     </div>
 
@@ -1177,7 +1193,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1192,7 +1208,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l272"><code>include\validation\validation_service.js:272</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l270"><code>include&#x2F;validation&#x2F;validation_service.js:270</code></a>
         </p>
 
 
@@ -1219,8 +1235,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1262,7 +1279,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l380"><code>include\validation\validation_service.js:380</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l378"><code>include&#x2F;validation&#x2F;validation_service.js:378</code></a>
         </p>
 
 
@@ -1280,7 +1297,7 @@ FALSE, null will be an acceptable value.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">val</code>
-                        <span class="type">Number</span>
+                        <span class="type"></span>
 
 
                     <div class="param-description">
@@ -1326,7 +1343,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1341,7 +1358,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l322"><code>include\validation\validation_service.js:322</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l320"><code>include&#x2F;validation&#x2F;validation_service.js:320</code></a>
         </p>
 
 
@@ -1368,8 +1385,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1392,7 +1410,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1407,7 +1425,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l221"><code>include\validation\validation_service.js:221</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l219"><code>include&#x2F;validation&#x2F;validation_service.js:219</code></a>
         </p>
 
 
@@ -1434,8 +1452,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1465,10 +1484,9 @@ FALSE, null will be an acceptable value.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/Services.html">Services</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/include_utils_logging.js.html#l68"><code>include\utils\logging.js:68</code></a>
+        <a href="../files/include_utils_logging.js.html#l68"><code>include&#x2F;utils&#x2F;logging.js:68</code></a>
         </p>
 
 
@@ -1500,7 +1518,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1515,7 +1533,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l247"><code>include\validation\validation_service.js:247</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l245"><code>include&#x2F;validation&#x2F;validation_service.js:245</code></a>
         </p>
 
 
@@ -1542,8 +1560,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1566,7 +1585,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1581,7 +1600,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l195"><code>include\validation\validation_service.js:195</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l193"><code>include&#x2F;validation&#x2F;validation_service.js:193</code></a>
         </p>
 
 
@@ -1608,8 +1627,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1632,7 +1652,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>expression</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1647,7 +1667,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l170"><code>include\validation\validation_service.js:170</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l168"><code>include&#x2F;validation&#x2F;validation_service.js:168</code></a>
         </p>
 
 
@@ -1674,8 +1694,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1698,7 +1719,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1713,7 +1734,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l155"><code>include\validation\validation_service.js:155</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l153"><code>include&#x2F;validation&#x2F;validation_service.js:153</code></a>
         </p>
 
 
@@ -1740,8 +1761,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1764,7 +1786,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1780,7 +1802,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l286"><code>include\validation\validation_service.js:286</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l284"><code>include&#x2F;validation&#x2F;validation_service.js:284</code></a>
         </p>
 
 
@@ -1807,8 +1829,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1822,7 +1845,7 @@ FALSE, null will be an acceptable value.</p>
 
 
 </div>
-<div id="method_validateEmail" class="method item">
+<div id="method_validateEmail" class="method item deprecated">
     <h3 class="name"><code>validateEmail</code></h3>
 
         <div class="args">
@@ -1831,12 +1854,13 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -1846,7 +1870,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l118"><code>include\validation\validation_service.js:118</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l116"><code>include&#x2F;validation&#x2F;validation_service.js:116</code></a>
         </p>
 
 
@@ -1873,8 +1897,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1897,7 +1922,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1913,7 +1938,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l261"><code>include\validation\validation_service.js:261</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l259"><code>include&#x2F;validation&#x2F;validation_service.js:259</code></a>
         </p>
 
 
@@ -1940,8 +1965,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1964,7 +1990,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1980,7 +2006,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l311"><code>include\validation\validation_service.js:311</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l309"><code>include&#x2F;validation&#x2F;validation_service.js:309</code></a>
         </p>
 
 
@@ -2007,8 +2033,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -2031,7 +2058,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -2047,7 +2074,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l210"><code>include\validation\validation_service.js:210</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l208"><code>include&#x2F;validation&#x2F;validation_service.js:208</code></a>
         </p>
 
 
@@ -2074,8 +2101,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -2098,7 +2126,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -2114,7 +2142,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l236"><code>include\validation\validation_service.js:236</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l234"><code>include&#x2F;validation&#x2F;validation_service.js:234</code></a>
         </p>
 
 
@@ -2141,8 +2169,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -2165,7 +2194,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -2181,7 +2210,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l184"><code>include\validation\validation_service.js:184</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l182"><code>include&#x2F;validation&#x2F;validation_service.js:182</code></a>
         </p>
 
 
@@ -2208,8 +2237,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -2232,7 +2262,7 @@ FALSE, null will be an acceptable value.</p>
                         <code>value</code>
                 </li>
                 <li class="arg">
-                        <code>required</code>
+                        <code class="optional">[required=false]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -2248,7 +2278,7 @@ FALSE, null will be an acceptable value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_validation_validation_service.js.html#l144"><code>include\validation\validation_service.js:144</code></a>
+        <a href="../files/include_validation_validation_service.js.html#l142"><code>include&#x2F;validation&#x2F;validation_service.js:142</code></a>
         </p>
 
 
@@ -2275,8 +2305,9 @@ FALSE, null will be an acceptable value.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">required</code>
+                        <code class="param-name optional">[required=false]</code>
                         <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -2295,141 +2326,141 @@ FALSE, null will be an acceptable value.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_" class="property item private">
-                        <h3 class="name"><code></code></h3>
-                        <span class="type">RegExp</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_validation_validation_service.js.html#l36"><code>include\validation\validation_service.js:36</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Pattern to validate a file name</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_" class="property item private">
-                        <h3 class="name"><code></code></h3>
-                        <span class="type">RegExp</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_validation_validation_service.js.html#l45"><code>include\validation\validation_service.js:45</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Pattern to validate a semantic package version</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_" class="property item private">
-                        <h3 class="name"><code></code></h3>
-                        <span class="type">RegExp</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_validation_validation_service.js.html#l54"><code>include\validation\validation_service.js:54</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A pattern to validate an email address</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_" class="property item private">
-                        <h3 class="name"><code></code></h3>
-                        <span class="type">RegExp</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_validation_validation_service.js.html#l63"><code>include\validation\validation_service.js:63</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A pattern to validate a fully qualified URL</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_" class="property item private">
-                        <h3 class="name"><code></code></h3>
-                        <span class="type">RegExp</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_validation_validation_service.js.html#l72"><code>include\validation\validation_service.js:72</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A pattern to validate a relative URL (no protocol, host, or port)</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_" class="property item private">
+    <h3 class="name"><code></code></h3>
+    <span class="type">RegExp</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_validation_validation_service.js.html#l34"><code>include&#x2F;validation&#x2F;validation_service.js:34</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Pattern to validate a file name</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_" class="property item private">
+    <h3 class="name"><code></code></h3>
+    <span class="type">RegExp</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_validation_validation_service.js.html#l43"><code>include&#x2F;validation&#x2F;validation_service.js:43</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Pattern to validate a semantic package version</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_" class="property item private">
+    <h3 class="name"><code></code></h3>
+    <span class="type">RegExp</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_validation_validation_service.js.html#l52"><code>include&#x2F;validation&#x2F;validation_service.js:52</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A pattern to validate an email address</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_" class="property item private">
+    <h3 class="name"><code></code></h3>
+    <span class="type">RegExp</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_validation_validation_service.js.html#l61"><code>include&#x2F;validation&#x2F;validation_service.js:61</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A pattern to validate a fully qualified URL</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_" class="property item private">
+    <h3 class="name"><code></code></h3>
+    <span class="type">RegExp</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_validation_validation_service.js.html#l70"><code>include&#x2F;validation&#x2F;validation_service.js:70</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A pattern to validate a relative URL (no protocol, host, or port)</p>
+
+    </div>
+
+
+
+</div>
             </div>
 
 

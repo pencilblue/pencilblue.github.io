@@ -24,7 +24,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "ClusterJobRunner",
         "CommandService",
         "CommentService",
-        "Configuration",
         "ContentObjectService",
         "ContentService",
         "ContentViewLoader",
@@ -58,6 +57,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "LockService",
         "MediaLoader",
         "MediaService",
+        "MediaServiceV2",
         "MemoryEntityService",
         "MongoCommandBroker",
         "MongoMediaProvider",
@@ -67,6 +67,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "PBError",
         "PageRenderer",
         "PageService",
+        "PasswordResetService",
         "PdfMediaRenderer",
         "PencilBlue",
         "PluginRepository",
@@ -126,7 +127,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "Session",
         "Storage",
         "Theme",
-        "Validation",
         "dao"
     ],
     "allModules": [
@@ -148,7 +148,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Entities",
             "name": "Entities",
-            "description": "Provides information on media"
+            "description": "Service for performing user specific operations."
         },
         {
             "displayName": "ErrorSuccess",
@@ -184,12 +184,8 @@ YUI.add("yuidoc-meta", function(Y) {
             "displayName": "Theme",
             "name": "Theme",
             "description": "Theme content services"
-        },
-        {
-            "displayName": "Validation",
-            "name": "Validation",
-            "description": "Provides a set of functions for common validations."
         }
-    ]
+    ],
+    "elements": []
 } };
 });

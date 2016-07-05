@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\service\entities\template_service.js - PencilBlue</title>
+    <title>include/service/entities/template_service.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\service\entities\template_service.js</h1>
+<h1 class="file-heading">File: include/service/entities/template_service.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -239,10 +240,10 @@ module.exports = function(pb) {
      *
      * @class TemplateService
      * @constructor
-     * @module Services
-     * @submodule Entities
-     * @param {Object} [localizationService] The localization service object
-     * @param {String} siteUid context site for this service
+     * @param {Object} opts The localization service object
+     * @param {Localization} opts.ls
+     * @param {string} opts.activeTheme
+     * @param {string} opts.site
      */
     function TemplateService(opts){
         var localizationService;
@@ -331,7 +332,7 @@ module.exports = function(pb) {
 
         /**
          * @property settingService
-         * @type {SettingService}
+         * @type {SimpleLayeredService}
          */
         this.settingService = pb.SettingServiceFactory.getServiceBySite(this.siteUid);
 
@@ -349,8 +350,6 @@ module.exports = function(pb) {
     var TEMPLATE_PREFIX_LEN     = TEMPLATE_PREFIX.length;
     var LOCALIZATION_PREFIX     = &#x27;loc_&#x27;;
     var LOCALIZATION_PREFIX_LEN = LOCALIZATION_PREFIX.length;
-    var SYSTEM_PREFIX           = &#x27;system_&#x27;;
-    var SYSTEM_PREFIX_LEN       = SYSTEM_PREFIX.length;
 
     var TEMPLATE_LOADER = null;
 
@@ -484,7 +483,7 @@ module.exports = function(pb) {
      * @param {Boolean} reprocess
      */
     TemplateService.prototype.setReprocess = function(reprocess) {
-        this.reprocess = reprocess ? true : false;
+        this.reprocess = !!reprocess;
     };
 
     /**
@@ -521,7 +520,6 @@ module.exports = function(pb) {
 
         //build set of paths to search through
         var paths = [];
-        var themePath = null;
         var hintedTheme = this.getTheme();
         if (hintedTheme &amp;&amp; !TemplateService.isTemplateBlacklisted(hintedTheme, relativePath)) {
             paths.push({
@@ -551,7 +549,7 @@ module.exports = function(pb) {
                 }
             }
 
-            //now add the defalt if appropriate
+            //now add the default if appropriate
             if (!TemplateService.isTemplateBlacklisted(pb.config.plugins.default, relativePath)) {
                 paths.push({
                     plugin: pb.config.plugins.default,
@@ -560,22 +558,22 @@ module.exports = function(pb) {
             }
 
             //iterate over paths until a valid template is found
-            var i        = 0;
+            var j        = 0;
             var doLoop   = true;
             var template = null;
             async.whilst(
-                function(){return i &lt; paths.length &amp;&amp; doLoop;},
+                function(){return j &lt; paths.length &amp;&amp; doLoop;},
                 function(callback) {
 
                     //attempt to load template
-                    TEMPLATE_LOADER.get(paths[i].path, function(err, templateData) {
+                    TEMPLATE_LOADER.get(paths[j].path, function(err, templateData) {
                         template = templateData;
                         doLoop   = util.isError(err) || !util.isObject(template);
                         if (doLoop) {
-                            TemplateService.blacklistTemplate(paths[i].plugin, relativePath);
+                            TemplateService.blacklistTemplate(paths[j].plugin, relativePath);
                         }
 
-                        i++;
+                        j++;
                         callback();
                     });
                 },
@@ -721,7 +719,6 @@ module.exports = function(pb) {
                 self.handleTemplateReplacement(flag, function(err, template) {
                     cb(null, template);
                 });
-                return;
             }
             else {
 
@@ -773,7 +770,7 @@ module.exports = function(pb) {
      *
      * @method handleReplacement
      * @param {string} flag The flag to transform
-     * @param {mixed} replacement The value can either be a function to handle the
+     * @param {*} replacement The value can either be a function to handle the
      * replacement or a value.
      * @param {function} cb Callback function
      */
@@ -785,7 +782,7 @@ module.exports = function(pb) {
             if (content instanceof TemplateValue) {
                 content = content.val();
             }
-            else if (util.isObject(content) || util.isString(content)){;
+            else if (util.isObject(content) || util.isString(content)){
                 content = HtmlEncoder.htmlEncode(content.toString());
             }
 
@@ -816,7 +813,7 @@ module.exports = function(pb) {
      * @method registerLocal
      * @param {string} flag The flag name to map to the value when encountered in a
      * template.
-     * @param {mixed} callbackFunctionOrValue The function to execute to perform the
+     * @param {*} callbackFunctionOrValue The function to execute to perform the
      * transformation or the value to substitute in place of the flag.
      * @return {Boolean} TRUE when registered successfully, FALSE if not
      */
@@ -866,7 +863,6 @@ module.exports = function(pb) {
             var flag = (prefix ? prefix + &#x27;.&#x27; : prefix) + key;
             if (util.isObject(value) &amp;&amp; !(value instanceof TemplateValue)) {
 
-                var result = true;
                 util.forEach(value, function(value, key) {
                     queue.push({
                         key: key,
@@ -884,13 +880,12 @@ module.exports = function(pb) {
         while (queue.length &gt; 0 &amp;&amp; completedResult) {
             var item = queue.shift();
             completedResult &amp;= register(item.prefix, item.key, item.value);
-        };
+        }
         return completedResult;
     };
 
     /**
      * Retrieves the content template names and locations for the active theme.
-     *
      * @method getTemplatesForActiveTheme
      * @param {function} cb A call back that provides two parameters: cb(err, [{templateName: templateLocation])
      */
@@ -927,12 +922,7 @@ module.exports = function(pb) {
 
                 var templates = [];
                 if (plugin &amp;&amp; plugin.theme &amp;&amp; plugin.theme.content_templates) {
-
-                    for (var j = 0; j &lt; plugin.theme.content_templates.length; j++) {
-
-                        var template = plugin.theme.content_templates[j];
-                        templates.push(template);
-                    }
+                    util.arrayPushAll(plugin.theme.content_templates, templates);
                 }
                 cb(err, templates);
             });
@@ -964,7 +954,7 @@ module.exports = function(pb) {
      * @method isFlag
      * @param {String} content
      * @param {String} flag
-     * @return {String}
+     * @return {boolean}
      */
     TemplateService.isFlag = function(content, flag) {
         return util.isString(content) &amp;&amp; (content.length === 0 || (&#x27;^&#x27;+flag+&#x27;^&#x27;) === content);
@@ -996,9 +986,9 @@ module.exports = function(pb) {
      *
      * @static
      * @method registerGlobal
-     * @param {string} flag The flag name to map to the value when encountered in a
+     * @param {string} key The flag name to map to the value when encountered in a
      * template.
-     * @param {mixed} callbackFunctionOrValue The function to execute to perform the
+     * @param {*} callbackFunctionOrValue The function to execute to perform the
      * transformation or the value to substitute in place of the flag.
      * @return {Boolean} TRUE when registered successfully, FALSE if not
      */
@@ -1026,6 +1016,7 @@ module.exports = function(pb) {
      *
      * @static
      * @method getCustomPath
+     * @param {string} themeName
      * @param {string} templateLocation
      * @return {string} The absolute path
      */
@@ -1047,14 +1038,14 @@ module.exports = function(pb) {
      * @return {Array} The array template parts
      */
     TemplateService.compile = function(text, start, end) {
-        if (!pb.validation.validateNonEmptyStr(text, true)) {
+        if (!pb.ValidationService.isNonEmptyStr(text, true)) {
             pb.log.warn(&#x27;TemplateService: Cannot parse the content because it is not a valid string: &#x27;+text);
             return [];
         }
-        if (!pb.validation.validateNonEmptyStr(start, true)) {
+        if (!pb.ValidationService.isNonEmptyStr(start, true)) {
             start = &#x27;^&#x27;;
         }
-        if (!pb.validation.validateNonEmptyStr(end, true)) {
+        if (!pb.ValidationService.isNonEmptyStr(end, true)) {
             end = &#x27;^&#x27;;
         }
 
@@ -1067,10 +1058,8 @@ module.exports = function(pb) {
         };
 
         var i;
-        var pipe      = 0;
         var flag      = null;
-        var static    = null;
-        var flagFound = 0;
+        var staticContent = null;
         var compiled  = [];
         while ( (i = text.indexOf(start)) &gt;= 0) {
 
@@ -1080,11 +1069,11 @@ module.exports = function(pb) {
 
                 //determine precursing static content &amp; flag
                 flag   = text.substring(start_pos, end_pos);
-                static = text.substring(0, start_pos - start.length);
+                staticContent = text.substring(0, start_pos - start.length);
 
                 //add the static content
-                if (static) {
-                    compiled.push(genPiece(TEMPLATE_PIECE_STATIC, static));
+                if (staticContent) {
+                    compiled.push(genPiece(TEMPLATE_PIECE_STATIC, staticContent));
                 }
 
                 //add the flag
@@ -1143,7 +1132,7 @@ module.exports = function(pb) {
      * instructions.
      * @class TemplateValue
      * @constructor
-     * @param {String} The raw value to be included in the template processing
+     * @param {String} {val} The raw value to be included in the template processing
      * @param {Boolean} [htmlEncode=true] Indicates if the value should be
      * encoded during serialization.
      */

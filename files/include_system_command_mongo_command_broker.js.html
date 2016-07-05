@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\system\command\mongo_command_broker.js - PencilBlue</title>
+    <title>include/system/command/mongo_command_broker.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\system\command\mongo_command_broker.js</h1>
+<h1 class="file-heading">File: include/system/command/mongo_command_broker.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -222,7 +223,6 @@
 
 //dependencies
 var util    = require(&#x27;../../util.js&#x27;);
-var process = require(&#x27;process&#x27;);
 var domain  = require(&#x27;domain&#x27;);
 var async   = require(&#x27;async&#x27;);
 
@@ -297,7 +297,7 @@ module.exports = function MongoCommandBrokerModule(pb) {
                 return cb(err);
             }
 
-            //when it exists we&#x27;re done.  We&#x27;ll assume that it was capped 
+            //when it exists we&#x27;re done.  We&#x27;ll assume that it was capped
             //appropriately &amp; that it was seeded
             if (exists) {
                 return cb(null, true);
@@ -313,8 +313,8 @@ module.exports = function MongoCommandBrokerModule(pb) {
                     return cb(err, false);
                 }
 
-                //Unfortunately, it turns out that MongoDB won’t keep a tailable 
-                //cursor open if the collection is empty, so let’s also create a 
+                //Unfortunately, it turns out that MongoDB won’t keep a tailable
+                //cursor open if the collection is empty, so let’s also create a
                 //blank document to “prime” the collection.
                 var primerCommand = {
                     type: &quot;primer&quot;
@@ -413,16 +413,16 @@ module.exports = function MongoCommandBrokerModule(pb) {
             if (util.isError(err)) {
                 return cb(err);
             }
-            
+
             db.collection(COMMAND_Q_COLL, function(err, collection) {
                 if (util.isError(err)) {
                     return cb(err);
                 }
 
 
-                //wrap it all up in a container so we can mitigate the crises that 
-                //will inevitably ensue from dropped or timed out cursor connections.  
-                //In addition, we put failure tolerances in place so that we can 
+                //wrap it all up in a container so we can mitigate the crises that
+                //will inevitably ensue from dropped or timed out cursor connections.
+                //In addition, we put failure tolerances in place so that we can
                 //attempt to reconnect.
                 var eot = new pb.ErrorsOverTime(5, 3000, &#x27;MongoCommandBroker: &#x27;);
                 var d   = domain.create();
@@ -433,7 +433,7 @@ module.exports = function MongoCommandBrokerModule(pb) {
                     //ensure we are still in bounds
                     eot.throwIfOutOfBounds(err);
 
-                    //when we are still within the acceptable fault tolerance try 
+                    //when we are still within the acceptable fault tolerance try
                     //to reconnect
                     loop();
                 });
@@ -447,23 +447,23 @@ module.exports = function MongoCommandBrokerModule(pb) {
             });
         });
     };
-    
+
     MongoCommandBroker.prototype.listen = function(latest, collection) {
         var self = this;
-        
+
         this.latest(latest, collection, function(err, latest) {
 //            if (util.isError(err)) {
 //                pb.log.error(&#x27;MongoBroker: %s&#x27;, err.stack);
 //                throw err;
 //            }
-            
+
             self._listen(latest, collection);
         });
     };
-    
+
     MongoCommandBroker.prototype.latest = function(latest, collection, cb) {
 
-        
+
         collection.find(latest ? { created: {$gt: new Date() }} : null)
         .sort({ $natural: -1 })
         .limit(1)
@@ -477,10 +477,10 @@ module.exports = function MongoCommandBrokerModule(pb) {
             });
         });
     };
-                        
+
     MongoCommandBroker.prototype._listen = function(latest, collection) {
         var self = this;
-        
+
         //enter listen loop
         async.whilst(
             function() { return true; },
@@ -495,16 +495,16 @@ module.exports = function MongoCommandBrokerModule(pb) {
             }
         );
     };
-    
+
     function getListener(collection, instance, latest) {
         return function(callback) {
-            
+
             var query = { created: { $gte: new Date() }};
             var options = { tailable: true, awaitdata: true, numberOfRetries: Number.MAX_VALUE, tailableRetryInterval: 200 };
             var cursor = collection.find(query, options);
-            
+
             var next = function() {
-                
+
                 cursor.nextObject(function(err, command) {
                     if (util.isError(err) || cursor.isClosed() || !util.isObject(command)) {
                         return callback(err);
@@ -516,12 +516,12 @@ module.exports = function MongoCommandBrokerModule(pb) {
                     else {
                         /* no op */
                     }
-                    
+
                     //trigger wait for next object
                     process.nextTick(next);
                 });
             };
-            
+
             process.nextTick(next);
         };
     };

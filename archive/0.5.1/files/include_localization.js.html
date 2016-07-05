@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include\localization.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.5.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/Configuration.html">Configuration</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include\localization.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2015  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var fs     = require(&#x27;fs&#x27;);
+var path   = require(&#x27;path&#x27;);
+var Locale = require(&#x27;locale&#x27;);
+var util   = require(&#x27;./util.js&#x27;);
+
+module.exports = function LocalizationModule(pb) {
+
+    //pb dependencies
+    var config = pb.config;
+
+    /**
+     * Provides functions to translate items based on keys.  Also
+     * assists in the determination of the best language for the given user.
+     *
+     * @module Services
+     * @class Localization
+     * @constructor
+     * @param {Object} request The request object
+     * @param {Object} [options]
+     * @param {String} [options.activeTheme]
+     * @param {Array} [options.supported] The languages that the localization
+     * instance should be limited to.
+     */
+    function Localization(request, options){
+        if (!util.isObject(options)) {
+            options = {};
+        }
+
+        /**
+         * expected to be lowercase and of the form &quot;en-us&quot;
+         * @property language Really should be renamed to locale in the future
+         * @type {String}
+         */
+        this.language = Localization.best(request, options.supported).toString();
+
+        /**
+         * @property localeObj
+         * @type {Object}
+         */
+        this.localeObj = Localization.parseLocaleStr(this.language);
+
+        /**
+         * Stores the keys already retrieved for the instance to prevent duplicate retrieval.
+         * @property cache
+         * @type {Object}
+         */
+        this.cache = {};
+
+        /**
+         * The currently active theme that should be prioritized when
+         * performing key lookup
+         * @property activeTheme
+         * @type {string}
+         */
+        this.activeTheme = options.activeTheme;
+    }
+
+    /**
+     *
+     * @property JS_EXT
+     * @type {String}
+     */
+    var JS_EXT = &#x27;.js&#x27;;
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property SEP
+     * @type {String}
+     */
+    Localization.SEP = &#x27;^&#x27;;
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property PREFIX
+     * @type {String}
+     */
+    Localization.PREFIX = Localization.SEP + &#x27;loc_&#x27;;
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property ACCEPT_LANG_HEADER
+     * @type {String}
+     */
+    Localization.ACCEPT_LANG_HEADER = &#x27;accept-language&#x27;;
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property LOCALE_PART_SEP
+     * @type {String}
+     */
+    Localization.LOCALE_PART_SEP = &#x27;-&#x27;;
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property KEY_SEP
+     * @type {String}
+     */
+    Localization.KEY_SEP = &#x27;.&#x27;;
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property storage
+     * @type {Object}
+     */
+    Localization.storage   = {};
+
+    /**
+     *
+     * @static
+     * @readonly
+     * @property supported
+     * @type {Locales}
+     */
+    Localization.supported = null;
+
+    /**
+     * @static
+     * @readonly
+     * @property supportedLookup
+     * @type {Object}
+     */
+    Localization.supportedLookup = {};
+
+    /**
+     * @static
+     * @readonly
+     * @property keys
+     * @type {Object}
+     */
+    Localization.keys = {};
+
+    /**
+     * @static
+     * @readonly
+     * @property PARAM_REPLACEMENT_REGEX
+     * @type {RegExp}
+     */
+    Localization.PARAM_REPLACEMENT_REGEX = /{([^{}]*)}/g;
+
+    /**
+     * Localizes a string by searching for keys within the template and replacing
+     * them with the specified values.
+     *
+     * @method localize
+     * @param {array} sets The localizations sets to search in
+     * @param {string} text The text to localize
+     * @param {string} hostname The current hostname
+     * @return {string} The text where keys have been replaced with translated values
+     */
+    Localization.prototype.localize = function(sets, text, hostname){
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;Localization: Localizing text - Locale [%s] Sets %s&#x27;, this.language, JSON.stringify(sets));
+        }
+
+        //get i18n from storage
+        var loc = Localization.storage;
+        if (util.isNullOrUndefined(loc)) {
+            throw new Error(&quot;Failed to set a language. LANG=&quot;+util.inspect(this.language));
+        }
+        for (var key in loc.generic) {
+            var genericVal = this.g(&#x27;generic&#x27; + Localization.KEY_SEP + key/*, {empty options}*/);
+            text = text.split(&#x27;^loc_&#x27; + key + &#x27;^&#x27;).join(genericVal);
+        }
+
+        for (var i = 0; i &lt; sets.length; i++) {
+            for(var key in loc[sets[i]])  {
+                var setVal = this.g(sets[i] + Localization.KEY_SEP + key/*, {empty options}*/);
+                text = text.split(&#x27;^loc_&#x27; + key + &#x27;^&#x27;).join(loc[sets[i]][key]);
+            }
+        }
+
+        // If the localization is for HTML output, load the localization into client side JS
+        if (text.indexOf(&#x27;&lt;body&#x27;) &gt; -1)  {
+            text = text.concat(pb.ClientJs.includeJS(pb.UrlService.createSystemUrl(&#x27;api/localization/script?locale=&#x27; + this.language, { hostname: hostname })));
+        }
+
+        return text;
+    };
+
+    /**
+     * Translates a single key.  The function accepts a variable number of
+     * parameters.  The first must be the key to be localized.  The rest are
+     * considered to be injectable values.  The function will call &quot;util.format&quot; in
+     * situations where the key is found and the nuber of arguments passed to the
+     * function is greater than 1.  See
+     * http://nodejs.org/api/util.html#util_util_format_format for details on
+     * suppored formatting.
+     * @deprecated Since 0.5.0
+     * @method get
+     * @param {String} key
+     * @param {String|Integer|Float|Object} [args] The variable number of
+     * parameters to be injected into the localization value
+     * @return {string} The formatted and localized string
+     */
+    Localization.prototype.get = function() {
+        var key = arguments[0];
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;Localization: Localizing key [%s] - Locale [%s]&#x27;, key, this.language);
+        }
+
+        //error checking
+        if (!pb.validation.isNonEmptyStr(key, true)) {
+            return null;
+        }
+
+        //create a key that can be converted over to what we need
+        var convertedKey;
+        if (!util.isNullOrUndefined(Localization.storage[key])) {
+            convertedKey = key;
+        }
+        else {
+            var topLevelKeys = Object.keys(Localization.storage);
+            for (var i = 0; i &lt; topLevelKeys.length; i++) {
+
+                if (!util.isNullOrUndefined(Localization.storage[topLevelKeys[i]][key])) {
+                    convertedKey = topLevelKeys[i] + Localization.KEY_SEP + key;
+                    break;
+                }
+            }
+
+            //just assign the key.  Won&#x27;t find anything though.
+            if (util.isNullOrUndefined(convertedKey)) {
+                convertedKey = key;
+            }
+        }
+
+
+        var val = this.g(convertedKey/*, {empty options}*/);
+        if (val !== null) {
+
+            arguments[0] = val;
+            val = util.format.apply(util, arguments);
+        }
+        return val;
+    };
+
+    /**
+     *
+     * @method g
+     * @param {String} key
+     * @param {Object} params
+     * @param {Object} [options]
+     * @param {String} [options.site=global]
+     * @param {Object} [options.params={}]
+     * @param {Object} [options.plugin]
+     * @return {String}
+     */
+    Localization.prototype.g = function() {
+        var key = arguments[0];
+        var options = arguments[1] || {
+            site: pb.SiteService.GLOBAL_SITE,
+            params: {}
+        };
+
+        //log operation
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;Localization: Localizing key [%s] - Locale [%s]&#x27;, key, this.language);
+        }
+
+        //error checking
+        if (!util.isString(key)) {
+            throw new Error(&#x27;key parameter is required&#x27;);
+        }
+        if (!util.isObject(options)) {
+            throw new Error(&#x27;options parameter must be an object&#x27;);
+        }
+
+        var params = options.params || {};
+        if (!util.isObject(params)) {
+            throw new Error(&#x27;params parameter is required&#x27;);
+        }
+
+
+        //TODO retrieve active plugins for site to narrow down which plugins should be examined during retrieval
+
+        //get the current local as object
+        var locale = this.localeObj;
+
+        //get theme to prioritize
+        var plugin = options.plugin || this.activeTheme;
+
+        //define convenience functions
+        var self = this;
+        var processValue = function(localization) {
+
+            //set cache
+            self.cache[key] = localization;
+
+            //finish processing the value
+            return localization.isParameterized ?
+                Localization.replaceParameters(localization.value, params, options.defaultParamVal) :
+                localization.value;
+        };
+
+        var processKeyBlock = function(keyBlock) {
+
+            //check for plugin specific
+            if (!util.isNullOrUndefined(keyBlock.__plugins)) {
+                var pluginsBlock = keyBlock.__plugins
+
+                //check for active plugin first
+                if (!util.isNullOrUndefined(pluginsBlock[plugin])) {
+
+                    //we found a plugin specific value
+                    return processValue(pluginsBlock[plugin]);
+                }
+
+                //check to see if the other plugins support the key
+                var pluginsToInspect = Object.keys(pluginsBlock);
+                for (var j = 0; j &lt; pluginsToInspect.length; j++) {
+
+                    //skip the active plugin bc we&#x27;ve already checked it
+                    if (plugin === pluginsToInspect[j]) {
+                        continue;
+                    }
+
+                    //examine the plugin
+                    if (!util.isNullOrUndefined(pluginsBlock[pluginsToInspect[j]])) {
+
+                        //we found a country &amp; plugin specific value
+                        return processValue(pluginsBlock[pluginsToInspect[j]]);
+                    }
+                }
+            }
+
+            //no plugin specific key was found.  Now check the defaults
+            if (!util.isNullOrUndefined(keyBlock.__default)) {
+                return processValue(keyBlock.__default);
+            }
+
+            //counldn&#x27;t find it in this block
+            return null;
+        };
+
+        var processLanguageBlock = function(langBlock) {
+            if (!util.isObject(langBlock)) {
+                return null;
+            }
+
+            //check for country specific
+            if (util.isString(locale.countryCode)) {
+
+                var countryKey = k(locale.countryCode);
+                if (!util.isNullOrUndefined(langBlock[countryKey])) {
+
+                    var countryResult = processKeyBlock(langBlock[countryKey]);
+                    if (util.isString(countryResult)) {
+                        return countryResult;
+                    }
+                }
+            }
+
+            //we failed to find the value in a country specific block.  We need to
+            //move on to the language
+            var langResult = processKeyBlock(langBlock);
+            if (util.isString(langResult)) {
+                return langResult;
+            }
+
+            //we counldn&#x27;t find it in this locale
+            return null;
+        };
+
+        var finalize = function(result) {
+            return util.isString(result) || options.defaultVal !== undefined ? result : key;
+        };
+
+        //verify that key even exists
+        if (!Localization.keys[key]) {
+            return finalize(options.defaultVal);
+        }
+        else if (this.cache[key]) {
+
+            //we have already processed this key once for this instance
+            return finalize(processValue(this.cache[key]));
+        }
+
+        //key create key path
+        var keyBlock = Localization.storage;
+        var parts = key.split(Localization.KEY_SEP);
+        for (var i = 0; i &lt; parts.length; i++) {
+            if (util.isNullOrUndefined(keyBlock[parts[i]]) || !keyBlock[parts[i]].__isKey) {
+
+                //the key doesn&#x27;t exist. Time to bail out
+                return finalize(options.defaultVal);
+            }
+
+            keyBlock = keyBlock[parts[i]];
+        }
+
+        //we found the key.  Now we need to dig around and figure out which
+        //value to pick
+        var langKey = k(locale.language);
+        var result = processLanguageBlock(keyBlock[langKey]);
+        if (!util.isString(result)) {
+
+            //check to see if we should fall back to the default locale
+            var defaultLocale = Localization.parseLocaleStr(Localization.getDefaultLocale());
+            if (defaultLocale.language !== this.localeObj.language || defaultLocale.countryCode !== this.localeObj.countryCode) {
+
+                locale = defaultLocale;
+                langKey = k(defaultLocale.language);
+                result = processLanguageBlock(keyBlock[langKey]);
+            }
+            else {
+                result = options.defaultVal;
+            }
+        }
+
+        //finally, if we have a string result return it otherwise settle on the key
+        return finalize(result);
+    };
+
+    /**
+     * Determines the best language to send a user based on the &#x27;accept-language&#x27;
+     * header in the request
+     *
+     * @method best
+     * @param {Object|String} request The request object
+     * @param {Array} [supported] The array of supported locales
+     * @return {string} Locale for the request
+     */
+    Localization.best = function(request, supported){
+        supported = util.isArray(supported) ?
+            new Locale.Locales(supported) : Localization.supported;
+
+        var locales;
+        var loc = Localization.getDefaultLocale();
+        if (request) {
+            var acceptLangStr = util.isString(request) ? request :
+                (request.headers[Localization.ACCEPT_LANG_HEADER] || loc);
+            locales = new Locale.Locales(acceptLangStr);
+            loc = locales.best(supported);
+        }
+        return loc;
+    };
+
+    /**
+     * Initializes the location.  Loads all language packs into memory for fast
+     * retrieval and sets the supported locales for determining what language to
+     * send the user based on their list of acceptable languages.
+     *
+     * @method init
+     * @param {Function} cb
+     */
+    Localization.init = function(cb) {
+        Localization.storage = {};
+        Localization.keys = {};
+
+        //create path to localization directory
+        var options = {
+            recursive: false,
+            filter: function(filePath) { return filePath.indexOf(JS_EXT) === filePath.length - JS_EXT.length; }
+        };
+        var localizationDir = path.join(pb.config.docRoot, &#x27;public&#x27;, &#x27;localization&#x27;);
+        util.getFiles(localizationDir, options, function(err, files) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            var compoundedResult = true;
+            files.forEach(function(file) {
+
+                //parse the file
+                var obj = null;
+                try {
+                    obj = require(file);
+                }
+                catch(e) {
+                    pb.log.warn(&#x27;Localization: Failed to load core localization file [%s]. %s&#x27;, absolutePath, e.stack);
+
+                    //we failed so skip this file
+                    return;
+                }
+
+                //convert file name to locale
+                var localeObj = Localization.parseLocaleStr(file);
+
+                //register the localization as defaults (call private method)
+                compoundedResult &amp;= Localization._registerLocale(localeObj, obj);
+            });
+
+            //set the supported locales
+            pb.log.debug(&quot;Localization: Supporting - &quot; + JSON.stringify(Object.keys(Localization.supportedLookup)));
+            cb(null, compoundedResult);
+        });
+    };
+
+    /**
+     * Determines if there have been keys registered for the specified locale.
+     * An example locale string would be: en-US.  Where the characters to the
+     * left of the dash are the language code and the characters to the right
+     * of the dash represent the country code.
+     * @static
+     * @method isSupported
+     * @param {String} locale
+     * @return {Boolean}
+     */
+    Localization.isSupported = function(locale) {
+        if (!util.isString(locale) || locale.length === 0) {
+            return false;
+        }
+
+        //make sure the locale is properly formatted
+        var localeObj = Localization.parseLocaleStr(locale);
+        locale = Localization.formatLocale(localeObj.language, localeObj.countryCode);
+
+        return Localization.supportedLookup[locale] ? true : false;
+    };
+
+    /**
+     * Retrieves the localization package for the specified locale
+     * @static
+     * @method getLocalizationPackage
+     * @param {String} locale
+     * @param {Object} [options] See options for Localization.g
+     * @return {Object}
+     */
+    Localization.getLocalizationPackage = function(locale, options) {
+        if (!pb.validation.isNonEmptyStr(locale, true)) {
+            return null;
+        }
+
+        var ls = new Localization(locale);
+        var package = {};
+        var keys = Object.keys(Localization.keys);
+        keys.forEach(function(key) {
+            var result = ls.g(key, options);
+
+            var parts = key.split(Localization.KEY_SEP);
+            if (parts.length === 1) {
+                package[key] = result;
+                return;
+            }
+
+            var block = package;
+            for (var i = 0; i &lt; parts.length; i++) {
+                if (i == parts.length - 1) {
+                    block[parts[i]] = result;
+                    break;
+                }
+                else if (util.isNullOrUndefined(block[parts[i]])) {
+                    block[parts[i]] = {};
+                }
+                block = block[parts[i]];
+            }
+        });
+        return package;
+    };
+
+    /**
+     * @deprecated since 0.5.0
+     * @static
+     * @method registerLocalizations
+     * @param {String} locale
+     * @param {Object} localizations
+     * @return {Boolean}
+     */
+    Localization.registerLocalizations = function(locale, localizations, options) {
+        pb.log.warn(&#x27;Localization: Localization.registerLocalizations is deprecated. Use Localization.registerLocale&#x27;);
+        return Localization.registerLocale(locale, localizations, options);
+    };
+
+    /**
+     * Registers a localization package for the provided locale and plugin.
+     * @private
+     * @static
+     * @method _registerLocale
+     * @param {String|Object} locale
+     * @param {Object} localizations
+     * @param {Object} [options]
+     * @param {String} [options.string]
+     * @return {Boolean}
+     */
+    Localization.registerLocale = function(locale, localizations, options) {
+        assertOptions(options);
+
+        return Localization._registerLocale(locale, localizations, options);
+    };
+
+    /**
+     * Registers a localization package for the provided locale.  Optionally,
+     * the packaged can be scoped to a specific plugin.
+     * @private
+     * @static
+     * @method _registerLocale
+     * @param {String|Object} locale
+     * @param {Object} localizations
+     * @param {Object} [options]
+     * @param {String} [options.string]
+     * @return {Boolean}
+     */
+    Localization._registerLocale = function(locale, localizations, options) {
+        locale = parseLocale(locale);
+
+        if (!util.isObject(localizations)) {
+            throw new Error(&#x27;localizations parameter is required&#x27;);
+        }
+        if (!util.isObject(options)) {
+            options = {};
+        }
+
+        //log it
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;Localization: Registering locale [%s] for plugin [%s]&#x27;, Localization.formatLocale(locale.language, locale.countryCode), options.plugin ? options.plugin : &#x27;SYSTEM&#x27;);
+        }
+
+        //load up top level keys into the queue
+        var queue = [];
+        var processObj = function(prefix, obj) {
+            util.forEach(obj, function(val, key) {
+                queue.push({
+                    key: prefix ? prefix + Localization.KEY_SEP + key : key,
+                    val: val
+                });
+            });
+        };
+        processObj(null, localizations);
+
+        var compoundedResult = true;
+        while(queue.length &gt; 0) {
+            var item = queue.shift();
+            if (util.isObject(item.val)) {
+                processObj(item.key, item.val);
+            }
+            else if (util.isString(item.val)){
+                compoundedResult &amp;= Localization._registerLocalization(locale, item.key, item.val, options);
+            }
+            else {
+                compoundedResult = false;
+                pb.log.warn(&#x27;Localization: Locale [%s] key [%s] provided an invalid value: %s&#x27;, Localization.formatLocale(locale.language, locale.countryCode), item.key, JSON.stringify(item.val));
+            }
+        }
+
+        //ensure that we add the supported localization
+        if (compoundedResult &amp;&amp; !Localization.isSupported(locale)) {
+            Localization.supportedLookup[Localization.formatLocale(locale.language, locale.countryCode)] = locale;
+            Localization.supported = new Locale.Locales(Object.keys(Localization.supportedLookup));
+        }
+        return compoundedResult;
+    };
+
+    /**
+     * Registers a single localization key for the provided locale and plugin.
+     * @private
+     * @static
+     * @method _registerLocalization
+     * @param {String} locale
+     * @param {String} key
+     * @param {String} value
+     * @param {Object} options
+     * @param {String} options.plugin
+     * @return {Boolean}
+     */
+    Localization.registerLocalization = function(locale, key, value, options) {
+        assertOptions(options);
+
+        return Localization._registerLocalization(locale, key, value, options);
+    };
+
+    /**
+     * Registers a single localization key for the provided locale.  Optionally, the localization can be scoped to a single plugin.
+     * @private
+     * @static
+     * @method _registerLocalization
+     * @param {String} locale
+     * @param {String} key
+     * @param {String} value
+     * @param {Object} [options]
+     * @param {String} [options.plugin]
+     * @return {Boolean}
+     */
+    Localization._registerLocalization = function(locale, key, value, options) {
+        locale = parseLocale(locale);
+        if (!util.isString(key)) {
+            throw new Error(&#x27;key parameter is required&#x27;);
+        }
+        if (!util.isString(value)) {
+            throw new Error(&#x27;value parameter is required&#x27;);
+        }
+
+        //set defaults
+        if (!util.isObject(options)) {
+            options = {};
+        }
+
+        //parse the key
+        var keyParts = key.split(Localization.KEY_SEP);
+
+        //ensure that the key path exists and set a reference to the block that
+        //represents the key.  We are essentially walking the tree to get to
+        //the key.  When a child node does not exist we create it.
+        var keyBlock = findKeyBlock(key);
+        if (keyBlock === null) {
+            return false;
+        }
+
+        //ensure that the language block exists
+        var langKey = k(locale.language);
+        if (util.isNullOrUndefined(keyBlock[langKey])) {
+            keyBlock[langKey] = {};
+        }
+        var insertionBlock = keyBlock[langKey];
+
+        //check to see if we need to move to a counry code block
+        if (util.isString(locale.countryCode)) {
+
+            var countryKey = k(locale.countryCode);
+            if (util.isNullOrUndefined(insertionBlock[countryKey])) {
+                insertionBlock[countryKey] = {};
+            }
+            insertionBlock = insertionBlock[countryKey];
+        }
+
+        //check to see if we are setting a default localization or a plugin specific one
+        var valueBlock = {
+            value: value,
+            isParameterized: Localization.containsParameters(value)
+        };
+        if (util.isString(options.plugin)) {
+            if (util.isNullOrUndefined(insertionBlock.__plugins)) {
+                insertionBlock.__plugins = {};
+            }
+            insertionBlock.__plugins[options.plugin] = valueBlock;
+        }
+        else { //we are inserting a system default
+            insertionBlock.__default = valueBlock;
+        }
+
+        //track the keys to know if they exist.  A performance boost in
+        //building localization packages, lookups, and removal from system.
+        Localization.keys[key] = true;
+
+        return true;
+    };
+
+    /**
+     * Removes a locale and all keys associated with it.  Optionally, the
+     * operation can be scoped to a single plugin.
+     * @static
+     * @method unregisterLocale
+     * @param {String|Object} locale
+     * @param {Object} [options]
+     * @param {String} [options.plugin]
+     * @return {Boolean}
+     */
+    Localization.unregisterLocale = function(locale, options) {
+        locale = parseLocale(locale);
+
+        //iterate over all of the keys
+        var result = true;
+        Object.keys(Localization.keys).forEach(function(key) {
+            result &amp;= Localization.unregisterLocalization(locale, key, options);
+        });
+        return result;
+    };
+
+    /**
+     * Unregisters a single key for the given locale.  The locale can be just
+     * the language or the combination of the language and country code.
+     * Additionally, the operation can be scoped to a single plugin.
+     * @static
+     * @method unregisterLocalization
+     * @param {String|Object} locale
+     * @param {String} key
+     * @param {Object} [options]
+     * @param {String} [options.plugin]
+     * @return {Boolean}
+     */
+    Localization.unregisterLocalization = function(locale, key, options) {
+        locale = parseLocale(locale);
+
+        if (!util.isString(key)) {
+            throw new Error(&#x27;key parameter is required&#x27;);
+        }
+        if (!util.isObject(options)) {
+            options = {};
+        }
+
+        //ensure that the key even exists
+        if (!util.isString(Localization.keys[key])) {
+            return false;
+        }
+
+        //walk the tree looking for the key
+        var keyBlock = findKeyBlock(key);
+        if (keyBlock === null) {
+            return false;
+        }
+
+        var langKey = k(locale.language);
+        var langBlock = keyBlock[langKey];
+        if (util.isNullOrUndefined(langBlock)) {
+
+            //the language could not be found
+            return false;
+        }
+
+        //check for country
+        if (util.isString(locale.countryCode)) {
+
+            var countryKey = k(locale.countryCode);
+            if (!util.isNullOrUndefined(langBlock[countryKey])) {
+
+                var countryBlock = langBlock[countryKey];//translate to plugin key
+                if (util.isString(options.plugin)) {
+
+                    if (util.isString(countryBlock[options.plugin])) {
+                        delete countryBlock[options.plugin];
+                        return true;
+                    }
+
+                    //we were asked to target the plugin only
+                    return false;
+                }
+            }
+
+            if (util.isString(keyBlock[countryKey].__default)) {
+                delete keyBlock[countryKey].__default;
+                return true;
+            }
+            return false;
+        }
+
+        //check the plugin at the lang level
+        if (util.isString(options.plugin) &amp;&amp; util.isObject(langBlock.__plugins)) {
+
+            if (util.isString(langBlock.__plugins[options.plugin])) {
+                delete langBlock.__plugins[options.plugin];
+                return true;
+            }
+
+            //we were asked to target the plugin only
+            return false;
+        }
+
+        //finally check the default
+        if (util.isString(langBlock.__default)) {
+            delete langBlock.__default;
+            return true;
+        }
+        return false;
+    };
+
+    /**
+     * Retrieves the default locale for the instance.  It first inspects the
+     * Configuration property localization.defaultLocale.  As a last resort it
+     * will fall back to english. The locale is expected to be of the form:
+     * [language code]_[country code]
+     * @static
+     * @method getDefaultLocale
+     * @return {String} The default locale
+     */
+    Localization.getDefaultLocale = function() {
+        return config.localization.defaultLocale || &#x27;en-US&#x27;;
+    };
+
+    /**
+     * Retrieves the supported locales
+     * @static
+     * @method getSupported
+     * @return {Array}
+     */
+    Localization.getSupported = function() {
+        return util.clone(Localization.supported);
+    };
+
+    /**
+     * Determines if a raw localization value contains named parameters
+     * @static
+     * @method containsParameters
+     * @param {String} localizationValue
+     * @return {Boolean}
+     */
+    Localization.containsParameters = function(localizationValue) {
+        if (!util.isString(localizationValue)) {
+            throw new Error(&#x27;localizationParameter is required&#x27;);
+        }
+        return localizationValue.search(Localization.PARAM_REPLACEMENT_REGEX) &gt;= 0;
+    };
+
+    /**
+     * Given a raw localization value and a set of parameters the function will
+     * attempt to replace the named parameters in the raw value with the values
+     * provided in the params.  When a named parameter is found that was not
+     * provided a value the defaultVal parameter value is used.
+     * @static
+     * @method replaceParameters
+     * @param {String} value
+     * @param {Object} params
+     * @param {String} [defaultVal]
+     * @return {String}
+     */
+    Localization.replaceParameters = function(value, params, defaultVal) {
+        if (!util.isString(value)) {
+            throw new Error(&#x27;value parameter is required&#x27;);
+        }
+        if (!util.isObject(params)) {
+            throw new Error(&#x27;params parameter is required&#x27;);
+        }
+
+        //We went with a homegrown solution here because it is ~4 times faster
+        //than the regex expression solution:
+        //http://stackoverflow.com/questions/1408289/how-can-i-do-string-interpolation-in-javascri
+        var prev = null;
+        var isOpen = false;
+        var variable = &#x27;&#x27;;
+        var val = &#x27;&#x27;;
+        for (var i = 0; i &lt; value.length; i++) {
+            if (!isOpen &amp;&amp; value[i] === &#x27;{&#x27; &amp;&amp; prev !== &#x27;%&#x27;) {
+                isOpen = true;
+            }
+            else if (isOpen &amp;&amp; value[i] === &#x27;}&#x27;) {
+                val += params[variable] || defaultVal || variable;
+                isOpen = false;
+                variable = &#x27;&#x27;;
+            }
+            else if (isOpen) {
+                variable += value[i];
+            }
+            else {
+                val += value[i];
+            }
+            prev = value[i];
+        }
+        return val;
+    };
+
+    /**
+     * Retrieves the supported locales as an array where each item in the array
+     * contains a value (locale) and a name (locale specific representation of
+     * the locale).
+     * @static
+     * @method getSupportedWithDisplay
+     * @return {Array}
+     */
+    Localization.getSupportedWithDisplay = function() {
+
+        var supported = Localization.getSupported();
+        return supported.map(function(locale) {
+
+            var localization = new Localization(locale);
+            return {
+                value: locale,
+                name: localization.g(&#x27;generic.LOCALE_DISPLAY&#x27;/*, {empty options}*/)
+            };
+        });
+    };
+
+    /**
+     * Parses a locale or file path to a locale file and extracts the language
+     * and country code into an object.
+     * @static
+     * @method parseLocaleStr
+     * @param {String} filePath
+     * @return {Object}
+     */
+    Localization.parseLocaleStr = function(filePath) {
+        if (util.isObject(filePath)) {
+            if (!util.isString(filePath.language)) {
+                throw new Error(&#x27;filePath.language parameter is required&#x27;);
+            }
+            if (!util.isNullOrUndefined(filePath.countryCode) &amp;&amp; !util.isString(filePath.countryCode)) {
+                throw new Error(&#x27;filePath.countryCode parameter must be a string&#x27;);
+            }
+
+            //we have a valid locale we can stop
+            return filePath;
+        }
+        if (!util.isString(filePath)) {
+            throw new Error(&#x27;filePath parameter is required&#x27;);
+        }
+
+        //detect what file path separator we are using. Unix first then windows
+        var lastSlashPos = filePath.lastIndexOf(&#x27;/&#x27;);
+        if (lastSlashPos &lt; 0) {
+            lastSlashPos = filePath.lastIndexOf(&#x27;\\&#x27;);
+        }
+        var extPos = filePath.lastIndexOf(JS_EXT);
+        if (extPos &lt; 0) {
+            extPos = filePath.length;
+        }
+        var locale = filePath.substr(lastSlashPos + 1, extPos - lastSlashPos - 1);
+
+        var parts = locale.split(Localization.LOCALE_PART_SEP);
+        var lang = parts[0] ? parts[0].toLowerCase() : null;
+        var countryCode = parts[1] ? parts[1].toUpperCase() : null;
+        return {
+            language: lang,
+            countryCode: countryCode,
+        };
+    };
+
+    /**
+     * Formats a language and an optional country code into a proper locale
+     * format (lang-COUNTRY)
+     * @static
+     * @method formatLocale
+     * @param {String} language
+     * @param {String} [countryCode]
+     * @return {String}
+     */
+    Localization.formatLocale = function(language, countryCode) {
+        if (!util.isString(language)) {
+            throw new Error(&#x27;language parameter is required&#x27;);
+        }
+        if (!util.isNullOrUndefined(countryCode) &amp;&amp; !util.isString(countryCode)) {
+            throw new Error(&#x27;countryCode parameter must be a string&#x27;);
+        }
+
+        var localeStr = language.toLowerCase();
+        if (util.isString(countryCode)) {
+            localeStr += Localization.LOCALE_PART_SEP + countryCode.toUpperCase();
+        }
+        return localeStr;
+    };
+
+    /**
+     * Asserts that the options parameter is provided and that it contains a
+     * property &quot;plugin&quot; that is a string.
+     * @private
+     * @static
+     * @method assertOptions
+     * @param {Object} options
+     * @param {String} options.plugin
+     */
+    function assertOptions(options) {
+        if (!util.isObject(options)) {
+            throw new Error(&#x27;options parameter is required&#x27;);
+        }
+        if (!util.isString(options.plugin)) {
+            throw new Error(&#x27;options.plugin is required&#x27;);
+        }
+    }
+
+    /**
+     * Takes a locale object or string representation.  When a string it is
+     * parsed to an object.  When an object is passed it is verified.  The
+     * function throws an error when it finds invalid format.
+     * @private
+     * @static
+     * @method parseLocale
+     * @param {String|Object} locale
+     * @return {Object}
+     */
+    function parseLocale(locale) {
+        if (util.isString(locale)) {
+            locale = Localization.parseLocaleStr(locale);
+        }
+        if (util.isObject(locale)) {
+            if (!util.isString(locale.language)) {
+                throw new Error(&#x27;locale.language is required&#x27;);
+            }
+        }
+        else {
+            throw new Error(&#x27;locale is required&#x27;);
+        }
+        return locale;
+    }
+
+    /**
+     * Formats a given key to be formatted as a &quot;private&quot; property in the
+     * storage structure.  This is to prevent collisions between localization
+     * keys.
+     * @private
+     * @static
+     * @method k
+     * @param {String} key
+     * @return {String}
+     */
+    function k(key) {
+        return &#x27;__&#x27; + key;
+    }
+
+    /**
+     * Navigates the storage structure to find where a localization key&#x27;s
+     * values live
+     * @private
+     * @static
+     * @method findKeyBlock
+     * @param {String} key
+     * @return {Object} The object that contains the values for the key
+     */
+    function findKeyBlock(key) {
+
+        //parse the key
+        var keyParts = key.split(Localization.KEY_SEP);
+
+        //walk the tree looking for the storage structure
+        var keyBlock = Localization.storage;
+        keyParts.forEach(function(part) {
+            if (util.isNullOrUndefined(keyBlock[part])) {
+                keyBlock[part] = {
+                    __isKey: true
+                };
+            }
+            else if (!keyBlock[part].__isKey) {;
+
+                //bad news bears. They tried to provide a key in a protected
+                //namespace.  Basically all the things with &quot;__&quot; prefixes
+                return null;
+            }
+            keyBlock = keyBlock[part];
+        });
+
+        return keyBlock;
+    }
+
+    return Localization;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

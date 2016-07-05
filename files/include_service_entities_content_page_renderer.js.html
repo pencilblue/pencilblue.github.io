@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\service\entities\content\page_renderer.js - PencilBlue</title>
+    <title>include/service/entities/content/page_renderer.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\service\entities\content\page_renderer.js</h1>
+<h1 class="file-heading">File: include/service/entities/content/page_renderer.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-	Copyright (C) 2015  PencilBlue, LLC
+	Copyright (C) 2016  PencilBlue, LLC
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -224,34 +225,37 @@
 var util = require(&#x27;../../../util.js&#x27;);
 
 module.exports = function(pb) {
-    
+
     /**
-     * Retrieves the necessary data as well as prepares the layout so a view 
+     * Retrieves the necessary data as well as prepares the layout so a view
      * loader can complete the render of content
      * @class PageRenderer
      * @constructor
+     * @param {object} context
      */
     function PageRenderer(context) {
-    
+
         /**
          *
          * @property commentService
          * @type {CommentService}
          */
         this.commentService = new pb.CommentService(context);
+
+        PageRenderer.super_.call(this, context);
     }
     util.inherits(PageRenderer, pb.ArticleRenderer);
-    
+
     /**
      * @method getContentLinkPrefix
      * @return {String}
      */
     PageRenderer.prototype.getContentLinkPrefix = function() {
-        return &#x27;/article/&#x27;;
+        return &#x27;/page/&#x27;;
     };
-    
+
     /**
-     * Retrieves the layout from the content object. Provides a mechanism to 
+     * Retrieves the layout from the content object. Provides a mechanism to
      * allow for layout parameter to have any name.
      * @method getLayout
      * @param {Object} content
@@ -260,10 +264,10 @@ module.exports = function(pb) {
     PageRenderer.prototype.getLayout = function(content) {
         return content.page_layout;
     };
-    
+
     /**
-     * A workaround to allow this prototype to operate on articles and pages.  
-     * The layout parameter is not the same.  Until we introduce breaking 
+     * A workaround to allow this prototype to operate on articles and pages.
+     * The layout parameter is not the same.  Until we introduce breaking
      * changes this will have to do.
      * @method setLayout
      * @param {Object} content
@@ -272,9 +276,10 @@ module.exports = function(pb) {
     PageRenderer.prototype.setLayout = function(content, layout) {
         content.page_layout = layout;
     };
-    
+
     return PageRenderer;
 };
+
     </pre>
 </div>
                     </div>

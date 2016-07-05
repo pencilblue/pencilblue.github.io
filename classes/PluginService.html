@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_plugin_service.js.html#l39"><code>include\service\entities\plugin_service.js:39</code></a>
+            Defined in: <a href="../files/include_service_entities_plugin_service.js.html#l38"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:38</code></a>
         </div>
 
             Module: <a href="../modules/Entities.html">Entities</a><br>
@@ -242,7 +243,7 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l39"><code>include\service\entities\plugin_service.js:39</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l38"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:38</code></a>
         </p>
 
 
@@ -366,9 +367,10 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                                 <a href="#method_getInitTasksForPlugin">getInitTasksForPlugin</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getLocalizations">getLocalizations</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getPermissionsForRole">getPermissionsForRole</a>
@@ -415,15 +417,17 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
 
                                     <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getServiceName">getServiceName</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getServices">getServices</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getSetting">getSetting</a>
@@ -484,6 +488,11 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_isActivePlugin">isActivePlugin</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_isInstalled">isInstalled</a>
 
                             </li>
@@ -507,10 +516,11 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_loadService">loadService</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_onIsPluginAvailableCommandReceived">onIsPluginAvailableCommandReceived</a>
@@ -540,10 +550,11 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                                 <a href="#method_purgeThemeSettings">purgeThemeSettings</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_require">require</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_resetSettings">resetSettings</a>
@@ -585,28 +596,34 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                                 <a href="#method_uninstallPlugin">uninstallPlugin</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_validateDetails">validateDetails</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_validateIconPath">validateIconPath</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_validateMainModulePath">validateMainModulePath</a>
 
+                                    <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_validateSetting">validateSetting</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_validateSettingValue">validateSettingValue</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                     </ul>
                 </div>
@@ -678,6 +695,9 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
                 <li class="arg">
                         <code>pluginUid</code>
                 </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -695,7 +715,7 @@ Install/uninstall, setting retrieval, plugin retrieval, etc.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l158"><code>include\service\entities\plugin_service.js:158</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l154"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:154</code></a>
         </p>
 
 
@@ -714,6 +734,16 @@ NOTE: it is not recommended to call this directly.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
                         <span class="type">String</span>
 
 
@@ -763,7 +793,7 @@ NOTE: it is not recommended to call this directly.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l775"><code>include\service\entities\plugin_service.js:775</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l774"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:774</code></a>
         </p>
 
 
@@ -834,6 +864,9 @@ the plugin's public directory.</p>
                 <li class="arg">
                         <code>serviceName</code>
                 </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -851,7 +884,7 @@ the plugin's public directory.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l500"><code>include\service\entities\plugin_service.js:500</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l497"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:497</code></a>
         </p>
 
 
@@ -914,6 +947,16 @@ use a cache service.</p>
                     </div>
 
                 </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
             </ul>
         </div>
 
@@ -952,7 +995,7 @@ use a cache service.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l800"><code>include\service\entities\plugin_service.js:800</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l799"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:799</code></a>
         </p>
 
 
@@ -1014,7 +1057,7 @@ use a cache service.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l141"><code>include\service\entities\plugin_service.js:141</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l140"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:140</code></a>
         </p>
 
 
@@ -1055,6 +1098,9 @@ use a cache service.</p>
                 <li class="arg">
                         <code>pluginUid</code>
                 </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -1072,7 +1118,7 @@ use a cache service.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l182"><code>include\service\entities\plugin_service.js:182</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l179"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:179</code></a>
         </p>
 
 
@@ -1090,6 +1136,16 @@ use a cache service.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">pluginUid</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
                         <span class="type">String</span>
 
 
@@ -1138,7 +1194,7 @@ use a cache service.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l726"><code>include\service\entities\plugin_service.js:726</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l725"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:725</code></a>
         </p>
 
 
@@ -1198,7 +1254,7 @@ use a cache service.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l196"><code>include\service\entities\plugin_service.js:196</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l194"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:194</code></a>
         </p>
 
 
@@ -1245,7 +1301,7 @@ initialized successfully within this instance.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l791"><code>include\service\entities\plugin_service.js:791</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l790"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:790</code></a>
         </p>
 
 
@@ -1296,7 +1352,7 @@ initialized successfully within this instance.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l215"><code>include\service\entities\plugin_service.js:215</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l212"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:212</code></a>
         </p>
 
 
@@ -1348,7 +1404,7 @@ initialized successfully within this instance.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l841"><code>include\service\entities\plugin_service.js:841</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l840"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:840</code></a>
         </p>
 
 
@@ -1431,7 +1487,7 @@ required to have a uid property that is a string.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1751"><code>include\service\entities\plugin_service.js:1751</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1536"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1536</code></a>
         </p>
 
 
@@ -1495,7 +1551,7 @@ contained within.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l830"><code>include\service\entities\plugin_service.js:830</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l829"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:829</code></a>
         </p>
 
 
@@ -1554,7 +1610,7 @@ properly.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1126"><code>include\service\entities\plugin_service.js:1126</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1110"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1110</code></a>
         </p>
 
 
@@ -1573,7 +1629,7 @@ A cache is used to store already known plugin information that can be shared bet
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">plugin</code>
-                        <span class="type">Plugin</span>
+                        <span class="type">Object</span>
 
 
                     <div class="param-description">
@@ -1595,7 +1651,7 @@ A cache is used to store already known plugin information that can be shared bet
 
 
 </div>
-<div id="method_getLocalizations" class="method item">
+<div id="method_getLocalizations" class="method item deprecated">
     <h3 class="name"><code>getLocalizations</code></h3>
 
         <div class="args">
@@ -1610,6 +1666,7 @@ A cache is used to store already known plugin information that can be shared bet
         </div>
 
 
+        <span class="flag deprecated" title="since 0.6.0">deprecated</span>
 
 
 
@@ -1619,10 +1676,11 @@ A cache is used to store already known plugin information that can be shared bet
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1601"><code>include\service\entities\plugin_service.js:1601</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1422"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1422</code></a>
         </p>
 
 
+            <p>Deprecated: since 0.6.0</p>
 
     </div>
 
@@ -1690,7 +1748,7 @@ When the directory does not exist NULL is returned as the result parameter.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l697"><code>include\service\entities\plugin_service.js:697</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l695"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:695</code></a>
         </p>
 
 
@@ -1757,7 +1815,7 @@ inspected.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l460"><code>include\service\entities\plugin_service.js:460</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l457"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:457</code></a>
         </p>
 
 
@@ -1827,7 +1885,7 @@ plugin does exist null is provided.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l473"><code>include\service\entities\plugin_service.js:473</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l470"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:470</code></a>
         </p>
 
 
@@ -1889,7 +1947,7 @@ plugin does exist null is provided.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l922"><code>include\service\entities\plugin_service.js:922</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l922"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:922</code></a>
         </p>
 
 
@@ -1942,7 +2000,7 @@ active, inactive, available.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1742"><code>include\service\entities\plugin_service.js:1742</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1527"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1527</code></a>
         </p>
 
 
@@ -1987,7 +2045,7 @@ active, inactive, available.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l482"><code>include\service\entities\plugin_service.js:482</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l479"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:479</code></a>
         </p>
 
 
@@ -2041,7 +2099,7 @@ active, inactive, available.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l491"><code>include\service\entities\plugin_service.js:491</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l488"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:488</code></a>
         </p>
 
 
@@ -2101,7 +2159,7 @@ active, inactive, available.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1729"><code>include\service\entities\plugin_service.js:1729</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1514"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1514</code></a>
         </p>
 
 
@@ -2155,6 +2213,9 @@ plugin</p>
                 <li class="arg">
                         <code>pluginUid</code>
                 </li>
+                <li class="arg">
+                        <code class="optional">[site=global]</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -2172,7 +2233,7 @@ plugin</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1675"><code>include\service\entities\plugin_service.js:1675</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1459"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1459</code></a>
         </p>
 
 
@@ -2181,8 +2242,8 @@ plugin</p>
 
     <div class="description">
         <p>Retrieves a plugin service prototype.  It is expected to be a prototype but
-it may also be an instance as along as that instance fufills all
-responsbilities of the service interface.  When the desired service does not
+it may also be an instance as along as that instance fulfills all
+responsibilities of the service interface.  When the desired service does not
 exist NULL is returned.</p>
 
     </div>
@@ -2208,6 +2269,20 @@ exist NULL is returned.</p>
 
                     <div class="param-description">
                         <p>The unique plugin identifier</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[site=global]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li>The site UID</li>
+</ul>
 
                     </div>
 
@@ -2238,6 +2313,9 @@ exist NULL is returned.</p>
                 <li class="arg">
                         <code>pluginUid</code>
                 </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -2255,7 +2333,7 @@ exist NULL is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1653"><code>include\service\entities\plugin_service.js:1653</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1436"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1436</code></a>
         </p>
 
 
@@ -2264,8 +2342,8 @@ exist NULL is returned.</p>
 
     <div class="description">
         <p>Retrieves a plugin service prototype.  It is expected to be a prototype but
-it may also be an instance as along as that instance fufills all
-responsbilities of the service interface.  When the desired service does not
+it may also be an instance as along as that instance fulfills all
+responsibilities of the service interface.  When the desired service does not
 exist NULL is returned.</p>
 
     </div>
@@ -2295,6 +2373,16 @@ exist NULL is returned.</p>
                     </div>
 
                 </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
             </ul>
         </div>
 
@@ -2310,7 +2398,7 @@ exist NULL is returned.</p>
 
 
 </div>
-<div id="method_getServiceName" class="method item">
+<div id="method_getServiceName" class="method item deprecated">
     <h3 class="name"><code>getServiceName</code></h3>
 
         <div class="args">
@@ -2328,6 +2416,7 @@ exist NULL is returned.</p>
             <span class="type">String</span>
         </span>
 
+        <span class="flag deprecated" title="since 0.6.0">deprecated</span>
 
 
 
@@ -2338,10 +2427,11 @@ exist NULL is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2310"><code>include\service\entities\plugin_service.js:2310</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1844"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1844</code></a>
         </p>
 
 
+            <p>Deprecated: since 0.6.0</p>
 
     </div>
 
@@ -2394,7 +2484,7 @@ name minus any extension.</p>
 
 
 </div>
-<div id="method_getServices" class="method item">
+<div id="method_getServices" class="method item deprecated">
     <h3 class="name"><code>getServices</code></h3>
 
         <div class="args">
@@ -2409,6 +2499,7 @@ name minus any extension.</p>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -2419,7 +2510,7 @@ name minus any extension.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2135"><code>include\service\entities\plugin_service.js:2135</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1698"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1698</code></a>
         </p>
 
 
@@ -2491,7 +2582,7 @@ callback.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l233"><code>include\service\entities\plugin_service.js:233</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l230"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:230</code></a>
         </p>
 
 
@@ -2572,7 +2663,7 @@ installed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l248"><code>include\service\entities\plugin_service.js:248</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l245"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:245</code></a>
         </p>
 
 
@@ -2641,7 +2732,7 @@ Null is provided in the event that the plugin is not installed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l261"><code>include\service\entities\plugin_service.js:261</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l258"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:258</code></a>
         </p>
 
 
@@ -2719,7 +2810,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l337"><code>include\service\entities\plugin_service.js:337</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l334"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:334</code></a>
         </p>
 
 
@@ -2798,7 +2889,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l350"><code>include\service\entities\plugin_service.js:350</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l347"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:347</code></a>
         </p>
 
 
@@ -2866,7 +2957,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l362"><code>include\service\entities\plugin_service.js:362</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l359"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:359</code></a>
         </p>
 
 
@@ -2932,7 +3023,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l373"><code>include\service\entities\plugin_service.js:373</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l370"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:370</code></a>
         </p>
 
 
@@ -3007,7 +3098,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1391"><code>include\service\entities\plugin_service.js:1391</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1378"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1378</code></a>
         </p>
 
 
@@ -3065,7 +3156,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2469"><code>include\service\entities\plugin_service.js:2469</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1993"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1993</code></a>
         </p>
 
 
@@ -3104,7 +3195,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1095"><code>include\service\entities\plugin_service.js:1095</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1073"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1073</code></a>
         </p>
 
 
@@ -3122,7 +3213,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">plugin</code>
-                        <span class="type">Plugin</span>
+                        <span class="type">Object</span>
 
 
                     <div class="param-description">
@@ -3154,7 +3245,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>A</code>
+                        <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -3169,7 +3260,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1030"><code>include\service\entities\plugin_service.js:1030</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1028"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1028</code></a>
         </p>
 
 
@@ -3186,12 +3277,12 @@ exists, and a hash of of the plugin's settings' names/values.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">A</code>
+                        <code class="param-name">cb</code>
                         <span class="type">Function</span>
 
 
                     <div class="param-description">
-                        <p>callback that provides two parameters: cb(Error, Boolean)</p>
+                        <p>A callback that provides two parameters: cb(Error, Boolean)</p>
 
                     </div>
 
@@ -3226,7 +3317,7 @@ exists, and a hash of of the plugin's settings' names/values.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l997"><code>include\service\entities\plugin_service.js:997</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l995"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:995</code></a>
         </p>
 
 
@@ -3313,7 +3404,7 @@ plugin and its details.json file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1447"><code>include\service\entities\plugin_service.js:1447</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1389"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1389</code></a>
         </p>
 
 
@@ -3383,6 +3474,9 @@ plugin and its details.json file.</p>
                 <li class="arg">
                         <code>uid</code>
                 </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -3400,7 +3494,7 @@ plugin and its details.json file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l743"><code>include\service\entities\plugin_service.js:743</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l744"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:744</code></a>
         </p>
 
 
@@ -3408,7 +3502,7 @@ plugin and its details.json file.</p>
     </div>
 
     <div class="description">
-        <p>Inidicates if the specified plugin is active in this instance of PB.</p>
+        <p>Indicates if the specified plugin is active in this instance of PB.</p>
 
     </div>
 
@@ -3424,6 +3518,96 @@ plugin and its details.json file.</p>
                     <div class="param-description">
                         <p>The unique identifier for a plugin</p>
 
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE if the plugin is active, FALSE if not</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isActivePlugin" class="method item">
+    <h3 class="name"><code>isActivePlugin</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>uid</code>
+                </li>
+                <li class="arg">
+                        <code>site</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l759"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:759</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Indicates if the specified plugin is active for a given site in this instance of PB.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">uid</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The unique identifier for a plugin</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
                     </div>
 
                 </li>
@@ -3448,7 +3632,7 @@ plugin and its details.json file.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>pluginIdentifer</code>
+                        <code>pluginIdentifier</code>
                 </li>
                 <li class="arg">
                         <code>cb</code>
@@ -3466,7 +3650,7 @@ plugin and its details.json file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l445"><code>include\service\entities\plugin_service.js:445</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l442"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:442</code></a>
         </p>
 
 
@@ -3483,8 +3667,8 @@ plugin and its details.json file.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">pluginIdentifer</code>
-                        <span class="type">Object</span>
+                        <code class="param-name">pluginIdentifier</code>
+                        <span class="type">String</span>
 
 
                     <div class="param-description">
@@ -3524,6 +3708,9 @@ TRUE if the plugin is installed, FALSE if not.</p>
                         <code>pluginUid</code>
                 </li>
                 <li class="arg">
+                        <code>site</code>
+                </li>
+                <li class="arg">
                         <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
@@ -3540,7 +3727,7 @@ TRUE if the plugin is installed, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2260"><code>include\service\entities\plugin_service.js:2260</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1793"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1793</code></a>
         </p>
 
 
@@ -3580,6 +3767,16 @@ RequestHandler.</p>
 
                 </li>
                 <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
                         <code class="param-name">cb</code>
                         <span class="type">Function</span>
 
@@ -3608,6 +3805,9 @@ RequestHandler.</p>
                         <code>pluginUid</code>
                 </li>
                 <li class="arg">
+                        <code>site</code>
+                </li>
+                <li class="arg">
                         <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
@@ -3624,7 +3824,7 @@ RequestHandler.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2206"><code>include\service\entities\plugin_service.js:2206</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1738"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1738</code></a>
         </p>
 
 
@@ -3660,6 +3860,16 @@ plugin's controllers directory.</p>
                     <div class="param-description">
                         <p>The unique identifier for the plugin</p>
 
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
                     </div>
 
                 </li>
@@ -3705,7 +3915,7 @@ plugin's controllers directory.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1763"><code>include\service\entities\plugin_service.js:1763</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1548"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1548</code></a>
         </p>
 
 
@@ -3777,7 +3987,7 @@ plugin's controllers directory.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1702"><code>include\service\entities\plugin_service.js:1702</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1487"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1487</code></a>
         </p>
 
 
@@ -3827,14 +4037,14 @@ see if it is an absolute path.</p>
 
             <div class="returns-description">
                         <span class="type">Function</span>:
-                    <p>The mainmodule prototype</p>
+                    <p>The main-module prototype</p>
 
             </div>
         </div>
 
 
 </div>
-<div id="method_loadService" class="method item">
+<div id="method_loadService" class="method item deprecated">
     <h3 class="name"><code>loadService</code></h3>
 
         <div class="args">
@@ -3849,6 +4059,7 @@ see if it is an absolute path.</p>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -3859,7 +4070,7 @@ see if it is an absolute path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2181"><code>include\service\entities\plugin_service.js:2181</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1716"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1716</code></a>
         </p>
 
 
@@ -3927,77 +4138,7 @@ the callback.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2436"><code>include\service\entities\plugin_service.js:2436</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p><b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>
-The function is called when a command is recevied to initialize a plugin.
-The result is then sent back to the calling process via the
-CommandService.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">command</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                        <ul class="params-list">
-                            <li class="param">
-                                    <code class="param-name">jobId</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    <p>The ID of the in-progress job that this
-process is intended to join.</p>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_onIsPluginAvailableCommandReceived" class="method item">
-    <h3 class="name"><code>onIsPluginAvailableCommandReceived</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>command</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2404"><code>include\service\entities\plugin_service.js:2404</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1928"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1928</code></a>
         </p>
 
 
@@ -4067,7 +4208,7 @@ process is intended to join.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2371"><code>include\service\entities\plugin_service.js:2371</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1895"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1895</code></a>
         </p>
 
 
@@ -4080,6 +4221,76 @@ The function is called when a command is recevied to validate that a plugin is a
 The function builds out the appropriate options then calls the
 uninstallPlugin function.  The result is then sent back to the calling
 process via the CommandService.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">command</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">jobId</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <p>The ID of the in-progress job that this
+process is intended to join.</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onIsPluginAvailableCommandReceived" class="method item">
+    <h3 class="name"><code>onIsPluginAvailableCommandReceived</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>command</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l1960"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1960</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p><b>NOTE: DO NOT CALL THIS DIRECTLY</b><br/>
+The function is called when a command is recevied to initialize a plugin.
+The result is then sent back to the calling process via the
+CommandService.</p>
 
     </div>
 
@@ -4138,7 +4349,7 @@ process is intended to join.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2337"><code>include\service\entities\plugin_service.js:2337</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1861"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1861</code></a>
         </p>
 
 
@@ -4211,7 +4422,7 @@ process is intended to join.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l423"><code>include\service\entities\plugin_service.js:423</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l420"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:420</code></a>
         </p>
 
 
@@ -4283,7 +4494,7 @@ process is intended to join.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l434"><code>include\service\entities\plugin_service.js:434</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l431"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:431</code></a>
         </p>
 
 
@@ -4331,7 +4542,7 @@ process is intended to join.</p>
 
 
 </div>
-<div id="method_require" class="method item">
+<div id="method_require" class="method item deprecated">
     <h3 class="name"><code>require</code></h3>
 
         <div class="args">
@@ -4349,6 +4560,7 @@ process is intended to join.</p>
             <span class="type"></span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -4359,7 +4571,7 @@ process is intended to join.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1580"><code>include\service\entities\plugin_service.js:1580</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1408"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1408</code></a>
         </p>
 
 
@@ -4434,7 +4646,7 @@ process is intended to join.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l600"><code>include\service\entities\plugin_service.js:600</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l598"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:598</code></a>
         </p>
 
 
@@ -4505,7 +4717,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l392"><code>include\service\entities\plugin_service.js:392</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l389"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:389</code></a>
         </p>
 
 
@@ -4576,7 +4788,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l407"><code>include\service\entities\plugin_service.js:407</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l404"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:404</code></a>
         </p>
 
 
@@ -4648,7 +4860,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l644"><code>include\service\entities\plugin_service.js:644</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l642"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:642</code></a>
         </p>
 
 
@@ -4726,7 +4938,7 @@ TRUE if the settings were successfully cleared and reloaded. FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l279"><code>include\service\entities\plugin_service.js:279</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l276"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:276</code></a>
         </p>
 
 
@@ -4820,7 +5032,7 @@ TRUE if the setting was persisted successfully, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l294"><code>include\service\entities\plugin_service.js:294</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l291"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:291</code></a>
         </p>
 
 
@@ -4906,7 +5118,7 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l308"><code>include\service\entities\plugin_service.js:308</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l305"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:305</code></a>
         </p>
 
 
@@ -5000,7 +5212,7 @@ TRUE if the setting was persisted successfully, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l323"><code>include\service\entities\plugin_service.js:323</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l320"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:320</code></a>
         </p>
 
 
@@ -5083,7 +5295,7 @@ TRUE if the settings were persisted successfully, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l543"><code>include\service\entities\plugin_service.js:543</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l541"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:541</code></a>
         </p>
 
 
@@ -5151,10 +5363,10 @@ TRUE/FALSE if an error occured.</p>
                         <code>pluginUid</code>
                 </li>
                 <li class="arg">
-                        <code>options</code>
+                        <code class="optional">[options]</code>
                 </li>
                 <li class="arg">
-                        <code class="optional">[cb]</code>
+                        <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -5169,7 +5381,7 @@ TRUE/FALSE if an error occured.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l953"><code>include\service\entities\plugin_service.js:953</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l953"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:953</code></a>
         </p>
 
 
@@ -5197,8 +5409,9 @@ TRUE/FALSE if an error occured.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name">options</code>
+                        <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -5212,7 +5425,7 @@ TRUE/FALSE if an error occured.</p>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
 
                                 <div class="param-description">
-                                    <p>Required when unintalling from the executing
+                                    <p>Required when uninstalling from the executing
 process instead of calling upon the cluster.</p>
 
                                 </div>
@@ -5234,9 +5447,8 @@ function installs the plugin from the executing process.</p>
                         </ul>
                 </li>
                 <li class="param">
-                        <code class="param-name optional">[cb]</code>
+                        <code class="param-name">cb</code>
                         <span class="type">Function</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -5251,7 +5463,7 @@ function installs the plugin from the executing process.</p>
 
 
 </div>
-<div id="method_validateDetails" class="method item">
+<div id="method_validateDetails" class="method item deprecated">
     <h3 class="name"><code>validateDetails</code></h3>
 
         <div class="args">
@@ -5269,6 +5481,7 @@ function installs the plugin from the executing process.</p>
         </div>
 
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -5279,7 +5492,7 @@ function installs the plugin from the executing process.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l1790"><code>include\service\entities\plugin_service.js:1790</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1575"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1575</code></a>
         </p>
 
 
@@ -5305,6 +5518,102 @@ function installs the plugin from the executing process.</p>
 
                     </div>
 
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[theme]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">permissions</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">uid</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">description</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">version</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">pb_version</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">icon</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[contributors]</code>
+                                    <span class="type">Array</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[author]</code>
+                                    <span class="type">Object</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[settings]</code>
+                                    <span class="type">Array</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
                 </li>
                 <li class="param">
                         <code class="param-name">pluginDirName</code>
@@ -5336,7 +5645,7 @@ TRUE if the details object passes validation, FALSE if not.</p>
 
 
 </div>
-<div id="method_validateIconPath" class="method item">
+<div id="method_validateIconPath" class="method item deprecated">
     <h3 class="name"><code>validateIconPath</code></h3>
 
         <div class="args">
@@ -5354,6 +5663,7 @@ TRUE if the details object passes validation, FALSE if not.</p>
             <span class="type">Boolean</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -5364,7 +5674,7 @@ TRUE if the details object passes validation, FALSE if not.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2052"><code>include\service\entities\plugin_service.js:2052</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1618"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1618</code></a>
         </p>
 
 
@@ -5419,7 +5729,7 @@ plugin's public directory.</p>
 
 
 </div>
-<div id="method_validateMainModulePath" class="method item">
+<div id="method_validateMainModulePath" class="method item deprecated">
     <h3 class="name"><code>validateMainModulePath</code></h3>
 
         <div class="args">
@@ -5437,16 +5747,18 @@ plugin's public directory.</p>
             <span class="type">Boolean</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
+        <span class="flag static">static</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2074"><code>include\service\entities\plugin_service.js:2074</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1633"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1633</code></a>
         </p>
 
 
@@ -5501,7 +5813,7 @@ specific plugin directory.</p>
 
 
 </div>
-<div id="method_validateSetting" class="method item">
+<div id="method_validateSetting" class="method item deprecated">
     <h3 class="name"><code>validateSetting</code></h3>
 
         <div class="args">
@@ -5519,6 +5831,7 @@ specific plugin directory.</p>
             <span class="type">Array</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -5528,7 +5841,7 @@ specific plugin directory.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2087"><code>include\service\entities\plugin_service.js:2087</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1648"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1648</code></a>
         </p>
 
 
@@ -5583,7 +5896,7 @@ produced an empty array is returned.</p>
 
 
 </div>
-<div id="method_validateSettingValue" class="method item">
+<div id="method_validateSettingValue" class="method item deprecated">
     <h3 class="name"><code>validateSettingValue</code></h3>
 
         <div class="args">
@@ -5598,6 +5911,7 @@ produced an empty array is returned.</p>
             <span class="type">Boolean</span>
         </span>
 
+        <span class="flag deprecated">deprecated</span>
 
 
 
@@ -5608,7 +5922,7 @@ produced an empty array is returned.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_plugin_service.js.html#l2122"><code>include\service\entities\plugin_service.js:2122</code></a>
+        <a href="../files/include_service_entities_plugin_service.js.html#l1684"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:1684</code></a>
         </p>
 
 
@@ -5628,7 +5942,7 @@ allowed.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">value</code>
-                        <span class="type">Boolean | Integer | Float | String</span>
+                        <span class="type">Boolean | Integer | Number | String</span>
 
 
                     <div class="param-description">
@@ -5657,283 +5971,283 @@ allowed.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property__pluginRepository" class="property item">
-                        <h3 class="name"><code>_pluginRepository</code></h3>
-                        <span class="type"><a href="../classes/PluginRepository.html" class="crosslink">PluginRepository</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l61"><code>include\service\entities\plugin_service.js:61</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_ACTIVE_PLUGINS" class="property item">
-                        <h3 class="name"><code>ACTIVE_PLUGINS</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l108"><code>include\service\entities\plugin_service.js:108</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A hash of the plugins that are installed and active in this instance of PB.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_DETAILS_FILE_NAME" class="property item">
-                        <h3 class="name"><code>DETAILS_FILE_NAME</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l93"><code>include\service\entities\plugin_service.js:93</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The name of the file that defines the plugin's properties</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_GLOBAL_SITE" class="property item private">
-                        <h3 class="name"><code>GLOBAL_SITE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                        <p>Provided by the <a href="../modules/Services.html">Services</a> module.</p>
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l30"><code>include\service\entities\plugin_service.js:30</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_MAX_DEPENDENCY_LOCK_RETRY_CNT" class="property item private">
-                        <h3 class="name"><code>MAX_DEPENDENCY_LOCK_RETRY_CNT</code></h3>
-                        <span class="type">Integer</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l131"><code>include\service\entities\plugin_service.js:131</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The maximum number of retries to acquire</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_PLUGIN_INIT_CACHE;" class="property item">
-                        <h3 class="name"><code>PLUGIN_INIT_CACHE;</code></h3>
-                        <span class="type">Object</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l115"><code>include\service\entities\plugin_service.js:115</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A hash of shared plugin information used during plugin initialization</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_PLUGINS_DIR" class="property item">
-                        <h3 class="name"><code>PLUGINS_DIR</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l86"><code>include\service\entities\plugin_service.js:86</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The absolute path to the plugins directory for this PecilBlue installation</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_pluginSettingsService" class="property item">
-                        <h3 class="name"><code>pluginSettingsService</code></h3>
-                        <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l77"><code>include\service\entities\plugin_service.js:77</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A setting service that sets and retrieves the settings for plugins</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_pluginSettingsService" class="property item">
-                        <h3 class="name"><code>pluginSettingsService</code></h3>
-                        <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l70"><code>include\service\entities\plugin_service.js:70</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>A setting service that sets and retrieves the settings for plugins</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_PUBLIC_DIR_NAME" class="property item">
-                        <h3 class="name"><code>PUBLIC_DIR_NAME</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l100"><code>include\service\entities\plugin_service.js:100</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The name of the directory for each plugin that contains the public resources</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_site" class="property item">
-                        <h3 class="name"><code>site</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_plugin_service.js.html#l55"><code>include\service\entities\plugin_service.js:55</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property__pluginRepository" class="property item">
+    <h3 class="name"><code>_pluginRepository</code></h3>
+    <span class="type"><a href="../classes/PluginRepository.html" class="crosslink">PluginRepository</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l60"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:60</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_ACTIVE_PLUGINS" class="property item">
+    <h3 class="name"><code>ACTIVE_PLUGINS</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l107"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:107</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A hash of the plugins that are installed and active in this instance of PB.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_DETAILS_FILE_NAME" class="property item">
+    <h3 class="name"><code>DETAILS_FILE_NAME</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l92"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:92</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The name of the file that defines the plugin's properties</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_GLOBAL_SITE" class="property item private">
+    <h3 class="name"><code>GLOBAL_SITE</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/Services.html">Services</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l29"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:29</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_MAX_DEPENDENCY_LOCK_RETRY_CNT" class="property item private">
+    <h3 class="name"><code>MAX_DEPENDENCY_LOCK_RETRY_CNT</code></h3>
+    <span class="type">Integer</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l130"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:130</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The maximum number of retries to acquire</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_PLUGIN_INIT_CACHE;" class="property item">
+    <h3 class="name"><code>PLUGIN_INIT_CACHE;</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l114"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:114</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A hash of shared plugin information used during plugin initialization</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_PLUGINS_DIR" class="property item">
+    <h3 class="name"><code>PLUGINS_DIR</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l85"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:85</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The absolute path to the plugins directory for this PecilBlue installation</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_pluginSettingsService" class="property item">
+    <h3 class="name"><code>pluginSettingsService</code></h3>
+    <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l76"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:76</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A setting service that sets and retrieves the settings for plugins</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_pluginSettingsService" class="property item">
+    <h3 class="name"><code>pluginSettingsService</code></h3>
+    <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l69"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:69</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A setting service that sets and retrieves the settings for plugins</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_PUBLIC_DIR_NAME" class="property item">
+    <h3 class="name"><code>PUBLIC_DIR_NAME</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l99"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:99</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The name of the directory for each plugin that contains the public resources</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_site" class="property item">
+    <h3 class="name"><code>site</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_plugin_service.js.html#l54"><code>include&#x2F;service&#x2F;entities&#x2F;plugin_service.js:54</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
             </div>
 
 

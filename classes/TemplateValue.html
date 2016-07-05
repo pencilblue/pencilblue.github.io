@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,11 +205,10 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_template_service.js.html#l935"><code>include\service\entities\template_service.js:935</code></a>
+            Defined in: <a href="../files/include_service_entities_template_service.js.html#l923"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:923</code></a>
         </div>
 
-            Module: <a href="../modules/Entities.html">Entities</a><br>
-            Parent Module: <a href="../modules/Services.html">Services</a>
+            Module: <a href="../modules/Services.html">Services</a>
 
 </div>
 
@@ -228,7 +228,7 @@ instructions.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>The</code>
+                        <code>{val}</code>
                 </li>
                 <li class="arg">
                         <code class="optional">[htmlEncode=true]</code>
@@ -246,7 +246,7 @@ instructions.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l935"><code>include\service\entities\template_service.js:935</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l923"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:923</code></a>
         </p>
 
 
@@ -262,12 +262,12 @@ instructions.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">The</code>
+                        <code class="param-name">{val}</code>
                         <span class="type">String</span>
 
 
                     <div class="param-description">
-                        <p>raw value to be included in the template processing</p>
+                        <p>The raw value to be included in the template processing</p>
 
                     </div>
 
@@ -353,7 +353,7 @@ encoded during serialization.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l972"><code>include\service\entities\template_service.js:972</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l960"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:960</code></a>
         </p>
 
 
@@ -393,7 +393,7 @@ encoded during serialization.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l951"><code>include\service\entities\template_service.js:951</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l939"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:939</code></a>
         </p>
 
 
@@ -451,7 +451,7 @@ encoded during serialization.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l964"><code>include\service\entities\template_service.js:964</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l952"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:952</code></a>
         </p>
 
 
@@ -485,7 +485,7 @@ encoded during serialization.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l993"><code>include\service\entities\template_service.js:993</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l981"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:981</code></a>
         </p>
 
 
@@ -529,7 +529,7 @@ processing instructions.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_template_service.js.html#l980"><code>include\service\entities\template_service.js:980</code></a>
+        <a href="../files/include_service_entities_template_service.js.html#l968"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:968</code></a>
         </p>
 
 

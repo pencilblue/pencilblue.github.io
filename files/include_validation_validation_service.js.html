@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>include\validation\validation_service.js - PencilBlue</title>
+    <title>include/validation/validation_service.js - PencilBlue</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,12 +200,12 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-<h1 class="file-heading">File: include\validation\validation_service.js</h1>
+<h1 class="file-heading">File: include/validation/validation_service.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /*
-    Copyright (C) 2015  PencilBlue, LLC
+    Copyright (C) 2016  PencilBlue, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -232,8 +233,6 @@ module.exports = function ValidationModule(pb) {
      *
      * @class ValidationService
      * @constructor
-     * @module Services
-     * @submodule Validation
      */
     function ValidationService(){}
 
@@ -322,10 +321,10 @@ module.exports = function ValidationModule(pb) {
 
     /**
      * Validates an email address
-     *
+     * @deprecated
      * @method validateEmail
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateEmail = function(value, required) {
         return ValidationService.isEmail(value, required);
@@ -336,7 +335,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isEmail
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isEmail = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -351,7 +350,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateVersionNum
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateVersionNum = function(value, required) {
         return ValidationService.isVersionNum(value, required);
@@ -362,7 +361,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isVersionNum
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isVersionNum = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -371,13 +370,13 @@ module.exports = function ValidationModule(pb) {
 
         return util.isString(value) &amp;&amp; value.search(VERSION_REGEX) !== -1;
     };
-    
+
     /**
      * Validates a version expression
      *
      * @method isVersionExpression
      * @param {String} expression
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isVersionExpression = function(expression, required) {
         if (!expression &amp;&amp; !required) {
@@ -391,7 +390,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateUrl
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateUrl = function(value, required) {
         return ValidationService.isUrl(value, required);
@@ -402,7 +401,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isUrl
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isUrl = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -417,7 +416,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateSafeFileName
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateSafeFileName = function(value, required) {
         return ValidationService.isSafeFileName(value, required);
@@ -428,7 +427,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isSafeFileName
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isSafeFileName = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -443,7 +442,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateStr
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateStr = function(value, required) {
         return ValidationService.isStr(value, required);
@@ -454,7 +453,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isStr
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isStr = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -468,7 +467,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateNonEmptyStr
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateNonEmptyStr = function(value, required) {
         return ValidationService.isNonEmptyStr(value, required);
@@ -479,7 +478,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isNonEmptyStr
      * @param {String} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isNonEmptyStr = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -493,7 +492,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateArray
      * @param {Array} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateArray = function(value, required) {
         return ValidationService.isArray(value, required);
@@ -504,7 +503,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isArray
      * @param {Array} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isArray = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -518,7 +517,7 @@ module.exports = function ValidationModule(pb) {
      * @deprecated
      * @method validateObject
      * @param {Object} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.validateObject = function(value, required) {
         return ValidationService.isObj(value, required);
@@ -529,7 +528,7 @@ module.exports = function ValidationModule(pb) {
      *
      * @method isObject
      * @param {Object} value
-     * @param {Boolean} required
+     * @param {Boolean} [required=false]
      */
     ValidationService.isObj = function(value, required) {
         if (!value &amp;&amp; !required) {
@@ -545,7 +544,7 @@ module.exports = function ValidationModule(pb) {
      * @param {Integer} val The value under test
      * @param {Boolean} [required=false] Indicates if the value is required. When
      * FALSE, null will be an acceptable value.
-     * @param {Boolean} Indicates if the value must be a number rather than a string representing a number.
+     * @param {Boolean} strict Indicates if the value must be a number rather than a string representing a number.
      * @return {Boolean} TRUE if the value is valid, FALSE if not
      */
     ValidationService.isInt = function(val, required, strict) {
@@ -564,10 +563,10 @@ module.exports = function ValidationModule(pb) {
      * Validates that the value is a float.
      * @static
      * @method isFloat
-     * @param {Float} val The value under test
+     * @param {*} val The value under test
      * @param {Boolean} [required=false] Indicates if the value is required. When
      * FALSE, null will be an acceptable value.
-     * @param {Boolean} Indicates if the value must be a number rather than a string representing a number.
+     * @param {Boolean} strict Indicates if the value must be a number rather than a string representing a number.
      * @return {Boolean} TRUE if the value is valid, FALSE if not
      */
     ValidationService.isFloat = function(val, required, strict) {
@@ -575,7 +574,7 @@ module.exports = function ValidationModule(pb) {
             return true;
         }
 
-        var parsed = parseFloat(val, 10);
+        var parsed = parseFloat(val);
         if (strict &amp;&amp; val !== parsed) {
             return false;
         }
@@ -586,7 +585,7 @@ module.exports = function ValidationModule(pb) {
      * Validates that the value is a number.
      * @static
      * @method isNum
-     * @param {Number} val The value under test
+     * @param {*} val The value under test
      * @param {Boolean} [required=false] Indicates if the value is required. When
      * FALSE, null will be an acceptable value.
      * @return {Boolean} TRUE if the value is valid, FALSE if not
@@ -603,7 +602,7 @@ module.exports = function ValidationModule(pb) {
      * Validates that the value is a boolean.
      * @static
      * @method isBool
-     * @param {Boolean} val The value under test
+     * @param {*} val The value under test
      * @return {Boolean} TRUE if the value is valid, FALSE if not
      */
     ValidationService.isBool = function(val) {
@@ -627,6 +626,7 @@ module.exports = function ValidationModule(pb) {
      * @static
      * @method isDate
      * @param {*} val The value under test
+     * @param {boolean} [required=false]
      * @return {Boolean} TRUE if the value is valid, FALSE if not
      */
     ValidationService.isDate = function(val, required) {
@@ -635,7 +635,7 @@ module.exports = function ValidationModule(pb) {
         }
         return util.isDate(val) &amp;&amp; !isNaN(val.getTime());
     };
-    
+
     return ValidationService;
 };
 

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.5.1</em>
+            <em>API Docs for: 0.6.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -61,7 +61,6 @@
                                 <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
                                 <li><a href="../classes/CommandService.html">CommandService</a></li>
                                 <li><a href="../classes/CommentService.html">CommentService</a></li>
-                                <li><a href="../classes/Configuration.html">Configuration</a></li>
                                 <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
                                 <li><a href="../classes/ContentService.html">ContentService</a></li>
                                 <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
@@ -95,6 +94,7 @@
                                 <li><a href="../classes/LockService.html">LockService</a></li>
                                 <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
@@ -102,6 +102,7 @@
                                 <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
                                 <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
                                 <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
                                 <li><a href="../classes/PB.html">PB</a></li>
                                 <li><a href="../classes/PBError.html">PBError</a></li>
                                 <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
@@ -153,6 +154,7 @@
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
+                
                             <ul id="api-modules" class="apis modules">
                                 <li><a href="../modules/Admin.html">Admin</a></li>
                                 <li><a href="../modules/dao.html">dao</a></li>
@@ -165,7 +167,6 @@
                                 <li><a href="../modules/Session.html">Session</a></li>
                                 <li><a href="../modules/Storage.html">Storage</a></li>
                                 <li><a href="../modules/Theme.html">Theme</a></li>
-                                <li><a href="../modules/Validation.html">Validation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_service_entities_site_service.js.html#l23"><code>include\service\entities\site_service.js:23</code></a>
+            Defined in: <a href="../files/include_service_entities_site_service.js.html#l23"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:23</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -234,7 +235,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l23"><code>include\service\entities\site_service.js:23</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l23"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:23</code></a>
         </p>
 
 
@@ -453,7 +454,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l244"><code>include\service\entities\site_service.js:244</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l244"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:244</code></a>
         </p>
 
 
@@ -537,7 +538,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l505"><code>include\service\entities\site_service.js:505</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l503"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:503</code></a>
         </p>
 
 
@@ -603,9 +604,6 @@
                         <code>options</code>
                 </li>
                 <li class="arg">
-                        <code>id</code>
-                </li>
-                <li class="arg">
                         <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
@@ -621,7 +619,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l302"><code>include\service\entities\site_service.js:302</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l302"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:302</code></a>
         </p>
 
 
@@ -651,18 +649,6 @@
 
                         <ul class="params-list">
                             <li class="param">
-                                    <code class="param-name">uid</code>
-                                    <span class="type">String</span>
-
-                                <div class="param-description">
-                                    <ul>
-<li>site unique id</li>
-</ul>
-
-                                </div>
-
-                            </li>
-                            <li class="param">
                                     <code class="param-name">hostname</code>
                                     <span class="type">String</span>
 
@@ -687,19 +673,6 @@
 
                             </li>
                         </ul>
-                </li>
-                <li class="param">
-                        <code class="param-name">id</code>
-                        <span class="type">String</span>
-
-
-                    <div class="param-description">
-                        <ul>
-<li>the site unique identifier for the database</li>
-</ul>
-
-                    </div>
-
                 </li>
                 <li class="param">
                         <code class="param-name">cb</code>
@@ -747,7 +720,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l263"><code>include\service\entities\site_service.js:263</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l263"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:263</code></a>
         </p>
 
 
@@ -828,7 +801,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l566"><code>include\service\entities\site_service.js:566</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l564"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:564</code></a>
         </p>
 
 
@@ -896,7 +869,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l281"><code>include\service\entities\site_service.js:281</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l281"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:281</code></a>
         </p>
 
 
@@ -1012,7 +985,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l128"><code>include\service\entities\site_service.js:128</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l128"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:128</code></a>
         </p>
 
 
@@ -1068,7 +1041,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l118"><code>include\service\entities\site_service.js:118</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l118"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:118</code></a>
         </p>
 
 
@@ -1127,7 +1100,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l95"><code>include\service\entities\site_service.js:95</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l95"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:95</code></a>
         </p>
 
 
@@ -1199,7 +1172,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l530"><code>include\service\entities\site_service.js:530</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l528"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:528</code></a>
         </p>
 
 
@@ -1273,7 +1246,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l210"><code>include\service\entities\site_service.js:210</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l210"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:210</code></a>
         </p>
 
 
@@ -1366,7 +1339,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l598"><code>include\service\entities\site_service.js:598</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l596"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:596</code></a>
         </p>
 
 
@@ -1413,7 +1386,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l553"><code>include\service\entities\site_service.js:553</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l551"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:551</code></a>
         </p>
 
 
@@ -1475,7 +1448,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l138"><code>include\service\entities\site_service.js:138</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l138"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:138</code></a>
         </p>
 
 
@@ -1534,7 +1507,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l540"><code>include\service\entities\site_service.js:540</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l538"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:538</code></a>
         </p>
 
 
@@ -1596,7 +1569,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l148"><code>include\service\entities\site_service.js:148</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l148"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:148</code></a>
         </p>
 
 
@@ -1655,7 +1628,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l167"><code>include\service\entities\site_service.js:167</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l167"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:167</code></a>
         </p>
 
 
@@ -1719,7 +1692,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l483"><code>include\service\entities\site_service.js:483</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l481"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:481</code></a>
         </p>
 
 
@@ -1756,7 +1729,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l369"><code>include\service\entities\site_service.js:369</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l367"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:367</code></a>
         </p>
 
 
@@ -1818,7 +1791,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l189"><code>include\service\entities\site_service.js:189</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l189"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:189</code></a>
         </p>
 
 
@@ -1898,7 +1871,7 @@
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>siteid</code>
+                        <code>siteId</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1916,7 +1889,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l495"><code>include\service\entities\site_service.js:495</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l493"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:493</code></a>
         </p>
 
 
@@ -1924,7 +1897,7 @@
     </div>
 
     <div class="description">
-        <p>Returns true if siteid given is global or non-existant (to remain backwards compatible)</p>
+        <p>Returns true if siteId given is global or non-existent (to remain backwards compatible)</p>
 
     </div>
 
@@ -1933,7 +1906,7 @@
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">siteid</code>
+                        <code class="param-name">siteId</code>
                         <span class="type">String</span>
 
 
@@ -1987,7 +1960,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l519"><code>include\service\entities\site_service.js:519</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l517"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:517</code></a>
         </p>
 
 
@@ -2066,7 +2039,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l405"><code>include\service\entities\site_service.js:405</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l403"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:403</code></a>
         </p>
 
 
@@ -2123,7 +2096,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l457"><code>include\service\entities\site_service.js:457</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l455"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:455</code></a>
         </p>
 
 
@@ -2180,7 +2153,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l431"><code>include\service\entities\site_service.js:431</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l429"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:429</code></a>
         </p>
 
 
@@ -2239,7 +2212,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l319"><code>include\service\entities\site_service.js:319</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l317"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:317</code></a>
         </p>
 
 
@@ -2311,7 +2284,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_service_entities_site_service.js.html#l344"><code>include\service\entities\site_service.js:344</code></a>
+        <a href="../files/include_service_entities_site_service.js.html#l342"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:342</code></a>
         </p>
 
 
@@ -2364,161 +2337,161 @@
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_GLOBAL_SITE" class="property item">
-                        <h3 class="name"><code>GLOBAL_SITE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_site_service.js.html#l49"><code>include\service\entities\site_service.js:49</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>represents default configuration, not actually a full site</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_NO_SITE" class="property item">
-                        <h3 class="name"><code>NO_SITE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_site_service.js.html#l58"><code>include\service\entities\site_service.js:58</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>represents a site that doesn't exist</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_SITE_COLL" class="property item private">
-                        <h3 class="name"><code>SITE_COLL</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_site_service.js.html#l85"><code>include\service\entities\site_service.js:85</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_SITE_COLLECTION" class="property item">
-                        <h3 class="name"><code>SITE_COLLECTION</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_site_service.js.html#l76"><code>include\service\entities\site_service.js:76</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_SITE_FIELD" class="property item">
-                        <h3 class="name"><code>SITE_FIELD</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_site_service.js.html#l67"><code>include\service\entities\site_service.js:67</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_TYPE" class="property item private">
-                        <h3 class="name"><code>TYPE</code></h3>
-                        <span class="type">String</span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                            <span class="flag static">static</span>
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/include_service_entities_site_service.js.html#l39"><code>include\service\entities\site_service.js:39</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>The name of the DB collection where the resources are persisted</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
+<div id="property_GLOBAL_SITE" class="property item">
+    <h3 class="name"><code>GLOBAL_SITE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_site_service.js.html#l49"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:49</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>represents default configuration, not actually a full site</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_NO_SITE" class="property item">
+    <h3 class="name"><code>NO_SITE</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_site_service.js.html#l58"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:58</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>represents a site that doesn't exist</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_SITE_COLL" class="property item private">
+    <h3 class="name"><code>SITE_COLL</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_site_service.js.html#l85"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:85</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_SITE_COLLECTION" class="property item">
+    <h3 class="name"><code>SITE_COLLECTION</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_site_service.js.html#l76"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:76</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_SITE_FIELD" class="property item">
+    <h3 class="name"><code>SITE_FIELD</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_site_service.js.html#l67"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:67</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_TYPE" class="property item private">
+    <h3 class="name"><code>TYPE</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_site_service.js.html#l39"><code>include&#x2F;service&#x2F;entities&#x2F;site_service.js:39</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The name of the DB collection where the resources are persisted</p>
+
+    </div>
+
+
+
+</div>
             </div>
 
 
