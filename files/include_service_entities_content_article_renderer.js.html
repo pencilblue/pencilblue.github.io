@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -441,12 +442,10 @@ module.exports = function(pb) {
             where: {
                 article: content[pb.DAO.getIdField()] + &#x27;&#x27;
             },
-            order: {
-                created: pb.DAO.ASC
-            }
+            order: [[&#x27;created&#x27;, pb.DAO.ASC]]
         };
         this.commentService.getAll(opts, function(err, comments) {
-            if(util.isError(err) || comments.length == 0) {
+            if(util.isError(err) || comments.length === 0) {
                 return cb(err);
             }
 
@@ -502,7 +501,7 @@ module.exports = function(pb) {
                 //user has not already commented so load
                 var dao = new pb.DAO();
                 dao.loadById(comment.commenter, &#x27;user&#x27;, function(err, commenter) {
-                    if(util.isError(err) || commenter == null) {
+                    if(util.isError(err) || commenter === null) {
                         callback(null, false);
                         return;
                     }
@@ -566,7 +565,7 @@ module.exports = function(pb) {
 
             // Cutoff the content at the right number of paragraphs
             for(i = 0; i &lt; tempLayoutArray.length &amp;&amp; i &lt; contentSettings.auto_break_articles; i++) {
-                if(i === contentSettings.auto_break_articles - 1 &amp;&amp; i != tempLayoutArray.length - 1) {
+                if(i === contentSettings.auto_break_articles - 1 &amp;&amp; i !== tempLayoutArray.length - 1) {
 
                     newLayout += tempLayoutArray[i] + this.getReadMoreSpan(content, contentSettings.read_more_text) + breakString;
                     continue;
@@ -588,7 +587,8 @@ module.exports = function(pb) {
     /**
      * @method formatLayoutForReadMore
      * @param {Object} content
-     * @param {Objct} context
+     * @param {Object} context
+     * @param {boolean} context.readMore
      */
     ArticleRenderer.prototype.formatLayoutForReadMore = function(content, context) {
         var layout = this.getLayout(content);

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -419,7 +420,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ClusterJobRunner.html#method_createCommandTask">ClusterJobRunner</a>:
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l180"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:180</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l181"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:181</code></a>
         </p>
 
 
@@ -469,7 +470,7 @@ results array provided by the cb from the call to send the command.
         <span class="paren">()</span>
 
         <span class="returns-inline">
-            <span class="type">Float</span>
+            <span class="type">Number</span>
         </span>
 
 
@@ -481,7 +482,7 @@ results array provided by the cb from the call to send the command.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_getChunkOfWorkPercentage">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l152"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:152</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l153"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:153</code></a>
         </p>
 
 
@@ -497,7 +498,7 @@ results array provided by the cb from the call to send the command.
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Float</span>:
+                        <span class="type">Number</span>:
             </div>
         </div>
 
@@ -521,7 +522,7 @@ results array provided by the cb from the call to send the command.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_getId">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l127"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:127</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l128"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:128</code></a>
         </p>
 
 
@@ -565,7 +566,7 @@ results array provided by the cb from the call to send the command.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ClusterJobRunner.html#method_getInitiatorTasks">ClusterJobRunner</a>:
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l73"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:73</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l74"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:74</code></a>
         </p>
 
 
@@ -665,7 +666,7 @@ perform the job.
                 AsyncJobRunner
             </a>
             but overwritten in
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l57"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:57</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l58"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:58</code></a>
         </p>
 
 
@@ -718,7 +719,7 @@ callback are determined by the isInitiator property.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ClusterJobRunner.html#method_getWorkerTasks">ClusterJobRunner</a>:
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l83"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:83</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l84"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:84</code></a>
         </p>
 
 
@@ -756,7 +757,7 @@ callback are determined by the isInitiator property.
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>name</code>
+                        <code class="optional">[name]</code>
                 </li>
                 <li class="arg">
                         <code class="optional">[jobId]</code>
@@ -774,7 +775,7 @@ callback are determined by the isInitiator property.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_init">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l112"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:112</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l113"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:113</code></a>
         </p>
 
 
@@ -791,8 +792,9 @@ instace of DAO.
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">name</code>
+                        <code class="param-name optional">[name]</code>
                         <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -838,7 +840,7 @@ instace of DAO.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_log">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l173"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:173</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l174"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:174</code></a>
         </p>
 
 
@@ -896,7 +898,7 @@ implementation for Winston loggers.
                 AsyncJobRunner
             </a>
             but overwritten in
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l162"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:162</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l163"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:163</code></a>
         </p>
 
 
@@ -957,7 +959,7 @@ execution begins.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_onCompleted">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l257"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:257</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l258"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:258</code></a>
         </p>
 
 
@@ -1024,7 +1026,7 @@ execution
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_onStart">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l205"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:205</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l206"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:206</code></a>
         </p>
 
 
@@ -1082,7 +1084,7 @@ calls to onUpdate or onComplete.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_onUpdate">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l225"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:225</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l226"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:226</code></a>
         </p>
 
 
@@ -1252,7 +1254,7 @@ that provides four properties: success (Boolean), id (String), pluginUid
                 AsyncJobRunner
             </a>
             but overwritten in
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l92"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:92</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l93"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:93</code></a>
         </p>
 
 
@@ -1335,7 +1337,7 @@ for more details.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ClusterJobRunner.html#method_processWorkerResults">ClusterJobRunner</a>:
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l148"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:148</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l149"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:149</code></a>
         </p>
 
 
@@ -1413,7 +1415,7 @@ values that indicate the success or failure of each task.
                 JobRunner
             </a>
             but overwritten in
-        <a href="../files/include_service_jobs_async_job_runner.js.html#l55"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:55</code></a>
+        <a href="../files/include_service_jobs_async_job_runner.js.html#l56"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:56</code></a>
         </p>
 
 
@@ -1471,7 +1473,7 @@ providing the error and all other task execution is halted.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#method_setChunkOfWorkPercentage">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l136"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:136</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l137"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:137</code></a>
         </p>
 
 
@@ -1489,7 +1491,7 @@ contribute once complete.
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">chunkOfWorkPercentage</code>
-                        <span class="type">Float</span>
+                        <span class="type">Number</span>
 
 
                     <div class="param-description">
@@ -1531,7 +1533,7 @@ contribute once complete.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/AsyncJobRunner.html#method_setParallelLimit">AsyncJobRunner</a>:
-        <a href="../files/include_service_jobs_async_job_runner.js.html#l46"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:46</code></a>
+        <a href="../files/include_service_jobs_async_job_runner.js.html#l47"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:47</code></a>
         </p>
 
 
@@ -1586,7 +1588,7 @@ contribute once complete.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ClusterJobRunner.html#method_setRunAsInitiator">ClusterJobRunner</a>:
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l44"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:44</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l45"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:45</code></a>
         </p>
 
 
@@ -1749,7 +1751,7 @@ job.  When FALSE, the actual job is performed on this process.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#property_dao">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l37"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:37</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l38"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:38</code></a>
         </p>
 
 
@@ -1773,7 +1775,7 @@ job.  When FALSE, the actual job is performed on this process.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#property_id">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l44"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:44</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l45"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:45</code></a>
         </p>
 
 
@@ -1797,7 +1799,7 @@ job.  When FALSE, the actual job is performed on this process.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/ClusterJobRunner.html#property_isInitiator">ClusterJobRunner</a>:
-        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l35"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:35</code></a>
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l36"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:36</code></a>
         </p>
 
 
@@ -1823,7 +1825,7 @@ job.  When FALSE, the actual job is performed.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/AsyncJobRunner.html#property_parallelLimit">AsyncJobRunner</a>:
-        <a href="../files/include_service_jobs_async_job_runner.js.html#l39"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:39</code></a>
+        <a href="../files/include_service_jobs_async_job_runner.js.html#l40"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:40</code></a>
         </p>
 
 
@@ -1863,7 +1865,7 @@ job.  When FALSE, the actual job is performed.
 </div>
 <div id="property_taskFactor" class="property item inherited">
     <h3 class="name"><code>taskFactor</code></h3>
-    <span class="type">Float</span>
+    <span class="type">Number</span>
 
 
 
@@ -1872,7 +1874,7 @@ job.  When FALSE, the actual job is performed.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/JobRunner.html#property_taskFactor">JobRunner</a>:
-        <a href="../files/include_service_jobs_job_runner.js.html#l51"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:51</code></a>
+        <a href="../files/include_service_jobs_job_runner.js.html#l52"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:52</code></a>
         </p>
 
 

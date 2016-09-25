@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include/service/entities/user_service.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.6.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include/service/entities/user_service.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2016  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+&#x27;use strict&#x27;;
+
+//dependencies
+var async = require(&#x27;async&#x27;);
+var util  = require(&#x27;../../util.js&#x27;);
+
+module.exports = function(pb) {
+
+    //pb dependencies
+    var DAO               = pb.DAO;
+    var SecurityService   = pb.SecurityService;
+    var ValidationService = pb.ValidationService;
+    var BaseObjectService = pb.BaseObjectService;
+
+    /**
+     * Service for performing user specific operations.
+     *
+     * @module Services
+     * @submodule Entities
+     * @class UserService
+     * @constructor
+     */
+    function UserService(context){
+        if (!util.isObject(context)) {
+            context = {};
+        }
+
+        context.type = TYPE;
+        UserService.super_.call(this, context);
+    }
+    util.inherits(UserService, BaseObjectService);
+
+    /**
+     * @private
+     * @static
+     * @readonly
+     * @property TYPE
+     * @type {String}
+     */
+    var TYPE = &#x27;user&#x27;;
+
+    /**
+     * @private
+     * @static
+     * @readonly
+     * @property UNVERIFIED_TYPE
+     * @type {String}
+     */
+    var UNVERIFIED_TYPE = &#x27;unverified_user&#x27;;
+
+    /**
+     * Gets the full name of a user
+     * @method getFullName
+     * @param {String} userId The object Id of the user
+     * @param {Function} cb (Error, string)
+     */
+    UserService.prototype.getFullName = function(userId, cb) {
+        if (!pb.validation.isId(userId, true)) {
+            return cb(new Error(&#x27;The userId parameter must be a valid ID value&#x27;));
+        }
+
+        var self = this;
+        var dao  = new pb.DAO();
+        dao.loadById(userId, TYPE, function(err, author){
+            if (util.isError(err)) {
+                return cb(err, null);
+            }
+
+            cb(null, self.getFormattedName(author));
+        });
+    };
+
+    /**
+     * Takes the specified user object and formats the first and last name.
+     * @static
+     * @method getFormattedName
+     * @param {Object} user The user object to extract a name for.
+     * @return {String} The user&#x27;s full name
+     */
+    UserService.prototype.getFormattedName = function(user) {
+        var name = user.username;
+        if (user.first_name) {
+            name = user.first_name + &#x27; &#x27; + user.last_name;
+        }
+        return name;
+    };
+
+    /**
+     * Gets the full names for the supplied authors
+     *
+     * @method getAuthors
+     * @param {Array} objArry An array of user object
+     * @param {Function} cb (Error, Array)
+     */
+    UserService.prototype.getAuthors = function(objArry, cb){
+        var self  = this;
+
+        //retrieve unique author list
+        var authorIds = {};
+        for (var i = 0; i &lt; objArry.length; i++) {
+            authorIds[objArry[i].author] = true;
+        }
+
+        //retrieve authors
+        var opts = {
+            select: {
+                username: 1,
+                first_name: 1,
+                last_name: 1
+            },
+            where: pb.DAO.getIdInWhere(Object.keys(authorIds))
+        };
+        var dao = new pb.SiteQueryService({site: this.context.site});
+        dao.q(&#x27;user&#x27;, opts, function(err, authors) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            //convert results into searchable hash
+            var authLookup = util.arrayToObj(authors, function(authors, i) { return authors[i][pb.DAO.getIdField()].toString(); });
+
+            //set the full name of the author
+            for (var i = 0; i &lt; objArry.length; i++) {
+                objArry[i].author_name = self.getFormattedName(authLookup[objArry[i].author]);
+            }
+
+            //callback with objects (not necessary but we do it anyway)
+            cb(null, objArry);
+        });
+    };
+
+    /**
+     * Retrieves the available access privileges to assign to a user
+     *
+     * @method getAdminOptions
+     * @param {Object} session The current session object
+     * @param {Localization} ls The localization object
+     * @return {Array}
+     */
+    UserService.prototype.getAdminOptions = function (session, ls) {
+        var adminOptions = [];
+
+        //in multi-site deployments non-global sites are limited to user roles: READER, WRITER, EDITOR.
+        //Admin roles (ADMINISTRATOR and MANAGING_EDITOR) are resevered for the global site.
+        if (!pb.config.multisite.enabled || !pb.SiteService.isGlobal(this.context.site)) {
+            adminOptions.push(
+                {name: ls.g(&#x27;generic.READER&#x27;), value: pb.SecurityService.ACCESS_USER},
+                {name: ls.g(&#x27;generic.WRITER&#x27;), value: pb.SecurityService.ACCESS_WRITER},
+                {name: ls.g(&#x27;generic.EDITOR&#x27;), value: pb.SecurityService.ACCESS_EDITOR}
+            );
+        }
+
+        //we want these included for single site deployments too.  However, we
+        //can guarantee that the site will be global in single site mode.
+        if (pb.SiteService.isGlobal(this.context.site)) {
+            if (session.authentication.user.admin &gt;= pb.SecurityService.ACCESS_MANAGING_EDITOR) {
+                adminOptions.push({name: ls.g(&#x27;generic.MANAGING_EDITOR&#x27;), value: pb.SecurityService.ACCESS_MANAGING_EDITOR});
+            }
+            if (session.authentication.user.admin &gt;= pb.SecurityService.ACCESS_ADMINISTRATOR) {
+                adminOptions.push({name: ls.g(&#x27;generic.ADMINISTRATOR&#x27;), value: pb.SecurityService.ACCESS_ADMINISTRATOR});
+            }
+        }
+
+        return adminOptions;
+    };
+
+    /**
+     * Retrieves a select list (id/name) of available system editors
+     * @deprecated since 0.4.0
+     * @method getEditorSelectList
+     * @param {String} currId The Id to be excluded from the list.
+     * @param {Function} cb (Error, Array) A callback that takes two parameters.  The first is an
+     * error, if exists, the second is an array of objects that represent the
+     * editor select list.
+     */
+    UserService.prototype.getEditorSelectList = function(currId, cb) {
+        pb.log.warn(&#x27;UserService: getEditorSelectList is deprecated. Use getWriterOrEditorSelectList instead&#x27;);
+        this.getWriterOrEditorSelectList(currId, cb);
+    };
+
+    /**
+     * Retrieves a select list (id/name) of available system writers or editors
+     * @method getWriterOrEditorSelectList
+     * @param {String} currId The Id to be excluded from the list.
+     * @param {Boolean} [getWriters=false] Whether to retrieve all writers or just editors.
+     * @param {Function} cb A callback that takes two parameters.  The first is an
+     * error, if exists, the second is an array of objects that represent the
+     * editor select list.
+     */
+    UserService.prototype.getWriterOrEditorSelectList = function(currId, getWriters, cb) {
+        if (util.isFunction(getWriters)) {
+            cb = getWriters;
+            getWriters = false;
+        }
+
+        var self = this;
+
+        var opts = {
+            select: {
+                first_name: 1,
+                last_name: 1
+            },
+            where: {
+                admin: {
+                    $gte: getWriters ? pb.SecurityService.ACCESS_WRITER : pb.SecurityService.ACCESS_EDITOR
+                },
+                $or: [
+                    { site: self.context.site },
+                    { site: pb.SiteService.GLOBAL_SITE },
+                    { site: { $exists: false } }
+                ]
+            }
+        };
+        var dao = new pb.DAO();
+        dao.q(TYPE, opts, function(err, data){
+            if (util.isError(err)) {
+                return cb(err, null);
+            }
+
+            var editors = [];
+            for(var i = 0; i &lt; data.length; i++) {
+
+                var editor = {
+                    name: self.getFormattedName(data[i])
+                };
+                editor[pb.DAO.getIdField()] = data[i][pb.DAO.getIdField()];
+
+                if(currId === data[i][pb.DAO.getIdField()].toString()) {
+                    editor.selected = &#x27;selected&#x27;;
+                }
+                editors.push(editor);
+            }
+            cb(null, editors);
+        });
+    };
+
+    /**
+     * @method getByUsernameOrEmail
+     * @param {string} usernameOrEmail
+     * @param {object} [options] See UserService#getSingle
+     * @param {function} cb (Error, object) The user object
+     */
+    UserService.prototype.getByUsernameOrEmail = function(usernameOrEmail, options, cb) {
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+
+        options.where = {
+            $or : [
+                {
+                    username : usernameOrEmail
+                },
+                {
+                    email : usernameOrEmail
+                }
+            ]
+        };
+        this.getSingle(options, cb);
+    };
+
+    /**
+     * Sends a verification email to an unverified user
+     *
+     * @method sendVerificationEmail
+     * @param {Object}   user A user object
+     * @param {Function} cb   Callback function
+     */
+    UserService.prototype.sendVerificationEmail = function(user, cb) {
+        var self = this;
+        cb = cb || util.cb;
+
+        var siteService = new pb.SiteService();
+        siteService.getByUid(self.context.site, function(err, siteInfo) {
+            if (pb.util.isError(err)) {
+                pb.log.error(&quot;UserService: Failed to load site with getByUid. ERROR[%s]&quot;, err.stack);
+                return cb(err, null);
+            }
+            // We need to see if email settings have been saved with verification content
+            var emailService = new pb.EmailService({site: self.context.site});
+            emailService.getSettings(function (err, emailSettings) {
+                if (pb.util.isError(err)) {
+                    pb.log.error(&quot;UserService: Failed to load email settings. ERROR[%s]&quot;, err.stack);
+                    return cb(err, null);
+                }
+                var options = {
+                    to: user.email,
+                    replacements: {
+                        &#x27;verification_url&#x27;: pb.SiteService.getHostWithProtocol(siteInfo.hostname) + &#x27;/actions/user/verify_email?email=&#x27; + user.email + &#x27;&amp;code=&#x27; + user.verification_code,
+                        &#x27;first_name&#x27;: user.first_name,
+                        &#x27;last_name&#x27;: user.last_name
+                    }
+                };
+                if (emailSettings.layout) {
+                    options.subject = emailSettings.verification_subject;
+                    options.layout = emailSettings.verification_content;
+                    emailService.sendFromLayout(options, cb);
+                }
+                else {
+                    options.subject = siteInfo.displayName + &#x27; Account Confirmation&#x27;;
+                    options.template = emailSettings.template;
+                    emailService.sendFromTemplate(options, cb);
+                }
+            });
+        });
+    };
+
+    /**
+     * Sends a password reset email to a user
+     * @deprecated
+     * @method sendPasswordResetEmail
+     * @param {object} user A user object
+     * @param {object} passwordReset A password reset object containing the verification code
+     * @param {function} cb (Error)
+     */
+    UserService.prototype.sendPasswordResetEmail = function(user, passwordReset, cb) {
+        var self = this;
+        cb = cb || util.cb;
+
+        pb.log.warn(&#x27;UserService: sendPasswordResetEmail is deprecated. Use PasswordResetService.sendPasswordResetEmail&#x27;);
+
+        var ctx = {
+            emailService: new pb.EmailService({site: self.context.site}),
+            siteService: new pb.SiteService()
+        };
+        var passwordResetService = new pb.PasswordResetService(ctx);
+        passwordResetService.sendPasswordResetEmail(user, passwordReset, cb);
+    };
+
+    /**
+     * Checks to see if a proposed user name or email is already in the system
+     *
+     * @method isUserNameOrEmailTaken
+     * @param {String}   username
+     * @param {String}   email
+     * @param {String}   id       User object Id to exclude from the search
+     * @param {Function} cb       Callback function
+     */
+    UserService.prototype.isUserNameOrEmailTaken = function(username, email, id, cb) {
+        this.getExistingUsernameEmailCounts(username, email, id, function(err, results) {
+
+            var result = results === null;
+            if (!result) {
+
+                Object.keys(results).reduce(function(actual, key) {
+                    return result || (results[key] &gt; 0);
+                }, result);
+            }
+            cb(err, result);
+        });
+    };
+
+    /**
+     * Gets the total counts of a username and email in both the user and unverified_user collections
+     * @method getExistingUsernameEmailCounts
+     * @param {String} username
+     * @param {String} email
+     * @param {String} [id] User object Id to exclude from the search
+     * @param {Function} cb (Error, object)
+     */
+    UserService.prototype.getExistingUsernameEmailCounts = function(username, email, id, cb) {
+        var self = this;
+        if (util.isFunction(id)) {
+            cb = id;
+            id = null;
+        }
+
+        var getWhere = function(where) {
+            if (id) {
+                where[pb.DAO.getIdField()] = pb.DAO.getNotIdField(id);
+            }
+            return where;
+        };
+
+        var dao = (pb.SiteService.isGlobal(self.context.site)) ? new pb.DAO() : new pb.SiteQueryService({site: self.context.site, onlyThisSite: false});
+        var tasks = {
+            verified_username: function(callback) {
+                var expStr = util.escapeRegExp(username) + &#x27;$&#x27;;
+                dao.count(TYPE, getWhere({username: new RegExp(expStr, &#x27;i&#x27;)}), callback);
+            },
+            verified_email: function(callback) {
+                dao.count(TYPE, getWhere({email: email.toLowerCase()}), callback);
+            },
+            unverified_username: function(callback) {
+                dao.count(UNVERIFIED_TYPE, getWhere({username: new RegExp(username + &#x27;$&#x27;, &#x27;i&#x27;)}), callback);
+            },
+            unverified_email: function(callback) {
+                dao.count(UNVERIFIED_TYPE, getWhere({email: email.toLowerCase()}), callback);
+            }
+        };
+        async.series(tasks, cb);
+    };
+
+    /**
+     * Indicates if there exists a user with the specified email value. The
+     * field is expected to be a string value.  The values will be compare with
+     * case ignored.
+     * @method isUsernameInUse
+     * @param {String} email
+     * @param {Object} [options]
+     * @param {String} [options.exclusionId]
+     * @param {Function} cb
+     */
+    UserService.prototype.isEmailInUse = function(email, options, cb) {
+        this._isFieldInUse(email, &#x27;email&#x27;, options, cb);
+    };
+
+    /**
+     * Indicates if there exists a user with the specified username value. The
+     * field is expected to be a string value.  The values will be compare with
+     * case ignored.
+     * @method isUsernameInUse
+     * @param {String} username
+     * @param {Object} [options]
+     * @param {String} [options.exclusionId]
+     * @param {Function} cb
+     */
+    UserService.prototype.isUsernameInUse = function(username, options, cb) {
+        this._isFieldInUse(username, &#x27;username&#x27;, options, cb);
+    };
+
+    /**
+     * Indicates if there exists a user with the specified property value. The
+     * field is expected to be a string value.  The values will be compare with
+     * case ignored.
+     * @private
+     * @method _isFieldInUse
+     * @param {String} value
+     * @param {String} field
+     * @param {Object} [options]
+     * @param {String} [options.exclusionId]
+     * @param {Function} cb
+     */
+    UserService.prototype._isFieldInUse = function(value, field, options, cb) {
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+
+        var self = this;
+        var expressionStr = util.escapeRegExp(value) + &#x27;$&#x27;;
+        var where = {};
+        where[field] = new RegExp(expressionStr, &#x27;i&#x27;);
+
+        //set exclusion.  This would be if we are editing a user
+        if (ValidationService.isId(options.exclusionId, true)) {
+            where[DAO.getIdField()] = DAO.getNotIdField(options.exclusionId);
+        }
+
+        var opts = {
+            where: where
+        };
+        var tasks = {
+
+            verified: function(callback) {
+                self.count(opts, callback);
+            },
+
+            unverified: function(callback) {
+                var dao = new pb.DAO();
+                dao.count(UNVERIFIED_TYPE, where, callback);
+            }
+        };
+        async.series(tasks, function(err, results) {
+            cb(err, results.verified &gt; 0 || results.unverified &gt; 0);
+        });
+    };
+
+    /**
+     * Retrieves users by their access level (role)
+     * @method findByAccessLevel
+     * @param {Integer} level The admin level of the users to find
+     * @param {Object} [options] The search options
+     * @param {Object} [options.select={}] The fields to return
+     * @param {Array} [options.orderBy] The order to return the results in
+     * @param {Integer} [options.limit] The maximum number of results to return
+     * @param {offset} [options.offset=0] The number of results to skip before
+     * returning results.
+     * @param {Function} cb (Error, Array) A callback that takes two parameters: an error, if
+     * occurred, and the second is an array of User objects.
+     */
+    UserService.prototype.findByAccessLevel = function(level, options, cb) {
+        if (util.isFunction(options)) {
+            cb      = options;
+            options = {};
+        }
+        else if (!util.isObject(options)) {
+            throw new Error(&#x27;The options parameter must be an object&#x27;);
+        }
+
+        var opts = {
+            select: options.select,
+            where: {
+                admin: level
+            },
+            order: options.orderBy,
+            limit: options.limit,
+            offset: options.offset
+        };
+        var dao = new pb.DAO();
+        dao.q(TYPE, opts, cb);
+    };
+
+    /**
+     * Verifies if a user has the provided access level or higher
+     *
+     * @method hasAccessLevel
+     * @param {String}   uid         The user&#x27;s object Id
+     * @param {Number}   accessLevel The access level to test against
+     * @param {Function} cb          Callback function
+     */
+    UserService.prototype.hasAccessLevel = function(uid, accessLevel, cb) {
+        var where = pb.DAO.getIdWhere(uid);
+        where.admin = {$gte: accessLevel};
+        var dao = new pb.DAO();
+        dao.count(TYPE, where, function(err, count) {
+            cb(err, count === 1);
+        });
+    };
+
+    /**
+     * @method determineUserSiteScope
+     * @param {Integer} accessLevel
+     * @param {string} siteId
+     * @returns {*}
+     */
+    UserService.prototype.determineUserSiteScope = function(accessLevel, siteId) {
+        if (accessLevel === pb.SecurityService.ACCESS_MANAGING_EDITOR ||
+            accessLevel === pb.SecurityService.ACCESS_ADMINISTRATOR) {
+            return pb.SiteService.GLOBAL_SITE;
+        }
+        else if (siteId === pb.SiteService.GLOBAL_SITE) {
+            return null;
+        }
+        return siteId;
+    };
+
+    /**
+     *
+     * @method validate
+     * @param {Object} context
+     * @param {Object} context.data The DTO that was provided for persistence
+     * @param {UserService} context.service An instance of the service that triggered
+     * the event that called this handler
+     * @param {Function} cb (Error) A callback that takes a single parameter: an error if occurred
+     */
+    UserService.prototype.validate = function(context, cb) {
+        var self = this;
+        var obj = context.data;
+        var errors = context.validationErrors;
+
+        var tasks = [
+
+            //first name
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.first_name, false)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;first_name&#x27;, &#x27;First name is required&#x27;));
+                }
+                callback();
+            },
+
+            //last name
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.last_name, false)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;last_name&#x27;, &#x27;Last name is required&#x27;));
+                }
+                callback();
+            },
+
+            //username
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.username, true)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;username&#x27;, &#x27;Username is required&#x27;));
+                    return callback();
+                }
+
+                //check to see if it is in use
+                var usernameOpts = {
+                    exclusionId: obj[DAO.getIdField()]
+                };
+                self.isUsernameInUse(obj.username, usernameOpts, function(err, isInUse) {
+                    if (isInUse) {
+                        errors.push(BaseObjectService.validationFailure(&#x27;username&#x27;, &#x27;Username is already in use&#x27;));
+                    }
+                    callback(err);
+                });
+            },
+
+            //email
+            function(callback) {
+                if (!ValidationService.isEmail(obj.email, true)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;email&#x27;, &#x27;Email is required&#x27;));
+                    return callback();
+                }
+
+                //check to see if it is in use
+                var usernameOpts = {
+                    exclusionId: obj[DAO.getIdField()]
+                };
+                self.isEmailInUse(obj.email, usernameOpts, function(err, isInUse) {
+                    if (isInUse) {
+                        errors.push(BaseObjectService.validationFailure(&#x27;email&#x27;, &#x27;Email address is already in use&#x27;));
+                    }
+                    callback(err);
+                });
+            },
+
+            //password
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.password, true)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;password&#x27;, &#x27;Password is required&#x27;));
+                }
+                callback();
+            },
+
+            //admin
+            function(callback) {
+                if (!ValidationService.isInt(obj.admin, true, true)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;admin&#x27;, &#x27;Role is required&#x27;));
+                    return callback();
+                }
+                else if (obj.admin &gt; SecurityService.ACCESS_ADMINISTRATOR || obj.admin &lt; SecurityService.ACCESS_USER) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;admin&#x27;, &#x27;An invalid role was provided&#x27;));
+                }
+                callback();
+            },
+
+            //locale
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.locale, true)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;locale&#x27;, &#x27;Preferred locale is required&#x27;));
+                }
+                callback();
+            },
+
+            //photo
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.photo, false)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;photo&#x27;, &#x27;An invalid photo was provided&#x27;));
+                }
+                callback();
+            },
+
+            //position
+            function(callback) {
+                if (!ValidationService.isNonEmptyStr(obj.position, false)) {
+                    errors.push(BaseObjectService.validationFailure(&#x27;position&#x27;, &#x27;An invalid position was provided&#x27;));
+                }
+                callback();
+            }
+        ];
+        async.series(tasks, cb);
+    };
+
+    /**
+     *
+     * @static
+     * @method
+     * @param {Object} context
+     * @param {UserService} context.service An instance of the service that triggered
+     * the event that called this handler
+     * @param {object} context.data
+     * @param {Function} cb (Error) A callback that takes a single parameter: an error if occurred
+     */
+    UserService.format = function(context, cb) {
+        var dto = context.data;
+        dto.first_name = BaseObjectService.sanitize(dto.first_name);
+        dto.last_name = BaseObjectService.sanitize(dto.last_name);
+        dto.username = BaseObjectService.sanitize(dto.username);
+        dto.email = BaseObjectService.sanitize(dto.email);
+        if (dto.email) {
+            dto.email = dto.email.toLowerCase();
+        }
+        dto.admin = parseInt(dto.admin);
+        dto.locale = BaseObjectService.sanitize(dto.locale);
+        dto.photo = BaseObjectService.sanitize(dto.photo);
+        dto.position = BaseObjectService.sanitize(dto.position);
+        cb(null);
+    };
+
+    /**
+     *
+     * @static
+     * @method
+     * @param {Object} context
+     * @param {UserService} context.service An instance of the service that triggered
+     * the event that called this handler
+     * @param {object} context.data The DTO
+     * @param {object} context.object The entity object to be persisted
+     * @param {Function} cb (Error) A callback that takes a single parameter: an error if occurred
+     */
+    UserService.merge = function(context, cb) {
+        var dto = context.data;
+        var obj = context.object;
+
+        obj.first_name = dto.first_name;
+        obj.last_name = dto.last_name;
+        obj.username = dto.username;
+        obj.email = dto.email;
+        obj.admin = dto.admin;
+        obj.locale = dto.locale;
+        obj.photo = dto.photo;
+        obj.position = dto.position;
+        if (context.isCreate &amp;&amp; dto.password) {
+            obj.password = pb.security.encrypt(dto.password);
+        }
+        cb(null);
+    };
+
+    /**
+     *
+     * @static
+     * @method validate
+     * @param {Object} context
+     * @param {Object} context.data The DTO that was provided for persistence
+     * @param {UserService} context.service An instance of the service that triggered
+     * the event that called this handler
+     * @param {Function} cb A callback that takes a single parameter: an error if occurred
+     */
+    UserService.validate = function(context, cb) {
+        context.service.validate(context, cb);
+    };
+
+    /**
+     * Strips the password from one or more user objects when passed a valid
+     * base object service event context
+     * @static
+     * @method removePassword
+     * @param {Object} context
+     * @param {Object} context.data The DTO that was provided for persistence
+     * @param {UserService} context.service An instance of the service that triggered
+     * the event that called this handler
+     * @param {Function} cb A callback that takes a single parameter: an error if occurred
+     */
+    UserService.removePassword = function(context, cb) {
+        var data = context.data;
+        if (util.isArray(data)) {
+            data.forEach(function(user) {
+                delete user.password;
+            });
+        }
+        else if (util.isObject(data)) {
+            delete data.password;
+        }
+        cb();
+    };
+
+    //Event Registries
+    BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.AFTER_SAVE, UserService.removePassword);
+    BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.GET, UserService.removePassword);
+    BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.GET_ALL, UserService.removePassword);
+    BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.FORMAT, UserService.format);
+    BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.MERGE, UserService.merge);
+    BaseObjectService.on(TYPE + &#x27;.&#x27; + BaseObjectService.VALIDATE, UserService.validate);
+
+    return UserService;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

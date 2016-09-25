@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var fs          = require(&#x27;fs&#x27;);
@@ -268,25 +270,35 @@ function PencilBlue(config){
      */
     this.init = function(){
         var tasks = [
-            this.initModules,
-            this.initRequestHandler,
-            this.initDBConnections,
-            this.initDBIndices,
-            this.initSiteMigration,
-            this.initSessions,
-            this.initPlugins,
-            this.initSites,
-            this.initServerRegistration,
-            this.initCommandService,
-            this.initLibraries,
-            this.registerMetrics,
-            util.wrapTask(this, this.initServer),
+            util.wrapTimedTask(this, this.initModules, &#x27;initModules&#x27;),
+            util.wrapTimedTask(this, this.initRequestHandler, &#x27;initRequestHandler&#x27;),
+            util.wrapTimedTask(this, this.initDBConnections, &#x27;initDBConnections&#x27;),
+            util.wrapTimedTask(this, this.initDBIndices, &#x27;initDBIndices&#x27;),
+            util.wrapTimedTask(this, this.initServerRegistration, &#x27;initServerRegistration&#x27;),
+            util.wrapTimedTask(this, this.initCommandService, &#x27;initCommandService&#x27;),
+            util.wrapTimedTask(this, this.initSiteMigration, &#x27;initSiteMigration&#x27;),
+            util.wrapTimedTask(this, this.initSessions, &#x27;initSessions&#x27;),
+            util.wrapTimedTask(this, this.initPlugins, &#x27;initPlugins&#x27;),
+            util.wrapTimedTask(this, this.initSites, &#x27;initSites&#x27;),
+            util.wrapTimedTask(this, this.initLibraries, &#x27;initLibraries&#x27;),
+            util.wrapTimedTask(this, this.registerMetrics, &#x27;registerMetrics&#x27;),
+            util.wrapTimedTask(this, this.initServer, &#x27;initServer&#x27;)
         ];
         async.series(tasks, function(err, results) {
             if (util.isError(err)) {
                 throw err;
             }
             pb.log.info(&#x27;PencilBlue: Ready to run!&#x27;);
+
+            //print out stats
+            if (pb.log.isDebug()) {
+                var stats = results.reduce(function (obj, result) {
+                    obj[result.name] = result.time;
+                    obj.total += result.time;
+                    return obj;
+                }, {total: 0});
+                pb.log.debug(&#x27;Startup Stats (ms):\n%s&#x27;, JSON.stringify(stats, null, 2));
+            }
         });
     };
 
@@ -317,7 +329,7 @@ function PencilBlue(config){
     this.initRequestHandler = function(cb) {
         pb.RequestHandler.init();
         cb(null, true);
-    }
+    };
 
     /**
      * Starts the session handler
@@ -401,7 +413,7 @@ function PencilBlue(config){
         }
 
         pb.log.info(&#x27;PencilBlue: Ensuring indices...&#x27;);
-        pb.dbm.processIndices(pb.config.db.indices, function(err, results) {
+        pb.dbm.processIndices(pb.config.db.indices, function(err/*, results*/) {
             cb(err, !util.isError(err));
         });
     };
@@ -560,8 +572,14 @@ function PencilBlue(config){
             self.init();
         });
     };
-};
+}
 
+/**
+ * The default entry point to a stand-alone instance of PencilBlue
+ * @static
+ * @method startInstance
+ * @return {PencilBlue}
+ */
 PencilBlue.startInstance = function() {
     var Configuration = require(&#x27;./include/config.js&#x27;);
     var config        = Configuration.load();

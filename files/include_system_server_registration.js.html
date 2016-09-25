@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var cluster = require(&#x27;cluster&#x27;);
@@ -252,7 +254,7 @@ module.exports = function ServerRegistrationModule(pb) {
         }
         this.provider = provider;
         this.timerHandle = null;
-    };
+    }
 
     /**
      * The default set of functions that gather the default set of information.
@@ -368,7 +370,7 @@ module.exports = function ServerRegistrationModule(pb) {
 
             //do first update and schedule the rest
             self.doRegistration();
-            this.timerHandle = setInterval(function() {
+            self.timerHandle = setInterval(function() {
                 self.doRegistration();
             }, pb.config.registry.update_interval);
 
@@ -420,7 +422,7 @@ module.exports = function ServerRegistrationModule(pb) {
      * provider.
      * @static
      * @method doRegistration
-     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     * @param {Function} [cb] A callback that provides two parameters: cb(Error, [RESULT])
      */
     ServerRegistration.prototype.doRegistration = function(cb) {
         cb = cb || util.cb;
@@ -508,10 +510,10 @@ module.exports = function ServerRegistrationModule(pb) {
     ServerRegistration.getIp = function() {
          var interfaces = os.networkInterfaces();
          var address = null;
-         for (k in interfaces) {
-             for (k2 in interfaces[k]) {
+         for (var k in interfaces) {
+             for (var k2 in interfaces[k]) {
                  var addr = interfaces[k][k2];
-                 if (addr.family == &#x27;IPv4&#x27; &amp;&amp; !addr.internal) {
+                 if (addr.family === &#x27;IPv4&#x27; &amp;&amp; !addr.internal) {
                      address = addr.address;
                      break;
                  }
@@ -533,7 +535,6 @@ module.exports = function ServerRegistrationModule(pb) {
         }
 
         //create a provider if not provided
-        var provider = null;
         if (!provider) {
 
             var RegistrationProvider = null;
@@ -549,7 +550,7 @@ module.exports = function ServerRegistrationModule(pb) {
             provider = new RegistrationProvider();
         }
 
-        return INSTANCE = new ServerRegistration(provider);
+        return (INSTANCE = new ServerRegistration(provider));
     };
 
     return ServerRegistration;

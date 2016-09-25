@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -205,7 +206,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/include_localization.js.html#l29"><code>include&#x2F;localization.js:29</code></a>
+            Defined in: <a href="../files/include_localization.js.html#l30"><code>include&#x2F;localization.js:30</code></a>
         </div>
 
             Module: <a href="../modules/Services.html">Services</a>
@@ -389,11 +390,6 @@ assists in the determination of the best language for the given user.</p>
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item property">
-                                <a href="#property_keys">keys</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item property">
                                 <a href="#property_language Really should be renamed to locale in the future">language Really should be renamed to locale in the future</a>
 
                             </li>
@@ -477,7 +473,7 @@ assists in the determination of the best language for the given user.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l612"><code>include&#x2F;localization.js:612</code></a>
+        <a href="../files/include_localization.js.html#l618"><code>include&#x2F;localization.js:618</code></a>
         </p>
 
 
@@ -605,7 +601,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l595"><code>include&#x2F;localization.js:595</code></a>
+        <a href="../files/include_localization.js.html#l601"><code>include&#x2F;localization.js:601</code></a>
         </p>
 
 
@@ -712,7 +708,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l676"><code>include&#x2F;localization.js:676</code></a>
+        <a href="../files/include_localization.js.html#l682"><code>include&#x2F;localization.js:682</code></a>
         </p>
 
 
@@ -827,7 +823,7 @@ the packaged can be scoped to a specific plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l694"><code>include&#x2F;localization.js:694</code></a>
+        <a href="../files/include_localization.js.html#l700"><code>include&#x2F;localization.js:700</code></a>
         </p>
 
 
@@ -1026,7 +1022,7 @@ property &quot;plugin&quot; that is a string.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l443"><code>include&#x2F;localization.js:443</code></a>
+        <a href="../files/include_localization.js.html#l451"><code>include&#x2F;localization.js:451</code></a>
         </p>
 
 
@@ -1153,6 +1149,9 @@ header in the request</p>
                 <li class="arg">
                         <code>key</code>
                 </li>
+                <li class="arg">
+                        <code>create</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -1191,6 +1190,16 @@ values live</p>
                 <li class="param">
                         <code class="param-name">key</code>
                         <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">create</code>
+                        <span class="type">Boolean</span>
 
 
                     <div class="param-description">
@@ -1319,7 +1328,7 @@ format (lang-COUNTRY)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l268"><code>include&#x2F;localization.js:268</code></a>
+        <a href="../files/include_localization.js.html#l283"><code>include&#x2F;localization.js:283</code></a>
         </p>
 
 
@@ -1428,7 +1437,7 @@ format (lang-COUNTRY)</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l211"><code>include&#x2F;localization.js:211</code></a>
+        <a href="../files/include_localization.js.html#l217"><code>include&#x2F;localization.js:217</code></a>
         </p>
 
 
@@ -1564,7 +1573,7 @@ will fall back to english. The locale is expected to be of the form:
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l540"><code>include&#x2F;localization.js:540</code></a>
+        <a href="../files/include_localization.js.html#l547"><code>include&#x2F;localization.js:547</code></a>
         </p>
 
 
@@ -1722,7 +1731,7 @@ the locale).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l467"><code>include&#x2F;localization.js:467</code></a>
+        <a href="../files/include_localization.js.html#l475"><code>include&#x2F;localization.js:475</code></a>
         </p>
 
 
@@ -1781,7 +1790,7 @@ send the user based on their list of acceptable languages.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l518"><code>include&#x2F;localization.js:518</code></a>
+        <a href="../files/include_localization.js.html#l525"><code>include&#x2F;localization.js:525</code></a>
         </p>
 
 
@@ -1921,7 +1930,7 @@ keys.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l170"><code>include&#x2F;localization.js:170</code></a>
+        <a href="../files/include_localization.js.html#l163"><code>include&#x2F;localization.js:163</code></a>
         </p>
 
 
@@ -2187,7 +2196,7 @@ and country code into an object.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l580"><code>include&#x2F;localization.js:580</code></a>
+        <a href="../files/include_localization.js.html#l586"><code>include&#x2F;localization.js:586</code></a>
         </p>
 
 
@@ -2380,7 +2389,7 @@ provided a value the defaultVal parameter value is used.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l769"><code>include&#x2F;localization.js:769</code></a>
+        <a href="../files/include_localization.js.html#l768"><code>include&#x2F;localization.js:768</code></a>
         </p>
 
 
@@ -2611,7 +2620,7 @@ Additionally, the operation can be scoped to a single plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l101"><code>include&#x2F;localization.js:101</code></a>
+        <a href="../files/include_localization.js.html#l102"><code>include&#x2F;localization.js:102</code></a>
         </p>
 
 
@@ -2635,7 +2644,7 @@ Additionally, the operation can be scoped to a single plugin.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l67"><code>include&#x2F;localization.js:67</code></a>
+        <a href="../files/include_localization.js.html#l68"><code>include&#x2F;localization.js:68</code></a>
         </p>
 
 
@@ -2661,7 +2670,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l60"><code>include&#x2F;localization.js:60</code></a>
+        <a href="../files/include_localization.js.html#l61"><code>include&#x2F;localization.js:61</code></a>
         </p>
 
 
@@ -2686,7 +2695,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l76"><code>include&#x2F;localization.js:76</code></a>
+        <a href="../files/include_localization.js.html#l77"><code>include&#x2F;localization.js:77</code></a>
         </p>
 
 
@@ -2711,32 +2720,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l119"><code>include&#x2F;localization.js:119</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-
-
-</div>
-<div id="property_keys" class="property item">
-    <h3 class="name"><code>keys</code></h3>
-    <span class="type">Object</span>
-
-
-
-
-        <span class="flag static">static</span>
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/include_localization.js.html#l154"><code>include&#x2F;localization.js:154</code></a>
+        <a href="../files/include_localization.js.html#l120"><code>include&#x2F;localization.js:120</code></a>
         </p>
 
 
@@ -2760,7 +2744,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l47"><code>include&#x2F;localization.js:47</code></a>
+        <a href="../files/include_localization.js.html#l48"><code>include&#x2F;localization.js:48</code></a>
         </p>
 
 
@@ -2786,7 +2770,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l110"><code>include&#x2F;localization.js:110</code></a>
+        <a href="../files/include_localization.js.html#l111"><code>include&#x2F;localization.js:111</code></a>
         </p>
 
 
@@ -2810,7 +2794,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l54"><code>include&#x2F;localization.js:54</code></a>
+        <a href="../files/include_localization.js.html#l55"><code>include&#x2F;localization.js:55</code></a>
         </p>
 
 
@@ -2835,7 +2819,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l162"><code>include&#x2F;localization.js:162</code></a>
+        <a href="../files/include_localization.js.html#l155"><code>include&#x2F;localization.js:155</code></a>
         </p>
 
 
@@ -2860,7 +2844,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l92"><code>include&#x2F;localization.js:92</code></a>
+        <a href="../files/include_localization.js.html#l93"><code>include&#x2F;localization.js:93</code></a>
         </p>
 
 
@@ -2885,7 +2869,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l83"><code>include&#x2F;localization.js:83</code></a>
+        <a href="../files/include_localization.js.html#l84"><code>include&#x2F;localization.js:84</code></a>
         </p>
 
 
@@ -2910,7 +2894,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l128"><code>include&#x2F;localization.js:128</code></a>
+        <a href="../files/include_localization.js.html#l129"><code>include&#x2F;localization.js:129</code></a>
         </p>
 
 
@@ -2935,7 +2919,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l137"><code>include&#x2F;localization.js:137</code></a>
+        <a href="../files/include_localization.js.html#l138"><code>include&#x2F;localization.js:138</code></a>
         </p>
 
 
@@ -2960,7 +2944,7 @@ performing key lookup</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_localization.js.html#l146"><code>include&#x2F;localization.js:146</code></a>
+        <a href="../files/include_localization.js.html#l147"><code>include&#x2F;localization.js:147</code></a>
         </p>
 
 

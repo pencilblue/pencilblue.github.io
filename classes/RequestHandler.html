@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -203,9 +204,12 @@
 <h1>RequestHandler Class</h1>
 <div class="box meta">
 
+        <div class="extends">
+            Extends <a href="../classes/AsyncEventEmitter.html" class="crosslink">AsyncEventEmitter</a>
+        </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/include_http_request_handler.js.html#l30"><code>include&#x2F;http&#x2F;request_handler.js:30</code></a>
+            Defined in: <a href="../files/include_http_request_handler.js.html#l34"><code>include&#x2F;http&#x2F;request_handler.js:34</code></a>
         </div>
 
             Module: <a href="../modules/ErrorSuccess.html">ErrorSuccess</a>
@@ -247,7 +251,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l30"><code>include&#x2F;http&#x2F;request_handler.js:30</code></a>
+        <a href="../files/include_http_request_handler.js.html#l34"><code>include&#x2F;http&#x2F;request_handler.js:34</code></a>
         </p>
 
 
@@ -318,7 +322,7 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
+                    <ul class="index-list methods extends">
                             <li class="index-item method private">
                                 <a href="#method__registerRoute">_registerRoute</a>
 
@@ -348,6 +352,10 @@
                             </li>
                             <li class="index-item method">
                                 <a href="#method_doRender">doRender</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_emitThemeRouteRetrieved">emitThemeRouteRetrieved</a>
 
                             </li>
                             <li class="index-item method">
@@ -515,7 +523,11 @@
                 <div class="index-section properties">
                     <h3>Properties</h3>
 
-                    <ul class="index-list properties">
+                    <ul class="index-list properties extends">
+                            <li class="index-item property">
+                                <a href="#property_activeTheme">activeTheme</a>
+
+                            </li>
                             <li class="index-item property private">
                                 <a href="#property_BODY_PARSER_MAP">BODY_PARSER_MAP</a>
 
@@ -532,6 +544,10 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item property">
+                                <a href="#property_errorCount">errorCount</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#property_hostname">hostname</a>
 
                             </li>
@@ -540,15 +556,44 @@
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
+                                <a href="#property_req">req</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_resp">resp</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_routeTheme">routeTheme</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_server">server</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_startTime">startTime</a>
+
+                            </li>
+                            <li class="index-item property protected">
                                 <a href="#property_staticRoutes">staticRoutes</a>
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property protected">
                                 <a href="#property_storage">storage</a>
 
                                     <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_THEME_ROUTE_RETRIEVED">THEME_ROUTE_RETRIEVED</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_url">url</a>
+
                             </li>
                     </ul>
                 </div>
@@ -594,7 +639,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l374"><code>include&#x2F;http&#x2F;request_handler.js:374</code></a>
+        <a href="../files/include_http_request_handler.js.html#l428"><code>include&#x2F;http&#x2F;request_handler.js:428</code></a>
         </p>
 
 
@@ -684,7 +729,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l188"><code>include&#x2F;http&#x2F;request_handler.js:188</code></a>
+        <a href="../files/include_http_request_handler.js.html#l242"><code>include&#x2F;http&#x2F;request_handler.js:242</code></a>
         </p>
 
 
@@ -745,7 +790,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1292"><code>include&#x2F;http&#x2F;request_handler.js:1292</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1363"><code>include&#x2F;http&#x2F;request_handler.js:1363</code></a>
         </p>
 
 
@@ -829,7 +874,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l197"><code>include&#x2F;http&#x2F;request_handler.js:197</code></a>
+        <a href="../files/include_http_request_handler.js.html#l251"><code>include&#x2F;http&#x2F;request_handler.js:251</code></a>
         </p>
 
 
@@ -881,7 +926,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l567"><code>include&#x2F;http&#x2F;request_handler.js:567</code></a>
+        <a href="../files/include_http_request_handler.js.html#l623"><code>include&#x2F;http&#x2F;request_handler.js:623</code></a>
         </p>
 
 
@@ -943,6 +988,9 @@
                 <li class="arg">
                         <code>location</code>
                 </li>
+                <li class="arg">
+                        <code class="optional">[statusCode=302]</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -956,7 +1004,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1408"><code>include&#x2F;http&#x2F;request_handler.js:1408</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1479"><code>include&#x2F;http&#x2F;request_handler.js:1479</code></a>
         </p>
 
 
@@ -974,6 +1022,17 @@
                 <li class="param">
                         <code class="param-name">location</code>
                         <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[statusCode=302]</code>
+                        <span class="type">Integer</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1008,7 +1067,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1047"><code>include&#x2F;http&#x2F;request_handler.js:1047</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1120"><code>include&#x2F;http&#x2F;request_handler.js:1120</code></a>
         </p>
 
 
@@ -1083,6 +1142,60 @@ by gathering all initialization parameters and calling the controller's
 
 
 </div>
+<div id="method_emitThemeRouteRetrieved" class="method item">
+    <h3 class="name"><code>emitThemeRouteRetrieved</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l1052"><code>include&#x2F;http&#x2F;request_handler.js:1052</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Emits the event to let listeners know that a request has derived the route and theme that matches the incoming
+request</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
 <div id="method_generateRedirect" class="method item">
     <h3 class="name"><code>generateRedirect</code></h3>
 
@@ -1108,7 +1221,7 @@ by gathering all initialization parameters and calling the controller's
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l151"><code>include&#x2F;http&#x2F;request_handler.js:151</code></a>
+        <a href="../files/include_http_request_handler.js.html#l205"><code>include&#x2F;http&#x2F;request_handler.js:205</code></a>
         </p>
 
 
@@ -1170,7 +1283,7 @@ header to be sent back as part of the response.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1549"><code>include&#x2F;http&#x2F;request_handler.js:1549</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1622"><code>include&#x2F;http&#x2F;request_handler.js:1622</code></a>
         </p>
 
 
@@ -1201,13 +1314,13 @@ header to be sent back as part of the response.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>The</code>
+                        <code>resourcePath</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
         <span class="returns-inline">
-            <span class="type">String</span>
+            <span class="type">String | Undefined</span>
         </span>
 
 
@@ -1220,7 +1333,7 @@ header to be sent back as part of the response.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l630"><code>include&#x2F;http&#x2F;request_handler.js:630</code></a>
+        <a href="../files/include_http_request_handler.js.html#l686"><code>include&#x2F;http&#x2F;request_handler.js:686</code></a>
         </p>
 
 
@@ -1238,12 +1351,12 @@ of the path.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">The</code>
-                        <span class="type">ResourcePath</span>
+                        <code class="param-name">resourcePath</code>
+                        <span class="type">String</span>
 
 
                     <div class="param-description">
-                        <p>file path to a resource</p>
+                        <p>The file path to a resource</p>
 
                     </div>
 
@@ -1255,7 +1368,7 @@ of the path.</p>
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">String</span>:
+                        <span class="type">String | Undefined</span>:
                     <p>The MIME type or NULL if could not be derived.</p>
 
             </div>
@@ -1284,7 +1397,7 @@ of the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1032"><code>include&#x2F;http&#x2F;request_handler.js:1032</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1105"><code>include&#x2F;http&#x2F;request_handler.js:1105</code></a>
         </p>
 
 
@@ -1350,7 +1463,7 @@ of the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l818"><code>include&#x2F;http&#x2F;request_handler.js:818</code></a>
+        <a href="../files/include_http_request_handler.js.html#l872"><code>include&#x2F;http&#x2F;request_handler.js:872</code></a>
         </p>
 
 
@@ -1398,7 +1511,7 @@ of the path.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>The</code>
+                        <code>path</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1417,7 +1530,7 @@ of the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l458"><code>include&#x2F;http&#x2F;request_handler.js:458</code></a>
+        <a href="../files/include_http_request_handler.js.html#l512"><code>include&#x2F;http&#x2F;request_handler.js:512</code></a>
         </p>
 
 
@@ -1438,12 +1551,12 @@ The path variables will be passed to the controllers.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">The</code>
+                        <code class="param-name">path</code>
                         <span class="type">String</span>
 
 
                     <div class="param-description">
-                        <p>URL path</p>
+                        <p>The URL path</p>
 
                     </div>
 
@@ -1493,7 +1606,7 @@ depth in the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l902"><code>include&#x2F;http&#x2F;request_handler.js:902</code></a>
+        <a href="../files/include_http_request_handler.js.html#l956"><code>include&#x2F;http&#x2F;request_handler.js:956</code></a>
         </p>
 
 
@@ -1561,7 +1674,7 @@ iterating over all other inherited themes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l517"><code>include&#x2F;http&#x2F;request_handler.js:517</code></a>
+        <a href="../files/include_http_request_handler.js.html#l571"><code>include&#x2F;http&#x2F;request_handler.js:571</code></a>
         </p>
 
 
@@ -1606,7 +1719,7 @@ iterating over all other inherited themes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l125"><code>include&#x2F;http&#x2F;request_handler.js:125</code></a>
+        <a href="../files/include_http_request_handler.js.html#l181"><code>include&#x2F;http&#x2F;request_handler.js:181</code></a>
         </p>
 
 
@@ -1645,7 +1758,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1489"><code>include&#x2F;http&#x2F;request_handler.js:1489</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1561"><code>include&#x2F;http&#x2F;request_handler.js:1561</code></a>
         </p>
 
 
@@ -1701,7 +1814,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l663"><code>include&#x2F;http&#x2F;request_handler.js:663</code></a>
+        <a href="../files/include_http_request_handler.js.html#l719"><code>include&#x2F;http&#x2F;request_handler.js:719</code></a>
         </p>
 
 
@@ -1755,6 +1868,9 @@ the system.  This should only be called once at startup.</p>
                         <code>id</code>
                 </li>
                 <li class="arg">
+                        <code class="optional">[site]</code>
+                </li>
+                <li class="arg">
                         <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
@@ -1771,7 +1887,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1509"><code>include&#x2F;http&#x2F;request_handler.js:1509</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1581"><code>include&#x2F;http&#x2F;request_handler.js:1581</code></a>
         </p>
 
 
@@ -1799,6 +1915,17 @@ the system.  This should only be called once at startup.</p>
                 <li class="param">
                         <code class="param-name">id</code>
                         <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[site]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -1844,7 +1971,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l206"><code>include&#x2F;http&#x2F;request_handler.js:206</code></a>
+        <a href="../files/include_http_request_handler.js.html#l260"><code>include&#x2F;http&#x2F;request_handler.js:260</code></a>
         </p>
 
 
@@ -1923,7 +2050,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l165"><code>include&#x2F;http&#x2F;request_handler.js:165</code></a>
+        <a href="../files/include_http_request_handler.js.html#l219"><code>include&#x2F;http&#x2F;request_handler.js:219</code></a>
         </p>
 
 
@@ -1962,6 +2089,9 @@ valid URL path structure.</p>
                 <li class="arg">
                         <code>controller</code>
                 </li>
+                <li class="arg">
+                        <code>themeRoute</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -1975,7 +2105,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1148"><code>include&#x2F;http&#x2F;request_handler.js:1148</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1230"><code>include&#x2F;http&#x2F;request_handler.js:1230</code></a>
         </p>
 
 
@@ -1993,6 +2123,16 @@ valid URL path structure.</p>
                 <li class="param">
                         <code class="param-name">controller</code>
                         <span class="type"><a href="../classes/BaseController.html" class="crosslink">BaseController</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">themeRoute</code>
+                        <span class="type">Object</span>
 
 
                     <div class="param-description">
@@ -2027,7 +2167,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1419"><code>include&#x2F;http&#x2F;request_handler.js:1419</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1491"><code>include&#x2F;http&#x2F;request_handler.js:1491</code></a>
         </p>
 
 
@@ -2066,6 +2206,9 @@ valid URL path structure.</p>
                 <li class="arg">
                         <code>data</code>
                 </li>
+                <li class="arg">
+                        <code>[data.code</code>
+                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -2079,7 +2222,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1170"><code>include&#x2F;http&#x2F;request_handler.js:1170</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1244"><code>include&#x2F;http&#x2F;request_handler.js:1244</code></a>
         </p>
 
 
@@ -2096,7 +2239,29 @@ valid URL path structure.</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">data</code>
-                        <span class="type">Object</span>
+                        <span class="type">Error | Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name optional">[redirect]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">[data.code</code>
+                        <span class="type">Integer</span>
 
 
                     <div class="param-description">
@@ -2143,7 +2308,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l994"><code>include&#x2F;http&#x2F;request_handler.js:994</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1067"><code>include&#x2F;http&#x2F;request_handler.js:1067</code></a>
         </p>
 
 
@@ -2240,7 +2405,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l758"><code>include&#x2F;http&#x2F;request_handler.js:758</code></a>
+        <a href="../files/include_http_request_handler.js.html#l812"><code>include&#x2F;http&#x2F;request_handler.js:812</code></a>
         </p>
 
 
@@ -2309,7 +2474,7 @@ active theme.  It then retrieves the route object and passes it off to onThemeRe
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l945"><code>include&#x2F;http&#x2F;request_handler.js:945</code></a>
+        <a href="../files/include_http_request_handler.js.html#l999"><code>include&#x2F;http&#x2F;request_handler.js:999</code></a>
         </p>
 
 
@@ -2374,7 +2539,7 @@ active theme.  It then retrieves the route object and passes it off to onThemeRe
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1096"><code>include&#x2F;http&#x2F;request_handler.js:1096</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1178"><code>include&#x2F;http&#x2F;request_handler.js:1178</code></a>
         </p>
 
 
@@ -2446,7 +2611,7 @@ value is dependent on the parser selected by the content type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1430"><code>include&#x2F;http&#x2F;request_handler.js:1430</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1500"><code>include&#x2F;http&#x2F;request_handler.js:1500</code></a>
         </p>
 
 
@@ -2454,7 +2619,8 @@ value is dependent on the parser selected by the content type.</p>
     </div>
 
     <div class="description">
-        
+        <p>Parses cookies passed for a request</p>
+
     </div>
 
         <div class="params">
@@ -2512,7 +2678,7 @@ value is dependent on the parser selected by the content type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1531"><code>include&#x2F;http&#x2F;request_handler.js:1531</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1604"><code>include&#x2F;http&#x2F;request_handler.js:1604</code></a>
         </p>
 
 
@@ -2596,7 +2762,7 @@ value is dependent on the parser selected by the content type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l310"><code>include&#x2F;http&#x2F;request_handler.js:310</code></a>
+        <a href="../files/include_http_request_handler.js.html#l364"><code>include&#x2F;http&#x2F;request_handler.js:364</code></a>
         </p>
 
 
@@ -2781,7 +2947,7 @@ request must have successfully authenticated against the system.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l891"><code>include&#x2F;http&#x2F;request_handler.js:891</code></a>
+        <a href="../files/include_http_request_handler.js.html#l945"><code>include&#x2F;http&#x2F;request_handler.js:945</code></a>
         </p>
 
 
@@ -2857,7 +3023,7 @@ request must have successfully authenticated against the system.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l862"><code>include&#x2F;http&#x2F;request_handler.js:862</code></a>
+        <a href="../files/include_http_request_handler.js.html#l916"><code>include&#x2F;http&#x2F;request_handler.js:916</code></a>
         </p>
 
 
@@ -2936,7 +3102,7 @@ the theme variation of the route.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l875"><code>include&#x2F;http&#x2F;request_handler.js:875</code></a>
+        <a href="../files/include_http_request_handler.js.html#l929"><code>include&#x2F;http&#x2F;request_handler.js:929</code></a>
         </p>
 
 
@@ -3023,7 +3189,7 @@ the theme variation of the route.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l679"><code>include&#x2F;http&#x2F;request_handler.js:679</code></a>
+        <a href="../files/include_http_request_handler.js.html#l735"><code>include&#x2F;http&#x2F;request_handler.js:735</code></a>
         </p>
 
 
@@ -3064,7 +3230,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l693"><code>include&#x2F;http&#x2F;request_handler.js:693</code></a>
+        <a href="../files/include_http_request_handler.js.html#l749"><code>include&#x2F;http&#x2F;request_handler.js:749</code></a>
         </p>
 
 
@@ -3072,9 +3238,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     </div>
 
     <div class="description">
-        <p>Serves up an error page.  The page is responsible for displaying an error page
-TODO Church this up a bit.  Make it a template and controller like 404.
-TODO install an encoder entity since node prints out function names in angle brackets</p>
+        <p>Serves up an error page.  The page is responsible for displaying an error page</p>
 
     </div>
 
@@ -3114,7 +3278,7 @@ TODO install an encoder entity since node prints out function names in angle bra
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>absolutePath</code>
+                        <code class="optional">[absolutePath]</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -3129,7 +3293,7 @@ TODO install an encoder entity since node prints out function names in angle bra
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l596"><code>include&#x2F;http&#x2F;request_handler.js:596</code></a>
+        <a href="../files/include_http_request_handler.js.html#l652"><code>include&#x2F;http&#x2F;request_handler.js:652</code></a>
         </p>
 
 
@@ -3146,8 +3310,9 @@ TODO install an encoder entity since node prints out function names in angle bra
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">absolutePath</code>
+                        <code class="param-name optional">[absolutePath]</code>
                         <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
@@ -3190,7 +3355,7 @@ TODO install an encoder entity since node prints out function names in angle bra
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l256"><code>include&#x2F;http&#x2F;request_handler.js:256</code></a>
+        <a href="../files/include_http_request_handler.js.html#l310"><code>include&#x2F;http&#x2F;request_handler.js:310</code></a>
         </p>
 
 
@@ -3268,7 +3433,7 @@ TODO install an encoder entity since node prints out function names in angle bra
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l221"><code>include&#x2F;http&#x2F;request_handler.js:221</code></a>
+        <a href="../files/include_http_request_handler.js.html#l275"><code>include&#x2F;http&#x2F;request_handler.js:275</code></a>
         </p>
 
 
@@ -3319,7 +3484,13 @@ TODO install an encoder entity since node prints out function names in angle bra
                         <code>url</code>
                 </li>
                 <li class="arg">
-                        <code>{</code>
+                        <code>id</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[site]</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -3335,7 +3506,7 @@ TODO install an encoder entity since node prints out function names in angle bra
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1452"><code>include&#x2F;http&#x2F;request_handler.js:1452</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1522"><code>include&#x2F;http&#x2F;request_handler.js:1522</code></a>
         </p>
 
 
@@ -3343,7 +3514,8 @@ TODO install an encoder entity since node prints out function names in angle bra
     </div>
 
     <div class="description">
-        
+        <p>Checks to see if the URL exists in the current context of the system</p>
+
     </div>
 
         <div class="params">
@@ -3361,12 +3533,34 @@ TODO install an encoder entity since node prints out function names in angle bra
 
                 </li>
                 <li class="param">
-                        <code class="param-name">{</code>
-                        <span class="type">Object</span>
+                        <code class="param-name">id</code>
+                        <span class="type">String</span>
 
 
                     <div class="param-description">
                          
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[site]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>(Error, boolean)</p>
+
                     </div>
 
                 </li>
@@ -3403,7 +3597,7 @@ TODO install an encoder entity since node prints out function names in angle bra
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1274"><code>include&#x2F;http&#x2F;request_handler.js:1274</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1348"><code>include&#x2F;http&#x2F;request_handler.js:1348</code></a>
         </p>
 
 
@@ -3480,7 +3674,7 @@ will be serialized via its implicity &quot;toString&quot; function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1222"><code>include&#x2F;http&#x2F;request_handler.js:1222</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1298"><code>include&#x2F;http&#x2F;request_handler.js:1298</code></a>
         </p>
 
 
@@ -3516,6 +3710,30 @@ will be serialized via its implicity &quot;toString&quot; function.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
+<div id="property_activeTheme" class="property item">
+    <h3 class="name"><code>activeTheme</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l86"><code>include&#x2F;http&#x2F;request_handler.js:86</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
 <div id="property_BODY_PARSER_MAP" class="property item private">
     <h3 class="name"><code>BODY_PARSER_MAP</code></h3>
     <span class="type">Object</span>
@@ -3529,7 +3747,7 @@ will be serialized via its implicity &quot;toString&quot; function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l59"><code>include&#x2F;http&#x2F;request_handler.js:59</code></a>
+        <a href="../files/include_http_request_handler.js.html#l106"><code>include&#x2F;http&#x2F;request_handler.js:106</code></a>
         </p>
 
 
@@ -3557,7 +3775,7 @@ route specification</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l113"><code>include&#x2F;http&#x2F;request_handler.js:113</code></a>
+        <a href="../files/include_http_request_handler.js.html#l160"><code>include&#x2F;http&#x2F;request_handler.js:160</code></a>
         </p>
 
 
@@ -3586,7 +3804,7 @@ equally.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l84"><code>include&#x2F;http&#x2F;request_handler.js:84</code></a>
+        <a href="../files/include_http_request_handler.js.html#l131"><code>include&#x2F;http&#x2F;request_handler.js:131</code></a>
         </p>
 
 
@@ -3595,6 +3813,30 @@ equally.</p>
     <div class="description">
         <p>The fallback theme (pencilblue)</p>
 
+    </div>
+
+
+
+</div>
+<div id="property_errorCount" class="property item">
+    <h3 class="name"><code>errorCount</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l98"><code>include&#x2F;http&#x2F;request_handler.js:98</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
     </div>
 
 
@@ -3611,7 +3853,7 @@ equally.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l45"><code>include&#x2F;http&#x2F;request_handler.js:45</code></a>
+        <a href="../files/include_http_request_handler.js.html#l75"><code>include&#x2F;http&#x2F;request_handler.js:75</code></a>
         </p>
 
 
@@ -3642,7 +3884,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l74"><code>include&#x2F;http&#x2F;request_handler.js:74</code></a>
+        <a href="../files/include_http_request_handler.js.html#l121"><code>include&#x2F;http&#x2F;request_handler.js:121</code></a>
         </p>
 
 
@@ -3656,12 +3898,132 @@ resulting in a 503 from the load balancer</p>
 
 
 </div>
-<div id="property_staticRoutes" class="property item private">
+<div id="property_req" class="property item">
+    <h3 class="name"><code>req</code></h3>
+    <span class="type">Request</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l57"><code>include&#x2F;http&#x2F;request_handler.js:57</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_resp" class="property item">
+    <h3 class="name"><code>resp</code></h3>
+    <span class="type">Response</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l63"><code>include&#x2F;http&#x2F;request_handler.js:63</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_routeTheme" class="property item">
+    <h3 class="name"><code>routeTheme</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l92"><code>include&#x2F;http&#x2F;request_handler.js:92</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_server" class="property item">
+    <h3 class="name"><code>server</code></h3>
+    <span class="type">Server</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l51"><code>include&#x2F;http&#x2F;request_handler.js:51</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_startTime" class="property item">
+    <h3 class="name"><code>startTime</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l45"><code>include&#x2F;http&#x2F;request_handler.js:45</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_staticRoutes" class="property item protected">
     <h3 class="name"><code>staticRoutes</code></h3>
     <span class="type">Object</span>
 
 
-        <span class="flag private">private</span>
+        <span class="flag protected">protected</span>
 
 
         <span class="flag static">static</span>
@@ -3669,7 +4031,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l104"><code>include&#x2F;http&#x2F;request_handler.js:104</code></a>
+        <a href="../files/include_http_request_handler.js.html#l151"><code>include&#x2F;http&#x2F;request_handler.js:151</code></a>
         </p>
 
 
@@ -3683,12 +4045,12 @@ resulting in a 503 from the load balancer</p>
 
 
 </div>
-<div id="property_storage" class="property item private">
+<div id="property_storage" class="property item protected">
     <h3 class="name"><code>storage</code></h3>
     <span class="type">Array</span>
 
 
-        <span class="flag private">private</span>
+        <span class="flag protected">protected</span>
 
 
         <span class="flag static">static</span>
@@ -3696,7 +4058,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l92"><code>include&#x2F;http&#x2F;request_handler.js:92</code></a>
+        <a href="../files/include_http_request_handler.js.html#l139"><code>include&#x2F;http&#x2F;request_handler.js:139</code></a>
         </p>
 
 
@@ -3705,6 +4067,56 @@ resulting in a 503 from the load balancer</p>
     <div class="description">
         <p>The internal storage of routes after they are validated and processed.</p>
 
+    </div>
+
+
+
+</div>
+<div id="property_THEME_ROUTE_RETRIEVED" class="property item">
+    <h3 class="name"><code>THEME_ROUTE_RETRIEVED</code></h3>
+    <span class="type">String</span>
+
+
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l172"><code>include&#x2F;http&#x2F;request_handler.js:172</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The event emitted when a route and theme is derived for an incoming request</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_url" class="property item">
+    <h3 class="name"><code>url</code></h3>
+    <span class="type">Url</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l69"><code>include&#x2F;http&#x2F;request_handler.js:69</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
     </div>
 
 

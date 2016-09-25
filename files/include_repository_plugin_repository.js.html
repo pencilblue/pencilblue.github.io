@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var async = require(&#x27;async&#x27;);
@@ -381,9 +383,9 @@ module.exports = function PluginRepositoryModule(pb) {
             $and: [idIsInTheList, belongsToThisSite]
         };
         var opts = {
-            select: pb.DAO.SELECT_ALL,
+            select: pb.DAO.PROJECT_ALL,
             where: where,
-            order: {created: pb.DAO.ASC}
+            order: [[&#x27;created&#x27;, pb.DAO.ASC]]
         };
         var dao = new pb.DAO();
         dao.q(PLUGIN_COLL, opts, cb);
@@ -407,9 +409,9 @@ module.exports = function PluginRepositoryModule(pb) {
             $and: [idIsNotInTheList, belongsToThisSite]
         };
         var opts = {
-            select: pb.DAO.SELECT_ALL,
+            select: pb.DAO.PROJECT_ALL,
             where: where,
-            order: {created: pb.DAO.ASC}
+            order: [[&#x27;created&#x27;, pb.DAO.ASC]]
         };
         var dao = new pb.DAO();
         dao.q(PLUGIN_COLL, opts, cb);
@@ -427,18 +429,15 @@ module.exports = function PluginRepositoryModule(pb) {
     };
 
     function getIdsNotInListQuery(pluginIDs) {
-        var idIsInTheList = {uid: {&#x27;$nin&#x27;: pluginIDs}};
-        return idIsInTheList;
+        return {uid: {&#x27;$nin&#x27;: pluginIDs}};
     }
 
     function getIdsInListQuery(pluginIDs) {
-        var idIsInTheList = {uid: {&#x27;$in&#x27;: pluginIDs}};
-        return idIsInTheList;
+        return {uid: {&#x27;$in&#x27;: pluginIDs}};
     }
 
     function getHasThemeQuery() {
-        var hasATheme = {theme: {$exists: true}};
-        return hasATheme;
+        return {theme: {$exists: true}};
     }
 
     function getCorrectIdQuery(pluginID) {

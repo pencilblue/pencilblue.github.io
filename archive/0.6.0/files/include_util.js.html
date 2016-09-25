@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include/util.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.6.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include/util.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2016  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+&quot;use strict&quot;;
+
+//dependencies
+var os     = require(&#x27;os&#x27;);
+var util   = require(&#x27;util&#x27;);
+var async  = require(&#x27;async&#x27;);
+var extend = require(&#x27;node.extend&#x27;);
+var fs     = require(&#x27;fs&#x27;);
+var path   = require(&#x27;path&#x27;);
+var uuid   = require(&#x27;node-uuid&#x27;);
+
+/**
+ * Provides a set of utility functions used throughout the code base
+ *
+ * @module Services
+ * @class Util
+ * @constructor
+ */
+function Util(){}
+
+/**
+ * Clones an object by serializing it and then re-parsing it.
+ * WARNING: Objects with circular dependencies will cause an error to be thrown.
+ * @static
+ * @method clone
+ * @param {Object} object The object to clone
+ * @return {Object|Array} Cloned object
+ */
+Util.clone = function(object){
+    return JSON.parse(JSON.stringify(object));
+};
+
+/**
+ * Performs a deep merge and returns the result.  &lt;b&gt;NOTE:&lt;/b&gt; DO NOT ATTEMPT
+ * TO MERGE PROPERTIES THAT REFERENCE OTHER PROPERTIES.  This could have
+ * unintended side-effects as well as cause errors due to circular dependencies.
+ * @static
+ * @method deepMerge
+ * @param {Object} from
+ * @param {Object} to
+ * @return {Object}
+ */
+Util.deepMerge = function(from, to) {
+    return extend(true, to, from);
+};
+
+/**
+ * Checks if the supplied object is an errof. If the object is an error the
+ * function will throw the error.
+ * @static
+ * @method ane
+ * @param {Object} obj The object to check
+ */
+Util.ane = function(obj){
+	if (util.isError(obj)) {
+		throw obj;
+	}
+};
+
+/**
+ * Initializes an array with the specified number of values.  The value at each
+ * index can be static or a function may be provided.  In the event that a
+ * function is provided the function will be called for each item to be placed
+ * into the array.  The return value of the function will be placed into the
+ * array.
+ * @static
+ * @method initArray
+ * @param {Integer} cnt The length of the array to create
+ * @param {Function|String|Number} val The value to initialize each index of
+ * the array
+ * @return {Array} The initialized array
+ */
+Util.initArray = function(cnt, val) {
+    var v = [];
+    var isFunc = Util.isFunction(val);
+    for(var i = 0; i &lt; cnt; i++) {
+        v.push(isFunc ? val(i) : val);
+    }
+    return v;
+};
+
+/**
+ * Escapes a regular expression.
+ * @static
+ * @method escapeRegExp
+ * @param {String} The expression to escape
+ * @return {String} Escaped regular expression.
+ */
+Util.escapeRegExp = function(str) {
+	if (!Util.isString(str)) {
+		return null;
+	}
+	return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, &quot;\\$&amp;&quot;);
+};
+
+/**
+ * Merges the properties from the first parameter into the second. This modifies
+ * the second parameter instead of creating a new object.
+ *
+ * @method merge
+ * @param {Object} from
+ * @param {Object} to
+ * @return {Object} The &#x27;to&#x27; variable
+ */
+Util.merge = function(from, to) {
+    Util.forEach(from, function(val, propName) {
+        to[propName] = val;
+    });
+    return to;
+};
+
+/**
+ * Creates an object that has both the properties of &quot;a&quot; and &quot;b&quot;.  When both
+ * objects have a property with the same name, &quot;b&quot;&#x27;s value will be preserved.
+ * @static
+ * @method union
+ * @return {Object} The union of properties from both a and b.
+ */
+Util.union = function(a, b) {
+	var union = {};
+	Util.merge(a, union);
+	Util.merge(b, union);
+	return union;
+};
+
+/**
+ * Creates a set of tasks that can be executed by the &quot;async&quot; module.
+ * @static
+ * @method getTasks
+ * @param {Array} iterable The array of items to build tasks for
+ * @param {Function} getTaskFunction The function that creates and returns the
+ * task to be executed.
+ * @example
+ * &lt;code&gt;
+ * var items = [&#x27;apple&#x27;, &#x27;orange&#x27;];
+ * var tasks = util.getTasks(items, function(items, i) {
+ *     return function(callback) {
+ *         console.log(items[i]);
+ *         callback(null, null);
+ *     };
+ * });
+ * async.series(tasks, util.cb);
+ * &lt;code&gt;
+ */
+Util.getTasks = function (iterable, getTaskFunction) {
+	var tasks = [];
+	for (var i = 0; i &lt; iterable.length; i++) {
+		tasks.push(getTaskFunction(iterable, i));
+	}
+	return tasks;
+};
+
+/**
+ * Wraps a function in an anonymous function.  The wrapper function will call
+ * the wrapped function with the provided context.  This comes in handy when
+ * creating your own task arrays in conjunction with the async function when a
+ * prototype function needs to be called with a specific context.
+ * @static
+ * @method wrapTask
+ * @param {*} context The value of &quot;this&quot; for the function to be called
+ * @param {Function} func The function to be executed
+ * @param {Array} [argArray] The arguments to be supplied to the func parameter
+ * when executed.
+ * @return {Function}
+ */
+Util.wrapTask = function(context, func, argArray) {
+    if (!util.isArray(argArray)) {
+        argArray = [];
+    }
+    return function(callback) {
+        argArray.push(callback);
+        func.apply(context, argArray);
+    };
+};
+
+/**
+ * Provides an implementation of for each that accepts an array or object.
+ * @static
+ * @method forEach
+ * @param {Object|Array} iterable
+ * @param {Function} handler A function that accepts 4 parameters.  The value
+ * of the current property or index.  The current index (property name if object).  The iterable.
+ * Finally, the numerical index if the iterable is an object.
+ */
+Util.forEach = function(iterable, handler) {
+
+    var internalHandler;
+    var internalIterable;
+    if (util.isArray(iterable)) {
+        internalHandler = handler;
+        internalIterable = iterable;
+    }
+    else if (Util.isObject(iterable)) {
+
+        internalIterable = Object.getOwnPropertyNames(iterable);
+        internalHandler = function(propName, i) {
+            handler(iterable[propName], propName, iterable, i);
+        };
+    }
+    else {
+        return false;
+    }
+
+    //execute native foreach on interable
+    internalIterable.forEach(internalHandler);
+};
+
+/**
+ * Hashes an array
+ * @static
+ * @method arrayToHash
+ * @param {Array} array      The array to hash
+ * @param {*} [defaultVal=true] Default value if the hashing fails
+ * @return {Object} Hash
+ */
+Util.arrayToHash = function(array, defaultVal) {
+	if (!util.isArray(array)) {
+		return null;
+	}
+
+    //set the default value
+    if (Util.isNullOrUndefined(defaultVal)) {
+        defaultVal = true;
+    }
+	var hash = {};
+	for(var i = 0; i &lt; array.length; i++) {
+		if (Util.isFunction(defaultVal)) {
+			hash[defaultVal(array, i)] = array[i];
+		}
+		else {
+			hash[array[i]] = defaultVal;
+		}
+	}
+	return hash;
+};
+
+/**
+ * Converts an array to an object.
+ * @static
+ * @method arrayToObj
+ * @param {Array} array The array of items to transform from an array to an
+ * object
+ * @param {String|Function} keyFieldOrTransform When this field is a string it
+ * is expected that the array contains objects and that the objects contain a
+ * property that the string represents.  The value of that field will be used
+ * as the property name in the new object.  When this parameter is a function
+ * it is passed two parameters: the array being operated on and the index of
+ * the current item.  It is expected that the function will return a value
+ * representing the key in the new object.
+ * @param {String|Function} [valFieldOrTransform] When this value is a string
+ * it is expected that the array contains objects and that the objects contain
+ * a property that the string represents.  The value of that field will be used
+ * as the property value in the new object.  When this parameter is a function
+ * it is passed two parameters: the array being operated on and the index of
+ * the current item.  It is expected that the function return a value
+ * representing the value of the derived property for that item.
+ * @return {Object} The converted array.
+ */
+Util.arrayToObj = function(array, keyFieldOrTransform, valFieldOrTransform) {
+    if (!util.isArray(array)) {
+		return null;
+	}
+
+    var keyIsString = Util.isString(keyFieldOrTransform);
+    var keyIsFunc   = Util.isFunction(keyFieldOrTransform);
+    if (!keyIsString &amp;&amp; !keyIsFunc) {
+        return null;
+    }
+
+    var valIsString = Util.isString(valFieldOrTransform);
+    var valIsFunc   = Util.isFunction(valFieldOrTransform);
+    if (!valIsString &amp;&amp; !valIsFunc) {
+        valFieldOrTransform = null;
+    }
+
+    var obj = {};
+    for (var i = 0; i &lt; array.length; i++) {
+
+        var item = array[i];
+        var key  = keyIsString ? item[keyFieldOrTransform] : keyFieldOrTransform(array, i);
+
+        if (valIsString) {
+            obj[key] = item[valFieldOrTransform];
+        }
+        else if (valIsFunc) {
+            obj[key] = valFieldOrTransform(array, i);
+        }
+        else {
+            obj[key] = item;
+        }
+    }
+    return obj;
+};
+
+/**
+ * Converts an array of objects into a hash where the key the value of the
+ * specified property. If multiple objects in the array have the same value for
+ * the specified value then the last one found will be kept.
+ * @static
+ * @method objArrayToHash
+ * @param {Array} array The array to convert
+ * @param {String} hashProp The property who&#x27;s value will be used as the key
+ * for each object in the array.
+ * @return {Object} A hash of the values in the array
+ */
+Util.objArrayToHash = function(array, hashProp) {
+    if (!util.isArray(array)) {
+		return null;
+	}
+
+    var hash = {};
+	for(var i = 0; i &lt; array.length; i++) {
+        hash[array[i][hashProp]] = array[i];
+	}
+	return hash;
+};
+
+/**
+ * Converts a hash to an array. When provided, the hashKeyProp will be the
+ * property name of each object in the array that holds the hash key.
+ * @static
+ * @method hashToArray
+ * @param {Object} obj The object to convert
+ * @param {String} [hashKeyProp] The property name that will hold the hash key.
+ * @return {Array} An array of each property value in the hash.
+ */
+Util.hashToArray = function(obj, hashKeyProp) {
+	if (!Util.isObject(obj)) {
+		return null;
+	}
+
+    var doHashKeyTransform = Util.isString(hashKeyProp);
+    return Object.keys(obj).reduce(function(prev, prop) {
+        prev.push(obj[prop]);
+        if (doHashKeyTransform) {
+            obj[prop][hashKeyProp] = prop;
+        }
+        return prev;
+    }, []);
+};
+
+/**
+ * Inverts a hash
+ * @static
+ * @method invertHash
+ * @param {Object} obj Hash object
+ * @return {Object} Inverted hash
+ */
+Util.invertHash = function(obj) {
+	if (!Util.isObject(obj)) {
+		return null;
+	}
+
+	var new_obj = {};
+	for (var prop in obj) {
+		if (obj.hasOwnProperty(prop)) {
+			new_obj[obj[prop]] = prop;
+		}
+	}
+	return new_obj;
+};
+
+/**
+ * Clones an array
+ * @static
+ * @method copyArray
+ * @param {Array} array
+ * @return {Array} Cloned array
+ */
+Util.copyArray = function(array) {
+	if (!util.isArray(array)) {
+		return null;
+	}
+
+	var clone = [];
+	for (var i = 0; i &lt; array.length; i++) {
+		clone.push(array[i]);
+	}
+	return clone;
+};
+
+Util.dedupeArray = function(array) {
+    var hash = Util.arrayToHash(array);
+    return Object.keys(hash);
+};
+
+/**
+ * Pushes all of one array&#x27;s values into another
+ * @static
+ * @method arrayPushAll
+ * @param {Array} from
+ * @param {Array} to
+ * @return {Boolean} FALSE when the parameters are not Arrays
+ */
+Util.arrayPushAll = function(from, to) {
+	if (!util.isArray(from) || !util.isArray(to)) {
+		return false;
+	}
+
+	for (var i = 0; i &lt; from.length; i++) {
+		to.push(from[i]);
+	}
+};
+
+/**
+ * Empty callback function just used as a place holder if a callback is required
+ * and the result is not needed.
+ * @static
+ * @method cb
+ */
+Util.cb = function(/*err, result*/){
+	//do nothing
+};
+
+/**
+ * Creates a unique Id
+ * @static
+ * @method uniqueId
+ * @return {String} Unique Id Object
+ */
+Util.uniqueId = function(){
+	return uuid.v4();
+};
+
+/**
+ * Tests if a value is an object
+ * @static
+ * @method isObject
+ * @param {*} value
+ * @return {Boolean}
+ */
+Util.isObject = function(value) {
+	return !Util.isNullOrUndefined(value) &amp;&amp; typeof value === &#x27;object&#x27;;
+};
+
+/**
+ * Tests if a value is an string
+ * @static
+ * @method isString
+ * @param {*} value
+ * @return {Boolean}
+ */
+Util.isString = function(value) {
+	return !Util.isNullOrUndefined(value) &amp;&amp; typeof value === &#x27;string&#x27;;
+};
+
+/**
+ * Tests if a value is a function
+ * @static
+ * @method isFunction
+ * @param {*} value
+ * @return {Boolean}
+ */
+Util.isFunction = function(value) {
+	return !Util.isNullOrUndefined(value) &amp;&amp; typeof value === &#x27;function&#x27;;
+};
+
+/**
+ * Tests if a value is NULL or undefined
+ * @static
+ * @method isNullOrUndefined
+ * @param {*} value
+ * @return {Boolean}
+ */
+Util.isNullOrUndefined = function(value) {
+    return value === null || typeof value === &#x27;undefined&#x27;;
+};
+
+/**
+ * Tests if a value is a boolean
+ * @static
+ * @method isBoolean
+ * @param {*} value
+ * @return {Boolean}
+ */
+Util.isBoolean = function(value) {
+    return value === true || value === false;
+};
+
+/**
+ * Retrieves the subdirectories of a path
+ * @static
+ * @method getDirectories
+ * @param {String}   dirPath The starting path
+ * @param {Function} cb      Callback function
+ */
+Util.getDirectories = function(dirPath, cb) {
+
+	var dirs = [];
+	fs.readdir(dirPath, function(err, files) {
+		if (util.isError(err)) {
+			return cb(err);
+		}
+
+		var tasks = Util.getTasks(files, function(files, index) {
+			return function(callback) {
+
+				var fullPath = path.join(dirPath, files[index]);
+				fs.stat(fullPath, function(err, stat) {
+                    if (util.isError(err)) {
+                        return cb(err);
+                    }
+                    if (Util.isNullOrUndefined(stat)) {
+                        console.log(&#x27;WARN: Util: unstatable file encountered: %s&#x27;, fullPath);
+                    }
+					else if (stat.isDirectory()) {
+						dirs.push(fullPath);
+					}
+					callback(err);
+				});
+			};
+		});
+		async.parallel(tasks, function(err/*, results*/) {
+			cb(err, dirs);
+		});
+	});
+};
+
+/**
+ * Retrieves file and/or directorie absolute paths under a given directory path.
+ * @static
+ * @method getFiles
+ * @param {String} dirPath The path to the directory to be examined
+ * @param {Object} [options] Options that customize the results
+ * @param {Boolean} [options.recursive=false] A flag that indicates if
+ * directories should be recursively searched.
+ * @param {Function} [options.filter] A function that returns a boolean
+ * indicating if the file should be included in the result set.  The function
+ * should take two parameters.  The first is a string value representing the
+ * absolute path of the file.  The second is the stat object for the file.
+ * @param {Function} cb A callback that takes two parameters. The first is an
+ * Error, if occurred. The second is an array of strings representing the
+ * absolute paths for files that met the criteria specified by the filter
+ * function.
+ */
+Util.getFiles = function(dirPath, options, cb) {
+    if (Util.isFunction(options)) {
+        cb      = options;
+        options = {
+            recursive: false,
+            filter: function(/*fullPath, stat*/) { return true; }
+        };
+    }
+
+    //read files from dir
+    fs.readdir(dirPath, function(err, q) {
+        if (util.isError(err)) {
+			return cb(err);
+		}
+
+        //seed the queue with the absolute paths not just the file names
+        for (var i = 0; i &lt; q.length; i++) {
+            q[i] = path.join(dirPath, q[i]);
+        }
+
+        //process the q
+        var filePaths = [];
+        async.whilst(
+            function() { return q.length &gt; 0; },
+            function(callback) {
+
+                var fullPath = q.shift();
+				fs.stat(fullPath, function(err, stat) {
+					if (util.isError(err)) {
+                        return callback(err);
+					}
+
+                    //apply filter
+                    var meetsCriteria = true;
+                    if (Util.isFunction(options.filter)) {
+                        meetsCriteria = options.filter(fullPath, stat);
+                    }
+
+                    //examine result and add it when criteria is met
+                    if (meetsCriteria) {
+                        filePaths.push(fullPath);
+                    }
+
+                    //when recursive queue up directory&#x27;s for processing
+                    if (!options.recursive || !stat.isDirectory()) {
+                        return callback(null);
+                    }
+
+                    //read the directory contents and append it to the queue
+                    fs.readdir(fullPath, function(err, childFiles) {
+                        if (util.isError(err)) {
+                            return callback(err);
+                        }
+
+                        childFiles.forEach(function(item) {
+                            q.push(path.join(fullPath, item));
+                        });
+                        callback(null);
+                    });
+				});
+            },
+            function(err) {
+                cb(err, filePaths);
+            }
+        );
+    });
+};
+
+/* Asynchronously makes the specified directory structure.
+ * @static
+ * @method mkdirsSync
+ * @param {String} absoluteDirPath The absolute path of the directory structure
+ * to be created
+ * @param {Boolean} isFileName When true the value after the last file
+ * separator is treated as a file.  This means that a directory with that value
+ * will not be created.
+ * @param {Function} cb A callback that provides an error, if occurred
+ */
+Util.mkdirs = function(absoluteDirPath, isFileName, cb) {
+    if (Util.isFunction(isFileName)) {
+        cb = isFileName;
+        isFileName = false;
+    }
+
+    if (!Util.isString(absoluteDirPath)) {
+        return cb(new Error(&#x27;absoluteDirPath must be a valid file path&#x27;));
+    }
+
+    var pieces = absoluteDirPath.split(path.sep);
+
+    var curr      = &#x27;&#x27;;
+    var isWindows = os.type().toLowerCase().indexOf(&#x27;windows&#x27;) !== -1;
+    var tasks     = Util.getTasks(pieces, function(pieces, i) {
+        return function(callback) {
+
+            //we need to skip the first one bc it will probably be empty and we
+            //want to skip the last one because it will probably be the file
+            //name not a directory.
+            var p = pieces[i];
+            if (p.length === 0 || (isFileName &amp;&amp; i &gt;= pieces.length - 1)) {
+                return callback();
+            }
+
+            curr += (isWindows &amp;&amp; i === 0 ? &#x27;&#x27; : path.sep) + p;
+            fs.exists(curr, function(exists) {
+                if (exists) {
+                    return callback();
+                }
+                fs.mkdir(curr, callback);
+            });
+        };
+    });
+    async.series(tasks, function(err/*, results*/){
+        cb(err);
+    });
+};
+
+/**
+ * Synchronously makes the specified directory structure.
+ * @static
+ * @method mkdirsSync
+ * @param {String} absoluteDirPath The absolute path of the directory structure
+ * to be created
+ * @param {Boolean} isFileName When true the value after the last file
+ * separator is treated as a file.  This means that a directory with that value
+ * will not be created.
+ */
+Util.mkdirsSync = function(absoluteDirPath, isFileName) {
+    if (!Util.isString(absoluteDirPath)) {
+        throw new Error(&#x27;absoluteDirPath must be a valid file path&#x27;);
+    }
+
+    var pieces    = absoluteDirPath.split(path.sep);
+    var curr      = &#x27;&#x27;;
+    var isWindows = os.type().toLowerCase().indexOf(&#x27;windows&#x27;) !== -1;
+    pieces.forEach(function(p, i) {
+
+        //we need to skip the first one bc it will probably be empty and we
+        //want to skip the last one because it will probably be the file
+        //name not a directory.
+        if (p.length === 0 || (isFileName &amp;&amp; i &gt;= pieces.length - 1)) {
+            return;
+        }
+
+        curr += (isWindows &amp;&amp; i === 0 ? &#x27;&#x27; : path.sep) + p;
+        if (!fs.existsSync(curr)) {
+            fs.mkdirSync(curr);
+        }
+    });
+};
+
+/**
+ * Retrieves the extension off of the end of a string that represents a URI to
+ * a resource
+ * @static
+ * @method getExtension
+ * @param {String} filePath URI to the resource
+ * @param {Object} [options]
+ * @param {Boolean} [options.lower=false] When TRUE the extension will be returned as lower case
+ * @param {String} [options.sep] The file path separator used in the path.  Defaults to the OS default.
+ * @return {String} The value after the last &#x27;.&#x27; character
+ */
+Util.getExtension = function(filePath, options) {
+    if (!Util.isString(filePath) || filePath.length &lt;= 0) {
+        return null;
+    }
+    if (!Util.isObject(options)) {
+        options = {};
+    }
+
+    //do to the end of the path
+    var pathPartIndex = filePath.lastIndexOf(options.sep || path.sep) || 0;
+    if (pathPartIndex &gt; -1) {
+			filePath = filePath.substr(pathPartIndex);
+		}
+
+    var ext = null;
+    var index = filePath.lastIndexOf(&#x27;.&#x27;);
+    if (index &gt;= 0) {
+        ext = filePath.substring(index + 1);
+
+        //apply options
+        if (options.lower) {
+            ext = ext.toLowerCase();
+        }
+    }
+    return ext;
+};
+
+/**
+ * Creates a filter function to be used with the getFiles function to skip files that are not of the specified type
+ * @static
+ * @method getFileExtensionFilter
+ * @param extension
+ * @return {Function}
+ */
+Util.getFileExtensionFilter = function(extension) {
+    var ext = &#x27;.&#x27; + extension;
+    return function(fullPath) {
+        return fullPath.lastIndexOf(ext) === (fullPath.length - ext.length);
+    };
+};
+
+//inherit from node&#x27;s version of &#x27;util&#x27;.  We can&#x27;t use node&#x27;s &quot;util.inherits&quot;
+//function because util is an object and not a prototype.
+Util.merge(util, Util);
+
+/**
+ * Overrides the basic inherit functionality to include static functions and
+ * properties of prototypes
+ * @static
+ * @method inherits
+ * @param {Function} Type1
+ * @param {Function} Type2
+ */
+Util.inherits = function(Type1, Type2) {
+    if (Util.isNullOrUndefined(Type1) || Util.isNullOrUndefined(Type2)) {
+        throw new Error(&#x27;The type parameters must be objects or prototypes&#x27;);
+    }
+
+    util.inherits(Type1, Type2);
+    Util.merge(Type2, Type1);
+};
+
+/**
+ * Provides typical conversions for time
+ * @static
+ * @readonly
+ * @property TIME
+ * @type {Object}
+ */
+Util.TIME = Object.freeze({
+
+	MILLIS_PER_SEC: 1000,
+	MILLIS_PER_MIN: 60000,
+	MILLIS_PER_HOUR: 3600000,
+	MILLIS_PER_DAY: 86400000
+});
+
+//exports
+module.exports = Util;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

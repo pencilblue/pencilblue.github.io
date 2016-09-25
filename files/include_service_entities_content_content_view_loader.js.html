@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -664,7 +665,7 @@ module.exports = function(pb) {
         ts.registerLocal(&#x27;display_login&#x27;, commentingUser ? &#x27;none&#x27; : &#x27;block&#x27;);
         ts.registerLocal(&#x27;comments_length&#x27;, util.isArray(content.comments) ? content.comments.length : 0);
         ts.registerLocal(&#x27;individual_comments&#x27;, function(flag, cb) {
-            if (!util.isArray(content.comments) || content.comments.length == 0) {
+            if (!util.isArray(content.comments) || content.comments.length === 0) {
                 return cb(null, &#x27;&#x27;);
             }
 

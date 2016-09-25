@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var util = require(&#x27;../../util.js&#x27;);
@@ -264,7 +266,7 @@ module.exports = function JobRunnerModule(pb) {
          * jobs to calculate their update increments.  The number must be a value
          * between 0 (exclusive) &amp; 1 (inclusive).
          * @property taskFactor
-         * @type {Float}
+         * @type {Number}
          */
         this.chunkOfWorkPercentage = 1;
     }
@@ -319,7 +321,7 @@ module.exports = function JobRunnerModule(pb) {
      * The initialization function sets the job&#x27;s name and ID as well as provide an
      * instace of DAO.
      * @method init
-     * @param {String} name The job&#x27;s name
+     * @param {String} [name] The job&#x27;s name
      * @param {String} [jobId] The job&#x27;s unique identifier
      */
     JobRunner.prototype.init = function(name, jobId) {
@@ -328,7 +330,7 @@ module.exports = function JobRunnerModule(pb) {
         this.id   = jobId || util.uniqueId();
         this.name = name || this.id;
         return this;
-    }
+    };
 
     /**
      * Retrieves the unique identifier for the job
@@ -343,7 +345,7 @@ module.exports = function JobRunnerModule(pb) {
      * Sets the portion of the over arching job that this job instance will
      * contribute once complete.
      * @method setChunkOfWorkPercentage
-     * @param {Float} chunkOfWorkPercentage
+     * @param {Number} chunkOfWorkPercentage
      * @return {JobRunner}
      */
     JobRunner.prototype.setChunkOfWorkPercentage = function(chunkOfWorkPercentage) {
@@ -358,7 +360,7 @@ module.exports = function JobRunnerModule(pb) {
     /**
      * Retrieves the chunk of work percentage
      * @method getChunkOfWorkPercentage
-     * @return {Float}
+     * @return {Number}
      */
     JobRunner.prototype.getChunkOfWorkPercentage = function() {
         return this.chunkOfWorkPercentage;
@@ -372,7 +374,7 @@ module.exports = function JobRunnerModule(pb) {
      * any error that was generated and the second is the implementation specific
      * result of the job.
      */
-    JobRunner.prototype.run = function(cb) {
+    JobRunner.prototype.run = function(/*cb*/) {
         throw new Error(&#x27;This function must be overriden by an extending prototype&#x27;);
     };
 
@@ -421,7 +423,7 @@ module.exports = function JobRunnerModule(pb) {
         job.name        = this.name;
         job.status      = status || DEFAULT_START_STATUS;
         job.progress    = 0;
-        this.dao.save(job, function(err, result) {
+        this.dao.save(job, function(err/*, result*/) {
             if (util.isError(err)) {
                 pb.log.error(&#x27;JobRunner: Failed to mark job as started %s&#x27;, err.stack);
             }
@@ -443,16 +445,16 @@ module.exports = function JobRunnerModule(pb) {
         var query   = pb.DAO.getIdWhere(this.getId());
         var updates = {};
         if (pb.validation.isFloat(progressIncrement, true, true)) {
-            updates[&#x27;$inc&#x27;] = {progress: progressIncrement};
+            updates.$inc = {progress: progressIncrement};
         }
-        if (pb.validation.validateNonEmptyStr(status, true)) {
-            updates[&#x27;$set&#x27;] = {status: status};
+        if (pb.validation.isNonEmptyStr(status, true)) {
+            updates.$set = {status: status};
         }
 
         //ensure we need to update
         if (updates !== {}) {
 
-            this.dao.updateFields(JOB_STORE_NAME, query, updates, function(err, result) {
+            this.dao.updateFields(JOB_STORE_NAME, query, updates, function(err/*, result*/) {
                 if (util.isError(err)) {
                     pb.log.error(&#x27;JobRunner: Failed to update job progress - &#x27;, err.stack);
                 }
@@ -491,7 +493,7 @@ module.exports = function JobRunnerModule(pb) {
                 error: err ? err.stack : undefined
             }
         };
-        this.dao.updateFields(JOB_STORE_NAME, query, sets, function(err, result) {
+        this.dao.updateFields(JOB_STORE_NAME, query, sets, function(err/*, result*/) {
             if (util.isError(err)) {
                 pb.log.error(&#x27;JobRunner: Failed to update job as completed - %s&#x27;, err.stack);
             }

@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var util        = require(&#x27;../../util.js&#x27;);
@@ -695,7 +697,7 @@ module.exports = function CustomObjectServiceModule(pb) {
         var opts = {
             where: pb.DAO.ANYWHERE,
             select: pb.DAO.PROJECT_ALL,
-            order: {NAME_FIELD: pb.DAO.ASC}
+            order: [[NAME_FIELD, pb.DAO.ASC]]
         };
 
         this.siteQueryService.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, custObjTypes) {
@@ -1013,7 +1015,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                     }
 
                     var typesHash = util.arrayToHash(types);
-                    for (var fieldName in custObjType.fields) {
+                    Object.keys(custObjType.fields).forEach(function(fieldName) {
                         if (!pb.validation.isNonEmptyStr(fieldName)) {
                             errors.push(CustomObjectService.err(&#x27;fields.&#x27;, &#x27;The field name cannot be empty&#x27;));
                         }
@@ -1021,7 +1023,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                             var fieldErrors = self.validateFieldDescriptor(custObjType.fields[fieldName], typesHash);
                             util.arrayPushAll(fieldErrors, errors);
                         }
-                    }
+                    });
                     callback(null);
                 });
             }
@@ -1289,14 +1291,14 @@ module.exports = function CustomObjectServiceModule(pb) {
         delete post.last_modified;
 
         //apply types to fields
-        for(var key in custObjType.fields) {
+        Object.keys(custObjType.fields).forEach(function(key) {
 
-            if(custObjType.fields[key].field_type == &#x27;number&#x27;) {
+            if(custObjType.fields[key].field_type === &#x27;number&#x27;) {
                 if(util.isString(post[key])) {
                     post[key] = parseFloat(post[key]);
                 }
             }
-            else if(custObjType.fields[key].field_type == &#x27;date&#x27;) {
+            else if(custObjType.fields[key].field_type === &#x27;date&#x27;) {
                 if(util.isString(post[key])) {
                     post[key] = Date.parse(post[key]);
                 }
@@ -1304,7 +1306,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                     post[key] = new Date(post[key]);
                 }
             }
-            else if (custObjType.fields[key].field_type == &#x27;boolean&#x27;) {
+            else if (custObjType.fields[key].field_type === &#x27;boolean&#x27;) {
                 if (!util.isBoolean(post[key])) {
 
                     if (util.isString(post[key])) {
@@ -1315,12 +1317,12 @@ module.exports = function CustomObjectServiceModule(pb) {
                     }
                 }
             }
-            else if (custObjType.fields[key].field_type == &#x27;wysiwyg&#x27;) {
+            else if (custObjType.fields[key].field_type === &#x27;wysiwyg&#x27;) {
 
                 //ensure not funky script tags or iframes
                 post[key] = pb.BaseController.sanitize(post[key], pb.BaseController.getContentSanitizationRules());
             }
-            else if(custObjType.fields[key].field_type == CHILD_OBJECTS_TYPE) {
+            else if(custObjType.fields[key].field_type === CHILD_OBJECTS_TYPE) {
                 if(util.isString(post[key])) {
 
                     //strips out any non ID strings.
@@ -1333,7 +1335,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                     }
                 }
             }
-            else if (custObjType.fields[key].field_type == PEER_OBJECT_TYPE) {
+            else if (custObjType.fields[key].field_type === PEER_OBJECT_TYPE) {
                 //do nothing because it can only been a string ID.  Validation
                 //should verify this before persistence.
             }
@@ -1342,7 +1344,7 @@ module.exports = function CustomObjectServiceModule(pb) {
                 //when nothing else matches and we just have a string. We should sanitize it
                 post[key] = pb.BaseController.sanitize(post[key]);
             }
-        }
+        });
         post.type = custObjType[pb.DAO.getIdField()].toString();
     };
 

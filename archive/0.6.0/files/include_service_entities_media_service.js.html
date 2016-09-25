@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include/service/entities/media_service.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.6.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include/service/entities/media_service.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+	Copyright (C) 2016  PencilBlue, LLC
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+//dependencies
+var http  = require(&#x27;http&#x27;);
+var fs    = require(&#x27;fs&#x27;);
+var path  = require(&#x27;path&#x27;);
+var async = require(&#x27;async&#x27;);
+var util  = require(&#x27;../../util.js&#x27;);
+
+module.exports = function MediaServiceModule(pb) {
+
+    /**
+     * Provides information on media
+     * @deprecated
+     * @class MediaService
+     * @constructor
+     * @param {MediaProvider} provider
+     * @param {string} site Site uid to be used for this service
+     * @param {boolean} onlyThisSite Whether this service should only return media associated with specified site
+     * or fallback to global if not found in specified site
+     */
+    function MediaService(provider, site, onlyThisSite) {
+        pb.log.warn(&#x27;MediaService is deprecated. Please use MediaServiceV2&#x27;);
+
+        /**
+         * @property site
+         * @type {String}
+         */
+        this.site = pb.SiteService.getCurrentSite(site);
+
+        var context = {
+            site: this.site,
+            onlyThisSite: onlyThisSite
+        };
+
+        /**
+         * @property siteQueryService
+         * @type {SiteQueryService}
+         */
+        this.siteQueryService = new pb.SiteQueryService(context);
+
+        if (util.isNullOrUndefined(provider)) {
+            provider = pb.MediaServiceV2.loadMediaProvider(context);
+        }
+        if (!provider) {
+            throw new Error(&#x27;A valid media provider is required. Please check your configuration&#x27;);
+        }
+
+        /**
+         * @property provider
+         * @type {MediaProvider}
+         */
+        this.provider = provider;
+    }
+
+    /**
+     * The collection where media descriptors are persisted
+     * @static
+     * @readonly
+     * @property COLL
+     * @type {String}
+     */
+    MediaService.COLL = &#x27;media&#x27;;
+
+    /**
+     * Loads a media descriptor by ID.
+     * @method loadById
+     * @param {String|ObjectID} mid Media descriptor ID
+     * @param {Function} cb A callback that provides two parameters: an Error, if
+     * occurred and a media descriptor if found.
+     */
+    MediaService.prototype.loadById = function(mid, cb) {
+        this.siteQueryService.loadById(mid.toString(), MediaService.COLL, cb);
+    };
+
+    /**
+     * Deletes a media descriptor by ID
+     * @method deleteById
+     * @param {String|ObjectID} mid
+     * @param {Object} [options] not used in implementation
+     * @param {Function} cb
+     */
+    MediaService.prototype.deleteById = function(mid, options, cb) {
+        if (util.isFunction(options)) {
+            cb     = options;
+            options = {delete_content: true};
+        }
+
+        var self = this;
+        self.siteQueryService.deleteById(mid, MediaService.COLL, cb);
+    };
+
+    /**
+     * Persists a media descriptor
+     * @method save
+     * @param {Object} media
+     * @param {Object} [options] Options object is not actually used in this implementation
+     * @param {Function} cb
+     */
+    MediaService.prototype.save = function(media, options, cb) {
+        if (util.isFunction(options)) {
+            cb      = options;
+            options = {};
+        }
+
+        var self = this;
+        self.validate(media, function(err, validationErrors) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            else if (validationErrors.length) {
+                return cb(null, validationErrors);
+            }
+
+            self.siteQueryService.save(media, cb);
+        });
+    };
+
+    /**
+     * Validates a media descriptor
+     * @method validate
+     * @param {Object} media
+     * @param {Function} cb A callback that provides two parameters: an Error, if
+     * occurred.  The second is an array of validation error objects.
+     */
+    MediaService.prototype.validate = function(media, cb) {
+        var errors = [];
+
+        if (!util.isObject(media)) {
+            errors.push(pb.CustomObjectService.err(&#x27;&#x27;, &#x27;The descriptor must be an object&#x27;));
+            return cb(null, errors);
+        }
+
+        //ensure the media name is unique
+        var where = { name: media.name };
+        this.siteQueryService.unique(MediaService.COLL, where, media[pb.DAO.getIdField()], function(err, isUnique) {
+            if(util.isError(err)) {
+                return cb(err, errors);
+            }
+            else if(!isUnique) {
+                errors.push(pb.CustomObjectService.err(&#x27;name&#x27;, &#x27;The name &#x27; + media.name + &#x27; is already in use&#x27;));
+            }
+
+            //TODO validate the other properties
+            cb(null, errors);
+        });
+    };
+
+    /**
+     * Queries for media descriptors
+     * @method get
+     * @param {Object} [options]
+     * @param {Object} [options.where]
+     * @param {Array} [options.order]
+     * @param {Object} [options.select]
+     * @param {Integer} [options.limit]
+     * @param {Integer} [options.offset]
+     * @param {Boolean} [options.format_media=true]
+     * @param cb
+     */
+    MediaService.prototype.get = function(options, cb) {
+        if (util.isFunction(options)) {
+            cb      = options;
+            options = {
+                format_media: true,
+                order: {name: 1}
+            };
+        }
+
+        this.siteQueryService.q(&#x27;media&#x27;, options, function (err, media) {
+            if (util.isError(err)) {
+                return cb(err, []);
+            }
+
+            //set the link and icon if specified
+            if (options.format_media) {
+                pb.MediaServiceV2.formatMedia(media);
+            }
+            cb(null, media);
+        });
+    };
+
+    /**
+     *
+     * @method getContentByPath
+     * @param {String} mediaPath
+     * @param {Function} cb
+     */
+    MediaService.prototype.getContentByPath = function(mediaPath, cb) {
+        this.provider.get(mediaPath, cb);
+    };
+
+    /**
+     *
+     * @method getContentStreamByPath
+     * @param {String} mediaPath
+     * @param {Function} cb
+     */
+    MediaService.prototype.getContentStreamByPath = function(mediaPath, cb) {
+        this.provider.getStream(mediaPath, cb);
+    };
+
+    /**
+     * @method getContentStreamById
+     * @param {string} id
+     * @param {Function} cb
+     */
+    MediaService.prototype.getContentStreamById = function(id, cb) {
+        var self = this;
+        var tasks = [
+            function(callback) { self.siteQueryService.loadById(id, MediaService.COLL, callback); },
+            function(media, callback) {
+                if (!media) {
+                    return callback(null, null);
+                }
+                self.provider.getStream(media.location, function(err, stream) {
+                    callback(err, stream ? {
+                        stream: stream,
+                        mime: pb.RequestHandler.getMimeFromPath(this.req.url)
+                    } : null);
+                });
+            }
+        ];
+        async.waterfall(tasks, cb);
+    };
+
+    /**
+     *
+     * @method setContent
+     * @param {String|Buffer} fileDataStrOrBuff
+     * @param {String} fileName
+     * @param {Function} cb
+     */
+    MediaService.prototype.setContent = function(fileDataStrOrBuff, fileName, cb) {
+        var mediaPath = pb.MediaServiceV2.generateMediaPath(fileName);
+        this.provider.set(fileDataStrOrBuff, mediaPath, function(err, result) {
+            cb(err, { mediaPath: mediaPath, result: result});
+        });
+    };
+
+    /**
+     *
+     * @method setContentStream
+     * @param {Stream} stream
+     * @param {String} fileName
+     * @param {Function} cb
+     */
+    MediaService.prototype.setContentStream = function(stream, fileName, cb) {
+        var mediaPath = pb.MediaServiceV2.generateMediaPath(fileName);
+        this.provider.setStream(stream, mediaPath, function(err, result) {
+            cb(err, { mediaPath: mediaPath, result: result});
+        });
+    };
+
+    /**
+     *
+     * @method createContentWriteStream
+     * @param {String} fileName
+     * @param {Function} cb
+     */
+    MediaService.prototype.createContentWriteStream = function(fileName, cb) {
+        var mediaPath = pb.MediaServiceV2.generateMediaPath(fileName);
+        this.provider.createWriteStream(mediaPath, function(err, stream) {
+            var result = {
+                mediaPath: mediaPath,
+                stream: stream
+            };
+            cb(err, result);
+        });
+    };
+
+    /**
+     *
+     * @method existsByPath
+     * @param {String} mediaPath
+     * @param {Function} cb
+     */
+    MediaService.prototype.existsByPath = function(mediaPath, cb) {
+        this.provider.exists(mediaPath, cb);
+    };
+
+    /**
+     *
+     * @method deleteContentByPath
+     * @param {String} mediaPath
+     * @param {Function} cb
+     */
+    MediaService.prototype.deleteContentByPath = function(mediaPath, cb) {
+        this.provider.delete(mediaPath, cb);
+    };
+
+    /**
+     *
+     * @method statByPath
+     * @param {String} mediaPath
+     * @param {Function} cb
+     */
+    MediaService.prototype.statByPath = function(mediaPath, cb) {
+        this.provider.stat(mediaPath, cb);
+    };
+
+    /**
+     * Retrieves whether a media&#x27;s file path is valid
+     *
+     * @method isValidFilePath
+     * @param {String}   mediaPath The file path of the media
+     * @param {Function} cb        Callback function
+     */
+    MediaService.prototype.isValidFilePath = function(mediaPath, cb) {
+        var absolutePath = path.join(pb.config.docRoot, &#x27;public&#x27;, mediaPath);
+        fs.exists(absolutePath, function(exists) {
+            cb(null, exists);
+        });
+    };
+
+    /**
+     * Registers a media renderer
+     * @deprecated
+     * @static
+     * @method registerRenderer
+     * @param {Function|Object} interfaceImplementation A prototype or object that implements the media renderer interface.
+     * @return {Boolean} TRUE if the implementation was registered, FALSE if not
+     */
+    MediaService.registerRenderer = function(interfaceImplementation) {
+        pb.log.warn(&#x27;MediaService: registerRenderer is deprecated. Use MediaServiceV2.registerRenderer&#x27;);
+        return pb.MediaServiceV2.registerRenderer(interfaceImplementation);
+    };
+
+    /**
+     * Indicates if a media renderer is already registered
+     * @deprecated
+     * @static
+     * @method isRegistered
+     * @param {Function|Object} interfaceImplementation A prototype or object that implements the media renderer interface
+     * @return {Boolean} TRUE if registered, FALSE if not
+     */
+    MediaService.isRegistered = function(interfaceImplementation) {
+        pb.log.warn(&#x27;MediaService: isRegistered is deprecated. Use MediaServiceV2.isRegistered&#x27;);
+        return pb.MediaServiceV2.isRegistered(interfaceImplementation);
+    };
+
+    /**
+     * Unregisters a media renderer
+     * @deprecated
+     * @static
+     * @method unregisterRenderer
+     * @param {Function|Object} interfaceToUnregister A prototype or object that implements the media renderer interface
+     * @return {Boolean} TRUE if unregistered, FALSE if not
+     */
+    MediaService.unregisterRenderer = function(interfaceToUnregister) {
+        pb.log.warn(&#x27;MediaService: unregisterRenderer is deprecated. Use MediaServiceV2.unregisterRenderer&#x27;);
+        return pb.MediaServiceV2.unregisterRenderer(interfaceToUnregister);
+    };
+
+    /**
+     * Determines if the media URI is a file.  It is determined to be a file if and
+     * only if the URI does not begin with &quot;http&quot; or &quot;//&quot;.
+     * @deprecated
+     * @static
+     * @method isFile
+     * @param {String} mediaUrl A URI string that points to a media resource
+     */
+    MediaService.isFile = function(mediaUrl) {
+        pb.log.warn(&#x27;MediaService: isFile is deprecated. Use MediaServiceV2.isFile instead&#x27;);
+        return mediaUrl.indexOf(&#x27;http&#x27;) !== 0 &amp;&amp; mediaUrl.indexOf(&#x27;//&#x27;) !== 0;
+    };
+
+    /**
+     * Generates a media descriptor for a given media URL
+     * @method getMediaDescriptor
+     * @param {String} mediaUrl
+     * @param {Function} cb A callback with two parameters. First, an Error if
+     * occurred and second is an object that describes the media resource described
+     * by the given media URL
+     */
+    MediaService.prototype.getMediaDescriptor = function(mediaUrl, cb) {
+
+        //get the type
+        var isFile = mediaUrl.indexOf(&#x27;http&#x27;) !== 0 &amp;&amp; mediaUrl.indexOf(&#x27;//&#x27;) !== 0;
+        var result = pb.MediaServiceV2.getRenderer(mediaUrl, isFile);
+        if (result === null) {
+            pb.log.warn(&#x27;MediaService: No media renderer could be found for URI [%s]&#x27;, mediaUrl);
+            return cb(null, null);
+        }
+
+        var renderer = result.renderer;
+        var tasks = {
+
+            meta: function(callback) {
+                renderer.getMeta(mediaUrl, isFile, callback);
+            },
+
+            thumbnail: function(callback) {
+                renderer.getThumbnail(mediaUrl, callback);
+            },
+
+            mediaId: function(callback) {
+                renderer.getMediaId(mediaUrl, callback);
+            }
+        };
+        async.series(tasks, function(err, taskResult) {
+            var descriptor = {
+                type: result.type,
+                media_type: result.type,
+                isFile: isFile,
+                is_file: isFile,
+                url: mediaUrl,
+                icon: renderer.getIcon(result.type),
+                thumbnail: taskResult.thumbnail,
+                location: taskResult.mediaId,
+                meta: taskResult.meta
+            };
+            cb(err, descriptor);
+        });
+    };
+
+    /**
+     * Renders a resource by type and location (mediaId).
+     * @method renderByLocation
+     * @param {Object} options
+     * @param {String} options.location The unique media identifier for the type
+     * @param {String} [options.type] The type of provider that knows how to render
+     * the resource
+     * @param {Object} [options.attrs] The desired HTML attributes that will be
+     * added to the element that provides the rendering
+     * @param {Object} [options.style] The desired style overrides for the media
+     * @param {String} [options.view] The view type that the media will be rendered
+     * for (view, editor, post).  Any style options provided will override those
+     * provided by the default style associated with the view.
+     * @param {boolean} [options.isFile=false]
+     * @param {Function} cb A callback that provides two parameters.  An Error if
+     * exists and the rendered HTML content for the media resource.
+     */
+    MediaService.prototype.renderByLocation = function(options, cb) {
+        var result = options.type ? pb.MediaServiceV2.getRendererByType(options.type) : pb.MediaServiceV2.getRenderer(options.location, options.isFile);
+        if (!result) {
+            var failures = [ BaseObjectService.validationFailure(&#x27;type&#x27;, &#x27;An invalid type was provided&#x27;) ];
+            var err = BaseObjectService.validationError(failures);
+            return cb(err, null);
+        }
+
+        //set style properties if we can
+        if (options.view) {
+            options.style = pb.MediaServiceV2.getStyleForView(result.renderer, options.view, options.style);
+        }
+
+        result.renderer.render(options, options, cb);
+    };
+
+    /**
+     * Renders a media resource by ID where ID refers the to the media descriptor
+     * id.
+     * @method renderById
+     * @param {String} id The media resource ID
+     * @param {Object} options
+     * @param {Object} [options.attrs] The desired HTML attributes that will be
+     * added to the element that provides the rendering
+     * @param {Object} [options.style] The desired style overrides for the media
+     * @param {String} [options.view] The view type that the media will be rendered
+     * for (view, editor, post).  Any style options provided will override those
+     * provided by the default style associated with the view.
+     * @param {Function} cb A callback that provides two parameters. An Error if
+     * exists and the rendered HTML content for the media resource.
+     */
+    MediaService.prototype.renderById = function(id, options, cb) {
+        var self = this;
+
+        self.siteQueryService.loadById(id, MediaService.COLL, function (err, media) {
+            if (util.isError(err) || !media) {
+                return cb(err, null);
+            }
+
+            //render
+            self.render(media, options, cb);
+        });
+    };
+
+    /**
+     * Renders the media represented by the provided media flag
+     * @method render
+     * @param {String|Object} flag The media resource ID
+     * @param {Object} options
+     * @param {Object} [options.attrs] The desired HTML attributes that will be
+     * added to the element that provides the rendering
+     * @param {Object} [options.style] The desired style overrides for the media
+     * @param {String} [options.view] The view type that the media will be rendered
+     * for (view, editor, post).  Any style options provided will override those
+     * provided by the default style associated with the view.
+     * @param {Function} cb A callback that provides two parameters. An Error if
+     * exists and the rendered HTML content for the media resource.
+     */
+    MediaService.prototype.renderByFlag = function(flag, options, cb) {
+        if (util.isString(flag)) {
+            flag = pb.MediaServiceV2.parseMediaFlag(flag);
+        }
+        if (!flag) {
+            return cb(new Error(&#x27;An invalid flag was passed&#x27;));
+        }
+
+        //check for absense of props
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {
+                style: {}
+            };
+        }
+
+        //ensure the max height is set if explicity set for media replacement
+        if (flag.style.maxHeight) {
+            options.style[&#x27;max-height&#x27;] = flag.style.maxHeight;
+        }
+        this.renderById(flag.id, options, cb);
+    };
+
+    /**
+     * Renders the media represented by the provided media descriptor.
+     * @method render
+     * @param {String} The media resource ID
+     * @param {Object} options
+     * @param {Object} [options.attrs] The desired HTML attributes that will be
+     * added to the element that provides the rendering
+     * @param {Object} [options.style] The desired style overrides for the media
+     * @param {String} [options.view] The view type that the media will be rendered
+     * for (view, editor, post).  Any style options provided will override those
+     * provided by the default style associated with the view.
+     * @param {Function} cb A callback that provides two parameters. An Error if
+     * exists and the rendered HTML content for the media resource.
+     */
+    MediaService.prototype.render = function(media, options, cb) {
+        //retrieve renderer
+        var result = pb.MediaServiceV2.getRendererByType(media.media_type);
+        if (!result) {
+            return cb(null, null);
+        }
+
+        //set style properties if we can
+        if (options.view) {
+            options.style = pb.MediaServiceV2.getStyleForView(result.renderer, options.view, options.style);
+        }
+
+        //render media
+        result.renderer.render(media, options, cb);
+    };
+
+    /**
+     * Retrieves the base style for the given renderer and view.  Overrides will be
+     * applied on top of the base style.
+     * @deprecated
+     * @static
+     * @method getStyleForView
+     * @param {MediaRenderer} renderer An implementation of MediaRenderer
+     * @param {String} view The view to retrieve the default styling for (view,
+     * editor, post)
+     * @param {Object} [overrides] A hash of style properties that will be applied
+     * to the base style for the given view
+     */
+    MediaService.getStyleForView = function(renderer, view, overrides) {
+        pb.log.warn(&#x27;MediaService: getStyleForView is deprecated. Use MediaServiceV2.getStyleForView&#x27;);
+        return pb.MediaServiceV2.getStyleForView(renderer, view, overrides);
+    };
+
+    /**
+     * Retrieves a media renderer for the specified type
+     * @deprecated
+     * @static
+     * @method getRendererByType
+     * @param {String} type The media type
+     * @return {MediaRenderer} A media renderer interface implementation or NULL if
+     * none support the given type.
+     */
+    MediaService.getRendererByType = function(type) {
+        pb.log.warn(&#x27;MediaService: getRendererByType is deprecated. Use MediaServiceV2.getRendererByType&#x27;);
+        return pb.MediaServiceV2.getRendererByType(type);
+    };
+
+    /**
+     * Retrieves a media renderer for the specified URL
+     * @deprecated
+     * @static
+     * @method getRendererByType
+     * @param {String} mediaUrl The media URL
+     * @param {Boolean} isFile TRUE if the URL represents an uploaded file, FALSE if not
+     * @return {MediaRenderer} A media renderer interface implementation or NULL if
+     * none support the given URL.
+     */
+    MediaService.getRenderer = function(mediaUrl, isFile) {
+        pb.log.warn(&#x27;MediaService: getRenderer is deprecated.  Use MediaServiceV2.getRenderer&#x27;);
+        return pb.MediaServiceV2.getRenderer(mediaUrl, isFile);
+    };
+
+    /**
+     * Generates a media placeholder for templating
+     * @deprecated
+     * @static
+     * @method getMediaFlag
+     * @param {String} mid The media descriptor ID
+     * @param {Object} [options] The list of attributes to be provided to the
+     * rendering element.
+     * @return {String}
+     */
+    MediaService.getMediaFlag = function(mid, options) {
+        pb.log.warn(&#x27;MediaService: getMediaFlag is deprecated.  Use MediaServiceV2.getMediaFlag&#x27;);
+        return pb.MediaServiceV2.getMediaFlag(mid, options);
+    };
+
+    /**
+     * Given a content string the function will search for and extract the first
+     * occurrence of a media flag. The parsed value that is returned will include:
+     * &lt;ul&gt;
+     * &lt;li&gt;startIndex - The index where the flag was found to start&lt;/li&gt;
+     * &lt;li&gt;endIndex - The position in the content string of the last character of the media flag&lt;/li&gt;
+     * &lt;li&gt;flag - The entire media flag including the start and end markers&lt;/li&gt;
+     * &lt;li&gt;id - The media descriptor id that is referenced by the media flag&lt;/li&gt;
+     * &lt;li&gt;style - A hash of the style properties declared for the flag&lt;/li&gt;
+     * &lt;li&gt;cleanFlag - The media flag stripped of the start and end markers&lt;/li&gt;
+     * &lt;/ul&gt;
+     * @deprecated
+     * @static
+     * @method extractNextMediaFlag
+     * @param {String} content The content string that potentially contains 1 or more media flags
+     * @return {Object} An object that contains the information about the parsed media flag.
+     */
+    MediaService.extractNextMediaFlag = function(content) {
+        pb.log.warn(&#x27;MediaService: extractNextMediaFlag is deprecated.  Use MediaServiceV2.extractNextMediaFlag&#x27;);
+        return pb.MediaServiceV2.extractNextMediaFlag(content);
+    };
+
+    /**
+     * Parses a media flag and returns each part in an object. The parsed value that
+     * is returned will include:
+     * &lt;ul&gt;
+     * &lt;li&gt;id - The media descriptor id that is referenced by the media flag&lt;/li&gt;
+     * &lt;li&gt;style - A hash of the style properties declared for the flag&lt;/li&gt;
+     * &lt;li&gt;cleanFlag - The media flag stripped of the start and end markers&lt;/li&gt;
+     * &lt;/ul&gt;
+     * @static
+     * @method .
+     * @param {String} content The content string that potentially contains 1 or more media flags
+     * @return {Object} An object that contains the information about the parsed media flag.
+     */
+    MediaService.parseMediaFlag = function(flag) {
+        pb.log.warn(&#x27;MediaService: parseMediaFlag is deprecated. Use MediaServiceV2.parseMediaFlag&#x27;);
+        return pb.MediaServiceV2.parseMediaFlag(flag);
+    };
+
+    /**
+     * The default editor implementations all for three position values to declared
+     * for embeded media (none, left, right, center).  These values map to HTML
+     * alignments.  This function retrieves the HTML style attribute for the
+     * provided position.
+     * @deprecated
+     * @static
+     * @method getStyleForPosition
+     * @param {String} position Can be one of 4 values: none, left, right, center
+     * @return {String} The HTML formatted style attribute(s)
+     */
+    MediaService.getStyleForPosition = function(position) {
+        pb.log.warn(&#x27;MediaService: getStyleForPosition is deprecated. Use MediaServiceV2.getStyleForPosition&#x27;);
+        return pb.MediaServiceV2.getStyleForPosition(position);
+    };
+
+    /**
+     * Generates the path to uploaded media
+     * @deprecated
+     * @static
+     * @method generateMediaPath
+     * @param {String} originalFilename
+     * @return {String}
+     */
+    MediaService.generateMediaPath = function(originalFilename) {
+        pb.log.warn(&#x27;MediaService: generateMediaPath is deprecated. Use MediaServiceV2.generateMediaPath&#x27;);
+        return pb.MediaServiceV2.generateMediaPath(originalFilename);
+    };
+
+    /**
+     * Generates a filename for a new media object
+     * @deprecated
+     * @static
+     * @method generateFilename
+     * @param {String} originalFilename
+     * @return {String}
+     */
+    MediaService.generateFilename = function(originalFilename){
+        pb.log.warn(&#x27;MediaService: generateFilename is deprecated. Use MediaServiceV2.generateFilename&#x27;);
+        return pb.MediaServiceV2.generateFilename(originalFilename);
+    };
+
+    /**
+     * Retrieves the font awesome icon for the media type.
+     * @deprecated
+     * @static
+     * @method getMediaIcon
+     * @param {String} mediaType
+     * @return {String}
+     */
+    MediaService.getMediaIcon = function(mediaType) {
+        pb.log.warn(&#x27;MediaService: getMediaIcon is deprecated. Use MediaServiceV2.getMediaIcon&#x27;);
+        return pb.MediaServiceV2.getMediaIcon(mediaType);
+    };
+
+    /**
+     * Sets the proper icon and link for an array of media items
+     * @deprecated
+     * @static
+     * @method formatMedia
+     * @param {Array} media The array of media objects to format
+     * @return {Array} The same array of media that was passed in
+     */
+    MediaService.formatMedia = function(media) {
+        pb.log.warn(&#x27;MediaService: formatMedia is deprecated. Use MediaServiceV2.formatMedia&#x27;);
+        return pb.MediaServiceV2.formatMedia(media);
+    };
+
+    /**
+     * Provides a mechanism to retrieve all of the supported extension types
+     * that can be uploaded into the system.
+     * @deprecated
+     * @static
+     * @method getSupportedExtensions
+     * @return {Array} provides an array of strings
+     */
+    MediaService.getSupportedExtensions = function() {
+        pb.log.warn(&#x27;MediaService: getSupportedExtensions is deprecated. Use MediaServiceV2.getSupportedExtensions&#x27;);
+        return pb.MediaServiceV2.getSupportedExtensions();
+    };
+
+    /**
+     * @deprecated
+     * @static
+     * @method loadMediaProvider
+     * @param {Object} context
+     * @param {String} context.site
+     * @return {MediaProvider} An instance of a media provider or NULL when no
+     * provider can be loaded.
+     */
+    MediaService.loadMediaProvider = function(context) {
+        pb.log.warn(&#x27;MediaService: loadMediaProvider is deprecated. Use MediaServiceV2.loadMediaProvider&#x27;);
+        return pb.MediaServiceV2.loadMediaProvider(context);
+    };
+
+    /**
+     * Looks up the prototype for the media provider based on the configuration
+     * @deprecated
+     * @static
+     * @method findProviderType
+     * @return {MediaProvider}
+     */
+    MediaService.findProviderType = function() {
+        pb.log.warn(&#x27;MediaService: findProviderType is deprecated. Use MediaServiceV2.findProviderType&#x27;);
+        return pb.MediaServiceV2.findProviderType();
+    };
+
+    //exports
+    return MediaService;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

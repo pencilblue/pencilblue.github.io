@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 */
+&#x27;use strict&#x27;;
 
 //dependencies
 var async   = require(&#x27;async&#x27;);
@@ -231,8 +233,9 @@ module.exports = function SectionServiceModule(pb) {
      * Service for managing the site&#x27;s navigation
      * @class SectionService
      * @constructor
-     * @param {String} site uid
-     * @param {Boolean} onlyThisSite should section service only return value set specifically by site rather than defaulting to global
+     * @param {object} options
+     * @param {String} options.site uid
+     * @param {Boolean} options.onlyThisSite should section service only return value set specifically by site rather than defaulting to global
      */
     function SectionService(options) {
         this.site = pb.SiteService.getCurrentSite(options.site) || pb.SiteService.GLOBAL_SITE;
@@ -264,7 +267,7 @@ module.exports = function SectionServiceModule(pb) {
      * @param {String} activePill
      * @return {Array}
      */
-    SectionService.getPillNavOptions = function(activePill) {
+    SectionService.getPillNavOptions = function(/*activePill*/) {
         return [
             {
                 name: &#x27;new_nav_item&#x27;,
@@ -286,7 +289,7 @@ module.exports = function SectionServiceModule(pb) {
         var self = this;
 
         if (!cb) {
-            cb         = sectionMap;
+            cb = sectionMap;
             sectionMap = null;
         }
 
@@ -312,7 +315,7 @@ module.exports = function SectionServiceModule(pb) {
                 cb(err, false);
                 return;
             }
-            else if (sectionMap == null) {
+            else if (sectionMap === null) {
                 cb(new Error(&quot;The section map is null and therefore cannot have any sections removed&quot;, false));
                 return;
             }
@@ -322,7 +325,7 @@ module.exports = function SectionServiceModule(pb) {
 
             //when the section map was not provided persist it back
             if (sectionMapWasNull) {
-                self.settings.set(&#x27;section_map&#x27;, sectionMap, function(err, result) {
+                self.settings.set(&#x27;section_map&#x27;, sectionMap, function(err/*, result*/) {
                     cb(err, orphans);
                 });
             }
@@ -421,7 +424,7 @@ module.exports = function SectionServiceModule(pb) {
             }
 
             //create it if not already done
-            var mapWasNull = sectionMap == null;
+            var mapWasNull = sectionMap === null;
             if(mapWasNull) {
                 sectionMap = [];
             }
@@ -456,7 +459,7 @@ module.exports = function SectionServiceModule(pb) {
                 navItem.children = undefined;
 
                 for (var i = 0; i &lt; sectionMap.length; i++) {
-                    if (sectionMap[i].uid == section.parent) {
+                    if (sectionMap[i].uid === section.parent) {
                         if (sectionIndex.childIndex &gt; -1) {
                             sectionMap[i].children.splice(sectionIndex.childIndex, 0, navItem);
                         }
@@ -505,12 +508,12 @@ module.exports = function SectionServiceModule(pb) {
     SectionService.prototype.getFormattedSections = function(localizationService, currUrl, cb) {
         var self = this;
         if (util.isFunction(currUrl)) {
-            cb      = currUrl;
+            cb = currUrl;
             currUrl = null;
         }
 
         self.settings.get(&#x27;section_map&#x27;, function(err, sectionMap) {
-            if (util.isError(err) || sectionMap == null) {
+            if (util.isError(err) || sectionMap === null) {
                 cb(err, []);
                 return;
             }
@@ -582,7 +585,7 @@ module.exports = function SectionServiceModule(pb) {
                 name: 1
             },
             where: where,
-            order: {&#x27;name&#x27;: pb.DAO.ASC}
+            order: [&#x27;name&#x27;, pb.DAO.ASC]
         };
         this.siteQueryService.q(&#x27;section&#x27;, opts, cb);
     };
@@ -654,7 +657,7 @@ module.exports = function SectionServiceModule(pb) {
             }
 
             //description
-            if (!pb.validation.validateNonEmptyStr(navItem.name, true)) {
+            if (!pb.validation.isNonEmptyStr(navItem.name, true)) {
                 errors.push({field: &#x27;name&#x27;, message: &#x27;An invalid name [&#x27;+navItem.name+&#x27;] was provided&#x27;});
             }
 
@@ -693,7 +696,7 @@ module.exports = function SectionServiceModule(pb) {
      */
     SectionService.prototype.validateLinkNavItem = function(navItem, cb) {
         var errors = [];
-        if (!pb.validation.validateUrl(navItem.link, true) &amp;&amp; navItem.link.charAt(0) !== &#x27;/&#x27;) {
+        if (!pb.validation.isUrl(navItem.link, true) &amp;&amp; navItem.link.charAt(0) !== &#x27;/&#x27;) {
             errors.push({field: &#x27;link&#x27;, message: &#x27;A valid link is required&#x27;});
         }
         process.nextTick(function() {
@@ -708,7 +711,7 @@ module.exports = function SectionServiceModule(pb) {
      * @param {Function} cb
      */
     SectionService.prototype.validateNavItemName = function(navItem, cb) {
-        if (!pb.validation.validateNonEmptyStr(navItem.name, true) || navItem.name === &#x27;admin&#x27;) {
+        if (!pb.validation.isNonEmptyStr(navItem.name, true) || navItem.name === &#x27;admin&#x27;) {
             cb(null, {field: &#x27;name&#x27;, message: &#x27;An invalid name [&#x27;+navItem.name+&#x27;] was provided&#x27;});
             return;
         }
@@ -756,7 +759,7 @@ module.exports = function SectionServiceModule(pb) {
                 });
             }
         ];
-        async.series(tasks, function(err, results) {
+        async.series(tasks, function(err/*, results*/) {
             cb(err, errors);
         });
     };
@@ -810,7 +813,7 @@ module.exports = function SectionServiceModule(pb) {
                 });
             }
         ];
-        async.series(tasks, function(err, results) {
+        async.series(tasks, function(err/*, results*/) {
             cb(err, errors);
         });
     };
@@ -824,7 +827,7 @@ module.exports = function SectionServiceModule(pb) {
     SectionService.prototype.validateNavItemParent = function(parent, cb) {
 
         var error = null;
-        if (!pb.validation.validateNonEmptyStr(parent, false)) {
+        if (!pb.validation.isNonEmptyStr(parent, false)) {
             error = {field: &#x27;parent&#x27;, message: &#x27;The parent must be a valid nav item container ID&#x27;};
             cb(null, error);
         }
@@ -856,7 +859,7 @@ module.exports = function SectionServiceModule(pb) {
     SectionService.prototype.validateNavItemContent = function(type, content, cb) {
 
         var error = null;
-        if (!pb.validation.validateNonEmptyStr(content, true)) {
+        if (!pb.validation.isNonEmptyStr(content, true)) {
             error = {field: &#x27;item&#x27;, message: &#x27;The content must be a valid ID&#x27;};
             cb(null, error);
             return;
@@ -882,7 +885,7 @@ module.exports = function SectionServiceModule(pb) {
     SectionService.prototype.validateNavItemEditor = function(editor, cb) {
 
         var error = null;
-        if (!pb.validation.validateNonEmptyStr(editor, true)) {
+        if (!pb.validation.isNonEmptyStr(editor, true)) {
             error = {field: &#x27;editor&#x27;, message: &#x27;The editor must be a valid user ID&#x27;};
             cb(null, error);
             return;
@@ -906,7 +909,7 @@ module.exports = function SectionServiceModule(pb) {
      */
     SectionService.prototype.save = function(navItem, options, cb) {
         if (util.isFunction(options)) {
-            cb      = options;
+            cb = options;
             options = {};
         }
 
@@ -952,7 +955,6 @@ module.exports = function SectionServiceModule(pb) {
      * @param {String} currUrl
      */
     SectionService.getSectionData = function(uid, navItems, currUrl) {
-        var self = this;
         for(var i = 0; i &lt; navItems.length; i++) {
 
             var navItem = navItems[i];
@@ -998,7 +1000,7 @@ module.exports = function SectionServiceModule(pb) {
      * @static
      * @method
      * @param {Localization} ls
-     * @return {array}
+     * @return {Array}
      */
     SectionService.getTypes = function(ls) {
         if (!ls) {
@@ -1025,14 +1027,14 @@ module.exports = function SectionServiceModule(pb) {
             {
                 value: &quot;link&quot;,
                 label: ls.g(&#x27;generic.LINK&#x27;)
-            },
+            }
         ];
     };
 
     /**
      * @static
      * @method isValidType
-     * @param {String}|{Object} type
+     * @param {String|Object} type
      * @return {Boolean}
      */
     SectionService.isValidType = function(type) {

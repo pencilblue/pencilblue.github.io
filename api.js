@@ -8,6 +8,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "ArticleRenderer",
         "ArticleService",
         "ArticleServiceV2",
+        "AsyncEventEmitter",
         "AsyncJobRunner",
         "AudioMediaRenderer",
         "BaseAdminController",

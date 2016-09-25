@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TemplateService - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.6.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>TemplateService Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/include_service_entities_template_service.js.html#l26"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:26</code></a>
+        </div>
+
+            Module: <a href="../modules/Services.html">Services</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>A templating engine that provides the ability to read in file snippets and
+call back for data based on the flags in the template file.  The instance
+can be provided a Localization instance which will be used to perform
+translations for localization flags are encountered.  Flags are marked in
+html files by the pattern ^xzy^.  The values provided here are not HTML
+encoded.  Any reserved characters must be manually encoded by any flag
+call backs.</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_TemplateService" class="method item">
+    <h3 class="name"><code>TemplateService</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>opts</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l26"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:26</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">opts</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The localization service object</p>
+
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">ls</code>
+                                    <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">activeTheme</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">site</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method private">
+                                <a href="#method__getActiveTheme">_getActiveTheme</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_blacklistTemplate">blacklistTemplate</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_compile">compile</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getAvailableContentTemplates">getAvailableContentTemplates</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getChildInstance">getChildInstance</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getCustomPath">getCustomPath</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getDefaultPath">getDefaultPath</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getTemplateContentsByPriority">getTemplateContentsByPriority</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getTemplatesForActiveTheme">getTemplatesForActiveTheme</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getTheme">getTheme</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_handleReplacement">handleReplacement</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_handleTemplateReplacement">handleTemplateReplacement</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_init">init</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isFlag">isFlag</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isTemplateBlacklisted">isTemplateBlacklisted</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_load">load</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_process">process</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_processFlag">processFlag</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_registerGlobal">registerGlobal</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_registerLocal">registerLocal</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_registerModel">registerModel</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setGlobalUnregisteredFlagHandler">setGlobalUnregisteredFlagHandler</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setReprocess">setReprocess</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setTheme">setTheme</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setUnregisteredFlagHandler">setUnregisteredFlagHandler</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_activeTheme">activeTheme</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_CUSTOM_PATH_PREFIX">CUSTOM_PATH_PREFIX</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_localCallbacks">localCallbacks</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_localizationService">localizationService</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_MIS_CACHE">MIS_CACHE</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_pluginService">pluginService</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_reprocess">reprocess</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_settingService">settingService</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_siteUid">siteUid</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property_"></a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_theme">theme</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_unregisteredFlagHandler">unregisteredFlagHandler</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_unregisteredFlagTemplate">unregisteredFlagTemplate</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method__getActiveTheme" class="method item private">
+    <h3 class="name"><code>_getActiveTheme</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l283"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:283</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the active theme.  When not provided the service retrieves it
+from the settings service.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_blacklistTemplate" class="method item">
+    <h3 class="name"><code>blacklistTemplate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>theme</code>
+                </li>
+                <li class="arg">
+                        <code>relativePath</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l908"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:908</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Blacklists a template for a theme.  This means that the template service
+will not consider this theme and path combination the next time it is
+prompted to check for its existence</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">theme</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">relativePath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_compile" class="method item">
+    <h3 class="name"><code>compile</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>text</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[start=&#x27;^&#x27;]</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[end=&#x27;^&#x27;]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l821"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:821</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Compiles the content be eagerly searching for flags/directives.  The static
+content is also placed into an object.  Whether static or a flag, an object
+is created and pushed into an array.  Each object has two properties: &quot;type&quot;
+that describes the type of template part it is (static, flag).  &quot;val&quot; the
+string value of the part.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">text</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The template text to compile</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[start=&#x27;^&#x27;]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The starting flag marker</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[end=&#x27;^&#x27;]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The ending flag marker</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>The array template parts</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getAvailableContentTemplates" class="method item">
+    <h3 class="name"><code>getAvailableContentTemplates</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>site</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l757"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:757</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the content templates that are available for use to render
+Articles and pages.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">site</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>An array of template definitions</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getChildInstance" class="method item">
+    <h3 class="name"><code>getChildInstance</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l726"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:726</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates an instance of Template service based</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/TemplateService.html" class="crosslink">TemplateService</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getCustomPath" class="method item">
+    <h3 class="name"><code>getCustomPath</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>themeName</code>
+                </li>
+                <li class="arg">
+                        <code>templateLocation</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l807"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:807</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the path to a template file based on the assumption that
+the provided path is relative to the pencilblue/plugins/[themeName]/templates/ directory.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">themeName</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">templateLocation</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The absolute path</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getDefaultPath" class="method item">
+    <h3 class="name"><code>getDefaultPath</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>templateLocation</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l794"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:794</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the default path to a template file based on the assumption that
+the provided path is relative to the pencilblue/plugins/pencilblue/templates/ directory.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">templateLocation</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The absolute path</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getTemplateContentsByPriority" class="method item">
+    <h3 class="name"><code>getTemplateContentsByPriority</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>relativePath</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l297"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:297</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the raw template based on a priority.  The path to the template is
+derived from the specified relative path and the following order of
+directories:</p>
+<ol>
+<li>The theme provided by "getTheme" if not null</li>
+<li>The globally set active_theme</li>
+<li>Iterates over the list of active plugins looking for the template</li>
+<li>The system template directory</li>
+</ol>
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">relativePath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getTemplatesForActiveTheme" class="method item">
+    <h3 class="name"><code>getTemplatesForActiveTheme</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l681"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:681</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the content template names and locations for the active theme.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A call back that provides two parameters: cb(err, [{templateName: templateLocation])</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getTheme" class="method item">
+    <h3 class="name"><code>getTheme</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l226"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:226</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Retrieves the prioratized theme</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    <p>The prioritized theme to use when loading templates</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_handleReplacement" class="method item">
+    <h3 class="name"><code>handleReplacement</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>flag</code>
+                </li>
+                <li class="arg">
+                        <code>replacement</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l558"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:558</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Called when the processing engine encounters a non-sub-template flag.  The
+function delegates the content transformation out to either the locally or
+globally registered function.  In the event that a value was registered and not
+a function then the value is used as the second parameter in the callback.
+During template re-assembly the value will be converted to a string.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">flag</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The flag to transform</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">replacement</code>
+                        <span class="type"></span>
+
+
+                    <div class="param-description">
+                        <p>The value can either be a function to handle the
+replacement or a value.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_handleTemplateReplacement" class="method item">
+    <h3 class="name"><code>handleTemplateReplacement</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>flag</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l537"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:537</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>When a sub-template flag is encountered by the processing engine this
+function is called to parse the flag and delegate out the loading and
+processing of the sub-template.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">flag</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The sub-template flag</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_init" class="method item">
+    <h3 class="name"><code>init</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l195"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:195</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets up the default flags required for the template service,
+including the flags that were previously considered to be global but
+now requires to be instanced with the TemplateService</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_isFlag" class="method item">
+    <h3 class="name"><code>isFlag</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>content</code>
+                </li>
+                <li class="arg">
+                        <code>flag</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l745"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:745</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Determines if the content provided is equal to the flag</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">content</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">flag</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isTemplateBlacklisted" class="method item">
+    <h3 class="name"><code>isTemplateBlacklisted</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>theme</code>
+                </li>
+                <li class="arg">
+                        <code>relativePath</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l896"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:896</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Checks to see if a template has been blacklisted</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">theme</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">relativePath</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_load" class="method item">
+    <h3 class="name"><code>load</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>templateLocation</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l381"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:381</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Loads a template file along with any encountered sub-template files and
+processes any flags.  The call back provides any error encountered and a
+second parameter that is the transformed content.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">templateLocation</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The relative location of the template file.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_process" class="method item">
+    <h3 class="name"><code>process</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>content</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l408"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:408</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Scans the template for flags.  The callback provides any error and a second
+parameter that is the populated template with any registered flags replaced.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">content</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The raw content to be inspected for flags</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_processFlag" class="method item">
+    <h3 class="name"><code>processFlag</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>flag</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l459"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:459</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Called when a flag is encountered by the processing engine.  The function is
+responsible for delegating out the responsibility of the flag to the
+registered entity.  Some flags are handled by default (although they can
+always be overriden locally or globally).  The following flags are considered
+&quot;baked in&quot; and will be handled automatically unless overriden:</p>
+<ul>
+<li>^loc_xyz^ - A localization flag.  When provided, the Localization
+instance will have its "get" function called in an attempt to retrieve the
+properly translated value for the key (the part betwee "^loc_" and the ending
+"^").
+</li>
+<li>^tmp_somedir=someotherdir=templatefileminusext^ - Specifies a
+sub-template that should be loaded processed.  The file is expected to have
+a .html extension.
+</li>
+</ul>
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">flag</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The flag to be processed. The value should NOT contain
+the carrot (^) prefix or postfix.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Callback function</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_registerGlobal" class="method item">
+    <h3 class="name"><code>registerGlobal</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code>callbackFunctionOrValue</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l778"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:778</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Registers a value or function for the specified</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The flag name to map to the value when encountered in a
+template.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callbackFunctionOrValue</code>
+                        <span class="type"></span>
+
+
+                    <div class="param-description">
+                        <p>The function to execute to perform the
+transformation or the value to substitute in place of the flag.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE when registered successfully, FALSE if not</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_registerLocal" class="method item">
+    <h3 class="name"><code>registerLocal</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>flag</code>
+                </li>
+                <li class="arg">
+                        <code>callbackFunctionOrValue</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l604"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:604</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Registers a value or function for the specified</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">flag</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The flag name to map to the value when encountered in a
+template.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callbackFunctionOrValue</code>
+                        <span class="type"></span>
+
+
+                    <div class="param-description">
+                        <p>The function to execute to perform the
+transformation or the value to substitute in place of the flag.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE when registered successfully, FALSE if not</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_registerModel" class="method item">
+    <h3 class="name"><code>registerModel</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>model</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[modelName]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l619"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:619</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Registers a model with the template service.  It processes each
+key/value pair in the object and creates a dot notated string
+registration.  For the object { key: 'value' } with a model name of
+&quot;item&quot; would result in 1 local value registration in which the key would
+be &quot;item.key&quot;.  If no model name existed the registered key would be:
+&quot;key&quot;. The algorithm fails fast.  On the first bad registeration the
+algorithm stops registering keys and returns.  Additionally, if a bad
+model object is pass an Error object is thrown.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">model</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The model is inspect</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[modelName]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The optional name of the model.  The name
+will prefix all of the model's keys.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE when all keys were successfully registered.
+FALSE if a single items fails to register.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_setGlobalUnregisteredFlagHandler" class="method item">
+    <h3 class="name"><code>setGlobalUnregisteredFlagHandler</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>unregisteredFlagHandler</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l254"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:254</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>When a flag is encountered that is not registered with the engine the
+handler is called as a fail safe unless there is a locally registered handler.
+It is expected to return a string that will be put in the place of the flag.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">unregisteredFlagHandler</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE when the handler was set, FALSE if not</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_setReprocess" class="method item">
+    <h3 class="name"><code>setReprocess</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>reprocess</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l272"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:272</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets the option that when true, instructs the engine to inspect the content
+provided by a flag for more flags.  This is one way of providing iterative
+processing of items.  See the sample plugin for an example.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">reprocess</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setTheme" class="method item">
+    <h3 class="name"><code>setTheme</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>theme</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l216"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:216</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Sets the prioritized theme to use when loading templates</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">theme</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The name of the theme.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setUnregisteredFlagHandler" class="method item">
+    <h3 class="name"><code>setUnregisteredFlagHandler</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>unregisteredFlagHandler</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l236"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:236</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>When a flag is encountered that is not registered with the engine the
+handler is called as a fail safe.  It is expected to return a string that
+will be put in the place of the flag.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">unregisteredFlagHandler</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p>TRUE when the handler was set, FALSE if not</p>
+
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+<div id="property_activeTheme" class="property item">
+    <h3 class="name"><code>activeTheme</code></h3>
+    <span class="type">Unknown</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l69"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:69</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_CUSTOM_PATH_PREFIX" class="property item private">
+    <h3 class="name"><code>CUSTOM_PATH_PREFIX</code></h3>
+    <span class="type">String</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l163"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:163</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The absolute path to the plugins directory</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_localCallbacks" class="property item">
+    <h3 class="name"><code>localCallbacks</code></h3>
+    <span class="type">Object</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l52"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:52</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_localizationService" class="property item">
+    <h3 class="name"><code>localizationService</code></h3>
+    <span class="type"><a href="../classes/Localization.html" class="crosslink">Localization</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l60"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:60</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_MIS_CACHE" class="property item private">
+    <h3 class="name"><code>MIS_CACHE</code></h3>
+    <span class="type">Object</span>
+
+
+        <span class="flag private">private</span>
+
+
+        <span class="flag static">static</span>
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l153"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:153</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Tracks the template keys that do not exist on disk.  This allows us to
+skip disk reads after the first request for a non-existent template</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_pluginService" class="property item">
+    <h3 class="name"><code>pluginService</code></h3>
+    <span class="type"><a href="../classes/PluginService.html" class="crosslink">PluginService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l133"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:133</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_reprocess" class="property item">
+    <h3 class="name"><code>reprocess</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l107"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:107</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Indicates if the data from the registered flags
+should be reprocessed.  The value is FALSE by default.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_settingService" class="property item">
+    <h3 class="name"><code>settingService</code></h3>
+    <span class="type"><a href="../classes/SimpleLayeredService.html" class="crosslink">SimpleLayeredService</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l127"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:127</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_siteUid" class="property item">
+    <h3 class="name"><code>siteUid</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l121"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:121</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+<div id="property_" class="property item private">
+    <h3 class="name"><code></code></h3>
+    <span class="type">Unknown</span>
+
+
+        <span class="flag private">private</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l172"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:172</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>A container that provides the mapping for global call backs.  These should
+only be added to at the start of the application or on plugin install/update.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_theme" class="property item">
+    <h3 class="name"><code>theme</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l74"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:74</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The prioritized theme when selecting templates</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_unregisteredFlagHandler" class="property item">
+    <h3 class="name"><code>unregisteredFlagHandler</code></h3>
+    <span class="type">Function</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l186"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:186</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The default handler for unregistered flags.  It outputs the flag back out.</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_unregisteredFlagTemplate" class="property item">
+    <h3 class="name"><code>unregisteredFlagTemplate</code></h3>
+    <span class="type">Function</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_entities_template_service.js.html#l115"><code>include&#x2F;service&#x2F;entities&#x2F;template_service.js:115</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+</div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

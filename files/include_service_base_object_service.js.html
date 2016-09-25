@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -396,6 +397,20 @@ module.exports = function(pb) {
      * @type {String}
      */
     BaseObjectService.AFTER_DELETE = &quot;afterDelete&quot;;
+
+    /**
+     * @static
+     * @property ContentSanitizationRulesOverride
+     * @type {object|null}
+     */
+    BaseObjectService.ContentSanitizationRulesOverride = null;
+
+    /**
+     * @static
+     * @property DefaultSanitizationRulesOverride
+     * @type {object|null}
+     */
+    BaseObjectService.DefaultSanitizationRulesOverride = null;
 
     /**
      * Retrieves the object type supported by the service
@@ -1018,7 +1033,7 @@ module.exports = function(pb) {
      * @return {Object}
      */
     BaseObjectService.getContentSanitizationRules = function() {
-        return {
+        return BaseObjectService.ContentSanitizationRulesOverride || {
             allowedTags: [ &#x27;h1&#x27;, &#x27;h2&#x27;, &#x27;h3&#x27;, &#x27;h4&#x27;, &#x27;h5&#x27;, &#x27;h6&#x27;, &#x27;blockquote&#x27;, &#x27;p&#x27;, &#x27;a&#x27;, &#x27;ul&#x27;, &#x27;ol&#x27;, &#x27;nl&#x27;, &#x27;li&#x27;, &#x27;b&#x27;, &#x27;i&#x27;, &#x27;strong&#x27;, &#x27;em&#x27;, &#x27;strike&#x27;, &#x27;code&#x27;, &#x27;hr&#x27;, &#x27;br&#x27;, &#x27;div&#x27;, &#x27;table&#x27;, &#x27;thead&#x27;, &#x27;caption&#x27;, &#x27;tbody&#x27;, &#x27;tr&#x27;, &#x27;th&#x27;, &#x27;td&#x27;, &#x27;pre&#x27;, &#x27;img&#x27;, &#x27;u&#x27;, &#x27;span&#x27; ],
             allowedAttributes: {
                 a: [ &#x27;href&#x27;, &#x27;name&#x27;, &#x27;target&#x27;, &#x27;class&#x27;, &#x27;align&#x27;],
@@ -1047,13 +1062,41 @@ module.exports = function(pb) {
     };
 
     /**
+     * Sets a system-wide override for the set of sanitization rules for content.  The function will throw if a non-object
+     * is passed.  NULL can be used to reset any override that is put into place.
+     * @static
+     * @method setDefaultSanitizationRules
+     * @param {object} rules
+     */
+    BaseObjectService.setContentSanitizationRules = function(rules) {
+        if (typeof rules !== &#x27;object&#x27; || util.isArray(rules)) {
+            throw new Error(&#x27;The content sanitization rules must be an object or null&#x27;);
+        }
+        BaseObjectService.ContentSanitizationRulesOverride = rules;
+    };
+
+    /**
+     * Sets a system-wide override for the default set of sanitization rules.  The function will throw if a non-object
+     * is passed.  NULL can be used to reset any override that is put into place.
+     * @static
+     * @method setDefaultSanitizationRules
+     * @param {object} rules
+     */
+    BaseObjectService.setDefaultSanitizationRules = function(rules) {
+        if (typeof rules !== &#x27;object&#x27; || util.isArray(rules)) {
+            throw new Error(&#x27;The default sanitization rules must be an object or null&#x27;);
+        }
+        BaseObjectService.DefaultSanitizationRulesOverride = rules;
+    };
+
+    /**
      * Retrieves the default sanitization rules for string fields.
      * @static
      * @method getDefaultSanitizationRules
      * @return {Object}
      */
     BaseObjectService.getDefaultSanitizationRules = function() {
-        return {
+        return BaseObjectService.DefaultSanitizationRulesOverride || {
             allowedTags: [],
             allowedAttributes: {}
         };

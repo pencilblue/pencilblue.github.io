@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.6.0</em>
+            <em>API Docs for: 0.7.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -45,6 +45,7 @@
                                 <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
                                 <li><a href="../classes/ArticleService.html">ArticleService</a></li>
                                 <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
                                 <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
                                 <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
                                 <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
@@ -220,6 +221,7 @@
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
  */
+&#x27;use strict&#x27;;
 
 //dependencies
 var async = require(&#x27;async&#x27;);
@@ -370,11 +372,11 @@ module.exports = function(pb) {
             select = options.select;
         }
         else {
-            select = pb.DAO.SELECT_ALL;
+            select = pb.DAO.PROJECT_ALL;
         }
 
         //build out the limit (must be a valid integer)
-        var limit = undefined;
+        var limit;
         if (pb.validation.isInt(options.limit, true, true)) {
             limit = options.limit;
         }
@@ -527,7 +529,7 @@ module.exports = function(pb) {
 
                     // Cutoff the article at the right number of paragraphs
                     for(i = 0; i &lt; tempLayoutArray.length &amp;&amp; i &lt; contentSettings.auto_break_articles; i++) {
-                        if(i === contentSettings.auto_break_articles -1 &amp;&amp; i != tempLayoutArray.length - 1) {
+                        if(i === contentSettings.auto_break_articles -1 &amp;&amp; i !== tempLayoutArray.length - 1) {
                             newLayout += tempLayoutArray[i] + &#x27;&amp;nbsp;&lt;a href=&quot;&#x27; + pb.config.siteRoot + &#x27;/article/&#x27; + article.url + &#x27;&quot;&gt;&#x27; + contentSettings.read_more_text + &#x27;...&lt;/a&gt;&#x27; + breakString;
                             continue;
                         }
@@ -558,13 +560,11 @@ module.exports = function(pb) {
                     where: {
                         article: article[pb.DAO.getIdField()].toString()
                     },
-                    order: {
-                        created: pb.DAO.ASC
-                    }
+                    order: [[&#x27;created&#x27;, pb.DAO.ASC]]
                 };
                 var dao   = new pb.DAO();
                 dao.q(&#x27;comment&#x27;, opts, function(err, comments) {
-                    if(util.isError(err) || comments.length == 0) {
+                    if(util.isError(err) || comments.length === 0) {
                         return cb(null, null);
                     }
 
@@ -638,7 +638,7 @@ module.exports = function(pb) {
                 //user has not already commented so load
                 var dao = new pb.DAO();
                 dao.loadById(comment.commenter, &#x27;user&#x27;, function(err, commenter) {
-                    if(util.isError(err) || commenter == null) {
+                    if(util.isError(err) || commenter === null) {
                         callback(null, false);
                         return;
                     }
@@ -882,6 +882,7 @@ module.exports = function(pb) {
      * @method replaceMediaTag
      * @param {String}   layout        The HTML layout of the article or page
      * @param {String}   mediaTemplate The template of the media embed
+     * @param {object} mediaCache
      * @param {Function} cb            Callback function
      */
     MediaLoader.prototype.replaceMediaTag = function(layout, mediaTemplate, mediaCache, cb) {
