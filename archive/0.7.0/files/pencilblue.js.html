@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>pencilblue.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.7.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: pencilblue.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2015  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+&#x27;use strict&#x27;;
+
+//dependencies
+var fs          = require(&#x27;fs&#x27;);
+var http        = require(&#x27;http&#x27;);
+var https       = require(&#x27;https&#x27;);
+var async       = require(&#x27;async&#x27;);
+var npm         = require(&#x27;npm&#x27;);
+var util        = require(&#x27;./include/util.js&#x27;);
+var ServerInitializer = require(&#x27;./include/http/server_initializer.js&#x27;);
+var HtmlEncoder = require(&#x27;htmlencode&#x27;);
+
+
+/**
+ * The main driver file for PencilBlue.  Provides the function necessary to
+ * start up the master and/or child processes.  In addition, it is responsible
+ * for ensuring that all system services are available by requiring the
+ * &quot;requirements.js&quot; file.
+ * @class PencilBlue
+ * @constructor
+ */
+function PencilBlue(config){
+
+    /**
+     *
+     * @private
+     * @static
+     * @property pb
+     * @type {Object}
+     */
+    var pb = require(&#x27;./lib&#x27;)(config);
+
+    /**
+     * The number of requests served by this instance
+     * @private
+     * @static
+     * @property requestsServed
+     * @type {Integer}
+     */
+    var requestsServed = 0;
+
+    /**
+     * To be called when the configuration is loaded.  The function is responsible
+     * for triggered the startup of the HTTP connection listener as well as start a
+     * connection pool to the core DB.
+     * @method init
+     */
+    this.init = function(){
+        var tasks = [
+            util.wrapTimedTask(this, this.initModules, &#x27;initModules&#x27;),
+            util.wrapTimedTask(this, this.initRequestHandler, &#x27;initRequestHandler&#x27;),
+            util.wrapTimedTask(this, this.initDBConnections, &#x27;initDBConnections&#x27;),
+            util.wrapTimedTask(this, this.initDBIndices, &#x27;initDBIndices&#x27;),
+            util.wrapTimedTask(this, this.initServerRegistration, &#x27;initServerRegistration&#x27;),
+            util.wrapTimedTask(this, this.initCommandService, &#x27;initCommandService&#x27;),
+            util.wrapTimedTask(this, this.initSiteMigration, &#x27;initSiteMigration&#x27;),
+            util.wrapTimedTask(this, this.initSessions, &#x27;initSessions&#x27;),
+            util.wrapTimedTask(this, this.initPlugins, &#x27;initPlugins&#x27;),
+            util.wrapTimedTask(this, this.initSites, &#x27;initSites&#x27;),
+            util.wrapTimedTask(this, this.initLibraries, &#x27;initLibraries&#x27;),
+            util.wrapTimedTask(this, this.registerMetrics, &#x27;registerMetrics&#x27;),
+            util.wrapTimedTask(this, this.initServer, &#x27;initServer&#x27;)
+        ];
+        async.series(tasks, function(err, results) {
+            if (util.isError(err)) {
+                throw err;
+            }
+            pb.log.info(&#x27;PencilBlue: Ready to run!&#x27;);
+
+            //print out stats
+            if (pb.log.isDebug()) {
+                var stats = results.reduce(function (obj, result) {
+                    obj[result.name] = result.time;
+                    obj.total += result.time;
+                    return obj;
+                }, {total: 0});
+                pb.log.debug(&#x27;Startup Stats (ms):\n%s&#x27;, JSON.stringify(stats, null, 2));
+            }
+        });
+    };
+
+    /**
+     * Ensures that any log messages by the NPM module are forwarded as output
+     * to the system logs
+     * @static
+     * @method initLogWrappers
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    this.initModules = function(cb) {
+        npm.on(&#x27;log&#x27;, function(message) {
+            pb.log.info(message);
+        });
+
+        HtmlEncoder.EncodeType = &#x27;numerical&#x27;;
+
+        pb.Localization.init(cb);
+    };
+
+    /**
+     * Initializes the request handler.  This causes all system routes to be
+     * registered.
+     * @static
+     * @method initRequestHandler
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    this.initRequestHandler = function(cb) {
+        pb.RequestHandler.init();
+        cb(null, true);
+    };
+
+    /**
+     * Starts the session handler
+     * @method initSessions
+     * @param {Function} cb
+     */
+    this.initSessions = function(cb) {
+        pb.session.start(cb);
+    };
+
+    /**
+     * Initializes the installed plugins.
+     * @static
+     * @method initPlugins
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    this.initPlugins = function(cb) {
+
+        //initialize command listeners
+        pb.PluginService.init();
+
+        //initialize the plugins
+        var pluginService = new pb.PluginService();
+        pluginService.initPlugins(cb);
+    };
+
+    /**
+     * Move a single tenant solution to a multi-tenant solution.
+     * @static
+     * @method initSiteMigration
+     * @param {Function} cb - callback function
+     */
+    this.initSiteMigration = function(cb) {
+        pb.SiteService.init();
+        pb.dbm.processMigration(cb);
+    };
+
+    /**
+     * Initializes site(s).
+     * @method initSites
+     * @static
+     * @param {Function} cb - callback function
+     */
+    this.initSites = function(cb) {
+        var siteService = new pb.SiteService();
+        siteService.initSites(cb);
+    };
+
+    /**
+     * Attempts to initialize a connection pool to the core database
+     * @static
+     * @method initDBConnections
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    this.initDBConnections = function(cb){
+        //setup database connection to core database
+        pb.dbm.getDb(pb.config.db.name, function(err, result){
+            if (util.isError(err)) {
+                return cb(err, false);
+            }
+            else if (!result.databaseName) {
+                return cb(new Error(&quot;Failed to establish a connection to: &quot;+pb.config.db.name), false);
+            }
+
+            pb.log.debug(&#x27;PencilBlue: Established connection to DB: %s&#x27;, result.databaseName);
+            cb(null, true);
+        });
+    };
+
+    /**
+     * Checks to see if the process should verify that the indices are valid and in
+     * place.
+     * @static
+     * @method initDBIndices
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    this.initDBIndices = function(cb) {
+        if (pb.config.db.skip_index_check || !util.isArray(pb.config.db.indices)) {
+            pb.log.info(&#x27;PencilBlue: Skipping ensurance of indices&#x27;);
+            return cb(null, true);
+        }
+
+        pb.log.info(&#x27;PencilBlue: Ensuring indices...&#x27;);
+        pb.dbm.processIndices(pb.config.db.indices, function(err/*, results*/) {
+            cb(err, !util.isError(err));
+        });
+    };
+
+    /**
+     * Initializes the HTTP server(s).  When SSL is enabled two servers are created.
+     * One to handle incoming HTTP traffic and one to handle HTTPS traffic.
+     * @static
+     * @method initServer
+     * @param {Function} cb A callback that provides two parameters: cb(Error, Boolean)
+     */
+    this.initServer = function(cb){
+        var self = this;
+        var context = {
+            config: pb.config,
+            log: pb.log,
+            onRequest: function(req, res) {
+                self.onHttpConnect(req, res);
+            },
+            onHandoffRequest: function(req, res) {
+                self.onHttpConnectForHandoff(req, res);
+            }
+        };
+        var Initializer = pb.config.server.initializer || ServerInitializer;
+        var initializer = new Initializer(pb);
+        initializer.init(context, function(err, servers) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+            pb.server = servers.server;
+            pb.handOffServer = servers.handOffServer;
+
+            cb(err, true);
+        });
+    };
+
+    /**
+     * The function that handles normal server traffic.  The function ensures that
+     * the incoming request is delegated out appropriately.  When SSL Termination
+     * is in use if the &#x27;x-forwarded-proto&#x27; header does equal &#x27;https&#x27; then the
+     * request is delegated to the handoff function so the request can be
+     * redirected appropriately.
+     * @static
+     * @method onHttpConnect
+     * @param {Request} req The incoming request
+     * @param {Response} res The outgoing response
+     */
+    this.onHttpConnect = function(req, res){
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;New Request: %s&#x27;, (req.uid = util.uniqueId()));
+        }
+
+        //bump the counter for the instance
+        requestsServed++;
+
+        //check to see if we should inspect the x-forwarded-proto header for SSL
+        //load balancers use this for SSL termination relieving the stress of SSL
+        //computation on more powerful load balancers.
+        if (pb.config.server.ssl.use_x_forwarded &amp;&amp; req.headers[&#x27;x-forwarded-proto&#x27;] !== &#x27;https&#x27;) {
+            return this.onHttpConnectForHandoff(req, res);
+        }
+
+        //route the request
+        var handler = new pb.RequestHandler(pb.server, req, res);
+        handler.handleRequest();
+    };
+
+    /**
+     * Handles traffic that comes in for HTTP when SSL is enabled.  The request is
+     * redirected to the appropriately protected HTTPS url.
+     * @static
+     * @method onHttpConnectForHandoff
+     * @param {Request} req The incoming request
+     * @param {Response} res The outgoing response
+     */
+    this.onHttpConnectForHandoff = function(req, res) {
+        var host = req.headers.host;
+        if (host) {
+            var index = host.indexOf(&#x27;:&#x27;);
+            if (index &gt;= 0) {
+                host = host.substring(0, index);
+            }
+        }
+        if (pb.config.server.ssl.use_handoff_port_in_redirect) {
+            host += &#x27;:&#x27;+pb.config.sitePort;
+        }
+
+        res.writeHead(301, { &quot;Location&quot;: &quot;https://&quot; + host + req.url });
+        res.end();
+    };
+
+    /**
+     * Initializes server registration.
+     * @static
+     * @method initServerRegistration
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    this.initServerRegistration = function(cb) {
+        pb.ServerRegistration.getInstance().init(cb);
+    };
+
+    /**
+     * Initializes the command service by calling its &quot;init&quot; function.
+     * @static
+     * @method initCommandService
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    this.initCommandService = function(cb) {
+        pb.CommandService.getInstance().init(cb);
+    };
+
+    /**
+     * Initializes the libraries service
+     * @static
+     * @method initLibraries
+     * @param {Function} cb A callback that provides two parameters: cb(Error, [RESULT])
+     */
+    this.initLibraries = function(cb) {
+        pb.LibrariesService.init(cb);
+    };
+
+    /**
+     * Initializes the metric registrations to measure request counts
+     * @static
+     * @method registerMetrics
+     * @param {Function} cb
+     */
+    this.registerMetrics = function(cb) {
+
+        //total number of requests served
+        pb.ServerRegistration.addItem(&#x27;requests&#x27;, function(callback) {
+            callback(null, requestsServed);
+        });
+
+        //current requests
+        pb.ServerRegistration.addItem(&#x27;currentRequests&#x27;, function(callback) {
+            pb.server.getConnections(callback);
+        });
+
+        //analytics average
+        pb.ServerRegistration.addItem(&#x27;analytics&#x27;, function(callback) {
+            callback(null, pb.AnalyticsManager.getStats());
+        });
+
+        cb(null, true);
+    };
+
+    /**
+     * Starts up the instance of PencilBlue
+     * @method start
+     */
+    this.start = function() {
+        var self = this;
+        pb.system.registerSignalHandlers(true);
+        pb.system.onStart(function(){
+            self.init();
+        });
+    };
+}
+
+/**
+ * The default entry point to a stand-alone instance of PencilBlue
+ * @static
+ * @method startInstance
+ * @return {PencilBlue}
+ */
+PencilBlue.startInstance = function() {
+    var Configuration = require(&#x27;./include/config.js&#x27;);
+    var config        = Configuration.load();
+    var pb            = new PencilBlue(config);
+    pb.start();
+    return pb;
+};
+
+//start system only when the module is called directly
+if (require.main === module) {
+    PencilBlue.startInstance();
+}
+
+//exports
+module.exports = PencilBlue;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

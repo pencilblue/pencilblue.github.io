@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.7.0</em>
+            <em>API Docs for: 0.8.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -77,6 +77,7 @@
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorUtils.html">ErrorUtils</a></li>
                                 <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
@@ -97,6 +98,7 @@
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
                                 <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/Middleware.html">Middleware</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
                                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
@@ -115,7 +117,9 @@
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
                                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RegExpUtils.html">RegExpUtils</a></li>
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/Router.html">Router</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
                                 <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
@@ -152,6 +156,7 @@
                                 <li><a href="../classes/View Controller.html">View Controller</a></li>
                                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
                                 <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/XmlErrorFormatter.html">XmlErrorFormatter</a></li>
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
@@ -209,7 +214,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/include_http_request_handler.js.html#l34"><code>include&#x2F;http&#x2F;request_handler.js:34</code></a>
+            Defined in: <a href="../files/include_http_request_handler.js.html#l36"><code>include&#x2F;http&#x2F;request_handler.js:36</code></a>
         </div>
 
             Module: <a href="../modules/ErrorSuccess.html">ErrorSuccess</a>
@@ -251,7 +256,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l34"><code>include&#x2F;http&#x2F;request_handler.js:34</code></a>
+        <a href="../files/include_http_request_handler.js.html#l36"><code>include&#x2F;http&#x2F;request_handler.js:36</code></a>
         </p>
 
 
@@ -334,6 +339,26 @@
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item method">
+                                <a href="#method_buildControllerContext">buildControllerContext</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_checkAdminLevel">checkAdminLevel</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_checkPermissions">checkPermissions</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_checkRequiresAuth">checkRequiresAuth</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_checkSecurity">checkSecurity</a>
 
                             </li>
@@ -368,10 +393,11 @@
 
                                     <span class="flag static">static</span>
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_getMimeFromPath">getMimeFromPath</a>
 
                                     <span class="flag static">static</span>
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method">
                                 <a href="#method_getPathVariables">getPathVariables</a>
@@ -639,7 +665,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l428"><code>include&#x2F;http&#x2F;request_handler.js:428</code></a>
+        <a href="../files/include_http_request_handler.js.html#l430"><code>include&#x2F;http&#x2F;request_handler.js:430</code></a>
         </p>
 
 
@@ -729,7 +755,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l242"><code>include&#x2F;http&#x2F;request_handler.js:242</code></a>
+        <a href="../files/include_http_request_handler.js.html#l244"><code>include&#x2F;http&#x2F;request_handler.js:244</code></a>
         </p>
 
 
@@ -757,6 +783,479 @@
             </ul>
         </div>
 
+
+
+</div>
+<div id="method_buildControllerContext" class="method item">
+    <h3 class="name"><code>buildControllerContext</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>req</code>
+                </li>
+                <li class="arg">
+                        <code>res</code>
+                </li>
+                <li class="arg">
+                        <code>extraData</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l1676"><code>include&#x2F;http&#x2F;request_handler.js:1676</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Builds out the context that is passed to a controller</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">req</code>
+                        <span class="type">Request</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">res</code>
+                        <span class="type">Response</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">extraData</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_checkAdminLevel" class="method item">
+    <h3 class="name"><code>checkAdminLevel</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Success: boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l1621"><code>include&#x2F;http&#x2F;request_handler.js:1621</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">themeRoute</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">access_level</code>
+                                                <span class="type">Number</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">session</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">authentication</code>
+                                                <span class="type">Object</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">authentication.admin_level</code>
+                                                <span class="type">Number</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Success: boolean</span>:
+                    <p>}</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_checkPermissions" class="method item">
+    <h3 class="name"><code>checkPermissions</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Success: boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l1585"><code>include&#x2F;http&#x2F;request_handler.js:1585</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">themeRoute</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">permissions</code>
+                                                <span class="type">Array</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">session</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">authentication</code>
+                                                <span class="type">Object</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">authentication.user</code>
+                                                <span class="type">Object</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">authentication.user.permissions</code>
+                                                <span class="type">Object</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Success: boolean</span>:
+                    <p>}</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_checkRequiresAuth" class="method item">
+    <h3 class="name"><code>checkRequiresAuth</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>context</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Success: boolean</span>
+        </span>
+
+
+
+
+        <span class="flag static">static</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_http_request_handler.js.html#l1646"><code>include&#x2F;http&#x2F;request_handler.js:1646</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">context</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">themeRoute</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">themeRotue.auth_required</code>
+                                    <span class="type">Boolean</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">session</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">authentication</code>
+                                                <span class="type">Object</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">authentication.user_id</code>
+                                                <span class="type">Number</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">req</code>
+                                    <span class="type">Request</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">hostname</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">url</code>
+                                    <span class="type">Object</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">href</code>
+                                                <span class="type">String</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Success: boolean</span>:
+                    <p>}</p>
+
+            </div>
+        </div>
 
 
 </div>
@@ -790,7 +1289,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1363"><code>include&#x2F;http&#x2F;request_handler.js:1363</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1348"><code>include&#x2F;http&#x2F;request_handler.js:1348</code></a>
         </p>
 
 
@@ -874,7 +1373,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l251"><code>include&#x2F;http&#x2F;request_handler.js:251</code></a>
+        <a href="../files/include_http_request_handler.js.html#l253"><code>include&#x2F;http&#x2F;request_handler.js:253</code></a>
         </p>
 
 
@@ -926,7 +1425,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l623"><code>include&#x2F;http&#x2F;request_handler.js:623</code></a>
+        <a href="../files/include_http_request_handler.js.html#l625"><code>include&#x2F;http&#x2F;request_handler.js:625</code></a>
         </p>
 
 
@@ -1004,7 +1503,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1479"><code>include&#x2F;http&#x2F;request_handler.js:1479</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1432"><code>include&#x2F;http&#x2F;request_handler.js:1432</code></a>
         </p>
 
 
@@ -1067,7 +1566,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1120"><code>include&#x2F;http&#x2F;request_handler.js:1120</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1105"><code>include&#x2F;http&#x2F;request_handler.js:1105</code></a>
         </p>
 
 
@@ -1163,7 +1662,7 @@ by gathering all initialization parameters and calling the controller's
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1052"><code>include&#x2F;http&#x2F;request_handler.js:1052</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1037"><code>include&#x2F;http&#x2F;request_handler.js:1037</code></a>
         </p>
 
 
@@ -1221,7 +1720,7 @@ request</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l205"><code>include&#x2F;http&#x2F;request_handler.js:205</code></a>
+        <a href="../files/include_http_request_handler.js.html#l207"><code>include&#x2F;http&#x2F;request_handler.js:207</code></a>
         </p>
 
 
@@ -1283,7 +1782,7 @@ header to be sent back as part of the response.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1622"><code>include&#x2F;http&#x2F;request_handler.js:1622</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1575"><code>include&#x2F;http&#x2F;request_handler.js:1575</code></a>
         </p>
 
 
@@ -1308,7 +1807,7 @@ header to be sent back as part of the response.</p>
 
 
 </div>
-<div id="method_getMimeFromPath" class="method item">
+<div id="method_getMimeFromPath" class="method item deprecated">
     <h3 class="name"><code>getMimeFromPath</code></h3>
 
         <div class="args">
@@ -1323,6 +1822,7 @@ header to be sent back as part of the response.</p>
             <span class="type">String | Undefined</span>
         </span>
 
+        <span class="flag deprecated" title="since 0.8.0 Use mime.lookup instead">deprecated</span>
 
 
 
@@ -1333,10 +1833,11 @@ header to be sent back as part of the response.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l686"><code>include&#x2F;http&#x2F;request_handler.js:686</code></a>
+        <a href="../files/include_http_request_handler.js.html#l688"><code>include&#x2F;http&#x2F;request_handler.js:688</code></a>
         </p>
 
 
+            <p>Deprecated: since 0.8.0 Use mime.lookup instead</p>
 
     </div>
 
@@ -1397,7 +1898,7 @@ of the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1105"><code>include&#x2F;http&#x2F;request_handler.js:1105</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1090"><code>include&#x2F;http&#x2F;request_handler.js:1090</code></a>
         </p>
 
 
@@ -1463,7 +1964,7 @@ of the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l872"><code>include&#x2F;http&#x2F;request_handler.js:872</code></a>
+        <a href="../files/include_http_request_handler.js.html#l857"><code>include&#x2F;http&#x2F;request_handler.js:857</code></a>
         </p>
 
 
@@ -1530,7 +2031,7 @@ of the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l512"><code>include&#x2F;http&#x2F;request_handler.js:512</code></a>
+        <a href="../files/include_http_request_handler.js.html#l514"><code>include&#x2F;http&#x2F;request_handler.js:514</code></a>
         </p>
 
 
@@ -1606,7 +2107,7 @@ depth in the path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l956"><code>include&#x2F;http&#x2F;request_handler.js:956</code></a>
+        <a href="../files/include_http_request_handler.js.html#l941"><code>include&#x2F;http&#x2F;request_handler.js:941</code></a>
         </p>
 
 
@@ -1674,7 +2175,7 @@ iterating over all other inherited themes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l571"><code>include&#x2F;http&#x2F;request_handler.js:571</code></a>
+        <a href="../files/include_http_request_handler.js.html#l573"><code>include&#x2F;http&#x2F;request_handler.js:573</code></a>
         </p>
 
 
@@ -1719,7 +2220,7 @@ iterating over all other inherited themes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l181"><code>include&#x2F;http&#x2F;request_handler.js:181</code></a>
+        <a href="../files/include_http_request_handler.js.html#l183"><code>include&#x2F;http&#x2F;request_handler.js:183</code></a>
         </p>
 
 
@@ -1742,11 +2243,14 @@ the system.  This should only be called once at startup.</p>
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
-                        <code>url</code>
+                        <code>urlPath</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
 
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
 
 
 
@@ -1758,7 +2262,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1561"><code>include&#x2F;http&#x2F;request_handler.js:1561</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1514"><code>include&#x2F;http&#x2F;request_handler.js:1514</code></a>
         </p>
 
 
@@ -1766,7 +2270,8 @@ the system.  This should only be called once at startup.</p>
     </div>
 
     <div class="description">
-        
+        <p>Determines if the provided URL pathname &quot;/admin/content/articles&quot; is a valid admin URL.</p>
+
     </div>
 
         <div class="params">
@@ -1774,7 +2279,7 @@ the system.  This should only be called once at startup.</p>
 
             <ul class="params-list">
                 <li class="param">
-                        <code class="param-name">url</code>
+                        <code class="param-name">urlPath</code>
                         <span class="type">String</span>
 
 
@@ -1786,6 +2291,13 @@ the system.  This should only be called once at startup.</p>
             </ul>
         </div>
 
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
 
 
 </div>
@@ -1814,7 +2326,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l719"><code>include&#x2F;http&#x2F;request_handler.js:719</code></a>
+        <a href="../files/include_http_request_handler.js.html#l701"><code>include&#x2F;http&#x2F;request_handler.js:701</code></a>
         </p>
 
 
@@ -1887,7 +2399,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1581"><code>include&#x2F;http&#x2F;request_handler.js:1581</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1535"><code>include&#x2F;http&#x2F;request_handler.js:1535</code></a>
         </p>
 
 
@@ -1971,7 +2483,7 @@ the system.  This should only be called once at startup.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l260"><code>include&#x2F;http&#x2F;request_handler.js:260</code></a>
+        <a href="../files/include_http_request_handler.js.html#l262"><code>include&#x2F;http&#x2F;request_handler.js:262</code></a>
         </p>
 
 
@@ -2050,7 +2562,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l219"><code>include&#x2F;http&#x2F;request_handler.js:219</code></a>
+        <a href="../files/include_http_request_handler.js.html#l221"><code>include&#x2F;http&#x2F;request_handler.js:221</code></a>
         </p>
 
 
@@ -2105,7 +2617,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1230"><code>include&#x2F;http&#x2F;request_handler.js:1230</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1215"><code>include&#x2F;http&#x2F;request_handler.js:1215</code></a>
         </p>
 
 
@@ -2167,7 +2679,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1491"><code>include&#x2F;http&#x2F;request_handler.js:1491</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1444"><code>include&#x2F;http&#x2F;request_handler.js:1444</code></a>
         </p>
 
 
@@ -2222,7 +2734,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1244"><code>include&#x2F;http&#x2F;request_handler.js:1244</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1229"><code>include&#x2F;http&#x2F;request_handler.js:1229</code></a>
         </p>
 
 
@@ -2308,7 +2820,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1067"><code>include&#x2F;http&#x2F;request_handler.js:1067</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1052"><code>include&#x2F;http&#x2F;request_handler.js:1052</code></a>
         </p>
 
 
@@ -2405,7 +2917,7 @@ valid URL path structure.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l812"><code>include&#x2F;http&#x2F;request_handler.js:812</code></a>
+        <a href="../files/include_http_request_handler.js.html#l797"><code>include&#x2F;http&#x2F;request_handler.js:797</code></a>
         </p>
 
 
@@ -2474,7 +2986,7 @@ active theme.  It then retrieves the route object and passes it off to onThemeRe
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l999"><code>include&#x2F;http&#x2F;request_handler.js:999</code></a>
+        <a href="../files/include_http_request_handler.js.html#l984"><code>include&#x2F;http&#x2F;request_handler.js:984</code></a>
         </p>
 
 
@@ -2539,7 +3051,7 @@ active theme.  It then retrieves the route object and passes it off to onThemeRe
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1178"><code>include&#x2F;http&#x2F;request_handler.js:1178</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1163"><code>include&#x2F;http&#x2F;request_handler.js:1163</code></a>
         </p>
 
 
@@ -2611,7 +3123,7 @@ value is dependent on the parser selected by the content type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1500"><code>include&#x2F;http&#x2F;request_handler.js:1500</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1453"><code>include&#x2F;http&#x2F;request_handler.js:1453</code></a>
         </p>
 
 
@@ -2678,7 +3190,7 @@ value is dependent on the parser selected by the content type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1604"><code>include&#x2F;http&#x2F;request_handler.js:1604</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1557"><code>include&#x2F;http&#x2F;request_handler.js:1557</code></a>
         </p>
 
 
@@ -2762,7 +3274,7 @@ value is dependent on the parser selected by the content type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l364"><code>include&#x2F;http&#x2F;request_handler.js:364</code></a>
+        <a href="../files/include_http_request_handler.js.html#l366"><code>include&#x2F;http&#x2F;request_handler.js:366</code></a>
         </p>
 
 
@@ -2947,7 +3459,7 @@ request must have successfully authenticated against the system.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l945"><code>include&#x2F;http&#x2F;request_handler.js:945</code></a>
+        <a href="../files/include_http_request_handler.js.html#l930"><code>include&#x2F;http&#x2F;request_handler.js:930</code></a>
         </p>
 
 
@@ -3023,7 +3535,7 @@ request must have successfully authenticated against the system.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l916"><code>include&#x2F;http&#x2F;request_handler.js:916</code></a>
+        <a href="../files/include_http_request_handler.js.html#l901"><code>include&#x2F;http&#x2F;request_handler.js:901</code></a>
         </p>
 
 
@@ -3102,7 +3614,7 @@ the theme variation of the route.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l929"><code>include&#x2F;http&#x2F;request_handler.js:929</code></a>
+        <a href="../files/include_http_request_handler.js.html#l914"><code>include&#x2F;http&#x2F;request_handler.js:914</code></a>
         </p>
 
 
@@ -3189,7 +3701,7 @@ the theme variation of the route.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l735"><code>include&#x2F;http&#x2F;request_handler.js:735</code></a>
+        <a href="../files/include_http_request_handler.js.html#l717"><code>include&#x2F;http&#x2F;request_handler.js:717</code></a>
         </p>
 
 
@@ -3230,7 +3742,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l749"><code>include&#x2F;http&#x2F;request_handler.js:749</code></a>
+        <a href="../files/include_http_request_handler.js.html#l731"><code>include&#x2F;http&#x2F;request_handler.js:731</code></a>
         </p>
 
 
@@ -3293,7 +3805,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l652"><code>include&#x2F;http&#x2F;request_handler.js:652</code></a>
+        <a href="../files/include_http_request_handler.js.html#l654"><code>include&#x2F;http&#x2F;request_handler.js:654</code></a>
         </p>
 
 
@@ -3355,7 +3867,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l310"><code>include&#x2F;http&#x2F;request_handler.js:310</code></a>
+        <a href="../files/include_http_request_handler.js.html#l312"><code>include&#x2F;http&#x2F;request_handler.js:312</code></a>
         </p>
 
 
@@ -3433,7 +3945,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l275"><code>include&#x2F;http&#x2F;request_handler.js:275</code></a>
+        <a href="../files/include_http_request_handler.js.html#l277"><code>include&#x2F;http&#x2F;request_handler.js:277</code></a>
         </p>
 
 
@@ -3506,7 +4018,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1522"><code>include&#x2F;http&#x2F;request_handler.js:1522</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1475"><code>include&#x2F;http&#x2F;request_handler.js:1475</code></a>
         </p>
 
 
@@ -3597,7 +4109,7 @@ not exist. This function <b>WILL</b> close the connection.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1348"><code>include&#x2F;http&#x2F;request_handler.js:1348</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1333"><code>include&#x2F;http&#x2F;request_handler.js:1333</code></a>
         </p>
 
 
@@ -3674,7 +4186,7 @@ will be serialized via its implicity &quot;toString&quot; function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l1298"><code>include&#x2F;http&#x2F;request_handler.js:1298</code></a>
+        <a href="../files/include_http_request_handler.js.html#l1283"><code>include&#x2F;http&#x2F;request_handler.js:1283</code></a>
         </p>
 
 
@@ -3721,7 +4233,7 @@ will be serialized via its implicity &quot;toString&quot; function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l86"><code>include&#x2F;http&#x2F;request_handler.js:86</code></a>
+        <a href="../files/include_http_request_handler.js.html#l88"><code>include&#x2F;http&#x2F;request_handler.js:88</code></a>
         </p>
 
 
@@ -3747,7 +4259,7 @@ will be serialized via its implicity &quot;toString&quot; function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l106"><code>include&#x2F;http&#x2F;request_handler.js:106</code></a>
+        <a href="../files/include_http_request_handler.js.html#l108"><code>include&#x2F;http&#x2F;request_handler.js:108</code></a>
         </p>
 
 
@@ -3775,7 +4287,7 @@ route specification</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l160"><code>include&#x2F;http&#x2F;request_handler.js:160</code></a>
+        <a href="../files/include_http_request_handler.js.html#l162"><code>include&#x2F;http&#x2F;request_handler.js:162</code></a>
         </p>
 
 
@@ -3804,7 +4316,7 @@ equally.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l131"><code>include&#x2F;http&#x2F;request_handler.js:131</code></a>
+        <a href="../files/include_http_request_handler.js.html#l133"><code>include&#x2F;http&#x2F;request_handler.js:133</code></a>
         </p>
 
 
@@ -3829,7 +4341,7 @@ equally.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l98"><code>include&#x2F;http&#x2F;request_handler.js:98</code></a>
+        <a href="../files/include_http_request_handler.js.html#l100"><code>include&#x2F;http&#x2F;request_handler.js:100</code></a>
         </p>
 
 
@@ -3853,7 +4365,7 @@ equally.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l75"><code>include&#x2F;http&#x2F;request_handler.js:75</code></a>
+        <a href="../files/include_http_request_handler.js.html#l77"><code>include&#x2F;http&#x2F;request_handler.js:77</code></a>
         </p>
 
 
@@ -3884,7 +4396,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l121"><code>include&#x2F;http&#x2F;request_handler.js:121</code></a>
+        <a href="../files/include_http_request_handler.js.html#l123"><code>include&#x2F;http&#x2F;request_handler.js:123</code></a>
         </p>
 
 
@@ -3909,7 +4421,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l57"><code>include&#x2F;http&#x2F;request_handler.js:57</code></a>
+        <a href="../files/include_http_request_handler.js.html#l59"><code>include&#x2F;http&#x2F;request_handler.js:59</code></a>
         </p>
 
 
@@ -3933,7 +4445,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l63"><code>include&#x2F;http&#x2F;request_handler.js:63</code></a>
+        <a href="../files/include_http_request_handler.js.html#l65"><code>include&#x2F;http&#x2F;request_handler.js:65</code></a>
         </p>
 
 
@@ -3957,7 +4469,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l92"><code>include&#x2F;http&#x2F;request_handler.js:92</code></a>
+        <a href="../files/include_http_request_handler.js.html#l94"><code>include&#x2F;http&#x2F;request_handler.js:94</code></a>
         </p>
 
 
@@ -3981,7 +4493,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l51"><code>include&#x2F;http&#x2F;request_handler.js:51</code></a>
+        <a href="../files/include_http_request_handler.js.html#l53"><code>include&#x2F;http&#x2F;request_handler.js:53</code></a>
         </p>
 
 
@@ -4005,7 +4517,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l45"><code>include&#x2F;http&#x2F;request_handler.js:45</code></a>
+        <a href="../files/include_http_request_handler.js.html#l47"><code>include&#x2F;http&#x2F;request_handler.js:47</code></a>
         </p>
 
 
@@ -4031,7 +4543,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l151"><code>include&#x2F;http&#x2F;request_handler.js:151</code></a>
+        <a href="../files/include_http_request_handler.js.html#l153"><code>include&#x2F;http&#x2F;request_handler.js:153</code></a>
         </p>
 
 
@@ -4058,7 +4570,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l139"><code>include&#x2F;http&#x2F;request_handler.js:139</code></a>
+        <a href="../files/include_http_request_handler.js.html#l141"><code>include&#x2F;http&#x2F;request_handler.js:141</code></a>
         </p>
 
 
@@ -4084,7 +4596,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l172"><code>include&#x2F;http&#x2F;request_handler.js:172</code></a>
+        <a href="../files/include_http_request_handler.js.html#l174"><code>include&#x2F;http&#x2F;request_handler.js:174</code></a>
         </p>
 
 
@@ -4109,7 +4621,7 @@ resulting in a 503 from the load balancer</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_http_request_handler.js.html#l69"><code>include&#x2F;http&#x2F;request_handler.js:69</code></a>
+        <a href="../files/include_http_request_handler.js.html#l71"><code>include&#x2F;http&#x2F;request_handler.js:71</code></a>
         </p>
 
 

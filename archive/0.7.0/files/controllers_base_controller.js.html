@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>controllers/base_controller.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.7.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: controllers/base_controller.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2016  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+&#x27;use strict&#x27;;
+
+//dependencies
+var url  = require(&#x27;url&#x27;);
+var util = require(&#x27;../include/util.js&#x27;);
+
+module.exports = function BaseControllerModule(pb) {
+
+    // pb dependancies
+    var SiteService = pb.SiteService;
+
+    /**
+     * The base controller provides functions for the majority of
+     * the heavy lifing for a controller. It accepts and provides access to
+     * extending controllers for items such as the request, response, session, etc.
+     * @class BaseController
+     * @constructor
+     */
+    function BaseController(){}
+
+    //constants
+    /**
+     * The code for a successful API call
+     * @static
+     * @property API_SUCCESS
+     * @type {Integer}
+     */
+    BaseController.API_SUCCESS = 0;
+
+    /**
+     * The code for a failed API call
+     * @static
+     * @property API_FAILURE
+     * @type {Integer}
+     */
+    BaseController.API_FAILURE = 1;
+
+    /**
+     * The snippet of JS code that will ensure that a form is refilled with values
+     * from the post
+     * @static
+     * @private
+     * @property FORM_REFILL_PATTERN
+     * @type {String}
+     */
+    var FORM_REFILL_PATTERN = &#x27;if(typeof refillForm !== &quot;undefined&quot;) {&#x27; + &quot;\n&quot; +
+        &#x27;$(document).ready(function(){&#x27;+ &quot;\n&quot; +
+            &#x27;refillForm(%s)});}&#x27;;
+
+    /**
+     * The snippet of HTML that will display an alert box
+     * @static
+     * @private
+     * @property ALERT_PATTERN
+     * @type {String}
+     */
+    var ALERT_PATTERN = &#x27;&lt;div class=&quot;alert %s error_success&quot;&gt;%s&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;&lt;/div&gt;&#x27;;
+
+    /**
+     * A mapping that converts the HTTP standard for content-type encoding and
+     * what the Buffer prototype expects
+     * @static
+     * @private
+     * @readonly
+     * @property ENCODING_MAPPING
+     * @type {Object}
+     */
+    var ENCODING_MAPPING = Object.freeze({
+        &#x27;UTF-8&#x27;: &#x27;utf8&#x27;,
+        &#x27;US-ASCII&#x27;: &#x27;ascii&#x27;,
+        &#x27;UTF-16LE&#x27;: &#x27;utf16le&#x27;
+    });
+
+    /**
+     * Responsible for initializing a controller.  Properties from the
+     * RequestHandler are passed down so that the controller has complete access to
+     * a variety of request specified properties.  By default the function transfers the options over to instance variables that can be access during rendering.  In addition, the function sets up the template service along with a set of local flags:
+     * &lt;ul&gt;
+     * &lt;li&gt;locale - The selected locale for the request (NOTE: this may not match the requested language if not supported)&lt;/li&gt;
+     * &lt;li&gt;error_success - An alert box if one was registered by the controller&lt;/li&gt;
+     * &lt;li&gt;page_name - The title of the page&lt;/li&gt;
+     * &lt;li&gt;localization_script - Includes the localization script so that it can be used client side&lt;/li&gt;
+     * &lt;li&gt;analytics - Inserts the necessary javascript for analytics providers&lt;/li&gt;
+     * &lt;/ul&gt;
+     * @method init
+     * @param {Object} props The properties needed to initialize the controller
+     *  @param {RequestHandler} props.request_handler
+     *  @param {Request} props.request The incoming request
+     *  @param {Response} props.response The outgoing response
+     *  @param {Object} props.session The session object
+     *  @param {Localization} props.localization_service The localization service instance for the request
+     *  @param {Object} props.path_vars The path variables associated with the URL for the request
+     *  @param {Object} props.query The query string variables associated with the URL for the request
+     *  @param {Function} cb A callback that takes a single optional argument: cb(Error)
+     */
+    BaseController.prototype.init = function(props, cb) {
+        var self = this;
+
+        /**
+         * The instance of the request handler that processed the request
+         * @property reqHandler
+         * @type {RequestHandler}
+         */
+        this.reqHandler = props.request_handler;
+
+        /**
+         * The current request object
+         * @property req
+         * @type {Request}
+         */
+        this.req = props.request;
+
+        /**
+         * The current response object
+         * @property res
+         * @type {Response}
+         */
+        this.res = props.response;
+
+        /**
+         * The session object that represents the calling entity
+         * @property session
+         * @type {object}
+         */
+        this.session = props.session;
+
+        /**
+         * The deserialized body of the request.  This field is only ever populted if the executing route specifies the
+         * &quot;request_body&quot; attribute and provides valid MIME types that map to a registered body parser
+         * @property body
+         * @type {object|null}
+         */
+        this.body = props.body;
+
+        /**
+         * @deprecated Use this.ls
+         * @property localizationService
+         * @type {Localization}
+         */
+        this.localizationService = props.localization_service;
+
+        /**
+         * @property ls
+         * @type {Localization}
+         */
+        this.ls = props.localization_service;
+
+        /**
+         * The hash of key/value pairs that represent the variables passed in the route path
+         * @property pathVars
+         * @type {object}
+         */
+        this.pathVars = props.pathVars;
+
+        /**
+         * The hash of key/value pairs that represent the variables passed as query string parameters
+         * @property query
+         * @type {object}
+         */
+        this.query = props.query;
+
+        /**
+         * The title of the view to be rendered, if there is a view
+         * @property pageName
+         * @type {string}
+         */
+        this.pageName            = &#x27;&#x27;;
+        this.siteObj             = props.siteObj;
+        this.site                = props.site;
+        this.siteName            = props.siteName;
+        this.hostname            = SiteService.getHostWithProtocol(self.siteObj.hostname) || pb.config.siteRoot;
+
+        /**
+         * The referring URL
+         * @deprecated
+         * @property referer
+         * @type {string}
+         */
+        this.referer = this.req.headers.referer;
+
+        /**
+         * @property ts
+         * @type {TemplateService}
+         */
+        this.ts = this.getTemplateServiceInstance(props);
+
+        /**
+         * @property activeTheme
+         * @type {String}
+         */
+        this.activeTheme = props.activeTheme;
+
+        //build out a base service context that can be cloned and passed to any
+        //service objects
+        /**
+         * @property context
+         * @type {{req: Request, session: object, ls: Localization, ts: TemplateService, site: string, hostname: string, activeTheme: string, onlyThisSite: boolean, siteObj: object}}
+         */
+        this.context = {
+            req: this.req,
+            session: this.session,
+            ls: this.ls,
+            ts: this.ts,
+            site: this.site,
+            hostname: this.hostname,
+            activeTheme: this.activeTheme,
+            onlyThisSite: true,
+            siteObj: this.siteObj
+        };
+
+        //call the initSync function
+        this.initSync(props);
+
+        cb();
+    };
+
+    /**
+     * Provides a synchronous function means to initialize a controller.  It is
+     * meant to be called from the &quot;init&quot; function called by the request handler.
+     * @method initSync
+     * @param {Object} context See &quot;init&quot; for more details on properties
+     */
+    BaseController.prototype.initSync = function(/*context*/) {};
+
+    /**
+     * Creates a TemplateService instance
+     * @method getTemplateServiceInstance
+     * @param {Object} props
+     * @return {TemplateService}
+     */
+    BaseController.prototype.getTemplateServiceInstance = function(props) {
+        var self = this;
+
+        //create options
+        var tsOpts = {
+            ls: this.ls,
+            activeTheme: props.activeTheme,
+            site: this.site
+        };
+
+        //create instance
+        var ts = new pb.TemplateService(tsOpts);
+
+        //configure for common flags
+        var model = {
+
+            meta_lang: this.ls.language,
+
+            error_success: function(flag, cb) {
+                self.displayErrorOrSuccessCallback(flag, cb);
+            },
+
+            page_name: function(flag, cb) {
+                cb(null, self.getPageName());
+            },
+
+            localization_script: function(flag, cb) {
+                self.requiresClientLocalizationCallback(flag, cb);
+            },
+
+            analytics: function(flag, cb) {
+                pb.AnalyticsManager.onPageRender(self.req, self.session, self.ls, cb);
+            },
+
+            wysiwyg: function(flag, cb) {
+                var wysiwygId = util.uniqueId();
+
+                self.ts.registerLocal(&#x27;wys_id&#x27;, wysiwygId);
+                self.ts.load(&#x27;admin/elements/wysiwyg&#x27;, function(err, data) {
+                    cb(err, new pb.TemplateValue(data, false));
+                });
+            },
+
+            site_root: self.hostname,
+            site_name: self.siteName,
+
+            localized_alternate: function(flag, cb) {
+                self.onLocalizedAlternateFlagFound(props.routeLocalized, cb);
+            }
+        };
+        ts.registerModel(model);
+        return ts;
+    };
+
+    /**
+     * @method onLocalizedAlternateFlagFound
+     * @param {Boolean} routeLocalized
+     * @param {Function} cb
+     */
+    BaseController.prototype.onLocalizedAlternateFlagFound = function(routeLocalized, cb) {
+        if (!routeLocalized) {
+            return cb(null, &#x27;&#x27;);
+        }
+
+        var val = &#x27;&#x27;;
+        var self = this;
+        Object.keys(this.siteObj.supportedLocales).forEach(function(locale) {
+            var path = self.req.url;
+            var isLocalizedPath = !!self.pathVars.locale &amp;&amp; path.indexOf(self.pathVars.locale) &gt;= 0;
+            if (self.ls.language === locale &amp;&amp; !isLocalizedPath) {
+                //skip current language.  We don&#x27;t need to list it as an alternate
+                return;
+            }
+            var relationship = self.ls.language === locale ? &#x27;canonical&#x27; : &#x27;alternate&#x27;;
+
+            var urlOpts = {
+                hostname: self.hostname,
+                locale: undefined
+            };
+            if (self.ls.language === locale) {
+                path = path.replace(locale + &#x27;/&#x27;, &#x27;&#x27;).replace(locale, &#x27;&#x27;);
+            }
+            else if (isLocalizedPath) {
+                path = path.replace(self.pathVars.locale, locale);
+            }
+            else {
+                urlOpts.locale = locale;
+            }
+            var url = pb.UrlService.createSystemUrl(path, urlOpts);
+            val += &#x27;&lt;link rel=&quot;&#x27; + relationship + &#x27;&quot; hreflang=&quot;&#x27; + locale + &#x27;&quot; href=&quot;&#x27; + url + &#x27;&quot; /&gt;\n&#x27;;
+        });
+        cb(null, new pb.TemplateValue(val, false));
+    };
+
+    /**
+     * Retrieves a context object that contains the necessary information for
+     * service prototypes
+     * @method getServiceContext
+     * @return {Object}
+     */
+    BaseController.prototype.getServiceContext = function(){
+        return util.merge(this.context, {});
+    };
+
+    /**
+     *
+     * @method requiresClientLocalization
+     * @return {Boolean}
+     */
+    BaseController.prototype.requiresClientLocalization = function() {
+        return true;
+    };
+
+    /**
+     *
+     * @method requiresClientLocalizationCallback
+     * @param {String} flag
+     * @param {Function} cb
+     */
+    BaseController.prototype.requiresClientLocalizationCallback = function(flag, cb) {
+        var val = &#x27;&#x27;;
+        if (this.requiresClientLocalization()) {
+            val = pb.ClientJs.includeJS(&#x27;/api/localization/script&#x27;);
+        }
+        cb(null, new pb.TemplateValue(val, false));
+    };
+
+    /**
+     *
+     * @method formError
+     * @param {String} message The error message to be displayed
+     * @param {String} redirectLocation
+     * @param {Function} cb
+     */
+    BaseController.prototype.formError = function(message, redirectLocation, cb) {
+
+        this.session.error = message;
+        var uri = pb.UrlService.createSystemUrl(redirectLocation, { hostname: this.hostname });
+        cb(pb.RequestHandler.generateRedirect(uri));
+    };
+
+    /**
+     *
+     * @method displayErrorOrSuccessCallback
+     * @param {String} flag
+     * @param {Function} cb
+     */
+    BaseController.prototype.displayErrorOrSuccessCallback = function(flag, cb) {
+        if(this.session.error) {
+            var error = this.session.error;
+            delete this.session.error;
+            cb(null, new pb.TemplateValue(util.format(ALERT_PATTERN, &#x27;alert-danger&#x27;, this.ls.get(error)), false));
+        }
+        else if(this.session.success) {
+            var success = this.session.success;
+            delete this.session.success;
+            cb(null, new pb.TemplateValue(util.format(ALERT_PATTERN, &#x27;alert-success&#x27;, this.ls.get(success)), false));
+        }
+        else {
+            cb(null, &#x27;&#x27;);
+        }
+    };
+
+    /**
+     * Provides a page title.  This is picked up by the template engine when the
+     * ^page_name^ key is found in a template.
+     * @method getPageName
+     * @return {String} The page title
+     */
+    BaseController.prototype.getPageName = function() {
+        return this.pageName;
+    };
+
+    /**
+     * Sets the page title
+     * @method setPageName
+     * @param {String} pageName The desired page title
+     */
+    BaseController.prototype.setPageName = function(pageName) {
+        this.pageName = pageName;
+    };
+
+    /**
+     *
+     * @method getPostParams
+     * @param {Function} cb
+     */
+    BaseController.prototype.getPostParams = function(cb) {
+        var self = this;
+
+        this.getPostData(function(err, raw){
+            //Handle error
+            if (util.isError(err)) {
+                pb.log.error(&quot;BaseController.getPostParams encountered an error. ERROR[%s]&quot;, err.stack);
+                return cb(err, null);
+            }
+
+            //lookup encoding
+            var encoding = pb.BaseBodyParser.getContentEncoding(self.req);
+            encoding = ENCODING_MAPPING[encoding] ? ENCODING_MAPPING[encoding] : &#x27;utf8&#x27;;
+
+            //convert to string
+            var postParams = url.parse(&#x27;?&#x27; + raw.toString(encoding), true).query;
+
+            //In Node v6 a breaking change was introduced into the &quot;querystring&quot; module to prevent reserved words from
+            // being passed in as query string parameters and overriding prototype functions.
+            // This fix allows for users to continue on with V6 until another viable option comes along
+            postParams.hawOwnProperty = Object.prototype.hasOwnProperty;
+
+            cb(null, postParams);
+        });
+    };
+
+    /**
+     * Parses the incoming payload of a request as JSON formatted data.
+     * @method getJSONPostParams
+     * @param {Function} cb
+     */
+    BaseController.prototype.getJSONPostParams = function(cb) {
+        var self = this;
+
+        this.getPostData(function(err, raw){
+            //Handle error
+            if (util.isError(err)) {
+                pb.log.error(&quot;BaseController.getJSONPostParams encountered an error. ERROR[%s]&quot;, err.stack);
+                return cb(err, null);
+            }
+
+            //lookup encoding
+            var encoding = pb.BaseBodyParser.getContentEncoding(self.req);
+            encoding = ENCODING_MAPPING[encoding] ? ENCODING_MAPPING[encoding] : &#x27;utf8&#x27;;
+
+            var error      = null;
+            var postParams = null;
+            try {
+                postParams = JSON.parse(raw.toString(encoding));
+            }
+            catch(err) {
+                error = err;
+            }
+            cb(error, postParams);
+        });
+    };
+
+    /**
+     *
+     * @method getPostData
+     * @param {Function} cb
+     */
+    BaseController.prototype.getPostData = function(cb) {
+        var buffers     = [];
+        var totalLength = 0;
+
+        this.req.on(&#x27;data&#x27;, function (data) {
+            buffers.push(data);
+            totalLength += data.length;
+
+            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+            if (totalLength &gt; 1e6) {
+                // FLOOD ATTACK OR FAULTY CLIENT, NUKE REQUEST
+                var err = new Error(&quot;POST limit reached! Maximum of 1MB.&quot;);
+                err.code = 400;
+                cb(err, null);
+            }
+        });
+        this.req.on(&#x27;end&#x27;, function () {
+
+            //create one big buffer.
+            var body = Buffer.concat (buffers, totalLength);
+            cb(null, body);
+        });
+    };
+
+    /**
+     *
+     * @method hasRequiredParams
+     * @param {Object} queryObject
+     * @param {Array} requiredParameters
+     */
+    BaseController.prototype.hasRequiredParams = function(queryObject, requiredParameters) {
+
+        for (var i = 0; i &lt; requiredParameters.length; i++) {
+
+            if (typeof queryObject[requiredParameters[i]] === &#x27;undefined&#x27; || queryObject[requiredParameters[i]].length === 0) {
+                return this.ls.g(&#x27;generic.FORM_INCOMPLETE&#x27;);
+            }
+        }
+
+        if(queryObject.password &amp;&amp; queryObject.confirm_password) {
+            if(queryObject.password !== queryObject.confirm_password) {
+                return this.ls.g(&#x27;users.PASSWORD_MISMATCH&#x27;);
+            }
+        }
+
+        return null;
+    };
+
+    /**
+     *
+     * @method setFormFieldValues
+     * @param {Object} post
+     */
+    BaseController.prototype.setFormFieldValues = function(post) {
+        this.session.fieldValues = post;
+        return this.session;
+    };
+
+    /**
+     *
+     * @method checkForFormRefill
+     * @param {String} result
+     * @param {Function} cb
+     */
+    BaseController.prototype.checkForFormRefill = function(result, cb) {
+        if(this.session.fieldValues) {
+            var content    = util.format(FORM_REFILL_PATTERN, JSON.stringify(this.session.fieldValues));
+            var formScript = pb.ClientJs.getJSTag(content);
+            result         = result.concat(formScript);
+
+            delete this.session.fieldValues;
+        }
+
+        cb(null, result);
+    };
+
+    /**
+     * Sanitizes an object.  This function is handy for incoming post objects.  It
+     * iterates over each field.  If the field is a string value it will be
+     * sanitized based on the default sanitization rules
+     * (BaseController.getDefaultSanitizationRules) or those provided by the call
+     * to BaseController.getSanitizationRules.
+     * @method sanitizeObject
+     * @param {Object} obj
+     */
+    BaseController.prototype.sanitizeObject = function(obj) {
+        if (!util.isObject(obj)) {
+            pb.log.warn(&quot;BaseController.sanitizeObject was not passed an object.&quot;);
+            return;
+        }
+
+        var rules = this.getSanitizationRules();
+        Object.keys(obj).forEach(function(prop) {
+            if (util.isString(obj[prop])) {
+
+                var config = rules[prop];
+                obj[prop] = pb.BaseObjectService.sanitize(obj[prop], config);
+            }
+        });
+    };
+
+    /**
+     *
+     * @method getSanitizationRules
+     * @return {Object}
+     */
+    BaseController.prototype.getSanitizationRules = function() {
+        return {};
+    };
+
+    /**
+     * The sanitization rules that apply to Pages and Articles
+     * @deprecated Since 0.4.1
+     * @static
+     * @method getContentSanitizationRules
+     */
+    BaseController.getContentSanitizationRules = function() {
+        return pb.BaseObjectService.getContentSanitizationRules();
+    };
+
+    /**
+     * @deprecated Since 0.4.1
+     * @static
+     * @method getDefaultSanitizationRules
+     */
+    BaseController.getDefaultSanitizationRules = function() {
+        return pb.BaseObjectService.getDefaultSanitizationRules();
+    };
+
+    /**
+     *
+     * @deprecated Since 0.4.1
+     * @static
+     * @method sanitize
+     * @param {String} value
+     * @param {Object} [config]
+     */
+    BaseController.sanitize = function(value, config) {
+        return pb.BaseObjectService.sanitize(value, config);
+    };
+
+    /**
+     * Redirects a request to a different location
+     * @method redirect
+     * @param {String} location
+     * @param {Function} cb
+     */
+    BaseController.prototype.redirect = function(location, cb){
+        cb(pb.RequestHandler.generateRedirect(location));
+    };
+
+    /**
+     * Generates an generic API response object
+     * @static
+     * @method apiResponse
+     * @return {String} JSON
+     */
+    BaseController.apiResponse = function(cd, msg, dta) {
+        if(typeof msg === &#x27;undefined&#x27;) {
+            switch(cd) {
+                case BaseController.API_FAILURE:
+                    msg = &#x27;FAILURE&#x27;;
+                    break;
+                case BaseController.API_SUCCESS:
+                    msg = &#x27;SUCCESS&#x27;;
+                    break;
+                default:
+                    msg = &#x27;&#x27;;
+                    break;
+            }
+        }
+        if(typeof dta === &#x27;undefined&#x27;) {
+            dta = null;
+        }
+        var response = {code: cd, message: msg, data: dta};
+        return JSON.stringify(response);
+    };
+    return BaseController;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

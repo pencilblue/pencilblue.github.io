@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.7.0</em>
+            <em>API Docs for: 0.8.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -77,6 +77,7 @@
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorUtils.html">ErrorUtils</a></li>
                                 <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
@@ -97,6 +98,7 @@
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
                                 <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/Middleware.html">Middleware</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
                                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
@@ -115,7 +117,9 @@
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
                                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RegExpUtils.html">RegExpUtils</a></li>
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/Router.html">Router</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
                                 <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
@@ -152,6 +156,7 @@
                                 <li><a href="../classes/View Controller.html">View Controller</a></li>
                                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
                                 <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/XmlErrorFormatter.html">XmlErrorFormatter</a></li>
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
@@ -292,9 +297,10 @@
                                 <a href="#method_getErrorMessage">getErrorMessage</a>
 
                             </li>
-                            <li class="index-item method inherited">
+                            <li class="index-item method deprecated inherited">
                                 <a href="#method_getJSONPostParams">getJSONPostParams</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method inherited">
                                 <a href="#method_getPageName">getPageName</a>
@@ -482,7 +488,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_checkForFormRefill">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l554"><code>controllers&#x2F;base_controller.js:554</code></a>
+        <a href="../files/controllers_base_controller.js.html#l555"><code>controllers&#x2F;base_controller.js:555</code></a>
         </p>
 
 
@@ -759,7 +765,7 @@
 
 
 </div>
-<div id="method_getJSONPostParams" class="method item inherited">
+<div id="method_getJSONPostParams" class="method item deprecated inherited">
     <h3 class="name"><code>getJSONPostParams</code></h3>
 
         <div class="args">
@@ -771,6 +777,7 @@
         </div>
 
 
+        <span class="flag deprecated" title="Since 0.8.0.  Will be removed in v1.0">deprecated</span>
 
 
 
@@ -784,6 +791,7 @@
         </p>
 
 
+            <p>Deprecated: Since 0.8.0.  Will be removed in v1.0</p>
 
     </div>
 
@@ -877,7 +885,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getPostData">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l491"><code>controllers&#x2F;base_controller.js:491</code></a>
+        <a href="../files/controllers_base_controller.js.html#l492"><code>controllers&#x2F;base_controller.js:492</code></a>
         </p>
 
 
@@ -978,7 +986,7 @@
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_getSanitizationRules">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l597"><code>controllers&#x2F;base_controller.js:597</code></a>
+        <a href="../files/controllers_base_controller.js.html#l598"><code>controllers&#x2F;base_controller.js:598</code></a>
         </p>
 
 
@@ -1169,7 +1177,7 @@ service prototypes</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_hasRequiredParams">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l520"><code>controllers&#x2F;base_controller.js:520</code></a>
+        <a href="../files/controllers_base_controller.js.html#l521"><code>controllers&#x2F;base_controller.js:521</code></a>
         </p>
 
 
@@ -1423,7 +1431,7 @@ meant to be called from the &quot;init&quot; function called by the request hand
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_redirect">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l637"><code>controllers&#x2F;base_controller.js:637</code></a>
+        <a href="../files/controllers_base_controller.js.html#l638"><code>controllers&#x2F;base_controller.js:638</code></a>
         </p>
 
 
@@ -1643,7 +1651,7 @@ meant to be called from the &quot;init&quot; function called by the request hand
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_sanitizeObject">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l572"><code>controllers&#x2F;base_controller.js:572</code></a>
+        <a href="../files/controllers_base_controller.js.html#l573"><code>controllers&#x2F;base_controller.js:573</code></a>
         </p>
 
 
@@ -1700,7 +1708,7 @@ to BaseController.getSanitizationRules.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/BaseController.html#method_setFormFieldValues">BaseController</a>:
-        <a href="../files/controllers_base_controller.js.html#l544"><code>controllers&#x2F;base_controller.js:544</code></a>
+        <a href="../files/controllers_base_controller.js.html#l545"><code>controllers&#x2F;base_controller.js:545</code></a>
         </p>
 
 

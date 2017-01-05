@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.7.0</em>
+            <em>API Docs for: 0.8.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -77,6 +77,7 @@
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorUtils.html">ErrorUtils</a></li>
                                 <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
@@ -97,6 +98,7 @@
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
                                 <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/Middleware.html">Middleware</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
                                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
@@ -115,7 +117,9 @@
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
                                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RegExpUtils.html">RegExpUtils</a></li>
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/Router.html">Router</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
                                 <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
@@ -152,6 +156,7 @@
                                 <li><a href="../classes/View Controller.html">View Controller</a></li>
                                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
                                 <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/XmlErrorFormatter.html">XmlErrorFormatter</a></li>
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
@@ -224,7 +229,8 @@
 &#x27;use strict&#x27;;
 
 //dependencies
-var util              = require(&#x27;../util.js&#x27;);
+var util              = require(&#x27;../util&#x27;);
+var ErrorUtils        = require(&#x27;../error/error_utils&#x27;);
 var async             = require(&#x27;async&#x27;);
 var AsyncEventEmitter = require(&#x27;async-eventemitter&#x27;);
 var Sanitizer         = require(&#x27;sanitize-html&#x27;);
@@ -974,37 +980,19 @@ module.exports = function(pb) {
      * @return {Error}
      */
     BaseObjectService.validationError = function(validationFailures) {
-        var error = new Error(&#x27;Validation Failure&#x27;);
-        error.code = 400;
-        error.validationErrors = validationFailures;
-        return error;
-    };
-
-    /**
-     * Creates a new Error representative of an action that was performed that
-     * the current principal did not have authroization to perform.
-     * @static
-     * @method forbiddenError
-     * @param {String} [message]
-     * @return {Error}
-     */
-    BaseObjectService.forbiddenError = function(message) {
-        var error = new Error(message || &#x27;Forbidden&#x27;);
-        error.code = 403;
-        return error;
+        return ErrorUtils.badRequest({message: &#x27;Validation Failure&#x27;, validationErrors: validationFailures});
     };
 
     /**
      * Creates a new Error representative of the inability to locate the requested resource
+     * @deprecated Will be removed in 1.0
      * @static
      * @method notFound
      * @param {String} [message]
      * @return {Error}
      */
     BaseObjectService.notFound = function(message) {
-        var error = new Error(message || &#x27;Not Found&#x27;);
-        error.code = 404;
-        return error;
+        return ErrorUtils.notFound(message);
     };
 
     /**

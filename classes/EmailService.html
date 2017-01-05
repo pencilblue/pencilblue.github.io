@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.7.0</em>
+            <em>API Docs for: 0.8.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -77,6 +77,7 @@
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorUtils.html">ErrorUtils</a></li>
                                 <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
@@ -97,6 +98,7 @@
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
                                 <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/Middleware.html">Middleware</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
                                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
@@ -115,7 +117,9 @@
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
                                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RegExpUtils.html">RegExpUtils</a></li>
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/Router.html">Router</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
                                 <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
@@ -152,6 +156,7 @@
                                 <li><a href="../classes/View Controller.html">View Controller</a></li>
                                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
                                 <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/XmlErrorFormatter.html">XmlErrorFormatter</a></li>
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
@@ -249,7 +254,7 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#method_sendFromTemplate">sendFromTemplate</a>
+                                <a href="#method_sendFromLayout">sendFromLayout</a>
 
                             </li>
                             <li class="index-item method">
@@ -484,8 +489,8 @@
 
 
 </div>
-<div id="method_sendFromTemplate" class="method item">
-    <h3 class="name"><code>sendFromTemplate</code></h3>
+<div id="method_sendFromLayout" class="method item">
+    <h3 class="name"><code>sendFromLayout</code></h3>
 
         <div class="args">
             <span class="paren">(</span><ul class="args-list inline commas">
@@ -508,7 +513,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_email.js.html#l63"><code>include&#x2F;email.js:63</code></a>
+        <a href="../files/include_email.js.html#l87"><code>include&#x2F;email.js:87</code></a>
         </p>
 
 
@@ -516,7 +521,7 @@
     </div>
 
     <div class="description">
-        <p>Retrieves a template and sends it as an email</p>
+        <p>Uses an HTML layout and sends it as an email</p>
 
     </div>
 
@@ -530,7 +535,7 @@
 
 
                     <div class="param-description">
-                        <p>Object containing the email settings and template name</p>
+                        <p>Object containing the email settings and layout</p>
 
                     </div>
 
@@ -576,7 +581,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/include_email.js.html#l87"><code>include&#x2F;email.js:87</code></a>
+        <a href="../files/include_email.js.html#l63"><code>include&#x2F;email.js:63</code></a>
         </p>
 
 
@@ -584,7 +589,7 @@
     </div>
 
     <div class="description">
-        <p>Uses an HTML layout and sends it as an email</p>
+        <p>Retrieves a template and sends it as an email</p>
 
     </div>
 

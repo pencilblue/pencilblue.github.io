@@ -39,6 +39,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "DocumentCreator",
         "EmailService",
         "ErrorFormatters",
+        "ErrorUtils",
         "ErrorViewController",
         "ErrorsOverTime",
         "FSEntityService",
@@ -60,6 +61,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "MediaService",
         "MediaServiceV2",
         "MemoryEntityService",
+        "Middleware",
         "MongoCommandBroker",
         "MongoMediaProvider",
         "MongoRegistrationProvider",
@@ -78,7 +80,9 @@ YUI.add("yuidoc-meta", function(Y) {
         "RedisCommandBroker",
         "RedisRegistrationProvider",
         "RedisSessionStore",
+        "RegExpUtils",
         "RequestHandler",
+        "Router",
         "SectionService",
         "SecurityService",
         "ServerInitializer",
@@ -115,6 +119,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "View Controller",
         "VimeoMediaRenderer",
         "VineMediaRenderer",
+        "XmlErrorFormatter",
         "YouTubeMediaRenderer"
     ],
     "modules": [

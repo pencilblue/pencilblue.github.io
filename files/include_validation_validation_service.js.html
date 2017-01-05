@@ -17,7 +17,7 @@
                 <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.7.0</em>
+            <em>API Docs for: 0.8.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -77,6 +77,7 @@
                                 <li><a href="../classes/EmailService.html">EmailService</a></li>
                                 <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
                                 <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorUtils.html">ErrorUtils</a></li>
                                 <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
                                 <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
                                 <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
@@ -97,6 +98,7 @@
                                 <li><a href="../classes/MediaService.html">MediaService</a></li>
                                 <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
                                 <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/Middleware.html">Middleware</a></li>
                                 <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
                                 <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
                                 <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
@@ -115,7 +117,9 @@
                                 <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
                                 <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
                                 <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RegExpUtils.html">RegExpUtils</a></li>
                                 <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/Router.html">Router</a></li>
                                 <li><a href="../classes/SectionService.html">SectionService</a></li>
                                 <li><a href="../classes/SecurityService.html">SecurityService</a></li>
                                 <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
@@ -152,6 +156,7 @@
                                 <li><a href="../classes/View Controller.html">View Controller</a></li>
                                 <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
                                 <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/XmlErrorFormatter.html">XmlErrorFormatter</a></li>
                                 <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
                             </ul>
                 
@@ -224,6 +229,7 @@
 &#x27;use strict&#x27;;
 
 //dependencies
+var _        = require(&#x27;lodash&#x27;);
 var semver   = require(&#x27;semver&#x27;);
 var ObjectID = require(&#x27;mongodb&#x27;).ObjectID;
 var util     = require(&#x27;../util.js&#x27;);
@@ -264,7 +270,7 @@ module.exports = function ValidationModule(pb) {
      * @property
      * @type {RegExp}
      */
-    var EMAIL_REGEX          = /^(([^&lt;&gt;()[\]\\.,;:\s@\&quot;]+(\.[^&lt;&gt;()[\]\\.,;:\s@\&quot;]+)*)|(\&quot;.+\&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var EMAIL_REGEX          = /^[-a-z0-9~!$%^&amp;*_=+}{\&#x27;?]+(\.[-a-z0-9~!$%^&amp;*_=+}{\&#x27;?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
 
     /**
      * A pattern to validate a fully qualified URL
@@ -577,7 +583,7 @@ module.exports = function ValidationModule(pb) {
         }
 
         var parsed = parseFloat(val);
-        if (strict &amp;&amp; val !== parsed) {
+        if ((Math.floor(parsed) === val) || (strict &amp;&amp; val !== parsed)) {
             return false;
         }
         return val == parsed;
@@ -612,15 +618,15 @@ module.exports = function ValidationModule(pb) {
     };
 
     /**
-     * Validates that the value is null, defined, an empty object, or an empty
-     * string.
+     * Validates that the value is null, defined, an empty object, and empty
+     * array or an empty string.
      * @static
      * @method isEmpty
      * @param {*} val The value under test
      * @return {Boolean} TRUE if the value is valid, FALSE if not
      */
     ValidationService.isEmpty = function(val) {
-        return val === null || val === undefined || val === &#x27;&#x27; || val === {};
+        return val === null || val === undefined || val === &#x27;&#x27; || _.isEqual(val, {}) || _.isEqual(val, []);
     };
 
     /**

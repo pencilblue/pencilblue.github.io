@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include/service/entities/custom_object_service.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.7.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include/service/entities/custom_object_service.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Copyright (C) 2016  PencilBlue, LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+&#x27;use strict&#x27;;
+
+//dependencies
+var util        = require(&#x27;../../util.js&#x27;);
+var async       = require(&#x27;async&#x27;);
+var HtmlEncoder = require(&#x27;htmlencode&#x27;);
+
+module.exports = function CustomObjectServiceModule(pb) {
+
+    /**
+     * Provides a service to do the heavy lifting of retrieving custom objects with
+     * the ability to eagerly fetch the related objects.
+     * @class CustomObjectService
+     * @constructor
+     */
+    function CustomObjectService(siteUid, onlyThisSite) {
+        this.typesCache = {};
+        this.typesNametoId = {};
+
+        this.site = pb.SiteService.getCurrentSite(siteUid);
+        this.siteQueryService = new pb.SiteQueryService({site: this.site, onlyThisSite: onlyThisSite});
+    }
+
+    //statics
+    /**
+     * @static
+     * @property CUST_OBJ_COLL
+     * @type {String}
+     */
+    CustomObjectService.CUST_OBJ_COLL = &#x27;custom_object&#x27;;
+
+    /**
+     * @static
+     * @property CUST_OBJ_TYPE_COLL
+     * @type {String}
+     */
+    CustomObjectService.CUST_OBJ_TYPE_COLL = &#x27;custom_object_type&#x27;;
+
+    /**
+     * @static
+     * @property CUST_OBJ_SORT_COLL
+     * @type {String}
+     */
+    CustomObjectService.CUST_OBJ_SORT_COLL = &#x27;custom_object_sort&#x27;;
+
+    //constants
+    /**
+     *
+     * @private
+     * @static
+     * @property NAME_FIELD
+     * @type {String}
+     */
+    var NAME_FIELD = &#x27;name&#x27;;
+
+    /**
+     *
+     * @private
+     * @static
+     * @property PEER_OBJECT_TYPE
+     * @type {String}
+     */
+    var PEER_OBJECT_TYPE = &#x27;peer_object&#x27;;
+
+    /**
+     *
+     * @private
+     * @static
+     * @property CHILD_OBJECTS_TYPE
+     * @type {String}
+     */
+    var CHILD_OBJECTS_TYPE = &#x27;child_objects&#x27;;
+
+    /**
+     *
+     * @private
+     * @static
+     * @property CUST_OBJ_TYPE_PREFIX
+     * @type {String}
+     */
+    var CUST_OBJ_TYPE_PREFIX = &#x27;custom:&#x27;;
+
+    /**
+     *
+     * @private
+     * @static
+     * @property AVAILABLE_FIELD_TYPES
+     * @type {Object}
+     */
+    var AVAILABLE_FIELD_TYPES = Object.freeze({
+        &#x27;text&#x27;: pb.validation.isStr,
+        &#x27;number&#x27;: pb.validation.isNum,
+        &#x27;wysiwyg&#x27;: pb.validation.isStr,
+        &#x27;boolean&#x27;: pb.validation.isBool,
+        &#x27;date&#x27;: pb.validation.isDate,
+        &#x27;peer_object&#x27;: pb.validation.isIdStr,
+        &#x27;child_objects&#x27;: pb.validation.isArray
+    });
+
+    /**
+     *
+     * @private
+     * @static
+     * @property AVAILABLE_REFERENCE_TYPES
+     * @type {Object}
+     */
+    var AVAILABLE_REFERENCE_TYPES = [
+        &#x27;article&#x27;,
+        &#x27;page&#x27;,
+        &#x27;section&#x27;,
+        &#x27;topic&#x27;,
+        &#x27;media&#x27;,
+        &#x27;user&#x27;
+    ];
+
+    /**
+     * Validates and persists a sort ordering for custom objects of a specific type
+     * @method saveSortOrdering
+     * @param {Object} sortOrder
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.saveSortOrdering = function(sortOrder, cb) {
+        if (!pb.validation.isObj(sortOrder, true)) {
+            throw new Error(&#x27;The custom object type must be a valid object.&#x27;);
+        }
+
+        sortOrder.object_type = CustomObjectService.CUST_OBJ_SORT_COLL;
+        this.validateSortOrdering(sortOrder, function(err, errors) {
+            if (util.isError(err) || errors.length &gt; 0) {
+                return cb(err, errors);
+            }
+
+            var dao = new pb.DAO();
+            dao.save(sortOrder, cb);
+        });
+    };
+
+    /**
+     * Validates a sort ordering for custom objects of a specific type
+     * @method validateSortOrdering
+     * @param {Object} sortOrder
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error, if occurred and the second is an array of validation error objects.
+     * If the array is empty them it is safe to assume that the object is valid.
+     */
+    CustomObjectService.prototype.validateSortOrdering = function(sortOrder, cb) {
+        if (!util.isObject(sortOrder)) {
+            throw new Error(&#x27;The sortOrder parameter must be a valid object&#x27;);
+        }
+
+        //validate sorted IDs
+        var errors = [];
+        if (!util.isArray(sortOrder.sorted_objects)) {
+            errors.push(CustomObjectService.err(&#x27;sorted_objects&#x27;, &#x27;The sorted_objects property must be an array of IDs&#x27;));
+        }
+        else {
+            if (sortOrder.length === 0) {
+                errors.push(CustomObjectService.err(&#x27;sorted_objects&#x27;, &#x27;The sorted objects ID list cannot be empty&#x27;));
+            }
+
+            for (var i = 0; i &lt; sortOrder.length; i++) {
+
+                if (!pb.validation.isIdStr(sortOrder[i], true)) {
+                    errors.push(CustomObjectService.err(&#x27;sorted_objects.&#x27;+i, &#x27;An invalid ID was found in the sorted_objects array at index &#x27;+i));
+                }
+            }
+        }
+
+        //validate that an object type Id is present
+        if (!pb.validation.isIdStr(sortOrder.custom_object_type, true)) {
+            errors.push(CustomObjectService.err(&#x27;custom_object_type&#x27;, &#x27;An invalid ID value was passed for the custom_object_type property&#x27;));
+        }
+
+        //validate an object type exists
+        if (sortOrder.object_type !== CustomObjectService.CUST_OBJ_SORT_COLL) {
+            errors.push(CustomObjectService.err(&#x27;object_type&#x27;, &#x27;The object_type value must be set to: &#x27;+CustomObjectService.CUST_OBJ_SORT_COLL));
+        }
+
+        cb(null, errors);
+    };
+
+    /**
+     * Retrieves custom objects of the specified type based on the specified options.
+     * @method findByTypeWithOrdering
+     * @param {Object|String} custObjType The custom object type descriptor object or the ID
+     * string of the type descriptor.
+     * @param {Object} [options={}] The filters and other flags.  The options object
+     * supports the same fields as the DAO.query function.
+     * @param {Integer} [options.fetch_depth=0] The depth indicates how many levels
+     * of referenced child and peer objects to load.  At the bottom level the
+     * references will be left as ID strings.
+     * @param {Function} cb A callback that takes two parameters. The first is any
+     * error, if occurred. The second is an array of objects sorted by the ordering
+     * assigned for the custom object or by name if no ordering exists.
+     */
+    CustomObjectService.prototype.findByTypeWithOrdering = function(custObjType, options, cb) {
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+        else if (!util.isObject(options)) {
+            options = {};
+        }
+
+        var sortOrder   = null;
+        var custObjects = null;
+        var self        = this;
+        var tasks       = [
+
+            //load objects
+            function(callback) {
+                self.findByType(custObjType, options, function(err, custObjectDocs) {
+                    custObjects = custObjectDocs;
+                    callback(err);
+                });
+            },
+
+            //load ordering
+            function(callback) {
+                self.loadSortOrdering(custObjType, function(err, ordering) {
+                    sortOrder = ordering;
+                    callback(err);
+                });
+            }
+        ];
+        async.parallel(tasks, function(err) {
+            custObjects = CustomObjectService.applyOrder(custObjects, sortOrder);
+            cb(err, custObjects);
+        });
+    };
+
+    /**
+     * Coordinates the eager fetching of peer and child objects for the specified custom object.
+     * @method fetchChildren
+     * @param {Object} custObj The custom object to inspect
+     * @param {Object} options The options specified for the retrieval
+     * @param {Integer} options.fetch_depth The number of levels of peer and child
+     * objects to retrieve
+     * @param {Object|String} custObjType The custom object type for the specified
+     * custom object.  This can also be the ID string value.
+     * @param {Function} cb A callback function that takes two parameters. The
+     * first is an Error, if occurred. The second is the specified custom object.
+     */
+    CustomObjectService.prototype.fetchChildren = function(custObj, options, custObjType, cb) {
+        if (!util.isObject(custObj) || !util.isObject(options)) {
+            throw new Error(&#x27;The custObj and options parameters must be an objects&#x27;);
+        }
+        else if (util.isFunction(custObjType)) {
+            cb          = custObjType;
+            custObjType = null;
+        }
+        else if (!pb.validation.isInt(options.fetch_depth, true, true) || options.fetch_depth &lt;= 0) {
+            return cb(null, custObj);
+        }
+
+        //log what we are doing. this shit gets confusing
+        if (pb.log.isSilly()) {
+            pb.log.silly(&#x27;CustomObjectService: Fetching children for [%s][%s] at depth:[%d]&#x27;, custObj.type, custObj.name, options.fetch_depth);
+        }
+
+        //private function to retrieve the custom object type if not available
+        var self           = this;
+        var getCustObjType = function(type, cb) {
+            if (util.isObject(type)) {
+                return cb(null, type);
+            }
+            else if (self.typesCache[type]) {
+                return cb(null, self.typesCache[type]);
+            }
+            else if (self.typesNametoId[type]) {
+                return cb(null, self.typesCache[self.typesNametoId[type]]);
+            }
+            else if (!type) {
+                type = custObj.type;
+            }
+
+            //build out the where clause
+            var where = null;
+            if (pb.validation.isIdStr(type, true)) {
+                where = pb.DAO.getIdWhere(type);
+            }
+            else {
+                where = {
+                    name: type
+                };
+            }
+            self.loadTypeBy(where, function(err, custObjType) {
+                if (util.isObject(custObjType)) {
+                    self.typesCache[type] = custObjType;
+                    self.typesNametoId[custObjType.name] = custObjType[pb.DAO.getIdField()];
+                }
+                cb(err, custObjType);
+            });
+        };
+
+        //loads up a peer object
+        var loadPeerObject = function(id, objType, cb) {
+            if (!pb.validation.isIdStr(id, true)) {
+                return cb(null, null);
+            }
+
+            //we must determine if we are loading a regular object or a custom object
+            if (CustomObjectService.isCustomObjectType(objType)) {
+                getCustObjType(CustomObjectService.getCustTypeSimpleName(objType), function(err, type) {
+                    if (util.isError(err)) {
+                        return cb(err);
+                    }
+                    self.loadById(id, {fetch_depth: options.fetch_depth - 1}, cb);
+                });
+            }
+            else {
+                //we know that we are a system object so we resort to DAO
+                var dao = new pb.DAO();
+                dao.loadById(id, objType, cb);
+            }
+        };
+
+        //load up child objects
+        var loadChildObjects = function(ids, objType, cb) {
+            if (!util.isArray(ids) || ids === []) {
+                return cb(null, []);
+            }
+
+            //we must determine if we are loading custom objects or regular system objects
+            if (CustomObjectService.isCustomObjectType(objType)) {
+                getCustObjType(CustomObjectService.getCustTypeSimpleName(objType), function(err, type) {
+                    if (util.isError(err)) {
+                        return cb(err);
+                    }
+
+                    var opts = {
+                        where: pb.DAO.getIdInWhere(ids),
+                        fetch_depth: options.fetch_depth - 1
+                    };
+                    self.findByType(type, opts, cb);
+                });
+            }
+            else {
+
+                var opts = { where: pb.DAO.getIdInWhere(ids) };
+                var dao  = new pb.DAO();
+                dao.q(objType, opts, cb);
+            }
+        };
+
+        //make sure we have the type for the object passed in
+        getCustObjType(custObjType, function(err, custObjType) {
+            if (util.isError(err)) {
+               return cb(err);
+            }
+            else if (util.isNullOrUndefined(custObjType)) {
+                return cb(new Error(&#x27;An invalid custom object type: &#x27; + custObjType + &#x27; was found.&#x27;));
+            }
+
+            var tasks = util.getTasks(Object.keys(custObjType.fields), function(fieldNames, i) {
+                return function(callback) {
+
+                    var field = custObjType.fields[fieldNames[i]];
+                    if (!CustomObjectService.isReferenceFieldType(field.field_type)) {
+                        return callback();
+                    }
+
+                    //load a peer object
+                    if (field.field_type === PEER_OBJECT_TYPE) {
+
+                        //load and set the peer object
+                        loadPeerObject(custObj[fieldNames[i]], field.object_type, function(err, peerObj) {
+                            if (util.isObject(peerObj)) {
+                                custObj[fieldNames[i]] = peerObj;
+                            }
+                            callback(err);
+                        });
+                    }//load child objects
+                    else if (field.field_type === CHILD_OBJECTS_TYPE) {
+
+                        //load and set the child objects
+                        loadChildObjects(custObj[fieldNames[i]], field.object_type, function(err, childObjs) {
+                             if (util.isArray(childObjs)) {
+
+                                 //apply the original ordering to the fields.  The
+                                 //DB does not promise to provide the correct ordering.
+                                 var sortOrder = {
+                                     sorted_objects: custObj[fieldNames[i]]
+                                 };
+                                 custObj[fieldNames[i]] = CustomObjectService.applyOrder(childObjs, sortOrder);
+                             }
+                            callback(err);
+                        });
+                    }
+                    else {
+                        callback(new Error(&#x27;An invalid field type was provided: &#x27;+field.field_type));
+                    }
+                };
+            });
+            async.series(tasks, function(err) {
+                cb(err, custObj);
+            });
+        });
+    };
+
+    /**
+     * Loads an ordering object for a specific custom object type.
+     * @method loadSortOrdering
+     * @param {Object|String} custObjType
+     * @param {Function} cb A callback that takes two parameters.  The first is an
+     * error, if occurred.  The second is the sort ordering object if found.
+     */
+    CustomObjectService.prototype.loadSortOrdering = function(custObjType, cb) {
+        if (util.isObject(custObjType)) {
+            custObjType = custObjType[pb.DAO.getIdField()] + &#x27;&#x27;;
+        }
+        else if (!util.isString(custObjType)) {
+            throw new Error(&#x27;An invalid custom object type was provided: &#x27;+(typeof custObjType)+&#x27;:&#x27;+custObjType);
+        }
+
+        var dao = new pb.DAO();
+        dao.loadByValue(&#x27;custom_object_type&#x27;, custObjType, CustomObjectService.CUST_OBJ_SORT_COLL, cb);
+    };
+
+    /**
+     * Finds custom objects by the specified type.
+     * @method findByType
+     * @param {Object|String} type The custom object type object or the ID of the
+     * object as a string
+     * @param {Object} [options] See DAO.q()
+     * @param {Function} cb A callback that takes two arguments. The first is an
+     * error, if occurred.  The second is an array of custom objects that match the
+     * specified criteria.
+     */
+    CustomObjectService.prototype.findByType = function(type, options, cb) {
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+        else if (!util.isObject(options)) {
+            options = {};
+        }
+
+        //ensure a where clause
+        if (!util.isObject(options.where)) {
+            options.where = {};
+        }
+
+        var typeStr = type;
+        if (util.isObject(type)) {
+            typeStr = type[pb.DAO.getIdField()] + &#x27;&#x27;;
+        }
+        options.where.type = typeStr;
+
+        var self = this;
+        self.siteQueryService.q(CustomObjectService.CUST_OBJ_COLL, options, function(err, custObjs) {
+            if (util.isArray(custObjs)) {
+
+                var tasks = util.getTasks(custObjs, function(custObjs, i) {
+                    return function(callback) {
+                        self.fetchChildren(custObjs[i], options, type, callback);
+                    };
+                });
+                async.series(tasks, cb);
+                return;
+            }
+            cb(err, custObjs);
+        });
+    };
+
+    /**
+     * Retrieves all of the custom object types in the system
+     * @method findTypes
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error, if occurred.  The second is an array of custom object type objects.
+     */
+    CustomObjectService.prototype.findTypes = function(cb) {
+
+        var opts = {
+            where: pb.DAO.ANYWHERE,
+            select: pb.DAO.PROJECT_ALL,
+            order: [[NAME_FIELD, pb.DAO.ASC]]
+        };
+
+        this.siteQueryService.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, custObjTypes) {
+            if (util.isArray(custObjTypes)) {
+                //currently, mongo cannot do case-insensitive sorts.  We do it manually
+                //until a solution for https://jira.mongodb.org/browse/SERVER-90 is merged.
+                custObjTypes.sort(function(a, b) {
+                    var x = a.name.toLowerCase();
+                    var y = b.name.toLowerCase();
+
+                    return ((x &lt; y) ? -1 : ((x &gt; y) ? 1 : 0));
+                });
+            }
+            cb(err, custObjTypes);
+        });
+    };
+
+    /**
+     * Retrieves a count based the specified criteria and type
+     * @method countByType
+     * @param {Object|String} type The custom object type object or ID string
+     * @param {Object} [where] The criteria for which objects to count
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error, if occurred. The second is the number of objects that match the
+     * specified criteria.
+     */
+    CustomObjectService.prototype.countByType = function(type, where, cb) {
+        if (util.isFunction(where)) {
+            cb = where;
+            where = {};
+        }
+        else if (!util.isObject(where)) {
+            where = {};
+        }
+
+        var typeStr = type;
+        if (util.isObject(type)) {
+            typeStr = type[pb.DAO.getIdField()] + &#x27;&#x27;;
+        }
+        where.type = typeStr;
+
+        var dao = new pb.DAO();
+        dao.count(CustomObjectService.CUST_OBJ_COLL, where, cb);
+    };
+
+    /**
+     * Loads a custom object by ID
+     * @method loadById
+     * @param {ObjectID|String} id
+     * @param {Object} [options]
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.loadById = function(id, options, cb) {
+        this.loadBy(undefined, pb.DAO.getIdWhere(id), options, cb);
+    };
+
+    /**
+     * Loads a custom object by name
+     * @method loadByName
+     * @param {String} type The ID string of the custom object type
+     * @param {String} name The unique name of the custom object
+     * @param {Object} [options]
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.loadByName = function(type, name, options, cb) {
+        var where = {};
+        where[NAME_FIELD] = name;
+        this.loadBy(type, where, options, cb);
+    };
+
+    /**
+     * Loads a custom object by the specified where criteria
+     * @method loadBy
+     * @param {String|Null} type
+     * @param {Object} where
+     * @param {Object} [options]
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.loadBy = function(type, where, options, cb) {
+        if (!pb.validation.isIdStr(type, false) || !pb.validation.isObj(where, true) || pb.validation.isEmpty(where)) {
+            throw new Error(&#x27;The type, where must be provided in order to load a custom object&#x27;);
+        }
+        else if (util.isFunction(options)) {
+            cb      = options;
+            options = {};
+        }
+        else if (!util.isObject(options)) {
+            throw new Error(&#x27;The options object must be an object&#x27;);
+        }
+
+        if (type) {
+            var typeStr = type;
+            if (util.isObject(type)) {
+                typeStr = type[pb.DAO.getIdField()] + &#x27;&#x27;;
+            }
+
+            where.type = typeStr;
+        }
+
+        var self = this;
+        self.siteQueryService.loadByValues(where, CustomObjectService.CUST_OBJ_COLL, function(err, custObj) {
+            if (util.isObject(custObj)) {
+                return self.fetchChildren(custObj, options, type, cb);
+            }
+            cb(err, custObj);
+        });
+    };
+
+    /**
+     * Loads a custom object type by ID
+     * @method loadTypeById
+     * @param {ObjectID|String} id
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.loadTypeById = function(id, cb) {
+        this.loadTypeBy(pb.DAO.getIdWhere(id), cb);
+    };
+
+    /**
+     * Loads a custom object type by name
+     * @method loadTypeByName
+     * @param {String} name
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.loadTypeByName = function(name, cb) {
+        name      = CustomObjectService.getCustTypeSimpleName(name);
+        var where = {};
+        where[NAME_FIELD] = name;
+        this.loadTypeBy(where, cb);
+    };
+
+    /**
+     * Loads a custom object type by the specified where criteria
+     * @method loadTypeBy
+     * @param {Object} where
+     * @param {Function} cb
+     */
+    CustomObjectService.prototype.loadTypeBy = function(where, cb) {
+        if (!pb.validation.isObj(where, true) || pb.validation.isEmpty(where)) {
+            return cb(Error(&quot;The where parameter must be provided in order to load a custom object type&quot;));
+        }
+
+        this.siteQueryService.loadByValues(where, CustomObjectService.CUST_OBJ_TYPE_COLL, cb);
+    };
+
+    /**
+     * Validates a custom object
+     * @method validate
+     * @param {Object} custObj The object to validate
+     * @param {Object} custObjType The custom object type to validate against
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error if occurred. The second is an array of validation error objects.  If
+     * the array is empty it is safe to assume that the object is valid.
+     */
+    CustomObjectService.prototype.validate = function(custObj, custObjType, cb) {
+
+        var self   = this;
+        var errors = [];
+        var dao    = new pb.DAO();
+        var tasks  = [
+
+            //validate object type
+            function(callback) {
+                if (custObj.object_type !== CustomObjectService.CUST_OBJ_COLL) {
+                    errors.push(CustomObjectService.err(&#x27;type&#x27;, &quot;The object type must be: &quot;+custObj.object_type));
+                }
+                callback(null);
+            },
+
+            //validate the type
+            function(callback) {
+                if (!pb.validation.isIdStr(custObj.type) || custObj.type !== custObjType[pb.DAO.getIdField()].toString()) {
+                    errors.push(CustomObjectService.err(&#x27;type&#x27;, &quot;The type must be an ID string and must match the describing custom object type&#x27;s ID&quot;));
+                }
+                callback(null);
+            },
+
+            //validate the name
+            function(callback) {
+                if (!pb.validation.isNonEmptyStr(custObj.name, true)) {
+                    errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name cannot be empty&#x27;));
+                    return callback(null);
+                }
+
+                //test for HTML
+                var sanitized = pb.BaseController.sanitize(custObj.name);
+                if (sanitized !== custObj.name) {
+                    errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name cannot contain HTML&#x27;));
+                    return callback(null);
+                }
+
+                //test uniqueness of name
+                var where = {
+                    type: custObjType[pb.DAO.getIdField()].toString()
+                };
+                where[NAME_FIELD] = new RegExp(&#x27;^&#x27;+util.escapeRegExp(custObj.name)+&#x27;$&#x27;, &#x27;i&#x27;);
+                dao.unique(CustomObjectService.CUST_OBJ_COLL, where, custObj[pb.DAO.getIdField()], function(err, isUnique){
+                    if (!isUnique) {
+                        errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name &#x27;+custObj.name+&#x27; is not unique&#x27;));
+                    }
+                    callback(err);
+                });
+            },
+
+            //validate other fields
+            function(callback) {
+                self.validateCustObjFields(custObj, custObjType, function(err, fieldErrors) {
+                    if (util.isArray(fieldErrors)) {
+                        util.arrayPushAll(fieldErrors, errors);
+                    }
+                    callback(err);
+                });
+            }
+        ];
+        async.series(tasks, function(err) {
+            cb(err, errors);
+        });
+    };
+
+    /**
+     * Validates the fields of a custom object
+     * @method validateCustObjFields
+     * @param {Object} custObj The object to validate
+     * @param {Object} custObjType The custom object type to validate against
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error if occurred. The second is an array of validation error objects.  If
+     * the array is empty it is safe to assume that the object is valid.
+     */
+    CustomObjectService.prototype.validateCustObjFields = function(custObj, custObjType, cb) {
+
+        var errors = [];
+        var tasks = util.getTasks(Object.keys(custObjType.fields), function(keys, i) {
+            return function(callback) {
+
+                //check for exception
+                var fieldName = keys[i];
+                if (fieldName === NAME_FIELD) {
+                    //validated independently in main validation function
+                    return callback(null);
+                }
+
+                //get value
+                var val = custObj[fieldName];
+
+                //execute validation procedure
+                var field          = custObjType.fields[fieldName];
+                var fieldType      = field.field_type;
+                var isValid        = AVAILABLE_FIELD_TYPES[fieldType];
+                if (!isValid(val, false)) {
+                    errors.push(CustomObjectService.err(fieldName, &#x27;An invalid value [&#x27;+val+&#x27;] was found.&#x27;));
+                }
+                callback(null);
+            };
+        });
+        async.series(tasks, function(err) {
+            cb(err, errors);
+        });
+    };
+
+    /**
+     * Validates a Custom Object Type.
+     * @method validateType
+     * @param {Object} custObjType The object to validate
+     * @param {Function} cb A callback function that provides two parameters: The
+     * first, an error, if exists. The second is an array of objects that represent
+     * validation errors.  If the 2nd parameter is an empty array it is safe to
+     * assume that validation passed.
+     */
+    CustomObjectService.prototype.validateType = function(custObjType, cb) {
+        if (!pb.validation.isObj(custObjType)) {
+            return cb(new Error(&#x27;The type descriptor must be an object: &#x27;+(typeof custObjType)));
+        }
+
+        var self   = this;
+        var errors = [];
+        var tasks  = [
+
+            //validate the name
+            function(callback) {
+                if (!pb.validation.isNonEmptyStr(custObjType.name, true)) {
+                    errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name cannot be empty&#x27;));
+                    return callback(null);
+                }
+
+                //test for HTML
+                var sanitized = pb.BaseController.sanitize(custObjType.name);
+                if (sanitized !== custObjType.name) {
+                    errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name cannot contain HTML&#x27;));
+                    return callback(null);
+                }
+
+                //test uniqueness of name
+                var where = {};
+                where[NAME_FIELD] = new RegExp(&#x27;^&#x27;+util.escapeRegExp(custObjType.name)+&#x27;$&#x27;, &#x27;i&#x27;);
+                self.siteQueryService.unique(CustomObjectService.CUST_OBJ_TYPE_COLL, where, custObjType[pb.DAO.getIdField()], function(err, isUnique){
+                    if(!isUnique) {
+                        errors.push(CustomObjectService.err(&#x27;name&#x27;, &#x27;The name &#x27;+custObjType.name+&#x27; is not unique&#x27;));
+                    }
+                    callback(err);
+                });
+            },
+
+            //validate the fields
+            function(callback) {
+
+                if (!pb.validation.isObj(custObjType.fields)) {
+                    errors.push(CustomObjectService.err(&#x27;fields&#x27;, &#x27;The fields property must be an object&#x27;));
+                    return callback(null);
+                }
+
+                //get the supported object types
+                self.getReferenceTypes(function(err, types) {
+                    if (util.isError(err)) {
+                        return callback(err);
+                    }
+
+                    var typesHash = util.arrayToHash(types);
+                    Object.keys(custObjType.fields).forEach(function(fieldName) {
+                        if (!pb.validation.isNonEmptyStr(fieldName)) {
+                            errors.push(CustomObjectService.err(&#x27;fields.&#x27;, &#x27;The field name cannot be empty&#x27;));
+                        }
+                        else {
+                            var fieldErrors = self.validateFieldDescriptor(custObjType.fields[fieldName], typesHash);
+                            util.arrayPushAll(fieldErrors, errors);
+                        }
+                    });
+                    callback(null);
+                });
+            }
+        ];
+        async.series(tasks, function(err) {
+            cb(err, errors);
+        });
+    };
+
+    /**
+     * Validates that the field descriptor for a custom object type.
+     * @method validateFieldDescriptor
+     * @param {object} field
+     * @param {object} customTypes
+     * @return {Array} An array of objects that contain two properties: field and
+     * error
+     */
+    CustomObjectService.prototype.validateFieldDescriptor = function(field, customTypes) {
+        var errors = [];
+        if (!pb.validation.isObj(field)) {
+            errors.push(CustomObjectService.err(&#x27;&#x27;, &#x27;The field descriptor must be an object: &#x27;+(typeof field)));
+        }
+        else {
+
+            if (!AVAILABLE_FIELD_TYPES[field.field_type]) {
+                errors.push(CustomObjectService.err(&#x27;field_type&#x27;, &#x27;An invalid field type was specified: &#x27;+field.field_type));
+            }
+            else if (field.field_type === PEER_OBJECT_TYPE || field.field_type === CHILD_OBJECTS_TYPE) {
+                if (!customTypes[field.object_type]) {
+                    errors.push(CustomObjectService.err(&#x27;object_type&#x27;, &#x27;An invalid object type was specified: &#x27;+field.object_type));
+                }
+            }
+        }
+        return errors;
+    };
+
+    /**
+     * Retrieves an array of all of the available object types that can be
+     * referenced as a child or peer object.
+     * @method getReferenceTypes
+     * @param {Function} cb A callback that takes two parameters: The first, an
+     * error, if occurs.  The second is an array of all of the available object
+     * types that can be referenced as a peer or child object.
+     */
+    CustomObjectService.prototype.getReferenceTypes = function(cb) {
+
+        var select                  = {};
+        select[NAME_FIELD]          = 1;
+        select[pb.DAO.getIdField()] = 0;
+
+        var opts = {
+            where: pb.DAO.ANYWHERE,
+            select: select
+        };
+
+        this.siteQueryService.q(CustomObjectService.CUST_OBJ_TYPE_COLL, opts, function(err, types) {
+            if (util.isError(err)) {
+                return cb(err);
+            }
+
+            var allTypes = util.clone(AVAILABLE_REFERENCE_TYPES);
+            for (var i = 0; i &lt; types.length; i++) {
+                allTypes.push(&#x27;custom:&#x27;+types[i][NAME_FIELD]);
+            }
+            cb(null, allTypes);
+        });
+    };
+
+    /**
+     * Validates and persists a custom object
+     * @method save
+     * @param {Object} custObj The object to validate
+     * @param {Object} custObjType The custom object type to validate against
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error if occurred. The second is an array of validation error objects or the
+     * result of the persistence operation.
+     *
+     */
+    CustomObjectService.prototype.save = function(custObj, custObjType, cb) {
+        if (!pb.validation.isObj(custObj, true)) {
+            throw new Error(&#x27;The custom object must be a valid object.&#x27;);
+        }
+
+        var self = this;
+        custObj.object_type = CustomObjectService.CUST_OBJ_COLL;
+        this.validate(custObj, custObjType, function(err, errors) {
+            if (util.isError(err) || errors.length &gt; 0) {
+                return cb(err, errors);
+            }
+            self.siteQueryService.save(custObj, cb);
+        });
+    };
+
+    /**
+     * Validates and persists a custom object type
+     * @method saveType
+     * @param {Object} custObjType The object to persist
+     * @param {Function} cb A callback that takes two parameters. The first is an
+     * error if occurred. The second is an array of validation error objects or the
+     * result of the persistence operation.
+     */
+    CustomObjectService.prototype.saveType = function(custObjType, cb) {
+        if (!pb.validation.isObj(custObjType, true)) {
+            throw new Error(&#x27;The custom object type must be a valid object.&#x27;);
+        }
+
+        var self = this;
+        custObjType.object_type = CustomObjectService.CUST_OBJ_TYPE_COLL;
+        this.validateType(custObjType, function(err, errors) {
+            if(util.isError(err) || errors.length &gt; 0) {
+                return cb(err, errors);
+            }
+
+            self.siteQueryService.save(custObjType, cb);
+        });
+    };
+
+    /**
+     * Deletes a custom object by ID
+     * @method deleteById
+     * @param {String} id
+     * @param {Function} cb (Error, *)
+     */
+    CustomObjectService.prototype.deleteById = function(id, cb) {
+        var dao = new pb.DAO();
+        dao.deleteById(id, CustomObjectService.CUST_OBJ_COLL, cb);
+    };
+
+    /**
+     * Deletes a custom object type by id
+     * @method deleteTypeById
+     * @param {String|ObjectID} id
+     * @param {object} [options={}]
+     * @param {function} cb (Error, *)
+     */
+    CustomObjectService.prototype.deleteTypeById = function(id, options, cb) {
+        if (util.isFunction(options)) {
+            cb = options;
+            options = {};
+        }
+
+        if (!pb.validation.isId(id, true)) {
+            return cb(new Error(&#x27;INVALID_UID&#x27;));
+        }
+
+        var self  = this;
+        var tasks = [
+
+            //remove object type
+            function(callback) {
+                var dao = new pb.DAO();
+                dao.deleteById(id, CustomObjectService.CUST_OBJ_TYPE_COLL, callback);
+            },
+
+            //remove those objects associated with the type
+            function(callback) {
+                self.deleteForType(id, callback);
+            }
+        ];
+        async.series(tasks, cb);
+    };
+
+    /**
+     * Deletes all custom objects of a specified type
+     * @method deleteForType
+     * @param {string|object} custObjType A string ID of the custom object type or
+     * the custom object type itself.
+     * @param {Function} cb (Error, *)
+     */
+    CustomObjectService.prototype.deleteForType = function(custObjType, cb) {
+
+        var typeId = custObjType;
+        if (!util.isString(custObjType)) {
+            typeId = custObjType[pb.DAO.getIdField()] + &#x27;&#x27;;
+        }
+        var dao = new pb.DAO();
+        dao.delete({type: typeId}, CustomObjectService.CUST_OBJ_COLL, cb);
+    };
+
+    /**
+     * Determines if a custom object type with the specified name (case insensitive) exists
+     * @method typeExists
+     * @param {string} typeName
+     * @param {function} cb (Error, Boolean)
+     */
+    CustomObjectService.prototype.typeExists = function(typeName, cb) {
+
+        var where = {
+            name: new RegExp(&#x27;^&#x27;+util.escapeRegExp(typeName)+&#x27;$&#x27;, &#x27;ig&#x27;)
+        };
+
+        this.siteQueryService.exists(CustomObjectService.CUST_OBJ_TYPE_COLL, where, cb);
+    };
+
+    /**
+     * Provides the various types of fields that are allowed for a custom object (number, boolean, string, etc).
+     * @static
+     * @method getFieldTypes
+     * @return {Array}
+     */
+    CustomObjectService.getFieldTypes = function() {
+        return Object.keys(AVAILABLE_FIELD_TYPES);
+    };
+
+    /**
+     * Retrieves the objects types that can be referenced by custom objects
+     * @static
+     * @method getStaticReferenceTypes
+     * @return {Array}
+     */
+    CustomObjectService.getStaticReferenceTypes = function() {
+        return util.clone(AVAILABLE_REFERENCE_TYPES);
+    };
+
+    /**
+     * Determines if a field type is reference to another object type
+     * @static
+     * @method isReferenceFieldType
+     * @param {String} fieldType
+     * @return {Boolean}
+     */
+    CustomObjectService.isReferenceFieldType = function(fieldType) {
+        return fieldType === PEER_OBJECT_TYPE || fieldType === CHILD_OBJECTS_TYPE;
+    };
+
+    /**
+     * Determines if the field type is a custom object type or a system reference
+     * @static
+     * @method isCustomObjectType
+     * @param {String} objType
+     * @return {Boolean}
+     */
+    CustomObjectService.isCustomObjectType = function(objType) {
+        return util.isString(objType) &amp;&amp; objType.indexOf(CUST_OBJ_TYPE_PREFIX) === 0;
+    };
+
+    /**
+     * Gets the simple custom object name.  The simple name is one that is not
+     * prefixed to indicate that it is custom
+     * @static
+     * @method getCustTypeSimpleName
+     * @param {String} name
+     * @return {String}
+     */
+    CustomObjectService.getCustTypeSimpleName = function(name) {
+        if (util.isString(name)) {
+            name = name.replace(CUST_OBJ_TYPE_PREFIX, &#x27;&#x27;);
+        }
+        return name;
+    };
+
+    /**
+     * Formats the object by ensuring that each field is in the correct data type.
+     * @static
+     * @method formatRawForType
+     * @param {Object} post The raw post object
+     * @param {Object} custObjType The custom object type describes the data in the
+     * post obj.
+     */
+    CustomObjectService.formatRawForType = function(post, custObjType) {
+
+        //remove system fields if posted back
+        delete post[pb.DAO.getIdField()];
+        delete post.created;
+        delete post.last_modified;
+
+        //apply types to fields
+        Object.keys(custObjType.fields).forEach(function(key) {
+
+            if(custObjType.fields[key].field_type === &#x27;number&#x27;) {
+                if(util.isString(post[key])) {
+                    post[key] = parseFloat(post[key]);
+                }
+            }
+            else if(custObjType.fields[key].field_type === &#x27;date&#x27;) {
+                if(util.isString(post[key])) {
+                    post[key] = Date.parse(post[key]);
+                }
+                else if (!isNaN(post[key])) {
+                    post[key] = new Date(post[key]);
+                }
+            }
+            else if (custObjType.fields[key].field_type === &#x27;boolean&#x27;) {
+                if (!util.isBoolean(post[key])) {
+
+                    if (util.isString(post[key])) {
+                        post[key] = &quot;true&quot; === post[key].toLowerCase();
+                    }
+                    else if (!isNaN(post[key])) {
+                        post[key] = post[key] ? true : false;
+                    }
+                }
+            }
+            else if (custObjType.fields[key].field_type === &#x27;wysiwyg&#x27;) {
+
+                //ensure not funky script tags or iframes
+                post[key] = pb.BaseController.sanitize(post[key], pb.BaseController.getContentSanitizationRules());
+            }
+            else if(custObjType.fields[key].field_type === CHILD_OBJECTS_TYPE) {
+                if(util.isString(post[key])) {
+
+                    //strips out any non ID strings.
+                    //TODO This should really move to validation.
+                    post[key] = post[key].split(&#x27;,&#x27;);
+                    for (var i = post[key].length - 1; i &gt;= 0; i--) {
+                        if (!pb.validation.isIdStr(post[key][i], true)) {
+                            post[key].splice(i, 1);
+                        }
+                    }
+                }
+            }
+            else if (custObjType.fields[key].field_type === PEER_OBJECT_TYPE) {
+                //do nothing because it can only been a string ID.  Validation
+                //should verify this before persistence.
+            }
+            else if (util.isString(post[key])){
+
+                //when nothing else matches and we just have a string. We should sanitize it
+                post[key] = pb.BaseController.sanitize(post[key]);
+            }
+        });
+        post.type = custObjType[pb.DAO.getIdField()].toString();
+    };
+
+    /**
+     * Formats the raw post data for a sort ordering
+     * @static
+     * @method formatRawSortOrdering
+     * @param {Object} post
+     * @param {Object} sortOrder the existing sort order object that the post data
+     * will be merged with
+     * @return {Object} The formatted sort ordering object
+     */
+    CustomObjectService.formatRawSortOrdering = function(post, sortOrder) {
+        delete post.last_modified;
+        delete post.created;
+        delete post[pb.DAO.getIdField()];
+
+        var sortOrderDoc = pb.DocumentCreator.create(&#x27;custom_object_sort&#x27;, post, []);
+        if (!sortOrderDoc) {
+            return sortOrderDoc;
+        }
+
+        //merge the old and new
+        if (util.isObject(sortOrder)) {
+            util.merge(sortOrderDoc, sortOrder);
+            return sortOrder;
+        }
+        return sortOrderDoc;
+    };
+
+    /**
+     * Discovers the field types used for each entry in the provided array and sets
+     * the &quot;fieldTypesUsed&quot; property for the object.
+     * @static
+     * @method setFieldTypesUsed
+     * @param {Array} custObjTypes The array of custom object type objects to inspect
+     * @param {Localization} ls
+     */
+    CustomObjectService.setFieldTypesUsed = function(custObjTypes, ls) {
+        if (!util.isArray(custObjTypes)) {
+            return;
+        }
+
+        var map                 = {};
+        map.text                = ls.g(&#x27;custom_objects.TEXT&#x27;);
+        map.number              = ls.g(&#x27;custom_objects.NUMBER&#x27;);
+        map.wysiwyg             = ls.g(&#x27;generic.WYSIWYG&#x27;);
+        map.boolean             = ls.g(&#x27;custom_objects.BOOLEAN&#x27;).toLowerCase();
+        map.date                = ls.g(&#x27;generic.DATE&#x27;);
+        map[PEER_OBJECT_TYPE]   = ls.g(&#x27;custom_objects.PEER_OBJECT&#x27;);
+        map[CHILD_OBJECTS_TYPE] = ls.g(&#x27;custom_objects.CHILD_OBJECTS&#x27;);
+
+        // Make the list of field types used in each custom object type, for display
+        for(var i = 0; i &lt; custObjTypes.length; i++) {
+
+            var fieldTypesUsed = {};
+            for(var key in custObjTypes[i].fields) {
+
+                var fieldType = custObjTypes[i].fields[key].field_type;
+                fieldTypesUsed[map[fieldType]] = 1;
+            }
+
+            fieldTypesUsed = Object.keys(fieldTypesUsed);
+            custObjTypes[i].fieldTypesUsed = fieldTypesUsed.join(&#x27;, &#x27;);
+        }
+    };
+
+    /**
+     * Orders the custom objects based on the provided sort order
+     * @static
+     * @method applyOrder
+     * @param {Array} custObjects The array of custom objects to be sorted
+     * @param {Object} sortOrder The object describing the ordering of the objects
+     * @return {Array} A refernce to the sorted array of custom objects.  The
+     * reference is the same as provided to the function.
+     */
+    CustomObjectService.applyOrder = function(custObjects, sortOrder) {
+        if (!util.isArray(custObjects)) {
+            throw new Error(&#x27;The custObjects parameter must be an array&#x27;);
+        }
+
+        //sort by name (case-insensitive)
+        if(!util.isObject(sortOrder) || !sortOrder.sorted_objects) {
+            //currently, mongo cannot do case-insensitive sorts.  We do it manually
+            //until a solution for https://jira.mongodb.org/browse/SERVER-90 is merged.
+            custObjects.sort(function(a, b) {
+                var x = a.name.toLowerCase();
+                var y = b.name.toLowerCase();
+
+                return ((x &lt; y) ? -1 : ((x &gt; y) ? 1 : 0));
+            });
+        }
+        else {
+            var idField          = pb.DAO.getIdField();
+            var customObjectSort = sortOrder.sorted_objects;
+            var sortedObjects    = [];
+            for(var i = 0; i &lt; customObjectSort.length; i++) {
+                for(var j = 0; j &lt; custObjects.length; j++) {
+                    if(custObjects[j][idField].equals(pb.DAO.getObjectId(customObjectSort[i]))) {
+                        sortedObjects.push(custObjects[j]);
+                        custObjects.splice(j, 1);
+                        break;
+                    }
+                }
+            }
+
+            custObjects = sortedObjects.concat(custObjects);
+        }
+        return custObjects;
+    };
+
+    /**
+     * Creates a validation error field
+     * @static
+     * @method err
+     * @param {String} field The field in the object that contains the error
+     * @param {String} err A string description of the error
+     * @return {Object} An object that describes the validation error
+     */
+    CustomObjectService.err = function(field, err) {
+        return {
+            field: field,
+            msg: err
+        };
+    };
+
+    /**
+     * Creates an HTML formatted error string out of an array of error objects.
+     * @static
+     * @method createErrorStr
+     * @param {Array} errors An array of objects where each object has a &quot;msg&quot; and
+     * a &quot;field&quot; property
+     * @param {String} msg
+     * @return {String} HTML formatted string representing the errors
+     */
+    CustomObjectService.createErrorStr = function(errors, msg) {
+        var errStr = &#x27;&#x27;;
+        if (msg) {
+            errStr += msg + &#x27;\n&#x27;;
+        }
+
+        errStr += &#x27;&lt;ul&gt;&#x27;;
+        for(var i = 0; i &lt; errors.length; i++) {
+            var err = errors[i];
+
+            errStr += &#x27;&lt;li&gt;&#x27;;
+            if (err.field) {
+                errStr += err.field + &#x27;: &#x27;;
+            }
+            errStr += HtmlEncoder.htmlEncode(err.msg) + &#x27;&lt;/li&gt;&#x27;;
+        }
+        errStr += &#x27;&lt;/ul&gt;&#x27;;
+        return errStr;
+    };
+
+    return CustomObjectService;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

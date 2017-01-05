@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SiteJobRunner - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.7.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>SiteJobRunner Class</h1>
+<div class="box meta">
+
+        <div class="extends">
+            Extends <a href="../classes/ClusterJobRunner.html" class="crosslink">ClusterJobRunner</a>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/include_service_jobs_sites_site_job_runner.js.html#l5"><code>include&#x2F;service&#x2F;jobs&#x2F;sites&#x2F;site_job_runner.js:5</code></a>
+        </div>
+
+            Module: <a href="../modules/Services.html">Services</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>Setup for running site activation job.</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_SiteJobRunner" class="method item">
+    <h3 class="name"><code>SiteJobRunner</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_jobs_sites_site_job_runner.js.html#l5"><code>include&#x2F;service&#x2F;jobs&#x2F;sites&#x2F;site_job_runner.js:5</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method inherited">
+                                <a href="#method_createCommandTask">createCommandTask</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getChunkOfWorkPercentage">getChunkOfWorkPercentage</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getId">getId</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getInitiatorTasks">getInitiatorTasks</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getSite">getSite</a>
+
+                            </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_getTasks">getTasks</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_getWorkerTasks">getWorkerTasks</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_init">init</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_log">log</a>
+
+                            </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_onBeforeFirstTask">onBeforeFirstTask</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_onCompleted">onCompleted</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_onStart">onStart</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_onUpdate">onUpdate</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_processClusterResults">processClusterResults</a>
+
+                            </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_processResults">processResults</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_processWorkerResults">processWorkerResults</a>
+
+                            </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#method_run">run</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setChunkOfWorkPercentage">setChunkOfWorkPercentage</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setParallelLimit">setParallelLimit</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_setRunAsInitiator">setRunAsInitiator</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setSite">setSite</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property inherited">
+                                <a href="#property_dao">dao</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_id">id</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_isInitiator">isInitiator</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_parallelLimit">parallelLimit</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_site">site</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#property_taskFactor">taskFactor</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_createCommandTask" class="method item inherited">
+    <h3 class="name"><code>createCommandTask</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>type</code>
+                </li>
+                <li class="arg">
+                        <code>command</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ClusterJobRunner.html#method_createCommandTask">ClusterJobRunner</a>:
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l181"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:181</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Creates a simple task that sends a command to the entire cluster then waits
+for all responses.  Success if determined by the lack of an Error in the
+callback in addition to the lack of an "error" property on each item in the
+results array provided by the cb from the call to send the command.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">type</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        The command type
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">command</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        The command to broadcast to the cluster.
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getChunkOfWorkPercentage" class="method item inherited">
+    <h3 class="name"><code>getChunkOfWorkPercentage</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_getChunkOfWorkPercentage">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l153"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:153</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Retrieves the chunk of work percentage
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Number</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getId" class="method item inherited">
+    <h3 class="name"><code>getId</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">String</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_getId">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l128"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:128</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Retrieves the unique identifier for the job
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">String</span>:
+                    The job ID
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getInitiatorTasks" class="method item inherited">
+    <h3 class="name"><code>getInitiatorTasks</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ClusterJobRunner.html#method_getInitiatorTasks">ClusterJobRunner</a>:
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l74"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:74</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Retrieves the tasks needed to contact each process in the cluster to
+perform the job.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters: cb(Error, Object|Array)</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getSite" class="method item">
+    <h3 class="name"><code>getSite</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_jobs_sites_site_job_runner.js.html#l39"><code>include&#x2F;service&#x2F;jobs&#x2F;sites&#x2F;site_job_runner.js:39</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Get the current site of this instance of SiteJobRunner.</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>the site object</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getTasks" class="method item inherited">
+    <h3 class="name"><code>getTasks</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/AsyncJobRunner.html#method_getTasks">
+                AsyncJobRunner
+            </a>
+            but overwritten in
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l58"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:58</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Retrieves the tasks to be executed by this job.  The tasks provided to the
+callback are determined by the isInitiator property.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        A callback that takes two parameters: cb(Error, Object|Array)
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_getWorkerTasks" class="method item inherited">
+    <h3 class="name"><code>getWorkerTasks</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ClusterJobRunner.html#method_getWorkerTasks">ClusterJobRunner</a>:
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l84"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:84</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Retrieves the tasks needed to perform the job on this process.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>A callback that takes two parameters: cb(Error, Object|Array)</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_init" class="method item inherited">
+    <h3 class="name"><code>init</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[name]</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[jobId]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_init">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l113"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:113</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        The initialization function sets the job's name and ID as well as provide an
+instace of DAO.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[name]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        The job's name
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[jobId]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        The job's unique identifier
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_log" class="method item inherited">
+    <h3 class="name"><code>log</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_log">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l174"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:174</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Logs a message to the system logger as well as to the persistence layer. The
+function takes a variable number of arguments.  A string message/pattern
+followed by the variables to fill in with that data.  See util.format or the
+implementation for Winston loggers.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        The message or pattern to log
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onBeforeFirstTask" class="method item inherited">
+    <h3 class="name"><code>onBeforeFirstTask</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/AsyncJobRunner.html#method_onBeforeFirstTask">
+                AsyncJobRunner
+            </a>
+            but overwritten in
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l163"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:163</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Called before the start of task execution.  When the property isInitiator =
+TRUE the onStart function is called to mark the start of the job.  It is not
+called for others because it is assumed that workers are already part of an
+in-progress cluster job and that an existing job id has been provided.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        A callback that takes two parameters. The first is an
+Error (if occurred) and the second is a boolean value that indicates if the
+function successfully completed any pre-requsite operations before task
+execution begins.
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onCompleted" class="method item inherited">
+    <h3 class="name"><code>onCompleted</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[status]</code>
+                </li>
+                <li class="arg">
+                        <code>err</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_onCompleted">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l258"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:258</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Called once by the extending implementation when the job has completed
+execution whether that be successful completion or by error.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[status]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        The final status of the job.  If not provided the
+status will default to 'COMPLETED' or 'ERRORED' when an error is provided as
+the second parameter.
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">err</code>
+                        <span class="type">Error</span>
+
+
+                    <div class="param-description">
+                        The error, if any, that was generated by the job's
+execution
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onStart" class="method item inherited">
+    <h3 class="name"><code>onStart</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code class="optional">[status=&#x27;RUNNING&#x27;]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_onStart">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l206"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:206</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        To be called once by the extending implmentation to mark the start of the
+job.  The function persists the job record and makes it available to future
+calls to onUpdate or onComplete.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name optional">[status=&#x27;RUNNING&#x27;]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        The starting status of the job
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onUpdate" class="method item inherited">
+    <h3 class="name"><code>onUpdate</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>progressIncrement</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[status]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_onUpdate">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l226"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:226</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        To be called by the extending implmentation when progress has been made.
+The incremental amount of progress should be provided keeping in mind that
+the overall progress should not exceed 100.  Optionally, the status
+parameter may also be included.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">progressIncrement</code>
+                        <span class="type">Integer</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[status]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_processClusterResults" class="method item">
+    <h3 class="name"><code>processClusterResults</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>err</code>
+                </li>
+                <li class="arg">
+                        <code>results</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/ClusterJobRunner.html#method_processClusterResults">
+                ClusterJobRunner
+            </a>
+            but overwritten in
+        <a href="../files/include_service_jobs_sites_site_job_runner.js.html#l48"><code>include&#x2F;service&#x2F;jobs&#x2F;sites&#x2F;site_job_runner.js:48</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Called when the tasks have completed execution and isInitiator = FALSE.  The
+function ispects the results of each processes' execution and attempts to
+decipher if an error occurred.  The function calls back with a result object
+that provides four properties: success (Boolean), id (String), pluginUid
+(String), results (Array of raw results).</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">err</code>
+                        <span class="type">Error</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li>error in the process or null</li>
+</ul>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">results</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li>array of results from the tasks run</li>
+</ul>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li>callback function</li>
+</ul>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_processResults" class="method item inherited">
+    <h3 class="name"><code>processResults</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>err</code>
+                </li>
+                <li class="arg">
+                        <code>results</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/AsyncJobRunner.html#method_processResults">
+                AsyncJobRunner
+            </a>
+            but overwritten in
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l93"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:93</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Called when the job has completed its assigned set of tasks.  The function
+is responsible for processing the results and calling back with the refined
+result.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">err</code>
+                        <span class="type">Error</span>
+
+
+                    <div class="param-description">
+                        The error that occurred (if any) during task execution
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">results</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        An array containing the result of each executed task
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        A callback that provides two parameters: The first is
+any error that occurred (if exists) and the second is dependent on the
+isInitiator property.  See processClusterResults and processWorkerResults
+for more details.
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_processWorkerResults" class="method item inherited">
+    <h3 class="name"><code>processWorkerResults</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>err</code>
+                </li>
+                <li class="arg">
+                        <code>results</code>
+                </li>
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ClusterJobRunner.html#method_processWorkerResults">ClusterJobRunner</a>:
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l149"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:149</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Called when the tasks have completed execution and isInitiator = FALSE. The
+function blindly passes the results of the tasks back to the callback.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">err</code>
+                        <span class="type">Error</span>
+
+
+                    <div class="param-description">
+                        The error that occurred (if any) during task execution
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">results</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        An array containing the result of each executed task
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        A callback that provides two parameters: The first is
+any error that occurred (if exists) and the second is an array of Boolean
+values that indicate the success or failure of each task.
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_run" class="method item inherited">
+    <h3 class="name"><code>run</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>cb</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+            <p>Inherited from
+            <a href="../classes/JobRunner.html#method_run">
+                JobRunner
+            </a>
+            but overwritten in
+        <a href="../files/include_service_jobs_async_job_runner.js.html#l56"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:56</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Kicks off the set of tasks for the job.  The implementation wraps the items
+in a domain in an attempt to provide a level of error handling.  When a
+qualifying error is intercepted by the domain processResults is called
+providing the error and all other task execution is halted.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">cb</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setChunkOfWorkPercentage" class="method item inherited">
+    <h3 class="name"><code>setChunkOfWorkPercentage</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>chunkOfWorkPercentage</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/JobRunner.html" class="crosslink">JobRunner</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#method_setChunkOfWorkPercentage">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l137"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:137</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Sets the portion of the over arching job that this job instance will
+contribute once complete.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">chunkOfWorkPercentage</code>
+                        <span class="type">Number</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/JobRunner.html" class="crosslink">JobRunner</a></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_setParallelLimit" class="method item inherited">
+    <h3 class="name"><code>setParallelLimit</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>max</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/AsyncJobRunner.html#method_setParallelLimit">AsyncJobRunner</a>:
+        <a href="../files/include_service_jobs_async_job_runner.js.html#l47"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:47</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Sets the number of tasks to run in parallel
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">max</code>
+                        <span class="type">Integer</span>
+
+
+                    <div class="param-description">
+                        The maximum number of tasks to run in parallel
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_setRunAsInitiator" class="method item inherited">
+    <h3 class="name"><code>setRunAsInitiator</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>isInitiator</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/ClusterJobRunner.html" class="crosslink">ClusterJobRunner</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ClusterJobRunner.html#method_setRunAsInitiator">ClusterJobRunner</a>:
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l45"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:45</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        Indicates if the job is to run as the initiator or a worker.  When TRUE, the
+job sends commands to all processes in the cluster to perform the
+job.  When FALSE, the actual job is performed on this process.
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">isInitiator</code>
+                        <span class="type">Boolean</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/ClusterJobRunner.html" class="crosslink">ClusterJobRunner</a></span>:
+                    This instance
+            </div>
+        </div>
+
+
+</div>
+<div id="method_setSite" class="method item">
+    <h3 class="name"><code>setSite</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>options</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_jobs_sites_site_job_runner.js.html#l25"><code>include&#x2F;service&#x2F;jobs&#x2F;sites&#x2F;site_job_runner.js:25</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Set the site for an instance of SiteJobRunner.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <ul>
+<li></li>
+</ul>
+
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">uid</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <ul>
+<li>site unique id</li>
+</ul>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">hostname</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <ul>
+<li>result of site hostname edit/create</li>
+</ul>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">displayName</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    <ul>
+<li>result of site display name edit/create</li>
+</ul>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>the instance in which the site was set.</p>
+
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+<div id="property_dao" class="property item inherited">
+    <h3 class="name"><code>dao</code></h3>
+    <span class="type"><a href="../classes/DAO.html" class="crosslink">DAO</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#property_dao">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l38"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:38</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        An instace of DAO to provide direct access to the DB if it is needed.
+    </div>
+
+
+
+</div>
+<div id="property_id" class="property item inherited">
+    <h3 class="name"><code>id</code></h3>
+    <span class="type">String</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#property_id">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l45"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:45</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        Holds the unique identifier for the job
+    </div>
+
+
+
+</div>
+<div id="property_isInitiator" class="property item inherited">
+    <h3 class="name"><code>isInitiator</code></h3>
+    <span class="type">Boolean</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/ClusterJobRunner.html#property_isInitiator">ClusterJobRunner</a>:
+        <a href="../files/include_service_jobs_cluster_job_runner.js.html#l36"><code>include&#x2F;service&#x2F;jobs&#x2F;cluster_job_runner.js:36</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        Indicates if the job is to run as the initiator or a worker.  When TRUE, the
+job sends commands to all processes in the cluster to perform the
+job.  When FALSE, the actual job is performed.
+    </div>
+
+
+
+</div>
+<div id="property_parallelLimit" class="property item inherited">
+    <h3 class="name"><code>parallelLimit</code></h3>
+    <span class="type">Integer</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/AsyncJobRunner.html#property_parallelLimit">AsyncJobRunner</a>:
+        <a href="../files/include_service_jobs_async_job_runner.js.html#l40"><code>include&#x2F;service&#x2F;jobs&#x2F;async_job_runner.js:40</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The number of tasks to run in parallel
+    </div>
+
+
+
+</div>
+<div id="property_site" class="property item">
+    <h3 class="name"><code>site</code></h3>
+    <span class="type">String - default to empty string</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/include_service_jobs_sites_site_job_runner.js.html#l18"><code>include&#x2F;service&#x2F;jobs&#x2F;sites&#x2F;site_job_runner.js:18</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The site for this instance of SiteJobRunner</p>
+
+    </div>
+
+
+
+</div>
+<div id="property_taskFactor" class="property item inherited">
+    <h3 class="name"><code>taskFactor</code></h3>
+    <span class="type">Number</span>
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/JobRunner.html#property_taskFactor">JobRunner</a>:
+        <a href="../files/include_service_jobs_job_runner.js.html#l52"><code>include&#x2F;service&#x2F;jobs&#x2F;job_runner.js:52</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        The percentage of the overall work that this job accounts for.  If this
+job is run by itself then the value should be 1.  This means that 100%
+of the job is completed by this job.  If, for example, the value is .333
+then it is assumed that this job accounts for 33% or one third of the
+over all work necessary to complete the job.  This is handy when a large
+job is made up of smaller jobs.  This value will assist in allowing the
+jobs to calculate their update increments.  The number must be a value
+between 0 (exclusive) & 1 (inclusive).
+    </div>
+
+
+
+</div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>include/http/middleware/index.js - PencilBlue</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="http://pencilblue.org/img/pb_logo.png" title="PencilBlue"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.8.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AdminNavigation.html">AdminNavigation</a></li>
+                                <li><a href="../classes/AdminSubnavService.html">AdminSubnavService</a></li>
+                                <li><a href="../classes/AnalyticsManager.html">AnalyticsManager</a></li>
+                                <li><a href="../classes/ApiActionController.html">ApiActionController</a></li>
+                                <li><a href="../classes/ArticleRenderer.html">ArticleRenderer</a></li>
+                                <li><a href="../classes/ArticleService.html">ArticleService</a></li>
+                                <li><a href="../classes/ArticleServiceV2.html">ArticleServiceV2</a></li>
+                                <li><a href="../classes/AsyncEventEmitter.html">AsyncEventEmitter</a></li>
+                                <li><a href="../classes/AsyncJobRunner.html">AsyncJobRunner</a></li>
+                                <li><a href="../classes/AudioMediaRenderer.html">AudioMediaRenderer</a></li>
+                                <li><a href="../classes/BaseAdminController.html">BaseAdminController</a></li>
+                                <li><a href="../classes/BaseApiController.html">BaseApiController</a></li>
+                                <li><a href="../classes/BaseBodyParser.html">BaseBodyParser</a></li>
+                                <li><a href="../classes/BaseController.html">BaseController</a></li>
+                                <li><a href="../classes/BaseMediaRenderer.html">BaseMediaRenderer</a></li>
+                                <li><a href="../classes/BaseObjectService.html">BaseObjectService</a></li>
+                                <li><a href="../classes/CacheEntityService.html">CacheEntityService</a></li>
+                                <li><a href="../classes/CacheFactory.html">CacheFactory</a></li>
+                                <li><a href="../classes/CacheLockProvider.html">CacheLockProvider</a></li>
+                                <li><a href="../classes/CallHomeService.html">CallHomeService</a></li>
+                                <li><a href="../classes/ClientJs.html">ClientJs</a></li>
+                                <li><a href="../classes/ClusterJobRunner.html">ClusterJobRunner</a></li>
+                                <li><a href="../classes/CommandService.html">CommandService</a></li>
+                                <li><a href="../classes/CommentService.html">CommentService</a></li>
+                                <li><a href="../classes/ContentObjectService.html">ContentObjectService</a></li>
+                                <li><a href="../classes/ContentService.html">ContentService</a></li>
+                                <li><a href="../classes/ContentViewLoader.html">ContentViewLoader</a></li>
+                                <li><a href="../classes/CustomObjectService.html">CustomObjectService</a></li>
+                                <li><a href="../classes/DailyMotionMediaRenderer.html">DailyMotionMediaRenderer</a></li>
+                                <li><a href="../classes/DAO.html">DAO</a></li>
+                                <li><a href="../classes/DbEntityService.html">DbEntityService</a></li>
+                                <li><a href="../classes/DbLockProvider.html">DbLockProvider</a></li>
+                                <li><a href="../classes/DBManager.html">DBManager</a></li>
+                                <li><a href="../classes/DBMigrate.html">DBMigrate</a></li>
+                                <li><a href="../classes/DeleteController.html">DeleteController</a></li>
+                                <li><a href="../classes/DocumentCreator.html">DocumentCreator</a></li>
+                                <li><a href="../classes/EmailService.html">EmailService</a></li>
+                                <li><a href="../classes/ErrorFormatters.html">ErrorFormatters</a></li>
+                                <li><a href="../classes/ErrorsOverTime.html">ErrorsOverTime</a></li>
+                                <li><a href="../classes/ErrorUtils.html">ErrorUtils</a></li>
+                                <li><a href="../classes/ErrorViewController.html">ErrorViewController</a></li>
+                                <li><a href="../classes/FormAuthentication.html">FormAuthentication</a></li>
+                                <li><a href="../classes/FormBodyParser.html">FormBodyParser</a></li>
+                                <li><a href="../classes/FormController.html">FormController</a></li>
+                                <li><a href="../classes/FSEntityService.html">FSEntityService</a></li>
+                                <li><a href="../classes/FsMediaProvider.html">FsMediaProvider</a></li>
+                                <li><a href="../classes/ImageMediaRenderer.html">ImageMediaRenderer</a></li>
+                                <li><a href="../classes/InstagramMediaRenderer.html">InstagramMediaRenderer</a></li>
+                                <li><a href="../classes/JobRunner.html">JobRunner</a></li>
+                                <li><a href="../classes/JobService.html">JobService</a></li>
+                                <li><a href="../classes/JsonBodyParser.html">JsonBodyParser</a></li>
+                                <li><a href="../classes/JSONFSEntityService.html">JSONFSEntityService</a></li>
+                                <li><a href="../classes/KickStarterMediaRenderer.html">KickStarterMediaRenderer</a></li>
+                                <li><a href="../classes/LibrariesService.html">LibrariesService</a></li>
+                                <li><a href="../classes/Localization.html">Localization</a></li>
+                                <li><a href="../classes/LockService.html">LockService</a></li>
+                                <li><a href="../classes/MediaLoader.html">MediaLoader</a></li>
+                                <li><a href="../classes/MediaService.html">MediaService</a></li>
+                                <li><a href="../classes/MediaServiceV2.html">MediaServiceV2</a></li>
+                                <li><a href="../classes/MemoryEntityService.html">MemoryEntityService</a></li>
+                                <li><a href="../classes/Middleware.html">Middleware</a></li>
+                                <li><a href="../classes/MongoCommandBroker.html">MongoCommandBroker</a></li>
+                                <li><a href="../classes/MongoMediaProvider.html">MongoMediaProvider</a></li>
+                                <li><a href="../classes/MongoRegistrationProvider.html">MongoRegistrationProvider</a></li>
+                                <li><a href="../classes/MongoSessionStore.html">MongoSessionStore</a></li>
+                                <li><a href="../classes/PageRenderer.html">PageRenderer</a></li>
+                                <li><a href="../classes/PageService.html">PageService</a></li>
+                                <li><a href="../classes/PasswordResetService.html">PasswordResetService</a></li>
+                                <li><a href="../classes/PB.html">PB</a></li>
+                                <li><a href="../classes/PBError.html">PBError</a></li>
+                                <li><a href="../classes/PdfMediaRenderer.html">PdfMediaRenderer</a></li>
+                                <li><a href="../classes/PencilBlue.html">PencilBlue</a></li>
+                                <li><a href="../classes/PluginRepository.html">PluginRepository</a></li>
+                                <li><a href="../classes/PluginService.html">PluginService</a></li>
+                                <li><a href="../classes/PluginSettingService.html">PluginSettingService</a></li>
+                                <li><a href="../classes/ReadOnlySimpleLayeredService.html">ReadOnlySimpleLayeredService</a></li>
+                                <li><a href="../classes/RedisCommandBroker.html">RedisCommandBroker</a></li>
+                                <li><a href="../classes/RedisRegistrationProvider.html">RedisRegistrationProvider</a></li>
+                                <li><a href="../classes/RedisSessionStore.html">RedisSessionStore</a></li>
+                                <li><a href="../classes/RegExpUtils.html">RegExpUtils</a></li>
+                                <li><a href="../classes/RequestHandler.html">RequestHandler</a></li>
+                                <li><a href="../classes/Router.html">Router</a></li>
+                                <li><a href="../classes/SectionService.html">SectionService</a></li>
+                                <li><a href="../classes/SecurityService.html">SecurityService</a></li>
+                                <li><a href="../classes/ServerInitializer.html">ServerInitializer</a></li>
+                                <li><a href="../classes/ServerRegistration.html">ServerRegistration</a></li>
+                                <li><a href="../classes/SessionHandler.html">SessionHandler</a></li>
+                                <li><a href="../classes/SettingService.html">SettingService</a></li>
+                                <li><a href="../classes/SettingsServiceFactory.html">SettingsServiceFactory</a></li>
+                                <li><a href="../classes/SimpleLayeredService.html">SimpleLayeredService</a></li>
+                                <li><a href="../classes/SiteActivateJob.html">SiteActivateJob</a></li>
+                                <li><a href="../classes/SiteCreateEditJob.html">SiteCreateEditJob</a></li>
+                                <li><a href="../classes/SiteDeactivateJob.html">SiteDeactivateJob</a></li>
+                                <li><a href="../classes/SiteJobRunner.html">SiteJobRunner</a></li>
+                                <li><a href="../classes/SiteMapService.html">SiteMapService</a></li>
+                                <li><a href="../classes/SiteQueryService.html">SiteQueryService</a></li>
+                                <li><a href="../classes/SiteService.html">SiteService</a></li>
+                                <li><a href="../classes/SlideShareMediaRenderer.html">SlideShareMediaRenderer</a></li>
+                                <li><a href="../classes/StorifyMediaRenderer.html">StorifyMediaRenderer</a></li>
+                                <li><a href="../classes/System.html">System</a></li>
+                                <li><a href="../classes/TemplateEntityService.html">TemplateEntityService</a></li>
+                                <li><a href="../classes/TemplateService.html">TemplateService</a></li>
+                                <li><a href="../classes/TemplateValue.html">TemplateValue</a></li>
+                                <li><a href="../classes/TokenAuthentication.html">TokenAuthentication</a></li>
+                                <li><a href="../classes/TokenService.html">TokenService</a></li>
+                                <li><a href="../classes/TopicService.html">TopicService</a></li>
+                                <li><a href="../classes/TopMenuService.html">TopMenuService</a></li>
+                                <li><a href="../classes/TrinketMediaRenderer.html">TrinketMediaRenderer</a></li>
+                                <li><a href="../classes/TTLIndexHelper.html">TTLIndexHelper</a></li>
+                                <li><a href="../classes/UrlService.html">UrlService</a></li>
+                                <li><a href="../classes/UsernamePasswordAuthentication.html">UsernamePasswordAuthentication</a></li>
+                                <li><a href="../classes/UserService.html">UserService</a></li>
+                                <li><a href="../classes/Util.html">Util</a></li>
+                                <li><a href="../classes/ValidationService.html">ValidationService</a></li>
+                                <li><a href="../classes/VideoMediaRenderer.html">VideoMediaRenderer</a></li>
+                                <li><a href="../classes/View Controller.html">View Controller</a></li>
+                                <li><a href="../classes/VimeoMediaRenderer.html">VimeoMediaRenderer</a></li>
+                                <li><a href="../classes/VineMediaRenderer.html">VineMediaRenderer</a></li>
+                                <li><a href="../classes/XmlErrorFormatter.html">XmlErrorFormatter</a></li>
+                                <li><a href="../classes/YouTubeMediaRenderer.html">YouTubeMediaRenderer</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Admin.html">Admin</a></li>
+                                <li><a href="../modules/dao.html">dao</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Entities.html">Entities</a></li>
+                                <li><a href="../modules/ErrorSuccess.html">ErrorSuccess</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/Security.html">Security</a></li>
+                                <li><a href="../modules/Services.html">Services</a></li>
+                                <li><a href="../modules/Session.html">Session</a></li>
+                                <li><a href="../modules/Storage.html">Storage</a></li>
+                                <li><a href="../modules/Theme.html">Theme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: include/http/middleware/index.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ Copyright (C) 2016  PencilBlue, LLC
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+&#x27;use strict&#x27;;
+
+//dependencies
+var url = require(&#x27;url&#x27;);
+var Cookies = require(&#x27;cookies&#x27;);
+var HttpStatus = require(&#x27;http-status-codes&#x27;);
+var ErrorUtils = require(&#x27;../../error/error_utils&#x27;);
+
+module.exports = function(pb) {
+
+    //pb dependencies
+    var util = pb.util;
+    var RequestHandler = pb.RequestHandler;
+
+    //private static variables
+    /**
+     * @private
+     * @static
+     * @property DEFAULT_MIDDLEWARE
+     * @type {string[]}
+     */
+    var DEFAULT_MIDDLEWARE = [
+        &#x27;startTime&#x27;, &#x27;urlParse&#x27;, &#x27;checkPublicRoute&#x27;, &#x27;principal&#x27;, &#x27;deriveSite&#x27;, &#x27;deriveRoute&#x27;, &#x27;deriveActiveTheme&#x27;,
+        &#x27;deriveRouteTheme&#x27;, &#x27;emitRouteThemeRetrieved&#x27;, &#x27;inactiveAccessCheck&#x27;, &#x27;systemSetupCheck&#x27;,
+        &#x27;requiresAuthenticationCheck&#x27;, &#x27;authorizationCheck&#x27;, &#x27;derivePathVariables&#x27;, &#x27;localizedRouteCheck&#x27;,
+        &#x27;instantiateController&#x27;, &#x27;parseRequestBody&#x27;, &#x27;initializeController&#x27;, &#x27;render&#x27;, &#x27;writeSessionCookie&#x27;,
+        &#x27;writeResponse&#x27;, &#x27;responseTime&#x27;, &#x27;principalClose&#x27;
+    ];
+
+    /**
+     * Provides the set of default middleware.
+     * @class Middleware
+     */
+    class Middleware {
+
+        /**
+         * Responsible for setting the start time for the request
+         * @static
+         * @method startTime
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static startTime (req, res, next) {
+            req.startTime = (new Date()).getTime();
+            req.handler.startTime = req.startTime;
+            next();
+        }
+
+        /**
+         * Parses the incoming URL
+         * @static
+         * @method urlParse
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static urlParse (req, res, next) {
+            req.handler.url = url.parse(req.url, true);
+            req.handler.hostname = req.headers.host || pb.SiteService.getGlobalSiteContext().hostname;
+            next();
+        }
+
+        /**
+         * Looks to see if the incoming route maps to a public resource
+         * @static
+         * @method checkPublicRoute
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static checkPublicRoute (req, res, next) {
+            if (RequestHandler.isPublicRoute(req.handler.url.pathname)) {
+                return req.handler.servePublicContent();
+            }//TODO ensure this still follows through with setting cookie and timings
+
+            //only continue when content is not public
+            next();
+        }
+
+        /**
+         * Derives the principal for the request based on the incoming cookie
+         * @static
+         * @method principal
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static principal (req, res, next) {
+
+            //check for session cookie
+            var cookies = RequestHandler.parseCookies(req);
+            req.headers[pb.SessionHandler.COOKIE_HEADER] = cookies;
+
+            //open session
+            pb.session.open(req, function (err, session) {
+                if (util.isError(err)) {
+                    return next(err);
+                }
+                if (!session) {
+                    return next(new Error(&quot;The session object was not valid.  Unable to generate a session object based on request.&quot;));
+                }
+                //set the session id when no session has started or the current one has
+                //expired.
+                var sc = Object.keys(cookies).length === 0;
+                var se = !sc &amp;&amp; cookies.session_id !== session.uid;
+                req.handler.setSessionCookie = req.setSessionCookie = sc || se;
+                if (pb.log.isSilly()) {
+                    pb.log.silly(&quot;RequestHandler: Session ID [%s] Cookie SID [%s] Created [%s] Expired [%s]&quot;, session.uid, cookies.session_id, sc, se);
+                }
+
+                //continue processing
+                req.handler.session = req.session = session;
+                next();
+            });
+        }
+
+        /**
+         * Derives the intended site based on hostname of the incoming request
+         * @static
+         * @method deriveSite
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static deriveSite (req, res, next) {
+            var hostname = req.handler.hostname;
+            var siteObj = RequestHandler.sites[hostname];
+            var redirectHost = RequestHandler.redirectHosts[hostname];
+
+            // If we need to redirect to a different host
+            if (!siteObj &amp;&amp; redirectHost &amp;&amp; RequestHandler.sites[redirectHost]) {
+                return req.router.redirect(pb.SiteService.getHostWithProtocol(redirectHost), HttpStatus.MOVED_PERMANENTLY);
+            }
+            req.handler.siteObj = req.siteObj = siteObj;
+
+            //derive the localization. We do it here so that if the site isn&#x27;t
+            //available we can still have one available when we error out
+            req.handler.localizationService = req.localizationService = req.handler.deriveLocalization({session: req.session});
+
+            //make sure we have a site
+            if (!siteObj) {
+                return next(new Error(&quot;The host (&quot; + hostname + &quot;) has not been registered with a site. In single site mode, you must use your site root (&quot; + pb.config.siteRoot + &quot;).&quot;));
+            }
+
+            req.handler.site = req.site = req.handler.siteObj.uid;
+            req.handler.siteName = req.siteName = req.handler.siteObj.displayName;
+
+            next();
+        }
+
+        /**
+         * Looks up the current route based on the incoming URL
+         * @static
+         * @method deriveRoute
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static deriveRoute (req, res, next) {
+
+            var route = req.handler.getRoute(req.handler.url.pathname);
+            if (route === null) {
+                return next(ErrorUtils.notFound());
+            }
+            req.handler.route = req.route = route;
+
+            next();
+        }
+
+        /**
+         * Looks up the active theme
+         * @static
+         * @method deriveActiveTheme
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static deriveActiveTheme (req, res, next) {
+            var settings = pb.SettingServiceFactory.getService(pb.config.settings.use_memory, pb.config.settings.use_cache, req.siteObj.uid);
+            settings.get(&#x27;active_theme&#x27;, function (err, activeTheme) {
+                if (util.isError(err)) {
+                    return next(err);
+                }
+                if (!activeTheme) {
+                    pb.log.warn(&quot;RequestHandler: The active theme is not set.  Defaulting to &#x27;%s&#x27;&quot;, pb.config.plugins.default);
+                    activeTheme = pb.config.plugins.default;
+                }
+
+                req.handler.activeTheme = req.activeTheme = activeTheme;
+
+                next();
+            });
+        }
+
+        /**
+         * Derives the route theme
+         * @static
+         * @method deriveRouteTheme
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static deriveRouteTheme (req, res, next) {
+
+            // routeTheme describes the site/theme/method combo
+            var rt = req.handler.routeTheme = req.routeTheme = req.handler.getRouteTheme(req.activeTheme, req.route);
+            if (rt.theme === null || rt.method === null || rt.site === null) {
+                return next(ErrorUtils.notFound());
+            }
+
+            // themeRoute describes the specific route definition based on the theme
+            // TODO [1.0] super confusing and should be changed
+            req.handler.themeRoute = req.themeRoute = req.route.themes[rt.site][rt.theme][rt.method];
+            if (pb.log.isSilly()) {
+                pb.log.silly(&quot;RequestHandler: Settling on theme [%s] and method [%s] for URL=[%s:%s]&quot;, rt.theme, rt.method, req.method, req.handler.url.href);
+            }
+
+            next();
+        }
+
+        /**
+         * Responsible for emitting the route theme retrieved event.
+         * @static
+         * @method emitRouteThemeRetrieved
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static emitRouteThemeRetrieved (req, res, next) {
+            req.handler.emitThemeRouteRetrieved(next);
+        }
+
+        /**
+         * Determines whether or not the request can be made against an inactive site. If the site is global and the
+         * route does not allow inactive access then the entity is redirected to the admin section. Otherwise, if the
+         * site is not global then a Not Found error is found.
+         * @static
+         * @method inactiveAccessCheck
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static inactiveAccessCheck (req, res, next) {
+            var inactiveSiteAccess = req.themeRoute.inactive_site_access;
+            if (!req.siteObj.active &amp;&amp; !inactiveSiteAccess) {
+                if (req.siteObj.uid === pb.SiteService.GLOBAL_SITE) {
+                    return req.router.redirect(&#x27;/admin&#x27;);
+                }
+                return next(ErrorUtils.notFound());
+            }
+
+            next();
+        }
+
+        /**
+         * Verifies that the system has already gone through the setup process.  When the check fails the system is
+         * redirected to the setup page
+         * @static
+         * @method systemSetupCheck
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static systemSetupCheck (req, res, next) {
+            var ctx = {
+                themeRoute: req.themeRoute
+            };
+            req.handler.checkSystemSetup(ctx, function (err, result) {
+                if (util.isError(err)) {
+                    return next(err);
+                }
+
+                //setup has not been completed so redirect that way
+                if (!result.success) {
+                    return req.router.redirect(result.redirect);
+                }
+                next();
+            });
+        }
+
+        /**
+         * Responsible for ensuring that the entity that is sending the request has been authenticated.  When the check
+         * fails a 401 NOT AUTHORIZED is thrown
+         * @static
+         * @method requiresAuthenticationCheck
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static requiresAuthenticationCheck (req, res, next) {
+            var ctx = {
+                themeRoute: req.themeRoute,
+                session: req.session,
+                req: req,
+                hostname: req.handler.hostname,
+                url: req.handler.url
+            };
+            var result = RequestHandler.checkRequiresAuth(ctx);
+            next(result.redirect ? ErrorUtils.notAuthorized() : null);
+        }
+
+        /**
+         * Responsible for ensuring that the entity that is sending the request has proper authorization to access the
+         * request resource. First a role check is made and if that passes then permissions are examined.  When the
+         * authorization check fails a 403 FORBIDDEN error is thrown
+         * @static
+         * @method authorizationCheck
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static authorizationCheck (req, res, next) {
+            var ctx = {
+                themeRoute: req.themeRoute,
+                session: req.session
+            };
+
+            //check role
+            var result = RequestHandler.checkAdminLevel(ctx);
+            if (!result.success) {
+                return next(ErrorUtils.forbidden());
+            }
+
+            //check permissions
+            result = RequestHandler.checkPermissions(ctx);
+            if (!result.success &amp;&amp; pb.log.isDebug()) {
+                pb.log.debug(&#x27;AuthCheck: %s&#x27;, result.message);
+            }
+            next(result.success ? null : ErrorUtils.forbidden());
+        }
+
+        /**
+         * Extracts path variables out of the route&#x27;s path and assigns them to the request instances &quot;pathVars&quot; variable
+         * @static
+         * @method derivePathVariables
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static derivePathVariables (req, res, next) {
+            req.pathVars = req.handler.getPathVariables(req.route);
+            next();
+        }
+
+        /**
+         * Responsible for determining if the route is localized.  If the derived site does not support the locale
+         * inside of the route path the middleware will throw a Not Found error
+         * @static
+         * @method localizedRouteCheck
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static localizedRouteCheck (req, res, next) {
+            var pathVars = req.pathVars;
+            if (typeof pathVars.locale !== &#x27;undefined&#x27;) {
+                if (!req.siteObj.supportedLocales[pathVars.locale]) {
+                    return next(ErrorUtils.notFound());
+                }
+
+                //update the localization
+                req.handler.localizationService = req.localizationService = req.handler.deriveLocalization({
+                    session: req.session,
+                    routeLocalization: pathVars.locale
+                });
+            }
+            next();
+        }
+
+        /**
+         * Instantiates an instance of the controller that maps to the derived route based on the active site, theme,
+         * and HTTP method combination.
+         * @static
+         * @method instantiateController
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static instantiateController (req, res, next) {
+
+            var rt = req.routeTheme;
+            var ControllerType = req.route.themes[rt.site][rt.theme][rt.method].controller;
+            req.controllerInstance = new ControllerType();
+
+            next();
+        }
+
+        /**
+         * Responsible for parsing the incoming request body
+         * @static
+         * @method parseRequestBody
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static parseRequestBody (req, res, next) {
+            req.handler.parseBody(req.themeRoute.request_body, function (err, body) {
+                if (util.isError(err)) {
+                    err.code = HttpStatus.BAD_REQUEST;
+                }
+                req.body = body;
+                next(err);
+            });
+        }
+
+        /**
+         * Takes the controller instance and calls the &quot;init&quot; function to ensure the controller is ready to render the
+         * result
+         * @static
+         * @method initializeController
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static initializeController (req, res, next) {
+            var props = RequestHandler.buildControllerContext(req, res, {});
+            req.controllerInstance.init(props, next);
+        }
+
+        /**
+         * Responsible for taking the initialized controller and executing its rendering handler.  The result of the
+         * rendering is set on the request object as &quot;controllerResult&quot;.
+         * @static
+         * @method render
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static render (req, res, next) {
+            req.controllerInstance[req.themeRoute.handler ? req.themeRoute.handler : &#x27;render&#x27;](function (result) {
+                if (util.isError(result)) {
+                    return next(result);
+                }
+                req.controllerResult = result;
+                next();
+            });
+        }
+
+        /**
+         * When no cookie is detected for the current request this middleware writes the session cookie to the response
+         * @static
+         * @method writeSessionCookie
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static writeSessionCookie (req, res, next) {
+            var cookies = new Cookies(req, res);
+            if (req.setSessionCookie) {
+                try {
+                    cookies.set(pb.SessionHandler.COOKIE_NAME, req.session.uid, pb.SessionHandler.getSessionCookie(req.session));
+                }
+                catch (e) {
+                    pb.log.error(&#x27;RequestHandler: Failed to set cookie: %s&#x27;, e.stack);
+                }
+            }
+            next();
+        }
+
+        /**
+         * Responsible for writing the result of the request to the response stream.  When the result contains a redirect
+         * parameter the middleware assumes that the controller result was a redirect result and creates a redirect response
+         * @static
+         * @method writeResponse
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static writeResponse (req, res, next) {
+            var data = req.controllerResult;
+            req.didRedirect = typeof data.redirect === &#x27;string&#x27;;
+            if (req.didRedirect) {
+                req.handler.doRedirect(data.redirect, data.code);
+            }
+            else {
+                req.handler.writeResponse(data);
+            }
+            next();
+        }
+
+        /**
+         * Responsible for calculating the time the server took to respond.  The result will be logged if the log level
+         * is debug or silly
+         * @static
+         * @method responseTime
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static responseTime (req, res, next) {
+            req.endTime = (new Date()).getTime();
+            if (pb.log.isDebug()) {
+                pb.log.debug(&quot;Response Time: %sms URL=%s%s%s&quot;,
+                    req.endTime - req.startTime,
+                    req.url,
+                    req.didRedirect ? &#x27; Redirect=&#x27; + req.controllerResult.redirect : &#x27;&#x27;,
+                    (typeof req.controllerResult.code === &#x27;undefined&#x27; ? &#x27;&#x27; : &#x27; CODE=&#x27; + req.controllerResult.code));
+            }
+            next();
+        }
+
+        /**
+         * Closes the session by persisting it back to the session store.
+         * @static
+         * @method principalClose
+         * @param {Request} req The current request to process
+         * @param {Response} res The response object that compliments the current request
+         * @param {function} next (Error) Callback function that takes a single parameter, an error if it occurred
+         */
+        static principalClose (req, res, next) {
+
+            //close session after data sent
+            //public content doesn&#x27;t require a session so in order to not error out we
+            //check if the session exists first.
+            if (req.session) {
+                pb.session.close(req.session, function (err/*, result*/) {
+                    if (util.isError(err)) {
+                        pb.log.warn(&#x27;RequestHandler: Failed to close session [%s]&#x27;, req.session.uid);
+                    }
+                });
+            }
+            next();
+        }
+
+        /**
+         * Retrieves all of the default middleware.
+         * @static
+         * @method getAll
+         * @returns {Array}
+         */
+        static getAll () {
+            return DEFAULT_MIDDLEWARE.map(function (middlewareName) {
+                return {
+                    name: middlewareName,
+                    action: Middleware[middlewareName]
+                };
+            });
+        }
+    }
+
+    return Middleware;
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
